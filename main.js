@@ -3,17 +3,20 @@ window.onload = (e) => {
     const fix_select = document.getElementById("selectpokemon")
     const u_switch = document.getElementById("user_switch")
     const e_switch = document.getElementById("enemy_switch")
+    const u_skill = document.getElementById("user_skill")
+    const e_skill = document.getElementById("enemy_skill")
+
     const pokemon = {
-        "ヘイラッシャ": ["みず", 225, 167, 135, 76, 117, 55, "てんねん", "とつげきチョッキ", "じしん", "ゆきなだれ", "ボディプレス"],
-        "ハバタクカミ": ["ゴースト・フェアリー", 130, 67, 75, 187, 155, 205, "こだいかっせい", "ブーストエナジー", "シャドーボール", "サイコショック", "マジカルフレイム"],
-        "ロトム(ウォッシュ)": ["みず・でんき", 157, 76, 127, 172, 127, 106, "ふゆう", "こだわりメガネ", "10まんボルト", "シャドーボール", "イカサマ"],
-        "オーガポン(かまど)": ["くさ・ほのお", 155, 172, 104, 72, 116, 178, "かたやぶり", "かまどのめん", "じゃれつく", "ウッドホーン", "じごくづき"],
-        "イーユイ": ["ほのお・あく", 130, 90, 100, 187, 140, 167, "わざわいのたま", "こだわりスカーフ", "かえんほうしゃ", "あくのはどう", "サイコキネシス"],
-        "テツノカイナ": ["でんき・かくとう", 229, 211, 128, 63, 120, 70, "クォークチャージ", "パンチグローブ", "かみなりパンチ", "れいとうパンチ", "じしん"],
-        "ガブリアス": ["じめん・ドラゴン", 183, 182, 115, 90, 105, 169, "さめはだ", "こだわりハチマキ", "じしん", "いわなだれ", "アイアンヘッド"],
-        "ヌメルゴン(ヒスイ)": ["はがね・ドラゴン", 187, 120, 120, 178, 170, 72, "シェルアーマー", "たべのこし", "10まんボルト", "ラスターカノン", "じしん"],
-        "ギャラドス": ["みず・ひこう", 202, 194, 99, 72, 120, 101, "いかく", "ゴツゴツメット", "じしん", "アイアンヘッド", "こおりのキバ"],
-        "テツノブジン": ["フェアリー・かくとう", 149, 150, 110, 172, 72, 184, "クォークチャージ", "きあいのタスキ", "インファイト", "10まんボルト", "シャドーボール"],
+        "ヘイラッシャ": ["みず", 225, 167, 135, 76, 117, 55, "てんねん", "とつげきチョッキ", "ウェーブタックル", "じしん", "ゆきなだれ", "ボディプレス"],
+        "ハバタクカミ": ["ゴースト・フェアリー", 130, 67, 75, 187, 155, 205, "こだいかっせい", "ブーストエナジー", "ムーンフォース", "シャドーボール", "サイコショック", "マジカルフレイム"],
+        "ロトム(ウォッシュ)": ["みず・でんき", 157, 76, 127, 172, 127, 106, "ふゆう", "こだわりメガネ", "ハイドロポンプ", "10まんボルト", "シャドーボール", "イカサマ"],
+        "オーガポン(かまど)": ["くさ・ほのお", 155, 172, 104, 72, 116, 178, "かたやぶり", "かまどのめん", "ツタこんぼう", "じゃれつく", "ウッドホーン", "じごくづき"],
+        "イーユイ": ["ほのお・あく", 130, 90, 100, 187, 140, 167, "わざわいのたま", "こだわりスカーフ", "オーバーヒート", "かえんほうしゃ", "あくのはどう", "サイコキネシス"],
+        "テツノカイナ": ["でんき・かくとう", 229, 211, 128, 63, 120, 70, "クォークチャージ", "パンチグローブ", "ドレインパンチ", "かみなりパンチ", "れいとうパンチ", "じしん"],
+        "ガブリアス": ["じめん・ドラゴン", 183, 182, 115, 90, 105, 169, "さめはだ", "こだわりハチマキ", "ドラゴンクロー", "じしん", "いわなだれ", "アイアンヘッド"],
+        "ヌメルゴン(ヒスイ)": ["はがね・ドラゴン", 187, 120, 120, 178, 170, 72, "シェルアーマー", "たべのこし", "れいとうビーム", "10まんボルト", "ラスターカノン", "じしん"],
+        "ランドロス(けしん)": ["じめん・ひこう", 164, 130, 110, 167, 100, 168, "ちからずく", "いのちのたま", "だいちのちから", "ヘドロばくだん", "きあいだま", "サイコキネシス"],
+        "イイネイヌ": ["どく・かくとう", 195, 198, 135, 70, 106, 100, "どくのくさり", "ゴツゴツメット", "ドレインパンチ", "どくづき", "かみくだく", "れいとうパンチ"],
     }
     const skills = {
         "ウェーブタックル": ["みず", "物理", 120, 100, 10, "直○", "守○", "1体選択", "相手に与えたダメージの33 % を自分も受ける。"],
@@ -65,16 +68,21 @@ window.onload = (e) => {
     }
 
 
-    let u_poke = []
-    let e_poke = []
-    // 先に設定しておく
+    let u_pokes = []    //チームのポケモン
+    let e_pokes = []
+    let u_poke = ""       //現在出ているポケモン
+    let e_poke = ""
+    // ポケモン選択を更新しておく
     const u_select = document.getElementById("user_select").querySelectorAll("input")
     const e_select = document.getElementById("enemy_select").querySelectorAll("input")
-    const update_pokemon = () => {
+    const update_pokesmon = () => {
+        e_pokes = []; u_pokes = [];
+        u_switch.innerHTML = "";
+        e_switch.innerHTML = "";
         u_select.forEach(function (inputElement) {
             if (inputElement.checked) {
                 const poke_name = inputElement.id.slice(0, -2)
-                u_poke.push(poke_name);
+                u_pokes.push(poke_name);
                 var option = document.createElement("option");
                 option.value = poke_name;
                 option.textContent = poke_name;
@@ -84,7 +92,7 @@ window.onload = (e) => {
         e_select.forEach(function (inputElement) {
             if (inputElement.checked) {
                 const poke_name = inputElement.id.slice(0, -2)
-                e_poke.push(poke_name);
+                e_pokes.push(poke_name);
                 var option = document.createElement("option");
                 option.value = poke_name;
                 option.textContent = poke_name;
@@ -92,31 +100,41 @@ window.onload = (e) => {
             }
         });
     }
-    update_pokemon()
+    update_pokesmon()
 
+    //ポケモン選択の更新
     document.getElementById("user_select").addEventListener("change", function () {
-        u_poke = []
-        update_pokemon()
-        console.log(u_poke)
+        update_pokesmon()
+        console.log(u_pokes)
     });
     document.getElementById("enemy_select").addEventListener("change", function () {
-        e_poke = []
-        e_select.forEach(function (inputElement) {
-            if (inputElement.checked) {
-                e_poke.push(inputElement.id.slice(0, -2));
-
-                var option = document.createElement("option");
-                option.value = element;
-                option.textContent = element;
-                e_switch.appendChild(option);
-            }
-        });
-        console.log(e_poke)
+        update_pokesmon()
+        console.log(e_pokes)
     })
+
+    //スキル選択の更新
+    const update_skills = () => {
+        document.getElementById("user_skill").innerHTML = ""
+        document.getElementById("enemy_skill").innerHTML = ""
+        e_skill.innerHTML=""; u_skill.innerHTML=""
+        pokemon[u_poke].slice(9).forEach(function (skill) {
+            var option = document.createElement("option");
+            option.value = skill;
+            option.textContent = skill;
+            u_skill.appendChild(option);
+        })
+        pokemon[e_poke].slice(9).forEach(function (skill) {
+            var option = document.createElement("option");
+            option.value = skill;
+            option.textContent = skill;
+            e_skill.appendChild(option);
+        })
+    }
+
 
     // パーティーを固定して開始
     fix_select.addEventListener("click", function () {
-        if (u_poke.length !== 3 || e_poke.length !== 3) {
+        if (u_pokes.length !== 3 || e_pokes.length !== 3) {
             alert("どちらも3体のポケモンを選んでください");
             return
         }
@@ -126,5 +144,11 @@ window.onload = (e) => {
         u_switch.disabled = true;
         e_switch.disabled = true;
 
+        u_poke = u_switch.value
+        document.getElementById("user_name").innerText = u_poke
+        e_poke = e_switch.value
+        document.getElementById("enemy_name").innerText = e_poke
+
+        update_skills()
     })
 }

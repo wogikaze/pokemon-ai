@@ -10,7 +10,8 @@
 
 <body>
     <div id="main">
-        <div style="background-color: #dcdcdc; ">
+        <div id="settings" style="background-color: #dcdcdc; ">
+            <div class="flex">パーティー構成</div>
             <div class="flex">
                 <div class="selectpoke" id="user_select">
                     <input type="checkbox" id="ヘイラッシャ_u" checked><label for="ヘイラッシャ_u">ヘイラッシャ</label>
@@ -37,6 +38,7 @@
                     <input type="checkbox" id="イイネイヌ_e"><label for="イイネイヌ_e">イイネイヌ</label>
                 </div>
             </div>
+            <hr>
             <div class="flex">場に出すポケモン</div>
             <div class="flex">
                 <select id="user_switch">
@@ -48,7 +50,16 @@
                 <button id="selectpokemon" style="width: 20%;">このパーティーで始める</button>
             </div>
         </div>
-        <div id="changepoke" style="background-color: #dcdcdc;text-align: center; ">
+
+        <div id="pokemon_info">
+            <div class="flex">
+                <div id="user_name">
+                    ユーザーのポケモン名
+                </div>
+                <div id="enemy_name">
+                    相手のポケモン名
+                </div>
+            </div>
 
         </div>
         <div class="flex">
@@ -63,12 +74,12 @@
                 </select>
             </div>
         </div>
-        <div id="outdiv">
+        <div id="buttle">
             <button id="run">ターンを進める</button>
 
             <input type="checkbox" id="fix-random" name="fix-random">
             <label for="fix-random">ダメージの最大値と最小値も表示する</label>
-            <div id="output" style="background-color: #dcdcdc;">
+            <div id="output" style="background-color:#b3b3b3;">
 
             </div>
         </div>
@@ -103,6 +114,12 @@
         margin-top: 10px;
     }
 
+
+
+
+    #pokemon_info {
+        margin-top: 20px;
+    }
     #run {
         margin: 10px;
         min-width: 25%;
@@ -115,7 +132,7 @@
         min-width: 100px;
     }
 
-    #outdiv {
+    #buttle {
         text-align: center;
         user-select: none
     }
