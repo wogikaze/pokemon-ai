@@ -1,6 +1,8 @@
 window.onload = (e) => {
     const run = document.getElementById("run");
     const fix_select = document.getElementById("selectpokemon")
+    const u_switch = document.getElementById("user_switch")
+    const e_switch = document.getElementById("enemy_switch")
     const pokemon = {
         "ヘイラッシャ": ["みず", 225, 167, 135, 76, 117, 55, "てんねん", "とつげきチョッキ", "じしん", "ゆきなだれ", "ボディプレス"],
         "ハバタクカミ": ["ゴースト・フェアリー", 130, 67, 75, 187, 155, 205, "こだいかっせい", "ブーストエナジー", "シャドーボール", "サイコショック", "マジカルフレイム"],
@@ -65,42 +67,64 @@ window.onload = (e) => {
 
     let u_poke = []
     let e_poke = []
-    const u_select = document.getElementById("user-select").querySelectorAll("input")
-    const e_select = document.getElementById("enemy-select").querySelectorAll("input")
-    document.getElementById("user-select").addEventListener("change", function () {
-        u_poke = []
+    // 先に設定しておく
+    const u_select = document.getElementById("user_select").querySelectorAll("input")
+    const e_select = document.getElementById("enemy_select").querySelectorAll("input")
+    const update_pokemon = () => {
         u_select.forEach(function (inputElement) {
             if (inputElement.checked) {
-                u_poke.push(inputElement.id.slice(0, -2));
+                const poke_name = inputElement.id.slice(0, -2)
+                u_poke.push(poke_name);
+                var option = document.createElement("option");
+                option.value = poke_name;
+                option.textContent = poke_name;
+                u_switch.appendChild(option);
             }
         });
+        e_select.forEach(function (inputElement) {
+            if (inputElement.checked) {
+                const poke_name = inputElement.id.slice(0, -2)
+                e_poke.push(poke_name);
+                var option = document.createElement("option");
+                option.value = poke_name;
+                option.textContent = poke_name;
+                e_switch.appendChild(option);
+            }
+        });
+    }
+    update_pokemon()
 
+    document.getElementById("user_select").addEventListener("change", function () {
+        u_poke = []
+        update_pokemon()
         console.log(u_poke)
     });
-    document.getElementById("enemy-select").addEventListener("change", function () {
+    document.getElementById("enemy_select").addEventListener("change", function () {
         e_poke = []
         e_select.forEach(function (inputElement) {
             if (inputElement.checked) {
                 e_poke.push(inputElement.id.slice(0, -2));
+
+                var option = document.createElement("option");
+                option.value = element;
+                option.textContent = element;
+                e_switch.appendChild(option);
             }
         });
         console.log(e_poke)
     })
 
-
+    // パーティーを固定して開始
     fix_select.addEventListener("click", function () {
         if (u_poke.length !== 3 || e_poke.length !== 3) {
-            alert("どちらも3体のポケモンを選んでください")
-        } else {
-            e_select.forEach(element => {
-                element.disabled = true
-            });
-            u_select.forEach(element => {
-                element.disabled = true
-            });
+            alert("どちらも3体のポケモンを選んでください");
+            return
         }
+        e_select.forEach(element => { element.disabled = true });
+        u_select.forEach(element => { element.disabled = true });
+        fix_select.disabled = true;
+        u_switch.disabled = true;
+        e_switch.disabled = true;
 
     })
-
-    //test commit
 }
