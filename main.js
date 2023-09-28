@@ -114,9 +114,8 @@ window.onload = (e) => {
 
     //スキル選択の更新
     const update_skills = () => {
-        document.getElementById("user_skill").innerHTML = ""
-        document.getElementById("enemy_skill").innerHTML = ""
-        e_skill.innerHTML=""; u_skill.innerHTML=""
+        u_skill.innerHTML = ""
+        e_skill.innerHTML = ""
         pokemon[u_poke].slice(9).forEach(function (skill) {
             var option = document.createElement("option");
             option.value = skill;
@@ -151,4 +150,51 @@ window.onload = (e) => {
 
         update_skills()
     })
+
+    // 交代
+    const check_change = (changeid) => {
+        if (document.getElementById(`${changeid}_change`).checked) {
+            document.getElementById("user_skill").innerHTML = ""
+            u_skill.innerHTML = ""
+            u_pokes.forEach(function (poke) {
+                if (poke === u_poke) return;
+                var option = document.createElement("option");
+                option.value = poke;
+                option.textContent = poke;
+                u_skill.appendChild(option);
+            })
+        }
+    }
+    document.getElementById("user_change").addEventListener("click", () => {
+        if (document.getElementById("user_change").checked) {
+            document.getElementById("user_skill").innerHTML = ""
+            u_skill.innerHTML = ""
+            u_pokes.forEach(function (poke) {
+                if (poke === u_poke) return;
+                var option = document.createElement("option");
+                option.value = poke;
+                option.textContent = poke;
+                u_skill.appendChild(option);
+            })
+        } else {
+            update_skills()
+        }
+    })
+    document.getElementById("enemy_change").addEventListener("click", () => {
+        if (document.getElementById("enemy_change").checked) {
+            document.getElementById("enemy_skill").innerHTML = ""
+            u_skill.innerHTML = ""
+            u_pokes.forEach(function (poke) {
+                if (poke === e_poke) return;
+                var option = document.createElement("option");
+                option.value = poke;
+                option.textContent = poke;
+                u_skill.appendChild(option);
+            })
+        } else {
+            update_skills()
+        }
+
+    })
+
 }
