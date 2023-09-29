@@ -5,7 +5,10 @@ window.onload = (e) => {
     const e_switch = document.getElementById("enemy_switch")
     const u_skill = document.getElementById("user_skill")
     const e_skill = document.getElementById("enemy_skill")
-
+    const u_select = document.getElementById("user_select").querySelectorAll("input")
+    const e_select = document.getElementById("enemy_select").querySelectorAll("input")
+    var u_names
+    var e_names
     const pokemon = {
         "ヘイラッシャ": ["みず", 225, 167, 135, 76, 117, 55, "てんねん", "とつげきチョッキ", "ウェーブタックル", "じしん", "ゆきなだれ", "ボディプレス"],
         "ハバタクカミ": ["ゴースト・フェアリー", 130, 67, 75, 187, 155, 205, "こだいかっせい", "ブーストエナジー", "ムーンフォース", "シャドーボール", "サイコショック", "マジカルフレイム"],
@@ -73,8 +76,6 @@ window.onload = (e) => {
     let u_poke = ""       //現在出ているポケモン(name)
     let e_poke = ""
     // ポケモン選択を更新しておく
-    const u_select = document.getElementById("user_select").querySelectorAll("input")
-    const e_select = document.getElementById("enemy_select").querySelectorAll("input")
     const update_pokesmon = () => {
         e_pokes = {}; u_pokes = {};
         u_switch.innerHTML = "";
@@ -133,7 +134,9 @@ window.onload = (e) => {
 
     // パーティーを固定して開始
     fix_select.addEventListener("click", function () {
-        if (u_pokes.length !== 3 || e_pokes.length !== 3) {
+        u_names = [...document.querySelectorAll("#user_select input:checked")].map(e => e.id.slice(0, -2))
+        e_names = [...document.querySelectorAll("#enemy_select input:checked")].map(e => e.id.slice(0, -2))
+        if (u_names.length !== 3 || e_names.length !== 3) {
             alert("どちらも3体のポケモンを選んでください");
             return
         }
@@ -156,7 +159,7 @@ window.onload = (e) => {
         if (document.getElementById("user_change").checked) {
             document.getElementById("user_skill").innerHTML = ""
             u_skill.innerHTML = ""
-            u_pokes.forEach(function (poke) {
+            u_names.forEach(function (poke) {
                 if (poke === u_poke) return;
                 var option = document.createElement("option");
                 option.value = poke;
@@ -171,7 +174,7 @@ window.onload = (e) => {
         if (document.getElementById("enemy_change").checked) {
             document.getElementById("enemy_skill").innerHTML = ""
             e_skill.innerHTML = ""
-            e_pokes.forEach(function (poke) {
+            e_names.forEach(function (poke) {
                 if (poke === e_poke) return;
                 var option = document.createElement("option");
                 option.value = poke;
@@ -185,9 +188,33 @@ window.onload = (e) => {
     })
 
     run.addEventListener("click", function () {
-        console.log(u_poke,e_poke)
-        console.log(u_skill.value, e_skill.value)
+        console.log(u_poke, u_skill.value)
+        console.log(e_poke, e_skill.value)
         //行動できるかの判定
-
+        //ポケモンの交代
+        if (document.getElementById("user_change").checked && document.getElementById("enemy_change").checked) {
+            console.log("両交代")
+            u_poke = u_skill.value
+            document.getElementById("user_name").innerText = u_poke
+            e_poke = e_skill.value
+            document.getElementById("enemy_name").innerText = e_poke
+            document.getElementById("user_change").checked = false
+            document.getElementById("enemy_change").checked = false
+        }
+        else if (document.getElementById("user_change").checked) {
+            console.log("userの交代")
+            u_poke = u_skill.value
+            document.getElementById("user_name").innerText = u_poke
+            document.getElementById("user_change").checked = false
+            //enemyの攻撃
+        }
+        else if (document.getElementById("enemy_change").checked) {
+            console.log("enemyの交代")
+            e_poke = e_skill.value
+            document.getElementById("enemy_name").innerText = e_poke
+            document.getElementById("enemy_change").checked = false
+            //userの攻撃
+        }
+        update_skills()
     })
 }
