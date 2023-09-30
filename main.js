@@ -145,6 +145,7 @@ window.onload = (e) => {
         fix_select.disabled = true;
         u_switch.disabled = true;
         e_switch.disabled = true;
+        run.disabled = false
 
         u_poke = u_switch.value
         document.getElementById("user_name").innerText = u_poke
