@@ -7,6 +7,8 @@ window.onload = (e) => {
     const e_skill = document.getElementById("enemy_skill")
     const u_select = document.getElementById("user_select").querySelectorAll("input")
     const e_select = document.getElementById("enemy_select").querySelectorAll("input")
+    const u_change = document.getElementById("user_change")
+    const e_change = document.getElementById("enemy_change")
     var u_names
     var e_names
     const pokemon = {
@@ -113,7 +115,7 @@ window.onload = (e) => {
         console.log(e_pokes)
     })
 
-    //スキル選択の更新
+    //スキル選択要素の更新
     const update_skills = () => {
         u_skill.innerHTML = ""
         e_skill.innerHTML = ""
@@ -155,9 +157,9 @@ window.onload = (e) => {
         update_skills()
     })
 
-    // 交代
-    document.getElementById("user_change").addEventListener("click", () => {
-        if (document.getElementById("user_change").checked) {
+    // 交代チェック
+    u_change.addEventListener("click", () => {
+        if (u_change.checked) {
             document.getElementById("user_skill").innerHTML = ""
             u_skill.innerHTML = ""
             u_names.forEach(function (poke) {
@@ -171,8 +173,8 @@ window.onload = (e) => {
             update_skills()
         }
     })
-    document.getElementById("enemy_change").addEventListener("click", () => {
-        if (document.getElementById("enemy_change").checked) {
+    e_change.addEventListener("click", () => {
+        if (e_change.checked) {
             document.getElementById("enemy_skill").innerHTML = ""
             e_skill.innerHTML = ""
             e_names.forEach(function (poke) {
@@ -187,33 +189,37 @@ window.onload = (e) => {
         }
 
     })
+    // 行動：交代
+    function changepokemon(user) {
 
+    }
     run.addEventListener("click", function () {
         console.log(u_poke, u_skill.value)
         console.log(e_poke, e_skill.value)
         //行動できるかの判定
         //ポケモンの交代
-        if (document.getElementById("user_change").checked && document.getElementById("enemy_change").checked) {
+        if (u_change.checked && e_change.checked) {
             console.log("両交代")
+            //素早さ順で行動
             u_poke = u_skill.value
             document.getElementById("user_name").innerText = u_poke
             e_poke = e_skill.value
             document.getElementById("enemy_name").innerText = e_poke
-            document.getElementById("user_change").checked = false
-            document.getElementById("enemy_change").checked = false
+            u_change.checked = false
+            e_change.checked = false
         }
-        else if (document.getElementById("user_change").checked) {
+        else if (u_change.checked) {
             console.log("userの交代")
             u_poke = u_skill.value
             document.getElementById("user_name").innerText = u_poke
-            document.getElementById("user_change").checked = false
+            u_change.checked = false
             //enemyの攻撃
         }
-        else if (document.getElementById("enemy_change").checked) {
+        else if (e_change.checked) {
             console.log("enemyの交代")
             e_poke = e_skill.value
             document.getElementById("enemy_name").innerText = e_poke
-            document.getElementById("enemy_change").checked = false
+            e_change.checked = false
             //userの攻撃
         }
         update_skills()
