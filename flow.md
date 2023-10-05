@@ -1,14 +1,17 @@
 # 処理のフロー
+
+### 戦闘開始
+- どのポケモンを出すか選択
+- 確定
+
 ### ターン開始
 - わざの選択
+- 交代の選択
 
 ### 急所か外したか
-- is_vital()
 - とくせい、持ち物の設定
-- まだ
 
 ### ダメージ計算
-- damage()
 - とくせい、持ち物の設定
 
 ### ランクの保持
@@ -16,3 +19,24 @@
 - ランク
 - HP
 - など
+
+### グローバル変数
+```js
+const run = document.getElementById("run");
+const fix_select = document.getElementById("selectpokemon")
+const u_switch = document.getElementById("user_switch")
+const e_switch = document.getElementById("enemy_switch")
+const u_skill = document.getElementById("user_skill")
+const e_skill = document.getElementById("enemy_skill")
+const u_select = document.getElementById("user_select").querySelectorAll("input")
+const e_select = document.getElementById("enemy_select").querySelectorAll("input")
+const u_change = document.getElementById("user_change")
+const e_change = document.getElementById("enemy_change")
+const output = document.getElementById("output")
+let u_pokes = {}    //チームのポケモン(struct)
+let e_pokes = {}
+let u_poke = ""     //現在出ているポケモン(name)
+let e_poke = ""
+var u_names         //チームのポケモン([name])
+var e_names
+```

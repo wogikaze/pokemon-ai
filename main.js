@@ -10,13 +10,13 @@ window.onload = (e) => {
     const u_change = document.getElementById("user_change")
     const e_change = document.getElementById("enemy_change")
     const output = document.getElementById("output")
-    var u_names
-    var e_names
 
     let u_pokes = {}    //チームのポケモン(struct)
     let e_pokes = {}
-    let u_poke = ""       //現在出ているポケモン(name)
+    let u_poke = ""     //現在出ているポケモン(name)
     let e_poke = ""
+    var u_names         //チームのポケモン([name])
+    var e_names
     // ポケモン選択を更新しておく
     const update_pokes = () => {
         e_pokes = {}; u_pokes = {};
@@ -69,7 +69,6 @@ window.onload = (e) => {
         const update_enemy = () => {
             e_skill.innerHTML = ""
             pokemon[e_poke].slice(9).forEach(function (skill) {
-
                 var option = document.createElement("option");
                 option.value = skill;
                 option.textContent = skill;
@@ -165,20 +164,20 @@ window.onload = (e) => {
             console.log("両交代")
             //素早さ順で行動
             let order = sortbyspeed()
-            
-            update_user()
-            update_enemy()
+
+            user_change()
+            enemy_change()
             update_skills("both")
         }
         else if (u_change.checked) {
             console.log("userの交代")
-            update_user()
+            user_change()
             update_skills("user")
             //enemyの攻撃
         }
         else if (e_change.checked) {
             console.log("enemyの交代")
-            update_enemy()
+            enemy_change()
             update_skills("enemy")
             //userの攻撃
         }
