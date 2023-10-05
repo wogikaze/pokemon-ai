@@ -113,6 +113,23 @@ window.onload = (e) => {
         e_poke = e_switch.value
         document.getElementById("enemy_name").innerText = e_poke
 
+        //ランクの初期化
+        const init_rank = {
+            "こうげき": 0,
+            "ぼうぎょ": 0,
+            "とくこう": 0,
+            "とくぼう": 0,
+            "すばやさ": 0,
+            "めいちゅう": 0,
+            "かいひ": 0,
+            "きゅうしょ": 0,
+        }
+        u_names.forEach(name => {
+            u_pokes[name][12] = init_rank
+        }); 
+        e_names.forEach(name => {
+            e_pokes[name][12] = init_rank
+        }); 
         update_skills("both")
     })
 
