@@ -114,22 +114,13 @@ window.onload = (e) => {
         document.getElementById("enemy_name").innerText = e_poke
 
         //ランクの初期化
-        const init_rank = {
-            "こうげき": 0,
-            "ぼうぎょ": 0,
-            "とくこう": 0,
-            "とくぼう": 0,
-            "すばやさ": 0,
-            "めいちゅう": 0,
-            "かいひ": 0,
-            "きゅうしょ": 0,
-        }
         u_names.forEach(name => {
             u_pokes[name][12] = init_rank
-        }); 
+        });
         e_names.forEach(name => {
             e_pokes[name][12] = init_rank
-        }); 
+        });
+
         update_skills("both")
     })
 
@@ -168,11 +159,13 @@ window.onload = (e) => {
     // 行動：交代
     function changepokemon(user) {
         const user_change = () => {
+            u_pokes[u_poke] = init_u_rank(u_pokes, u_poke)
             u_poke = u_skill.value
             document.getElementById("user_name").innerText = u_poke
             u_change.checked = false
         }
         const enemy_change = () => {
+            e_pokes[e_poke] = init_e_rank(e_pokes, e_poke)
             e_poke = e_skill.value
             document.getElementById("enemy_name").innerText = e_poke
             e_change.checked = false
