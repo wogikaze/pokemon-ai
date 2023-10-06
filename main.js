@@ -17,6 +17,7 @@ window.onload = (e) => {
     let e_poke = ""
     var u_names         //チームのポケモン([name])
     var e_names
+    var phaze // アイテムなどの追加特性を発動させるフェーズ
     // ポケモン選択を更新しておく
     const update_pokes = () => {
         e_pokes = {}; u_pokes = {};
@@ -157,17 +158,22 @@ window.onload = (e) => {
 
     })
     // 行動：交代
-    function changepokemon(user) {
+    function changepokemon() {
+        phaze = "change"
         const user_change = () => {
             u_pokes[u_poke] = init_u_rank(u_pokes, u_poke)
             u_poke = u_skill.value
             document.getElementById("user_name").innerText = u_poke
+            if (character[u_pokes[u_poke][7]]?.phaze) eval(character[u_pokes[u_poke]]?.phaze)
+            if (items[u_pokes[u_poke][8]]?.phaze) eval(items[u_pokes[u_poke][8]]?.phaze)
             u_change.checked = false
         }
         const enemy_change = () => {
             e_pokes[e_poke] = init_e_rank(e_pokes, e_poke)
             e_poke = e_skill.value
             document.getElementById("enemy_name").innerText = e_poke
+            if (character[_pokes[e_poke][7]]?.phaze) eval(character[e_pokes[e_poke]]?.phaze)
+            if (items[e_pokes[e_poke][8]]?.phaze) eval(items[e_pokes[e_poke][8]]?.phaze)
             e_change.checked = false
         }
         if (u_change.checked && e_change.checked) {

@@ -23,6 +23,7 @@ const damage = (
     // --攻撃者のテラスタイプ--
     ...random                       // (もしあれば)固定したい乱数
 ) => {
+    var phaze = "damage"
     const level = 50                // 攻撃者レベル(50固定)
 
     // 下準備
@@ -39,13 +40,16 @@ const damage = (
         return rate
     })
     let vital_rank = 0
-    if (skill_effects[skill_n]["damage"] !== undefined) {
-        eval(skill_effects[skill_n]["damage"])
-    }
-    // ここまで下準備
-    
-    const is_vital = is_vital()                    // 急所かどうか
+    if (skill_effects[skill_n]?.phaze !== undefined) eval(skill_effects[skill_n].phaze)
 
+    // ここまで下準備
+
+    const is_vital = check_vital(vital_rank)                    // 急所かどうか
+    if (is_vital) {
+        if (kougeki_rank < 0) kougeki_rank = 0
+        if (bougyo_rank < 0) bougyo_rank = 0
+        // さらに「リフレクター」「ひかりのかべ」「オーロラベール」によるダメージ軽減補正を無視します。
+    }
 
     let damage_1 = Math.floor(level * 2 / 5 + 2)
     let second = (() => {
@@ -55,14 +59,14 @@ const damage = (
         // テラスタイプと技のタイプが同じで60未満の場合は60にする(一部の技を除く)
     })
     let forth = (() => {
-        let damage_temp = Math.floor(kougeki * kougeki_rank)
+        let damage_temp = Math.floor(kougeki * damage_rank[kougeki_rank + 6])
         // 特性：はりきりx1.5
         damage_temp = roundHalfUpOrDown(damage_temp * kougeki_hosei / 4096)
         if (damage_temp < 1) damage_temp = 1
         return damage_temp
     })
     let sixth = (() => {
-        let bougyo_temp = Math.floor(bougyo * bougyo_rank)
+        let bougyo_temp = Math.floor(bougyo * kougeki_rank[bougyo_rank + 6])
         // 場の状態：すなあらし(いわ)/ゆき(こおり)で1.5倍
         bougyo_temp = roundHalfUpOrDown(bougyo_temp * bougyo_hosei / 4096)
         if (bougyo_temp < 1) bougyo_temp = 1

@@ -1,15 +1,13 @@
-function is_vital(
-    skill_n
-) {
-    // 1/24 （第6世代までは1/16）の確率で与えるダメージが1.5倍になる補正です。
-    // さらに「リフレクター」「ひかりのかべ」「オーロラベール」によるダメージ軽減補正と、
-    // 不利なランク補正を無視します。（攻撃側のこうげき・とくこうランクがマイナスなら0と見なす。防御側のぼうぎょ・とくぼうランクがプラスなら0と見なす。）
-    // ※特性「カブトアーマー」「シェルアーマー」のポケモンへの攻撃は急所に当たりません。
-    // ※「おまじない」の効果がある場合は急所に当たりません。
-
+const check_vital = (
+    vital_rank
+) => {
     randomNumber = Math.random();
-
-    return true
+    if (randomNumber < vital_rate[vital_rank]) {
+        return true
+    }
+    return false
 }
 
-const vital_rank = [1 / 24, 1 / 8, 1 / 2, 1 / 1]
+const vital_rate = [1 / 24, 1 / 8, 1 / 2, 1 / 1]
+
+console.log("vital_rank: 3", check_vital(3))
