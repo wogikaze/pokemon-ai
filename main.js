@@ -232,7 +232,7 @@ window.onload = (e) => {
             skill[1],
             skill[2],
             skill_hosei,
-            false]
+            skill_n]
         let damage_v = damage(...damage_args)
         let outputtext = `${u_poke}は${e_poke}に${skill_n}で${damage_v}ダメージを与えた\n`
         if (document.getElementById("fix-random").checked) {

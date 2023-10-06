@@ -19,7 +19,7 @@ const damage = (
     skill_category,                 // わざカテゴリ(物理/特殊)
     skill_power,                    // わざ威力
     skill_hosei,                    // わざ威力補正値
-    is_vital,                       // 急所かどうか
+    skill_n,
     // --攻撃者のテラスタイプ--
     ...random                       // (もしあれば)固定したい乱数
 ) => {
@@ -38,7 +38,14 @@ const damage = (
         defender_types_i.forEach(type => { rate *= type_rates[skill_type_i][type] });
         return rate
     })
+    let vital_rank = 0
+    if (skill_effects[skill_n]["damage"] !== undefined) {
+        eval(skill_effects[skill_n]["damage"])
+    }
     // ここまで下準備
+    
+    const is_vital = is_vital()                    // 急所かどうか
+
 
     let damage_1 = Math.floor(level * 2 / 5 + 2)
     let second = (() => {
