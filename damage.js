@@ -1,6 +1,7 @@
 // ダメージ
 
 const damage = (
+    attacker, defender,
     kougeki_types,                  // 攻撃者タイプ
     power,                          // 攻撃者こうげき
     tokukou,                        // 攻撃者とくこう
@@ -23,6 +24,23 @@ const damage = (
     // --攻撃者のテラスタイプ--
     ...random                       // (もしあれば)固定したい乱数
 ) => {
+    kougeki_types = attacker[0]
+    power = attacker[2]
+    tokukou = attacker[4]
+    power_rank = attacker[13]?.["power_rank"]
+    tokukou_rank = attacker[13]?.["tokukou_rank"]
+    kougeki_hosei = attacker[13]?.["kougeki_hosei"]
+    defender_types = defender[0]
+    bougyo_first = defender[3]
+    tokubou = defender[5]
+    bougyo_rank_first = defender[12]?.["bougyo_rank"]
+    tokubou_rank_first = defender[12]?.["tokubou_rank"]
+    bougyo_hosei = defender[12]?.["bougyo_hosei"]
+    skill_type = skill[a_skill][0]
+    skill_category = skill[a_skill][1]
+    skill_power = skill[a_skill][2]
+    skill_hosei = skill[a_skill]
+
     var phaze = "damage"
     const level = 50                // 攻撃者レベル(50固定)
 

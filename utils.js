@@ -19,10 +19,10 @@ const sort_turn = (
     e_poke,
 ) => {
     //トリックルーム
-    if (u_poke[6] > e_poke[6]) {
+    if (pokemon[u_poke][6] > pokemon[e_poke][6]) {
         return 1
     }
-    else if (u_poke[6] = e_poke[6]) {
+    else if (pokemon[u_poke][6] === pokemon[e_poke][6]) {
         return Math.random() < 0.5 ? 0 : 1;
     }
     else {

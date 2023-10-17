@@ -157,7 +157,7 @@ window.onload = (e) => {
         update_skills()
     })
 
-    // 交代
+    // 交代ボタンのチェック
     u_change.addEventListener("click", () => {
         if (u_change.checked) {
             document.getElementById("user_skill").innerHTML = ""
@@ -197,7 +197,10 @@ window.onload = (e) => {
         //ポケモンの交代
         if (u_change.checked && e_change.checked) {
             console.log("両交代")
-            //行動順の判定
+            //行動順の判定->交代時特性など
+            if (sort_turn(u_poke, e_poke)) {
+            } else {
+            }
             u_poke = u_skill.value
             document.getElementById("user_name").innerText = u_poke
             e_poke = e_skill.value
@@ -219,10 +222,18 @@ window.onload = (e) => {
             document.getElementById("enemy_name").innerText = e_poke
             e_change.checked = false
             //userの攻撃
-            run_skill(u_poke, e_poke, e_skill.value)
+            run_skill(u_poke, e_poke, u_skill.value)
         }
         else {
-            run_skill(u_poke, e_poke, e_skill.value)
+            //行動順の判定
+            if (sort_turn(u_poke, e_poke)) {
+                run_skill(u_poke, e_poke, u_skill.value)
+                run_skill(e_poke, u_poke, e_skill.value)
+            }
+            else {
+                run_skill(e_poke, u_poke, e_skill.value)
+                run_skill(u_poke, e_poke, u_skill.value)
+            }
         }
         update_skills()
     })
