@@ -1,45 +1,32 @@
 // ダメージ
 
 const damage = (
-    attacker, defender,
-    kougeki_types,                  // 攻撃者タイプ
-    power,                          // 攻撃者こうげき
-    tokukou,                        // 攻撃者とくこう
-    power_rank,                     // 攻撃者こうげきランク
-    tokukou_rank,                   // 攻撃者とくこうランク
-    kougeki_hosei,                  // 攻撃の補正値
-
-    defender_types,                 // 防御側タイプ
-    bougyo_first,                   // 防御側ぼうぎょ
-    tokubou,                        // 防御側とくぼう
-    bougyo_rank_first,              // 防御側ぼうぎょランク
-    tokubou_rank_first,             // 防御側とくぼうランク
-    bougyo_hosei,                   // 防御の補正値
-
-    skill_type,                     // わざタイプ
-    skill_category,                 // わざカテゴリ(物理/特殊)
-    skill_power,                    // わざ威力
-    skill_hosei,                    // わざ威力補正値
-    skill_n,
+    attacker,
+    defender,
+    a_skill,
     // --攻撃者のテラスタイプ--
     ...random                       // (もしあれば)固定したい乱数
 ) => {
+
+    //初期化
     kougeki_types = attacker[0]
     power = attacker[2]
     tokukou = attacker[4]
-    power_rank = attacker[13]?.["power_rank"]
-    tokukou_rank = attacker[13]?.["tokukou_rank"]
-    kougeki_hosei = attacker[13]?.["kougeki_hosei"]
+    power_rank = attacker[13]?.["こうげき"]
+    tokukou_rank = attacker[13]?.["とくこう"]
+    kougeki_hosei = 4096
+
     defender_types = defender[0]
     bougyo_first = defender[3]
     tokubou = defender[5]
-    bougyo_rank_first = defender[12]?.["bougyo_rank"]
-    tokubou_rank_first = defender[12]?.["tokubou_rank"]
-    bougyo_hosei = defender[12]?.["bougyo_hosei"]
-    skill_type = skill[a_skill][0]
-    skill_category = skill[a_skill][1]
-    skill_power = skill[a_skill][2]
-    skill_hosei = skill[a_skill]
+    bougyo_rank_first = defender[12]?.["ぼうぎょ"]
+    tokubou_rank_first = defender[12]?.["とくぼう"]
+    bougyo_hosei = 4096
+
+    skill_type = skills[a_skill][0]
+    skill_category = skills[a_skill][1]
+    skill_power = skills[a_skill][2]
+    skill_hosei = 4096
 
     var phaze = "damage"
     const level = 50                // 攻撃者レベル(50固定)
@@ -58,7 +45,7 @@ const damage = (
         return rate
     })
     let vital_rank = 0
-    if (skill_effects[skill_n]?.phaze !== undefined) eval(skill_effects[skill_n].phaze)
+    if (skill_effects[a_skill]?.phaze !== undefined) eval(skill_effects[a_skill].phaze)
 
     // ここまで下準備
 
