@@ -9,18 +9,18 @@ const damage = (
 ) => {
 
     //初期化
-    kougeki_types = attacker[0]
+    kougeki_types = attacker[0].includes("・") ? attacker[0].split("・") : [attacker[0]]
     power = attacker[2]
     tokukou = attacker[4]
     power_rank = attacker[13]?.["こうげき"]
     tokukou_rank = attacker[13]?.["とくこう"]
     kougeki_hosei = 4096
 
-    defender_types = defender[0]
+    defender_types = defender[0].includes("・") ? defender[0].split("・") : [defender[0]]
     bougyo_first = defender[3]
     tokubou = defender[5]
-    bougyo_rank_first = defender[12]?.["ぼうぎょ"]
-    tokubou_rank_first = defender[12]?.["とくぼう"]
+    bougyo_rank_first = defender[13]?.["ぼうぎょ"]
+    tokubou_rank_first = defender[13]?.["とくぼう"]
     bougyo_hosei = 4096
 
     skill_type = skills[a_skill][0]
@@ -64,14 +64,14 @@ const damage = (
         // テラスタイプと技のタイプが同じで60未満の場合は60にする(一部の技を除く)
     })
     let forth = (() => {
-        let damage_temp = Math.floor(kougeki * damage_rank[kougeki_rank + 6])
+        let damage_temp = Math.floor(kougeki * hit_rank[kougeki_rank + 6])
         // 特性：はりきりx1.5
         damage_temp = roundHalfUpOrDown(damage_temp * kougeki_hosei / 4096)
         if (damage_temp < 1) damage_temp = 1
         return damage_temp
     })
     let sixth = (() => {
-        let bougyo_temp = Math.floor(bougyo * kougeki_rank[bougyo_rank + 6])
+        let bougyo_temp = Math.floor(bougyo * hit_rank[bougyo_rank + 6])
         // 場の状態：すなあらし(いわ)/ゆき(こおり)で1.5倍
         bougyo_temp = roundHalfUpOrDown(bougyo_temp * bougyo_hosei / 4096)
         if (bougyo_temp < 1) bougyo_temp = 1
