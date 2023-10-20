@@ -84,6 +84,12 @@ const items = {};
 ```json
 "name":{"when":"code"}
 ```
+when
+- damage:ダメージを与える前の効果
+- afterturn:行動を終えた後
+- out:ポケモンを出したとき
+- in:ポケモンを戻したとき
+
 
 # 処理
 ```mermaid

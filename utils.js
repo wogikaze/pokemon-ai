@@ -18,7 +18,10 @@ const sort_turn = (
     u_poke,
     e_poke,
 ) => {
-    //トリックルーム
+    //todo:トリックルーム
+    //todo:場の状態:道具:特性
+    //todo:まひ状態
+    //todo:優先度:下位優先度
     if (pokemon[u_poke][6] > pokemon[e_poke][6]) {
         return 1
     }

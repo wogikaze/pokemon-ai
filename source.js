@@ -56,8 +56,8 @@ const skill_effects = {
     "ツタこんぼう": {"damage":"vital_rank += 1"}
 }
 const character = {
-    "てんねん": { "damage": 'kougeki_rank = 0;bougyo_rank = 0;', "isdamage": 'meityuu_rank = 0;kaihi_rank = 0;' },
-    "こだいかっせい": { "status": `if(pokemon[u_name][8]==="ブーストエナジー")` },
+    "てんねん": { "damage": 'kougeki_rank = 0;bougyo_rank = 0;meityuu_rank = 0;kaihi_rank = 0;' },
+    "こだいかっせい": { "out": `if(pokemon[name][8]==="ブーストエナジー")すばやさ*1.5` },
     "ふゆう": { "damage": 'if(skill_type=="じめん"{ return 0 }' },
     "": {}
 }

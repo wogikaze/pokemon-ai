@@ -160,7 +160,7 @@ window.onload = (e) => {
     function changepokemon() {
         phaze = "change"
         const user_change = () => {
-            u_pokes[u_poke] = init_u_rank(u_pokes, u_poke)
+            u_pokes[u_poke][13] = init_rank
             output.innerText += u_poke
             u_poke = u_skill.value
             document.getElementById("user_name").innerText = u_poke
@@ -170,7 +170,7 @@ window.onload = (e) => {
             output.innerText += `から${u_poke}に交代\n`
         }
         const enemy_change = () => {
-            e_pokes[e_poke] = init_e_rank(e_pokes, e_poke)
+            e_pokes[e_poke][13] = init_rank
             output.innerText += e_poke
             e_poke = e_skill.value
             document.getElementById("enemy_name").innerText = e_poke
