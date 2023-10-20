@@ -3,7 +3,7 @@
 const damage = (
     attacker,
     defender,
-    a_skill,
+    skill,
     // --攻撃者のテラスタイプ--
     ...random                       // (もしあれば)固定したい乱数
 ) => {
@@ -23,9 +23,9 @@ const damage = (
     tokubou_rank_first = defender[13]?.["とくぼう"]
     bougyo_hosei = 4096
 
-    skill_type = skills[a_skill][0]
-    skill_category = skills[a_skill][1]
-    skill_power = skills[a_skill][2]
+    skill_type = skills[skill][0]
+    skill_category = skills[skill][1]
+    skill_power = skills[skill][2]
     skill_hosei = 4096
 
     var phaze = "damage"
@@ -45,7 +45,7 @@ const damage = (
         return rate
     })
     let vital_rank = 0
-    if (skill_effects[a_skill]?.phaze !== undefined) eval(skill_effects[a_skill].phaze)
+    if (skill_effects[skill]?.phaze !== undefined) eval(skill_effects[skill].phaze)
 
     // ここまで下準備
 
