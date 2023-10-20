@@ -91,6 +91,8 @@ when
 - out:ポケモンを出したとき
 - in:ポケモンを戻したとき
 - isdamage:命中判定
+- calchp:HP計算時
+- afterdamage:ダメージ計算後
 
 
 # 処理

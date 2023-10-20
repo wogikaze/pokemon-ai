@@ -26,6 +26,7 @@ const damage = (
     skill_type = skills[skill][0]
     skill_category = skills[skill][1]
     skill_power = skills[skill][2]
+    skill_sessyoku = skills[skill][5]
     skill_hosei = 4096
 
     var phaze = "damage"
