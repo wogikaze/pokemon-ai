@@ -1,17 +1,19 @@
 window.onload = (e) => {
-    const run = document.getElementById("run");
-    const fix_select = document.getElementById("selectpokemon")
-    const u_switch = document.getElementById("user_switch")
-    const e_switch = document.getElementById("enemy_switch")
-    const u_skill = document.getElementById("user_skill")
-    const e_skill = document.getElementById("enemy_skill")
-    const u_select = document.getElementById("user_select").querySelectorAll("input")
-    const e_select = document.getElementById("enemy_select").querySelectorAll("input")
-    const u_change = document.getElementById("user_change")
-    const e_change = document.getElementById("enemy_change")
-    const u_hp = document.getElementById("user_hp")
-    const e_hp = document.getElementById("enemy_hp")
-    const output = document.getElementById("output")
+    const getElement = (id) => document.getElementById(id);
+
+    const run = getElement("run");
+    const fix_select = getElement("selectpokemon");
+    const u_switch = getElement("user_switch");
+    const e_switch = getElement("enemy_switch");
+    const u_skill = getElement("user_skill");
+    const e_skill = getElement("enemy_skill");
+    const u_select = getElement("user_select").querySelectorAll("input");
+    const e_select = getElement("enemy_select").querySelectorAll("input");
+    const u_change = getElement("user_change");
+    const e_change = getElement("enemy_change");
+    const u_hp = getElement("user_hp");
+    const e_hp = getElement("enemy_hp");
+    const output = getElement("output");
     var u_names
     var e_names
 
@@ -240,20 +242,21 @@ window.onload = (e) => {
             let max_damage = damage(...damage_args)
             damage_args[3] = 0.85
             let min_damage = damage(...damage_args)
-            outputtext += ` (${min_damage}以上${max_damage}以下）`
-        } else {
-
-            if (attacker_side === "user") {
-                u_pokes[attacker_name][1] -= damage_num
-                u_hp.innerText = `${u_pokes[attacker_name][1]}/${pokemon[attacker_name][1]}`
-                e_hp.innerText = `${e_pokes[defender_name][1]}/${pokemon[defender_name][1]}`
-            } else {
-                e_pokes[attacker_name][1] -= damage_num
-                u_hp.innerText = `${u_pokes[defender_name][1]}/${pokemon[defender_name][1]}`
-                e_hp.innerText = `${e_pokes[attacker_name][1]}/${pokemon[attacker_name][1]}`
-            }
-            console.log(pokemon)
+            output.innerText += outputtext + ` (${min_damage}以上${max_damage}以下）` + "\n";
+            return
         }
+
+        if (attacker_side === "user") {
+            e_pokes[defender_name][1] -= damage_num
+            u_hp.innerText = `${u_pokes[attacker_name][1]}/${pokemon[attacker_name][1]}`
+            e_hp.innerText = `${e_pokes[defender_name][1]}/${pokemon[defender_name][1]}`
+        } else {
+            u_pokes[defender_name][1] -= damage_num
+            u_hp.innerText = `${u_pokes[defender_name][1]}/${pokemon[defender_name][1]}`
+            e_hp.innerText = `${e_pokes[attacker_name][1]}/${pokemon[attacker_name][1]}`
+        }
+        console.log(pokemon)
+
 
         output.innerText += outputtext + "\n";
     }
