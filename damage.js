@@ -14,6 +14,7 @@ const damage = (
     tokukou = attacker[4]
     power_rank = attacker[13]?.["こうげき"]
     tokukou_rank = attacker[13]?.["とくこう"]
+    meityu_rank = attacker[13]?.["めいちゅう"]
     kougeki_hosei = 4096
 
     defender_types = defender[0].includes("・") ? defender[0].split("・") : [defender[0]]
@@ -21,6 +22,7 @@ const damage = (
     tokubou = defender[5]
     bougyo_rank_first = defender[13]?.["ぼうぎょ"]
     tokubou_rank_first = defender[13]?.["とくぼう"]
+    kaihi_rank = defender[13]?.["かいひ"]
     bougyo_hosei = 4096
 
     skill_type = skills[skill][0]
@@ -47,6 +49,7 @@ const damage = (
     })
     let vital_rank = 0
     if (skill_effects[skill]?.phaze !== undefined) eval(skill_effects[skill].phaze)
+    if (check_hit(skills[skill][3],meityu_rank,kaihi_rank) === false) { return 0 }  //TODO:命中判定で無効になったことを表示する
 
     // ここまで下準備
 
@@ -65,14 +68,14 @@ const damage = (
         // テラスタイプと技のタイプが同じで60未満の場合は60にする(一部の技を除く)
     })
     let forth = (() => {
-        let damage_temp = Math.floor(kougeki * hit_rank[kougeki_rank + 6])
+        let damage_temp = Math.floor(kougeki * hit_rate[kougeki_rank + 6])
         // 特性：はりきりx1.5
         damage_temp = roundHalfUpOrDown(damage_temp * kougeki_hosei / 4096)
         if (damage_temp < 1) damage_temp = 1
         return damage_temp
     })
     let sixth = (() => {
-        let bougyo_temp = Math.floor(bougyo * hit_rank[bougyo_rank + 6])
+        let bougyo_temp = Math.floor(bougyo * hit_rate[bougyo_rank + 6])
         // 場の状態：すなあらし(いわ)/ゆき(こおり)で1.5倍
         bougyo_temp = roundHalfUpOrDown(bougyo_temp * bougyo_hosei / 4096)
         if (bougyo_temp < 1) bougyo_temp = 1
