@@ -9,6 +9,8 @@ window.onload = (e) => {
     const e_select = document.getElementById("enemy_select").querySelectorAll("input")
     const u_change = document.getElementById("user_change")
     const e_change = document.getElementById("enemy_change")
+    const u_hp = document.getElementById("user_hp")
+    const e_hp = document.getElementById("enemy_hp")
     const output = document.getElementById("output")
     var u_names
     var e_names
@@ -26,7 +28,7 @@ window.onload = (e) => {
         u_select.forEach(function (inputElement) {
             if (inputElement.checked) {
                 const poke_name = inputElement.id.slice(0, -2)
-                u_pokes[poke_name] = pokemon[poke_name];
+                u_pokes[poke_name] = { ...pokemon[poke_name] }
                 var option = document.createElement("option");
                 option.value = poke_name;
                 option.textContent = poke_name;
@@ -36,7 +38,7 @@ window.onload = (e) => {
         e_select.forEach(function (inputElement) {
             if (inputElement.checked) {
                 const poke_name = inputElement.id.slice(0, -2)
-                e_pokes[poke_name] = pokemon[poke_name]
+                e_pokes[poke_name] = { ...pokemon[poke_name] }
                 var option = document.createElement("option");
                 option.value = poke_name;
                 option.textContent = poke_name;
@@ -239,6 +241,18 @@ window.onload = (e) => {
             damage_args[3] = 0.85
             let min_damage = damage(...damage_args)
             outputtext += ` (${min_damage}以上${max_damage}以下）`
+        } else {
+
+            if (attacker_side === "user") {
+                u_pokes[attacker_name][1] -= damage_num
+                u_hp.innerText = `${u_pokes[attacker_name][1]}/${pokemon[attacker_name][1]}`
+                e_hp.innerText = `${e_pokes[defender_name][1]}/${pokemon[defender_name][1]}`
+            } else {
+                e_pokes[attacker_name][1] -= damage_num
+                u_hp.innerText = `${u_pokes[defender_name][1]}/${pokemon[defender_name][1]}`
+                e_hp.innerText = `${e_pokes[attacker_name][1]}/${pokemon[attacker_name][1]}`
+            }
+            console.log(pokemon)
         }
 
         output.innerText += outputtext + "\n";

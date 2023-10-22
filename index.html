@@ -62,26 +62,30 @@
                     相手のポケモン名
                 </div>
             </div>
+            <div class="flex">
+                <div>
+                    <select id="user_skill">
 
+                    </select>
+                    <input type="checkbox" id="user_change"><label for="user_change">交代</label>
+                </div>
+                <div>
+                    <select id="enemy_skill">
+                    </select>
+                    <input type="checkbox" id="enemy_change"><label for="enemy_change">交代</label>
+                </div>
+            </div>
+            <div class="flex">
+                自分のHP：<div id="user_hp"> </div>
+                相手のHP：<div id="enemy_hp"> </div>
+            </div>
         </div>
-        <div class="flex">
-            <div>
-                <select id="user_skill">
 
-                </select>
-                <input type="checkbox" id="user_change"><label for="user_change">交代</label>
-            </div>
-            <div>
-                <select id="enemy_skill">
-                </select>
-                <input type="checkbox" id="enemy_change"><label for="enemy_change">交代</label>
-            </div>
-        </div>
         <div id="buttle">
             <button id="run" disabled>ターンを進める</button>
 
             <input type="checkbox" id="fix-random" name="fix-random">
-            <label for="fix-random">ダメージの最大値と最小値も表示する</label>
+            <label for="fix-random">ダメージの最大値と最小値も表示する(HPの計算をしない)</label>
             <div id="output" style="background-color:#b3b3b3;">
 
             </div>
