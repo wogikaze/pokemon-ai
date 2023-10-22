@@ -49,7 +49,10 @@ const damage = (
     })
     let vital_rank = 0
     if (skill_effects[skill]?.phaze !== undefined) eval(skill_effects[skill].phaze)
-    if (check_hit(skills[skill][3],meityu_rank,kaihi_rank) === false) { return 0 }  //TODO:命中判定で無効になったことを表示する
+    if (check_hit(skills[skill][3], meityu_rank, kaihi_rank) === false) {
+        document.getElementById("output").innerText += "命中失敗："
+        return 0
+    }
 
     // ここまで下準備
 

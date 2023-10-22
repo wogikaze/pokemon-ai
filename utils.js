@@ -23,7 +23,7 @@ const check_hit = (
     // let meityu_hosei = 4096 * ... / 4096
     meityu_hosei = 4096 / 4096
     let rate = Math.floor(skill_meityu * hit_rate[hit_rank + 6])
-    return Math.floor(Math.random()*99) < rate
+    return Math.floor(Math.random() * 99) < rate
 }
 
 // console.log("vital_rank: 3", check_vital(3))
