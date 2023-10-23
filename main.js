@@ -203,6 +203,7 @@ window.onload = (e) => {
             update_skills("user")
             //enemyの攻撃
             run_skill(e_poke, u_poke, e_skill.value, "enemy")
+            check_death()
         }
         else if (e_change.checked) {
             console.log("enemyの交代")
@@ -210,16 +211,21 @@ window.onload = (e) => {
             update_skills("enemy")
             //userの攻撃
             run_skill(u_poke, e_poke, u_skill.value, "user")
+            check_death()
         }
         else {
             //行動順の判定
             if (sort_turn(u_poke, e_poke)) {
                 run_skill(u_poke, e_poke, u_skill.value, "user")
+                check_death()
                 run_skill(e_poke, u_poke, e_skill.value, "enemy")
+                check_death()
             }
             else {
                 run_skill(e_poke, u_poke, e_skill.value, "enemy")
+                check_death()
                 run_skill(u_poke, e_poke, u_skill.value, "user")
+                check_death()
             }
         }
     }
@@ -255,10 +261,23 @@ window.onload = (e) => {
             u_hp.innerText = `${u_pokes[defender_name][1]}/${pokemon[defender_name][1]}`
             e_hp.innerText = `${e_pokes[attacker_name][1]}/${pokemon[attacker_name][1]}`
         }
-        console.log(pokemon)
-
 
         output.innerText += outputtext + "\n";
+    }
+
+    function check_death() {
+        user_hp = u_pokes[u_poke][1]
+        enemy_hp = e_pokes[e_poke][1]
+        if (user_hp < 0 && enemy_hp < 0) {
+            return [true, true]
+        }
+        else if (user_hp < 0) {
+            return [true, false]
+        }
+        else if (enemy_hp < 0) {
+            return [false, true]
+        }
+        return [false, false]
     }
 
 }
