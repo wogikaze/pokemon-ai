@@ -139,6 +139,7 @@ window.onload = (e) => {
                 var option = document.createElement("option");
                 option.value = poke;
                 option.textContent = poke;
+                if (u_pokes[poke][1] < 0) option.disabled = true;
                 u_skill.appendChild(option);
             })
         } else {
@@ -154,6 +155,7 @@ window.onload = (e) => {
                 var option = document.createElement("option");
                 option.value = poke;
                 option.textContent = poke;
+                if (e_pokes[poke][1] < 0) option.disabled = true;
                 e_skill.appendChild(option);
             })
         } else {
@@ -202,7 +204,9 @@ window.onload = (e) => {
             user_change()
             update_skills("user")
             //enemyの攻撃
-            run_skill(e_poke, u_poke, e_skill.value, "enemy")
+            //死に出し後
+            if (u_change.disabled) u_change.disabled = false;
+            else run_skill(e_poke, u_poke, e_skill.value, "enemy")
             check_death()
         }
         else if (e_change.checked) {
@@ -210,21 +214,21 @@ window.onload = (e) => {
             enemy_change()
             update_skills("enemy")
             //userの攻撃
-            run_skill(u_poke, e_poke, u_skill.value, "user")
+            if (e_change.disabled) e_change.disabled = false;
+            else run_skill(u_poke, e_poke, u_skill.value, "user")
             check_death()
         }
         else {
             //行動順の判定
             if (sort_turn(u_poke, e_poke)) {
                 run_skill(u_poke, e_poke, u_skill.value, "user")
-                check_death()
-                run_skill(e_poke, u_poke, e_skill.value, "enemy")
+                if (!check_death()[1]) { run_skill(e_poke, u_poke, e_skill.value, "enemy") }
                 check_death()
             }
             else {
                 run_skill(e_poke, u_poke, e_skill.value, "enemy")
                 check_death()
-                run_skill(u_poke, e_poke, u_skill.value, "user")
+                if (!check_death()[0]) { run_skill(u_poke, e_poke, u_skill.value, "user") }
                 check_death()
             }
         }
@@ -234,6 +238,9 @@ window.onload = (e) => {
     run.addEventListener("click", function () {
         changepokemon()
         output.innerText += "\n";
+
+        u_hp.innerText = `${u_pokes[u_poke][1]}/${pokemon[u_poke][1]}`
+        e_hp.innerText = `${e_pokes[e_poke][1]}/${pokemon[e_poke][1]}`
     })
 
     function run_skill(attacker_name, defender_name, skill, attacker_side) {
@@ -254,30 +261,38 @@ window.onload = (e) => {
 
         if (attacker_side === "user") {
             e_pokes[defender_name][1] -= damage_num
-            u_hp.innerText = `${u_pokes[attacker_name][1]}/${pokemon[attacker_name][1]}`
-            e_hp.innerText = `${e_pokes[defender_name][1]}/${pokemon[defender_name][1]}`
         } else {
             u_pokes[defender_name][1] -= damage_num
-            u_hp.innerText = `${u_pokes[defender_name][1]}/${pokemon[defender_name][1]}`
-            e_hp.innerText = `${e_pokes[attacker_name][1]}/${pokemon[attacker_name][1]}`
         }
 
         output.innerText += outputtext + "\n";
+
     }
 
     function check_death() {
         user_hp = u_pokes[u_poke][1]
         enemy_hp = e_pokes[e_poke][1]
         if (user_hp < 0 && enemy_hp < 0) {
+            u_change.click()
+            e_change.click()
+            u_change.disabled = true
+            e_change.disabled = true
             return [true, true]
         }
         else if (user_hp < 0) {
+            u_change.click()
+            u_change.disabled = true
+            if (u_skill.value === "") alert("user lose")
             return [true, false]
         }
         else if (enemy_hp < 0) {
+            e_change.click()
+            e_change.disabled = true
+            if (e_skill.value === "") alert("enemy lose")
             return [false, true]
         }
         return [false, false]
     }
+
 
 }
