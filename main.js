@@ -92,7 +92,7 @@ window.onload = (e) => {
                 update_enemy()
                 break;
             default:
-                alert("err")
+                console.error("Error occurred");
                 break;
         }
     }
@@ -227,7 +227,6 @@ window.onload = (e) => {
             }
             else {
                 run_skill(e_poke, u_poke, e_skill.value, "enemy")
-                check_death()
                 if (!check_death()[0]) { run_skill(u_poke, e_poke, u_skill.value, "user") }
                 check_death()
             }
@@ -272,20 +271,20 @@ window.onload = (e) => {
     function check_death() {
         user_hp = u_pokes[u_poke][1]
         enemy_hp = e_pokes[e_poke][1]
-        if (user_hp < 0 && enemy_hp < 0) {
+        if (user_hp <= 0 && enemy_hp <= 0) {
             u_change.click()
             e_change.click()
             u_change.disabled = true
             e_change.disabled = true
             return [true, true]
         }
-        else if (user_hp < 0) {
+        else if (user_hp <= 0) {
             u_change.click()
             u_change.disabled = true
             if (u_skill.value === "") alert("user lose")
             return [true, false]
         }
-        else if (enemy_hp < 0) {
+        else if (enemy_hp <= 0) {
             e_change.click()
             e_change.disabled = true
             if (e_skill.value === "") alert("enemy lose")
