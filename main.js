@@ -292,6 +292,8 @@ window.onload = (e) => {
         }
         return [false, false]
     }
-
+    function start_effect(u_pokemon, e_pokemon) {
+        
+    }
 
 }
