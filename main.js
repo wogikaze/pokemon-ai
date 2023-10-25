@@ -51,11 +51,11 @@ window.onload = (e) => {
     update_pokesmon()
 
     //ポケモン選択の更新
-    document.getElementById("user_select").addEventListener("change", function () {
+    getElement("user_select").addEventListener("change", function () {
         update_pokesmon()
         console.log(u_pokes)
     });
-    document.getElementById("enemy_select").addEventListener("change", function () {
+    getElement("enemy_select").addEventListener("change", function () {
         update_pokesmon()
         console.log(e_pokes)
     })
@@ -114,17 +114,13 @@ window.onload = (e) => {
         run.disabled = false
 
         u_poke = u_switch.value
-        document.getElementById("user_name").innerText = u_poke
+        getElement("user_name").innerText = u_poke
         e_poke = e_switch.value
-        document.getElementById("enemy_name").innerText = e_poke
+        getElement("enemy_name").innerText = e_poke
 
         //ランクの初期化
-        u_names.forEach(name => {
-            u_pokes[name][13] = init_rank
-        });
-        e_names.forEach(name => {
-            e_pokes[name][13] = init_rank
-        });
+        u_names.forEach(name => { u_pokes[name][13] = init_rank });
+        e_names.forEach(name => { e_pokes[name][13] = init_rank });
 
         update_skills("both")
     })
@@ -132,7 +128,7 @@ window.onload = (e) => {
     // 交代ボタンのチェック
     u_change.addEventListener("click", () => {
         if (u_change.checked) {
-            document.getElementById("user_skill").innerHTML = ""
+            getElement("user_skill").innerHTML = ""
             u_skill.innerHTML = ""
             u_names.forEach(function (poke) {
                 if (poke === u_poke) return;
@@ -148,7 +144,7 @@ window.onload = (e) => {
     })
     e_change.addEventListener("click", () => {
         if (e_change.checked) {
-            document.getElementById("enemy_skill").innerHTML = ""
+            getElement("enemy_skill").innerHTML = ""
             e_skill.innerHTML = ""
             e_names.forEach(function (poke) {
                 if (poke === e_poke) return;
@@ -169,7 +165,7 @@ window.onload = (e) => {
             u_pokes[u_poke][13] = init_rank
             output.innerText += u_poke
             u_poke = u_skill.value
-            document.getElementById("user_name").innerText = u_poke
+            getElement("user_name").innerText = u_poke
             if (character[u_pokes[u_poke][7]]?.phaze) eval(character[u_pokes[u_poke]]?.phaze)
             if (items[u_pokes[u_poke][8]]?.phaze) eval(items[u_pokes[u_poke][8]]?.phaze)
             u_change.checked = false
@@ -179,7 +175,7 @@ window.onload = (e) => {
             e_pokes[e_poke][13] = init_rank
             output.innerText += e_poke
             e_poke = e_skill.value
-            document.getElementById("enemy_name").innerText = e_poke
+            getElement("enemy_name").innerText = e_poke
             if (character[e_pokes[e_poke][7]]?.phaze) eval(character[e_pokes[e_poke]]?.phaze)
             if (items[e_pokes[e_poke][8]]?.phaze) eval(items[e_pokes[e_poke][8]]?.phaze)
             e_change.checked = false
@@ -249,7 +245,7 @@ window.onload = (e) => {
 
         let damage_num = damage(...damage_args)
         let outputtext = `${attacker_name}は${defender_name}に${skill}で${damage_num}ダメージを与えた`
-        if (document.getElementById("fix-random").checked) {
+        if (getElement("fix-random").checked) {
             damage_args.push(1)
             let max_damage = damage(...damage_args)
             damage_args[3] = 0.85
@@ -293,7 +289,7 @@ window.onload = (e) => {
         return [false, false]
     }
     function start_effect(u_pokemon, e_pokemon) {
-        
+
     }
-    
+
 }
