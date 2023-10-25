@@ -47,13 +47,3 @@ const sort_turn = (
         return 0
     }
 }
-
-//ランクの初期化
-const init_u_rank = (u_pokes, u_poke) => {
-    u_pokes[u_poke][13] = init_rank
-    return u_pokes[u_poke]
-}
-const init_e_rank = (e_pokes, e_poke) => {
-    e_pokes[e_poke][13] = init_rank
-    return e_pokes[e_poke]
-}

@@ -281,13 +281,13 @@ window.onload = (e) => {
         else if (user_hp <= 0) {
             u_change.click()
             u_change.disabled = true
-            if (u_skill.value === "") alert("user lose")
+            if (u_skill.value === "") { alert("user lose"); output.innerText += "user lose" }
             return [true, false]
         }
         else if (enemy_hp <= 0) {
             e_change.click()
             e_change.disabled = true
-            if (e_skill.value === "") alert("enemy lose")
+            if (e_skill.value === "") { alert("enemy lose"); output.innerText += "enemy lose" }
             return [false, true]
         }
         return [false, false]
@@ -295,5 +295,5 @@ window.onload = (e) => {
     function start_effect(u_pokemon, e_pokemon) {
         
     }
-
+    
 }
