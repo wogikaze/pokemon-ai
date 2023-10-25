@@ -122,6 +122,24 @@ window.onload = (e) => {
         u_names.forEach(name => { u_pokes[name][13] = init_rank });
         e_names.forEach(name => { e_pokes[name][13] = init_rank });
 
+        //特性などの発動
+        phaze = "out"
+        // 行動する側のポケモン、行動される側のポケモン
+        const out_effect = (a_poke, b_poke) => {
+            let a_tokusei = a_poke[7]
+            let a_item = a_poke[8]
+            if (a_tokusei === "かがくへんかガス") { eval(a_tokusei.phaze) }
+            if (a_tokusei === "きんちょうかん" || a_tokusei === "しんばいったい") { eval(a_tokusei.phaze) }
+            
+        }
+        if (sort_turn(u_poke, e_poke)) {
+            user_change()
+            enemy_change()
+        } else {
+            enemy_change()
+            user_change()
+        }
+
         update_skills("both")
     })
 
