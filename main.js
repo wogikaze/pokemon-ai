@@ -22,6 +22,8 @@ window.onload = (e) => {
     let e_pokes = {}
     let u_poke = ""       //現在出ているポケモン(name)
     let e_poke = ""
+
+    let turn_count = 0
     // ポケモン選択を更新しておく
     const update_pokesmon = () => {
         e_pokes = {}; u_pokes = {};
@@ -130,7 +132,7 @@ window.onload = (e) => {
             let a_item = a_poke[8]
             if (a_tokusei === "かがくへんかガス") { eval(a_tokusei.phaze) }
             if (a_tokusei === "きんちょうかん" || a_tokusei === "しんばいったい") { eval(a_tokusei.phaze) }
-            
+
         }
         if (sort_turn(u_poke, e_poke)) {
             user_change()
@@ -254,6 +256,7 @@ window.onload = (e) => {
 
         u_hp.innerText = `${u_pokes[u_poke][1]}/${pokemon[u_poke][1]}`
         e_hp.innerText = `${e_pokes[e_poke][1]}/${pokemon[e_poke][1]}`
+        turn_count += 1
     })
 
     function run_skill(attacker_name, defender_name, skill, attacker_side) {
