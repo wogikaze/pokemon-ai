@@ -66,7 +66,7 @@ window.onload = (e) => {
     const update_skills = (mode) => {
         const update_user = () => {
             u_skill.innerHTML = ""
-            pokemon[u_poke].slice(9, -1).forEach(function (skill) {
+            pokemon[u_poke].slice(9).forEach(function (skill) {
                 var option = document.createElement("option");
                 option.value = skill;
                 option.textContent = skill;
@@ -75,7 +75,7 @@ window.onload = (e) => {
         }
         const update_enemy = () => {
             e_skill.innerHTML = ""
-            pokemon[e_poke].slice(9, -1).forEach(function (skill) {
+            pokemon[e_poke].slice(9).forEach(function (skill) {
                 var option = document.createElement("option");
                 option.value = skill;
                 option.textContent = skill;
@@ -134,13 +134,13 @@ window.onload = (e) => {
             if (a_tokusei === "きんちょうかん" || a_tokusei === "しんばいったい") { eval(a_tokusei.phaze) }
 
         }
-        if (sort_turn(u_poke, e_poke)) {
-            user_change()
-            enemy_change()
-        } else {
-            enemy_change()
-            user_change()
-        }
+        // if (sort_turn(u_poke, e_poke)) {
+        //     user_change()
+        //     enemy_change()
+        // } else {
+        //     enemy_change()
+        //     user_change()
+        // }
 
         update_skills("both")
     })
