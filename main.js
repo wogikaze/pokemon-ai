@@ -127,11 +127,12 @@ window.onload = (e) => {
         //特性などの発動
         phaze = "out"
         // 行動する側のポケモン、行動される側のポケモン
+
         const out_effect = (a_poke, b_poke) => {
             let a_tokusei = a_poke[7]
             let a_item = a_poke[8]
-            if (a_tokusei === "かがくへんかガス") { eval(a_tokusei.phaze) }
-            if (a_tokusei === "きんちょうかん" || a_tokusei === "しんばいったい") { eval(a_tokusei.phaze) }
+            if (a_tokusei === "かがくへんかガス") { eval(a_tokusei.phaze); output_tokusei(a_poke, a_tokusei) }
+            if (a_tokusei === "きんちょうかん" || a_tokusei === "しんばいったい") { eval(a_tokusei.phaze); output_tokusei(a_poke, a_tokusei) }
 
         }
         // if (sort_turn(u_poke, e_poke)) {
@@ -314,5 +315,7 @@ window.onload = (e) => {
     function start_effect(u_pokemon, e_pokemon) {
 
     }
-
+    function output_tokusei(poke, text) {
+        output.innerText += `${poke}の${text}が発動`
+    }
 }
