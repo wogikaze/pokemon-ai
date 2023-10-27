@@ -23,7 +23,7 @@ window.onload = (e) => {
     let u_poke = ""       //現在出ているポケモン(name)
     let e_poke = ""
 
-    let turn_count = 0
+    let turn_count = 1
     // ポケモン選択を更新しておく
     const update_pokesmon = () => {
         e_pokes = {}; u_pokes = {};
@@ -155,7 +155,7 @@ window.onload = (e) => {
                 var option = document.createElement("option");
                 option.value = poke;
                 option.textContent = poke;
-                if (u_pokes[poke][1] < 0) option.disabled = true;
+                if (u_pokes[poke][1] <= 0) option.disabled = true;
                 u_skill.appendChild(option);
             })
         } else {
@@ -171,7 +171,7 @@ window.onload = (e) => {
                 var option = document.createElement("option");
                 option.value = poke;
                 option.textContent = poke;
-                if (e_pokes[poke][1] < 0) option.disabled = true;
+                if (e_pokes[poke][1] <= 0) option.disabled = true;
                 e_skill.appendChild(option);
             })
         } else {
@@ -239,24 +239,24 @@ window.onload = (e) => {
             if (sort_turn(u_poke, e_poke)) {
                 run_skill(u_poke, e_poke, u_skill.value, "user")
                 if (!check_death()[1]) { run_skill(e_poke, u_poke, e_skill.value, "enemy") }
-                check_death()
+                // check_death()
             }
             else {
                 run_skill(e_poke, u_poke, e_skill.value, "enemy")
                 if (!check_death()[0]) { run_skill(u_poke, e_poke, u_skill.value, "user") }
-                check_death()
+                // check_death()
             }
         }
     }
 
     //ターンをすすめる
     run.addEventListener("click", function () {
+        if (!u_change.disabled && !e_change.disabled) output.innerText += `ターン${turn_count}\n`;
         changepokemon()
-        output.innerText += "\n";
 
         u_hp.innerText = `${u_pokes[u_poke][1]}/${pokemon[u_poke][1]}`
         e_hp.innerText = `${e_pokes[e_poke][1]}/${pokemon[e_poke][1]}`
-        turn_count += 1
+        if (!u_change.disabled && !e_change.disabled) turn_count += 1
     })
 
     function run_skill(attacker_name, defender_name, skill, attacker_side) {
@@ -298,12 +298,14 @@ window.onload = (e) => {
         else if (user_hp <= 0) {
             u_change.click()
             u_change.disabled = true
-            if (u_skill.value === "") { alert("user lose"); output.innerText += "user lose" }
+            output.innerText += `${u_poke}は倒れた\n`
+            if (u_skill.value === "") { output.innerText += "user lose" }
             return [true, false]
         }
         else if (enemy_hp <= 0) {
             e_change.click()
             e_change.disabled = true
+            output.innerText += `${e_poke}は倒れた\n`
             if (e_skill.value === "") { alert("enemy lose"); output.innerText += "enemy lose" }
             return [false, true]
         }
