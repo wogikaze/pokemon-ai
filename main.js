@@ -128,12 +128,14 @@ window.onload = (e) => {
         phaze = "out"
         // 行動する側のポケモン、行動される側のポケモン
 
+        // 速いポケモン、遅いポケモン
         const out_effect = (a_poke, b_poke) => {
             let a_tokusei = a_poke[7]
             let a_item = a_poke[8]
             if (a_tokusei === "かがくへんかガス") { eval(a_tokusei.phaze); output_tokusei(a_poke, a_tokusei) }
             if (a_tokusei === "きんちょうかん" || a_tokusei === "しんばいったい") { eval(a_tokusei.phaze); output_tokusei(a_poke, a_tokusei) }
 
+            [(a_poke,b_poke),(b_poke,a_poke)].forEach(tem => {tem})
         }
         // if (sort_turn(u_poke, e_poke)) {
         //     user_change()
