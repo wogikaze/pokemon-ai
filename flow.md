@@ -83,6 +83,13 @@ const items = {};
 
 ## items, character, skill_effects
 
+# 場の状態
+
+### てんき
+- にほんばれ、あめ、すなあらし、ゆき、おおひでり、らんきりゅう、おおあめ
+- 残りターン
+### 味方の場に発生
+
 ```json
 "name":{"when":"code"}
 ```
