@@ -130,12 +130,11 @@ window.onload = (e) => {
 
         // 速いポケモン、遅いポケモン
         const out_effect = (a_poke, b_poke) => {
-            let a_tokusei = a_poke[7]
-            let a_item = a_poke[8]
-            if (a_tokusei === "かがくへんかガス") { eval(a_tokusei.phaze); output_tokusei(a_poke, a_tokusei) }
-            if (a_tokusei === "きんちょうかん" || a_tokusei === "しんばいったい") { eval(a_tokusei.phaze); output_tokusei(a_poke, a_tokusei) }
-
-            [(a_poke,b_poke),(b_poke,a_poke)].forEach(tem => {tem})
+            let tokusei = a_poke[7]
+            let item = a_poke[8]
+            if (sort_turn(u_poke, e_poke)) 
+            if (tokusei === "かがくへんかガス") { eval(tokusei.phaze); output_tokusei(poke, tokusei) }
+            if (["きんちょうかん", "しんばいったい"].includes(tokusei)) { eval(tokusei.phaze); output_tokusei(poke, tokusei) }
         }
         // if (sort_turn(u_poke, e_poke)) {
         //     user_change()
@@ -296,6 +295,8 @@ window.onload = (e) => {
             e_change.click()
             u_change.disabled = true
             e_change.disabled = true
+            output.innerText += `${u_poke}は倒れた\n`
+            output.innerText += `${e_poke}は倒れた\n`
             return [true, true]
         }
         else if (user_hp <= 0) {

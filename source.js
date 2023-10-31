@@ -53,22 +53,57 @@ const skills = {
     "シャドーボール": ["ゴースト", "特殊", 80, 100, 15, "直×", "守○", "1体選択", "20 % の確率で相手の『とくぼう』ランクを1段階下げる。"],
 }
 const skill_effects = {
-    "ツタこんぼう": {"damage":"vital_rank += 1"}
+    "ツタこんぼう": { "damage": "vital_rank += 1" }
 }
-const character = {
+
+const items = {
+
+}
+class Tokusei {
+    constructor(name, phazes) {
+        this.name = name; // 特性の名前
+        this.phazes = phazes; // 特性の効果の発動関数のマップ
+    }
+
+    // 特性の効果を発動するメソッド
+    activate(attacker, defender, phaze) {
+        if (this.phazes[phaze]) {
+            this.phazes[phaze](attacker, defender);
+        } else {
+            console.error(`Unknown phaze: ${phaze}`);
+        }
+    }
+}
+// 特性のオブジェクトのマップ
+const tokuseiMap = {
+    "きんちょうかん": new Tokusei("きんちょうかん", {
+        "out": (attacker, defender) => {
+            console.log(`${defender.name}はきんちょうして外に出た！`);
+        },
+        "in": (attacker, defender) => {
+            console.log(`${defender.name}はきんちょうして中に入った！`);
+        },
+    }),
     "てんねん": { "damage": 'kougeki_rank = 0;bougyo_rank = 0;meityuu_rank = 0;kaihi_rank = 0;' },
     "こだいかっせい": { "out": `if(pokes[poke][8]==="ブーストエナジー")pokes[poke][6] *= 1.5;` },
     "ふゆう": { "isdamage": 'if(skill_type=="じめん"{ return 0 }' },
-    "かたやぶり": {"damage":''},//todo
-    "わざわいのたま":{"damage":'tokubou*=0.75'},
-    "クォークチャージ":{},
-    "さめはだ":{"hpcalc":'if(skill_sessyoku=="直○")'},//相手のHPを最大HPの1/8減らす
-    "シェルアーマー":{},
-    "ちからずく":{"":''},//追加効果があるとき効果をなくして威力を1.3倍
-    "どくのくさり":{"afterdamage":"if(damage>0)"}//30%で「もうどく」
-}
-const items = {
-    
+    "かたやぶり": { "damage": '' },//todo
+    "わざわいのたま": { "damage": 'tokubou*=0.75' },
+    "クォークチャージ": {},
+    "さめはだ": { "hpcalc": 'if(skill_sessyoku=="直○")' },//相手のHPを最大HPの1/8減らす
+    "シェルアーマー": {},
+    "ちからずく": { "": '' },//追加効果があるとき効果をなくして威力を1.3倍
+    "どくのくさり": { "afterdamage": "if(damage>0)" }//30%で「もうどく」
+
+    // 他の特性もここに追加
+};
+function activateTokusei(attacker, defender) {
+    const tokusei = tokuseiMap[defender.tokusei]; // 特性のオブジェクトを取得
+    if (tokusei) {
+        tokusei.activate(attacker, defender, phaze); // 特性を発動
+    } else {
+        console.log(`Unknown tokusei: ${defender.tokusei}`);
+    }
 }
 const init_rank = {
     "こうげき": 0,
