@@ -50,7 +50,7 @@
                 </select>
             </div>
             <div class="flex">
-                <button id="selectpokemon" >このパーティーで始める</button>
+                <button id="selectpokemon">このパーティーで始める</button>
             </div>
         </div>
 
@@ -125,7 +125,8 @@
         color: #999;
     }
 
-    #run, #selectpokemon {
+    #run,
+    #selectpokemon {
         padding: 10px;
         margin: 5px;
         min-width: 100px;
@@ -140,6 +141,7 @@
     #buttle {
         text-align: center;
     }
+
     #turn {
         display: inline-block;
         background: rgb(23, 26, 100);
@@ -154,9 +156,20 @@
         padding: 20px;
         border-radius: 5px;
     }
+
     .turn {
         margin-bottom: 10px;
     }
+
+    #turn::-webkit-scrollbar {
+        width: 5px;
+        background: white;
+    }
+
+    #turn.mostly-customized-scrollbar::-webkit-scrollbar-thumb {
+        background: #000;
+    }
+
     .title {
         width: 100%;
         background-color: darkgrey;
@@ -186,7 +199,7 @@
         border-radius: 10px;
     }
 
-    #main > div {
+    #main>div {
         background: rgb(209, 234, 255);
         border-radius: 0px 0px 20px 20px;
         margin: 20px;
