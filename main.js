@@ -253,11 +253,45 @@ window.onload = (e) => {
 
     //ターンをすすめる
     run.addEventListener("click", function () {
-        if (!u_change.disabled && !e_change.disabled) output.innerText += `ターン${turn_count}\n`;
+        // if (!u_change.disabled && !e_change.disabled) output.innerText += `ターン${turn_count}\n`;
+        if (!u_change.disabled && !e_change.disabled) {
+            var turn = getElement("turn")
+            var newTurn = document.createElement("div");
+            newTurn.className = "turn"
+            var title = document.createElement("span")
+            title.className = "title"
+            title.textContent = turn_count
+            var turnText = document.createElement("div")
+            turnText.className = "turn_text"
+            newTurn.appendChild(title)
+            newTurn.appendChild(turnText)
+            turn.appendChild(newTurn)
+        }
         changepokemon()
 
         u_hp.innerText = `${u_pokes[u_poke][1]}/${pokemon[u_poke][1]}`
         e_hp.innerText = `${e_pokes[e_poke][1]}/${pokemon[e_poke][1]}`
+
+
+
+        var childNodes = Array.from(output.childNodes);
+        for (var i = 0; i < childNodes.length; i++) {
+            var turnText = [... document.getElementsByClassName("turn_text")].slice(-1)[0]
+            var child = childNodes[i];
+            if (child.nodeType === Node.TEXT_NODE && child.textContent.trim() !== '') {
+                var lines = child.textContent.split('\n');
+                for (var j = 0; j < lines.length; j++) {
+                    var line = lines[j];
+                    if (line.trim() !== '') {
+                        var div = document.createElement('div');
+                        div.textContent = line;
+                        turnText.appendChild(div);
+                    }
+                }
+            }
+            output.innerText = ""
+        }
+
         if (!u_change.disabled && !e_change.disabled) turn_count += 1
     })
 
@@ -303,14 +337,14 @@ window.onload = (e) => {
             u_change.click()
             u_change.disabled = true
             output.innerText += `${u_poke}は倒れた\n`
-            if (u_skill.value === "") { output.innerText += "user lose" }
+            if (u_skill.value === "") { output.innerText += "user lose"; run.disabled = true }
             return [true, false]
         }
         else if (enemy_hp <= 0) {
             e_change.click()
             e_change.disabled = true
             output.innerText += `${e_poke}は倒れた\n`
-            if (e_skill.value === "") { alert("enemy lose"); output.innerText += "enemy lose" }
+            if (e_skill.value === "") { output.innerText += "enemy lose"; run.disabled = true }
             return [false, true]
         }
         return [false, false]
