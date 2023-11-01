@@ -258,9 +258,9 @@ window.onload = (e) => {
             var turn = getElement("turn")
             var newTurn = document.createElement("div");
             newTurn.className = "turn"
-            var title = document.createElement("span")
+            var title = document.createElement("div")
             title.className = "title"
-            title.textContent = turn_count
+            title.textContent = `ターン${turn_count}`
             var turnText = document.createElement("div")
             turnText.className = "turn_text"
             newTurn.appendChild(title)
