@@ -132,8 +132,8 @@ window.onload = (e) => {
         const out_effect = (a_poke, b_poke) => {
             let tokusei = a_poke[7]
             let item = a_poke[8]
-            if (sort_turn(u_poke, e_poke)) 
-            if (tokusei === "かがくへんかガス") { eval(tokusei.phaze); output_tokusei(poke, tokusei) }
+            if (sort_turn(u_poke, e_poke))
+                if (tokusei === "かがくへんかガス") { eval(tokusei.phaze); output_tokusei(poke, tokusei) }
             if (["きんちょうかん", "しんばいったい"].includes(tokusei)) { eval(tokusei.phaze); output_tokusei(poke, tokusei) }
         }
         // if (sort_turn(u_poke, e_poke)) {
@@ -188,8 +188,8 @@ window.onload = (e) => {
             output.innerText += u_poke
             u_poke = u_skill.value
             getElement("user_name").innerText = u_poke
-            if (character[u_pokes[u_poke][7]]?.phaze) eval(character[u_pokes[u_poke]]?.phaze)
-            if (items[u_pokes[u_poke][8]]?.phaze) eval(items[u_pokes[u_poke][8]]?.phaze)
+            // if (character[u_pokes[u_poke][7]]?.phaze) eval(character[u_pokes[u_poke]]?.phaze)
+            // if (items[u_pokes[u_poke][8]]?.phaze) eval(items[u_pokes[u_poke][8]]?.phaze)
             u_change.checked = false
             output.innerText += `から${u_poke}に交代\n`
         }
@@ -198,8 +198,8 @@ window.onload = (e) => {
             output.innerText += e_poke
             e_poke = e_skill.value
             getElement("enemy_name").innerText = e_poke
-            if (character[e_pokes[e_poke][7]]?.phaze) eval(character[e_pokes[e_poke]]?.phaze)
-            if (items[e_pokes[e_poke][8]]?.phaze) eval(items[e_pokes[e_poke][8]]?.phaze)
+            // if (character[e_pokes[e_poke][7]]?.phaze) eval(character[e_pokes[e_poke]]?.phaze)
+            // if (items[e_pokes[e_poke][8]]?.phaze) eval(items[e_pokes[e_poke][8]]?.phaze)
             e_change.checked = false
             output.innerText += `から${e_poke}に交代\n`
         }
