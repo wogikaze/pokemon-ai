@@ -130,12 +130,11 @@ window.onload = (e) => {
 
         // 速いポケモン、遅いポケモン
         const out_effect = (a_poke, b_poke) => {
-            let a_tokusei = a_poke[7]
-            let a_item = a_poke[8]
-            if (a_tokusei === "かがくへんかガス") { eval(a_tokusei.phaze); output_tokusei(a_poke, a_tokusei) }
-            if (a_tokusei === "きんちょうかん" || a_tokusei === "しんばいったい") { eval(a_tokusei.phaze); output_tokusei(a_poke, a_tokusei) }
-
-            [(a_poke,b_poke),(b_poke,a_poke)].forEach(tem => {tem})
+            let tokusei = a_poke[7]
+            let item = a_poke[8]
+            if (sort_turn(u_poke, e_poke))
+                if (tokusei === "かがくへんかガス") { eval(tokusei.phaze); output_tokusei(poke, tokusei) }
+            if (["きんちょうかん", "しんばいったい"].includes(tokusei)) { eval(tokusei.phaze); output_tokusei(poke, tokusei) }
         }
         // if (sort_turn(u_poke, e_poke)) {
         //     user_change()
@@ -189,8 +188,8 @@ window.onload = (e) => {
             output.innerText += u_poke
             u_poke = u_skill.value
             getElement("user_name").innerText = u_poke
-            if (character[u_pokes[u_poke][7]]?.phaze) eval(character[u_pokes[u_poke]]?.phaze)
-            if (items[u_pokes[u_poke][8]]?.phaze) eval(items[u_pokes[u_poke][8]]?.phaze)
+            // if (character[u_pokes[u_poke][7]]?.phaze) eval(character[u_pokes[u_poke]]?.phaze)
+            // if (items[u_pokes[u_poke][8]]?.phaze) eval(items[u_pokes[u_poke][8]]?.phaze)
             u_change.checked = false
             output.innerText += `から${u_poke}に交代\n`
         }
@@ -199,8 +198,8 @@ window.onload = (e) => {
             output.innerText += e_poke
             e_poke = e_skill.value
             getElement("enemy_name").innerText = e_poke
-            if (character[e_pokes[e_poke][7]]?.phaze) eval(character[e_pokes[e_poke]]?.phaze)
-            if (items[e_pokes[e_poke][8]]?.phaze) eval(items[e_pokes[e_poke][8]]?.phaze)
+            // if (character[e_pokes[e_poke][7]]?.phaze) eval(character[e_pokes[e_poke]]?.phaze)
+            // if (items[e_pokes[e_poke][8]]?.phaze) eval(items[e_pokes[e_poke][8]]?.phaze)
             e_change.checked = false
             output.innerText += `から${e_poke}に交代\n`
         }
@@ -254,11 +253,45 @@ window.onload = (e) => {
 
     //ターンをすすめる
     run.addEventListener("click", function () {
-        if (!u_change.disabled && !e_change.disabled) output.innerText += `ターン${turn_count}\n`;
+        // if (!u_change.disabled && !e_change.disabled) output.innerText += `ターン${turn_count}\n`;
+        if (!u_change.disabled && !e_change.disabled) {
+            var turn = getElement("turn")
+            var newTurn = document.createElement("div");
+            newTurn.className = "turn"
+            var title = document.createElement("div")
+            title.className = "title"
+            title.textContent = `ターン${turn_count}`
+            var turnText = document.createElement("div")
+            turnText.className = "turn_text"
+            newTurn.appendChild(title)
+            newTurn.appendChild(turnText)
+            turn.appendChild(newTurn)
+        }
         changepokemon()
 
         u_hp.innerText = `${u_pokes[u_poke][1]}/${pokemon[u_poke][1]}`
         e_hp.innerText = `${e_pokes[e_poke][1]}/${pokemon[e_poke][1]}`
+
+
+
+        var childNodes = Array.from(output.childNodes);
+        for (var i = 0; i < childNodes.length; i++) {
+            var turnText = [... document.getElementsByClassName("turn_text")].slice(-1)[0]
+            var child = childNodes[i];
+            if (child.nodeType === Node.TEXT_NODE && child.textContent.trim() !== '') {
+                var lines = child.textContent.split('\n');
+                for (var j = 0; j < lines.length; j++) {
+                    var line = lines[j];
+                    if (line.trim() !== '') {
+                        var div = document.createElement('div');
+                        div.textContent = line;
+                        turnText.appendChild(div);
+                    }
+                }
+            }
+            output.innerText = ""
+        }
+
         if (!u_change.disabled && !e_change.disabled) turn_count += 1
     })
 
@@ -296,20 +329,22 @@ window.onload = (e) => {
             e_change.click()
             u_change.disabled = true
             e_change.disabled = true
+            output.innerText += `${u_poke}は倒れた\n`
+            output.innerText += `${e_poke}は倒れた\n`
             return [true, true]
         }
         else if (user_hp <= 0) {
             u_change.click()
             u_change.disabled = true
             output.innerText += `${u_poke}は倒れた\n`
-            if (u_skill.value === "") { output.innerText += "user lose" }
+            if (u_skill.value === "") { output.innerText += "user lose"; run.disabled = true }
             return [true, false]
         }
         else if (enemy_hp <= 0) {
             e_change.click()
             e_change.disabled = true
             output.innerText += `${e_poke}は倒れた\n`
-            if (e_skill.value === "") { alert("enemy lose"); output.innerText += "enemy lose" }
+            if (e_skill.value === "") { output.innerText += "enemy lose"; run.disabled = true }
             return [false, true]
         }
         return [false, false]
