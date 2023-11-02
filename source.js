@@ -692,16 +692,6 @@ const tokuseiMap = {
             console.log(`${defender.name}はきんちょうして中に入った！`);
         },
     }),
-    "てんねん": { "damage": 'kougeki_rank = 0;bougyo_rank = 0;meityuu_rank = 0;kaihi_rank = 0;' },
-    "こだいかっせい": { "out": `if(pokes[poke][8]==="ブーストエナジー")pokes[poke][6] *= 1.5;` },
-    "ふゆう": { "isdamage": 'if(skill_type=="じめん"{ return 0 }' },
-    "かたやぶり": { "damage": '' },//todo
-    "わざわいのたま": { "damage": 'tokubou*=0.75' },
-    "クォークチャージ": {},
-    "さめはだ": { "hpcalc": 'if(skill_sessyoku=="直○")' },//相手のHPを最大HPの1/8減らす
-    "シェルアーマー": {},
-    "ちからずく": { "": '' },//追加効果があるとき効果をなくして威力を1.3倍
-    "どくのくさり": { "afterdamage": "if(damage>0)" }//30%で「もうどく」
 
     // 他の特性もここに追加
 };
@@ -712,13 +702,6 @@ function activateTokusei(attacker, defender) {
     } else {
         console.log(`Unknown tokusei: ${defender.tokusei}`);
     }
-    "かたやぶり": { "damage": '' },//todo
-    "わざわいのたま": { "damage": 'tokubou*=0.75' },
-    "クォークチャージ": { },
-    "さめはだ": { "hpcalc": 'if(skill_sessyoku=="直○")' },//相手のHPを最大HPの1/8減らす
-    "シェルアーマー": { },
-    "ちからずく": { "": '' },//追加効果があるとき効果をなくして威力を1.3倍
-    "どくのくさり": { "afterdamage": "if(damage>0)" }//30%で「もうどく」
 }
 const items = {
 
