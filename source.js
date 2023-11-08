@@ -703,9 +703,6 @@ function activateTokusei(attacker, defender) {
         console.log(`Unknown tokusei: ${defender.tokusei}`);
     }
 }
-const items = {
-
-}
 const init_rank = {
     "こうげき": 0,
     "ぼうぎょ": 0,
