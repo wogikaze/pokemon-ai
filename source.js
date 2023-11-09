@@ -12,6 +12,12 @@ class Pokemon {
         this.item = item;
         this.skills = [skill1, skill2, skill3, skill4];
     }
+    get(poke_name) {
+        return pokemonMap[poke_name]
+    }
+}
+const getPokemon = (poke_name) => {
+    
 }
 const pokemonMap = {
     "ヘイラッシャ": new Pokemon("ヘイラッシャ", "みず", 225, 167, 135, 76, 117, 55, "てんねん", "たべのこし", "ウェーブタックル", "じしん", "ゆきなだれ", "ボディプレス"),
