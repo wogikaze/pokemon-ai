@@ -129,15 +129,17 @@ window.onload = (e) => {
         // 行動する側のポケモン、行動される側のポケモン
 
         // 速いポケモン、遅いポケモン
-        const out_effect = (a_poke, b_poke, u, e) => {
-            let tokusei = a_poke[7]
-            let item = a_poke[8]
-            if (!sort_turn(u, e))
-                activateTokusei(a_poke, b_poke, u, e)
+        const out_effect = (a_poke, b_poke, phaze) => {
+            let tokusei = a_poke.tokusei
+            let item = a_poke.item
+            if (!sort_turn(a_poke, b_poke))
+                [a_poke, b_poke] = activateTokusei(a_poke, b_poke, phaze)
             //     if (tokusei === "かがくへんかガス") { eval(tokusei.phaze); output_tokusei(poke, tokusei) }
             // if (["きんちょうかん", "しんばいったい"].includes(tokusei)) { eval(tokusei.phaze); output_tokusei(poke, tokusei) }
+            return [a_poke, b_poke]
         }
-        out_effect(u_pokes[u_poke], e_pokes[e_poke], u_poke, e_poke)
+        [a_poke, b_poke] = out_effect(u_pokes[u_poke], e_pokes[e_poke], phaze)
+
         update_skills("both")
     })
 
