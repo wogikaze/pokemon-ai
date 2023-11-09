@@ -32,7 +32,7 @@ window.onload = (e) => {
         u_select.forEach(function (inputElement) {
             if (inputElement.checked) {
                 const poke_name = inputElement.id.slice(0, -2)
-                u_pokes[poke_name] = getPokemon(poke_name) 
+                u_pokes[poke_name] = getPokemon(poke_name)
                 var option = document.createElement("option");
                 option.value = poke_name;
                 option.textContent = poke_name;
@@ -42,7 +42,7 @@ window.onload = (e) => {
         e_select.forEach(function (inputElement) {
             if (inputElement.checked) {
                 const poke_name = inputElement.id.slice(0, -2)
-                e_pokes[poke_name]=getPokemon(poke_name)
+                e_pokes[poke_name] = getPokemon(poke_name)
                 var option = document.createElement("option");
                 option.value = poke_name;
                 option.textContent = poke_name;
