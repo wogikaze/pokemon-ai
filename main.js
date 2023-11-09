@@ -129,21 +129,15 @@ window.onload = (e) => {
         // 行動する側のポケモン、行動される側のポケモン
 
         // 速いポケモン、遅いポケモン
-        const out_effect = (a_poke, b_poke) => {
+        const out_effect = (a_poke, b_poke, u, e) => {
             let tokusei = a_poke[7]
             let item = a_poke[8]
-            if (sort_turn(u_poke, e_poke))
-                if (tokusei === "かがくへんかガス") { eval(tokusei.phaze); output_tokusei(poke, tokusei) }
-            if (["きんちょうかん", "しんばいったい"].includes(tokusei)) { eval(tokusei.phaze); output_tokusei(poke, tokusei) }
+            if (!sort_turn(u, e))
+                activateTokusei(a_poke, b_poke, u, e)
+            //     if (tokusei === "かがくへんかガス") { eval(tokusei.phaze); output_tokusei(poke, tokusei) }
+            // if (["きんちょうかん", "しんばいったい"].includes(tokusei)) { eval(tokusei.phaze); output_tokusei(poke, tokusei) }
         }
-        // if (sort_turn(u_poke, e_poke)) {
-        //     user_change()
-        //     enemy_change()
-        // } else {
-        //     enemy_change()
-        //     user_change()
-        // }
-
+        out_effect(u_pokes[u_poke], e_pokes[e_poke], u_poke, e_poke)
         update_skills("both")
     })
 
@@ -276,7 +270,7 @@ window.onload = (e) => {
 
         var childNodes = Array.from(output.childNodes);
         for (var i = 0; i < childNodes.length; i++) {
-            var turnText = [... document.getElementsByClassName("turn_text")].slice(-1)[0]
+            var turnText = [...document.getElementsByClassName("turn_text")].slice(-1)[0]
             var child = childNodes[i];
             if (child.nodeType === Node.TEXT_NODE && child.textContent.trim() !== '') {
                 var lines = child.textContent.split('\n');

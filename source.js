@@ -10,6 +10,58 @@ const pokemon = {
     "ランドロス(けしん)": ["じめん・ひこう", 164, 130, 110, 167, 100, 168, "ちからずく", "いのちのたま", "だいちのちから", "ヘドロばくだん", "きあいだま", "サイコキネシス"],
     "イイネイヌ": ["どく・かくとう", 195, 198, 135, 70, 106, 100, "どくのくさり", "ゴツゴツメット", "ドレインパンチ", "どくづき", "かみくだく", "れいとうパンチ"],
 }
+const skill_effects = {
+    "ツタこんぼう": { "damage": "vital_rank += 1" }
+}
+
+const items = {
+
+}
+class Tokusei {
+    constructor(name, phazes) {
+        this.name = name; // 特性の名前
+        this.phazes = phazes; // 特性の効果の発動関数のマップ
+    }
+
+    // 特性の効果を発動するメソッド
+    activate(attacker, defender, phaze) {
+        if (this.phazes[phaze]) {
+            this.phazes[phaze](attacker, defender);
+        } else {
+            console.error(`Unknown phaze: ${phaze}`);
+        }
+    }
+}
+// 特性のオブジェクトのマップ
+const tokuseiMap = {
+    "かたやぶり": new Tokusei("かたやぶり", {
+        "out": (attacker, defender) => {
+            console.log(`${defender}はきんちょうして外に出た！`);
+        }
+    }),
+
+    // 他の特性もここに追加
+};
+const activateTokusei = (attacker, defender) => {
+    const tokusei = tokuseiMap[defender[7]]; // 特性のオブジェクトを取得
+    if (tokusei) {
+        tokusei.activate(attacker, defender, phaze); // 特性を発動
+    } else {
+        console.log(`Unknown tokusei: ${defender.tokusei}`);
+    }
+}
+const init_rank = {
+    "こうげき": 0,
+    "ぼうぎょ": 0,
+    "とくこう": 0,
+    "とくぼう": 0,
+    "すばやさ": 0,
+    "めいちゅう": 0,
+    "かいひ": 0,
+    "きゅうしょ": 0,
+}
+const hit_rate = [3 / 9, 3 / 8, 3 / 7, 3 / 6, 3 / 5, 3 / 4, 3 / 3, 4 / 3, 5 / 3, 6 / 3, 7 / 3, 8 / 3, 9 / 3]
+const damage_rank = [2 / 8, 2 / 7, 2 / 6, 2 / 5, 2 / 4, 2 / 3, 2 / 2, 3 / 2, 4 / 2, 5 / 2, 6 / 2, 7 / 2, 8 / 2]
 const skills = {
     "10まんばりき": ["じめん", "物理", 95, 95, 10, "直○", "守○", "1体選択", "通常攻撃。"],
     "10まんボルト": ["でんき", "特殊", 90, 100, 15, "直×", "守○", "1体選択", "10%の確率で相手を『まひ』状態にする。"],
@@ -660,58 +712,3 @@ const skills = {
     "ワンダースチーム": ["フェアリー", "特殊", 90, 95, 10, "直×", "守○", "1体選択", "20%の確率で相手を1～4ターンの間『こんらん』状態にする。"],
     "ワンダールーム": ["エスパー", "変化", "-", "-", 10, "直×", "守×", "全体の場", "5ターンの間、すべてのポケモンの『ぼうぎょ』と『とくぼう』の能力値が入れ替わる。もう1度使用すると元に戻る。"],
 }
-const skill_effects = {
-    "ツタこんぼう": { "damage": "vital_rank += 1" }
-}
-
-const items = {
-
-}
-class Tokusei {
-    constructor(name, phazes) {
-        this.name = name; // 特性の名前
-        this.phazes = phazes; // 特性の効果の発動関数のマップ
-    }
-
-    // 特性の効果を発動するメソッド
-    activate(attacker, defender, phaze) {
-        if (this.phazes[phaze]) {
-            this.phazes[phaze](attacker, defender);
-        } else {
-            console.error(`Unknown phaze: ${phaze}`);
-        }
-    }
-}
-// 特性のオブジェクトのマップ
-const tokuseiMap = {
-    "きんちょうかん": new Tokusei("きんちょうかん", {
-        "out": (attacker, defender) => {
-            console.log(`${defender.name}はきんちょうして外に出た！`);
-        },
-        "in": (attacker, defender) => {
-            console.log(`${defender.name}はきんちょうして中に入った！`);
-        },
-    }),
-
-    // 他の特性もここに追加
-};
-function activateTokusei(attacker, defender) {
-    const tokusei = tokuseiMap[defender.tokusei]; // 特性のオブジェクトを取得
-    if (tokusei) {
-        tokusei.activate(attacker, defender, phaze); // 特性を発動
-    } else {
-        console.log(`Unknown tokusei: ${defender.tokusei}`);
-    }
-}
-const init_rank = {
-    "こうげき": 0,
-    "ぼうぎょ": 0,
-    "とくこう": 0,
-    "とくぼう": 0,
-    "すばやさ": 0,
-    "めいちゅう": 0,
-    "かいひ": 0,
-    "きゅうしょ": 0,
-}
-const hit_rate = [3 / 9, 3 / 8, 3 / 7, 3 / 6, 3 / 5, 3 / 4, 3 / 3, 4 / 3, 5 / 3, 6 / 3, 7 / 3, 8 / 3, 9 / 3]
-const damage_rank = [2 / 8, 2 / 7, 2 / 6, 2 / 5, 2 / 4, 2 / 3, 2 / 2, 3 / 2, 4 / 2, 5 / 2, 6 / 2, 7 / 2, 8 / 2]
