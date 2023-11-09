@@ -1,3 +1,14 @@
+
+const init_rank = {
+    "こうげき": 0,
+    "ぼうぎょ": 0,
+    "とくこう": 0,
+    "とくぼう": 0,
+    "すばやさ": 0,
+    "めいちゅう": 0,
+    "かいひ": 0,
+    "きゅうしょ": 0,
+}
 class Pokemon {
     constructor(name, type, hp, attack, defense, tokukou, tokubou, speed, tokusei, item, skill1, skill2, skill3, skill4) {
         this.name = name;
@@ -11,6 +22,7 @@ class Pokemon {
         this.tokusei = tokusei;
         this.item = item;
         this.skills = [skill1, skill2, skill3, skill4];
+        this.rank = init_rank
     }
     get(poke_name) {
         return pokemonMap[poke_name]
@@ -83,16 +95,6 @@ const activateTokusei = (attacker, defender) => {
     } else {
         console.log(`Unknown tokusei: ${defender.tokusei}`);
     }
-}
-const init_rank = {
-    "こうげき": 0,
-    "ぼうぎょ": 0,
-    "とくこう": 0,
-    "とくぼう": 0,
-    "すばやさ": 0,
-    "めいちゅう": 0,
-    "かいひ": 0,
-    "きゅうしょ": 0,
 }
 const hit_rate = [3 / 9, 3 / 8, 3 / 7, 3 / 6, 3 / 5, 3 / 4, 3 / 3, 4 / 3, 5 / 3, 6 / 3, 7 / 3, 8 / 3, 9 / 3]
 const damage_rank = [2 / 8, 2 / 7, 2 / 6, 2 / 5, 2 / 4, 2 / 3, 2 / 2, 3 / 2, 4 / 2, 5 / 2, 6 / 2, 7 / 2, 8 / 2]

@@ -9,20 +9,20 @@ const damage = (
 ) => {
 
     //初期化
-    kougeki_types = attacker[0].includes("・") ? attacker[0].split("・") : [attacker[0]]
-    power = attacker[2]
-    tokukou = attacker[4]
-    power_rank = attacker[13]?.["こうげき"]
-    tokukou_rank = attacker[13]?.["とくこう"]
-    meityu_rank = attacker[13]?.["めいちゅう"]
+    kougeki_types = attacker.type.includes("・") ? attacker.type.split("・") : [attacker.type]
+    power = attacker.attack
+    tokukou = attacker.tokukou
+    power_rank = attacker.rank?.["こうげき"]
+    tokukou_rank = attacker.rank?.["とくこう"]
+    meityu_rank = attacker.rank?.["めいちゅう"]
     kougeki_hosei = 4096
 
-    defender_types = defender[0].includes("・") ? defender[0].split("・") : [defender[0]]
-    bougyo_first = defender[3]
-    tokubou = defender[5]
-    bougyo_rank_first = defender[13]?.["ぼうぎょ"]
-    tokubou_rank_first = defender[13]?.["とくぼう"]
-    kaihi_rank = defender[13]?.["かいひ"]
+    defender_types = defender.type.includes("・") ? defender.type.split("・") : [defender.type]
+    bougyo_first = defender.defense
+    tokubou = defender.tokubou
+    bougyo_rank_first = defender.rank?.["ぼうぎょ"]
+    tokubou_rank_first = defender.rank?.["とくぼう"]
+    kaihi_rank = defender.rank?.["かいひ"]
     bougyo_hosei = 4096
 
     skill_type = skills[skill][0]

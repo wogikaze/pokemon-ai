@@ -66,7 +66,7 @@ window.onload = (e) => {
     const update_skills = (mode) => {
         const update_user = () => {
             u_skill.innerHTML = ""
-            pokemon[u_poke].slice(9).forEach(function (skill) {
+            u_pokes[u_poke].skills.forEach(function (skill) {
                 var option = document.createElement("option");
                 option.value = skill;
                 option.textContent = skill;
@@ -75,7 +75,7 @@ window.onload = (e) => {
         }
         const update_enemy = () => {
             e_skill.innerHTML = ""
-            pokemon[e_poke].slice(9).forEach(function (skill) {
+            e_pokes[e_poke].skills.forEach(function (skill) {
                 var option = document.createElement("option");
                 option.value = skill;
                 option.textContent = skill;
@@ -263,8 +263,8 @@ window.onload = (e) => {
         }
         changepokemon()
 
-        u_hp.innerText = `${u_pokes[u_poke][1]}/${pokemon[u_poke][1]}`
-        e_hp.innerText = `${e_pokes[e_poke][1]}/${pokemon[e_poke][1]}`
+        u_hp.innerText = `${u_pokes[u_poke].hp}/${getPokemon(u_poke).hp}`
+        e_hp.innerText = `${e_pokes[e_poke].hp}/${getPokemon(e_poke).hp}`
 
 
 
