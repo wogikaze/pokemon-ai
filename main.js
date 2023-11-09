@@ -32,7 +32,7 @@ window.onload = (e) => {
         u_select.forEach(function (inputElement) {
             if (inputElement.checked) {
                 const poke_name = inputElement.id.slice(0, -2)
-                u_pokes[poke_name] = getPokemon(poke_name)
+                u_pokes[poke_name] = { ...getPokemon(poke_name) }
                 var option = document.createElement("option");
                 option.value = poke_name;
                 option.textContent = poke_name;
@@ -42,7 +42,7 @@ window.onload = (e) => {
         e_select.forEach(function (inputElement) {
             if (inputElement.checked) {
                 const poke_name = inputElement.id.slice(0, -2)
-                e_pokes[poke_name] = getPokemon(poke_name)
+                e_pokes[poke_name] = { ...getPokemon(poke_name) }
                 var option = document.createElement("option");
                 option.value = poke_name;
                 option.textContent = poke_name;
@@ -121,8 +121,8 @@ window.onload = (e) => {
         getElement("enemy_name").innerText = e_poke
 
         //ランクの初期化
-        u_names.forEach(name => { u_pokes[name][13] = init_rank });
-        e_names.forEach(name => { e_pokes[name][13] = init_rank });
+        u_names.forEach(name => { u_pokes[name].rank = init_rank });
+        e_names.forEach(name => { e_pokes[name].rank = init_rank });
 
         //特性などの発動
         phaze = "out"
@@ -151,7 +151,7 @@ window.onload = (e) => {
                 var option = document.createElement("option");
                 option.value = poke;
                 option.textContent = poke;
-                if (u_pokes[poke][1] <= 0) option.disabled = true;
+                if (u_pokes[poke].hp <= 0) option.disabled = true;
                 u_skill.appendChild(option);
             })
         } else {
@@ -167,7 +167,7 @@ window.onload = (e) => {
                 var option = document.createElement("option");
                 option.value = poke;
                 option.textContent = poke;
-                if (e_pokes[poke][1] <= 0) option.disabled = true;
+                if (e_pokes[poke].hp <= 0) option.disabled = true;
                 e_skill.appendChild(option);
             })
         } else {
@@ -178,7 +178,7 @@ window.onload = (e) => {
     function changepokemon() {
         phaze = "change"
         const user_change = () => {
-            u_pokes[u_poke][13] = init_rank
+            u_pokes[u_poke].rank = init_rank
             output.innerText += u_poke
             u_poke = u_skill.value
             getElement("user_name").innerText = u_poke
@@ -188,7 +188,7 @@ window.onload = (e) => {
             output.innerText += `から${u_poke}に交代\n`
         }
         const enemy_change = () => {
-            e_pokes[e_poke][13] = init_rank
+            e_pokes[e_poke].rank = init_rank
             output.innerText += e_poke
             e_poke = e_skill.value
             getElement("enemy_name").innerText = e_poke
@@ -306,9 +306,9 @@ window.onload = (e) => {
         }
 
         if (attacker_side === "user") {
-            e_pokes[defender_name][1] -= damage_num
+            e_pokes[defender_name].hp -= damage_num
         } else {
-            u_pokes[defender_name][1] -= damage_num
+            u_pokes[defender_name].hp -= damage_num
         }
 
         output.innerText += outputtext + "\n";
@@ -316,8 +316,8 @@ window.onload = (e) => {
     }
 
     function check_death() {
-        user_hp = u_pokes[u_poke][1]
-        enemy_hp = e_pokes[e_poke][1]
+        user_hp = u_pokes[u_poke].hp
+        enemy_hp = e_pokes[e_poke].hp
         if (user_hp <= 0 && enemy_hp <= 0) {
             u_change.click()
             e_change.click()
