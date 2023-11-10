@@ -38,12 +38,12 @@ const sort_turn = (
     //todo:まひ状態
     //todo:優先度:下位優先度
     if (u_poke.speed > e_poke.speed) {
-        return 1
+        return true
     }
     else if (u_poke.speed === e_poke.speed) {
         return Math.random() < 0.5 ? 0 : 1;
     }
     else {
-        return 0
+        return false
     }
 }

@@ -65,6 +65,7 @@ class Tokusei {
     activate(attacker, defender, phaze) {
         if (this.phazes[phaze]) {
             this.phazes[phaze](attacker, defender);
+            console.log(`発動：${defender.name}の${defender.tokusei}`);
         } else {
             console.error(`Unknown phaze: ${phaze}`);
         }
@@ -74,19 +75,20 @@ class Tokusei {
 const tokuseiMap = {
     "かたやぶり": new Tokusei("かたやぶり", {
         "out": (attacker, defender) => {
-            console.log(`${defender}はきんちょうして外に出た！`);
+            attacker.hp += 100;
         }
     }),
 
     // 他の特性もここに追加
 };
-const activateTokusei = (attacker, defender) => {
-    const tokusei = tokuseiMap[defender[7]]; // 特性のオブジェクトを取得
+const activateTokusei = (attacker, defender, phaze) => {
+    const tokusei = tokuseiMap[defender.tokusei]; // 特性のオブジェクトを取得
     if (tokusei) {
         tokusei.activate(attacker, defender, phaze); // 特性を発動
     } else {
         console.log(`Unknown tokusei: ${defender.tokusei}`);
     }
+    return [attacker, defender]
 }
 const hit_rate = [3 / 9, 3 / 8, 3 / 7, 3 / 6, 3 / 5, 3 / 4, 3 / 3, 4 / 3, 5 / 3, 6 / 3, 7 / 3, 8 / 3, 9 / 3]
 const damage_rank = [2 / 8, 2 / 7, 2 / 6, 2 / 5, 2 / 4, 2 / 3, 2 / 2, 3 / 2, 4 / 2, 5 / 2, 6 / 2, 7 / 2, 8 / 2]
