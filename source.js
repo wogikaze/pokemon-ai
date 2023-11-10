@@ -47,7 +47,11 @@ const pokemonMap = {
 const skill_effects = {
     "ツタこんぼう": { "damage": "vital_rank += 1" }
 }
-
+class Skill {
+    constructor(name,type,category,power,hit,pp,direct,guard,target){
+        
+    }
+}
 const items = {
 
 }
