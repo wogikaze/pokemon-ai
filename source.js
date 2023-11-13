@@ -49,8 +49,26 @@ const skill_effects = {
 }
 class Skill {
     constructor(name, type, category, power, hit, pp, direct, guard, target, phazes) {
-
+        this.name = name
+        this.type = type
+        this.category = category
+        this.power = power
+        this.hit = hit
+        this.pp = pp
+        this.direct = direct
+        this.guard = guard
+        this.target = target
+        this.phazes = phazes
     }
+    activate(attacker, defender, phaze) {
+    }
+    get(skill_name) {
+        return skillMap[skill_name]
+    }
+}
+const getSkill = (skill_name) => {
+    const skill = skillMap[skill_name]
+    return skill.get(skill_name)
 }
 const items = {
 

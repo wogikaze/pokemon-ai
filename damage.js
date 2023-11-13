@@ -25,10 +25,11 @@ const damage = (
     kaihi_rank = defender.rank?.["かいひ"]
     bougyo_hosei = 4096
 
-    skill_type = skills[skill][0]
-    skill_category = skills[skill][1]
-    skill_power = skills[skill][2]
-    skill_sessyoku = skills[skill][5]
+    const skills = getSkill(skill)
+    skill_type = skills.type
+    skill_category = skills.category
+    skill_power = skills.power
+    skill_sessyoku = skills.direct
     skill_hosei = 4096
 
     var phaze = "damage"
@@ -49,7 +50,7 @@ const damage = (
     })
     let vital_rank = 0
     if (skill_effects[skill]?.phaze !== undefined) eval(skill_effects[skill].phaze)
-    if (check_hit(skills[skill][3], meityu_rank, kaihi_rank) === false) {
+    if (check_hit(skills.hit, meityu_rank, kaihi_rank) === false) {
         document.getElementById("output").innerText += "命中失敗："
         return 0
     }
