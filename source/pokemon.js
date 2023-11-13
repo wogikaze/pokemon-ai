@@ -1,3 +1,34 @@
+class Pokemon {
+    constructor(name, type, hp, attack, defense, tokukou, tokubou, speed, tokusei, item, skill1, skill2, skill3, skill4) {
+        this.name = name;
+        this.type = type;
+        this.hp = hp;
+        this.attack = attack;
+        this.defense = defense;
+        this.tokukou = tokukou;
+        this.tokubou = tokubou;
+        this.speed = speed;
+        this.tokusei = tokusei;
+        this.item = item;
+        this.skills = [skill1, skill2, skill3, skill4];
+        this.rank = init_rank
+    }
+    get(poke_name) {
+        const pokemon = pokemonMap[poke_name];
+        return JSON.parse(JSON.stringify(pokemon));
+    }
+}
+const init_rank = {
+    "こうげき": 0,
+    "ぼうぎょ": 0,
+    "とくこう": 0,
+    "とくぼう": 0,
+    "すばやさ": 0,
+    "めいちゅう": 0,
+    "かいひ": 0,
+    "きゅうしょ": 0,
+}
+
 const pokemonMap = {
     "ヘイラッシャ": new Pokemon("ヘイラッシャ", "みず", 225, 167, 135, 76, 117, 55, "てんねん", "たべのこし", "ウェーブタックル", "じしん", "ゆきなだれ", "ボディプレス"),
     "ハバタクカミ": new Pokemon("ハバタクカミ", "ゴースト・フェアリー", 130, 67, 75, 187, 155, 205, "こだいかっせい", "ブーストエナジー", "ムーンフォース", "シャドーボール", "サイコショック", "マジカルフレイム"),
@@ -10,3 +41,8 @@ const pokemonMap = {
     "ランドロス(けしん)": new Pokemon("ランドロス(けしん)", "じめん・ひこう", 164, 130, 110, 167, 100, 168, "ちからずく", "いのちのたま", "だいちのちから", "ヘドロばくだん", "きあいだま", "くさむすび"),
     "イイネイヌ": new Pokemon("イイネイヌ", "どく・かくとう", 195, 198, 135, 70, 106, 100, "どくのくさり", "ゴツゴツメット", "ドレインパンチ", "どくづき", "かみくだく", "れいとうパンチ"),
 };
+
+const getPokemon = (poke_name) => {
+    const poke = pokemonMap[poke_name]
+    return poke.get(poke_name)
+}

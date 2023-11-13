@@ -1,3 +1,28 @@
+class Tokusei {
+    constructor(name, phazes) {
+        this.name = name; // 特性の名前
+        this.phazes = phazes; // 特性の効果の発動関数のマップ
+    }
+
+    // 特性の効果を発動するメソッド
+    activate(attacker, defender, phaze) {
+        if (this.phazes[phaze]) {
+            this.phazes[phaze](attacker, defender);
+            console.log(`発動：${defender.name}の${defender.tokusei}`);
+        } else {
+            console.log(`Unknown phaze: ${phaze}`);
+        }
+    }
+}
+const activateTokusei = (attacker, defender, phaze) => {
+    const tokusei = tokuseiMap[defender.tokusei]; // 特性のオブジェクトを取得
+    if (tokusei) {
+        tokusei.activate(attacker, defender, phaze); // 特性を発動
+    } else {
+        console.log(`Unknown tokusei: ${defender.tokusei}`);
+    }
+    return [attacker, defender]
+}
 // 特性のオブジェクトのマップ
 const tokuseiMap = {
     "ARシステム": new Tokusei("ARシステム", {
