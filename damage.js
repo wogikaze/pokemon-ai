@@ -35,6 +35,9 @@ const damage = (
     var phaze = "damage"
     const level = 50                // 攻撃者レベル(50固定)
 
+    // 特性判定(仮)
+    activateTokusei(attacker, defender, "calc_damage")
+    
     // 下準備
     let isphysic = skill_category == "物理"
     let kougeki = isphysic ? power : tokukou
