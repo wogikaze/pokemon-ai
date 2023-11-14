@@ -501,6 +501,12 @@ const tokuseiMap = {
     }),
     "てんねん": new Tokusei("てんねん", {
         //相手の『こうげき』『ぼうぎょ』『とくこう』『とくぼう』ランクおよび『回避率』『命中率』ランクの変化の影響を受けない。(素早さは除く)
+        "calc_damage": (attacker, defender) => {
+            kougeki_rank = 0
+            bougyo_rank = 0
+            meityu_rank = 0
+            kaihi_rank = 0
+        }
     }),
     "てんのめぐみ": new Tokusei("てんのめぐみ", {
         //技の追加効果の発生率が2倍になる。
