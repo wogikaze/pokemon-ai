@@ -244,13 +244,19 @@ window.onload = (e) => {
             //行動順の判定
             if (sort_turn(u_pokes[u_name], e_pokes[e_name])) {
                 run_skill(u_name, e_name, u_skill.value, "user")
-                if (!check_death()[1]) { run_skill(e_name, u_name, e_skill.value, "enemy") }
+                if (!check_death()[1]) {
+                    run_skill(e_name, u_name, e_skill.value, "enemy")
+                    check_death()
+                }
             }
             else {
                 run_skill(e_name, u_name, e_skill.value, "enemy")
-                if (!check_death()[0]) { run_skill(u_name, e_name, u_skill.value, "user") }
+                if (!check_death()[0]) {
+                    run_skill(u_name, e_name, u_skill.value, "user")
+                    check_death()
+                }
+
             }
-            check_death()
         }
     }
 
