@@ -1,24 +1,7 @@
 // List of flags and their descriptions can be found in sim/dex-moves.ts
 
-export const Moves = {
-	"10000000voltthunderbolt": {
-		num: 719,
-		accuracy: true,
-		basePower: 195,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "10,000,000 Volt Thunderbolt",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "pikashuniumz",
-		critRatio: 3,
-		secondary: null,
-		target: "normal",
-		type: "Electric",
-		contestType: "Cool"
-	},
-	absorb: {
+const Moves = {
+	"すいとる": {
 		num: 71,
 		accuracy: 100,
 		basePower: 20,
@@ -33,7 +16,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Clever"
 	},
-	accelerock: {
+	"アクセルロック": {
 		num: 709,
 		accuracy: 100,
 		basePower: 40,
@@ -47,7 +30,7 @@ export const Moves = {
 		type: "Rock",
 		contestType: "Cool"
 	},
-	acid: {
+	"ようかいえき": {
 		num: 51,
 		accuracy: 100,
 		basePower: 40,
@@ -66,7 +49,7 @@ export const Moves = {
 		type: "Poison",
 		contestType: "Clever"
 	},
-	acidarmor: {
+	"とける": {
 		num: 151,
 		accuracy: true,
 		basePower: 0,
@@ -84,23 +67,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Tough"
 	},
-	aciddownpour: {
-		num: 628,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Acid Downpour",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "poisoniumz",
-		secondary: null,
-		target: "normal",
-		type: "Poison",
-		contestType: "Cool"
-	},
-	acidspray: {
+	"アシッドボム": {
 		num: 491,
 		accuracy: 100,
 		basePower: 40,
@@ -119,7 +86,7 @@ export const Moves = {
 		type: "Poison",
 		contestType: "Beautiful"
 	},
-	acrobatics: {
+	"アクロバット": {
 		num: 512,
 		accuracy: 100,
 		basePower: 55,
@@ -140,7 +107,7 @@ export const Moves = {
 		type: "Flying",
 		contestType: "Cool"
 	},
-	acupressure: {
+	"つぼをつく": {
 		num: 367,
 		accuracy: true,
 		basePower: 0,
@@ -172,7 +139,7 @@ export const Moves = {
 		zMove: { effect: "crit2" },
 		contestType: "Tough"
 	},
-	aerialace: {
+	"つばめがえし": {
 		num: 332,
 		accuracy: true,
 		basePower: 60,
@@ -186,23 +153,7 @@ export const Moves = {
 		type: "Flying",
 		contestType: "Cool"
 	},
-	aeroblast: {
-		num: 177,
-		accuracy: 95,
-		basePower: 100,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Aeroblast",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1, distance: 1 },
-		critRatio: 2,
-		secondary: null,
-		target: "any",
-		type: "Flying",
-		contestType: "Cool"
-	},
-	afteryou: {
+	"おさきにどうぞ": {
 		num: 495,
 		accuracy: true,
 		basePower: 0,
@@ -227,7 +178,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Cute"
 	},
-	agility: {
+	"こうそくいどう": {
 		num: 97,
 		accuracy: true,
 		basePower: 0,
@@ -245,7 +196,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cool"
 	},
-	aircutter: {
+	"エアカッター": {
 		num: 314,
 		accuracy: 95,
 		basePower: 60,
@@ -260,7 +211,7 @@ export const Moves = {
 		type: "Flying",
 		contestType: "Cool"
 	},
-	airslash: {
+	"エアスラッシュ": {
 		num: 403,
 		accuracy: 95,
 		basePower: 75,
@@ -277,23 +228,7 @@ export const Moves = {
 		type: "Flying",
 		contestType: "Cool"
 	},
-	alloutpummeling: {
-		num: 624,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "All-Out Pummeling",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "fightiniumz",
-		secondary: null,
-		target: "normal",
-		type: "Fighting",
-		contestType: "Cool"
-	},
-	allyswitch: {
+	"サイドチェンジ": {
 		num: 502,
 		accuracy: true,
 		basePower: 0,
@@ -324,7 +259,7 @@ export const Moves = {
 		zMove: { boost: { spe: 2 } },
 		contestType: "Clever"
 	},
-	amnesia: {
+	"ドわすれ": {
 		num: 133,
 		accuracy: true,
 		basePower: 0,
@@ -342,28 +277,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
-	anchorshot: {
-		num: 677,
-		accuracy: 100,
-		basePower: 80,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Anchor Shot",
-		pp: 20,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: {
-			chance: 100,
-			onHit(target, source, move) {
-				if (source.isActive)
-					target.addVolatile("trapped", source, move, "trapper")
-			}
-		},
-		target: "normal",
-		type: "Steel",
-		contestType: "Tough"
-	},
-	ancientpower: {
+	"げんしのちから": {
 		num: 246,
 		accuracy: 100,
 		basePower: 60,
@@ -388,7 +302,7 @@ export const Moves = {
 		type: "Rock",
 		contestType: "Tough"
 	},
-	appleacid: {
+	"りんごさん": {
 		num: 787,
 		accuracy: 100,
 		basePower: 80,
@@ -406,7 +320,7 @@ export const Moves = {
 		target: "normal",
 		type: "Grass"
 	},
-	aquacutter: {
+	"アクアカッター": {
 		num: 895,
 		accuracy: 100,
 		basePower: 70,
@@ -421,7 +335,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Cool"
 	},
-	aquajet: {
+	"アクアジェット": {
 		num: 453,
 		accuracy: 100,
 		basePower: 40,
@@ -435,7 +349,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Cool"
 	},
-	aquaring: {
+	"アクアリング": {
 		num: 392,
 		accuracy: true,
 		basePower: 0,
@@ -460,7 +374,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Beautiful"
 	},
-	aquastep: {
+	"アクアステップ": {
 		num: 872,
 		accuracy: 100,
 		basePower: 80,
@@ -481,7 +395,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Cool"
 	},
-	aquatail: {
+	"アクアテール": {
 		num: 401,
 		accuracy: 90,
 		basePower: 90,
@@ -495,7 +409,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Beautiful"
 	},
-	armorcannon: {
+	"アーマーキャノン": {
 		num: 890,
 		accuracy: 100,
 		basePower: 120,
@@ -514,7 +428,7 @@ export const Moves = {
 		target: "normal",
 		type: "Fire"
 	},
-	armthrust: {
+	"つっぱり": {
 		num: 292,
 		accuracy: 100,
 		basePower: 15,
@@ -529,41 +443,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Tough"
 	},
-	aromatherapy: {
-		num: 312,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Aromatherapy",
-		pp: 5,
-		priority: 0,
-		flags: { snatch: 1, distance: 1 },
-		onHit(target, source, move) {
-			this.add("-activate", source, "move: Aromatherapy")
-			let success = false
-			const allies = [
-				...target.side.pokemon,
-				...(target.side.allySide?.pokemon || [])
-			]
-			for (const ally of allies) {
-				if (
-					ally !== source &&
-					(ally.hasAbility("sapsipper") ||
-						(ally.volatiles["substitute"] && !move.infiltrates))
-				) {
-					continue
-				}
-				if (ally.cureStatus()) success = true
-			}
-			return success
-		},
-		target: "allyTeam",
-		type: "Grass",
-		zMove: { effect: "heal" },
-		contestType: "Clever"
-	},
-	aromaticmist: {
+	"アロマミスト": {
 		num: 597,
 		accuracy: true,
 		basePower: 0,
@@ -581,49 +461,7 @@ export const Moves = {
 		zMove: { boost: { spd: 2 } },
 		contestType: "Beautiful"
 	},
-	assist: {
-		num: 274,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Assist",
-		pp: 20,
-		priority: 0,
-		flags: {
-			failencore: 1,
-			nosleeptalk: 1,
-			noassist: 1,
-			failcopycat: 1,
-			failinstruct: 1,
-			failmimic: 1
-		},
-		onHit(target) {
-			const moves = []
-			for (const pokemon of target.side.pokemon) {
-				if (pokemon === target) continue
-				for (const moveSlot of pokemon.moveSlots) {
-					const moveid = moveSlot.id
-					const move = this.dex.moves.get(moveid)
-					if (move.flags["noassist"] || move.isZ || move.isMax) {
-						continue
-					}
-					moves.push(moveid)
-				}
-			}
-			let randomMove = ""
-			if (moves.length) randomMove = this.sample(moves)
-			if (!randomMove) {
-				return false
-			}
-			this.actions.useMove(randomMove, target)
-		},
-		secondary: null,
-		target: "self",
-		type: "Normal",
-		contestType: "Cute"
-	},
-	assurance: {
+	"ダメおし": {
 		num: 372,
 		accuracy: 100,
 		basePower: 60,
@@ -644,7 +482,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Clever"
 	},
-	astonish: {
+	"おどろかす": {
 		num: 310,
 		accuracy: 100,
 		basePower: 30,
@@ -661,7 +499,7 @@ export const Moves = {
 		type: "Ghost",
 		contestType: "Cute"
 	},
-	astralbarrage: {
+	"アストラルビット": {
 		num: 825,
 		accuracy: 100,
 		basePower: 120,
@@ -674,7 +512,7 @@ export const Moves = {
 		target: "allAdjacentFoes",
 		type: "Ghost"
 	},
-	attackorder: {
+	"こうげきしれい": {
 		num: 454,
 		accuracy: 100,
 		basePower: 90,
@@ -689,7 +527,7 @@ export const Moves = {
 		type: "Bug",
 		contestType: "Clever"
 	},
-	attract: {
+	"メロメロ": {
 		num: 213,
 		accuracy: 100,
 		basePower: 0,
@@ -773,7 +611,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
-	aurasphere: {
+	"はどうだん": {
 		num: 396,
 		accuracy: true,
 		basePower: 80,
@@ -787,7 +625,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Beautiful"
 	},
-	aurawheel: {
+	"オーラぐるま": {
 		num: 783,
 		accuracy: 100,
 		basePower: 110,
@@ -825,7 +663,7 @@ export const Moves = {
 		target: "normal",
 		type: "Electric"
 	},
-	aurorabeam: {
+	"オーロラビーム": {
 		num: 62,
 		accuracy: 100,
 		basePower: 65,
@@ -844,7 +682,7 @@ export const Moves = {
 		type: "Ice",
 		contestType: "Beautiful"
 	},
-	auroraveil: {
+	"オーロラベール": {
 		num: 694,
 		accuracy: true,
 		basePower: 0,
@@ -897,41 +735,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Beautiful"
 	},
-	autotomize: {
-		num: 475,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Autotomize",
-		pp: 15,
-		priority: 0,
-		flags: { snatch: 1 },
-		onTryHit(pokemon) {
-			const hasContrary = pokemon.hasAbility("contrary")
-			if (
-				(!hasContrary && pokemon.boosts.spe === 6) ||
-				(hasContrary && pokemon.boosts.spe === -6)
-			) {
-				return false
-			}
-		},
-		boosts: {
-			spe: 2
-		},
-		onHit(pokemon) {
-			if (pokemon.weighthg > 1) {
-				pokemon.weighthg = Math.max(1, pokemon.weighthg - 1000)
-				this.add("-start", pokemon, "Autotomize")
-			}
-		},
-		secondary: null,
-		target: "self",
-		type: "Steel",
-		zMove: { effect: "clearnegativeboost" },
-		contestType: "Beautiful"
-	},
-	avalanche: {
+	"ゆきなだれ": {
 		num: 419,
 		accuracy: 100,
 		basePower: 60,
@@ -955,7 +759,7 @@ export const Moves = {
 		type: "Ice",
 		contestType: "Beautiful"
 	},
-	axekick: {
+	"かかとおとし": {
 		num: 853,
 		accuracy: 90,
 		basePower: 120,
@@ -980,7 +784,7 @@ export const Moves = {
 		target: "normal",
 		type: "Fighting"
 	},
-	babydolleyes: {
+	"つぶらなひとみ": {
 		num: 608,
 		accuracy: 100,
 		basePower: 0,
@@ -998,25 +802,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
-	baddybad: {
-		num: 737,
-		accuracy: 95,
-		basePower: 80,
-		category: "Special",
-		isNonstandard: "LGPE",
-		name: "Baddy Bad",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		self: {
-			sideCondition: "reflect"
-		},
-		secondary: null,
-		target: "normal",
-		type: "Dark",
-		contestType: "Clever"
-	},
-	banefulbunker: {
+	"トーチカ": {
 		num: 661,
 		accuracy: true,
 		basePower: 0,
@@ -1078,7 +864,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Tough"
 	},
-	barbbarrage: {
+	"どくばりセンボン": {
 		num: 839,
 		accuracy: 100,
 		basePower: 60,
@@ -1099,42 +885,7 @@ export const Moves = {
 		target: "normal",
 		type: "Poison"
 	},
-	barrage: {
-		num: 140,
-		accuracy: 85,
-		basePower: 15,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Barrage",
-		pp: 20,
-		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
-		multihit: [2, 5],
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Cute"
-	},
-	barrier: {
-		num: 112,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Barrier",
-		pp: 20,
-		priority: 0,
-		flags: { snatch: 1 },
-		boosts: {
-			def: 2
-		},
-		secondary: null,
-		target: "self",
-		type: "Psychic",
-		zMove: { effect: "clearnegativeboost" },
-		contestType: "Cool"
-	},
-	batonpass: {
+	"バトンタッチ": {
 		num: 226,
 		accuracy: true,
 		basePower: 0,
@@ -1162,48 +913,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
-	beakblast: {
-		num: 690,
-		accuracy: 100,
-		basePower: 100,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Beak Blast",
-		pp: 15,
-		priority: -3,
-		flags: {
-			bullet: 1,
-			protect: 1,
-			noassist: 1,
-			failmefirst: 1,
-			nosleeptalk: 1,
-			failcopycat: 1,
-			failinstruct: 1
-		},
-		priorityChargeCallback(pokemon) {
-			pokemon.addVolatile("beakblast")
-		},
-		condition: {
-			duration: 1,
-			onStart(pokemon) {
-				this.add("-singleturn", pokemon, "move: Beak Blast")
-			},
-			onHit(target, source, move) {
-				if (this.checkMoveMakesContact(move, source, target)) {
-					source.trySetStatus("brn", target)
-				}
-			}
-		},
-		// FIXME: onMoveAborted(pokemon) {pokemon.removeVolatile('beakblast')},
-		onAfterMove(pokemon) {
-			pokemon.removeVolatile("beakblast")
-		},
-		secondary: null,
-		target: "normal",
-		type: "Flying",
-		contestType: "Tough"
-	},
-	beatup: {
+	"ふくろだたき": {
 		num: 251,
 		accuracy: 100,
 		basePower: 0,
@@ -1229,7 +939,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Clever"
 	},
-	behemothbash: {
+	"きょじゅうだん": {
 		num: 782,
 		accuracy: 100,
 		basePower: 100,
@@ -1242,7 +952,7 @@ export const Moves = {
 		target: "normal",
 		type: "Steel"
 	},
-	behemothblade: {
+	"きょじゅうざん": {
 		num: 781,
 		accuracy: 100,
 		basePower: 100,
@@ -1262,7 +972,7 @@ export const Moves = {
 		target: "normal",
 		type: "Steel"
 	},
-	belch: {
+	"ゲップ": {
 		num: 562,
 		accuracy: 90,
 		basePower: 120,
@@ -1287,7 +997,7 @@ export const Moves = {
 		type: "Poison",
 		contestType: "Tough"
 	},
-	bellydrum: {
+	"はらだいこ": {
 		num: 187,
 		accuracy: true,
 		basePower: 0,
@@ -1314,135 +1024,7 @@ export const Moves = {
 		zMove: { effect: "heal" },
 		contestType: "Cute"
 	},
-	bestow: {
-		num: 516,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Bestow",
-		pp: 15,
-		priority: 0,
-		flags: {
-			mirror: 1,
-			bypasssub: 1,
-			allyanim: 1,
-			noassist: 1,
-			failcopycat: 1
-		},
-		onHit(target, source, move) {
-			if (target.item) {
-				return false
-			}
-			const myItem = source.takeItem()
-			if (!myItem) return false
-			if (
-				!this.singleEvent(
-					"TakeItem",
-					myItem,
-					source.itemState,
-					target,
-					source,
-					move,
-					myItem
-				) ||
-				!target.setItem(myItem)
-			) {
-				source.item = myItem.id
-				return false
-			}
-			this.add(
-				"-item",
-				target,
-				myItem.name,
-				"[from] move: Bestow",
-				"[of] " + source
-			)
-		},
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { boost: { spe: 2 } },
-		contestType: "Cute"
-	},
-	bide: {
-		num: 117,
-		accuracy: true,
-		basePower: 0,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Bide",
-		pp: 10,
-		priority: 1,
-		flags: { contact: 1, protect: 1, nosleeptalk: 1, failinstruct: 1 },
-		volatileStatus: "bide",
-		ignoreImmunity: true,
-		beforeMoveCallback(pokemon) {
-			if (pokemon.volatiles["bide"]) return true
-		},
-		condition: {
-			duration: 3,
-			onLockMove: "bide",
-			onStart(pokemon) {
-				this.effectState.totalDamage = 0
-				this.add("-start", pokemon, "move: Bide")
-			},
-			onDamagePriority: -101,
-			onDamage(damage, target, source, move) {
-				if (!move || move.effectType !== "Move" || !source) return
-				this.effectState.totalDamage += damage
-				this.effectState.lastDamageSource = source
-			},
-			onBeforeMove(pokemon, target, move) {
-				if (this.effectState.duration === 1) {
-					this.add("-end", pokemon, "move: Bide")
-					target = this.effectState.lastDamageSource
-					if (!target || !this.effectState.totalDamage) {
-						this.attrLastMove("[still]")
-						this.add("-fail", pokemon)
-						return false
-					}
-					if (!target.isActive) {
-						const possibleTarget = this.getRandomTarget(
-							pokemon,
-							this.dex.moves.get("pound")
-						)
-						if (!possibleTarget) {
-							this.add("-miss", pokemon)
-							return false
-						}
-						target = possibleTarget
-					}
-					const moveData = {
-						id: "bide",
-						name: "Bide",
-						accuracy: true,
-						damage: this.effectState.totalDamage * 2,
-						category: "Physical",
-						priority: 1,
-						flags: { contact: 1, protect: 1 },
-						effectType: "Move",
-						type: "Normal"
-					}
-					this.actions.tryMoveHit(target, pokemon, moveData)
-					pokemon.removeVolatile("bide")
-					return false
-				}
-				this.add("-activate", pokemon, "move: Bide")
-			},
-			onMoveAborted(pokemon) {
-				pokemon.removeVolatile("bide")
-			},
-			onEnd(pokemon) {
-				this.add("-end", pokemon, "move: Bide", "[silent]")
-			}
-		},
-		secondary: null,
-		target: "self",
-		type: "Normal",
-		contestType: "Tough"
-	},
-	bind: {
+	"しめつける": {
 		num: 20,
 		accuracy: 85,
 		basePower: 15,
@@ -1457,7 +1039,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	bite: {
+	"かみつく": {
 		num: 44,
 		accuracy: 100,
 		basePower: 60,
@@ -1474,7 +1056,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Tough"
 	},
-	bitterblade: {
+	"むねんのつるぎ": {
 		num: 891,
 		accuracy: 100,
 		basePower: 90,
@@ -1488,7 +1070,7 @@ export const Moves = {
 		target: "normal",
 		type: "Fire"
 	},
-	bittermalice: {
+	"うらみつらみ": {
 		num: 841,
 		accuracy: 100,
 		basePower: 75,
@@ -1506,23 +1088,7 @@ export const Moves = {
 		target: "normal",
 		type: "Ghost"
 	},
-	blackholeeclipse: {
-		num: 654,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Black Hole Eclipse",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "darkiniumz",
-		secondary: null,
-		target: "normal",
-		type: "Dark",
-		contestType: "Cool"
-	},
-	blastburn: {
+	"ブラストバーン": {
 		num: 307,
 		accuracy: 90,
 		basePower: 150,
@@ -1539,7 +1105,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Beautiful"
 	},
-	blazekick: {
+	"ブレイズキック": {
 		num: 299,
 		accuracy: 90,
 		basePower: 85,
@@ -1557,33 +1123,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Cool"
 	},
-	blazingtorque: {
-		num: 896,
-		accuracy: 100,
-		basePower: 80,
-		category: "Physical",
-		isNonstandard: "Unobtainable",
-		name: "Blazing Torque",
-		pp: 10,
-		priority: 0,
-		flags: {
-			protect: 1,
-			failencore: 1,
-			failmefirst: 1,
-			nosleeptalk: 1,
-			noassist: 1,
-			failcopycat: 1,
-			failinstruct: 1,
-			failmimic: 1
-		},
-		secondary: {
-			chance: 30,
-			status: "brn"
-		},
-		target: "normal",
-		type: "Fire"
-	},
-	bleakwindstorm: {
+	"こがらしあらし": {
 		num: 846,
 		accuracy: 80,
 		basePower: 100,
@@ -1609,7 +1149,7 @@ export const Moves = {
 		target: "allAdjacentFoes",
 		type: "Flying"
 	},
-	blizzard: {
+	"ふぶき": {
 		num: 59,
 		accuracy: 70,
 		basePower: 110,
@@ -1629,7 +1169,7 @@ export const Moves = {
 		type: "Ice",
 		contestType: "Beautiful"
 	},
-	block: {
+	"とおせんぼう": {
 		num: 335,
 		accuracy: true,
 		basePower: 0,
@@ -1647,7 +1187,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
-	bloodmoon: {
+	"ブラッドムーン": {
 		num: 901,
 		accuracy: 100,
 		basePower: 140,
@@ -1660,41 +1200,7 @@ export const Moves = {
 		target: "normal",
 		type: "Normal"
 	},
-	bloomdoom: {
-		num: 644,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Bloom Doom",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "grassiumz",
-		secondary: null,
-		target: "normal",
-		type: "Grass",
-		contestType: "Cool"
-	},
-	blueflare: {
-		num: 551,
-		accuracy: 85,
-		basePower: 130,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Blue Flare",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: {
-			chance: 20,
-			status: "brn"
-		},
-		target: "normal",
-		type: "Fire",
-		contestType: "Beautiful"
-	},
-	bodypress: {
+	"ボディプレス": {
 		num: 776,
 		accuracy: 100,
 		basePower: 80,
@@ -1708,7 +1214,7 @@ export const Moves = {
 		target: "normal",
 		type: "Fighting"
 	},
-	bodyslam: {
+	"のしかかり": {
 		num: 34,
 		accuracy: 100,
 		basePower: 85,
@@ -1725,82 +1231,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	boltbeak: {
-		num: 754,
-		accuracy: 100,
-		basePower: 85,
-		basePowerCallback(pokemon, target, move) {
-			if (target.newlySwitched || this.queue.willMove(target)) {
-				this.debug("Bolt Beak damage boost")
-				return move.basePower * 2
-			}
-			this.debug("Bolt Beak NOT boosted")
-			return move.basePower
-		},
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Bolt Beak",
-		pp: 10,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Electric"
-	},
-	boltstrike: {
-		num: 550,
-		accuracy: 85,
-		basePower: 130,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Bolt Strike",
-		pp: 5,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: {
-			chance: 20,
-			status: "par"
-		},
-		target: "normal",
-		type: "Electric",
-		contestType: "Beautiful"
-	},
-	boneclub: {
-		num: 125,
-		accuracy: 85,
-		basePower: 65,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Bone Club",
-		pp: 20,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: {
-			chance: 10,
-			volatileStatus: "flinch"
-		},
-		target: "normal",
-		type: "Ground",
-		contestType: "Tough"
-	},
-	bonemerang: {
-		num: 155,
-		accuracy: 90,
-		basePower: 50,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Bonemerang",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		multihit: 2,
-		secondary: null,
-		target: "normal",
-		type: "Ground",
-		maxMove: { basePower: 130 },
-		contestType: "Tough"
-	},
-	bonerush: {
+	"ボーンラッシュ": {
 		num: 198,
 		accuracy: 90,
 		basePower: 25,
@@ -1817,7 +1248,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Tough"
 	},
-	boomburst: {
+	"ばくおんぱ": {
 		num: 586,
 		accuracy: 100,
 		basePower: 140,
@@ -1831,7 +1262,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	bounce: {
+	"とびはねる": {
 		num: 340,
 		accuracy: 85,
 		basePower: 85,
@@ -1893,23 +1324,7 @@ export const Moves = {
 		type: "Flying",
 		contestType: "Cute"
 	},
-	bouncybubble: {
-		num: 733,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		isNonstandard: "LGPE",
-		name: "Bouncy Bubble",
-		pp: 20,
-		priority: 0,
-		flags: { protect: 1, mirror: 1, heal: 1 },
-		drain: [1, 2],
-		secondary: null,
-		target: "normal",
-		type: "Water",
-		contestType: "Clever"
-	},
-	branchpoke: {
+	"えだづき": {
 		num: 785,
 		accuracy: 100,
 		basePower: 40,
@@ -1922,7 +1337,7 @@ export const Moves = {
 		target: "normal",
 		type: "Grass"
 	},
-	bravebird: {
+	"ブレイブバード": {
 		num: 413,
 		accuracy: 100,
 		basePower: 120,
@@ -1937,7 +1352,7 @@ export const Moves = {
 		type: "Flying",
 		contestType: "Cool"
 	},
-	breakingswipe: {
+	"ワイドブレイカー": {
 		num: 784,
 		accuracy: 100,
 		basePower: 60,
@@ -1955,23 +1370,7 @@ export const Moves = {
 		target: "allAdjacentFoes",
 		type: "Dragon"
 	},
-	breakneckblitz: {
-		num: 622,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Breakneck Blitz",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "normaliumz",
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Cool"
-	},
-	brickbreak: {
+	"かわらわり": {
 		num: 280,
 		accuracy: 100,
 		basePower: 75,
@@ -1991,7 +1390,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Cool"
 	},
-	brine: {
+	"しおみず": {
 		num: 362,
 		accuracy: 100,
 		basePower: 65,
@@ -2010,7 +1409,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Tough"
 	},
-	brutalswing: {
+	"ぶんまわす": {
 		num: 693,
 		accuracy: 100,
 		basePower: 60,
@@ -2024,27 +1423,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Tough"
 	},
-	bubble: {
-		num: 145,
-		accuracy: 100,
-		basePower: 40,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Bubble",
-		pp: 30,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: {
-			chance: 10,
-			boosts: {
-				spe: -1
-			}
-		},
-		target: "allAdjacentFoes",
-		type: "Water",
-		contestType: "Cute"
-	},
-	bubblebeam: {
+	"バブルこうせん": {
 		num: 61,
 		accuracy: 100,
 		basePower: 65,
@@ -2063,7 +1442,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Beautiful"
 	},
-	bugbite: {
+	"むしくい": {
 		num: 450,
 		accuracy: 100,
 		basePower: 60,
@@ -2095,7 +1474,7 @@ export const Moves = {
 		type: "Bug",
 		contestType: "Cute"
 	},
-	bugbuzz: {
+	"むしのさざめき": {
 		num: 405,
 		accuracy: 100,
 		basePower: 90,
@@ -2114,7 +1493,7 @@ export const Moves = {
 		type: "Bug",
 		contestType: "Beautiful"
 	},
-	bulkup: {
+	"ビルドアップ": {
 		num: 339,
 		accuracy: true,
 		basePower: 0,
@@ -2133,7 +1512,7 @@ export const Moves = {
 		zMove: { boost: { atk: 1 } },
 		contestType: "Cool"
 	},
-	bulldoze: {
+	"じならし": {
 		num: 523,
 		accuracy: 100,
 		basePower: 60,
@@ -2152,7 +1531,7 @@ export const Moves = {
 		type: "Ground",
 		contestType: "Tough"
 	},
-	bulletpunch: {
+	"バレットパンチ": {
 		num: 418,
 		accuracy: 100,
 		basePower: 40,
@@ -2166,7 +1545,7 @@ export const Moves = {
 		type: "Steel",
 		contestType: "Tough"
 	},
-	bulletseed: {
+	"タネマシンガン": {
 		num: 331,
 		accuracy: 100,
 		basePower: 25,
@@ -2183,7 +1562,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Cool"
 	},
-	burningjealousy: {
+	"しっとのほのお": {
 		num: 807,
 		accuracy: 100,
 		basePower: 70,
@@ -2204,7 +1583,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Tough"
 	},
-	burnup: {
+	"もえつきる": {
 		num: 682,
 		accuracy: 100,
 		basePower: 130,
@@ -2238,25 +1617,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Clever"
 	},
-	buzzybuzz: {
-		num: 734,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		isNonstandard: "LGPE",
-		name: "Buzzy Buzz",
-		pp: 20,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: {
-			chance: 100,
-			status: "par"
-		},
-		target: "normal",
-		type: "Electric",
-		contestType: "Clever"
-	},
-	calmmind: {
+	"めいそう": {
 		num: 347,
 		accuracy: true,
 		basePower: 0,
@@ -2275,80 +1636,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
-	camouflage: {
-		num: 293,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Camouflage",
-		pp: 20,
-		priority: 0,
-		flags: { snatch: 1 },
-		onHit(target) {
-			let newType = "Normal"
-			if (this.field.isTerrain("electricterrain")) {
-				newType = "Electric"
-			} else if (this.field.isTerrain("grassyterrain")) {
-				newType = "Grass"
-			} else if (this.field.isTerrain("mistyterrain")) {
-				newType = "Fairy"
-			} else if (this.field.isTerrain("psychicterrain")) {
-				newType = "Psychic"
-			}
-
-			if (target.getTypes().join() === newType || !target.setType(newType))
-				return false
-			this.add("-start", target, "typechange", newType)
-		},
-		secondary: null,
-		target: "self",
-		type: "Normal",
-		zMove: { boost: { evasion: 1 } },
-		contestType: "Clever"
-	},
-	captivate: {
-		num: 445,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Captivate",
-		pp: 20,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
-		onTryImmunity(pokemon, source) {
-			return (
-				(pokemon.gender === "M" && source.gender === "F") ||
-				(pokemon.gender === "F" && source.gender === "M")
-			)
-		},
-		boosts: {
-			spa: -2
-		},
-		secondary: null,
-		target: "allAdjacentFoes",
-		type: "Normal",
-		zMove: { boost: { spd: 2 } },
-		contestType: "Cute"
-	},
-	catastropika: {
-		num: 658,
-		accuracy: true,
-		basePower: 210,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Catastropika",
-		pp: 1,
-		priority: 0,
-		flags: { contact: 1 },
-		isZ: "pikaniumz",
-		secondary: null,
-		target: "normal",
-		type: "Electric",
-		contestType: "Cool"
-	},
-	ceaselessedge: {
+	"ひけん・ちえなみ": {
 		num: 845,
 		accuracy: 90,
 		basePower: 65,
@@ -2375,7 +1663,7 @@ export const Moves = {
 		target: "normal",
 		type: "Dark"
 	},
-	celebrate: {
+	"おいわい": {
 		num: 606,
 		accuracy: true,
 		basePower: 0,
@@ -2399,7 +1687,7 @@ export const Moves = {
 		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
 		contestType: "Cute"
 	},
-	charge: {
+	"じゅうでん": {
 		num: 268,
 		accuracy: true,
 		basePower: 0,
@@ -2472,7 +1760,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
-	chargebeam: {
+	"チャージビーム": {
 		num: 451,
 		accuracy: 90,
 		basePower: 50,
@@ -2493,7 +1781,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Beautiful"
 	},
-	charm: {
+	"あまえる": {
 		num: 204,
 		accuracy: 100,
 		basePower: 0,
@@ -2511,37 +1799,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
-	chatter: {
-		num: 448,
-		accuracy: 100,
-		basePower: 65,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Chatter",
-		pp: 20,
-		priority: 0,
-		flags: {
-			protect: 1,
-			mirror: 1,
-			sound: 1,
-			distance: 1,
-			bypasssub: 1,
-			nosleeptalk: 1,
-			noassist: 1,
-			failcopycat: 1,
-			failinstruct: 1,
-			failmimic: 1
-		},
-		noSketch: true,
-		secondary: {
-			chance: 100,
-			volatileStatus: "confusion"
-		},
-		target: "any",
-		type: "Flying",
-		contestType: "Cute"
-	},
-	chillingwater: {
+	"ひやみず": {
 		num: 886,
 		accuracy: 100,
 		basePower: 50,
@@ -2560,7 +1818,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Beautiful"
 	},
-	chillyreception: {
+	"さむいギャグ": {
 		num: 881,
 		accuracy: true,
 		basePower: 0,
@@ -2577,24 +1835,7 @@ export const Moves = {
 		target: "all",
 		type: "Ice"
 	},
-	chipaway: {
-		num: 498,
-		accuracy: 100,
-		basePower: 70,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Chip Away",
-		pp: 20,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		ignoreDefensive: true,
-		ignoreEvasion: true,
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Tough"
-	},
-	chloroblast: {
+	"クロロブラスト": {
 		num: 835,
 		accuracy: 95,
 		basePower: 150,
@@ -2608,7 +1849,7 @@ export const Moves = {
 		target: "normal",
 		type: "Grass"
 	},
-	circlethrow: {
+	"ともえなげ": {
 		num: 509,
 		accuracy: 90,
 		basePower: 60,
@@ -2622,23 +1863,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Cool"
 	},
-	clamp: {
-		num: 128,
-		accuracy: 85,
-		basePower: 35,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Clamp",
-		pp: 15,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		volatileStatus: "partiallytrapped",
-		secondary: null,
-		target: "normal",
-		type: "Water",
-		contestType: "Tough"
-	},
-	clangingscales: {
+	"スケイルノイズ": {
 		num: 691,
 		accuracy: 100,
 		basePower: 110,
@@ -2657,7 +1882,7 @@ export const Moves = {
 		type: "Dragon",
 		contestType: "Tough"
 	},
-	clangoroussoul: {
+	"ソウルビート": {
 		num: 775,
 		accuracy: 100,
 		basePower: 0,
@@ -2688,34 +1913,7 @@ export const Moves = {
 		target: "self",
 		type: "Dragon"
 	},
-	clangoroussoulblaze: {
-		num: 728,
-		accuracy: true,
-		basePower: 185,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Clangorous Soulblaze",
-		pp: 1,
-		priority: 0,
-		flags: { sound: 1, bypasssub: 1 },
-		selfBoost: {
-			boosts: {
-				atk: 1,
-				def: 1,
-				spa: 1,
-				spd: 1,
-				spe: 1
-			}
-		},
-		isZ: "kommoniumz",
-		secondary: {
-			// Sheer Force negates the selfBoost even though it is not secondary
-		},
-		target: "allAdjacentFoes",
-		type: "Dragon",
-		contestType: "Cool"
-	},
-	clearsmog: {
+	"クリアスモッグ": {
 		num: 499,
 		accuracy: true,
 		basePower: 50,
@@ -2733,7 +1931,7 @@ export const Moves = {
 		type: "Poison",
 		contestType: "Beautiful"
 	},
-	closecombat: {
+	"インファイト": {
 		num: 370,
 		accuracy: 100,
 		basePower: 120,
@@ -2753,7 +1951,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Tough"
 	},
-	coaching: {
+	"コーチング": {
 		num: 811,
 		accuracy: true,
 		basePower: 0,
@@ -2770,7 +1968,7 @@ export const Moves = {
 		target: "adjacentAlly",
 		type: "Fighting"
 	},
-	coil: {
+	"とぐろをまく": {
 		num: 489,
 		accuracy: true,
 		basePower: 0,
@@ -2790,7 +1988,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Tough"
 	},
-	collisioncourse: {
+	"アクセルブレイク": {
 		num: 878,
 		accuracy: 100,
 		basePower: 100,
@@ -2811,50 +2009,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Tough"
 	},
-	combattorque: {
-		num: 899,
-		accuracy: 100,
-		basePower: 100,
-		category: "Physical",
-		isNonstandard: "Unobtainable",
-		name: "Combat Torque",
-		pp: 10,
-		priority: 0,
-		flags: {
-			protect: 1,
-			failencore: 1,
-			failmefirst: 1,
-			nosleeptalk: 1,
-			noassist: 1,
-			failcopycat: 1,
-			failinstruct: 1,
-			failmimic: 1
-		},
-		secondary: {
-			chance: 30,
-			status: "par"
-		},
-		target: "normal",
-		type: "Fighting"
-	},
-	cometpunch: {
-		num: 4,
-		accuracy: 85,
-		basePower: 18,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Comet Punch",
-		pp: 15,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
-		multihit: [2, 5],
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		maxMove: { basePower: 100 },
-		contestType: "Tough"
-	},
-	comeuppance: {
+	"ほうふく": {
 		num: 894,
 		accuracy: 100,
 		basePower: 0,
@@ -2885,7 +2040,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Cool"
 	},
-	confide: {
+	"ないしょばなし": {
 		num: 590,
 		accuracy: true,
 		basePower: 0,
@@ -2903,7 +2058,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Cute"
 	},
-	confuseray: {
+	"あやしいひかり": {
 		num: 109,
 		accuracy: 100,
 		basePower: 0,
@@ -2919,7 +2074,7 @@ export const Moves = {
 		zMove: { boost: { spa: 1 } },
 		contestType: "Clever"
 	},
-	confusion: {
+	"ねんりき": {
 		num: 93,
 		accuracy: 100,
 		basePower: 50,
@@ -2936,101 +2091,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Clever"
 	},
-	constrict: {
-		num: 132,
-		accuracy: 100,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Constrict",
-		pp: 35,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: {
-			chance: 10,
-			boosts: {
-				spe: -1
-			}
-		},
-		target: "normal",
-		type: "Normal",
-		contestType: "Tough"
-	},
-	continentalcrush: {
-		num: 632,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Continental Crush",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "rockiumz",
-		secondary: null,
-		target: "normal",
-		type: "Rock",
-		contestType: "Cool"
-	},
-	conversion: {
-		num: 160,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Conversion",
-		pp: 30,
-		priority: 0,
-		flags: { snatch: 1 },
-		onHit(target) {
-			const type = this.dex.moves.get(target.moveSlots[0].id).type
-			if (target.hasType(type) || !target.setType(type)) return false
-			this.add("-start", target, "typechange", type)
-		},
-		secondary: null,
-		target: "self",
-		type: "Normal",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
-		contestType: "Beautiful"
-	},
-	conversion2: {
-		num: 176,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Conversion 2",
-		pp: 30,
-		priority: 0,
-		flags: { bypasssub: 1 },
-		onHit(target, source) {
-			if (!target.lastMoveUsed) {
-				return false
-			}
-			const possibleTypes = []
-			const attackType = target.lastMoveUsed.type
-			for (const type of this.dex.types.names()) {
-				if (source.hasType(type)) continue
-				const typeCheck = this.dex.types.get(type).damageTaken[attackType]
-				if (typeCheck === 2 || typeCheck === 3) {
-					possibleTypes.push(type)
-				}
-			}
-			if (!possibleTypes.length) {
-				return false
-			}
-			const randomType = this.sample(possibleTypes)
-
-			if (!source.setType(randomType)) return false
-			this.add("-start", source, "typechange", randomType)
-		},
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { effect: "heal" },
-		contestType: "Beautiful"
-	},
-	copycat: {
+	"まねっこ": {
 		num: 383,
 		accuracy: true,
 		basePower: 0,
@@ -3062,49 +2123,7 @@ export const Moves = {
 		zMove: { boost: { accuracy: 1 } },
 		contestType: "Cute"
 	},
-	coreenforcer: {
-		num: 687,
-		accuracy: 100,
-		basePower: 100,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Core Enforcer",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		onHit(target) {
-			if (target.getAbility().isPermanent) return
-			if (target.newlySwitched || this.queue.willMove(target)) return
-			target.addVolatile("gastroacid")
-		},
-		onAfterSubDamage(damage, target) {
-			if (target.getAbility().isPermanent) return
-			if (target.newlySwitched || this.queue.willMove(target)) return
-			target.addVolatile("gastroacid")
-		},
-		secondary: null,
-		target: "allAdjacentFoes",
-		type: "Dragon",
-		zMove: { basePower: 140 },
-		contestType: "Tough"
-	},
-	corkscrewcrash: {
-		num: 638,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Corkscrew Crash",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "steeliumz",
-		secondary: null,
-		target: "normal",
-		type: "Steel",
-		contestType: "Cool"
-	},
-	corrosivegas: {
+	"ふしょくガス": {
 		num: 810,
 		accuracy: 100,
 		basePower: 0,
@@ -3131,7 +2150,7 @@ export const Moves = {
 		target: "allAdjacent",
 		type: "Poison"
 	},
-	cosmicpower: {
+	"コスモパワー": {
 		num: 322,
 		accuracy: true,
 		basePower: 0,
@@ -3150,7 +2169,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Beautiful"
 	},
-	cottonguard: {
+	"コットンガード": {
 		num: 538,
 		accuracy: true,
 		basePower: 0,
@@ -3168,7 +2187,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
-	cottonspore: {
+	"わたほうし": {
 		num: 178,
 		accuracy: 100,
 		basePower: 0,
@@ -3186,7 +2205,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
-	counter: {
+	"カウンター": {
 		num: 68,
 		accuracy: 100,
 		basePower: 0,
@@ -3238,7 +2257,7 @@ export const Moves = {
 		maxMove: { basePower: 75 },
 		contestType: "Tough"
 	},
-	courtchange: {
+	"コートチェンジ": {
 		num: 756,
 		accuracy: 100,
 		basePower: 0,
@@ -3332,7 +2351,7 @@ export const Moves = {
 		target: "all",
 		type: "Normal"
 	},
-	covet: {
+	"ほしがる": {
 		num: 343,
 		accuracy: 100,
 		basePower: 60,
@@ -3384,7 +2403,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cute"
 	},
-	crabhammer: {
+	"クラブハンマー": {
 		num: 152,
 		accuracy: 90,
 		basePower: 100,
@@ -3399,40 +2418,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Tough"
 	},
-	craftyshield: {
-		num: 578,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Crafty Shield",
-		pp: 10,
-		priority: 3,
-		flags: {},
-		sideCondition: "craftyshield",
-		onTry() {
-			return !!this.queue.willAct()
-		},
-		condition: {
-			duration: 1,
-			onSideStart(target, source) {
-				this.add("-singleturn", source, "Crafty Shield")
-			},
-			onTryHitPriority: 3,
-			onTryHit(target, source, move) {
-				if (["self", "all"].includes(move.target) || move.category !== "Status")
-					return
-				this.add("-activate", target, "move: Crafty Shield")
-				return this.NOT_FAIL
-			}
-		},
-		secondary: null,
-		target: "allySide",
-		type: "Fairy",
-		zMove: { boost: { spd: 1 } },
-		contestType: "Clever"
-	},
-	crosschop: {
+	"クロスチョップ": {
 		num: 238,
 		accuracy: 80,
 		basePower: 100,
@@ -3447,7 +2433,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Cool"
 	},
-	crosspoison: {
+	"クロスポイズン": {
 		num: 440,
 		accuracy: 100,
 		basePower: 70,
@@ -3465,7 +2451,7 @@ export const Moves = {
 		type: "Poison",
 		contestType: "Cool"
 	},
-	crunch: {
+	"かみくだく": {
 		num: 242,
 		accuracy: 100,
 		basePower: 80,
@@ -3484,7 +2470,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Tough"
 	},
-	crushclaw: {
+	"ブレイククロー": {
 		num: 306,
 		accuracy: 95,
 		basePower: 75,
@@ -3503,36 +2489,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cool"
 	},
-	crushgrip: {
-		num: 462,
-		accuracy: 100,
-		basePower: 0,
-		basePowerCallback(pokemon, target) {
-			const hp = target.hp
-			const maxHP = target.maxhp
-			const bp =
-				Math.floor(
-					Math.floor(
-						(120 * (100 * Math.floor((hp * 4096) / maxHP)) + 2048 - 1) / 4096
-					) / 100
-				) || 1
-			this.debug("BP for " + hp + "/" + maxHP + " HP: " + bp)
-			return bp
-		},
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Crush Grip",
-		pp: 5,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { basePower: 190 },
-		maxMove: { basePower: 140 },
-		contestType: "Tough"
-	},
-	curse: {
+	"のろい": {
 		num: 174,
 		accuracy: true,
 		basePower: 0,
@@ -3577,7 +2534,7 @@ export const Moves = {
 		zMove: { effect: "curse" },
 		contestType: "Tough"
 	},
-	cut: {
+	"いあいぎり": {
 		num: 15,
 		accuracy: 95,
 		basePower: 50,
@@ -3591,7 +2548,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cool"
 	},
-	darkestlariat: {
+	"DDラリアット": {
 		num: 663,
 		accuracy: 100,
 		basePower: 85,
@@ -3607,7 +2564,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Cool"
 	},
-	darkpulse: {
+	"あくのはどう": {
 		num: 399,
 		accuracy: 100,
 		basePower: 80,
@@ -3624,7 +2581,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Cool"
 	},
-	darkvoid: {
+	"ダークホール": {
 		num: 464,
 		accuracy: 50,
 		basePower: 0,
@@ -3648,7 +2605,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
-	dazzlinggleam: {
+	"マジカルシャイン": {
 		num: 605,
 		accuracy: 100,
 		basePower: 80,
@@ -3662,25 +2619,7 @@ export const Moves = {
 		type: "Fairy",
 		contestType: "Beautiful"
 	},
-	decorate: {
-		num: 777,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Decorate",
-		pp: 15,
-		priority: 0,
-		flags: { allyanim: 1 },
-		secondary: null,
-		boosts: {
-			atk: 2,
-			spa: 2
-		},
-		target: "normal",
-		type: "Fairy"
-	},
-	defendorder: {
+	"ぼうぎょしれい": {
 		num: 455,
 		accuracy: true,
 		basePower: 0,
@@ -3699,7 +2638,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
-	defensecurl: {
+	"まるくなる": {
 		num: 111,
 		accuracy: true,
 		basePower: 0,
@@ -3722,7 +2661,7 @@ export const Moves = {
 		zMove: { boost: { accuracy: 1 } },
 		contestType: "Cute"
 	},
-	defog: {
+	"きりばらい": {
 		num: 432,
 		accuracy: true,
 		basePower: 0,
@@ -3788,7 +2727,7 @@ export const Moves = {
 		zMove: { boost: { accuracy: 1 } },
 		contestType: "Cool"
 	},
-	destinybond: {
+	"みちづれ": {
 		num: 194,
 		accuracy: true,
 		basePower: 0,
@@ -3832,7 +2771,7 @@ export const Moves = {
 		zMove: { effect: "redirect" },
 		contestType: "Clever"
 	},
-	detect: {
+	"みきり": {
 		num: 197,
 		accuracy: true,
 		basePower: 0,
@@ -3855,23 +2794,7 @@ export const Moves = {
 		zMove: { boost: { evasion: 1 } },
 		contestType: "Cool"
 	},
-	devastatingdrake: {
-		num: 652,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Devastating Drake",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "dragoniumz",
-		secondary: null,
-		target: "normal",
-		type: "Dragon",
-		contestType: "Cool"
-	},
-	diamondstorm: {
+	"ダイヤストーム": {
 		num: 591,
 		accuracy: 95,
 		basePower: 100,
@@ -3893,7 +2816,7 @@ export const Moves = {
 		type: "Rock",
 		contestType: "Beautiful"
 	},
-	dig: {
+	"あなをほる": {
 		num: 91,
 		accuracy: 100,
 		basePower: 80,
@@ -3944,7 +2867,7 @@ export const Moves = {
 		type: "Ground",
 		contestType: "Tough"
 	},
-	disable: {
+	"かなしばり": {
 		num: 50,
 		accuracy: 100,
 		basePower: 0,
@@ -4028,7 +2951,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
-	disarmingvoice: {
+	"チャームボイス": {
 		num: 574,
 		accuracy: true,
 		basePower: 40,
@@ -4042,7 +2965,7 @@ export const Moves = {
 		type: "Fairy",
 		contestType: "Cute"
 	},
-	discharge: {
+	"ほうでん": {
 		num: 435,
 		accuracy: 100,
 		basePower: 80,
@@ -4059,7 +2982,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Beautiful"
 	},
-	direclaw: {
+	"フェイタルクロー": {
 		num: 827,
 		accuracy: 100,
 		basePower: 80,
@@ -4084,7 +3007,7 @@ export const Moves = {
 		target: "normal",
 		type: "Poison"
 	},
-	dive: {
+	"ダイビング": {
 		num: 291,
 		accuracy: 100,
 		basePower: 80,
@@ -4147,25 +3070,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Beautiful"
 	},
-	dizzypunch: {
-		num: 146,
-		accuracy: 100,
-		basePower: 70,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Dizzy Punch",
-		pp: 10,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
-		secondary: {
-			chance: 20,
-			volatileStatus: "confusion"
-		},
-		target: "normal",
-		type: "Normal",
-		contestType: "Cute"
-	},
-	doodle: {
+	"うつしえ": {
 		num: 867,
 		accuracy: 100,
 		basePower: 0,
@@ -4203,7 +3108,7 @@ export const Moves = {
 		target: "adjacentFoe",
 		type: "Normal"
 	},
-	doomdesire: {
+	"はめつのねがい": {
 		num: 353,
 		accuracy: 100,
 		basePower: 140,
@@ -4237,7 +3142,7 @@ export const Moves = {
 		type: "Steel",
 		contestType: "Beautiful"
 	},
-	doubleedge: {
+	"すてみタックル": {
 		num: 38,
 		accuracy: 100,
 		basePower: 120,
@@ -4252,7 +3157,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	doublehit: {
+	"ダブルアタック": {
 		num: 458,
 		accuracy: 90,
 		basePower: 35,
@@ -4269,28 +3174,7 @@ export const Moves = {
 		maxMove: { basePower: 120 },
 		contestType: "Cool"
 	},
-	doubleironbash: {
-		num: 742,
-		accuracy: 100,
-		basePower: 60,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Double Iron Bash",
-		pp: 5,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
-		multihit: 2,
-		secondary: {
-			chance: 30,
-			volatileStatus: "flinch"
-		},
-		target: "normal",
-		type: "Steel",
-		zMove: { basePower: 180 },
-		maxMove: { basePower: 140 },
-		contestType: "Clever"
-	},
-	doublekick: {
+	"にどげり": {
 		num: 24,
 		accuracy: 100,
 		basePower: 30,
@@ -4306,7 +3190,7 @@ export const Moves = {
 		maxMove: { basePower: 80 },
 		contestType: "Cool"
 	},
-	doubleshock: {
+	"でんこうそうげき": {
 		num: 892,
 		accuracy: 100,
 		basePower: 120,
@@ -4342,23 +3226,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Clever"
 	},
-	doubleslap: {
-		num: 3,
-		accuracy: 85,
-		basePower: 15,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Double Slap",
-		pp: 10,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		multihit: [2, 5],
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Cute"
-	},
-	doubleteam: {
+	"かげぶんしん": {
 		num: 104,
 		accuracy: true,
 		basePower: 0,
@@ -4376,7 +3244,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cool"
 	},
-	dracometeor: {
+	"りゅうせいぐん": {
 		num: 434,
 		accuracy: 90,
 		basePower: 130,
@@ -4395,7 +3263,7 @@ export const Moves = {
 		type: "Dragon",
 		contestType: "Beautiful"
 	},
-	dragonascent: {
+	"ガリョウテンセイ": {
 		num: 620,
 		accuracy: 100,
 		basePower: 120,
@@ -4414,7 +3282,7 @@ export const Moves = {
 		type: "Flying",
 		contestType: "Beautiful"
 	},
-	dragonbreath: {
+	"りゅうのいぶき": {
 		num: 225,
 		accuracy: 100,
 		basePower: 60,
@@ -4431,7 +3299,7 @@ export const Moves = {
 		type: "Dragon",
 		contestType: "Cool"
 	},
-	dragonclaw: {
+	"ドラゴンクロー": {
 		num: 337,
 		accuracy: 100,
 		basePower: 80,
@@ -4445,7 +3313,7 @@ export const Moves = {
 		type: "Dragon",
 		contestType: "Cool"
 	},
-	dragondance: {
+	"りゅうのまい": {
 		num: 349,
 		accuracy: true,
 		basePower: 0,
@@ -4464,7 +3332,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cool"
 	},
-	dragondarts: {
+	"ドラゴンアロー": {
 		num: 751,
 		accuracy: 100,
 		basePower: 50,
@@ -4480,7 +3348,7 @@ export const Moves = {
 		type: "Dragon",
 		maxMove: { basePower: 130 }
 	},
-	dragonenergy: {
+	"ドラゴンエナジー": {
 		num: 820,
 		accuracy: 100,
 		basePower: 150,
@@ -4498,22 +3366,7 @@ export const Moves = {
 		target: "allAdjacentFoes",
 		type: "Dragon"
 	},
-	dragonhammer: {
-		num: 692,
-		accuracy: 100,
-		basePower: 90,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Dragon Hammer",
-		pp: 15,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Dragon",
-		contestType: "Tough"
-	},
-	dragonpulse: {
+	"りゅうのはどう": {
 		num: 406,
 		accuracy: 100,
 		basePower: 85,
@@ -4527,23 +3380,7 @@ export const Moves = {
 		type: "Dragon",
 		contestType: "Beautiful"
 	},
-	dragonrage: {
-		num: 82,
-		accuracy: 100,
-		basePower: 0,
-		damage: 40,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Dragon Rage",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Dragon",
-		contestType: "Cool"
-	},
-	dragonrush: {
+	"ドラゴンダイブ": {
 		num: 407,
 		accuracy: 75,
 		basePower: 100,
@@ -4560,7 +3397,7 @@ export const Moves = {
 		type: "Dragon",
 		contestType: "Tough"
 	},
-	dragontail: {
+	"ドラゴンテール": {
 		num: 525,
 		accuracy: 90,
 		basePower: 60,
@@ -4574,7 +3411,7 @@ export const Moves = {
 		type: "Dragon",
 		contestType: "Tough"
 	},
-	drainingkiss: {
+	"ドレインキッス": {
 		num: 577,
 		accuracy: 100,
 		basePower: 50,
@@ -4589,7 +3426,7 @@ export const Moves = {
 		type: "Fairy",
 		contestType: "Cute"
 	},
-	drainpunch: {
+	"ドレインパンチ": {
 		num: 409,
 		accuracy: 100,
 		basePower: 75,
@@ -4604,7 +3441,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Tough"
 	},
-	dreameater: {
+	"ゆめくい": {
 		num: 138,
 		accuracy: 100,
 		basePower: 100,
@@ -4622,7 +3459,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Clever"
 	},
-	drillpeck: {
+	"ドリルくちばし": {
 		num: 65,
 		accuracy: 100,
 		basePower: 80,
@@ -4636,7 +3473,7 @@ export const Moves = {
 		type: "Flying",
 		contestType: "Cool"
 	},
-	drillrun: {
+	"ドリルライナー": {
 		num: 529,
 		accuracy: 95,
 		basePower: 80,
@@ -4651,7 +3488,7 @@ export const Moves = {
 		type: "Ground",
 		contestType: "Tough"
 	},
-	drumbeating: {
+	"ドラムアタック": {
 		num: 778,
 		accuracy: 100,
 		basePower: 80,
@@ -4669,24 +3506,7 @@ export const Moves = {
 		target: "normal",
 		type: "Grass"
 	},
-	dualchop: {
-		num: 530,
-		accuracy: 90,
-		basePower: 40,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Dual Chop",
-		pp: 15,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		multihit: 2,
-		secondary: null,
-		target: "normal",
-		type: "Dragon",
-		maxMove: { basePower: 130 },
-		contestType: "Tough"
-	},
-	dualwingbeat: {
+	"ダブルウイング": {
 		num: 814,
 		accuracy: 90,
 		basePower: 40,
@@ -4701,7 +3521,7 @@ export const Moves = {
 		type: "Flying",
 		maxMove: { basePower: 130 }
 	},
-	dynamaxcannon: {
+	"ダイマックスほう": {
 		num: 744,
 		accuracy: 100,
 		basePower: 100,
@@ -4722,7 +3542,7 @@ export const Moves = {
 		target: "normal",
 		type: "Dragon"
 	},
-	dynamicpunch: {
+	"ばくれつパンチ": {
 		num: 223,
 		accuracy: 50,
 		basePower: 100,
@@ -4739,7 +3559,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Cool"
 	},
-	earthpower: {
+	"だいちのちから": {
 		num: 414,
 		accuracy: 100,
 		basePower: 90,
@@ -4758,7 +3578,7 @@ export const Moves = {
 		type: "Ground",
 		contestType: "Beautiful"
 	},
-	earthquake: {
+	"じしん": {
 		num: 89,
 		accuracy: 100,
 		basePower: 100,
@@ -4772,7 +3592,7 @@ export const Moves = {
 		type: "Ground",
 		contestType: "Tough"
 	},
-	echoedvoice: {
+	"エコーボイス": {
 		num: 497,
 		accuracy: 100,
 		basePower: 40,
@@ -4811,7 +3631,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Beautiful"
 	},
-	eerieimpulse: {
+	"かいでんぱ": {
 		num: 598,
 		accuracy: 100,
 		basePower: 0,
@@ -4829,7 +3649,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
-	eeriespell: {
+	"ぶきみなじゅもん": {
 		num: 826,
 		accuracy: 100,
 		basePower: 80,
@@ -4861,22 +3681,7 @@ export const Moves = {
 		target: "normal",
 		type: "Psychic"
 	},
-	eggbomb: {
-		num: 121,
-		accuracy: 75,
-		basePower: 100,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Egg Bomb",
-		pp: 10,
-		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Cute"
-	},
-	electricterrain: {
+	"エレキフィールド": {
 		num: 604,
 		accuracy: true,
 		basePower: 0,
@@ -4951,40 +3756,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
-	electrify: {
-		num: 582,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Electrify",
-		pp: 20,
-		priority: 0,
-		flags: { protect: 1, mirror: 1, allyanim: 1 },
-		volatileStatus: "electrify",
-		onTryHit(target) {
-			if (!this.queue.willMove(target) && target.activeTurns) return false
-		},
-		condition: {
-			duration: 1,
-			onStart(target) {
-				this.add("-singleturn", target, "move: Electrify")
-			},
-			onModifyTypePriority: -2,
-			onModifyType(move) {
-				if (move.id !== "struggle") {
-					this.debug("Electrify making move type electric")
-					move.type = "Electric"
-				}
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Electric",
-		zMove: { boost: { spa: 1 } },
-		contestType: "Clever"
-	},
-	electroball: {
+	"エレキボール": {
 		num: 486,
 		accuracy: 100,
 		basePower: 0,
@@ -5007,7 +3779,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Cool"
 	},
-	electrodrift: {
+	"イナズマドライブ": {
 		num: 879,
 		accuracy: 100,
 		basePower: 100,
@@ -5028,7 +3800,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Cool"
 	},
-	electroweb: {
+	"エレキネット": {
 		num: 527,
 		accuracy: 95,
 		basePower: 55,
@@ -5047,36 +3819,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Beautiful"
 	},
-	embargo: {
-		num: 373,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Embargo",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
-		volatileStatus: "embargo",
-		condition: {
-			duration: 5,
-			onStart(pokemon) {
-				this.add("-start", pokemon, "Embargo")
-				this.singleEvent("End", pokemon.getItem(), pokemon.itemState, pokemon)
-			},
-			// Item suppression implemented in Pokemon.ignoringItem() within sim/pokemon.js
-			onResidualOrder: 21,
-			onEnd(pokemon) {
-				this.add("-end", pokemon, "Embargo")
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Dark",
-		zMove: { boost: { spa: 1 } },
-		contestType: "Clever"
-	},
-	ember: {
+	"ひのこ": {
 		num: 52,
 		accuracy: 100,
 		basePower: 40,
@@ -5093,7 +3836,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Cute"
 	},
-	encore: {
+	"アンコール": {
 		num: 227,
 		accuracy: 100,
 		basePower: 0,
@@ -5167,7 +3910,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Cute"
 	},
-	endeavor: {
+	"がむしゃら": {
 		num: 283,
 		accuracy: 100,
 		basePower: 0,
@@ -5189,7 +3932,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Tough"
 	},
-	endure: {
+	"こらえる": {
 		num: 203,
 		accuracy: true,
 		basePower: 0,
@@ -5225,7 +3968,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Tough"
 	},
-	energyball: {
+	"エナジーボール": {
 		num: 412,
 		accuracy: 100,
 		basePower: 90,
@@ -5244,7 +3987,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Beautiful"
 	},
-	entrainment: {
+	"なかまづくり": {
 		num: 494,
 		accuracy: 100,
 		basePower: 0,
@@ -5300,7 +4043,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Cute"
 	},
-	eruption: {
+	"ふんか": {
 		num: 284,
 		accuracy: 100,
 		basePower: 150,
@@ -5319,7 +4062,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Beautiful"
 	},
-	esperwing: {
+	"オーラウイング": {
 		num: 840,
 		accuracy: 100,
 		basePower: 80,
@@ -5340,24 +4083,7 @@ export const Moves = {
 		target: "normal",
 		type: "Psychic"
 	},
-	eternabeam: {
-		num: 795,
-		accuracy: 90,
-		basePower: 160,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Eternabeam",
-		pp: 5,
-		priority: 0,
-		flags: { recharge: 1, protect: 1, mirror: 1 },
-		self: {
-			volatileStatus: "mustrecharge"
-		},
-		secondary: null,
-		target: "normal",
-		type: "Dragon"
-	},
-	expandingforce: {
+	"ワイドフォース": {
 		num: 797,
 		accuracy: 100,
 		basePower: 80,
@@ -5381,7 +4107,7 @@ export const Moves = {
 		target: "normal",
 		type: "Psychic"
 	},
-	explosion: {
+	"だいばくはつ": {
 		num: 153,
 		accuracy: 100,
 		basePower: 250,
@@ -5396,7 +4122,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Beautiful"
 	},
-	extrasensory: {
+	"じんつうりき": {
 		num: 326,
 		accuracy: 100,
 		basePower: 80,
@@ -5413,30 +4139,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Cool"
 	},
-	extremeevoboost: {
-		num: 702,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Extreme Evoboost",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "eeviumz",
-		boosts: {
-			atk: 2,
-			def: 2,
-			spa: 2,
-			spd: 2,
-			spe: 2
-		},
-		secondary: null,
-		target: "self",
-		type: "Normal",
-		contestType: "Beautiful"
-	},
-	extremespeed: {
+	"しんそく": {
 		num: 245,
 		accuracy: 100,
 		basePower: 80,
@@ -5450,7 +4153,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cool"
 	},
-	facade: {
+	"からげんき": {
 		num: 263,
 		accuracy: 100,
 		basePower: 70,
@@ -5469,7 +4172,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cute"
 	},
-	fairylock: {
+	"フェアリーロック": {
 		num: 587,
 		accuracy: true,
 		basePower: 0,
@@ -5494,7 +4197,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
-	fairywind: {
+	"ようせいのかぜ": {
 		num: 584,
 		accuracy: 100,
 		basePower: 40,
@@ -5508,7 +4211,7 @@ export const Moves = {
 		type: "Fairy",
 		contestType: "Beautiful"
 	},
-	fakeout: {
+	"ねこだまし": {
 		num: 252,
 		accuracy: 100,
 		basePower: 40,
@@ -5531,7 +4234,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cute"
 	},
-	faketears: {
+	"うそなき": {
 		num: 313,
 		accuracy: 100,
 		basePower: 0,
@@ -5549,7 +4252,7 @@ export const Moves = {
 		zMove: { boost: { spa: 1 } },
 		contestType: "Cute"
 	},
-	falsesurrender: {
+	"どげざつき": {
 		num: 793,
 		accuracy: true,
 		basePower: 80,
@@ -5562,7 +4265,7 @@ export const Moves = {
 		target: "normal",
 		type: "Dark"
 	},
-	falseswipe: {
+	"みねうち": {
 		num: 206,
 		accuracy: 100,
 		basePower: 40,
@@ -5580,7 +4283,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cool"
 	},
-	featherdance: {
+	"フェザーダンス": {
 		num: 297,
 		accuracy: 100,
 		basePower: 0,
@@ -5598,7 +4301,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Beautiful"
 	},
-	feint: {
+	"フェイント": {
 		num: 364,
 		accuracy: 100,
 		basePower: 30,
@@ -5614,22 +4317,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Clever"
 	},
-	feintattack: {
-		num: 185,
-		accuracy: true,
-		basePower: 60,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Feint Attack",
-		pp: 20,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Dark",
-		contestType: "Clever"
-	},
-	fellstinger: {
+	"とどめばり": {
 		num: 565,
 		accuracy: 100,
 		basePower: 50,
@@ -5647,7 +4335,7 @@ export const Moves = {
 		type: "Bug",
 		contestType: "Cool"
 	},
-	fierydance: {
+	"ほのおのまい": {
 		num: 552,
 		accuracy: 100,
 		basePower: 80,
@@ -5668,7 +4356,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Beautiful"
 	},
-	fierywrath: {
+	"もえあがるいかり": {
 		num: 822,
 		accuracy: 100,
 		basePower: 90,
@@ -5684,7 +4372,7 @@ export const Moves = {
 		target: "allAdjacentFoes",
 		type: "Dark"
 	},
-	filletaway: {
+	"みをけずる": {
 		num: 868,
 		accuracy: true,
 		basePower: 0,
@@ -5712,7 +4400,7 @@ export const Moves = {
 		target: "self",
 		type: "Normal"
 	},
-	finalgambit: {
+	"いのちがけ": {
 		num: 515,
 		accuracy: 100,
 		basePower: 0,
@@ -5733,7 +4421,7 @@ export const Moves = {
 		zMove: { basePower: 180 },
 		contestType: "Tough"
 	},
-	fireblast: {
+	"だいもんじ": {
 		num: 126,
 		accuracy: 85,
 		basePower: 110,
@@ -5750,7 +4438,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Beautiful"
 	},
-	firefang: {
+	"ほのおのキバ": {
 		num: 424,
 		accuracy: 95,
 		basePower: 65,
@@ -5773,7 +4461,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Cool"
 	},
-	firelash: {
+	"ほのおのムチ": {
 		num: 680,
 		accuracy: 100,
 		basePower: 80,
@@ -5792,7 +4480,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Cute"
 	},
-	firepledge: {
+	"ほのおのちかい": {
 		num: 519,
 		accuracy: 100,
 		basePower: 80,
@@ -5863,7 +4551,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Beautiful"
 	},
-	firepunch: {
+	"ほのおのパンチ": {
 		num: 7,
 		accuracy: 100,
 		basePower: 75,
@@ -5880,7 +4568,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Tough"
 	},
-	firespin: {
+	"ほのおのうず": {
 		num: 83,
 		accuracy: 85,
 		basePower: 35,
@@ -5895,7 +4583,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Beautiful"
 	},
-	firstimpression: {
+	"であいがしら": {
 		num: 660,
 		accuracy: 100,
 		basePower: 90,
@@ -5915,29 +4603,7 @@ export const Moves = {
 		type: "Bug",
 		contestType: "Cute"
 	},
-	fishiousrend: {
-		num: 755,
-		accuracy: 100,
-		basePower: 85,
-		basePowerCallback(pokemon, target, move) {
-			if (target.newlySwitched || this.queue.willMove(target)) {
-				this.debug("Fishious Rend damage boost")
-				return move.basePower * 2
-			}
-			this.debug("Fishious Rend NOT boosted")
-			return move.basePower
-		},
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Fishious Rend",
-		pp: 10,
-		priority: 0,
-		flags: { bite: 1, contact: 1, protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Water"
-	},
-	fissure: {
+	"じわれ": {
 		num: 90,
 		accuracy: 30,
 		basePower: 0,
@@ -5954,7 +4620,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Tough"
 	},
-	flail: {
+	"じたばた": {
 		num: 175,
 		accuracy: 100,
 		basePower: 0,
@@ -5989,42 +4655,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Cute"
 	},
-	flameburst: {
-		num: 481,
-		accuracy: 100,
-		basePower: 70,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Flame Burst",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		onHit(target, source, move) {
-			for (const ally of target.adjacentAllies()) {
-				this.damage(
-					ally.baseMaxhp / 16,
-					ally,
-					source,
-					this.dex.conditions.get("Flame Burst")
-				)
-			}
-		},
-		onAfterSubDamage(damage, target, source, move) {
-			for (const ally of target.adjacentAllies()) {
-				this.damage(
-					ally.baseMaxhp / 16,
-					ally,
-					source,
-					this.dex.conditions.get("Flame Burst")
-				)
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Fire",
-		contestType: "Beautiful"
-	},
-	flamecharge: {
+	"ニトロチャージ": {
 		num: 488,
 		accuracy: 100,
 		basePower: 50,
@@ -6045,7 +4676,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Cool"
 	},
-	flamewheel: {
+	"かえんぐるま": {
 		num: 172,
 		accuracy: 100,
 		basePower: 60,
@@ -6062,7 +4693,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Beautiful"
 	},
-	flamethrower: {
+	"かえんほうしゃ": {
 		num: 53,
 		accuracy: 100,
 		basePower: 90,
@@ -6079,7 +4710,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Beautiful"
 	},
-	flareblitz: {
+	"フレアドライブ": {
 		num: 394,
 		accuracy: 100,
 		basePower: 120,
@@ -6097,26 +4728,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Cool"
 	},
-	flash: {
-		num: 148,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Flash",
-		pp: 20,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
-		boosts: {
-			accuracy: -1
-		},
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { boost: { evasion: 1 } },
-		contestType: "Beautiful"
-	},
-	flashcannon: {
+	"ラスターカノン": {
 		num: 430,
 		accuracy: 100,
 		basePower: 80,
@@ -6135,7 +4747,7 @@ export const Moves = {
 		type: "Steel",
 		contestType: "Beautiful"
 	},
-	flatter: {
+	"おだてる": {
 		num: 260,
 		accuracy: 100,
 		basePower: 0,
@@ -6154,7 +4766,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
-	fleurcannon: {
+	"フルールカノン": {
 		num: 705,
 		accuracy: 90,
 		basePower: 130,
@@ -6173,7 +4785,7 @@ export const Moves = {
 		type: "Fairy",
 		contestType: "Beautiful"
 	},
-	fling: {
+	"なげつける": {
 		num: 374,
 		accuracy: 100,
 		basePower: 0,
@@ -6236,7 +4848,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Cute"
 	},
-	flipturn: {
+	"クイックターン": {
 		num: 812,
 		accuracy: 100,
 		basePower: 60,
@@ -6250,91 +4862,7 @@ export const Moves = {
 		target: "normal",
 		type: "Water"
 	},
-	floatyfall: {
-		num: 731,
-		accuracy: 95,
-		basePower: 90,
-		category: "Physical",
-		isNonstandard: "LGPE",
-		name: "Floaty Fall",
-		pp: 15,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, gravity: 1 },
-		secondary: {
-			chance: 30,
-			volatileStatus: "flinch"
-		},
-		target: "normal",
-		type: "Flying",
-		contestType: "Cool"
-	},
-	floralhealing: {
-		num: 666,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Floral Healing",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, heal: 1, allyanim: 1 },
-		onHit(target, source) {
-			let success = false
-			if (this.field.isTerrain("grassyterrain")) {
-				success = !!this.heal(this.modify(target.baseMaxhp, 0.667))
-			} else {
-				success = !!this.heal(Math.ceil(target.baseMaxhp * 0.5))
-			}
-			if (success && !target.isAlly(source)) {
-				target.staleness = "external"
-			}
-			if (!success) {
-				this.add("-fail", target, "heal")
-				return this.NOT_FAIL
-			}
-			return success
-		},
-		secondary: null,
-		target: "normal",
-		type: "Fairy",
-		zMove: { effect: "clearnegativeboost" },
-		contestType: "Beautiful"
-	},
-	flowershield: {
-		num: 579,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Flower Shield",
-		pp: 10,
-		priority: 0,
-		flags: { distance: 1 },
-		onHitField(t, source, move) {
-			const targets = []
-			for (const pokemon of this.getAllActive()) {
-				if (
-					pokemon.hasType("Grass") &&
-					(!pokemon.volatiles["maxguard"] ||
-						this.runEvent("TryHit", pokemon, source, move))
-				) {
-					// This move affects every Grass-type Pokemon in play.
-					targets.push(pokemon)
-				}
-			}
-			let success = false
-			for (const target of targets) {
-				success = this.boost({ def: 1 }, target, source, move) || success
-			}
-			return success
-		},
-		secondary: null,
-		target: "all",
-		type: "Fairy",
-		zMove: { boost: { def: 1 } },
-		contestType: "Beautiful"
-	},
-	flowertrick: {
+	"トリックフラワー": {
 		num: 870,
 		accuracy: true,
 		basePower: 70,
@@ -6348,7 +4876,7 @@ export const Moves = {
 		target: "normal",
 		type: "Grass"
 	},
-	fly: {
+	"そらをとぶ": {
 		num: 19,
 		accuracy: 95,
 		basePower: 90,
@@ -6407,7 +4935,7 @@ export const Moves = {
 		type: "Flying",
 		contestType: "Clever"
 	},
-	flyingpress: {
+	"フライングプレス": {
 		num: 560,
 		accuracy: 95,
 		basePower: 100,
@@ -6432,7 +4960,7 @@ export const Moves = {
 		zMove: { basePower: 170 },
 		contestType: "Tough"
 	},
-	focusblast: {
+	"きあいだま": {
 		num: 411,
 		accuracy: 70,
 		basePower: 120,
@@ -6451,7 +4979,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Cool"
 	},
-	focusenergy: {
+	"きあいだめ": {
 		num: 116,
 		accuracy: true,
 		basePower: 0,
@@ -6484,7 +5012,7 @@ export const Moves = {
 		zMove: { boost: { accuracy: 1 } },
 		contestType: "Cool"
 	},
-	focuspunch: {
+	"きあいパンチ": {
 		num: 264,
 		accuracy: 100,
 		basePower: 150,
@@ -6530,7 +5058,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Tough"
 	},
-	followme: {
+	"このゆびとまれ": {
 		num: 266,
 		accuracy: true,
 		basePower: 0,
@@ -6570,7 +5098,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
-	forcepalm: {
+	"はっけい": {
 		num: 395,
 		accuracy: 100,
 		basePower: 60,
@@ -6587,68 +5115,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Cool"
 	},
-	foresight: {
-		num: 193,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Foresight",
-		pp: 40,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1, bypasssub: 1 },
-		volatileStatus: "foresight",
-		onTryHit(target) {
-			if (target.volatiles["miracleeye"]) return false
-		},
-		condition: {
-			noCopy: true,
-			onStart(pokemon) {
-				this.add("-start", pokemon, "Foresight")
-			},
-			onNegateImmunity(pokemon, type) {
-				if (pokemon.hasType("Ghost") && ["Normal", "Fighting"].includes(type))
-					return false
-			},
-			onModifyBoost(boosts) {
-				if (boosts.evasion && boosts.evasion > 0) {
-					boosts.evasion = 0
-				}
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { effect: "crit2" },
-		contestType: "Clever"
-	},
-	forestscurse: {
-		num: 571,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		name: "Forest's Curse",
-		pp: 20,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1, allyanim: 1 },
-		onHit(target) {
-			if (target.hasType("Grass")) return false
-			if (!target.addType("Grass")) return false
-			this.add(
-				"-start",
-				target,
-				"typeadd",
-				"Grass",
-				"[from] move: Forest's Curse"
-			)
-		},
-		secondary: null,
-		target: "normal",
-		type: "Grass",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
-		contestType: "Clever"
-	},
-	foulplay: {
+	"イカサマ": {
 		num: 492,
 		accuracy: 100,
 		basePower: 95,
@@ -6663,7 +5130,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Clever"
 	},
-	freezedry: {
+	"フリーズドライ": {
 		num: 573,
 		accuracy: 100,
 		basePower: 70,
@@ -6683,42 +5150,7 @@ export const Moves = {
 		type: "Ice",
 		contestType: "Beautiful"
 	},
-	freezeshock: {
-		num: 553,
-		accuracy: 90,
-		basePower: 140,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Freeze Shock",
-		pp: 5,
-		priority: 0,
-		flags: {
-			charge: 1,
-			protect: 1,
-			mirror: 1,
-			nosleeptalk: 1,
-			failinstruct: 1
-		},
-		onTryMove(attacker, defender, move) {
-			if (attacker.removeVolatile(move.id)) {
-				return
-			}
-			this.add("-prepare", attacker, move.name)
-			if (!this.runEvent("ChargeMove", attacker, defender, move)) {
-				return
-			}
-			attacker.addVolatile("twoturnmove", defender)
-			return null
-		},
-		secondary: {
-			chance: 30,
-			status: "par"
-		},
-		target: "normal",
-		type: "Ice",
-		contestType: "Beautiful"
-	},
-	freezingglare: {
+	"いてつくしせん": {
 		num: 821,
 		accuracy: 100,
 		basePower: 90,
@@ -6734,28 +5166,7 @@ export const Moves = {
 		target: "normal",
 		type: "Psychic"
 	},
-	freezyfrost: {
-		num: 739,
-		accuracy: 90,
-		basePower: 100,
-		category: "Special",
-		isNonstandard: "LGPE",
-		name: "Freezy Frost",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		onHit() {
-			this.add("-clearallboost")
-			for (const pokemon of this.getAllActive()) {
-				pokemon.clearBoosts()
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Ice",
-		contestType: "Clever"
-	},
-	frenzyplant: {
+	"ハードプラント": {
 		num: 338,
 		accuracy: 90,
 		basePower: 150,
@@ -6772,7 +5183,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Cool"
 	},
-	frostbreath: {
+	"こおりのいぶき": {
 		num: 524,
 		accuracy: 90,
 		basePower: 60,
@@ -6787,27 +5198,7 @@ export const Moves = {
 		type: "Ice",
 		contestType: "Beautiful"
 	},
-	frustration: {
-		num: 218,
-		accuracy: 100,
-		basePower: 0,
-		basePowerCallback(pokemon) {
-			return Math.floor(((255 - pokemon.happiness) * 10) / 25) || 1
-		},
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Frustration",
-		pp: 20,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { basePower: 160 },
-		maxMove: { basePower: 130 },
-		contestType: "Cute"
-	},
-	furyattack: {
+	"みだれづき": {
 		num: 31,
 		accuracy: 85,
 		basePower: 15,
@@ -6822,7 +5213,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cool"
 	},
-	furycutter: {
+	"れんぞくぎり": {
 		num: 210,
 		accuracy: 95,
 		basePower: 40,
@@ -6860,7 +5251,7 @@ export const Moves = {
 		type: "Bug",
 		contestType: "Cool"
 	},
-	furyswipes: {
+	"みだれひっかき": {
 		num: 154,
 		accuracy: 80,
 		basePower: 18,
@@ -6876,49 +5267,7 @@ export const Moves = {
 		maxMove: { basePower: 100 },
 		contestType: "Tough"
 	},
-	fusionbolt: {
-		num: 559,
-		accuracy: 100,
-		basePower: 100,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Fusion Bolt",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		onBasePower(basePower, pokemon) {
-			if (this.lastSuccessfulMoveThisTurn === "fusionflare") {
-				this.debug("double power")
-				return this.chainModify(2)
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Electric",
-		contestType: "Cool"
-	},
-	fusionflare: {
-		num: 558,
-		accuracy: 100,
-		basePower: 100,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Fusion Flare",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1, defrost: 1 },
-		onBasePower(basePower, pokemon) {
-			if (this.lastSuccessfulMoveThisTurn === "fusionbolt") {
-				this.debug("double power")
-				return this.chainModify(2)
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Fire",
-		contestType: "Beautiful"
-	},
-	futuresight: {
+	"みらいよち": {
 		num: 248,
 		accuracy: 100,
 		basePower: 120,
@@ -6955,7 +5304,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Clever"
 	},
-	gastroacid: {
+	"いえき": {
 		num: 380,
 		accuracy: 100,
 		basePower: 0,
@@ -6999,114 +5348,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Tough"
 	},
-	geargrind: {
-		num: 544,
-		accuracy: 85,
-		basePower: 50,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Gear Grind",
-		pp: 15,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		multihit: 2,
-		secondary: null,
-		target: "normal",
-		type: "Steel",
-		zMove: { basePower: 180 },
-		maxMove: { basePower: 130 },
-		contestType: "Clever"
-	},
-	gearup: {
-		num: 674,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Gear Up",
-		pp: 20,
-		priority: 0,
-		flags: { snatch: 1, bypasssub: 1 },
-		onHitSide(side, source, move) {
-			const targets = side
-				.allies()
-				.filter(
-					target =>
-						target.hasAbility(["plus", "minus"]) &&
-						(!target.volatiles["maxguard"] ||
-							this.runEvent("TryHit", target, source, move))
-				)
-			if (!targets.length) return false
-			let didSomething = false
-			for (const target of targets) {
-				didSomething =
-					this.boost({ atk: 1, spa: 1 }, target, source, move, false, true) ||
-					didSomething
-			}
-			return didSomething
-		},
-		secondary: null,
-		target: "allySide",
-		type: "Steel",
-		zMove: { boost: { spa: 1 } },
-		contestType: "Clever"
-	},
-	genesissupernova: {
-		num: 703,
-		accuracy: true,
-		basePower: 185,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Genesis Supernova",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "mewniumz",
-		secondary: {
-			chance: 100,
-			self: {
-				onHit() {
-					this.field.setTerrain("psychicterrain")
-				}
-			}
-		},
-		target: "normal",
-		type: "Psychic",
-		contestType: "Cool"
-	},
-	geomancy: {
-		num: 601,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Geomancy",
-		pp: 10,
-		priority: 0,
-		flags: { charge: 1, nonsky: 1, nosleeptalk: 1, failinstruct: 1 },
-		onTryMove(attacker, defender, move) {
-			if (attacker.removeVolatile(move.id)) {
-				return
-			}
-			this.add("-prepare", attacker, move.name)
-			if (!this.runEvent("ChargeMove", attacker, defender, move)) {
-				return
-			}
-			attacker.addVolatile("twoturnmove", defender)
-			return null
-		},
-		boosts: {
-			spa: 2,
-			spd: 2,
-			spe: 2
-		},
-		secondary: null,
-		target: "self",
-		type: "Fairy",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
-		contestType: "Beautiful"
-	},
-	gigadrain: {
+	"ギガドレイン": {
 		num: 202,
 		accuracy: 100,
 		basePower: 75,
@@ -7121,7 +5363,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Clever"
 	},
-	gigaimpact: {
+	"ギガインパクト": {
 		num: 416,
 		accuracy: 90,
 		basePower: 150,
@@ -7138,7 +5380,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	gigatonhammer: {
+	"デカハンマー": {
 		num: 893,
 		accuracy: 100,
 		basePower: 160,
@@ -7151,23 +5393,7 @@ export const Moves = {
 		target: "normal",
 		type: "Steel"
 	},
-	gigavolthavoc: {
-		num: 646,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Gigavolt Havoc",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "electriumz",
-		secondary: null,
-		target: "normal",
-		type: "Electric",
-		contestType: "Cool"
-	},
-	glaciallance: {
+	"ブリザードランス": {
 		num: 824,
 		accuracy: 100,
 		basePower: 120,
@@ -7180,27 +5406,7 @@ export const Moves = {
 		target: "allAdjacentFoes",
 		type: "Ice"
 	},
-	glaciate: {
-		num: 549,
-		accuracy: 95,
-		basePower: 65,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Glaciate",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: {
-			chance: 100,
-			boosts: {
-				spe: -1
-			}
-		},
-		target: "allAdjacentFoes",
-		type: "Ice",
-		contestType: "Beautiful"
-	},
-	glaiverush: {
+	"きょけんとつげき": {
 		num: 862,
 		accuracy: 100,
 		basePower: 120,
@@ -7233,7 +5439,7 @@ export const Moves = {
 		target: "normal",
 		type: "Dragon"
 	},
-	glare: {
+	"へびにらみ": {
 		num: 137,
 		accuracy: 100,
 		basePower: 0,
@@ -7249,947 +5455,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Tough"
 	},
-	glitzyglow: {
-		num: 736,
-		accuracy: 95,
-		basePower: 80,
-		category: "Special",
-		isNonstandard: "LGPE",
-		name: "Glitzy Glow",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		self: {
-			sideCondition: "lightscreen"
-		},
-		secondary: null,
-		target: "normal",
-		type: "Psychic",
-		contestType: "Clever"
-	},
-	gmaxbefuddle: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Befuddle",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Butterfree",
-		self: {
-			onHit(source) {
-				for (const pokemon of source.foes()) {
-					const result = this.random(3)
-					if (result === 0) {
-						pokemon.trySetStatus("slp", source)
-					} else if (result === 1) {
-						pokemon.trySetStatus("par", source)
-					} else {
-						pokemon.trySetStatus("psn", source)
-					}
-				}
-			}
-		},
-		target: "adjacentFoe",
-		type: "Bug",
-		contestType: "Cool"
-	},
-	gmaxcannonade: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Cannonade",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: "Blastoise",
-		self: {
-			onHit(source) {
-				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition("gmaxcannonade")
-				}
-			}
-		},
-		condition: {
-			duration: 4,
-			onSideStart(targetSide) {
-				this.add("-sidestart", targetSide, "G-Max Cannonade")
-			},
-			onResidualOrder: 5,
-			onResidualSubOrder: 1,
-			onResidual(target) {
-				if (!target.hasType("Water")) this.damage(target.baseMaxhp / 6, target)
-			},
-			onSideResidualOrder: 26,
-			onSideResidualSubOrder: 11,
-			onSideEnd(targetSide) {
-				this.add("-sideend", targetSide, "G-Max Cannonade")
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Water",
-		contestType: "Cool"
-	},
-	gmaxcentiferno: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Centiferno",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Centiskorch",
-		self: {
-			onHit(source) {
-				for (const pokemon of source.foes()) {
-					pokemon.addVolatile(
-						"partiallytrapped",
-						source,
-						this.dex.getActiveMove("G-Max Centiferno")
-					)
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Fire",
-		contestType: "Cool"
-	},
-	gmaxchistrike: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Chi Strike",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Machamp",
-		self: {
-			onHit(source) {
-				for (const pokemon of source.alliesAndSelf()) {
-					pokemon.addVolatile("gmaxchistrike")
-				}
-			}
-		},
-		condition: {
-			noCopy: true,
-			onStart(target, source, effect) {
-				this.effectState.layers = 1
-				if (
-					!["costar", "imposter", "psychup", "transform"].includes(effect?.id)
-				) {
-					this.add("-start", target, "move: G-Max Chi Strike")
-				}
-			},
-			onRestart(target, source, effect) {
-				if (this.effectState.layers >= 3) return false
-				this.effectState.layers++
-				if (
-					!["costar", "imposter", "psychup", "transform"].includes(effect?.id)
-				) {
-					this.add("-start", target, "move: G-Max Chi Strike")
-				}
-			},
-			onModifyCritRatio(critRatio) {
-				return critRatio + this.effectState.layers
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Fighting",
-		contestType: "Cool"
-	},
-	gmaxcuddle: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Cuddle",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Eevee",
-		self: {
-			onHit(source) {
-				for (const pokemon of source.foes()) {
-					pokemon.addVolatile("attract")
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Normal",
-		contestType: "Cool"
-	},
-	gmaxdepletion: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Depletion",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Duraludon",
-		self: {
-			onHit(source) {
-				for (const pokemon of source.foes()) {
-					let move = pokemon.lastMove
-					if (!move || move.isZ) continue
-					if (move.isMax && move.baseMove)
-						move = this.dex.moves.get(move.baseMove)
-
-					const ppDeducted = pokemon.deductPP(move.id, 2)
-					if (ppDeducted) {
-						this.add(
-							"-activate",
-							pokemon,
-							"move: G-Max Depletion",
-							move.name,
-							ppDeducted
-						)
-						// Don't return here because returning early doesn't trigger
-						// activation text for the second Pokemon in doubles
-					}
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Dragon",
-		contestType: "Cool"
-	},
-	gmaxdrumsolo: {
-		num: 1000,
-		accuracy: true,
-		basePower: 160,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Drum Solo",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Rillaboom",
-		ignoreAbility: true,
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Grass",
-		contestType: "Cool"
-	},
-	gmaxfinale: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Finale",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Alcremie",
-		self: {
-			onHit(target, source, move) {
-				for (const pokemon of source.alliesAndSelf()) {
-					this.heal(pokemon.maxhp / 6, pokemon, source, move)
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Fairy",
-		contestType: "Cool"
-	},
-	gmaxfireball: {
-		num: 1000,
-		accuracy: true,
-		basePower: 160,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Fireball",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Cinderace",
-		ignoreAbility: true,
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Fire",
-		contestType: "Cool"
-	},
-	gmaxfoamburst: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Foam Burst",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Kingler",
-		self: {
-			onHit(source) {
-				for (const pokemon of source.foes()) {
-					this.boost({ spe: -2 }, pokemon)
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Water",
-		contestType: "Cool"
-	},
-	gmaxgoldrush: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Gold Rush",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Meowth",
-		self: {
-			onHit(source) {
-				for (const pokemon of source.foes()) {
-					pokemon.addVolatile("confusion")
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Normal",
-		contestType: "Cool"
-	},
-	gmaxgravitas: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Gravitas",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Orbeetle",
-		self: {
-			pseudoWeather: "gravity"
-		},
-		target: "adjacentFoe",
-		type: "Psychic",
-		contestType: "Cool"
-	},
-	gmaxhydrosnipe: {
-		num: 1000,
-		accuracy: true,
-		basePower: 160,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Hydrosnipe",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Inteleon",
-		ignoreAbility: true,
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Water",
-		contestType: "Cool"
-	},
-	gmaxmalodor: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Malodor",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Garbodor",
-		self: {
-			onHit(source) {
-				for (const pokemon of source.foes()) {
-					pokemon.trySetStatus("psn", source)
-				}
-			}
-		},
-		target: "adjacentFoe",
-		type: "Poison",
-		contestType: "Cool"
-	},
-	gmaxmeltdown: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Meltdown",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Melmetal",
-		self: {
-			onHit(source, target, effect) {
-				for (const pokemon of source.foes()) {
-					if (!pokemon.volatiles["dynamax"])
-						pokemon.addVolatile("torment", source, effect)
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Steel",
-		contestType: "Cool"
-	},
-	gmaxoneblow: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max One Blow",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Urshifu",
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Dark",
-		contestType: "Cool"
-	},
-	gmaxrapidflow: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Rapid Flow",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Urshifu-Rapid-Strike",
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Water",
-		contestType: "Cool"
-	},
-	gmaxreplenish: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Replenish",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Snorlax",
-		self: {
-			onHit(source) {
-				if (this.random(2) === 0) return
-				for (const pokemon of source.alliesAndSelf()) {
-					if (pokemon.item) continue
-
-					if (
-						pokemon.lastItem &&
-						this.dex.items.get(pokemon.lastItem).isBerry
-					) {
-						const item = pokemon.lastItem
-						pokemon.lastItem = ""
-						this.add(
-							"-item",
-							pokemon,
-							this.dex.items.get(item),
-							"[from] move: G-Max Replenish"
-						)
-						pokemon.setItem(item)
-					}
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Normal",
-		contestType: "Cool"
-	},
-	gmaxresonance: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Resonance",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Lapras",
-		self: {
-			sideCondition: "auroraveil"
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Ice",
-		contestType: "Cool"
-	},
-	gmaxsandblast: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Sandblast",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Sandaconda",
-		self: {
-			onHit(source) {
-				for (const pokemon of source.foes()) {
-					pokemon.addVolatile(
-						"partiallytrapped",
-						source,
-						this.dex.getActiveMove("G-Max Sandblast")
-					)
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Ground",
-		contestType: "Cool"
-	},
-	gmaxsmite: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Smite",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Hatterene",
-		self: {
-			onHit(source) {
-				for (const pokemon of source.foes()) {
-					pokemon.addVolatile("confusion", source)
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Fairy",
-		contestType: "Cool"
-	},
-	gmaxsnooze: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Snooze",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Grimmsnarl",
-		onHit(target) {
-			if (target.status || !target.runStatusImmunity("slp")) return
-			if (this.random(2) === 0) return
-			target.addVolatile("yawn")
-		},
-		onAfterSubDamage(damage, target) {
-			if (target.status || !target.runStatusImmunity("slp")) return
-			if (this.random(2) === 0) return
-			target.addVolatile("yawn")
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Dark",
-		contestType: "Cool"
-	},
-	gmaxsteelsurge: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Steelsurge",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Copperajah",
-		self: {
-			onHit(source) {
-				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition("gmaxsteelsurge")
-				}
-			}
-		},
-		condition: {
-			onSideStart(side) {
-				this.add("-sidestart", side, "move: G-Max Steelsurge")
-			},
-			onEntryHazard(pokemon) {
-				if (pokemon.hasItem("heavydutyboots")) return
-				// Ice Face and Disguise correctly get typed damage from Stealth Rock
-				// because Stealth Rock bypasses Substitute.
-				// They don't get typed damage from Steelsurge because Steelsurge doesn't,
-				// so we're going to test the damage of a Steel-type Stealth Rock instead.
-				const steelHazard = this.dex.getActiveMove("Stealth Rock")
-				steelHazard.type = "Steel"
-				const typeMod = this.clampIntRange(
-					pokemon.runEffectiveness(steelHazard),
-					-6,
-					6
-				)
-				this.damage((pokemon.maxhp * Math.pow(2, typeMod)) / 8)
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Steel",
-		contestType: "Cool"
-	},
-	gmaxstonesurge: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Stonesurge",
-		pp: 5,
-		priority: 0,
-		flags: {},
-		isMax: "Drednaw",
-		self: {
-			onHit(source) {
-				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition("stealthrock")
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Water",
-		contestType: "Cool"
-	},
-	gmaxstunshock: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Stun Shock",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: "Toxtricity",
-		self: {
-			onHit(source) {
-				for (const pokemon of source.foes()) {
-					const result = this.random(2)
-					if (result === 0) {
-						pokemon.trySetStatus("par", source)
-					} else {
-						pokemon.trySetStatus("psn", source)
-					}
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Electric",
-		contestType: "Cool"
-	},
-	gmaxsweetness: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Sweetness",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: "Appletun",
-		self: {
-			onHit(source) {
-				for (const ally of source.side.pokemon) {
-					ally.cureStatus()
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Grass",
-		contestType: "Cool"
-	},
-	gmaxtartness: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Tartness",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: "Flapple",
-		self: {
-			onHit(source) {
-				for (const pokemon of source.foes()) {
-					this.boost({ evasion: -1 }, pokemon)
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Grass",
-		contestType: "Cool"
-	},
-	gmaxterror: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Terror",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: "Gengar",
-		self: {
-			onHit(source) {
-				for (const pokemon of source.foes()) {
-					pokemon.addVolatile("trapped", source, null, "trapper")
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Ghost",
-		contestType: "Cool"
-	},
-	gmaxvinelash: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Vine Lash",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: "Venusaur",
-		self: {
-			onHit(source) {
-				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition("gmaxvinelash")
-				}
-			}
-		},
-		condition: {
-			duration: 4,
-			onSideStart(targetSide) {
-				this.add("-sidestart", targetSide, "G-Max Vine Lash")
-			},
-			onResidualOrder: 5,
-			onResidualSubOrder: 1,
-			onResidual(target) {
-				if (!target.hasType("Grass")) this.damage(target.baseMaxhp / 6, target)
-			},
-			onSideResidualOrder: 26,
-			onSideResidualSubOrder: 11,
-			onSideEnd(targetSide) {
-				this.add("-sideend", targetSide, "G-Max Vine Lash")
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Grass",
-		contestType: "Cool"
-	},
-	gmaxvolcalith: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Volcalith",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: "Coalossal",
-		self: {
-			onHit(source) {
-				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition("gmaxvolcalith")
-				}
-			}
-		},
-		condition: {
-			duration: 4,
-			onSideStart(targetSide) {
-				this.add("-sidestart", targetSide, "G-Max Volcalith")
-			},
-			onResidualOrder: 5,
-			onResidualSubOrder: 1,
-			onResidual(target) {
-				if (!target.hasType("Rock")) this.damage(target.baseMaxhp / 6, target)
-			},
-			onSideResidualOrder: 26,
-			onSideResidualSubOrder: 11,
-			onSideEnd(targetSide) {
-				this.add("-sideend", targetSide, "G-Max Volcalith")
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Rock",
-		contestType: "Cool"
-	},
-	gmaxvoltcrash: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Volt Crash",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: "Pikachu",
-		self: {
-			onHit(source) {
-				for (const pokemon of source.foes()) {
-					pokemon.trySetStatus("par", source)
-				}
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Electric",
-		contestType: "Cool"
-	},
-	gmaxwildfire: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Wildfire",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: "Charizard",
-		self: {
-			onHit(source) {
-				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition("gmaxwildfire")
-				}
-			}
-		},
-		condition: {
-			duration: 4,
-			onSideStart(targetSide) {
-				this.add("-sidestart", targetSide, "G-Max Wildfire")
-			},
-			onResidualOrder: 5,
-			onResidualSubOrder: 1,
-			onResidual(target) {
-				if (!target.hasType("Fire")) this.damage(target.baseMaxhp / 6, target)
-			},
-			onSideResidualOrder: 26,
-			onSideResidualSubOrder: 11,
-			onSideEnd(targetSide) {
-				this.add("-sideend", targetSide, "G-Max Wildfire")
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Fire",
-		contestType: "Cool"
-	},
-	gmaxwindrage: {
-		num: 1000,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Gigantamax",
-		name: "G-Max Wind Rage",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: "Corviknight",
-		self: {
-			onHit(source) {
-				let success = false
-				const removeTarget = [
-					"reflect",
-					"lightscreen",
-					"auroraveil",
-					"safeguard",
-					"mist",
-					"spikes",
-					"toxicspikes",
-					"stealthrock",
-					"stickyweb"
-				]
-				const removeAll = [
-					"spikes",
-					"toxicspikes",
-					"stealthrock",
-					"stickyweb",
-					"gmaxsteelsurge"
-				]
-				for (const targetCondition of removeTarget) {
-					if (source.side.foe.removeSideCondition(targetCondition)) {
-						if (!removeAll.includes(targetCondition)) continue
-						this.add(
-							"-sideend",
-							source.side.foe,
-							this.dex.conditions.get(targetCondition).name,
-							"[from] move: G-Max Wind Rage",
-							"[of] " + source
-						)
-						success = true
-					}
-				}
-				for (const sideCondition of removeAll) {
-					if (source.side.removeSideCondition(sideCondition)) {
-						this.add(
-							"-sideend",
-							source.side,
-							this.dex.conditions.get(sideCondition).name,
-							"[from] move: G-Max Wind Rage",
-							"[of] " + source
-						)
-						success = true
-					}
-				}
-				this.field.clearTerrain()
-				return success
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Flying",
-		contestType: "Cool"
-	},
-	grassknot: {
+	"くさむすび": {
 		num: 447,
 		accuracy: 100,
 		basePower: 0,
@@ -8231,7 +5497,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Cute"
 	},
-	grasspledge: {
+	"くさのちかい": {
 		num: 520,
 		accuracy: 100,
 		basePower: 80,
@@ -8299,24 +5565,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Beautiful"
 	},
-	grasswhistle: {
-		num: 320,
-		accuracy: 55,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Grass Whistle",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1 },
-		status: "slp",
-		secondary: null,
-		target: "normal",
-		type: "Grass",
-		zMove: { boost: { spe: 1 } },
-		contestType: "Clever"
-	},
-	grassyglide: {
+	"グラススライダー": {
 		num: 803,
 		accuracy: 100,
 		basePower: 55,
@@ -8335,7 +5584,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Cool"
 	},
-	grassyterrain: {
+	"グラスフィールド": {
 		num: 580,
 		accuracy: true,
 		basePower: 0,
@@ -8404,7 +5653,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Beautiful"
 	},
-	gravapple: {
+	"Gのちから": {
 		num: 788,
 		accuracy: 100,
 		basePower: 80,
@@ -8427,7 +5676,7 @@ export const Moves = {
 		target: "normal",
 		type: "Grass"
 	},
-	gravity: {
+	"じゅうりょく": {
 		num: 356,
 		accuracy: true,
 		basePower: 0,
@@ -8525,7 +5774,7 @@ export const Moves = {
 		zMove: { boost: { spa: 1 } },
 		contestType: "Clever"
 	},
-	growl: {
+	"なきごえ": {
 		num: 45,
 		accuracy: 100,
 		basePower: 0,
@@ -8543,7 +5792,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
-	growth: {
+	"せいちょう": {
 		num: 74,
 		accuracy: true,
 		basePower: 0,
@@ -8566,83 +5815,7 @@ export const Moves = {
 		zMove: { boost: { spa: 1 } },
 		contestType: "Beautiful"
 	},
-	grudge: {
-		num: 288,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Grudge",
-		pp: 5,
-		priority: 0,
-		flags: { bypasssub: 1 },
-		volatileStatus: "grudge",
-		condition: {
-			onStart(pokemon) {
-				this.add("-singlemove", pokemon, "Grudge")
-			},
-			onFaint(target, source, effect) {
-				if (!source || source.fainted || !effect) return
-				if (
-					effect.effectType === "Move" &&
-					!effect.flags["futuremove"] &&
-					source.lastMove
-				) {
-					let move = source.lastMove
-					if (move.isMax && move.baseMove)
-						move = this.dex.moves.get(move.baseMove)
-
-					for (const moveSlot of source.moveSlots) {
-						if (moveSlot.id === move.id) {
-							moveSlot.pp = 0
-							this.add("-activate", source, "move: Grudge", move.name)
-						}
-					}
-				}
-			},
-			onBeforeMovePriority: 100,
-			onBeforeMove(pokemon) {
-				this.debug("removing Grudge before attack")
-				pokemon.removeVolatile("grudge")
-			}
-		},
-		secondary: null,
-		target: "self",
-		type: "Ghost",
-		zMove: { effect: "redirect" },
-		contestType: "Tough"
-	},
-	guardianofalola: {
-		num: 698,
-		accuracy: true,
-		basePower: 0,
-		damageCallback(pokemon, target) {
-			const hp75 = Math.floor((target.getUndynamaxedHP() * 3) / 4)
-			if (
-				target.volatiles["protect"] ||
-				target.volatiles["banefulbunker"] ||
-				target.volatiles["kingsshield"] ||
-				target.volatiles["spikyshield"] ||
-				target.side.getSideCondition("matblock")
-			) {
-				this.add("-zbroken", target)
-				return this.clampIntRange(Math.ceil(hp75 / 4 - 0.5), 1)
-			}
-			return this.clampIntRange(hp75, 1)
-		},
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Guardian of Alola",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "tapuniumz",
-		secondary: null,
-		target: "normal",
-		type: "Fairy",
-		contestType: "Tough"
-	},
-	guardsplit: {
+	"ガードシェア": {
 		num: 470,
 		accuracy: true,
 		basePower: 0,
@@ -8670,7 +5843,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
-	guardswap: {
+	"ガードスワップ": {
 		num: 385,
 		accuracy: true,
 		basePower: 0,
@@ -8706,7 +5879,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
-	guillotine: {
+	"ハサミギロチン": {
 		num: 12,
 		accuracy: 30,
 		basePower: 0,
@@ -8723,7 +5896,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Cool"
 	},
-	gunkshot: {
+	"ダストシュート": {
 		num: 441,
 		accuracy: 80,
 		basePower: 120,
@@ -8740,7 +5913,7 @@ export const Moves = {
 		type: "Poison",
 		contestType: "Tough"
 	},
-	gust: {
+	"かぜおこし": {
 		num: 16,
 		accuracy: 100,
 		basePower: 40,
@@ -8754,7 +5927,7 @@ export const Moves = {
 		type: "Flying",
 		contestType: "Clever"
 	},
-	gyroball: {
+	"ジャイロボール": {
 		num: 360,
 		accuracy: 100,
 		basePower: 0,
@@ -8778,24 +5951,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Cool"
 	},
-	hail: {
-		num: 258,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Hail",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		weather: "hail",
-		secondary: null,
-		target: "all",
-		type: "Ice",
-		zMove: { boost: { spe: 1 } },
-		contestType: "Beautiful"
-	},
-	hammerarm: {
+	"アームハンマー": {
 		num: 359,
 		accuracy: 90,
 		basePower: 100,
@@ -8814,7 +5970,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Tough"
 	},
-	happyhour: {
+	"ハッピータイム": {
 		num: 603,
 		accuracy: true,
 		basePower: 0,
@@ -8832,7 +5988,7 @@ export const Moves = {
 		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
 		contestType: "Cute"
 	},
-	harden: {
+	"かたくなる": {
 		num: 106,
 		accuracy: true,
 		basePower: 0,
@@ -8850,7 +6006,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Tough"
 	},
-	haze: {
+	"くろいきり": {
 		num: 114,
 		accuracy: true,
 		basePower: 0,
@@ -8871,7 +6027,7 @@ export const Moves = {
 		zMove: { effect: "heal" },
 		contestType: "Beautiful"
 	},
-	headbutt: {
+	"ずつき": {
 		num: 29,
 		accuracy: 100,
 		basePower: 70,
@@ -8888,23 +6044,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	headcharge: {
-		num: 543,
-		accuracy: 100,
-		basePower: 120,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Head Charge",
-		pp: 15,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		recoil: [1, 4],
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Tough"
-	},
-	headlongrush: {
+	"ぶちかまし": {
 		num: 838,
 		accuracy: 100,
 		basePower: 120,
@@ -8923,7 +6063,7 @@ export const Moves = {
 		target: "normal",
 		type: "Ground"
 	},
-	headsmash: {
+	"もろはのずつき": {
 		num: 457,
 		accuracy: 80,
 		basePower: 150,
@@ -8938,7 +6078,7 @@ export const Moves = {
 		type: "Rock",
 		contestType: "Tough"
 	},
-	healbell: {
+	"いやしのすず": {
 		num: 215,
 		accuracy: true,
 		basePower: 0,
@@ -8965,77 +6105,7 @@ export const Moves = {
 		zMove: { effect: "heal" },
 		contestType: "Beautiful"
 	},
-	healblock: {
-		num: 377,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Heal Block",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
-		volatileStatus: "healblock",
-		condition: {
-			duration: 5,
-			durationCallback(target, source, effect) {
-				if (source?.hasAbility("persistent")) {
-					this.add(
-						"-activate",
-						source,
-						"ability: Persistent",
-						"[move] Heal Block"
-					)
-					return 7
-				}
-				return 5
-			},
-			onStart(pokemon, source) {
-				this.add("-start", pokemon, "move: Heal Block")
-				source.moveThisTurnResult = true
-			},
-			onDisableMove(pokemon) {
-				for (const moveSlot of pokemon.moveSlots) {
-					if (this.dex.moves.get(moveSlot.id).flags["heal"]) {
-						pokemon.disableMove(moveSlot.id)
-					}
-				}
-			},
-			onBeforeMovePriority: 6,
-			onBeforeMove(pokemon, target, move) {
-				if (move.flags["heal"] && !move.isZ && !move.isMax) {
-					this.add("cant", pokemon, "move: Heal Block", move)
-					return false
-				}
-			},
-			onModifyMove(move, pokemon, target) {
-				if (move.flags["heal"] && !move.isZ && !move.isMax) {
-					this.add("cant", pokemon, "move: Heal Block", move)
-					return false
-				}
-			},
-			onResidualOrder: 20,
-			onEnd(pokemon) {
-				this.add("-end", pokemon, "move: Heal Block")
-			},
-			onTryHeal(damage, target, source, effect) {
-				if (effect?.id === "zpower" || this.effectState.isZ) return damage
-				return false
-			},
-			onRestart(target, source) {
-				this.add("-fail", target, "move: Heal Block") // Succeeds to supress downstream messages
-				if (!source.moveThisTurnResult) {
-					source.moveThisTurnResult = false
-				}
-			}
-		},
-		secondary: null,
-		target: "allAdjacentFoes",
-		type: "Psychic",
-		zMove: { boost: { spa: 2 } },
-		contestType: "Clever"
-	},
-	healingwish: {
+	"いやしのねがい": {
 		num: 361,
 		accuracy: true,
 		basePower: 0,
@@ -9073,24 +6143,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Beautiful"
 	},
-	healorder: {
-		num: 456,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Heal Order",
-		pp: 10,
-		priority: 0,
-		flags: { snatch: 1, heal: 1 },
-		heal: [1, 2],
-		secondary: null,
-		target: "self",
-		type: "Bug",
-		zMove: { effect: "clearnegativeboost" },
-		contestType: "Clever"
-	},
-	healpulse: {
+	"いやしのはどう": {
 		num: 505,
 		accuracy: true,
 		basePower: 0,
@@ -9128,25 +6181,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
-	heartstamp: {
-		num: 531,
-		accuracy: 100,
-		basePower: 60,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Heart Stamp",
-		pp: 25,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: {
-			chance: 30,
-			volatileStatus: "flinch"
-		},
-		target: "normal",
-		type: "Psychic",
-		contestType: "Cute"
-	},
-	heartswap: {
+	"ハートスワップ": {
 		num: 391,
 		accuracy: true,
 		basePower: 0,
@@ -9176,7 +6211,7 @@ export const Moves = {
 		zMove: { effect: "crit2" },
 		contestType: "Clever"
 	},
-	heatcrash: {
+	"ヒートスタンプ": {
 		num: 535,
 		accuracy: 100,
 		basePower: 0,
@@ -9217,7 +6252,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Tough"
 	},
-	heatwave: {
+	"ねっぷう": {
 		num: 257,
 		accuracy: 90,
 		basePower: 95,
@@ -9234,7 +6269,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Beautiful"
 	},
-	heavyslam: {
+	"ヘビーボンバー": {
 		num: 484,
 		accuracy: 100,
 		basePower: 0,
@@ -9275,7 +6310,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Tough"
 	},
-	helpinghand: {
+	"てだすけ": {
 		num: 270,
 		accuracy: true,
 		basePower: 0,
@@ -9310,7 +6345,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
-	hex: {
+	"たたりめ": {
 		num: 506,
 		accuracy: 100,
 		basePower: 65,
@@ -9332,281 +6367,7 @@ export const Moves = {
 		zMove: { basePower: 160 },
 		contestType: "Clever"
 	},
-	hiddenpower: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Hidden Power",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		onModifyType(move, pokemon) {
-			move.type = pokemon.hpType || "Dark"
-		},
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Clever"
-	},
-	hiddenpowerbug: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Bug",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Bug",
-		contestType: "Clever"
-	},
-	hiddenpowerdark: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Dark",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Dark",
-		contestType: "Clever"
-	},
-	hiddenpowerdragon: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Dragon",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Dragon",
-		contestType: "Clever"
-	},
-	hiddenpowerelectric: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Electric",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Electric",
-		contestType: "Clever"
-	},
-	hiddenpowerfighting: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Fighting",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Fighting",
-		contestType: "Clever"
-	},
-	hiddenpowerfire: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Fire",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Fire",
-		contestType: "Clever"
-	},
-	hiddenpowerflying: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Flying",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Flying",
-		contestType: "Clever"
-	},
-	hiddenpowerghost: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Ghost",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Ghost",
-		contestType: "Clever"
-	},
-	hiddenpowergrass: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Grass",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Grass",
-		contestType: "Clever"
-	},
-	hiddenpowerground: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Ground",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Ground",
-		contestType: "Clever"
-	},
-	hiddenpowerice: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Ice",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Ice",
-		contestType: "Clever"
-	},
-	hiddenpowerpoison: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Poison",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Poison",
-		contestType: "Clever"
-	},
-	hiddenpowerpsychic: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Psychic",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Psychic",
-		contestType: "Clever"
-	},
-	hiddenpowerrock: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Rock",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Rock",
-		contestType: "Clever"
-	},
-	hiddenpowersteel: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Steel",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Steel",
-		contestType: "Clever"
-	},
-	hiddenpowerwater: {
-		num: 237,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		realMove: "Hidden Power",
-		isNonstandard: "Past",
-		name: "Hidden Power Water",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Water",
-		contestType: "Clever"
-	},
-	highhorsepower: {
+	"10まんばりき": {
 		num: 667,
 		accuracy: 95,
 		basePower: 95,
@@ -9620,7 +6381,7 @@ export const Moves = {
 		type: "Ground",
 		contestType: "Tough"
 	},
-	highjumpkick: {
+	"とびひざげり": {
 		num: 136,
 		accuracy: 90,
 		basePower: 130,
@@ -9643,7 +6404,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Cool"
 	},
-	holdback: {
+	"てかげん": {
 		num: 610,
 		accuracy: 100,
 		basePower: 40,
@@ -9661,7 +6422,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cool"
 	},
-	holdhands: {
+	"てをつなぐ": {
 		num: 607,
 		accuracy: true,
 		basePower: 0,
@@ -9683,7 +6444,7 @@ export const Moves = {
 		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
 		contestType: "Cute"
 	},
-	honeclaws: {
+	"つめとぎ": {
 		num: 468,
 		accuracy: true,
 		basePower: 0,
@@ -9702,7 +6463,7 @@ export const Moves = {
 		zMove: { boost: { atk: 1 } },
 		contestType: "Cute"
 	},
-	hornattack: {
+	"つのでつく": {
 		num: 30,
 		accuracy: 100,
 		basePower: 65,
@@ -9716,7 +6477,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cool"
 	},
-	horndrill: {
+	"つのドリル": {
 		num: 32,
 		accuracy: 30,
 		basePower: 0,
@@ -9733,7 +6494,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Cool"
 	},
-	hornleech: {
+	"ウッドホーン": {
 		num: 532,
 		accuracy: 100,
 		basePower: 75,
@@ -9748,7 +6509,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Tough"
 	},
-	howl: {
+	"とおぼえ": {
 		num: 336,
 		accuracy: true,
 		basePower: 0,
@@ -9766,7 +6527,7 @@ export const Moves = {
 		zMove: { boost: { atk: 1 } },
 		contestType: "Cool"
 	},
-	hurricane: {
+	"ぼうふう": {
 		num: 542,
 		accuracy: 70,
 		basePower: 110,
@@ -9795,7 +6556,7 @@ export const Moves = {
 		type: "Flying",
 		contestType: "Tough"
 	},
-	hydrocannon: {
+	"ハイドロカノン": {
 		num: 308,
 		accuracy: 90,
 		basePower: 150,
@@ -9812,7 +6573,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Beautiful"
 	},
-	hydropump: {
+	"ハイドロポンプ": {
 		num: 56,
 		accuracy: 80,
 		basePower: 110,
@@ -9826,7 +6587,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Beautiful"
 	},
-	hydrosteam: {
+	"ハイドロスチーム": {
 		num: 876,
 		accuracy: 100,
 		basePower: 80,
@@ -9841,23 +6602,7 @@ export const Moves = {
 		target: "normal",
 		type: "Water"
 	},
-	hydrovortex: {
-		num: 642,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Hydro Vortex",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "wateriumz",
-		secondary: null,
-		target: "normal",
-		type: "Water",
-		contestType: "Cool"
-	},
-	hyperbeam: {
+	"はかいこうせん": {
 		num: 63,
 		accuracy: 90,
 		basePower: 150,
@@ -9874,7 +6619,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cool"
 	},
-	hyperdrill: {
+	"ハイパードリル": {
 		num: 887,
 		accuracy: 100,
 		basePower: 100,
@@ -9888,25 +6633,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Clever"
 	},
-	hyperfang: {
-		num: 158,
-		accuracy: 90,
-		basePower: 80,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Hyper Fang",
-		pp: 15,
-		priority: 0,
-		flags: { bite: 1, contact: 1, protect: 1, mirror: 1 },
-		secondary: {
-			chance: 10,
-			volatileStatus: "flinch"
-		},
-		target: "normal",
-		type: "Normal",
-		contestType: "Cool"
-	},
-	hyperspacefury: {
+	"いじげんラッシュ": {
 		num: 621,
 		accuracy: true,
 		basePower: 100,
@@ -9940,7 +6667,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Tough"
 	},
-	hyperspacehole: {
+	"いじげんホール": {
 		num: 593,
 		accuracy: true,
 		basePower: 80,
@@ -9955,7 +6682,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Clever"
 	},
-	hypervoice: {
+	"ハイパーボイス": {
 		num: 304,
 		accuracy: 100,
 		basePower: 90,
@@ -9969,7 +6696,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cool"
 	},
-	hypnosis: {
+	"さいみんじゅつ": {
 		num: 95,
 		accuracy: 60,
 		basePower: 0,
@@ -9985,88 +6712,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
-	iceball: {
-		num: 301,
-		accuracy: 90,
-		basePower: 30,
-		basePowerCallback(pokemon, target, move) {
-			let bp = move.basePower
-			const iceballData = pokemon.volatiles["iceball"]
-			if (iceballData?.hitCount) {
-				bp *= Math.pow(2, iceballData.contactHitCount)
-			}
-			if (iceballData && pokemon.status !== "slp") {
-				iceballData.hitCount++
-				iceballData.contactHitCount++
-				if (iceballData.hitCount < 5) {
-					iceballData.duration = 2
-				}
-			}
-			if (pokemon.volatiles["defensecurl"]) {
-				bp *= 2
-			}
-			this.debug("BP: " + bp)
-			return bp
-		},
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Ice Ball",
-		pp: 20,
-		priority: 0,
-		flags: {
-			bullet: 1,
-			contact: 1,
-			protect: 1,
-			mirror: 1,
-			noparentalbond: 1,
-			failinstruct: 1
-		},
-		onModifyMove(move, pokemon, target) {
-			if (pokemon.volatiles["iceball"] || pokemon.status === "slp" || !target)
-				return
-			pokemon.addVolatile("iceball")
-			// @ts-ignore
-			// TS thinks pokemon.volatiles['iceball'] doesn't exist because of the condition on the return above
-			// but it does exist now because addVolatile created it
-			pokemon.volatiles["iceball"].targetSlot = move.sourceEffect
-				? pokemon.lastMoveTargetLoc
-				: pokemon.getLocOf(target)
-		},
-		onAfterMove(source, target, move) {
-			const iceballData = source.volatiles["iceball"]
-			if (
-				iceballData &&
-				iceballData.hitCount === 5 &&
-				iceballData.contactHitCount < 5
-				// this conditions can only be met in gen7 and gen8dlc1
-				// see `disguise` and `iceface` abilities in the resp mod folders
-			) {
-				source.addVolatile("rolloutstorage")
-				source.volatiles["rolloutstorage"].contactHitCount =
-					iceballData.contactHitCount
-			}
-		},
-
-		condition: {
-			duration: 1,
-			onLockMove: "iceball",
-			onStart() {
-				this.effectState.hitCount = 0
-				this.effectState.contactHitCount = 0
-			},
-			onResidual(target) {
-				if (target.lastMove && target.lastMove.id === "struggle") {
-					// don't lock
-					delete target.volatiles["iceball"]
-				}
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Ice",
-		contestType: "Beautiful"
-	},
-	icebeam: {
+	"れいとうビーム": {
 		num: 58,
 		accuracy: 100,
 		basePower: 90,
@@ -10083,42 +6729,7 @@ export const Moves = {
 		type: "Ice",
 		contestType: "Beautiful"
 	},
-	iceburn: {
-		num: 554,
-		accuracy: 90,
-		basePower: 140,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Ice Burn",
-		pp: 5,
-		priority: 0,
-		flags: {
-			charge: 1,
-			protect: 1,
-			mirror: 1,
-			nosleeptalk: 1,
-			failinstruct: 1
-		},
-		onTryMove(attacker, defender, move) {
-			if (attacker.removeVolatile(move.id)) {
-				return
-			}
-			this.add("-prepare", attacker, move.name)
-			if (!this.runEvent("ChargeMove", attacker, defender, move)) {
-				return
-			}
-			attacker.addVolatile("twoturnmove", defender)
-			return null
-		},
-		secondary: {
-			chance: 30,
-			status: "brn"
-		},
-		target: "normal",
-		type: "Ice",
-		contestType: "Beautiful"
-	},
-	icefang: {
+	"こおりのキバ": {
 		num: 423,
 		accuracy: 95,
 		basePower: 65,
@@ -10141,7 +6752,7 @@ export const Moves = {
 		type: "Ice",
 		contestType: "Cool"
 	},
-	icehammer: {
+	"アイスハンマー": {
 		num: 665,
 		accuracy: 90,
 		basePower: 100,
@@ -10160,7 +6771,7 @@ export const Moves = {
 		type: "Ice",
 		contestType: "Tough"
 	},
-	icepunch: {
+	"れいとうパンチ": {
 		num: 8,
 		accuracy: 100,
 		basePower: 75,
@@ -10177,7 +6788,7 @@ export const Moves = {
 		type: "Ice",
 		contestType: "Beautiful"
 	},
-	iceshard: {
+	"こおりのつぶて": {
 		num: 420,
 		accuracy: 100,
 		basePower: 40,
@@ -10191,7 +6802,7 @@ export const Moves = {
 		type: "Ice",
 		contestType: "Beautiful"
 	},
-	icespinner: {
+	"アイススピナー": {
 		num: 861,
 		accuracy: 100,
 		basePower: 80,
@@ -10214,7 +6825,7 @@ export const Moves = {
 		target: "normal",
 		type: "Ice"
 	},
-	iciclecrash: {
+	"つららおとし": {
 		num: 556,
 		accuracy: 90,
 		basePower: 85,
@@ -10231,7 +6842,7 @@ export const Moves = {
 		type: "Ice",
 		contestType: "Beautiful"
 	},
-	iciclespear: {
+	"つららばり": {
 		num: 333,
 		accuracy: 100,
 		basePower: 25,
@@ -10248,7 +6859,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Beautiful"
 	},
-	icywind: {
+	"こごえるかぜ": {
 		num: 196,
 		accuracy: 95,
 		basePower: 55,
@@ -10267,7 +6878,7 @@ export const Moves = {
 		type: "Ice",
 		contestType: "Beautiful"
 	},
-	imprison: {
+	"ふういん": {
 		num: 286,
 		accuracy: true,
 		basePower: 0,
@@ -10308,7 +6919,7 @@ export const Moves = {
 		zMove: { boost: { spd: 2 } },
 		contestType: "Clever"
 	},
-	incinerate: {
+	"やきつくす": {
 		num: 510,
 		accuracy: 100,
 		basePower: 60,
@@ -10328,7 +6939,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Tough"
 	},
-	infernalparade: {
+	"ひゃっきやこう": {
 		num: 844,
 		accuracy: 100,
 		basePower: 60,
@@ -10349,7 +6960,7 @@ export const Moves = {
 		target: "normal",
 		type: "Ghost"
 	},
-	inferno: {
+	"れんごく": {
 		num: 517,
 		accuracy: 50,
 		basePower: 100,
@@ -10366,23 +6977,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Beautiful"
 	},
-	infernooverdrive: {
-		num: 640,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Inferno Overdrive",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "firiumz",
-		secondary: null,
-		target: "normal",
-		type: "Fire",
-		contestType: "Cool"
-	},
-	infestation: {
+	"まとわりつく": {
 		num: 611,
 		accuracy: 100,
 		basePower: 20,
@@ -10397,7 +6992,7 @@ export const Moves = {
 		type: "Bug",
 		contestType: "Cute"
 	},
-	ingrain: {
+	"ねをはる": {
 		num: 275,
 		accuracy: true,
 		basePower: 0,
@@ -10430,7 +7025,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
-	instruct: {
+	"さいはい": {
 		num: 689,
 		accuracy: true,
 		basePower: 0,
@@ -10472,40 +7067,7 @@ export const Moves = {
 		zMove: { boost: { spa: 1 } },
 		contestType: "Clever"
 	},
-	iondeluge: {
-		num: 569,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Ion Deluge",
-		pp: 25,
-		priority: 1,
-		flags: {},
-		pseudoWeather: "iondeluge",
-		condition: {
-			duration: 1,
-			onFieldStart(target, source, sourceEffect) {
-				this.add("-fieldactivate", "move: Ion Deluge")
-				this.hint(
-					`Normal-type moves become Electric-type after using ${sourceEffect}.`
-				)
-			},
-			onModifyTypePriority: -2,
-			onModifyType(move) {
-				if (move.type === "Normal") {
-					move.type = "Electric"
-					this.debug(move.name + "'s type changed to Electric")
-				}
-			}
-		},
-		secondary: null,
-		target: "all",
-		type: "Electric",
-		zMove: { boost: { spa: 1 } },
-		contestType: "Beautiful"
-	},
-	irondefense: {
+	"てっぺき": {
 		num: 334,
 		accuracy: true,
 		basePower: 0,
@@ -10523,7 +7085,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Tough"
 	},
-	ironhead: {
+	"アイアンヘッド": {
 		num: 442,
 		accuracy: 100,
 		basePower: 80,
@@ -10540,7 +7102,7 @@ export const Moves = {
 		type: "Steel",
 		contestType: "Tough"
 	},
-	irontail: {
+	"アイアンテール": {
 		num: 231,
 		accuracy: 75,
 		basePower: 100,
@@ -10559,7 +7121,7 @@ export const Moves = {
 		type: "Steel",
 		contestType: "Cool"
 	},
-	ivycudgel: {
+	"ツタこんぼう": {
 		num: 904,
 		accuracy: 100,
 		basePower: 100,
@@ -10594,7 +7156,7 @@ export const Moves = {
 		target: "normal",
 		type: "Grass"
 	},
-	jawlock: {
+	"くらいつく": {
 		num: 746,
 		accuracy: 100,
 		basePower: 80,
@@ -10611,7 +7173,7 @@ export const Moves = {
 		target: "normal",
 		type: "Dark"
 	},
-	jetpunch: {
+	"ジェットパンチ": {
 		num: 857,
 		accuracy: 100,
 		basePower: 60,
@@ -10625,7 +7187,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Cool"
 	},
-	judgment: {
+	"さばきのつぶて": {
 		num: 449,
 		accuracy: 100,
 		basePower: 100,
@@ -10646,31 +7208,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Beautiful"
 	},
-	jumpkick: {
-		num: 26,
-		accuracy: 95,
-		basePower: 100,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Jump Kick",
-		pp: 10,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, gravity: 1 },
-		hasCrashDamage: true,
-		onMoveFail(target, source, move) {
-			this.damage(
-				source.baseMaxhp / 2,
-				source,
-				source,
-				this.dex.conditions.get("Jump Kick")
-			)
-		},
-		secondary: null,
-		target: "normal",
-		type: "Fighting",
-		contestType: "Cool"
-	},
-	junglehealing: {
+	"ジャングルヒール": {
 		num: 816,
 		accuracy: true,
 		basePower: 0,
@@ -10687,115 +7225,7 @@ export const Moves = {
 		target: "allies",
 		type: "Grass"
 	},
-	karatechop: {
-		num: 2,
-		accuracy: 100,
-		basePower: 50,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Karate Chop",
-		pp: 25,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		critRatio: 2,
-		secondary: null,
-		target: "normal",
-		type: "Fighting",
-		contestType: "Tough"
-	},
-	kinesis: {
-		num: 134,
-		accuracy: 80,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Kinesis",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
-		boosts: {
-			accuracy: -1
-		},
-		secondary: null,
-		target: "normal",
-		type: "Psychic",
-		zMove: { boost: { evasion: 1 } },
-		contestType: "Clever"
-	},
-	kingsshield: {
-		num: 588,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "King's Shield",
-		pp: 10,
-		priority: 4,
-		flags: { noassist: 1, failcopycat: 1, failinstruct: 1 },
-		stallingMove: true,
-		volatileStatus: "kingsshield",
-		onPrepareHit(pokemon) {
-			return !!this.queue.willAct() && this.runEvent("StallMove", pokemon)
-		},
-		onHit(pokemon) {
-			pokemon.addVolatile("stall")
-		},
-		condition: {
-			duration: 1,
-			onStart(target) {
-				this.add("-singleturn", target, "Protect")
-			},
-			onTryHitPriority: 3,
-			onTryHit(target, source, move) {
-				if (!move.flags["protect"] || move.category === "Status") {
-					if (["gmaxoneblow", "gmaxrapidflow"].includes(move.id)) return
-					if (move.isZ || move.isMax)
-						target.getMoveHitData(move).zBrokeProtect = true
-					return
-				}
-				if (move.smartTarget) {
-					move.smartTarget = false
-				} else {
-					this.add("-activate", target, "move: Protect")
-				}
-				const lockedmove = source.getVolatile("lockedmove")
-				if (lockedmove) {
-					// Outrage counter is reset
-					if (source.volatiles["lockedmove"].duration === 2) {
-						delete source.volatiles["lockedmove"]
-					}
-				}
-				if (this.checkMoveMakesContact(move, source, target)) {
-					this.boost(
-						{ atk: -1 },
-						source,
-						target,
-						this.dex.getActiveMove("King's Shield")
-					)
-				}
-				return this.NOT_FAIL
-			},
-			onHit(target, source, move) {
-				if (
-					move.isZOrMaxPowered &&
-					this.checkMoveMakesContact(move, source, target)
-				) {
-					this.boost(
-						{ atk: -1 },
-						source,
-						target,
-						this.dex.getActiveMove("King's Shield")
-					)
-				}
-			}
-		},
-		secondary: null,
-		target: "self",
-		type: "Steel",
-		zMove: { effect: "clearnegativeboost" },
-		contestType: "Cool"
-	},
-	knockoff: {
+	"はたきおとす": {
 		num: 282,
 		accuracy: 100,
 		basePower: 65,
@@ -10841,7 +7271,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Clever"
 	},
-	kowtowcleave: {
+	"ドゲザン": {
 		num: 869,
 		accuracy: true,
 		basePower: 85,
@@ -10854,63 +7284,7 @@ export const Moves = {
 		target: "normal",
 		type: "Dark"
 	},
-	landswrath: {
-		num: 616,
-		accuracy: 100,
-		basePower: 90,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Land's Wrath",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
-		secondary: null,
-		target: "allAdjacentFoes",
-		type: "Ground",
-		zMove: { basePower: 185 },
-		contestType: "Beautiful"
-	},
-	laserfocus: {
-		num: 673,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Laser Focus",
-		pp: 30,
-		priority: 0,
-		flags: { snatch: 1 },
-		volatileStatus: "laserfocus",
-		condition: {
-			duration: 2,
-			onStart(pokemon, source, effect) {
-				if (
-					effect &&
-					["costar", "imposter", "psychup", "transform"].includes(effect.id)
-				) {
-					this.add("-start", pokemon, "move: Laser Focus", "[silent]")
-				} else {
-					this.add("-start", pokemon, "move: Laser Focus")
-				}
-			},
-			onRestart(pokemon) {
-				this.effectState.duration = 2
-				this.add("-start", pokemon, "move: Laser Focus")
-			},
-			onModifyCritRatio(critRatio) {
-				return 5
-			},
-			onEnd(pokemon) {
-				this.add("-end", pokemon, "move: Laser Focus", "[silent]")
-			}
-		},
-		secondary: null,
-		target: "self",
-		type: "Normal",
-		zMove: { boost: { atk: 1 } },
-		contestType: "Cool"
-	},
-	lashout: {
+	"うっぷんばらし": {
 		num: 808,
 		accuracy: 100,
 		basePower: 75,
@@ -10929,7 +7303,7 @@ export const Moves = {
 		target: "normal",
 		type: "Dark"
 	},
-	lastresort: {
+	"とっておき": {
 		num: 387,
 		accuracy: 100,
 		basePower: 140,
@@ -10955,7 +7329,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cute"
 	},
-	lastrespects: {
+	"おはかまいり": {
 		num: 854,
 		accuracy: 100,
 		basePower: 50,
@@ -10971,7 +7345,7 @@ export const Moves = {
 		target: "normal",
 		type: "Ghost"
 	},
-	lavaplume: {
+	"ふんえん": {
 		num: 436,
 		accuracy: 100,
 		basePower: 80,
@@ -10988,7 +7362,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Tough"
 	},
-	leafage: {
+	"このは": {
 		num: 670,
 		accuracy: 100,
 		basePower: 40,
@@ -11002,7 +7376,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Tough"
 	},
-	leafblade: {
+	"リーフブレード": {
 		num: 348,
 		accuracy: 100,
 		basePower: 90,
@@ -11017,7 +7391,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Cool"
 	},
-	leafstorm: {
+	"リーフストーム": {
 		num: 437,
 		accuracy: 90,
 		basePower: 130,
@@ -11036,27 +7410,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Beautiful"
 	},
-	leaftornado: {
-		num: 536,
-		accuracy: 90,
-		basePower: 65,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Leaf Tornado",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: {
-			chance: 50,
-			boosts: {
-				accuracy: -1
-			}
-		},
-		target: "normal",
-		type: "Grass",
-		contestType: "Cool"
-	},
-	leechlife: {
+	"きゅうけつ": {
 		num: 141,
 		accuracy: 100,
 		basePower: 80,
@@ -11071,7 +7425,7 @@ export const Moves = {
 		type: "Bug",
 		contestType: "Clever"
 	},
-	leechseed: {
+	"やどりぎのタネ": {
 		num: 73,
 		accuracy: 90,
 		basePower: 0,
@@ -11107,7 +7461,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
-	leer: {
+	"にらみつける": {
 		num: 43,
 		accuracy: 100,
 		basePower: 0,
@@ -11125,23 +7479,7 @@ export const Moves = {
 		zMove: { boost: { atk: 1 } },
 		contestType: "Cool"
 	},
-	letssnuggleforever: {
-		num: 726,
-		accuracy: true,
-		basePower: 190,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Let's Snuggle Forever",
-		pp: 1,
-		priority: 0,
-		flags: { contact: 1 },
-		isZ: "mimikiumz",
-		secondary: null,
-		target: "normal",
-		type: "Fairy",
-		contestType: "Cool"
-	},
-	lick: {
+	"したでなめる": {
 		num: 122,
 		accuracy: 100,
 		basePower: 30,
@@ -11158,7 +7496,7 @@ export const Moves = {
 		type: "Ghost",
 		contestType: "Cute"
 	},
-	lifedew: {
+	"いのちのしずく": {
 		num: 791,
 		accuracy: true,
 		basePower: 0,
@@ -11172,23 +7510,7 @@ export const Moves = {
 		target: "allies",
 		type: "Water"
 	},
-	lightofruin: {
-		num: 617,
-		accuracy: 90,
-		basePower: 140,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Light of Ruin",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		recoil: [1, 2],
-		secondary: null,
-		target: "normal",
-		type: "Fairy",
-		contestType: "Beautiful"
-	},
-	lightscreen: {
+	"ひかりのかべ": {
 		num: 113,
 		accuracy: true,
 		basePower: 0,
@@ -11234,31 +7556,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Beautiful"
 	},
-	lightthatburnsthesky: {
-		num: 723,
-		accuracy: true,
-		basePower: 200,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Light That Burns the Sky",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		onModifyMove(move, pokemon) {
-			if (
-				pokemon.getStat("atk", false, true) >
-				pokemon.getStat("spa", false, true)
-			)
-				move.category = "Physical"
-		},
-		ignoreAbility: true,
-		isZ: "ultranecroziumz",
-		secondary: null,
-		target: "normal",
-		type: "Psychic",
-		contestType: "Cool"
-	},
-	liquidation: {
+	"アクアブレイク": {
 		num: 710,
 		accuracy: 100,
 		basePower: 85,
@@ -11277,7 +7575,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Cool"
 	},
-	lockon: {
+	"ロックオン": {
 		num: 199,
 		accuracy: true,
 		basePower: 0,
@@ -11320,24 +7618,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
-	lovelykiss: {
-		num: 142,
-		accuracy: 75,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Lovely Kiss",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
-		status: "slp",
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { boost: { spe: 1 } },
-		contestType: "Beautiful"
-	},
-	lowkick: {
+	"けたぐり": {
 		num: 67,
 		accuracy: 100,
 		basePower: 0,
@@ -11378,7 +7659,7 @@ export const Moves = {
 		zMove: { basePower: 160 },
 		contestType: "Tough"
 	},
-	lowsweep: {
+	"ローキック": {
 		num: 490,
 		accuracy: 100,
 		basePower: 65,
@@ -11397,36 +7678,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Clever"
 	},
-	luckychant: {
-		num: 381,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Lucky Chant",
-		pp: 30,
-		priority: 0,
-		flags: { snatch: 1 },
-		sideCondition: "luckychant",
-		condition: {
-			duration: 5,
-			onSideStart(side) {
-				this.add("-sidestart", side, "move: Lucky Chant") // "The Lucky Chant shielded [side.name]'s team from critical hits!"
-			},
-			onCriticalHit: false,
-			onSideResidualOrder: 26,
-			onSideResidualSubOrder: 6,
-			onSideEnd(side) {
-				this.add("-sideend", side, "move: Lucky Chant") // "[side.name]'s team's Lucky Chant wore off!"
-			}
-		},
-		secondary: null,
-		target: "allySide",
-		type: "Normal",
-		zMove: { boost: { evasion: 1 } },
-		contestType: "Cute"
-	},
-	luminacrash: {
+	"ルミナコリジョン": {
 		num: 855,
 		accuracy: 100,
 		basePower: 80,
@@ -11444,7 +7696,7 @@ export const Moves = {
 		target: "normal",
 		type: "Psychic"
 	},
-	lunarblessing: {
+	"みかづきのいのり": {
 		num: 849,
 		accuracy: true,
 		basePower: 0,
@@ -11461,7 +7713,7 @@ export const Moves = {
 		target: "allies",
 		type: "Psychic"
 	},
-	lunardance: {
+	"みかづきのまい": {
 		num: 461,
 		accuracy: true,
 		basePower: 0,
@@ -11507,7 +7759,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Beautiful"
 	},
-	lunge: {
+	"とびかかる": {
 		num: 679,
 		accuracy: 100,
 		basePower: 80,
@@ -11526,27 +7778,7 @@ export const Moves = {
 		type: "Bug",
 		contestType: "Cute"
 	},
-	lusterpurge: {
-		num: 295,
-		accuracy: 100,
-		basePower: 70,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Luster Purge",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: {
-			chance: 50,
-			boosts: {
-				spd: -1
-			}
-		},
-		target: "normal",
-		type: "Psychic",
-		contestType: "Clever"
-	},
-	machpunch: {
+	"マッハパンチ": {
 		num: 183,
 		accuracy: 100,
 		basePower: 40,
@@ -11560,7 +7792,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Cool"
 	},
-	magicalleaf: {
+	"マジカルリーフ": {
 		num: 345,
 		accuracy: true,
 		basePower: 60,
@@ -11574,88 +7806,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Beautiful"
 	},
-	magicaltorque: {
-		num: 900,
-		accuracy: 100,
-		basePower: 100,
-		category: "Physical",
-		isNonstandard: "Unobtainable",
-		name: "Magical Torque",
-		pp: 10,
-		priority: 0,
-		flags: {
-			protect: 1,
-			failencore: 1,
-			failmefirst: 1,
-			nosleeptalk: 1,
-			noassist: 1,
-			failcopycat: 1,
-			failinstruct: 1,
-			failmimic: 1
-		},
-		secondary: {
-			chance: 30,
-			volatileStatus: "confusion"
-		},
-		target: "normal",
-		type: "Fairy"
-	},
-	magiccoat: {
-		num: 277,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Magic Coat",
-		pp: 15,
-		priority: 4,
-		flags: {},
-		volatileStatus: "magiccoat",
-		condition: {
-			duration: 1,
-			onStart(target, source, effect) {
-				this.add("-singleturn", target, "move: Magic Coat")
-				if (effect?.effectType === "Move") {
-					this.effectState.pranksterBoosted = effect.pranksterBoosted
-				}
-			},
-			onTryHitPriority: 2,
-			onTryHit(target, source, move) {
-				if (
-					target === source ||
-					move.hasBounced ||
-					!move.flags["reflectable"]
-				) {
-					return
-				}
-				const newMove = this.dex.getActiveMove(move.id)
-				newMove.hasBounced = true
-				newMove.pranksterBoosted = this.effectState.pranksterBoosted
-				this.actions.useMove(newMove, target, source)
-				return null
-			},
-			onAllyTryHitSide(target, source, move) {
-				if (
-					target.isAlly(source) ||
-					move.hasBounced ||
-					!move.flags["reflectable"]
-				) {
-					return
-				}
-				const newMove = this.dex.getActiveMove(move.id)
-				newMove.hasBounced = true
-				newMove.pranksterBoosted = false
-				this.actions.useMove(newMove, this.effectState.target, source)
-				return null
-			}
-		},
-		secondary: null,
-		target: "self",
-		type: "Psychic",
-		zMove: { boost: { spd: 2 } },
-		contestType: "Beautiful"
-	},
-	magicpowder: {
+	"まほうのこな": {
 		num: 750,
 		accuracy: 100,
 		basePower: 0,
@@ -11673,7 +7824,7 @@ export const Moves = {
 		target: "normal",
 		type: "Psychic"
 	},
-	magicroom: {
+	"マジックルーム": {
 		num: 478,
 		accuracy: true,
 		basePower: 0,
@@ -11732,7 +7883,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
-	magmastorm: {
+	"マグマストーム": {
 		num: 463,
 		accuracy: 75,
 		basePower: 100,
@@ -11747,22 +7898,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Tough"
 	},
-	magnetbomb: {
-		num: 443,
-		accuracy: true,
-		basePower: 60,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Magnet Bomb",
-		pp: 20,
-		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Steel",
-		contestType: "Cool"
-	},
-	magneticflux: {
+	"じばそうさ": {
 		num: 602,
 		accuracy: true,
 		basePower: 0,
@@ -11796,7 +7932,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
-	magnetrise: {
+	"でんじふゆう": {
 		num: 393,
 		accuracy: true,
 		basePower: 0,
@@ -11835,52 +7971,7 @@ export const Moves = {
 		zMove: { boost: { evasion: 1 } },
 		contestType: "Clever"
 	},
-	magnitude: {
-		num: 222,
-		accuracy: 100,
-		basePower: 0,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Magnitude",
-		pp: 30,
-		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
-		onModifyMove(move, pokemon) {
-			const i = this.random(100)
-			if (i < 5) {
-				move.magnitude = 4
-				move.basePower = 10
-			} else if (i < 15) {
-				move.magnitude = 5
-				move.basePower = 30
-			} else if (i < 35) {
-				move.magnitude = 6
-				move.basePower = 50
-			} else if (i < 65) {
-				move.magnitude = 7
-				move.basePower = 70
-			} else if (i < 85) {
-				move.magnitude = 8
-				move.basePower = 90
-			} else if (i < 95) {
-				move.magnitude = 9
-				move.basePower = 110
-			} else {
-				move.magnitude = 10
-				move.basePower = 150
-			}
-		},
-		onUseMoveMessage(pokemon, target, move) {
-			this.add("-activate", pokemon, "move: Magnitude", move.magnitude)
-		},
-		secondary: null,
-		target: "allAdjacent",
-		type: "Ground",
-		zMove: { basePower: 140 },
-		maxMove: { basePower: 140 },
-		contestType: "Tough"
-	},
-	makeitrain: {
+	"ゴールドラッシュ": {
 		num: 874,
 		accuracy: 100,
 		basePower: 120,
@@ -11899,74 +7990,7 @@ export const Moves = {
 		type: "Steel",
 		contestType: "Beautiful"
 	},
-	maliciousmoonsault: {
-		num: 696,
-		accuracy: true,
-		basePower: 180,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Malicious Moonsault",
-		pp: 1,
-		priority: 0,
-		flags: { contact: 1 },
-		isZ: "inciniumz",
-		secondary: null,
-		target: "normal",
-		type: "Dark",
-		contestType: "Cool"
-	},
-	matblock: {
-		num: 561,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Mat Block",
-		pp: 10,
-		priority: 0,
-		flags: { snatch: 1, nonsky: 1, noassist: 1, failcopycat: 1 },
-		stallingMove: true,
-		sideCondition: "matblock",
-		onTry(source) {
-			if (source.activeMoveActions > 1) {
-				this.hint("Mat Block only works on your first turn out.")
-				return false
-			}
-			return !!this.queue.willAct()
-		},
-		condition: {
-			duration: 1,
-			onSideStart(target, source) {
-				this.add("-singleturn", source, "Mat Block")
-			},
-			onTryHitPriority: 3,
-			onTryHit(target, source, move) {
-				if (!move.flags["protect"]) {
-					if (["gmaxoneblow", "gmaxrapidflow"].includes(move.id)) return
-					if (move.isZ || move.isMax)
-						target.getMoveHitData(move).zBrokeProtect = true
-					return
-				}
-				if (move && (move.target === "self" || move.category === "Status"))
-					return
-				this.add("-activate", target, "move: Mat Block", move.name)
-				const lockedmove = source.getVolatile("lockedmove")
-				if (lockedmove) {
-					// Outrage counter is reset
-					if (source.volatiles["lockedmove"].duration === 2) {
-						delete source.volatiles["lockedmove"]
-					}
-				}
-				return this.NOT_FAIL
-			}
-		},
-		secondary: null,
-		target: "allySide",
-		type: "Fighting",
-		zMove: { boost: { def: 1 } },
-		contestType: "Cool"
-	},
-	matchagotcha: {
+	"シャカシャカほう": {
 		num: 902,
 		accuracy: 90,
 		basePower: 80,
@@ -11984,481 +8008,7 @@ export const Moves = {
 		target: "allAdjacentFoes",
 		type: "Grass"
 	},
-	maxairstream: {
-		num: 766,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Airstream",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				for (const pokemon of source.alliesAndSelf()) {
-					this.boost({ spe: 1 }, pokemon)
-				}
-			}
-		},
-		target: "adjacentFoe",
-		type: "Flying",
-		contestType: "Cool"
-	},
-	maxdarkness: {
-		num: 772,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Darkness",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				for (const pokemon of source.foes()) {
-					this.boost({ spd: -1 }, pokemon)
-				}
-			}
-		},
-		target: "adjacentFoe",
-		type: "Dark",
-		contestType: "Cool"
-	},
-	maxflare: {
-		num: 757,
-		accuracy: true,
-		basePower: 100,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Flare",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				this.field.setWeather("sunnyday")
-			}
-		},
-		target: "adjacentFoe",
-		type: "Fire",
-		contestType: "Cool"
-	},
-	maxflutterby: {
-		num: 758,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Flutterby",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				for (const pokemon of source.foes()) {
-					this.boost({ spa: -1 }, pokemon)
-				}
-			}
-		},
-		target: "adjacentFoe",
-		type: "Bug",
-		contestType: "Cool"
-	},
-	maxgeyser: {
-		num: 765,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Geyser",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				this.field.setWeather("raindance")
-			}
-		},
-		target: "adjacentFoe",
-		type: "Water",
-		contestType: "Cool"
-	},
-	maxguard: {
-		num: 743,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Max Guard",
-		pp: 10,
-		priority: 4,
-		flags: {},
-		isMax: true,
-		stallingMove: true,
-		volatileStatus: "maxguard",
-		onPrepareHit(pokemon) {
-			return !!this.queue.willAct() && this.runEvent("StallMove", pokemon)
-		},
-		onHit(pokemon) {
-			pokemon.addVolatile("stall")
-		},
-		condition: {
-			duration: 1,
-			onStart(target) {
-				this.add("-singleturn", target, "Max Guard")
-			},
-			onTryHitPriority: 3,
-			onTryHit(target, source, move) {
-				const bypassesMaxGuard = [
-					"acupressure",
-					"afteryou",
-					"allyswitch",
-					"aromatherapy",
-					"aromaticmist",
-					"coaching",
-					"confide",
-					"copycat",
-					"curse",
-					"decorate",
-					"doomdesire",
-					"feint",
-					"futuresight",
-					"gmaxoneblow",
-					"gmaxrapidflow",
-					"healbell",
-					"holdhands",
-					"howl",
-					"junglehealing",
-					"lifedew",
-					"meanlook",
-					"perishsong",
-					"playnice",
-					"powertrick",
-					"roar",
-					"roleplay",
-					"tearfullook"
-				]
-				if (bypassesMaxGuard.includes(move.id)) return
-				if (move.smartTarget) {
-					move.smartTarget = false
-				} else {
-					this.add("-activate", target, "move: Max Guard")
-				}
-				const lockedmove = source.getVolatile("lockedmove")
-				if (lockedmove) {
-					// Outrage counter is reset
-					if (source.volatiles["lockedmove"].duration === 2) {
-						delete source.volatiles["lockedmove"]
-					}
-				}
-				return this.NOT_FAIL
-			}
-		},
-		secondary: null,
-		target: "self",
-		type: "Normal",
-		contestType: "Cool"
-	},
-	maxhailstorm: {
-		num: 763,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Hailstorm",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				this.field.setWeather("hail")
-			}
-		},
-		target: "adjacentFoe",
-		type: "Ice",
-		contestType: "Cool"
-	},
-	maxknuckle: {
-		num: 761,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Knuckle",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				for (const pokemon of source.alliesAndSelf()) {
-					this.boost({ atk: 1 }, pokemon)
-				}
-			}
-		},
-		target: "adjacentFoe",
-		type: "Fighting",
-		contestType: "Cool"
-	},
-	maxlightning: {
-		num: 759,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Lightning",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				this.field.setTerrain("electricterrain")
-			}
-		},
-		target: "adjacentFoe",
-		type: "Electric",
-		contestType: "Cool"
-	},
-	maxmindstorm: {
-		num: 769,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Mindstorm",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				this.field.setTerrain("psychicterrain")
-			}
-		},
-		target: "adjacentFoe",
-		type: "Psychic",
-		contestType: "Cool"
-	},
-	maxooze: {
-		num: 764,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Ooze",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				for (const pokemon of source.alliesAndSelf()) {
-					this.boost({ spa: 1 }, pokemon)
-				}
-			}
-		},
-		target: "adjacentFoe",
-		type: "Poison",
-		contestType: "Cool"
-	},
-	maxovergrowth: {
-		num: 773,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Overgrowth",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				this.field.setTerrain("grassyterrain")
-			}
-		},
-		target: "adjacentFoe",
-		type: "Grass",
-		contestType: "Cool"
-	},
-	maxphantasm: {
-		num: 762,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Phantasm",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				for (const pokemon of source.foes()) {
-					this.boost({ def: -1 }, pokemon)
-				}
-			}
-		},
-		target: "adjacentFoe",
-		type: "Ghost",
-		contestType: "Cool"
-	},
-	maxquake: {
-		num: 771,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Quake",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				for (const pokemon of source.alliesAndSelf()) {
-					this.boost({ spd: 1 }, pokemon)
-				}
-			}
-		},
-		target: "adjacentFoe",
-		type: "Ground",
-		contestType: "Cool"
-	},
-	maxrockfall: {
-		num: 770,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Rockfall",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				this.field.setWeather("sandstorm")
-			}
-		},
-		target: "adjacentFoe",
-		type: "Rock",
-		contestType: "Cool"
-	},
-	maxstarfall: {
-		num: 767,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Starfall",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				this.field.setTerrain("mistyterrain")
-			}
-		},
-		target: "adjacentFoe",
-		type: "Fairy",
-		contestType: "Cool"
-	},
-	maxsteelspike: {
-		num: 774,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Steelspike",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				for (const pokemon of source.alliesAndSelf()) {
-					this.boost({ def: 1 }, pokemon)
-				}
-			}
-		},
-		target: "adjacentFoe",
-		type: "Steel",
-		contestType: "Cool"
-	},
-	maxstrike: {
-		num: 760,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Strike",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				for (const pokemon of source.foes()) {
-					this.boost({ spe: -1 }, pokemon)
-				}
-			}
-		},
-		target: "adjacentFoe",
-		type: "Normal",
-		contestType: "Cool"
-	},
-	maxwyrmwind: {
-		num: 768,
-		accuracy: true,
-		basePower: 10,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Max Wyrmwind",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		isMax: true,
-		self: {
-			onHit(source) {
-				if (!source.volatiles["dynamax"]) return
-				for (const pokemon of source.foes()) {
-					this.boost({ atk: -1 }, pokemon)
-				}
-			}
-		},
-		target: "adjacentFoe",
-		type: "Dragon",
-		contestType: "Cool"
-	},
-	meanlook: {
+	"くろいまなざし": {
 		num: 212,
 		accuracy: true,
 		basePower: 0,
@@ -12476,71 +8026,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Beautiful"
 	},
-	meditate: {
-		num: 96,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Meditate",
-		pp: 40,
-		priority: 0,
-		flags: { snatch: 1 },
-		boosts: {
-			atk: 1
-		},
-		secondary: null,
-		target: "self",
-		type: "Psychic",
-		zMove: { boost: { atk: 1 } },
-		contestType: "Beautiful"
-	},
-	mefirst: {
-		num: 382,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Me First",
-		pp: 20,
-		priority: 0,
-		flags: {
-			protect: 1,
-			bypasssub: 1,
-			failencore: 1,
-			failmefirst: 1,
-			nosleeptalk: 1,
-			noassist: 1,
-			failcopycat: 1,
-			failinstruct: 1,
-			failmimic: 1
-		},
-		onTryHit(target, pokemon) {
-			const action = this.queue.willMove(target)
-			if (!action) return false
-			const move = this.dex.getActiveMove(action.move.id)
-			if (action.zmove || move.isZ || move.isMax) return false
-			if (target.volatiles["mustrecharge"]) return false
-			if (move.category === "Status" || move.flags["failmefirst"]) return false
-
-			pokemon.addVolatile("mefirst")
-			this.actions.useMove(move, pokemon, target)
-			return null
-		},
-		condition: {
-			duration: 1,
-			onBasePowerPriority: 12,
-			onBasePower(basePower) {
-				return this.chainModify(1.5)
-			}
-		},
-		secondary: null,
-		target: "adjacentFoe",
-		type: "Normal",
-		zMove: { boost: { spe: 2 } },
-		contestType: "Clever"
-	},
-	megadrain: {
+	"メガドレイン": {
 		num: 72,
 		accuracy: 100,
 		basePower: 40,
@@ -12556,7 +8042,7 @@ export const Moves = {
 		zMove: { basePower: 120 },
 		contestType: "Clever"
 	},
-	megahorn: {
+	"メガホーン": {
 		num: 224,
 		accuracy: 85,
 		basePower: 120,
@@ -12570,7 +8056,7 @@ export const Moves = {
 		type: "Bug",
 		contestType: "Cool"
 	},
-	megakick: {
+	"メガトンキック": {
 		num: 25,
 		accuracy: 75,
 		basePower: 120,
@@ -12584,7 +8070,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cool"
 	},
-	megapunch: {
+	"メガトンパンチ": {
 		num: 5,
 		accuracy: 85,
 		basePower: 80,
@@ -12598,7 +8084,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	memento: {
+	"おきみやげ": {
 		num: 262,
 		accuracy: 100,
 		basePower: 0,
@@ -12618,24 +8104,7 @@ export const Moves = {
 		zMove: { effect: "healreplacement" },
 		contestType: "Tough"
 	},
-	menacingmoonrazemaelstrom: {
-		num: 725,
-		accuracy: true,
-		basePower: 200,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Menacing Moonraze Maelstrom",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "lunaliumz",
-		ignoreAbility: true,
-		secondary: null,
-		target: "normal",
-		type: "Ghost",
-		contestType: "Cool"
-	},
-	metalburst: {
+	"メタルバースト": {
 		num: 368,
 		accuracy: 100,
 		basePower: 0,
@@ -12666,7 +8135,7 @@ export const Moves = {
 		type: "Steel",
 		contestType: "Cool"
 	},
-	metalclaw: {
+	"メタルクロー": {
 		num: 232,
 		accuracy: 95,
 		basePower: 50,
@@ -12687,7 +8156,7 @@ export const Moves = {
 		type: "Steel",
 		contestType: "Cool"
 	},
-	metalsound: {
+	"きんぞくおん": {
 		num: 319,
 		accuracy: 85,
 		basePower: 0,
@@ -12712,24 +8181,7 @@ export const Moves = {
 		zMove: { boost: { spa: 1 } },
 		contestType: "Clever"
 	},
-	meteorassault: {
-		num: 794,
-		accuracy: 100,
-		basePower: 150,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Meteor Assault",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, recharge: 1, mirror: 1, failinstruct: 1 },
-		self: {
-			volatileStatus: "mustrecharge"
-		},
-		secondary: null,
-		target: "normal",
-		type: "Fighting"
-	},
-	meteorbeam: {
+	"メテオビーム": {
 		num: 800,
 		accuracy: 90,
 		basePower: 120,
@@ -12754,7 +8206,7 @@ export const Moves = {
 		target: "normal",
 		type: "Rock"
 	},
-	meteormash: {
+	"コメットパンチ": {
 		num: 309,
 		accuracy: 90,
 		basePower: 90,
@@ -12775,7 +8227,7 @@ export const Moves = {
 		type: "Steel",
 		contestType: "Cool"
 	},
-	metronome: {
+	"ゆびをふる": {
 		num: 118,
 		accuracy: true,
 		basePower: 0,
@@ -12959,7 +8411,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cute"
 	},
-	milkdrink: {
+	"ミルクのみ": {
 		num: 208,
 		accuracy: true,
 		basePower: 0,
@@ -12975,7 +8427,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
-	mimic: {
+	"ものまね": {
 		num: 102,
 		accuracy: true,
 		basePower: 0,
@@ -13026,64 +8478,7 @@ export const Moves = {
 		zMove: { boost: { accuracy: 1 } },
 		contestType: "Cute"
 	},
-	mindblown: {
-		num: 720,
-		accuracy: 100,
-		basePower: 150,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Mind Blown",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		mindBlownRecoil: true,
-		onAfterMove(pokemon, target, move) {
-			if (move.mindBlownRecoil && !move.multihit) {
-				const hpBeforeRecoil = pokemon.hp
-				this.damage(
-					Math.round(pokemon.maxhp / 2),
-					pokemon,
-					pokemon,
-					this.dex.conditions.get("Mind Blown"),
-					true
-				)
-				if (
-					pokemon.hp <= pokemon.maxhp / 2 &&
-					hpBeforeRecoil > pokemon.maxhp / 2
-				) {
-					this.runEvent("EmergencyExit", pokemon, pokemon)
-				}
-			}
-		},
-		secondary: null,
-		target: "allAdjacent",
-		type: "Fire",
-		contestType: "Cool"
-	},
-	mindreader: {
-		num: 170,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Mind Reader",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		onTryHit(target, source) {
-			if (source.volatiles["lockon"]) return false
-		},
-		onHit(target, source) {
-			source.addVolatile("lockon", target)
-			this.add("-activate", source, "move: Mind Reader", "[of] " + target)
-		},
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { boost: { spa: 1 } },
-		contestType: "Clever"
-	},
-	minimize: {
+	"ちいさくなる": {
 		num: 107,
 		accuracy: true,
 		basePower: 0,
@@ -13137,41 +8532,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
-	miracleeye: {
-		num: 357,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Miracle Eye",
-		pp: 40,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1, bypasssub: 1 },
-		volatileStatus: "miracleeye",
-		onTryHit(target) {
-			if (target.volatiles["foresight"]) return false
-		},
-		condition: {
-			noCopy: true,
-			onStart(pokemon) {
-				this.add("-start", pokemon, "Miracle Eye")
-			},
-			onNegateImmunity(pokemon, type) {
-				if (pokemon.hasType("Dark") && type === "Psychic") return false
-			},
-			onModifyBoost(boosts) {
-				if (boosts.evasion && boosts.evasion > 0) {
-					boosts.evasion = 0
-				}
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Psychic",
-		zMove: { boost: { spa: 1 } },
-		contestType: "Clever"
-	},
-	mirrorcoat: {
+	"ミラーコート": {
 		num: 243,
 		accuracy: 100,
 		basePower: 0,
@@ -13216,58 +8577,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Beautiful"
 	},
-	mirrormove: {
-		num: 119,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Mirror Move",
-		pp: 20,
-		priority: 0,
-		flags: {
-			failencore: 1,
-			nosleeptalk: 1,
-			noassist: 1,
-			failcopycat: 1,
-			failinstruct: 1,
-			failmimic: 1
-		},
-		onTryHit(target, pokemon) {
-			const move = target.lastMove
-			if (!move?.flags["mirror"] || move.isZ || move.isMax) {
-				return false
-			}
-			this.actions.useMove(move.id, pokemon, target)
-			return null
-		},
-		secondary: null,
-		target: "normal",
-		type: "Flying",
-		zMove: { boost: { atk: 2 } },
-		contestType: "Clever"
-	},
-	mirrorshot: {
-		num: 429,
-		accuracy: 85,
-		basePower: 65,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Mirror Shot",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: {
-			chance: 30,
-			boosts: {
-				accuracy: -1
-			}
-		},
-		target: "normal",
-		type: "Steel",
-		contestType: "Beautiful"
-	},
-	mist: {
+	"しろいきり": {
 		num: 54,
 		accuracy: true,
 		basePower: 0,
@@ -13315,27 +8625,7 @@ export const Moves = {
 		zMove: { effect: "heal" },
 		contestType: "Beautiful"
 	},
-	mistball: {
-		num: 296,
-		accuracy: 100,
-		basePower: 70,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Mist Ball",
-		pp: 5,
-		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
-		secondary: {
-			chance: 50,
-			boosts: {
-				spa: -1
-			}
-		},
-		target: "normal",
-		type: "Psychic",
-		contestType: "Clever"
-	},
-	mistyexplosion: {
+	"ミストバースト": {
 		num: 802,
 		accuracy: 100,
 		basePower: 100,
@@ -13355,7 +8645,7 @@ export const Moves = {
 		target: "allAdjacent",
 		type: "Fairy"
 	},
-	mistyterrain: {
+	"ミストフィールド": {
 		num: 581,
 		accuracy: true,
 		basePower: 0,
@@ -13423,7 +8713,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Beautiful"
 	},
-	moonblast: {
+	"ムーンフォース": {
 		num: 585,
 		accuracy: 100,
 		basePower: 95,
@@ -13442,23 +8732,7 @@ export const Moves = {
 		type: "Fairy",
 		contestType: "Beautiful"
 	},
-	moongeistbeam: {
-		num: 714,
-		accuracy: 100,
-		basePower: 100,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Moongeist Beam",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		ignoreAbility: true,
-		secondary: null,
-		target: "normal",
-		type: "Ghost",
-		contestType: "Cool"
-	},
-	moonlight: {
+	"つきのひかり": {
 		num: 236,
 		accuracy: true,
 		basePower: 0,
@@ -13495,7 +8769,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
-	morningsun: {
+	"あさのひざし": {
 		num: 234,
 		accuracy: true,
 		basePower: 0,
@@ -13532,7 +8806,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
-	mortalspin: {
+	"キラースピン": {
 		num: 866,
 		accuracy: 100,
 		basePower: 30,
@@ -13616,7 +8890,7 @@ export const Moves = {
 		target: "allAdjacentFoes",
 		type: "Poison"
 	},
-	mountaingale: {
+	"ひょうざんおろし": {
 		num: 836,
 		accuracy: 85,
 		basePower: 100,
@@ -13632,27 +8906,7 @@ export const Moves = {
 		target: "normal",
 		type: "Ice"
 	},
-	mudbomb: {
-		num: 426,
-		accuracy: 85,
-		basePower: 65,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Mud Bomb",
-		pp: 10,
-		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
-		secondary: {
-			chance: 30,
-			boosts: {
-				accuracy: -1
-			}
-		},
-		target: "normal",
-		type: "Ground",
-		contestType: "Cute"
-	},
-	mudshot: {
+	"マッドショット": {
 		num: 341,
 		accuracy: 95,
 		basePower: 55,
@@ -13671,7 +8925,7 @@ export const Moves = {
 		type: "Ground",
 		contestType: "Tough"
 	},
-	mudslap: {
+	"どろかけ": {
 		num: 189,
 		accuracy: 100,
 		basePower: 20,
@@ -13690,42 +8944,7 @@ export const Moves = {
 		type: "Ground",
 		contestType: "Cute"
 	},
-	mudsport: {
-		num: 300,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Mud Sport",
-		pp: 15,
-		priority: 0,
-		flags: { nonsky: 1 },
-		pseudoWeather: "mudsport",
-		condition: {
-			duration: 5,
-			onFieldStart(field, source) {
-				this.add("-fieldstart", "move: Mud Sport", "[of] " + source)
-			},
-			onBasePowerPriority: 1,
-			onBasePower(basePower, attacker, defender, move) {
-				if (move.type === "Electric") {
-					this.debug("mud sport weaken")
-					return this.chainModify([1352, 4096])
-				}
-			},
-			onFieldResidualOrder: 27,
-			onFieldResidualSubOrder: 4,
-			onFieldEnd() {
-				this.add("-fieldend", "move: Mud Sport")
-			}
-		},
-		secondary: null,
-		target: "all",
-		type: "Ground",
-		zMove: { boost: { spd: 1 } },
-		contestType: "Cute"
-	},
-	muddywater: {
+	"だくりゅう": {
 		num: 330,
 		accuracy: 85,
 		basePower: 90,
@@ -13744,28 +8963,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Tough"
 	},
-	multiattack: {
-		num: 718,
-		accuracy: 100,
-		basePower: 120,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Multi-Attack",
-		pp: 10,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		onModifyType(move, pokemon) {
-			if (pokemon.ignoringItem()) return
-			move.type = this.runEvent("Memory", pokemon, null, move, "Normal")
-		},
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { basePower: 185 },
-		maxMove: { basePower: 95 },
-		contestType: "Tough"
-	},
-	mysticalfire: {
+	"マジカルフレイム": {
 		num: 595,
 		accuracy: 100,
 		basePower: 75,
@@ -13784,7 +8982,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Beautiful"
 	},
-	mysticalpower: {
+	"しんぴのちから": {
 		num: 832,
 		accuracy: 90,
 		basePower: 70,
@@ -13804,7 +9002,7 @@ export const Moves = {
 		target: "normal",
 		type: "Psychic"
 	},
-	nastyplot: {
+	"わるだくみ": {
 		num: 417,
 		accuracy: true,
 		basePower: 0,
@@ -13822,129 +9020,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
-	naturalgift: {
-		num: 363,
-		accuracy: 100,
-		basePower: 0,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Natural Gift",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		onModifyType(move, pokemon) {
-			if (pokemon.ignoringItem()) return
-			const item = pokemon.getItem()
-			if (!item.naturalGift) return
-			move.type = item.naturalGift.type
-		},
-		onPrepareHit(target, pokemon, move) {
-			if (pokemon.ignoringItem()) return false
-			const item = pokemon.getItem()
-			if (!item.naturalGift) return false
-			move.basePower = item.naturalGift.basePower
-			this.debug("BP: " + move.basePower)
-			pokemon.setItem("")
-			pokemon.lastItem = item.id
-			pokemon.usedItemThisTurn = true
-			this.runEvent("AfterUseItem", pokemon, null, null, item)
-		},
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { basePower: 160 },
-		maxMove: { basePower: 130 },
-		contestType: "Clever"
-	},
-	naturepower: {
-		num: 267,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Nature Power",
-		pp: 20,
-		priority: 0,
-		flags: {
-			failencore: 1,
-			nosleeptalk: 1,
-			noassist: 1,
-			failcopycat: 1,
-			failinstruct: 1,
-			failmimic: 1
-		},
-		onTryHit(target, pokemon) {
-			let move = "triattack"
-			if (this.field.isTerrain("electricterrain")) {
-				move = "thunderbolt"
-			} else if (this.field.isTerrain("grassyterrain")) {
-				move = "energyball"
-			} else if (this.field.isTerrain("mistyterrain")) {
-				move = "moonblast"
-			} else if (this.field.isTerrain("psychicterrain")) {
-				move = "psychic"
-			}
-			this.actions.useMove(move, pokemon, target)
-			return null
-		},
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Beautiful"
-	},
-	naturesmadness: {
-		num: 717,
-		accuracy: 90,
-		basePower: 0,
-		damageCallback(pokemon, target) {
-			return this.clampIntRange(Math.floor(target.getUndynamaxedHP() / 2), 1)
-		},
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Nature's Madness",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Fairy",
-		contestType: "Tough"
-	},
-	needlearm: {
-		num: 302,
-		accuracy: 100,
-		basePower: 60,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Needle Arm",
-		pp: 15,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: {
-			chance: 30,
-			volatileStatus: "flinch"
-		},
-		target: "normal",
-		type: "Grass",
-		contestType: "Clever"
-	},
-	neverendingnightmare: {
-		num: 636,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Never-Ending Nightmare",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "ghostiumz",
-		secondary: null,
-		target: "normal",
-		type: "Ghost",
-		contestType: "Cool"
-	},
-	nightdaze: {
+	"ナイトバースト": {
 		num: 539,
 		accuracy: 95,
 		basePower: 85,
@@ -13963,37 +9039,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Cool"
 	},
-	nightmare: {
-		num: 171,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Nightmare",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		volatileStatus: "nightmare",
-		condition: {
-			noCopy: true,
-			onStart(pokemon) {
-				if (pokemon.status !== "slp" && !pokemon.hasAbility("comatose")) {
-					return false
-				}
-				this.add("-start", pokemon, "Nightmare")
-			},
-			onResidualOrder: 11,
-			onResidual(pokemon) {
-				this.damage(pokemon.baseMaxhp / 4)
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Ghost",
-		zMove: { boost: { spa: 1 } },
-		contestType: "Clever"
-	},
-	nightshade: {
+	"ナイトヘッド": {
 		num: 101,
 		accuracy: 100,
 		basePower: 0,
@@ -14008,7 +9054,7 @@ export const Moves = {
 		type: "Ghost",
 		contestType: "Clever"
 	},
-	nightslash: {
+	"つじぎり": {
 		num: 400,
 		accuracy: 100,
 		basePower: 70,
@@ -14023,7 +9069,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Cool"
 	},
-	nobleroar: {
+	"おたけび": {
 		num: 568,
 		accuracy: 100,
 		basePower: 0,
@@ -14042,7 +9088,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Tough"
 	},
-	noretreat: {
+	"はいすいのじん": {
 		num: 748,
 		accuracy: true,
 		basePower: 0,
@@ -14077,33 +9123,7 @@ export const Moves = {
 		target: "self",
 		type: "Fighting"
 	},
-	noxioustorque: {
-		num: 898,
-		accuracy: 100,
-		basePower: 100,
-		category: "Physical",
-		isNonstandard: "Unobtainable",
-		name: "Noxious Torque",
-		pp: 10,
-		priority: 0,
-		flags: {
-			protect: 1,
-			failencore: 1,
-			failmefirst: 1,
-			nosleeptalk: 1,
-			noassist: 1,
-			failcopycat: 1,
-			failinstruct: 1,
-			failmimic: 1
-		},
-		secondary: {
-			chance: 30,
-			status: "psn"
-		},
-		target: "normal",
-		type: "Poison"
-	},
-	nuzzle: {
+	"ほっぺすりすり": {
 		num: 609,
 		accuracy: 100,
 		basePower: 20,
@@ -14120,227 +9140,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Cute"
 	},
-	oblivionwing: {
-		num: 613,
-		accuracy: 100,
-		basePower: 80,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Oblivion Wing",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1, distance: 1, heal: 1 },
-		drain: [3, 4],
-		secondary: null,
-		target: "any",
-		type: "Flying",
-		contestType: "Cool"
-	},
-	obstruct: {
-		num: 792,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Obstruct",
-		pp: 10,
-		priority: 4,
-		flags: { failinstruct: 1 },
-		stallingMove: true,
-		volatileStatus: "obstruct",
-		onPrepareHit(pokemon) {
-			return !!this.queue.willAct() && this.runEvent("StallMove", pokemon)
-		},
-		onHit(pokemon) {
-			pokemon.addVolatile("stall")
-		},
-		condition: {
-			duration: 1,
-			onStart(target) {
-				this.add("-singleturn", target, "Protect")
-			},
-			onTryHitPriority: 3,
-			onTryHit(target, source, move) {
-				if (!move.flags["protect"] || move.category === "Status") {
-					if (["gmaxoneblow", "gmaxrapidflow"].includes(move.id)) return
-					if (move.isZ || move.isMax)
-						target.getMoveHitData(move).zBrokeProtect = true
-					return
-				}
-				if (move.smartTarget) {
-					move.smartTarget = false
-				} else {
-					this.add("-activate", target, "move: Protect")
-				}
-				const lockedmove = source.getVolatile("lockedmove")
-				if (lockedmove) {
-					// Outrage counter is reset
-					if (source.volatiles["lockedmove"].duration === 2) {
-						delete source.volatiles["lockedmove"]
-					}
-				}
-				if (this.checkMoveMakesContact(move, source, target)) {
-					this.boost(
-						{ def: -2 },
-						source,
-						target,
-						this.dex.getActiveMove("Obstruct")
-					)
-				}
-				return this.NOT_FAIL
-			},
-			onHit(target, source, move) {
-				if (
-					move.isZOrMaxPowered &&
-					this.checkMoveMakesContact(move, source, target)
-				) {
-					this.boost(
-						{ def: -2 },
-						source,
-						target,
-						this.dex.getActiveMove("Obstruct")
-					)
-				}
-			}
-		},
-		secondary: null,
-		target: "self",
-		type: "Dark"
-	},
-	oceanicoperetta: {
-		num: 697,
-		accuracy: true,
-		basePower: 195,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Oceanic Operetta",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "primariumz",
-		secondary: null,
-		target: "normal",
-		type: "Water",
-		contestType: "Cool"
-	},
-	octazooka: {
-		num: 190,
-		accuracy: 85,
-		basePower: 65,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Octazooka",
-		pp: 10,
-		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
-		secondary: {
-			chance: 50,
-			boosts: {
-				accuracy: -1
-			}
-		},
-		target: "normal",
-		type: "Water",
-		contestType: "Tough"
-	},
-	octolock: {
-		num: 753,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Octolock",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		onTryImmunity(target) {
-			return this.dex.getImmunity("trapped", target)
-		},
-		volatileStatus: "octolock",
-		condition: {
-			onStart(pokemon, source) {
-				this.add("-start", pokemon, "move: Octolock", "[of] " + source)
-			},
-			onResidualOrder: 14,
-			onResidual(pokemon) {
-				const source = this.effectState.source
-				if (
-					source &&
-					(!source.isActive || source.hp <= 0 || !source.activeTurns)
-				) {
-					delete pokemon.volatiles["octolock"]
-					this.add(
-						"-end",
-						pokemon,
-						"Octolock",
-						"[partiallytrapped]",
-						"[silent]"
-					)
-					return
-				}
-				this.boost(
-					{ def: -1, spd: -1 },
-					pokemon,
-					source,
-					this.dex.getActiveMove("octolock")
-				)
-			},
-			onTrapPokemon(pokemon) {
-				if (this.effectState.source && this.effectState.source.isActive)
-					pokemon.tryTrap()
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Fighting"
-	},
-	odorsleuth: {
-		num: 316,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Odor Sleuth",
-		pp: 40,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1, bypasssub: 1, allyanim: 1 },
-		volatileStatus: "foresight",
-		onTryHit(target) {
-			if (target.volatiles["miracleeye"]) return false
-		},
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { boost: { atk: 1 } },
-		contestType: "Clever"
-	},
-	ominouswind: {
-		num: 466,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Ominous Wind",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: {
-			chance: 10,
-			self: {
-				boosts: {
-					atk: 1,
-					def: 1,
-					spa: 1,
-					spd: 1,
-					spe: 1
-				}
-			}
-		},
-		target: "normal",
-		type: "Ghost",
-		contestType: "Beautiful"
-	},
-	orderup: {
+	"いっちょうあがり": {
 		num: 856,
 		accuracy: 100,
 		basePower: 80,
@@ -14370,7 +9170,7 @@ export const Moves = {
 		target: "normal",
 		type: "Dragon"
 	},
-	originpulse: {
+	"こんげんのはどう": {
 		num: 618,
 		accuracy: 85,
 		basePower: 110,
@@ -14383,7 +9183,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Beautiful"
 	},
-	outrage: {
+	"げきりん": {
 		num: 200,
 		accuracy: 100,
 		basePower: 120,
@@ -14408,7 +9208,7 @@ export const Moves = {
 		type: "Dragon",
 		contestType: "Cool"
 	},
-	overdrive: {
+	"オーバードライブ": {
 		num: 786,
 		accuracy: 100,
 		basePower: 80,
@@ -14421,7 +9221,7 @@ export const Moves = {
 		target: "allAdjacentFoes",
 		type: "Electric"
 	},
-	overheat: {
+	"オーバーヒート": {
 		num: 315,
 		accuracy: 90,
 		basePower: 130,
@@ -14440,7 +9240,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Beautiful"
 	},
-	painsplit: {
+	"いたみわけ": {
 		num: 220,
 		accuracy: true,
 		basePower: 0,
@@ -14470,27 +9270,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
-	paleowave: {
-		num: 0,
-		accuracy: 100,
-		basePower: 85,
-		category: "Special",
-		isNonstandard: "CAP",
-		name: "Paleo Wave",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: {
-			chance: 20,
-			boosts: {
-				atk: -1
-			}
-		},
-		target: "normal",
-		type: "Rock",
-		contestType: "Beautiful"
-	},
-	paraboliccharge: {
+	"パラボラチャージ": {
 		num: 570,
 		accuracy: 100,
 		basePower: 65,
@@ -14505,7 +9285,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Clever"
 	},
-	partingshot: {
+	"すてゼリフ": {
 		num: 575,
 		accuracy: 100,
 		basePower: 0,
@@ -14527,7 +9307,7 @@ export const Moves = {
 		zMove: { effect: "healreplacement" },
 		contestType: "Cool"
 	},
-	payback: {
+	"しっぺがえし": {
 		num: 371,
 		accuracy: 100,
 		basePower: 50,
@@ -14549,7 +9329,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Tough"
 	},
-	payday: {
+	"ネコにこばん": {
 		num: 6,
 		accuracy: 100,
 		basePower: 40,
@@ -14563,7 +9343,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Clever"
 	},
-	peck: {
+	"つつく": {
 		num: 64,
 		accuracy: 100,
 		basePower: 35,
@@ -14577,7 +9357,7 @@ export const Moves = {
 		type: "Flying",
 		contestType: "Cool"
 	},
-	perishsong: {
+	"ほろびのうた": {
 		num: 195,
 		accuracy: true,
 		basePower: 0,
@@ -14623,7 +9403,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
-	petalblizzard: {
+	"はなふぶき": {
 		num: 572,
 		accuracy: 100,
 		basePower: 90,
@@ -14637,7 +9417,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Beautiful"
 	},
-	petaldance: {
+	"はなびらのまい": {
 		num: 80,
 		accuracy: 100,
 		basePower: 120,
@@ -14662,7 +9442,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Beautiful"
 	},
-	phantomforce: {
+	"ゴーストダイブ": {
 		num: 566,
 		accuracy: 100,
 		basePower: 90,
@@ -14699,50 +9479,7 @@ export const Moves = {
 		type: "Ghost",
 		contestType: "Cool"
 	},
-	photongeyser: {
-		num: 722,
-		accuracy: 100,
-		basePower: 100,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Photon Geyser",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		onModifyMove(move, pokemon) {
-			if (
-				pokemon.getStat("atk", false, true) >
-				pokemon.getStat("spa", false, true)
-			)
-				move.category = "Physical"
-		},
-		ignoreAbility: true,
-		secondary: null,
-		target: "normal",
-		type: "Psychic",
-		contestType: "Cool"
-	},
-	pikapapow: {
-		num: 732,
-		accuracy: true,
-		basePower: 0,
-		basePowerCallback(pokemon) {
-			const bp = Math.floor((pokemon.happiness * 10) / 25) || 1
-			this.debug("BP: " + bp)
-			return bp
-		},
-		category: "Special",
-		isNonstandard: "LGPE",
-		name: "Pika Papow",
-		pp: 20,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Electric",
-		contestType: "Cute"
-	},
-	pinmissile: {
+	"ミサイルばり": {
 		num: 42,
 		accuracy: 95,
 		basePower: 25,
@@ -14759,23 +9496,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Cool"
 	},
-	plasmafists: {
-		num: 721,
-		accuracy: 100,
-		basePower: 100,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Plasma Fists",
-		pp: 15,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
-		pseudoWeather: "iondeluge",
-		secondary: null,
-		target: "normal",
-		type: "Electric",
-		contestType: "Cool"
-	},
-	playnice: {
+	"なかよくする": {
 		num: 589,
 		accuracy: true,
 		basePower: 0,
@@ -14793,7 +9514,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
-	playrough: {
+	"じゃれつく": {
 		num: 583,
 		accuracy: 90,
 		basePower: 90,
@@ -14812,7 +9533,7 @@ export const Moves = {
 		type: "Fairy",
 		contestType: "Cute"
 	},
-	pluck: {
+	"ついばむ": {
 		num: 365,
 		accuracy: 100,
 		basePower: 60,
@@ -14844,7 +9565,7 @@ export const Moves = {
 		type: "Flying",
 		contestType: "Cute"
 	},
-	poisonfang: {
+	"どくどくのキバ": {
 		num: 305,
 		accuracy: 100,
 		basePower: 50,
@@ -14861,7 +9582,7 @@ export const Moves = {
 		type: "Poison",
 		contestType: "Clever"
 	},
-	poisongas: {
+	"どくガス": {
 		num: 139,
 		accuracy: 90,
 		basePower: 0,
@@ -14877,7 +9598,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
-	poisonjab: {
+	"どくづき": {
 		num: 398,
 		accuracy: 100,
 		basePower: 80,
@@ -14894,7 +9615,7 @@ export const Moves = {
 		type: "Poison",
 		contestType: "Tough"
 	},
-	poisonpowder: {
+	"どくのこな": {
 		num: 77,
 		accuracy: 75,
 		basePower: 0,
@@ -14910,7 +9631,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
-	poisonsting: {
+	"どくばり": {
 		num: 40,
 		accuracy: 100,
 		basePower: 15,
@@ -14927,7 +9648,7 @@ export const Moves = {
 		type: "Poison",
 		contestType: "Clever"
 	},
-	poisontail: {
+	"ポイズンテール": {
 		num: 342,
 		accuracy: 100,
 		basePower: 50,
@@ -14945,7 +9666,7 @@ export const Moves = {
 		type: "Poison",
 		contestType: "Clever"
 	},
-	pollenpuff: {
+	"かふんだんご": {
 		num: 676,
 		accuracy: 100,
 		basePower: 90,
@@ -14986,7 +9707,7 @@ export const Moves = {
 		type: "Bug",
 		contestType: "Cute"
 	},
-	poltergeist: {
+	"ポルターガイスト": {
 		num: 809,
 		accuracy: 90,
 		basePower: 110,
@@ -15010,7 +9731,7 @@ export const Moves = {
 		target: "normal",
 		type: "Ghost"
 	},
-	populationbomb: {
+	"ネズミざん": {
 		num: 860,
 		accuracy: 90,
 		basePower: 20,
@@ -15025,7 +9746,7 @@ export const Moves = {
 		target: "normal",
 		type: "Normal"
 	},
-	pounce: {
+	"とびつく": {
 		num: 884,
 		accuracy: 100,
 		basePower: 50,
@@ -15044,7 +9765,7 @@ export const Moves = {
 		type: "Bug",
 		contestType: "Cute"
 	},
-	pound: {
+	"はたく": {
 		num: 1,
 		accuracy: 100,
 		basePower: 40,
@@ -15058,39 +9779,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	powder: {
-		num: 600,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Powder",
-		pp: 20,
-		priority: 1,
-		flags: { powder: 1, protect: 1, reflectable: 1, mirror: 1, bypasssub: 1 },
-		volatileStatus: "powder",
-		condition: {
-			duration: 1,
-			onStart(target) {
-				this.add("-singleturn", target, "Powder")
-			},
-			onTryMovePriority: -1,
-			onTryMove(pokemon, target, move) {
-				if (move.type === "Fire") {
-					this.add("-activate", pokemon, "move: Powder")
-					this.damage(this.clampIntRange(Math.round(pokemon.maxhp / 4), 1))
-					this.attrLastMove("[still]")
-					return false
-				}
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Bug",
-		zMove: { boost: { spd: 2 } },
-		contestType: "Clever"
-	},
-	powdersnow: {
+	"こなゆき": {
 		num: 181,
 		accuracy: 100,
 		basePower: 40,
@@ -15107,7 +9796,7 @@ export const Moves = {
 		type: "Ice",
 		contestType: "Beautiful"
 	},
-	powergem: {
+	"パワージェム": {
 		num: 408,
 		accuracy: 100,
 		basePower: 80,
@@ -15121,7 +9810,7 @@ export const Moves = {
 		type: "Rock",
 		contestType: "Beautiful"
 	},
-	powershift: {
+	"パワーシフト": {
 		num: 829,
 		accuracy: true,
 		basePower: 0,
@@ -15161,7 +9850,7 @@ export const Moves = {
 		target: "self",
 		type: "Normal"
 	},
-	powersplit: {
+	"パワーシェア": {
 		num: 471,
 		accuracy: true,
 		basePower: 0,
@@ -15189,7 +9878,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
-	powerswap: {
+	"パワースワップ": {
 		num: 384,
 		accuracy: true,
 		basePower: 0,
@@ -15225,7 +9914,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
-	powertrick: {
+	"パワートリック": {
 		num: 379,
 		accuracy: true,
 		basePower: 0,
@@ -15266,7 +9955,7 @@ export const Moves = {
 		zMove: { boost: { atk: 1 } },
 		contestType: "Clever"
 	},
-	powertrip: {
+	"つけあがる": {
 		num: 681,
 		accuracy: 100,
 		basePower: 20,
@@ -15287,29 +9976,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Clever"
 	},
-	poweruppunch: {
-		num: 612,
-		accuracy: 100,
-		basePower: 40,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Power-Up Punch",
-		pp: 20,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
-		secondary: {
-			chance: 100,
-			self: {
-				boosts: {
-					atk: 1
-				}
-			}
-		},
-		target: "normal",
-		type: "Fighting",
-		contestType: "Tough"
-	},
-	powerwhip: {
+	"パワーウィップ": {
 		num: 438,
 		accuracy: 85,
 		basePower: 120,
@@ -15323,7 +9990,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Tough"
 	},
-	precipiceblades: {
+	"だんがいのつるぎ": {
 		num: 619,
 		accuracy: 85,
 		basePower: 120,
@@ -15336,7 +10003,7 @@ export const Moves = {
 		type: "Ground",
 		contestType: "Cool"
 	},
-	present: {
+	"プレゼント": {
 		num: 217,
 		accuracy: 90,
 		basePower: 0,
@@ -15363,25 +10030,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cute"
 	},
-	prismaticlaser: {
-		num: 711,
-		accuracy: 100,
-		basePower: 160,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Prismatic Laser",
-		pp: 10,
-		priority: 0,
-		flags: { recharge: 1, protect: 1, mirror: 1 },
-		self: {
-			volatileStatus: "mustrecharge"
-		},
-		secondary: null,
-		target: "normal",
-		type: "Psychic",
-		contestType: "Cool"
-	},
-	protect: {
+	"まもる": {
 		num: 182,
 		accuracy: true,
 		basePower: 0,
@@ -15432,7 +10081,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
-	psybeam: {
+	"サイケこうせん": {
 		num: 60,
 		accuracy: 100,
 		basePower: 65,
@@ -15449,7 +10098,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Beautiful"
 	},
-	psyblade: {
+	"サイコブレイド": {
 		num: 875,
 		accuracy: 100,
 		basePower: 80,
@@ -15468,7 +10117,7 @@ export const Moves = {
 		target: "normal",
 		type: "Psychic"
 	},
-	psychup: {
+	"じこあんじ": {
 		num: 244,
 		accuracy: true,
 		basePower: 0,
@@ -15501,7 +10150,7 @@ export const Moves = {
 		zMove: { effect: "heal" },
 		contestType: "Clever"
 	},
-	psychic: {
+	"サイコキネシス": {
 		num: 94,
 		accuracy: 100,
 		basePower: 90,
@@ -15520,7 +10169,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Clever"
 	},
-	psychicfangs: {
+	"サイコファング": {
 		num: 706,
 		accuracy: 100,
 		basePower: 85,
@@ -15540,7 +10189,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Clever"
 	},
-	psychicterrain: {
+	"サイコフィールド": {
 		num: 678,
 		accuracy: true,
 		basePower: 0,
@@ -15611,27 +10260,7 @@ export const Moves = {
 		zMove: { boost: { spa: 1 } },
 		contestType: "Clever"
 	},
-	psychoboost: {
-		num: 354,
-		accuracy: 90,
-		basePower: 140,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Psycho Boost",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		self: {
-			boosts: {
-				spa: -2
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Psychic",
-		contestType: "Clever"
-	},
-	psychocut: {
+	"サイコカッター": {
 		num: 427,
 		accuracy: 100,
 		basePower: 70,
@@ -15646,32 +10275,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Cool"
 	},
-	psychoshift: {
-		num: 375,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Psycho Shift",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		onTryHit(target, source, move) {
-			if (!source.status) return false
-			move.status = source.status
-		},
-		self: {
-			onHit(pokemon) {
-				pokemon.cureStatus()
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Psychic",
-		zMove: { boost: { spa: 2 } },
-		contestType: "Clever"
-	},
-	psyshieldbash: {
+	"バリアーラッシュ": {
 		num: 828,
 		accuracy: 90,
 		basePower: 70,
@@ -15691,7 +10295,7 @@ export const Moves = {
 		target: "normal",
 		type: "Psychic"
 	},
-	psyshock: {
+	"サイコショック": {
 		num: 473,
 		accuracy: 100,
 		basePower: 80,
@@ -15706,7 +10310,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Beautiful"
 	},
-	psystrike: {
+	"サイコブレイク": {
 		num: 540,
 		accuracy: 100,
 		basePower: 100,
@@ -15721,160 +10325,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Cool"
 	},
-	psywave: {
-		num: 149,
-		accuracy: 100,
-		basePower: 0,
-		damageCallback(pokemon) {
-			return (this.random(50, 151) * pokemon.level) / 100
-		},
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Psywave",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Psychic",
-		contestType: "Clever"
-	},
-	pulverizingpancake: {
-		num: 701,
-		accuracy: true,
-		basePower: 210,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Pulverizing Pancake",
-		pp: 1,
-		priority: 0,
-		flags: { contact: 1 },
-		isZ: "snorliumz",
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Cool"
-	},
-	punishment: {
-		num: 386,
-		accuracy: 100,
-		basePower: 0,
-		basePowerCallback(pokemon, target) {
-			let power = 60 + 20 * target.positiveBoosts()
-			if (power > 200) power = 200
-			this.debug("BP: " + power)
-			return power
-		},
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Punishment",
-		pp: 5,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Dark",
-		zMove: { basePower: 160 },
-		maxMove: { basePower: 130 },
-		contestType: "Cool"
-	},
-	purify: {
-		num: 685,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Purify",
-		pp: 20,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, heal: 1 },
-		onHit(target, source) {
-			if (!target.cureStatus()) {
-				this.add("-fail", source)
-				this.attrLastMove("[still]")
-				return this.NOT_FAIL
-			}
-			this.heal(Math.ceil(source.maxhp * 0.5), source)
-		},
-		secondary: null,
-		target: "normal",
-		type: "Poison",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
-		contestType: "Beautiful"
-	},
-	pursuit: {
-		num: 228,
-		accuracy: 100,
-		basePower: 40,
-		basePowerCallback(pokemon, target, move) {
-			// You can't get here unless the pursuit succeeds
-			if (target.beingCalledBack || target.switchFlag) {
-				this.debug("Pursuit damage boost")
-				return move.basePower * 2
-			}
-			return move.basePower
-		},
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Pursuit",
-		pp: 20,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		beforeTurnCallback(pokemon) {
-			for (const side of this.sides) {
-				if (side.hasAlly(pokemon)) continue
-				side.addSideCondition("pursuit", pokemon)
-				const data = side.getSideConditionData("pursuit")
-				if (!data.sources) {
-					data.sources = []
-				}
-				data.sources.push(pokemon)
-			}
-		},
-		onModifyMove(move, source, target) {
-			if (target?.beingCalledBack || target?.switchFlag) move.accuracy = true
-		},
-		onTryHit(target, pokemon) {
-			target.side.removeSideCondition("pursuit")
-		},
-		condition: {
-			duration: 1,
-			onBeforeSwitchOut(pokemon) {
-				this.debug("Pursuit start")
-				let alreadyAdded = false
-				pokemon.removeVolatile("destinybond")
-				for (const source of this.effectState.sources) {
-					if (
-						!source.isAdjacent(pokemon) ||
-						!this.queue.cancelMove(source) ||
-						!source.hp
-					)
-						continue
-					if (!alreadyAdded) {
-						this.add("-activate", pokemon, "move: Pursuit")
-						alreadyAdded = true
-					}
-					// Run through each action in queue to check if the Pursuit user is supposed to Mega Evolve this turn.
-					// If it is, then Mega Evolve before moving.
-					if (source.canMegaEvo || source.canUltraBurst) {
-						for (const [actionIndex, action] of this.queue.entries()) {
-							if (action.pokemon === source && action.choice === "megaEvo") {
-								this.actions.runMegaEvo(source)
-								this.queue.list.splice(actionIndex, 1)
-								break
-							}
-						}
-					}
-					this.actions.runMove("pursuit", source, source.getLocOf(pokemon))
-				}
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Dark",
-		contestType: "Clever"
-	},
-	pyroball: {
+	"かえんボール": {
 		num: 780,
 		accuracy: 90,
 		basePower: 120,
@@ -15890,7 +10341,7 @@ export const Moves = {
 		target: "normal",
 		type: "Fire"
 	},
-	quash: {
+	"さきおくり": {
 		num: 511,
 		accuracy: 100,
 		basePower: 0,
@@ -15913,7 +10364,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
-	quickattack: {
+	"でんこうせっか": {
 		num: 98,
 		accuracy: 100,
 		basePower: 40,
@@ -15927,7 +10378,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cool"
 	},
-	quickguard: {
+	"ファストガード": {
 		num: 501,
 		accuracy: true,
 		basePower: 0,
@@ -15976,7 +10427,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Cool"
 	},
-	quiverdance: {
+	"ちょうのまい": {
 		num: 483,
 		accuracy: true,
 		basePower: 0,
@@ -15996,40 +10447,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
-	rage: {
-		num: 99,
-		accuracy: 100,
-		basePower: 20,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Rage",
-		pp: 20,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		self: {
-			volatileStatus: "rage"
-		},
-		condition: {
-			onStart(pokemon) {
-				this.add("-singlemove", pokemon, "Rage")
-			},
-			onHit(target, source, move) {
-				if (target !== source && move.category !== "Status") {
-					this.boost({ atk: 1 })
-				}
-			},
-			onBeforeMovePriority: 100,
-			onBeforeMove(pokemon) {
-				this.debug("removing Rage before attack")
-				pokemon.removeVolatile("rage")
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Tough"
-	},
-	ragefist: {
+	"ふんどのこぶし": {
 		num: 889,
 		accuracy: 100,
 		basePower: 50,
@@ -16045,7 +10463,7 @@ export const Moves = {
 		target: "normal",
 		type: "Ghost"
 	},
-	ragepowder: {
+	"いかりのこな": {
 		num: 476,
 		accuracy: true,
 		basePower: 0,
@@ -16084,7 +10502,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
-	ragingbull: {
+	"レイジングブル": {
 		num: 873,
 		accuracy: 100,
 		basePower: 90,
@@ -16116,7 +10534,7 @@ export const Moves = {
 		target: "normal",
 		type: "Normal"
 	},
-	ragingfury: {
+	"だいふんげき": {
 		num: 833,
 		accuracy: 100,
 		basePower: 120,
@@ -16137,7 +10555,7 @@ export const Moves = {
 		target: "randomNormal",
 		type: "Fire"
 	},
-	raindance: {
+	"あまごい": {
 		num: 240,
 		accuracy: true,
 		basePower: 0,
@@ -16153,7 +10571,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Beautiful"
 	},
-	rapidspin: {
+	"こうそくスピン": {
 		num: 229,
 		accuracy: 100,
 		basePower: 50,
@@ -16242,7 +10660,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cool"
 	},
-	razorleaf: {
+	"はっぱカッター": {
 		num: 75,
 		accuracy: 95,
 		basePower: 55,
@@ -16257,7 +10675,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Cool"
 	},
-	razorshell: {
+	"シェルブレード": {
 		num: 534,
 		accuracy: 95,
 		basePower: 75,
@@ -16276,40 +10694,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Cool"
 	},
-	razorwind: {
-		num: 13,
-		accuracy: 100,
-		basePower: 80,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Razor Wind",
-		pp: 10,
-		priority: 0,
-		flags: {
-			charge: 1,
-			protect: 1,
-			mirror: 1,
-			nosleeptalk: 1,
-			failinstruct: 1
-		},
-		onTryMove(attacker, defender, move) {
-			if (attacker.removeVolatile(move.id)) {
-				return
-			}
-			this.add("-prepare", attacker, move.name)
-			if (!this.runEvent("ChargeMove", attacker, defender, move)) {
-				return
-			}
-			attacker.addVolatile("twoturnmove", defender)
-			return null
-		},
-		critRatio: 2,
-		secondary: null,
-		target: "allAdjacentFoes",
-		type: "Normal",
-		contestType: "Cool"
-	},
-	recover: {
+	"じこさいせい": {
 		num: 105,
 		accuracy: true,
 		basePower: 0,
@@ -16325,7 +10710,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
-	recycle: {
+	"リサイクル": {
 		num: 278,
 		accuracy: true,
 		basePower: 0,
@@ -16352,7 +10737,7 @@ export const Moves = {
 		zMove: { boost: { spe: 2 } },
 		contestType: "Clever"
 	},
-	reflect: {
+	"リフレクター": {
 		num: 115,
 		accuracy: true,
 		basePower: 0,
@@ -16398,7 +10783,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
-	reflecttype: {
+	"ミラータイプ": {
 		num: 513,
 		accuracy: true,
 		basePower: 0,
@@ -16441,27 +10826,7 @@ export const Moves = {
 		zMove: { boost: { spa: 1 } },
 		contestType: "Clever"
 	},
-	refresh: {
-		num: 287,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Refresh",
-		pp: 20,
-		priority: 0,
-		flags: { snatch: 1 },
-		onHit(pokemon) {
-			if (["", "slp", "frz"].includes(pokemon.status)) return false
-			pokemon.cureStatus()
-		},
-		secondary: null,
-		target: "self",
-		type: "Normal",
-		zMove: { effect: "heal" },
-		contestType: "Cute"
-	},
-	relicsong: {
+	"いにしえのうた": {
 		num: 547,
 		accuracy: 100,
 		basePower: 75,
@@ -16498,7 +10863,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Beautiful"
 	},
-	rest: {
+	"ねむる": {
 		num: 156,
 		accuracy: true,
 		basePower: 0,
@@ -16537,7 +10902,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
-	retaliate: {
+	"かたきうち": {
 		num: 514,
 		accuracy: 100,
 		basePower: 70,
@@ -16557,27 +10922,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cool"
 	},
-	return: {
-		num: 216,
-		accuracy: 100,
-		basePower: 0,
-		basePowerCallback(pokemon) {
-			return Math.floor((pokemon.happiness * 10) / 25) || 1
-		},
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Return",
-		pp: 20,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { basePower: 160 },
-		maxMove: { basePower: 130 },
-		contestType: "Cute"
-	},
-	revelationdance: {
+	"めざめるダンス": {
 		num: 686,
 		accuracy: 100,
 		basePower: 90,
@@ -16596,32 +10941,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Beautiful"
 	},
-	revenge: {
-		num: 279,
-		accuracy: 100,
-		basePower: 60,
-		basePowerCallback(pokemon, target, move) {
-			const damagedByTarget = pokemon.attackedBy.some(
-				p => p.source === target && p.damage > 0 && p.thisTurn
-			)
-			if (damagedByTarget) {
-				this.debug("BP doubled for getting hit by " + target)
-				return move.basePower * 2
-			}
-			return move.basePower
-		},
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Revenge",
-		pp: 10,
-		priority: -4,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Fighting",
-		contestType: "Tough"
-	},
-	reversal: {
+	"きしかいせい": {
 		num: 179,
 		accuracy: 100,
 		basePower: 0,
@@ -16655,7 +10975,7 @@ export const Moves = {
 		zMove: { basePower: 160 },
 		contestType: "Cool"
 	},
-	revivalblessing: {
+	"さいきのいのり": {
 		num: 863,
 		accuracy: true,
 		basePower: 0,
@@ -16683,7 +11003,7 @@ export const Moves = {
 		target: "self",
 		type: "Normal"
 	},
-	risingvoltage: {
+	"ライジングボルト": {
 		num: 804,
 		accuracy: 100,
 		basePower: 70,
@@ -16705,7 +11025,7 @@ export const Moves = {
 		type: "Electric",
 		maxMove: { basePower: 140 }
 	},
-	roar: {
+	"ほえる": {
 		num: 46,
 		accuracy: true,
 		basePower: 0,
@@ -16729,7 +11049,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Cool"
 	},
-	roaroftime: {
+	"ときのほうこう": {
 		num: 459,
 		accuracy: 90,
 		basePower: 150,
@@ -16746,7 +11066,7 @@ export const Moves = {
 		type: "Dragon",
 		contestType: "Beautiful"
 	},
-	rockblast: {
+	"ロックブラスト": {
 		num: 350,
 		accuracy: 90,
 		basePower: 25,
@@ -16763,25 +11083,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Tough"
 	},
-	rockclimb: {
-		num: 431,
-		accuracy: 85,
-		basePower: 90,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Rock Climb",
-		pp: 20,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: {
-			chance: 20,
-			volatileStatus: "confusion"
-		},
-		target: "normal",
-		type: "Normal",
-		contestType: "Tough"
-	},
-	rockpolish: {
+	"ロックカット": {
 		num: 397,
 		accuracy: true,
 		basePower: 0,
@@ -16799,7 +11101,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Tough"
 	},
-	rockslide: {
+	"いわなだれ": {
 		num: 157,
 		accuracy: 90,
 		basePower: 75,
@@ -16816,7 +11118,7 @@ export const Moves = {
 		type: "Rock",
 		contestType: "Tough"
 	},
-	rocksmash: {
+	"いわくだき": {
 		num: 249,
 		accuracy: 100,
 		basePower: 40,
@@ -16835,7 +11137,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Tough"
 	},
-	rockthrow: {
+	"いわおとし": {
 		num: 88,
 		accuracy: 90,
 		basePower: 50,
@@ -16849,7 +11151,7 @@ export const Moves = {
 		type: "Rock",
 		contestType: "Tough"
 	},
-	rocktomb: {
+	"がんせきふうじ": {
 		num: 317,
 		accuracy: 95,
 		basePower: 60,
@@ -16868,25 +11170,7 @@ export const Moves = {
 		type: "Rock",
 		contestType: "Clever"
 	},
-	rockwrecker: {
-		num: 439,
-		accuracy: 90,
-		basePower: 150,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Rock Wrecker",
-		pp: 5,
-		priority: 0,
-		flags: { bullet: 1, recharge: 1, protect: 1, mirror: 1 },
-		self: {
-			volatileStatus: "mustrecharge"
-		},
-		secondary: null,
-		target: "normal",
-		type: "Rock",
-		contestType: "Tough"
-	},
-	roleplay: {
+	"なりきり": {
 		num: 272,
 		accuracy: true,
 		basePower: 0,
@@ -16942,25 +11226,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Cute"
 	},
-	rollingkick: {
-		num: 27,
-		accuracy: 85,
-		basePower: 60,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Rolling Kick",
-		pp: 15,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: {
-			chance: 30,
-			volatileStatus: "flinch"
-		},
-		target: "normal",
-		type: "Fighting",
-		contestType: "Cool"
-	},
-	rollout: {
+	"ころがる": {
 		num: 205,
 		accuracy: 90,
 		basePower: 30,
@@ -17038,7 +11304,7 @@ export const Moves = {
 		type: "Rock",
 		contestType: "Cute"
 	},
-	roost: {
+	"はねやすめ": {
 		num: 355,
 		accuracy: true,
 		basePower: 0,
@@ -17076,42 +11342,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
-	rototiller: {
-		num: 563,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Rototiller",
-		pp: 10,
-		priority: 0,
-		flags: { distance: 1, nonsky: 1 },
-		onHitField(target, source) {
-			const targets = []
-			let anyAirborne = false
-			for (const pokemon of this.getAllActive()) {
-				if (!pokemon.runImmunity("Ground")) {
-					this.add("-immune", pokemon)
-					anyAirborne = true
-					continue
-				}
-				if (pokemon.hasType("Grass")) {
-					// This move affects every grounded Grass-type Pokemon in play.
-					targets.push(pokemon)
-				}
-			}
-			if (!targets.length && !anyAirborne) return false // Fails when there are no grounded Grass types or airborne Pokemon
-			for (const pokemon of targets) {
-				this.boost({ atk: 1, spa: 1 }, pokemon, source)
-			}
-		},
-		secondary: null,
-		target: "all",
-		type: "Ground",
-		zMove: { boost: { atk: 1 } },
-		contestType: "Tough"
-	},
-	round: {
+	"りんしょう": {
 		num: 496,
 		accuracy: 100,
 		basePower: 60,
@@ -17142,7 +11373,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Beautiful"
 	},
-	ruination: {
+	"カタストロフィ": {
 		num: 877,
 		accuracy: 90,
 		basePower: 0,
@@ -17159,25 +11390,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Tough"
 	},
-	sacredfire: {
-		num: 221,
-		accuracy: 95,
-		basePower: 100,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Sacred Fire",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1, defrost: 1 },
-		secondary: {
-			chance: 50,
-			status: "brn"
-		},
-		target: "normal",
-		type: "Fire",
-		contestType: "Beautiful"
-	},
-	sacredsword: {
+	"せいなるつるぎ": {
 		num: 533,
 		accuracy: 100,
 		basePower: 90,
@@ -17193,7 +11406,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Cool"
 	},
-	safeguard: {
+	"しんぴのまもり": {
 		num: 219,
 		accuracy: true,
 		basePower: 0,
@@ -17273,7 +11486,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Beautiful"
 	},
-	saltcure: {
+	"しおづけ": {
 		num: 864,
 		accuracy: 100,
 		basePower: 40,
@@ -17304,7 +11517,7 @@ export const Moves = {
 		target: "normal",
 		type: "Rock"
 	},
-	sandattack: {
+	"すなかけ": {
 		num: 28,
 		accuracy: 100,
 		basePower: 0,
@@ -17322,7 +11535,7 @@ export const Moves = {
 		zMove: { boost: { evasion: 1 } },
 		contestType: "Cute"
 	},
-	sandsearstorm: {
+	"ねっさのあらし": {
 		num: 848,
 		accuracy: 80,
 		basePower: 100,
@@ -17346,7 +11559,7 @@ export const Moves = {
 		target: "allAdjacentFoes",
 		type: "Ground"
 	},
-	sandstorm: {
+	"すなあらし": {
 		num: 201,
 		accuracy: true,
 		basePower: 0,
@@ -17362,7 +11575,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Tough"
 	},
-	sandtomb: {
+	"すなじごく": {
 		num: 328,
 		accuracy: 85,
 		basePower: 35,
@@ -17377,42 +11590,7 @@ export const Moves = {
 		type: "Ground",
 		contestType: "Clever"
 	},
-	sappyseed: {
-		num: 738,
-		accuracy: 90,
-		basePower: 100,
-		category: "Physical",
-		isNonstandard: "LGPE",
-		name: "Sappy Seed",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
-		onHit(target, source) {
-			if (target.hasType("Grass")) return null
-			target.addVolatile("leechseed", source)
-		},
-		secondary: null,
-		target: "normal",
-		type: "Grass",
-		contestType: "Clever"
-	},
-	savagespinout: {
-		num: 634,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Savage Spin-Out",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "buginiumz",
-		secondary: null,
-		target: "normal",
-		type: "Bug",
-		contestType: "Cool"
-	},
-	scald: {
+	"ねっとう": {
 		num: 503,
 		accuracy: 100,
 		basePower: 80,
@@ -17430,7 +11608,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Tough"
 	},
-	scaleshot: {
+	"スケイルショット": {
 		num: 799,
 		accuracy: 90,
 		basePower: 25,
@@ -17452,7 +11630,7 @@ export const Moves = {
 		zMove: { basePower: 140 },
 		maxMove: { basePower: 130 }
 	},
-	scaryface: {
+	"こわいかお": {
 		num: 184,
 		accuracy: 100,
 		basePower: 0,
@@ -17470,7 +11648,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Tough"
 	},
-	scorchingsands: {
+	"ねっさのだいち": {
 		num: 815,
 		accuracy: 100,
 		basePower: 70,
@@ -17487,7 +11665,7 @@ export const Moves = {
 		target: "normal",
 		type: "Ground"
 	},
-	scratch: {
+	"ひっかく": {
 		num: 10,
 		accuracy: 100,
 		basePower: 40,
@@ -17501,7 +11679,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	screech: {
+	"いやなおと": {
 		num: 103,
 		accuracy: 85,
 		basePower: 0,
@@ -17526,105 +11704,7 @@ export const Moves = {
 		zMove: { boost: { atk: 1 } },
 		contestType: "Clever"
 	},
-	searingshot: {
-		num: 545,
-		accuracy: 100,
-		basePower: 100,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Searing Shot",
-		pp: 5,
-		priority: 0,
-		flags: { bullet: 1, protect: 1, mirror: 1 },
-		secondary: {
-			chance: 30,
-			status: "brn"
-		},
-		target: "allAdjacent",
-		type: "Fire",
-		contestType: "Cool"
-	},
-	searingsunrazesmash: {
-		num: 724,
-		accuracy: true,
-		basePower: 200,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Searing Sunraze Smash",
-		pp: 1,
-		priority: 0,
-		flags: { contact: 1 },
-		isZ: "solganiumz",
-		ignoreAbility: true,
-		secondary: null,
-		target: "normal",
-		type: "Steel",
-		contestType: "Cool"
-	},
-	secretpower: {
-		num: 290,
-		accuracy: 100,
-		basePower: 70,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Secret Power",
-		pp: 20,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		onModifyMove(move, pokemon) {
-			if (this.field.isTerrain("")) return
-			move.secondaries = []
-			if (this.field.isTerrain("electricterrain")) {
-				move.secondaries.push({
-					chance: 30,
-					status: "par"
-				})
-			} else if (this.field.isTerrain("grassyterrain")) {
-				move.secondaries.push({
-					chance: 30,
-					status: "slp"
-				})
-			} else if (this.field.isTerrain("mistyterrain")) {
-				move.secondaries.push({
-					chance: 30,
-					boosts: {
-						spa: -1
-					}
-				})
-			} else if (this.field.isTerrain("psychicterrain")) {
-				move.secondaries.push({
-					chance: 30,
-					boosts: {
-						spe: -1
-					}
-				})
-			}
-		},
-		secondary: {
-			chance: 30,
-			status: "par"
-		},
-		target: "normal",
-		type: "Normal",
-		contestType: "Clever"
-	},
-	secretsword: {
-		num: 548,
-		accuracy: 100,
-		basePower: 85,
-		category: "Special",
-		isNonstandard: "Past",
-		overrideDefensiveStat: "def",
-		name: "Secret Sword",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1, slicing: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Fighting",
-		contestType: "Beautiful"
-	},
-	seedbomb: {
+	"タネばくだん": {
 		num: 402,
 		accuracy: 100,
 		basePower: 80,
@@ -17638,7 +11718,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Tough"
 	},
-	seedflare: {
+	"シードフレア": {
 		num: 465,
 		accuracy: 85,
 		basePower: 120,
@@ -17657,7 +11737,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Beautiful"
 	},
-	seismictoss: {
+	"ちきゅうなげ": {
 		num: 69,
 		accuracy: 100,
 		basePower: 0,
@@ -17673,7 +11753,7 @@ export const Moves = {
 		maxMove: { basePower: 75 },
 		contestType: "Tough"
 	},
-	selfdestruct: {
+	"じばく": {
 		num: 120,
 		accuracy: 100,
 		basePower: 200,
@@ -17688,7 +11768,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Beautiful"
 	},
-	shadowball: {
+	"シャドーボール": {
 		num: 247,
 		accuracy: 100,
 		basePower: 80,
@@ -17707,27 +11787,7 @@ export const Moves = {
 		type: "Ghost",
 		contestType: "Clever"
 	},
-	shadowbone: {
-		num: 708,
-		accuracy: 100,
-		basePower: 85,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Shadow Bone",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: {
-			chance: 20,
-			boosts: {
-				def: -1
-			}
-		},
-		target: "normal",
-		type: "Ghost",
-		contestType: "Cool"
-	},
-	shadowclaw: {
+	"シャドークロー": {
 		num: 421,
 		accuracy: 100,
 		basePower: 70,
@@ -17742,7 +11802,7 @@ export const Moves = {
 		type: "Ghost",
 		contestType: "Cool"
 	},
-	shadowforce: {
+	"シャドーダイブ": {
 		num: 467,
 		accuracy: 100,
 		basePower: 120,
@@ -17779,7 +11839,7 @@ export const Moves = {
 		type: "Ghost",
 		contestType: "Cool"
 	},
-	shadowpunch: {
+	"シャドーパンチ": {
 		num: 325,
 		accuracy: true,
 		basePower: 60,
@@ -17793,7 +11853,7 @@ export const Moves = {
 		type: "Ghost",
 		contestType: "Clever"
 	},
-	shadowsneak: {
+	"かげうち": {
 		num: 425,
 		accuracy: 100,
 		basePower: 40,
@@ -17807,62 +11867,7 @@ export const Moves = {
 		type: "Ghost",
 		contestType: "Clever"
 	},
-	shadowstrike: {
-		num: 0,
-		accuracy: 95,
-		basePower: 80,
-		category: "Physical",
-		isNonstandard: "CAP",
-		name: "Shadow Strike",
-		pp: 10,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: {
-			chance: 50,
-			boosts: {
-				def: -1
-			}
-		},
-		target: "normal",
-		type: "Ghost",
-		contestType: "Clever"
-	},
-	sharpen: {
-		num: 159,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Sharpen",
-		pp: 30,
-		priority: 0,
-		flags: { snatch: 1 },
-		boosts: {
-			atk: 1
-		},
-		secondary: null,
-		target: "self",
-		type: "Normal",
-		zMove: { boost: { atk: 1 } },
-		contestType: "Cute"
-	},
-	shatteredpsyche: {
-		num: 648,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Shattered Psyche",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "psychiumz",
-		secondary: null,
-		target: "normal",
-		type: "Psychic",
-		contestType: "Cool"
-	},
-	shedtail: {
+	"しっぽきり": {
 		num: 880,
 		accuracy: true,
 		basePower: 0,
@@ -17900,7 +11905,7 @@ export const Moves = {
 		type: "Normal",
 		zMove: { effect: "clearnegativeboost" }
 	},
-	sheercold: {
+	"ぜったいれいど": {
 		num: 329,
 		accuracy: 30,
 		basePower: 0,
@@ -17917,7 +11922,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Beautiful"
 	},
-	shellsidearm: {
+	"シェルアームズ": {
 		num: 801,
 		accuracy: 100,
 		basePower: 90,
@@ -17969,7 +11974,7 @@ export const Moves = {
 		target: "normal",
 		type: "Poison"
 	},
-	shellsmash: {
+	"からをやぶる": {
 		num: 504,
 		accuracy: true,
 		basePower: 0,
@@ -17991,54 +11996,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Tough"
 	},
-	shelltrap: {
-		num: 704,
-		accuracy: 100,
-		basePower: 150,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Shell Trap",
-		pp: 5,
-		priority: -3,
-		flags: {
-			protect: 1,
-			failmefirst: 1,
-			nosleeptalk: 1,
-			noassist: 1,
-			failcopycat: 1,
-			failinstruct: 1
-		},
-		priorityChargeCallback(pokemon) {
-			pokemon.addVolatile("shelltrap")
-		},
-		onTryMove(pokemon) {
-			if (!pokemon.volatiles["shelltrap"]?.gotHit) {
-				this.attrLastMove("[still]")
-				this.add("cant", pokemon, "Shell Trap", "Shell Trap")
-				return null
-			}
-		},
-		condition: {
-			duration: 1,
-			onStart(pokemon) {
-				this.add("-singleturn", pokemon, "move: Shell Trap")
-			},
-			onHit(pokemon, source, move) {
-				if (!pokemon.isAlly(source) && move.category === "Physical") {
-					this.effectState.gotHit = true
-					const action = this.queue.willMove(pokemon)
-					if (action) {
-						this.queue.prioritizeAction(action)
-					}
-				}
-			}
-		},
-		secondary: null,
-		target: "allAdjacentFoes",
-		type: "Fire",
-		contestType: "Tough"
-	},
-	shelter: {
+	"たてこもる": {
 		num: 842,
 		accuracy: true,
 		basePower: 0,
@@ -18054,7 +12012,7 @@ export const Moves = {
 		target: "self",
 		type: "Steel"
 	},
-	shiftgear: {
+	"ギアチェンジ": {
 		num: 508,
 		accuracy: true,
 		basePower: 0,
@@ -18073,7 +12031,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
-	shockwave: {
+	"でんげきは": {
 		num: 351,
 		accuracy: true,
 		basePower: 60,
@@ -18087,7 +12045,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Cool"
 	},
-	shoreup: {
+	"すなあつめ": {
 		num: 659,
 		accuracy: true,
 		basePower: 0,
@@ -18114,25 +12072,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
-	signalbeam: {
-		num: 324,
-		accuracy: 100,
-		basePower: 75,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Signal Beam",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: {
-			chance: 10,
-			volatileStatus: "confusion"
-		},
-		target: "normal",
-		type: "Bug",
-		contestType: "Beautiful"
-	},
-	silktrap: {
+	"スレッドトラップ": {
 		num: 852,
 		accuracy: true,
 		basePower: 0,
@@ -18200,33 +12140,7 @@ export const Moves = {
 		target: "self",
 		type: "Bug"
 	},
-	silverwind: {
-		num: 318,
-		accuracy: 100,
-		basePower: 60,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Silver Wind",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: {
-			chance: 10,
-			self: {
-				boosts: {
-					atk: 1,
-					def: 1,
-					spa: 1,
-					spd: 1,
-					spe: 1
-				}
-			}
-		},
-		target: "normal",
-		type: "Bug",
-		contestType: "Beautiful"
-	},
-	simplebeam: {
+	"シンプルビーム": {
 		num: 493,
 		accuracy: 100,
 		basePower: 0,
@@ -18258,7 +12172,7 @@ export const Moves = {
 		zMove: { boost: { spa: 1 } },
 		contestType: "Cute"
 	},
-	sing: {
+	"うたう": {
 		num: 47,
 		accuracy: 55,
 		basePower: 0,
@@ -18274,90 +12188,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Cute"
 	},
-	sinisterarrowraid: {
-		num: 695,
-		accuracy: true,
-		basePower: 180,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Sinister Arrow Raid",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "decidiumz",
-		secondary: null,
-		target: "normal",
-		type: "Ghost",
-		contestType: "Cool"
-	},
-	sizzlyslide: {
-		num: 735,
-		accuracy: 100,
-		basePower: 60,
-		category: "Physical",
-		isNonstandard: "LGPE",
-		name: "Sizzly Slide",
-		pp: 20,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, defrost: 1 },
-		secondary: {
-			chance: 100,
-			status: "brn"
-		},
-		target: "normal",
-		type: "Fire",
-		contestType: "Clever"
-	},
-	sketch: {
-		num: 166,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Sketch",
-		pp: 1,
-		noPPBoosts: true,
-		priority: 0,
-		flags: {
-			bypasssub: 1,
-			allyanim: 1,
-			failencore: 1,
-			nosleeptalk: 1,
-			noassist: 1,
-			failcopycat: 1,
-			failinstruct: 1,
-			failmimic: 1
-		},
-		onHit(target, source) {
-			const disallowedMoves = ["chatter", "sketch", "struggle"]
-			const move = target.lastMove
-			if (source.transformed || !move || source.moves.includes(move.id))
-				return false
-			if (disallowedMoves.includes(move.id) || move.isZ || move.isMax)
-				return false
-			const sketchIndex = source.moves.indexOf("sketch")
-			if (sketchIndex < 0) return false
-			const sketchedMove = {
-				move: move.name,
-				id: move.id,
-				pp: move.pp,
-				maxpp: move.pp,
-				target: move.target,
-				disabled: false,
-				used: false
-			}
-			source.moveSlots[sketchIndex] = sketchedMove
-			source.baseMoveSlots[sketchIndex] = sketchedMove
-			this.add("-activate", source, "move: Sketch", move.name)
-		},
-		noSketch: true,
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
-		contestType: "Clever"
-	},
-	skillswap: {
+	"スキルスワップ": {
 		num: 285,
 		accuracy: true,
 		basePower: 0,
@@ -18440,7 +12271,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
-	skittersmack: {
+	"はいよるいちげき": {
 		num: 806,
 		accuracy: 90,
 		basePower: 70,
@@ -18458,41 +12289,7 @@ export const Moves = {
 		target: "normal",
 		type: "Bug"
 	},
-	skullbash: {
-		num: 130,
-		accuracy: 100,
-		basePower: 130,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Skull Bash",
-		pp: 10,
-		priority: 0,
-		flags: {
-			contact: 1,
-			charge: 1,
-			protect: 1,
-			mirror: 1,
-			nosleeptalk: 1,
-			failinstruct: 1
-		},
-		onTryMove(attacker, defender, move) {
-			if (attacker.removeVolatile(move.id)) {
-				return
-			}
-			this.add("-prepare", attacker, move.name)
-			this.boost({ def: 1 }, attacker, attacker, move)
-			if (!this.runEvent("ChargeMove", attacker, defender, move)) {
-				return
-			}
-			attacker.addVolatile("twoturnmove", defender)
-			return null
-		},
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Tough"
-	},
-	skyattack: {
+	"ゴッドバード": {
 		num: 143,
 		accuracy: 90,
 		basePower: 140,
@@ -18528,181 +12325,7 @@ export const Moves = {
 		type: "Flying",
 		contestType: "Cool"
 	},
-	skydrop: {
-		num: 507,
-		accuracy: 100,
-		basePower: 60,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Sky Drop",
-		pp: 10,
-		priority: 0,
-		flags: {
-			contact: 1,
-			charge: 1,
-			protect: 1,
-			mirror: 1,
-			gravity: 1,
-			distance: 1,
-			nosleeptalk: 1,
-			noassist: 1,
-			failinstruct: 1
-		},
-		onModifyMove(move, source) {
-			if (!source.volatiles["skydrop"]) {
-				move.accuracy = true
-				delete move.flags["contact"]
-			}
-		},
-		onMoveFail(target, source) {
-			if (
-				source.volatiles["twoturnmove"] &&
-				source.volatiles["twoturnmove"].duration === 1
-			) {
-				source.removeVolatile("skydrop")
-				source.removeVolatile("twoturnmove")
-				if (target === this.effectState.target) {
-					this.add("-end", target, "Sky Drop", "[interrupt]")
-				}
-			}
-		},
-		onTry(source, target) {
-			return !target.fainted
-		},
-		onTryHit(target, source, move) {
-			if (source.removeVolatile(move.id)) {
-				if (target !== source.volatiles["twoturnmove"].source) return false
-
-				if (target.hasType("Flying")) {
-					this.add("-immune", target)
-					return null
-				}
-			} else {
-				if (target.volatiles["substitute"] || target.isAlly(source)) {
-					return false
-				}
-				if (target.getWeight() >= 2000) {
-					this.add("-fail", target, "move: Sky Drop", "[heavy]")
-					return null
-				}
-
-				this.add("-prepare", source, move.name, target)
-				source.addVolatile("twoturnmove", target)
-				return null
-			}
-		},
-		onHit(target, source) {
-			if (target.hp) this.add("-end", target, "Sky Drop")
-		},
-		condition: {
-			duration: 2,
-			onAnyDragOut(pokemon) {
-				if (
-					pokemon === this.effectState.target ||
-					pokemon === this.effectState.source
-				)
-					return false
-			},
-			onFoeTrapPokemonPriority: -15,
-			onFoeTrapPokemon(defender) {
-				if (defender !== this.effectState.source) return
-				defender.trapped = true
-			},
-			onFoeBeforeMovePriority: 12,
-			onFoeBeforeMove(attacker, defender, move) {
-				if (attacker === this.effectState.source) {
-					attacker.activeMoveActions--
-					this.debug("Sky drop nullifying.")
-					return null
-				}
-			},
-			onRedirectTargetPriority: 99,
-			onRedirectTarget(target, source, source2) {
-				if (source !== this.effectState.target) return
-				if (this.effectState.source.fainted) return
-				return this.effectState.source
-			},
-			onAnyInvulnerability(target, source, move) {
-				if (
-					target !== this.effectState.target &&
-					target !== this.effectState.source
-				) {
-					return
-				}
-				if (
-					source === this.effectState.target &&
-					target === this.effectState.source
-				) {
-					return
-				}
-				if (
-					[
-						"gust",
-						"twister",
-						"skyuppercut",
-						"thunder",
-						"hurricane",
-						"smackdown",
-						"thousandarrows"
-					].includes(move.id)
-				) {
-					return
-				}
-				return false
-			},
-			onAnyBasePower(basePower, target, source, move) {
-				if (
-					target !== this.effectState.target &&
-					target !== this.effectState.source
-				) {
-					return
-				}
-				if (
-					source === this.effectState.target &&
-					target === this.effectState.source
-				) {
-					return
-				}
-				if (move.id === "gust" || move.id === "twister") {
-					this.debug("BP doubled on midair target")
-					return this.chainModify(2)
-				}
-			},
-			onFaint(target) {
-				if (
-					target.volatiles["skydrop"] &&
-					target.volatiles["twoturnmove"].source
-				) {
-					this.add(
-						"-end",
-						target.volatiles["twoturnmove"].source,
-						"Sky Drop",
-						"[interrupt]"
-					)
-				}
-			}
-		},
-		secondary: null,
-		target: "any",
-		type: "Flying",
-		contestType: "Tough"
-	},
-	skyuppercut: {
-		num: 327,
-		accuracy: 90,
-		basePower: 85,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Sky Uppercut",
-		pp: 15,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Fighting",
-		contestType: "Cool"
-	},
-	slackoff: {
+	"なまける": {
 		num: 303,
 		accuracy: true,
 		basePower: 0,
@@ -18718,7 +12341,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
-	slam: {
+	"たたきつける": {
 		num: 21,
 		accuracy: 75,
 		basePower: 80,
@@ -18732,7 +12355,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	slash: {
+	"きりさく": {
 		num: 163,
 		accuracy: 100,
 		basePower: 70,
@@ -18747,7 +12370,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cool"
 	},
-	sleeppowder: {
+	"ねむりごな": {
 		num: 79,
 		accuracy: 75,
 		basePower: 0,
@@ -18763,7 +12386,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
-	sleeptalk: {
+	"ねごと": {
 		num: 214,
 		accuracy: true,
 		basePower: 0,
@@ -18812,7 +12435,7 @@ export const Moves = {
 		zMove: { effect: "crit2" },
 		contestType: "Cute"
 	},
-	sludge: {
+	"ヘドロこうげき": {
 		num: 124,
 		accuracy: 100,
 		basePower: 65,
@@ -18829,7 +12452,7 @@ export const Moves = {
 		type: "Poison",
 		contestType: "Tough"
 	},
-	sludgebomb: {
+	"ヘドロばくだん": {
 		num: 188,
 		accuracy: 100,
 		basePower: 90,
@@ -18846,7 +12469,7 @@ export const Moves = {
 		type: "Poison",
 		contestType: "Tough"
 	},
-	sludgewave: {
+	"ヘドロウェーブ": {
 		num: 482,
 		accuracy: 100,
 		basePower: 95,
@@ -18863,7 +12486,7 @@ export const Moves = {
 		type: "Poison",
 		contestType: "Tough"
 	},
-	smackdown: {
+	"うちおとす": {
 		num: 479,
 		accuracy: 100,
 		basePower: 50,
@@ -18915,7 +12538,7 @@ export const Moves = {
 		type: "Rock",
 		contestType: "Tough"
 	},
-	smartstrike: {
+	"スマートホーン": {
 		num: 684,
 		accuracy: true,
 		basePower: 70,
@@ -18929,32 +12552,7 @@ export const Moves = {
 		type: "Steel",
 		contestType: "Cool"
 	},
-	smellingsalts: {
-		num: 265,
-		accuracy: 100,
-		basePower: 70,
-		basePowerCallback(pokemon, target, move) {
-			if (target.status === "par") {
-				this.debug("BP doubled on paralyzed target")
-				return move.basePower * 2
-			}
-			return move.basePower
-		},
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Smelling Salts",
-		pp: 10,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		onHit(target) {
-			if (target.status === "par") target.cureStatus()
-		},
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Tough"
-	},
-	smog: {
+	"スモッグ": {
 		num: 123,
 		accuracy: 70,
 		basePower: 30,
@@ -18971,7 +12569,7 @@ export const Moves = {
 		type: "Poison",
 		contestType: "Tough"
 	},
-	smokescreen: {
+	"えんまく": {
 		num: 108,
 		accuracy: 100,
 		basePower: 0,
@@ -18989,22 +12587,7 @@ export const Moves = {
 		zMove: { boost: { evasion: 1 } },
 		contestType: "Clever"
 	},
-	snaptrap: {
-		num: 779,
-		accuracy: 100,
-		basePower: 35,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Snap Trap",
-		pp: 15,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		volatileStatus: "partiallytrapped",
-		secondary: null,
-		target: "normal",
-		type: "Grass"
-	},
-	snarl: {
+	"バークアウト": {
 		num: 555,
 		accuracy: 95,
 		basePower: 55,
@@ -19023,48 +12606,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Tough"
 	},
-	snatch: {
-		num: 289,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Snatch",
-		pp: 10,
-		priority: 4,
-		flags: { bypasssub: 1, mustpressure: 1, noassist: 1, failcopycat: 1 },
-		volatileStatus: "snatch",
-		condition: {
-			duration: 1,
-			onStart(pokemon) {
-				this.add("-singleturn", pokemon, "Snatch")
-			},
-			onAnyPrepareHitPriority: -1,
-			onAnyPrepareHit(source, target, move) {
-				const snatchUser = this.effectState.source
-				if (snatchUser.isSkyDropped()) return
-				if (
-					!move ||
-					move.isZ ||
-					move.isMax ||
-					!move.flags["snatch"] ||
-					move.sourceEffect === "snatch"
-				) {
-					return
-				}
-				snatchUser.removeVolatile("snatch")
-				this.add("-activate", snatchUser, "move: Snatch", "[of] " + source)
-				this.actions.useMove(move.id, snatchUser)
-				return null
-			}
-		},
-		secondary: null,
-		target: "self",
-		type: "Dark",
-		zMove: { boost: { spe: 2 } },
-		contestType: "Clever"
-	},
-	snipeshot: {
+	"ねらいうち": {
 		num: 745,
 		accuracy: 100,
 		basePower: 80,
@@ -19079,7 +12621,7 @@ export const Moves = {
 		target: "normal",
 		type: "Water"
 	},
-	snore: {
+	"いびき": {
 		num: 173,
 		accuracy: 100,
 		basePower: 50,
@@ -19100,7 +12642,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cute"
 	},
-	snowscape: {
+	"ゆきげしき": {
 		num: 883,
 		accuracy: true,
 		basePower: 0,
@@ -19114,7 +12656,7 @@ export const Moves = {
 		target: "all",
 		type: "Ice"
 	},
-	soak: {
+	"みずびたし": {
 		num: 487,
 		accuracy: 100,
 		basePower: 0,
@@ -19138,7 +12680,7 @@ export const Moves = {
 		zMove: { boost: { spa: 1 } },
 		contestType: "Cute"
 	},
-	softboiled: {
+	"タマゴうみ": {
 		num: 135,
 		accuracy: true,
 		basePower: 0,
@@ -19154,7 +12696,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
-	solarbeam: {
+	"ソーラービーム": {
 		num: 76,
 		accuracy: 100,
 		basePower: 120,
@@ -19203,7 +12745,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Cool"
 	},
-	solarblade: {
+	"ソーラーブレード": {
 		num: 669,
 		accuracy: 100,
 		basePower: 125,
@@ -19254,39 +12796,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Cool"
 	},
-	sonicboom: {
-		num: 49,
-		accuracy: 90,
-		basePower: 0,
-		damage: 20,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Sonic Boom",
-		pp: 20,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Cool"
-	},
-	soulstealing7starstrike: {
-		num: 699,
-		accuracy: true,
-		basePower: 195,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Soul-Stealing 7-Star Strike",
-		pp: 1,
-		priority: 0,
-		flags: { contact: 1 },
-		isZ: "marshadiumz",
-		secondary: null,
-		target: "normal",
-		type: "Ghost",
-		contestType: "Cool"
-	},
-	spacialrend: {
+	"あくうせつだん": {
 		num: 460,
 		accuracy: 95,
 		basePower: 100,
@@ -19301,7 +12811,7 @@ export const Moves = {
 		type: "Dragon",
 		contestType: "Beautiful"
 	},
-	spark: {
+	"スパーク": {
 		num: 209,
 		accuracy: 100,
 		basePower: 65,
@@ -19318,84 +12828,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Cool"
 	},
-	sparklingaria: {
-		num: 664,
-		accuracy: 100,
-		basePower: 90,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Sparkling Aria",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1, sound: 1, bypasssub: 1 },
-		secondary: {
-			dustproof: true,
-			chance: 100,
-			volatileStatus: "sparklingaria"
-		},
-		onAfterMove(source, target, move) {
-			for (const pokemon of this.getAllActive()) {
-				if (
-					pokemon !== source &&
-					pokemon.removeVolatile("sparklingaria") &&
-					pokemon.status === "brn" &&
-					!source.fainted
-				) {
-					pokemon.cureStatus()
-				}
-			}
-		},
-		target: "allAdjacent",
-		type: "Water",
-		contestType: "Tough"
-	},
-	sparklyswirl: {
-		num: 740,
-		accuracy: 85,
-		basePower: 120,
-		category: "Special",
-		isNonstandard: "LGPE",
-		name: "Sparkly Swirl",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		self: {
-			onHit(pokemon, source, move) {
-				this.add("-activate", source, "move: Aromatherapy")
-				for (const ally of source.side.pokemon) {
-					if (
-						ally !== source &&
-						ally.volatiles["substitute"] && !move.infiltrates
-					) {
-						continue
-					}
-					ally.cureStatus()
-				}
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Fairy",
-		contestType: "Clever"
-	},
-	spectralthief: {
-		num: 712,
-		accuracy: 100,
-		basePower: 90,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Spectral Thief",
-		pp: 10,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, bypasssub: 1 },
-		stealsBoosts: true,
-		// Boost stealing implemented in scripts.js
-		secondary: null,
-		target: "normal",
-		type: "Ghost",
-		contestType: "Cool"
-	},
-	speedswap: {
+	"スピードスワップ": {
 		num: 683,
 		accuracy: true,
 		basePower: 0,
@@ -19416,7 +12849,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
-	spicyextract: {
+	"ハバネロエキス": {
 		num: 858,
 		accuracy: true,
 		basePower: 0,
@@ -19433,43 +12866,7 @@ export const Moves = {
 		target: "normal",
 		type: "Grass"
 	},
-	spiderweb: {
-		num: 169,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Spider Web",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
-		onHit(target, source, move) {
-			return target.addVolatile("trapped", source, move, "trapper")
-		},
-		secondary: null,
-		target: "normal",
-		type: "Bug",
-		zMove: { boost: { def: 1 } },
-		contestType: "Clever"
-	},
-	spikecannon: {
-		num: 131,
-		accuracy: 100,
-		basePower: 20,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Spike Cannon",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		multihit: [2, 5],
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		maxMove: { basePower: 120 },
-		contestType: "Cool"
-	},
-	spikes: {
+	"まきびし": {
 		num: 191,
 		accuracy: true,
 		basePower: 0,
@@ -19504,7 +12901,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
-	spikyshield: {
+	"ニードルガード": {
 		num: 596,
 		accuracy: true,
 		basePower: 0,
@@ -19566,7 +12963,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Tough"
 	},
-	spinout: {
+	"ホイールスピン": {
 		num: 859,
 		accuracy: 100,
 		basePower: 100,
@@ -19584,7 +12981,7 @@ export const Moves = {
 		target: "normal",
 		type: "Steel"
 	},
-	spiritbreak: {
+	"ソウルクラッシュ": {
 		num: 789,
 		accuracy: 100,
 		basePower: 75,
@@ -19602,7 +12999,7 @@ export const Moves = {
 		target: "normal",
 		type: "Fairy"
 	},
-	spiritshackle: {
+	"かげぬい": {
 		num: 662,
 		accuracy: 100,
 		basePower: 80,
@@ -19622,7 +13019,7 @@ export const Moves = {
 		type: "Ghost",
 		contestType: "Tough"
 	},
-	spitup: {
+	"はきだす": {
 		num: 255,
 		accuracy: 100,
 		basePower: 0,
@@ -19646,7 +13043,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	spite: {
+	"うらみ": {
 		num: 180,
 		accuracy: 100,
 		basePower: 0,
@@ -19670,7 +13067,7 @@ export const Moves = {
 		zMove: { effect: "heal" },
 		contestType: "Tough"
 	},
-	splash: {
+	"はねる": {
 		num: 150,
 		accuracy: true,
 		basePower: 0,
@@ -19695,47 +13092,7 @@ export const Moves = {
 		zMove: { boost: { atk: 3 } },
 		contestType: "Cute"
 	},
-	splinteredstormshards: {
-		num: 727,
-		accuracy: true,
-		basePower: 190,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Splintered Stormshards",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		onHit() {
-			this.field.clearTerrain()
-		},
-		onAfterSubDamage() {
-			this.field.clearTerrain()
-		},
-		isZ: "lycaniumz",
-		secondary: null,
-		target: "normal",
-		type: "Rock",
-		contestType: "Cool"
-	},
-	splishysplash: {
-		num: 730,
-		accuracy: 100,
-		basePower: 90,
-		category: "Special",
-		isNonstandard: "LGPE",
-		name: "Splishy Splash",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		secondary: {
-			chance: 30,
-			status: "par"
-		},
-		target: "allAdjacentFoes",
-		type: "Water",
-		contestType: "Cool"
-	},
-	spore: {
+	"キノコのほうし": {
 		num: 147,
 		accuracy: 100,
 		basePower: 0,
@@ -19751,46 +13108,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
-	spotlight: {
-		num: 671,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Spotlight",
-		pp: 15,
-		priority: 3,
-		flags: {
-			protect: 1,
-			reflectable: 1,
-			allyanim: 1,
-			noassist: 1,
-			failcopycat: 1
-		},
-		volatileStatus: "spotlight",
-		onTryHit(target) {
-			if (this.activePerHalf === 1) return false
-		},
-		condition: {
-			duration: 1,
-			onStart(pokemon) {
-				this.add("-singleturn", pokemon, "move: Spotlight")
-			},
-			onFoeRedirectTargetPriority: 2,
-			onFoeRedirectTarget(target, source, source2, move) {
-				if (this.validTarget(this.effectState.target, source, move.target)) {
-					this.debug("Spotlight redirected target of move")
-					return this.effectState.target
-				}
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { boost: { spd: 1 } },
-		contestType: "Cute"
-	},
-	springtidestorm: {
+	"はるのあらし": {
 		num: 831,
 		accuracy: 80,
 		basePower: 100,
@@ -19808,7 +13126,7 @@ export const Moves = {
 		target: "allAdjacentFoes",
 		type: "Fairy"
 	},
-	stealthrock: {
+	"ステルスロック": {
 		num: 446,
 		accuracy: true,
 		basePower: 0,
@@ -19839,7 +13157,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Cool"
 	},
-	steameruption: {
+	"スチームバースト": {
 		num: 592,
 		accuracy: 95,
 		basePower: 110,
@@ -19857,25 +13175,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Beautiful"
 	},
-	steamroller: {
-		num: 537,
-		accuracy: 100,
-		basePower: 65,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Steamroller",
-		pp: 20,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: {
-			chance: 30,
-			volatileStatus: "flinch"
-		},
-		target: "normal",
-		type: "Bug",
-		contestType: "Tough"
-	},
-	steelbeam: {
+	"てっていこうせん": {
 		num: 796,
 		accuracy: 95,
 		basePower: 140,
@@ -19907,7 +13207,7 @@ export const Moves = {
 		target: "normal",
 		type: "Steel"
 	},
-	steelroller: {
+	"アイアンローラー": {
 		num: 798,
 		accuracy: 100,
 		basePower: 130,
@@ -19929,7 +13229,7 @@ export const Moves = {
 		target: "normal",
 		type: "Steel"
 	},
-	steelwing: {
+	"はがねのつばさ": {
 		num: 211,
 		accuracy: 90,
 		basePower: 70,
@@ -19950,7 +13250,7 @@ export const Moves = {
 		type: "Steel",
 		contestType: "Cool"
 	},
-	stickyweb: {
+	"ねばねばネット": {
 		num: 564,
 		accuracy: true,
 		basePower: 0,
@@ -19981,7 +13281,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Tough"
 	},
-	stockpile: {
+	"たくわえる": {
 		num: 254,
 		accuracy: true,
 		basePower: 0,
@@ -20044,26 +13344,7 @@ export const Moves = {
 		zMove: { effect: "heal" },
 		contestType: "Tough"
 	},
-	stokedsparksurfer: {
-		num: 700,
-		accuracy: true,
-		basePower: 175,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Stoked Sparksurfer",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "aloraichiumz",
-		secondary: {
-			chance: 100,
-			status: "par"
-		},
-		target: "normal",
-		type: "Electric",
-		contestType: "Cool"
-	},
-	stomp: {
+	"ふみつけ": {
 		num: 23,
 		accuracy: 100,
 		basePower: 65,
@@ -20080,7 +13361,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	stompingtantrum: {
+	"じだんだ": {
 		num: 707,
 		accuracy: 100,
 		basePower: 75,
@@ -20101,7 +13382,7 @@ export const Moves = {
 		type: "Ground",
 		contestType: "Tough"
 	},
-	stoneaxe: {
+	"がんせきアックス": {
 		num: 830,
 		accuracy: 90,
 		basePower: 65,
@@ -20128,7 +13409,7 @@ export const Moves = {
 		target: "normal",
 		type: "Rock"
 	},
-	stoneedge: {
+	"ストーンエッジ": {
 		num: 444,
 		accuracy: 80,
 		basePower: 100,
@@ -20143,7 +13424,7 @@ export const Moves = {
 		type: "Rock",
 		contestType: "Tough"
 	},
-	storedpower: {
+	"アシストパワー": {
 		num: 500,
 		accuracy: 100,
 		basePower: 20,
@@ -20164,23 +13445,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Clever"
 	},
-	stormthrow: {
-		num: 480,
-		accuracy: 100,
-		basePower: 60,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Storm Throw",
-		pp: 10,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		willCrit: true,
-		secondary: null,
-		target: "normal",
-		type: "Fighting",
-		contestType: "Cool"
-	},
-	strangesteam: {
+	"ワンダースチーム": {
 		num: 790,
 		accuracy: 95,
 		basePower: 90,
@@ -20196,7 +13461,7 @@ export const Moves = {
 		target: "normal",
 		type: "Fairy"
 	},
-	strength: {
+	"かいりき": {
 		num: 70,
 		accuracy: 100,
 		basePower: 80,
@@ -20210,7 +13475,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	strengthsap: {
+	"ちからをすいとる": {
 		num: 668,
 		accuracy: 100,
 		basePower: 0,
@@ -20231,7 +13496,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
-	stringshot: {
+	"いとをはく": {
 		num: 81,
 		accuracy: 95,
 		basePower: 0,
@@ -20249,7 +13514,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
-	struggle: {
+	"わるあがき": {
 		num: 165,
 		accuracy: true,
 		basePower: 50,
@@ -20280,7 +13545,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	strugglebug: {
+	"むしのていこう": {
 		num: 522,
 		accuracy: 100,
 		basePower: 50,
@@ -20299,7 +13564,7 @@ export const Moves = {
 		type: "Bug",
 		contestType: "Cute"
 	},
-	stuffcheeks: {
+	"ほおばる": {
 		num: 747,
 		accuracy: true,
 		basePower: 0,
@@ -20322,7 +13587,7 @@ export const Moves = {
 		target: "self",
 		type: "Normal"
 	},
-	stunspore: {
+	"しびれごな": {
 		num: 78,
 		accuracy: 75,
 		basePower: 0,
@@ -20338,23 +13603,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
-	submission: {
-		num: 66,
-		accuracy: 80,
-		basePower: 80,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Submission",
-		pp: 20,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		recoil: [1, 4],
-		secondary: null,
-		target: "normal",
-		type: "Fighting",
-		contestType: "Cool"
-	},
-	substitute: {
+	"みがわり": {
 		num: 164,
 		accuracy: true,
 		basePower: 0,
@@ -20461,23 +13710,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
-	subzeroslammer: {
-		num: 650,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Subzero Slammer",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "iciumz",
-		secondary: null,
-		target: "normal",
-		type: "Ice",
-		contestType: "Cool"
-	},
-	suckerpunch: {
+	"ふいうち": {
 		num: 389,
 		accuracy: 100,
 		basePower: 70,
@@ -20502,7 +13735,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Clever"
 	},
-	sunnyday: {
+	"にほんばれ": {
 		num: 241,
 		accuracy: true,
 		basePower: 0,
@@ -20518,23 +13751,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Beautiful"
 	},
-	sunsteelstrike: {
-		num: 713,
-		accuracy: 100,
-		basePower: 100,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Sunsteel Strike",
-		pp: 5,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		ignoreAbility: true,
-		secondary: null,
-		target: "normal",
-		type: "Steel",
-		contestType: "Cool"
-	},
-	superfang: {
+	"いかりのまえば": {
 		num: 162,
 		accuracy: 90,
 		basePower: 0,
@@ -20551,7 +13768,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	superpower: {
+	"ばかぢから": {
 		num: 276,
 		accuracy: 100,
 		basePower: 120,
@@ -20571,7 +13788,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Tough"
 	},
-	supersonic: {
+	"ちょうおんぱ": {
 		num: 48,
 		accuracy: 55,
 		basePower: 0,
@@ -20587,23 +13804,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
-	supersonicskystrike: {
-		num: 626,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Supersonic Skystrike",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "flyiniumz",
-		secondary: null,
-		target: "normal",
-		type: "Flying",
-		contestType: "Cool"
-	},
-	surf: {
+	"なみのり": {
 		num: 57,
 		accuracy: 100,
 		basePower: 90,
@@ -20617,7 +13818,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Beautiful"
 	},
-	surgingstrikes: {
+	"すいりゅうれんだ": {
 		num: 818,
 		accuracy: 100,
 		basePower: 25,
@@ -20634,7 +13835,7 @@ export const Moves = {
 		zMove: { basePower: 140 },
 		maxMove: { basePower: 130 }
 	},
-	swagger: {
+	"いばる": {
 		num: 207,
 		accuracy: 85,
 		basePower: 0,
@@ -20653,7 +13854,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
-	swallow: {
+	"のみこむ": {
 		num: 256,
 		accuracy: true,
 		basePower: 0,
@@ -20683,7 +13884,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Tough"
 	},
-	sweetkiss: {
+	"てんしのキッス": {
 		num: 186,
 		accuracy: 75,
 		basePower: 0,
@@ -20699,7 +13900,7 @@ export const Moves = {
 		zMove: { boost: { spa: 1 } },
 		contestType: "Cute"
 	},
-	sweetscent: {
+	"あまいかおり": {
 		num: 230,
 		accuracy: 100,
 		basePower: 0,
@@ -20717,7 +13918,7 @@ export const Moves = {
 		zMove: { boost: { accuracy: 1 } },
 		contestType: "Cute"
 	},
-	swift: {
+	"スピードスター": {
 		num: 129,
 		accuracy: true,
 		basePower: 60,
@@ -20731,7 +13932,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cool"
 	},
-	switcheroo: {
+	"すりかえ": {
 		num: 415,
 		accuracy: 100,
 		basePower: 0,
@@ -20809,7 +14010,7 @@ export const Moves = {
 		zMove: { boost: { spe: 2 } },
 		contestType: "Clever"
 	},
-	swordsdance: {
+	"つるぎのまい": {
 		num: 14,
 		accuracy: true,
 		basePower: 0,
@@ -20827,25 +14028,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
-	synchronoise: {
-		num: 485,
-		accuracy: 100,
-		basePower: 120,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Synchronoise",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		onTryImmunity(target, source) {
-			return target.hasType(source.getTypes())
-		},
-		secondary: null,
-		target: "allAdjacent",
-		type: "Psychic",
-		contestType: "Clever"
-	},
-	synthesis: {
+	"こうごうせい": {
 		num: 235,
 		accuracy: true,
 		basePower: 0,
@@ -20882,7 +14065,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
-	syrupbomb: {
+	"みずあめボム": {
 		num: 903,
 		accuracy: 85,
 		basePower: 60,
@@ -20912,7 +14095,7 @@ export const Moves = {
 		target: "normal",
 		type: "Grass"
 	},
-	tackle: {
+	"たいあたり": {
 		num: 33,
 		accuracy: 100,
 		basePower: 40,
@@ -20926,7 +14109,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	tailglow: {
+	"ほたるび": {
 		num: 294,
 		accuracy: true,
 		basePower: 0,
@@ -20944,7 +14127,7 @@ export const Moves = {
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
-	tailslap: {
+	"スイープビンタ": {
 		num: 541,
 		accuracy: 85,
 		basePower: 25,
@@ -20961,7 +14144,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Cute"
 	},
-	tailwhip: {
+	"しっぽをふる": {
 		num: 39,
 		accuracy: 100,
 		basePower: 0,
@@ -20979,7 +14162,7 @@ export const Moves = {
 		zMove: { boost: { atk: 1 } },
 		contestType: "Cute"
 	},
-	tailwind: {
+	"おいかぜ": {
 		num: 366,
 		accuracy: true,
 		basePower: 0,
@@ -21025,7 +14208,7 @@ export const Moves = {
 		zMove: { effect: "crit2" },
 		contestType: "Cool"
 	},
-	takedown: {
+	"とっしん": {
 		num: 36,
 		accuracy: 85,
 		basePower: 90,
@@ -21040,7 +14223,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	takeheart: {
+	"ブレイブチャージ": {
 		num: 850,
 		accuracy: true,
 		basePower: 0,
@@ -21057,7 +14240,7 @@ export const Moves = {
 		target: "self",
 		type: "Psychic"
 	},
-	tarshot: {
+	"タールショット": {
 		num: 749,
 		accuracy: 100,
 		basePower: 0,
@@ -21087,7 +14270,7 @@ export const Moves = {
 		target: "normal",
 		type: "Rock"
 	},
-	taunt: {
+	"ちょうはつ": {
 		num: 269,
 		accuracy: 100,
 		basePower: 0,
@@ -21136,7 +14319,7 @@ export const Moves = {
 		zMove: { boost: { atk: 1 } },
 		contestType: "Clever"
 	},
-	tearfullook: {
+	"なみだめ": {
 		num: 715,
 		accuracy: true,
 		basePower: 0,
@@ -21155,7 +14338,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
-	teatime: {
+	"おちゃかい": {
 		num: 752,
 		accuracy: true,
 		basePower: 0,
@@ -21190,42 +14373,7 @@ export const Moves = {
 		target: "all",
 		type: "Normal"
 	},
-	technoblast: {
-		num: 546,
-		accuracy: 100,
-		basePower: 120,
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Techno Blast",
-		pp: 5,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		onModifyType(move, pokemon) {
-			if (pokemon.ignoringItem()) return
-			move.type = this.runEvent("Drive", pokemon, null, move, "Normal")
-		},
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Cool"
-	},
-	tectonicrage: {
-		num: 630,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Tectonic Rage",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "groundiumz",
-		secondary: null,
-		target: "normal",
-		type: "Ground",
-		contestType: "Cool"
-	},
-	teeterdance: {
+	"フラフラダンス": {
 		num: 298,
 		accuracy: 100,
 		basePower: 0,
@@ -21241,66 +14389,7 @@ export const Moves = {
 		zMove: { boost: { spa: 1 } },
 		contestType: "Cute"
 	},
-	telekinesis: {
-		num: 477,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Telekinesis",
-		pp: 15,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1, gravity: 1, allyanim: 1 },
-		volatileStatus: "telekinesis",
-		onTry(source, target, move) {
-			// Additional Gravity check for Z-move variant
-			if (this.field.getPseudoWeather("Gravity")) {
-				this.attrLastMove("[still]")
-				this.add("cant", source, "move: Gravity", move)
-				return null
-			}
-		},
-		condition: {
-			duration: 3,
-			onStart(target) {
-				if (
-					["Diglett", "Dugtrio", "Palossand", "Sandygast"].includes(
-						target.baseSpecies.baseSpecies
-					) ||
-					target.baseSpecies.name === "Gengar-Mega"
-				) {
-					this.add("-immune", target)
-					return null
-				}
-				if (target.volatiles["smackdown"] || target.volatiles["ingrain"])
-					return false
-				this.add("-start", target, "Telekinesis")
-			},
-			onAccuracyPriority: -1,
-			onAccuracy(accuracy, target, source, move) {
-				if (move && !move.ohko) return true
-			},
-			onImmunity(type) {
-				if (type === "Ground") return false
-			},
-			onUpdate(pokemon) {
-				if (pokemon.baseSpecies.name === "Gengar-Mega") {
-					delete pokemon.volatiles["telekinesis"]
-					this.add("-end", pokemon, "Telekinesis", "[silent]")
-				}
-			},
-			onResidualOrder: 19,
-			onEnd(target) {
-				this.add("-end", target, "Telekinesis")
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Psychic",
-		zMove: { boost: { spa: 1 } },
-		contestType: "Clever"
-	},
-	teleport: {
+	"テレポート": {
 		num: 100,
 		accuracy: true,
 		basePower: 0,
@@ -21319,7 +14408,7 @@ export const Moves = {
 		zMove: { effect: "heal" },
 		contestType: "Cool"
 	},
-	terablast: {
+	"テラバースト": {
 		num: 851,
 		accuracy: 100,
 		basePower: 80,
@@ -21351,7 +14440,7 @@ export const Moves = {
 		target: "normal",
 		type: "Normal"
 	},
-	terrainpulse: {
+	"だいちのはどう": {
 		num: 805,
 		accuracy: 100,
 		basePower: 50,
@@ -21389,7 +14478,7 @@ export const Moves = {
 		zMove: { basePower: 160 },
 		maxMove: { basePower: 130 }
 	},
-	thief: {
+	"どろぼう": {
 		num: 168,
 		accuracy: 100,
 		basePower: 60,
@@ -21449,52 +14538,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Tough"
 	},
-	thousandarrows: {
-		num: 614,
-		accuracy: 100,
-		basePower: 90,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Thousand Arrows",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
-		onEffectiveness(typeMod, target, type, move) {
-			if (move.type !== "Ground") return
-			if (!target) return // avoid crashing when called from a chat plugin
-			// ignore effectiveness if the target is Flying type and immune to Ground
-			if (!target.runImmunity("Ground")) {
-				if (target.hasType("Flying")) return 0
-			}
-		},
-		volatileStatus: "smackdown",
-		ignoreImmunity: { Ground: true },
-		secondary: null,
-		target: "allAdjacentFoes",
-		type: "Ground",
-		zMove: { basePower: 180 },
-		contestType: "Beautiful"
-	},
-	thousandwaves: {
-		num: 615,
-		accuracy: 100,
-		basePower: 90,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Thousand Waves",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
-		onHit(target, source, move) {
-			if (source.isActive)
-				target.addVolatile("trapped", source, move, "trapper")
-		},
-		secondary: null,
-		target: "allAdjacentFoes",
-		type: "Ground",
-		contestType: "Tough"
-	},
-	thrash: {
+	"あばれる": {
 		num: 37,
 		accuracy: 100,
 		basePower: 120,
@@ -21519,7 +14563,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	throatchop: {
+	"じごくづき": {
 		num: 675,
 		accuracy: 100,
 		basePower: 80,
@@ -21568,7 +14612,7 @@ export const Moves = {
 		type: "Dark",
 		contestType: "Clever"
 	},
-	thunder: {
+	"かみなり": {
 		num: 87,
 		accuracy: 70,
 		basePower: 110,
@@ -21597,7 +14641,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Cool"
 	},
-	thunderbolt: {
+	"10まんボルト": {
 		num: 85,
 		accuracy: 100,
 		basePower: 90,
@@ -21614,7 +14658,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Cool"
 	},
-	thundercage: {
+	"サンダープリズン": {
 		num: 819,
 		accuracy: 90,
 		basePower: 80,
@@ -21628,7 +14672,7 @@ export const Moves = {
 		target: "normal",
 		type: "Electric"
 	},
-	thunderfang: {
+	"かみなりのキバ": {
 		num: 422,
 		accuracy: 95,
 		basePower: 65,
@@ -21651,7 +14695,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Cool"
 	},
-	thunderouskick: {
+	"らいめいげり": {
 		num: 823,
 		accuracy: 100,
 		basePower: 90,
@@ -21669,7 +14713,7 @@ export const Moves = {
 		target: "normal",
 		type: "Fighting"
 	},
-	thunderpunch: {
+	"かみなりパンチ": {
 		num: 9,
 		accuracy: 100,
 		basePower: 75,
@@ -21686,7 +14730,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Cool"
 	},
-	thundershock: {
+	"でんきショック": {
 		num: 84,
 		accuracy: 100,
 		basePower: 40,
@@ -21703,7 +14747,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Cool"
 	},
-	thunderwave: {
+	"でんじは": {
 		num: 86,
 		accuracy: 90,
 		basePower: 0,
@@ -21720,7 +14764,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Cool"
 	},
-	tickle: {
+	"くすぐる": {
 		num: 321,
 		accuracy: 100,
 		basePower: 0,
@@ -21739,7 +14783,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
-	tidyup: {
+	"おかたづけ": {
 		num: 882,
 		accuracy: true,
 		basePower: 0,
@@ -21783,34 +14827,7 @@ export const Moves = {
 		target: "self",
 		type: "Normal"
 	},
-	topsyturvy: {
-		num: 576,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Topsy-Turvy",
-		pp: 20,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1, allyanim: 1 },
-		onHit(target) {
-			let success = false
-			let i
-			for (i in target.boosts) {
-				if (target.boosts[i] === 0) continue
-				target.boosts[i] = -target.boosts[i]
-				success = true
-			}
-			if (!success) return false
-			this.add("-invertboost", target, "[from] move: Topsy-Turvy")
-		},
-		secondary: null,
-		target: "normal",
-		type: "Dark",
-		zMove: { boost: { atk: 1 } },
-		contestType: "Clever"
-	},
-	torchsong: {
+	"フレアソング": {
 		num: 871,
 		accuracy: 100,
 		basePower: 80,
@@ -21831,7 +14848,7 @@ export const Moves = {
 		type: "Fire",
 		contestType: "Beautiful"
 	},
-	torment: {
+	"いちゃもん": {
 		num: 259,
 		accuracy: 100,
 		basePower: 0,
@@ -21865,7 +14882,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Tough"
 	},
-	toxic: {
+	"どくどく": {
 		num: 92,
 		accuracy: 90,
 		basePower: 0,
@@ -21882,7 +14899,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
-	toxicspikes: {
+	"どくびし": {
 		num: 390,
 		accuracy: true,
 		basePower: 0,
@@ -21931,7 +14948,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
-	toxicthread: {
+	"どくのいと": {
 		num: 672,
 		accuracy: 100,
 		basePower: 0,
@@ -21950,7 +14967,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Tough"
 	},
-	trailblaze: {
+	"くさわけ": {
 		num: 885,
 		accuracy: 100,
 		basePower: 50,
@@ -21971,7 +14988,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Cool"
 	},
-	transform: {
+	"へんしん": {
 		num: 144,
 		accuracy: true,
 		basePower: 0,
@@ -21998,7 +15015,7 @@ export const Moves = {
 		zMove: { effect: "heal" },
 		contestType: "Clever"
 	},
-	triattack: {
+	"トライアタック": {
 		num: 161,
 		accuracy: 100,
 		basePower: 80,
@@ -22024,7 +15041,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Beautiful"
 	},
-	trick: {
+	"トリック": {
 		num: 271,
 		accuracy: 100,
 		basePower: 0,
@@ -22090,42 +15107,7 @@ export const Moves = {
 		zMove: { boost: { spe: 2 } },
 		contestType: "Clever"
 	},
-	trickortreat: {
-		num: 567,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Trick-or-Treat",
-		pp: 20,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1, allyanim: 1 },
-		onHit(target) {
-			if (target.hasType("Ghost")) return false
-			if (!target.addType("Ghost")) return false
-			this.add(
-				"-start",
-				target,
-				"typeadd",
-				"Ghost",
-				"[from] move: Trick-or-Treat"
-			)
-
-			if (target.side.active.length === 2 && target.position === 1) {
-				// Curse Glitch
-				const action = this.queue.willMove(target)
-				if (action && action.move.id === "curse") {
-					action.targetLoc = -1
-				}
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Ghost",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
-		contestType: "Cute"
-	},
-	trickroom: {
+	"トリックルーム": {
 		num: 433,
 		accuracy: true,
 		basePower: 0,
@@ -22177,7 +15159,7 @@ export const Moves = {
 		zMove: { boost: { accuracy: 1 } },
 		contestType: "Clever"
 	},
-	triplearrows: {
+	"3ぼんのや": {
 		num: 843,
 		accuracy: 100,
 		basePower: 90,
@@ -22202,7 +15184,7 @@ export const Moves = {
 		target: "normal",
 		type: "Fighting"
 	},
-	tripleaxel: {
+	"トリプルアクセル": {
 		num: 813,
 		accuracy: 90,
 		basePower: 20,
@@ -22222,7 +15204,7 @@ export const Moves = {
 		zMove: { basePower: 120 },
 		maxMove: { basePower: 140 }
 	},
-	tripledive: {
+	"トリプルダイブ": {
 		num: 865,
 		accuracy: 95,
 		basePower: 30,
@@ -22236,29 +15218,7 @@ export const Moves = {
 		target: "normal",
 		type: "Water"
 	},
-	triplekick: {
-		num: 167,
-		accuracy: 90,
-		basePower: 10,
-		basePowerCallback(pokemon, target, move) {
-			return 10 * move.hit
-		},
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Triple Kick",
-		pp: 10,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		multihit: 3,
-		multiaccuracy: true,
-		secondary: null,
-		target: "normal",
-		type: "Fighting",
-		zMove: { basePower: 120 },
-		maxMove: { basePower: 80 },
-		contestType: "Cool"
-	},
-	tropkick: {
+	"トロピカルキック": {
 		num: 688,
 		accuracy: 100,
 		basePower: 70,
@@ -22277,57 +15237,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Cute"
 	},
-	trumpcard: {
-		num: 376,
-		accuracy: true,
-		basePower: 0,
-		basePowerCallback(source, target, move) {
-			const callerMoveId = move.sourceEffect || move.id
-			const moveSlot =
-				callerMoveId === "instruct"
-					? source.getMoveData(move.id)
-					: source.getMoveData(callerMoveId)
-			let bp
-			if (!moveSlot) {
-				bp = 40
-			} else {
-				switch (moveSlot.pp) {
-					case 0:
-						bp = 200
-						break
-					case 1:
-						bp = 80
-						break
-					case 2:
-						bp = 60
-						break
-					case 3:
-						bp = 50
-						break
-					default:
-						bp = 40
-						break
-				}
-			}
-
-			this.debug("BP: " + bp)
-			return bp
-		},
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Trump Card",
-		pp: 5,
-		noPPBoosts: true,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { basePower: 160 },
-		maxMove: { basePower: 130 },
-		contestType: "Cool"
-	},
-	twinbeam: {
+	"ツインビーム": {
 		num: 888,
 		accuracy: 100,
 		basePower: 40,
@@ -22342,43 +15252,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Cool"
 	},
-	twineedle: {
-		num: 41,
-		accuracy: 100,
-		basePower: 25,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Twineedle",
-		pp: 20,
-		priority: 0,
-		flags: { protect: 1, mirror: 1 },
-		multihit: 2,
-		secondary: {
-			chance: 20,
-			status: "psn"
-		},
-		target: "normal",
-		type: "Bug",
-		maxMove: { basePower: 100 },
-		contestType: "Cool"
-	},
-	twinkletackle: {
-		num: 656,
-		accuracy: true,
-		basePower: 1,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Twinkle Tackle",
-		pp: 1,
-		priority: 0,
-		flags: {},
-		isZ: "fairiumz",
-		secondary: null,
-		target: "normal",
-		type: "Fairy",
-		contestType: "Cool"
-	},
-	twister: {
+	"たつまき": {
 		num: 239,
 		accuracy: 100,
 		basePower: 40,
@@ -22395,7 +15269,7 @@ export const Moves = {
 		type: "Dragon",
 		contestType: "Cool"
 	},
-	uturn: {
+	"とんぼがえり": {
 		num: 369,
 		accuracy: 100,
 		basePower: 70,
@@ -22410,7 +15284,7 @@ export const Moves = {
 		type: "Bug",
 		contestType: "Cute"
 	},
-	uproar: {
+	"さわぐ": {
 		num: 253,
 		accuracy: 100,
 		basePower: 90,
@@ -22476,7 +15350,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Cute"
 	},
-	vacuumwave: {
+	"しんくうは": {
 		num: 410,
 		accuracy: 100,
 		basePower: 40,
@@ -22490,7 +15364,7 @@ export const Moves = {
 		type: "Fighting",
 		contestType: "Cool"
 	},
-	vcreate: {
+	"Vジェネレート": {
 		num: 557,
 		accuracy: 95,
 		basePower: 180,
@@ -22512,49 +15386,7 @@ export const Moves = {
 		zMove: { basePower: 220 },
 		contestType: "Cool"
 	},
-	veeveevolley: {
-		num: 741,
-		accuracy: true,
-		basePower: 0,
-		basePowerCallback(pokemon) {
-			const bp = Math.floor((pokemon.happiness * 10) / 25) || 1
-			this.debug("BP: " + bp)
-			return bp
-		},
-		category: "Physical",
-		isNonstandard: "LGPE",
-		name: "Veevee Volley",
-		pp: 20,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		contestType: "Cute"
-	},
-	venomdrench: {
-		num: 599,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Venom Drench",
-		pp: 20,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1 },
-		onHit(target, source, move) {
-			if (target.status === "psn" || target.status === "tox") {
-				return !!this.boost({ atk: -1, spa: -1, spe: -1 }, target, source, move)
-			}
-			return false
-		},
-		secondary: null,
-		target: "allAdjacentFoes",
-		type: "Poison",
-		zMove: { boost: { def: 1 } },
-		contestType: "Clever"
-	},
-	venoshock: {
+	"ベノムショック": {
 		num: 474,
 		accuracy: 100,
 		basePower: 65,
@@ -22573,7 +15405,7 @@ export const Moves = {
 		type: "Poison",
 		contestType: "Beautiful"
 	},
-	victorydance: {
+	"しょうりのまい": {
 		num: 837,
 		accuracy: true,
 		basePower: 0,
@@ -22591,7 +15423,7 @@ export const Moves = {
 		target: "self",
 		type: "Fighting"
 	},
-	vinewhip: {
+	"つるのムチ": {
 		num: 22,
 		accuracy: 100,
 		basePower: 45,
@@ -22605,7 +15437,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Cool"
 	},
-	visegrip: {
+	"はさむ": {
 		num: 11,
 		accuracy: 100,
 		basePower: 55,
@@ -22619,22 +15451,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	vitalthrow: {
-		num: 233,
-		accuracy: true,
-		basePower: 70,
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Vital Throw",
-		pp: 10,
-		priority: -1,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Fighting",
-		contestType: "Cool"
-	},
-	voltswitch: {
+	"ボルトチェンジ": {
 		num: 521,
 		accuracy: 100,
 		basePower: 70,
@@ -22649,7 +15466,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Cool"
 	},
-	volttackle: {
+	"ボルテッカー": {
 		num: 344,
 		accuracy: 100,
 		basePower: 120,
@@ -22667,32 +15484,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Cool"
 	},
-	wakeupslap: {
-		num: 358,
-		accuracy: 100,
-		basePower: 70,
-		basePowerCallback(pokemon, target, move) {
-			if (target.status === "slp" || target.hasAbility("comatose")) {
-				this.debug("BP doubled on sleeping target")
-				return move.basePower * 2
-			}
-			return move.basePower
-		},
-		category: "Physical",
-		isNonstandard: "Past",
-		name: "Wake-Up Slap",
-		pp: 10,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		onHit(target) {
-			if (target.status === "slp") target.cureStatus()
-		},
-		secondary: null,
-		target: "normal",
-		type: "Fighting",
-		contestType: "Tough"
-	},
-	waterfall: {
+	"たきのぼり": {
 		num: 127,
 		accuracy: 100,
 		basePower: 80,
@@ -22709,7 +15501,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Tough"
 	},
-	watergun: {
+	"みずでっぽう": {
 		num: 55,
 		accuracy: 100,
 		basePower: 40,
@@ -22723,7 +15515,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Cute"
 	},
-	waterpledge: {
+	"みずのちかい": {
 		num: 518,
 		accuracy: 100,
 		basePower: 80,
@@ -22806,7 +15598,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Beautiful"
 	},
-	waterpulse: {
+	"みずのはどう": {
 		num: 352,
 		accuracy: 100,
 		basePower: 60,
@@ -22823,7 +15615,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Beautiful"
 	},
-	watershuriken: {
+	"みずしゅりけん": {
 		num: 594,
 		accuracy: 100,
 		basePower: 15,
@@ -22848,42 +15640,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Cool"
 	},
-	watersport: {
-		num: 346,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		isNonstandard: "Past",
-		name: "Water Sport",
-		pp: 15,
-		priority: 0,
-		flags: { nonsky: 1 },
-		pseudoWeather: "watersport",
-		condition: {
-			duration: 5,
-			onFieldStart(field, source) {
-				this.add("-fieldstart", "move: Water Sport", "[of] " + source)
-			},
-			onBasePowerPriority: 1,
-			onBasePower(basePower, attacker, defender, move) {
-				if (move.type === "Fire") {
-					this.debug("water sport weaken")
-					return this.chainModify([1352, 4096])
-				}
-			},
-			onFieldResidualOrder: 27,
-			onFieldResidualSubOrder: 3,
-			onFieldEnd() {
-				this.add("-fieldend", "move: Water Sport")
-			}
-		},
-		secondary: null,
-		target: "all",
-		type: "Water",
-		zMove: { boost: { spd: 1 } },
-		contestType: "Cute"
-	},
-	waterspout: {
+	"しおふき": {
 		num: 323,
 		accuracy: 100,
 		basePower: 150,
@@ -22902,7 +15659,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Beautiful"
 	},
-	wavecrash: {
+	"ウェーブタックル": {
 		num: 834,
 		accuracy: 100,
 		basePower: 120,
@@ -22916,7 +15673,7 @@ export const Moves = {
 		target: "normal",
 		type: "Water"
 	},
-	weatherball: {
+	"ウェザーボール": {
 		num: 311,
 		accuracy: 100,
 		basePower: 50,
@@ -22971,7 +15728,7 @@ export const Moves = {
 		maxMove: { basePower: 130 },
 		contestType: "Beautiful"
 	},
-	whirlpool: {
+	"うずしお": {
 		num: 250,
 		accuracy: 85,
 		basePower: 35,
@@ -22986,7 +15743,7 @@ export const Moves = {
 		type: "Water",
 		contestType: "Beautiful"
 	},
-	whirlwind: {
+	"ふきとばし": {
 		num: 18,
 		accuracy: true,
 		basePower: 0,
@@ -23010,7 +15767,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
-	wickedblow: {
+	"あんこくきょうだ": {
 		num: 817,
 		accuracy: 100,
 		basePower: 75,
@@ -23024,33 +15781,7 @@ export const Moves = {
 		target: "normal",
 		type: "Dark"
 	},
-	wickedtorque: {
-		num: 897,
-		accuracy: 100,
-		basePower: 80,
-		category: "Physical",
-		isNonstandard: "Unobtainable",
-		name: "Wicked Torque",
-		pp: 10,
-		priority: 0,
-		flags: {
-			protect: 1,
-			failencore: 1,
-			failmefirst: 1,
-			nosleeptalk: 1,
-			noassist: 1,
-			failcopycat: 1,
-			failinstruct: 1,
-			failmimic: 1
-		},
-		secondary: {
-			chance: 10,
-			status: "slp"
-		},
-		target: "normal",
-		type: "Dark"
-	},
-	wideguard: {
+	"ワイドガード": {
 		num: 469,
 		accuracy: true,
 		basePower: 0,
@@ -23102,7 +15833,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Tough"
 	},
-	wildboltstorm: {
+	"かみなりあらし": {
 		num: 847,
 		accuracy: 80,
 		basePower: 100,
@@ -23126,7 +15857,7 @@ export const Moves = {
 		target: "allAdjacentFoes",
 		type: "Electric"
 	},
-	wildcharge: {
+	"ワイルドボルト": {
 		num: 528,
 		accuracy: 100,
 		basePower: 90,
@@ -23141,7 +15872,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Tough"
 	},
-	willowisp: {
+	"おにび": {
 		num: 261,
 		accuracy: 85,
 		basePower: 0,
@@ -23157,7 +15888,7 @@ export const Moves = {
 		zMove: { boost: { atk: 1 } },
 		contestType: "Beautiful"
 	},
-	wingattack: {
+	"つばさでうつ": {
 		num: 17,
 		accuracy: 100,
 		basePower: 60,
@@ -23171,7 +15902,7 @@ export const Moves = {
 		type: "Flying",
 		contestType: "Cool"
 	},
-	wish: {
+	"ねがいごと": {
 		num: 273,
 		accuracy: true,
 		basePower: 0,
@@ -23208,7 +15939,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Cute"
 	},
-	withdraw: {
+	"からにこもる": {
 		num: 110,
 		accuracy: true,
 		basePower: 0,
@@ -23226,7 +15957,7 @@ export const Moves = {
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
-	wonderroom: {
+	"ワンダールーム": {
 		num: 472,
 		accuracy: true,
 		basePower: 0,
@@ -23289,7 +16020,7 @@ export const Moves = {
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
-	woodhammer: {
+	"ウッドハンマー": {
 		num: 452,
 		accuracy: 100,
 		basePower: 120,
@@ -23304,7 +16035,7 @@ export const Moves = {
 		type: "Grass",
 		contestType: "Tough"
 	},
-	workup: {
+	"ふるいたてる": {
 		num: 526,
 		accuracy: true,
 		basePower: 0,
@@ -23323,7 +16054,7 @@ export const Moves = {
 		zMove: { boost: { atk: 1 } },
 		contestType: "Tough"
 	},
-	worryseed: {
+	"なやみのタネ": {
 		num: 388,
 		accuracy: 100,
 		basePower: 0,
@@ -23361,7 +16092,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
-	wrap: {
+	"まきつく": {
 		num: 35,
 		accuracy: 90,
 		basePower: 15,
@@ -23376,36 +16107,7 @@ export const Moves = {
 		type: "Normal",
 		contestType: "Tough"
 	},
-	wringout: {
-		num: 378,
-		accuracy: 100,
-		basePower: 0,
-		basePowerCallback(pokemon, target, move) {
-			const hp = target.hp
-			const maxHP = target.maxhp
-			const bp =
-				Math.floor(
-					Math.floor(
-						(120 * (100 * Math.floor((hp * 4096) / maxHP)) + 2048 - 1) / 4096
-					) / 100
-				) || 1
-			this.debug("BP for " + hp + "/" + maxHP + " HP: " + bp)
-			return bp
-		},
-		category: "Special",
-		isNonstandard: "Past",
-		name: "Wring Out",
-		pp: 5,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: null,
-		target: "normal",
-		type: "Normal",
-		zMove: { basePower: 190 },
-		maxMove: { basePower: 140 },
-		contestType: "Tough"
-	},
-	xscissor: {
+	"シザークロス": {
 		num: 404,
 		accuracy: 100,
 		basePower: 80,
@@ -23419,7 +16121,7 @@ export const Moves = {
 		type: "Bug",
 		contestType: "Cool"
 	},
-	yawn: {
+	"あくび": {
 		num: 281,
 		accuracy: true,
 		basePower: 0,
@@ -23452,7 +16154,7 @@ export const Moves = {
 		zMove: { boost: { spe: 1 } },
 		contestType: "Cute"
 	},
-	zapcannon: {
+	"でんじほう": {
 		num: 192,
 		accuracy: 50,
 		basePower: 120,
@@ -23469,7 +16171,7 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Cool"
 	},
-	zenheadbutt: {
+	"しねんのずつき": {
 		num: 428,
 		accuracy: 90,
 		basePower: 80,
@@ -23486,7 +16188,7 @@ export const Moves = {
 		type: "Psychic",
 		contestType: "Clever"
 	},
-	zingzap: {
+	"びりびりちくちく": {
 		num: 716,
 		accuracy: 100,
 		basePower: 80,
@@ -23503,26 +16205,4 @@ export const Moves = {
 		type: "Electric",
 		contestType: "Cool"
 	},
-	zippyzap: {
-		num: 729,
-		accuracy: 100,
-		basePower: 80,
-		category: "Physical",
-		isNonstandard: "LGPE",
-		name: "Zippy Zap",
-		pp: 10,
-		priority: 2,
-		flags: { contact: 1, protect: 1, mirror: 1 },
-		secondary: {
-			chance: 100,
-			self: {
-				boosts: {
-					evasion: 1
-				}
-			}
-		},
-		target: "normal",
-		type: "Electric",
-		contestType: "Cool"
-	}
 }
