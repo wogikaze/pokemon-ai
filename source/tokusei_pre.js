@@ -43,7 +43,7 @@ export const Abilities = {
 		onModifyMove(move) {
 			move.stab = 2
 		},
-		name: "Adaptability",
+		name: "てきおうりょく",
 		rating: 4,
 		num: 91
 	},
@@ -74,12 +74,12 @@ export const Abilities = {
 			if (move.typeChangerBoosted === this.effect)
 				return this.chainModify([4915, 4096])
 		},
-		name: "Aerilate",
+		name: "スカイスキン",
 		rating: 4,
 		num: 184
 	},
 	"ゆうばく": {
-		name: "Aftermath",
+		name: "ゆうばく",
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (
@@ -108,7 +108,7 @@ export const Abilities = {
 			this.eachEvent("WeatherChange", this.effect)
 		},
 		suppressWeather: true,
-		name: "Air Lock",
+		name: "エアロック",
 		rating: 1.5,
 		num: 76
 	},
@@ -128,7 +128,7 @@ export const Abilities = {
 				return this.chainModify([5325, 4096])
 			}
 		},
-		name: "Analytic",
+		name: "アナライズ",
 		rating: 2.5,
 		num: 148
 	},
@@ -139,7 +139,7 @@ export const Abilities = {
 				this.boost({ atk: 12 }, target, target)
 			}
 		},
-		name: "Anger Point",
+		name: "いかりのつぼ",
 		rating: 1,
 		num: 83
 	},
@@ -187,7 +187,7 @@ export const Abilities = {
 				this.boost({ atk: 1, spa: 1, spe: 1, def: -1, spd: -1 }, target, target)
 			}
 		},
-		name: "Anger Shell",
+		name: "いかりのこうら",
 		rating: 3,
 		num: 271
 	},
@@ -209,7 +209,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Anticipation",
+		name: "きけんよち",
 		rating: 0.5,
 		num: 107
 	},
@@ -228,7 +228,7 @@ export const Abilities = {
 				pokemon.maybeTrapped = true
 			}
 		},
-		name: "Arena Trap",
+		name: "ありじごく",
 		rating: 5,
 		num: 71
 	},
@@ -259,7 +259,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Armor Tail",
+		name: "テイルアーマー",
 		rating: 2.5,
 		num: 296
 	},
@@ -288,7 +288,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Aroma Veil",
+		name: "アロマベール",
 		rating: 2,
 		num: 165
 	},
@@ -356,7 +356,7 @@ export const Abilities = {
 			move.hasAuraBreak = true
 		},
 		isBreakable: true,
-		name: "Aura Break",
+		name: "オーラブレイク",
 		rating: 1,
 		num: 188
 	},
@@ -371,12 +371,12 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Bad Dreams",
+		name: "ナイトメア",
 		rating: 1.5,
 		num: 123
 	},
 	"たまひろい": {
-		name: "Ball Fetch",
+		name: "たまひろい",
 		rating: 0,
 		num: 237
 	},
@@ -388,14 +388,14 @@ export const Abilities = {
 				return this.chainModify([5325, 4096])
 			}
 		},
-		name: "Battery",
+		name: "バッテリー",
 		rating: 0,
 		num: 217
 	},
 	"カブトアーマー": {
 		onCriticalHit: false,
 		isBreakable: true,
-		name: "Battle Armor",
+		name: "カブトアーマー",
 		rating: 1,
 		num: 4
 	},
@@ -415,7 +415,7 @@ export const Abilities = {
 			}
 		},
 		isPermanent: true,
-		name: "Battle Bond",
+		name: "きずなへんげ",
 		rating: 3.5,
 		num: 210
 	},
@@ -433,7 +433,7 @@ export const Abilities = {
 			this.debug("Beads of Ruin SpD drop")
 			return this.chainModify(0.75)
 		},
-		name: "Beads of Ruin",
+		name: "わざわいのたま",
 		rating: 4.5,
 		num: 284
 	},
@@ -444,7 +444,7 @@ export const Abilities = {
 				this.boost({ [bestStat]: length }, source)
 			}
 		},
-		name: "Beast Boost",
+		name: "ビーストブースト",
 		rating: 3.5,
 		num: 224
 	},
@@ -492,7 +492,7 @@ export const Abilities = {
 				this.boost({ spa: 1 }, target, target)
 			}
 		},
-		name: "Berserk",
+		name: "ぎゃくじょう",
 		rating: 2,
 		num: 201
 	},
@@ -514,7 +514,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Big Pecks",
+		name: "はとむね",
 		rating: 0.5,
 		num: 145
 	},
@@ -533,7 +533,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Blaze",
+		name: "もうか",
 		rating: 2,
 		num: 66
 	},
@@ -545,7 +545,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Bulletproof",
+		name: "ぼうだん",
 		rating: 3,
 		num: 171
 	},
@@ -553,7 +553,7 @@ export const Abilities = {
 		onEatItem(item, pokemon) {
 			this.heal(pokemon.baseMaxhp / 3)
 		},
-		name: "Cheek Pouch",
+		name: "ほおぶくろ",
 		rating: 2,
 		num: 167
 	},
@@ -563,7 +563,7 @@ export const Abilities = {
 				this.boost({ atk: length }, source)
 			}
 		},
-		name: "Chilling Neigh",
+		name: "しろのいななき",
 		rating: 3,
 		num: 264
 	},
@@ -573,7 +573,7 @@ export const Abilities = {
 				return this.chainModify(2)
 			}
 		},
-		name: "Chlorophyll",
+		name: "ようりょくそ",
 		rating: 3,
 		num: 34
 	},
@@ -599,7 +599,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Clear Body",
+		name: "クリアボディ",
 		rating: 2,
 		num: 29
 	},
@@ -619,7 +619,7 @@ export const Abilities = {
 			this.eachEvent("WeatherChange", this.effect)
 		},
 		suppressWeather: true,
-		name: "Cloud Nine",
+		name: "ノーてんき",
 		rating: 1.5,
 		num: 13
 	},
@@ -652,7 +652,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Color Change",
+		name: "へんしょく",
 		rating: 0,
 		num: 16
 	},
@@ -668,7 +668,7 @@ export const Abilities = {
 		},
 		// Permanent sleep "status" implemented in the relevant sleep-checking effects
 		isPermanent: true,
-		name: "Comatose",
+		name: "ぜったいねむり",
 		rating: 4,
 		num: 213
 	},
@@ -703,7 +703,7 @@ export const Abilities = {
 				pokemon.removeVolatile("commanding")
 			}
 		},
-		name: "Commander",
+		name: "しれいとう",
 		rating: 0,
 		num: 279
 	},
@@ -730,7 +730,7 @@ export const Abilities = {
 				this.boost({ spa: 2 }, target, target, null, false, true)
 			}
 		},
-		name: "Competitive",
+		name: "かちき",
 		rating: 2.5,
 		num: 172
 	},
@@ -741,7 +741,7 @@ export const Abilities = {
 			this.debug("compoundeyes - enhancing accuracy")
 			return this.chainModify([5325, 4096])
 		},
-		name: "Compound Eyes",
+		name: "ふくがん",
 		rating: 3,
 		num: 14
 	},
@@ -754,13 +754,13 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Contrary",
+		name: "あまのじゃく",
 		rating: 4.5,
 		num: 126
 	},
 	"ふしょく": {
 		// Implemented in sim/pokemon.js:Pokemon#setStatus
-		name: "Corrosion",
+		name: "ふしょく",
 		rating: 2.5,
 		num: 212
 	},
@@ -785,7 +785,7 @@ export const Abilities = {
 			}
 			this.add("-copyboost", pokemon, ally, "[from] ability: Costar")
 		},
-		name: "Costar",
+		name: "きょうえん",
 		rating: 0,
 		num: 294
 	},
@@ -801,7 +801,7 @@ export const Abilities = {
 				this.boost({ spe: -1 }, pokemon, target, null, true)
 			}
 		},
-		name: "Cotton Down",
+		name: "わたげ",
 		rating: 2,
 		num: 238
 	},
@@ -834,7 +834,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Cud Chew",
+		name: "はんすう",
 		rating: 2,
 		num: 291
 	},
@@ -850,7 +850,7 @@ export const Abilities = {
 				)
 			}
 		},
-		name: "Curious Medicine",
+		name: "きみょうなくすり",
 		rating: 0,
 		num: 261
 	},
@@ -863,7 +863,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Cursed Body",
+		name: "のろわれボディ",
 		rating: 2,
 		num: 130
 	},
@@ -875,7 +875,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Cute Charm",
+		name: "メロメロボディ",
 		rating: 0.5,
 		num: 56
 	},
@@ -903,12 +903,12 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Damp",
+		name: "しめりけ",
 		rating: 0.5,
 		num: 6
 	},
 	"おどりこ": {
-		name: "Dancer",
+		name: "おどりこ",
 		// implemented in runMove in scripts.js
 		rating: 1.5,
 		num: 216
@@ -931,7 +931,7 @@ export const Abilities = {
 			if (move.auraBooster !== this.effectState.target) return
 			return this.chainModify([move.hasAuraBreak ? 3072 : 5448, 4096])
 		},
-		name: "Dark Aura",
+		name: "ダークオーラ",
 		rating: 3,
 		num: 186
 	},
@@ -941,7 +941,7 @@ export const Abilities = {
 			pokemon.shieldBoost = true
 			this.boost({ def: 1 }, pokemon)
 		},
-		name: "Dauntless Shield",
+		name: "ふくつのたて",
 		rating: 3.5,
 		num: 235
 	},
@@ -972,7 +972,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Dazzling",
+		name: "ビビッドボディ",
 		rating: 2.5,
 		num: 219
 	},
@@ -989,7 +989,7 @@ export const Abilities = {
 				return this.chainModify(0.5)
 			}
 		},
-		name: "Defeatist",
+		name: "よわき",
 		rating: -1,
 		num: 129
 	},
@@ -1016,7 +1016,7 @@ export const Abilities = {
 				this.boost({ atk: 2 }, target, target, null, false, true)
 			}
 		},
-		name: "Defiant",
+		name: "まけんき",
 		rating: 3,
 		num: 128
 	},
@@ -1043,7 +1043,7 @@ export const Abilities = {
 			}
 			this.field.clearWeather()
 		},
-		name: "Delta Stream",
+		name: "デルタストリーム",
 		rating: 4,
 		num: 191
 	},
@@ -1070,7 +1070,7 @@ export const Abilities = {
 			}
 			this.field.clearWeather()
 		},
-		name: "Desolate Land",
+		name: "おわりのだいち",
 		rating: 4.5,
 		num: 190
 	},
@@ -1143,7 +1143,7 @@ export const Abilities = {
 		},
 		isBreakable: true,
 		isPermanent: true,
-		name: "Disguise",
+		name: "ばけのかわ",
 		rating: 3.5,
 		num: 209
 	},
@@ -1161,7 +1161,7 @@ export const Abilities = {
 				this.boost({ atk: 1 })
 			}
 		},
-		name: "Download",
+		name: "ダウンロード",
 		rating: 3.5,
 		num: 88
 	},
@@ -1180,7 +1180,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Dragon's Maw",
+		name: "りゅうのあぎと",
 		rating: 3.5,
 		num: 263
 	},
@@ -1198,7 +1198,7 @@ export const Abilities = {
 			}
 			this.field.setWeather("raindance")
 		},
-		name: "Drizzle",
+		name: "あめふらし",
 		rating: 4,
 		num: 2
 	},
@@ -1216,7 +1216,7 @@ export const Abilities = {
 			}
 			this.field.setWeather("sunnyday")
 		},
-		name: "Drought",
+		name: "ひでり",
 		rating: 4,
 		num: 70
 	},
@@ -1244,12 +1244,12 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Dry Skin",
+		name: "かんそうはだ",
 		rating: 3,
 		num: 87
 	},
 	"はやおき": {
-		name: "Early Bird",
+		name: "はやおき",
 		// Implemented in statuses.js
 		rating: 1.5,
 		num: 48
@@ -1264,7 +1264,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Earth Eater",
+		name: "どしょく",
 		rating: 3.5,
 		num: 297
 	},
@@ -1285,7 +1285,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Effect Spore",
+		name: "ほうし",
 		rating: 2,
 		num: 27
 	},
@@ -1293,7 +1293,7 @@ export const Abilities = {
 		onStart(source) {
 			this.field.setTerrain("electricterrain")
 		},
-		name: "Electric Surge",
+		name: "エレキメイカー",
 		rating: 4,
 		num: 226
 	},
@@ -1302,7 +1302,7 @@ export const Abilities = {
 		onDamagingHit(damage, target, source, move) {
 			target.addVolatile("charge")
 		},
-		name: "Electromorphosis",
+		name: "でんきにかえる",
 		rating: 3,
 		num: 280
 	},
@@ -1394,7 +1394,7 @@ export const Abilities = {
 			target.switchFlag = true
 			this.add("-activate", target, "ability: Emergency Exit")
 		},
-		name: "Emergency Exit",
+		name: "ききかいひ",
 		rating: 1,
 		num: 194
 	},
@@ -1416,7 +1416,7 @@ export const Abilities = {
 			if (move.auraBooster !== this.effectState.target) return
 			return this.chainModify([move.hasAuraBreak ? 3072 : 5448, 4096])
 		},
-		name: "Fairy Aura",
+		name: "フェアリーオーラ",
 		rating: 3,
 		num: 187
 	},
@@ -1428,7 +1428,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Filter",
+		name: "フィルター",
 		rating: 3,
 		num: 111
 	},
@@ -1440,7 +1440,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Flame Body",
+		name: "ほのおのからだ",
 		rating: 2,
 		num: 49
 	},
@@ -1451,7 +1451,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Flare Boost",
+		name: "ねつぼうそう",
 		rating: 2,
 		num: 138
 	},
@@ -1492,7 +1492,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Flash Fire",
+		name: "もらいび",
 		rating: 3.5,
 		num: 18
 	},
@@ -1533,7 +1533,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Flower Gift",
+		name: "フラワーギフト",
 		rating: 1,
 		num: 122
 	},
@@ -1596,7 +1596,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Flower Veil",
+		name: "フラワーベール",
 		rating: 0,
 		num: 166
 	},
@@ -1608,7 +1608,7 @@ export const Abilities = {
 			return this.chainModify(mod)
 		},
 		isBreakable: true,
-		name: "Fluffy",
+		name: "もふもふ",
 		rating: 3.5,
 		num: 218
 	},
@@ -1641,7 +1641,7 @@ export const Abilities = {
 				pokemon.formeChange(forme, this.effect, false, "[msg]")
 			}
 		},
-		name: "Forecast",
+		name: "てんきや",
 		rating: 2,
 		num: 59
 	},
@@ -1680,12 +1680,12 @@ export const Abilities = {
 				"[of] " + warnTarget
 			)
 		},
-		name: "Forewarn",
+		name: "よちむ",
 		rating: 0.5,
 		num: 108
 	},
 	"フレンドガード": {
-		name: "Friend Guard",
+		name: "フレンドガード",
 		onAnyModifyDamage(damage, source, target, move) {
 			if (
 				target !== this.effectState.target &&
@@ -1714,7 +1714,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Frisk",
+		name: "おみとおし",
 		rating: 1.5,
 		num: 119
 	},
@@ -1739,7 +1739,7 @@ export const Abilities = {
 				)
 			}
 		},
-		name: "Full Metal Body",
+		name: "メタルプロテクト",
 		rating: 2,
 		num: 230
 	},
@@ -1749,7 +1749,7 @@ export const Abilities = {
 			return this.chainModify(2)
 		},
 		isBreakable: true,
-		name: "Fur Coat",
+		name: "ファーコート",
 		rating: 4,
 		num: 169
 	},
@@ -1758,7 +1758,7 @@ export const Abilities = {
 			if (move?.type === "Flying" && pokemon.hp === pokemon.maxhp)
 				return priority + 1
 		},
-		name: "Gale Wings",
+		name: "はやてのつばさ",
 		rating: 1.5,
 		num: 177
 	},
@@ -1789,12 +1789,12 @@ export const Abilities = {
 			if (move.typeChangerBoosted === this.effect)
 				return this.chainModify([4915, 4096])
 		},
-		name: "Galvanize",
+		name: "エレキスキン",
 		rating: 4,
 		num: 206
 	},
 	"くいしんぼう": {
-		name: "Gluttony",
+		name: "くいしんぼう",
 		rating: 1.5,
 		num: 82,
 		onStart(pokemon) {
@@ -1812,7 +1812,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Good as Gold",
+		name: "おうごんのからだ",
 		rating: 5,
 		num: 283
 	},
@@ -1823,7 +1823,7 @@ export const Abilities = {
 				this.boost({ spe: -1 }, source, target, null, true)
 			}
 		},
-		name: "Gooey",
+		name: "ぬめぬめ",
 		rating: 2,
 		num: 183
 	},
@@ -1873,7 +1873,7 @@ export const Abilities = {
 		onEnd(pokemon) {
 			pokemon.abilityState.choiceLock = ""
 		},
-		name: "Gorilla Tactics",
+		name: "ごりむちゅう",
 		rating: 4.5,
 		num: 255
 	},
@@ -1883,7 +1883,7 @@ export const Abilities = {
 			if (this.field.isTerrain("grassyterrain")) return this.chainModify(1.5)
 		},
 		isBreakable: true,
-		name: "Grass Pelt",
+		name: "くさのけがわ",
 		rating: 0.5,
 		num: 179
 	},
@@ -1891,7 +1891,7 @@ export const Abilities = {
 		onStart(source) {
 			this.field.setTerrain("grassyterrain")
 		},
-		name: "Grassy Surge",
+		name: "グラスメイカー",
 		rating: 4,
 		num: 229
 	},
@@ -1901,7 +1901,7 @@ export const Abilities = {
 				this.boost({ spa: length }, source)
 			}
 		},
-		name: "Grim Neigh",
+		name: "くろのいななき",
 		rating: 3,
 		num: 265
 	},
@@ -1918,7 +1918,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Guard Dog",
+		name: "ばんけん",
 		rating: 2,
 		num: 275
 	},
@@ -1960,7 +1960,7 @@ export const Abilities = {
 			}
 		},
 		isPermanent: true,
-		name: "Gulp Missile",
+		name: "うのミサイル",
 		rating: 2.5,
 		num: 241
 	},
@@ -1971,7 +1971,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Guts",
+		name: "こんじょう",
 		rating: 3.5,
 		num: 62
 	},
@@ -1991,12 +1991,12 @@ export const Abilities = {
 				return this.chainModify([5461, 4096])
 			}
 		},
-		name: "Hadron Engine",
+		name: "ハドロンエンジン",
 		rating: 4.5,
 		num: 289
 	},
 	"しゅうかく": {
-		name: "Harvest",
+		name: "しゅうかく",
 		onResidualOrder: 28,
 		onResidualSubOrder: 2,
 		onResidual(pokemon) {
@@ -2024,7 +2024,7 @@ export const Abilities = {
 		num: 139
 	},
 	"いやしのこころ": {
-		name: "Healer",
+		name: "いやしのこころ",
 		onResidualOrder: 5,
 		onResidualSubOrder: 3,
 		onResidual(pokemon) {
@@ -2059,7 +2059,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Heatproof",
+		name: "たいねつ",
 		rating: 2,
 		num: 85
 	},
@@ -2069,12 +2069,12 @@ export const Abilities = {
 			return weighthg * 2
 		},
 		isBreakable: true,
-		name: "Heavy Metal",
+		name: "ヘヴィメタル",
 		rating: 0,
 		num: 134
 	},
 	"みつあつめ": {
-		name: "Honey Gather",
+		name: "みつあつめ",
 		rating: 0,
 		num: 118
 	},
@@ -2084,7 +2084,7 @@ export const Abilities = {
 				this.heal(ally.baseMaxhp / 4, ally, pokemon)
 			}
 		},
-		name: "Hospitality",
+		name: "おもてなし",
 		rating: 0,
 		num: 299
 	},
@@ -2093,7 +2093,7 @@ export const Abilities = {
 		onModifyAtk(atk) {
 			return this.chainModify(2)
 		},
-		name: "Huge Power",
+		name: "ちからもち",
 		rating: 5,
 		num: 37
 	},
@@ -2110,7 +2110,7 @@ export const Abilities = {
 				pokemon.species.name === "Morpeko" ? "Morpeko-Hangry" : "Morpeko"
 			pokemon.formeChange(targetForme)
 		},
-		name: "Hunger Switch",
+		name: "はらぺこスイッチ",
 		rating: 1,
 		num: 258
 	},
@@ -2126,7 +2126,7 @@ export const Abilities = {
 				return this.chainModify([3277, 4096])
 			}
 		},
-		name: "Hustle",
+		name: "はりきり",
 		rating: 3.5,
 		num: 55
 	},
@@ -2143,7 +2143,7 @@ export const Abilities = {
 				pokemon.cureStatus()
 			}
 		},
-		name: "Hydration",
+		name: "うるおいボディ",
 		rating: 1.5,
 		num: 93
 	},
@@ -2165,7 +2165,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Hyper Cutter",
+		name: "かいりきバサミ",
 		rating: 1.5,
 		num: 52
 	},
@@ -2178,7 +2178,7 @@ export const Abilities = {
 		onImmunity(type, pokemon) {
 			if (type === "hail") return false
 		},
-		name: "Ice Body",
+		name: "アイスボディ",
 		rating: 1,
 		num: 115
 	},
@@ -2263,7 +2263,7 @@ export const Abilities = {
 		},
 		isBreakable: true,
 		isPermanent: true,
-		name: "Ice Face",
+		name: "アイスフェイス",
 		rating: 3,
 		num: 248
 	},
@@ -2274,7 +2274,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Ice Scales",
+		name: "こおりのりんぷん",
 		rating: 4,
 		num: 246
 	},
@@ -2299,7 +2299,7 @@ export const Abilities = {
 			move.ignoreEvasion = true
 		},
 		isBreakable: true,
-		name: "Illuminate",
+		name: "はっこう",
 		rating: 0.5,
 		num: 35
 	},
@@ -2356,7 +2356,7 @@ export const Abilities = {
 		onFaint(pokemon) {
 			pokemon.illusion = null
 		},
-		name: "Illusion",
+		name: "イリュージョン",
 		rating: 4.5,
 		num: 149
 	},
@@ -2375,7 +2375,7 @@ export const Abilities = {
 			return false
 		},
 		isBreakable: true,
-		name: "Immunity",
+		name: "めんえき",
 		rating: 2,
 		num: 17
 	},
@@ -2398,7 +2398,7 @@ export const Abilities = {
 			}
 			this.effectState.switchingIn = false
 		},
-		name: "Imposter",
+		name: "かわりもの",
 		rating: 5,
 		num: 150
 	},
@@ -2406,12 +2406,12 @@ export const Abilities = {
 		onModifyMove(move) {
 			move.infiltrates = true
 		},
-		name: "Infiltrator",
+		name: "すりぬけ",
 		rating: 2.5,
 		num: 151
 	},
 	"とびだすなかみ": {
-		name: "Innards Out",
+		name: "とびだすなかみ",
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
@@ -2439,7 +2439,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Inner Focus",
+		name: "せいしんりょく",
 		rating: 1,
 		num: 39
 	},
@@ -2464,7 +2464,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Insomnia",
+		name: "ふみん",
 		rating: 1.5,
 		num: 15
 	},
@@ -2483,7 +2483,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Intimidate",
+		name: "いかく",
 		rating: 3.5,
 		num: 22
 	},
@@ -2493,7 +2493,7 @@ export const Abilities = {
 			pokemon.swordBoost = true
 			this.boost({ atk: 1 }, pokemon)
 		},
-		name: "Intrepid Sword",
+		name: "ふとうのけん",
 		rating: 4,
 		num: 234
 	},
@@ -2504,7 +2504,7 @@ export const Abilities = {
 				this.damage(source.baseMaxhp / 8, source, target)
 			}
 		},
-		name: "Iron Barbs",
+		name: "てつのトゲ",
 		rating: 2.5,
 		num: 160
 	},
@@ -2516,7 +2516,7 @@ export const Abilities = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		name: "Iron Fist",
+		name: "てつのこぶし",
 		rating: 3,
 		num: 89
 	},
@@ -2526,7 +2526,7 @@ export const Abilities = {
 				this.boost({ atk: 1 })
 			}
 		},
-		name: "Justified",
+		name: "せいぎのこころ",
 		rating: 2.5,
 		num: 154
 	},
@@ -2551,7 +2551,7 @@ export const Abilities = {
 			move.ignoreEvasion = true
 		},
 		isBreakable: true,
-		name: "Keen Eye",
+		name: "するどいめ",
 		rating: 0.5,
 		num: 51
 	},
@@ -2560,7 +2560,7 @@ export const Abilities = {
 		onStart(pokemon) {
 			this.singleEvent("End", pokemon.getItem(), pokemon.itemState, pokemon)
 		},
-		name: "Klutz",
+		name: "ぶきよう",
 		rating: -1,
 		num: 103
 	},
@@ -2583,14 +2583,14 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Leaf Guard",
+		name: "リーフガード",
 		rating: 0.5,
 		num: 102
 	},
 	"ふゆう": {
 		// airborneness implemented in sim/pokemon.js:Pokemon#isGrounded
 		isBreakable: true,
-		name: "Levitate",
+		name: "ふゆう",
 		rating: 3.5,
 		num: 26
 	},
@@ -2613,7 +2613,7 @@ export const Abilities = {
 		onSwitchIn() {
 			delete this.effectState.libero
 		},
-		name: "Libero",
+		name: "リベロ",
 		rating: 4,
 		num: 236
 	},
@@ -2622,7 +2622,7 @@ export const Abilities = {
 			return this.trunc(weighthg / 2)
 		},
 		isBreakable: true,
-		name: "Light Metal",
+		name: "ライトメタル",
 		rating: 1,
 		num: 135
 	},
@@ -2655,7 +2655,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Lightning Rod",
+		name: "ひらいしん",
 		rating: 3,
 		num: 31
 	},
@@ -2674,7 +2674,7 @@ export const Abilities = {
 			return false
 		},
 		isBreakable: true,
-		name: "Limber",
+		name: "じゅうなん",
 		rating: 2,
 		num: 7
 	},
@@ -2699,7 +2699,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Lingering Aroma",
+		name: "とれないにおい",
 		rating: 2,
 		num: 268
 	},
@@ -2714,7 +2714,7 @@ export const Abilities = {
 				return 0
 			}
 		},
-		name: "Liquid Ooze",
+		name: "ヘドロえき",
 		rating: 2.5,
 		num: 64
 	},
@@ -2726,7 +2726,7 @@ export const Abilities = {
 				move.type = "Water"
 			}
 		},
-		name: "Liquid Voice",
+		name: "うるおいボイス",
 		rating: 1.5,
 		num: 204
 	},
@@ -2734,12 +2734,12 @@ export const Abilities = {
 		onModifyMove(move) {
 			delete move.flags["contact"]
 		},
-		name: "Long Reach",
+		name: "えんかく",
 		rating: 1,
 		num: 203
 	},
 	"マジックミラー": {
-		name: "Magic Bounce",
+		name: "マジックミラー",
 		onTryHitPriority: 1,
 		onTryHit(target, source, move) {
 			if (target === source || move.hasBounced || !move.flags["reflectable"]) {
@@ -2780,7 +2780,7 @@ export const Abilities = {
 				return false
 			}
 		},
-		name: "Magic Guard",
+		name: "マジックガード",
 		rating: 4,
 		num: 98
 	},
@@ -2805,7 +2805,7 @@ export const Abilities = {
 				)
 			}
 		},
-		name: "Magician",
+		name: "マジシャン",
 		rating: 1,
 		num: 170
 	},
@@ -2820,7 +2820,7 @@ export const Abilities = {
 			if (type === "frz") return false
 		},
 		isBreakable: true,
-		name: "Magma Armor",
+		name: "マグマのよろい",
 		rating: 0.5,
 		num: 40
 	},
@@ -2840,7 +2840,7 @@ export const Abilities = {
 				pokemon.maybeTrapped = true
 			}
 		},
-		name: "Magnet Pull",
+		name: "じりょく",
 		rating: 4,
 		num: 42
 	},
@@ -2852,7 +2852,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Marvel Scale",
+		name: "ふしぎなうろこ",
 		rating: 2.5,
 		num: 63
 	},
@@ -2863,7 +2863,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Mega Launcher",
+		name: "メガランチャー",
 		rating: 3,
 		num: 178
 	},
@@ -2871,7 +2871,7 @@ export const Abilities = {
 		onModifyCritRatio(critRatio, source, target) {
 			if (target && ["psn", "tox"].includes(target.status)) return 5
 		},
-		name: "Merciless",
+		name: "ひとでなし",
 		rating: 1.5,
 		num: 196
 	},
@@ -2916,7 +2916,7 @@ export const Abilities = {
 				this.add("-end", pokemon, "typechange", "[silent]")
 			}
 		},
-		name: "Mimicry",
+		name: "ぎたい",
 		rating: 0,
 		num: 250
 	},
@@ -2946,7 +2946,7 @@ export const Abilities = {
 				move.ignoreImmunity["Normal"] = true
 			}
 		},
-		name: "Mind's Eye",
+		name: "しんがん",
 		rating: 0,
 		num: 300
 	},
@@ -2959,7 +2959,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Minus",
+		name: "マイナス",
 		rating: 0,
 		num: 58
 	},
@@ -2988,7 +2988,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Mirror Armor",
+		name: "ミラーアーマー",
 		rating: 2,
 		num: 240
 	},
@@ -2996,7 +2996,7 @@ export const Abilities = {
 		onStart(source) {
 			this.field.setTerrain("mistyterrain")
 		},
-		name: "Misty Surge",
+		name: "ミストメイカー",
 		rating: 3.5,
 		num: 228
 	},
@@ -3007,7 +3007,7 @@ export const Abilities = {
 		onModifyMove(move) {
 			move.ignoreAbility = true
 		},
-		name: "Mold Breaker",
+		name: "かたやぶり",
 		rating: 3,
 		num: 104
 	},
@@ -3040,7 +3040,7 @@ export const Abilities = {
 
 			this.boost(boost, pokemon, pokemon)
 		},
-		name: "Moody",
+		name: "ムラっけ",
 		rating: 5,
 		num: 141
 	},
@@ -3054,7 +3054,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Motor Drive",
+		name: "でんきエンジン",
 		rating: 3,
 		num: 78
 	},
@@ -3064,7 +3064,7 @@ export const Abilities = {
 				this.boost({ atk: length }, source)
 			}
 		},
-		name: "Moxie",
+		name: "じしんかじょう",
 		rating: 3,
 		num: 153
 	},
@@ -3076,19 +3076,19 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Multiscale",
+		name: "マルチスケイル",
 		rating: 3.5,
 		num: 136
 	},
 	"マルチタイプ": {
 		// Multitype's type-changing itself is implemented in statuses.js
 		isPermanent: true,
-		name: "Multitype",
+		name: "マルチタイプ",
 		rating: 4,
 		num: 121
 	},
 	"ミイラ": {
-		name: "Mummy",
+		name: "ミイラ",
 		onDamagingHit(damage, target, source, move) {
 			const sourceAbility = source.getAbility()
 			if (sourceAbility.isPermanent || sourceAbility.id === "mummy") {
@@ -3124,7 +3124,7 @@ export const Abilities = {
 				move.ignoreAbility = true
 			}
 		},
-		name: "Mycelium Might",
+		name: "きんしのちから",
 		rating: 2,
 		num: 298
 	},
@@ -3221,7 +3221,7 @@ export const Abilities = {
 			// (once you know a Pokemon has Natural Cure, its cures are always known)
 			if (!pokemon.showCure) pokemon.showCure = undefined
 		},
-		name: "Natural Cure",
+		name: "しぜんかいふく",
 		rating: 2.5,
 		num: 30
 	},
@@ -3231,7 +3231,7 @@ export const Abilities = {
 				return this.chainModify([5120, 4096])
 			}
 		},
-		name: "Neuroforce",
+		name: "ブレインフォース",
 		rating: 2.5,
 		num: 233
 	},
@@ -3314,7 +3314,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Neutralizing Gas",
+		name: "かがくへんかガス",
 		rating: 3.5,
 		num: 256
 	},
@@ -3338,7 +3338,7 @@ export const Abilities = {
 			}
 			return accuracy
 		},
-		name: "No Guard",
+		name: "ノーガード",
 		rating: 4,
 		num: 99
 	},
@@ -3371,7 +3371,7 @@ export const Abilities = {
 			if (move.typeChangerBoosted === this.effect)
 				return this.chainModify([4915, 4096])
 		},
-		name: "Normalize",
+		name: "ノーマルスキン",
 		rating: 0,
 		num: 96
 	},
@@ -3415,7 +3415,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Oblivious",
+		name: "どんかん",
 		rating: 1.5,
 		num: 12
 	},
@@ -3434,7 +3434,7 @@ export const Abilities = {
 			if (Object.keys(positiveBoosts).length < 1) return
 			this.boost(positiveBoosts, pokemon)
 		},
-		name: "Opportunist",
+		name: "びんじょう",
 		rating: 3,
 		num: 290
 	},
@@ -3453,7 +3453,7 @@ export const Abilities = {
 				return this.chainModify([5461, 4096])
 			}
 		},
-		name: "Orichalcum Pulse",
+		name: "ひひいろのこどう",
 		rating: 4.5,
 		num: 288
 	},
@@ -3474,7 +3474,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Overcoat",
+		name: "ぼうじん",
 		rating: 2,
 		num: 142
 	},
@@ -3493,7 +3493,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Overgrow",
+		name: "しんりょく",
 		rating: 2,
 		num: 65
 	},
@@ -3526,7 +3526,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Own Tempo",
+		name: "マイペース",
 		rating: 1.5,
 		num: 20
 	},
@@ -3557,7 +3557,7 @@ export const Abilities = {
 				return secondaries.filter(effect => effect.volatileStatus === "flinch")
 			}
 		},
-		name: "Parental Bond",
+		name: "おやこあい",
 		rating: 4.5,
 		num: 185
 	},
@@ -3603,7 +3603,7 @@ export const Abilities = {
 			return false
 		},
 		isBreakable: true,
-		name: "Pastel Veil",
+		name: "パステルベール",
 		rating: 2,
 		num: 257
 	},
@@ -3621,7 +3621,7 @@ export const Abilities = {
 				pokemon.addVolatile("perishsong")
 			}
 		},
-		name: "Perish Body",
+		name: "ほろびのボディ",
 		rating: 1,
 		num: 253
 	},
@@ -3661,7 +3661,7 @@ export const Abilities = {
 				)
 			}
 		},
-		name: "Pickpocket",
+		name: "わるいてぐせ",
 		rating: 1,
 		num: 124
 	},
@@ -3688,7 +3688,7 @@ export const Abilities = {
 			)
 			pokemon.setItem(item)
 		},
-		name: "Pickup",
+		name: "ものひろい",
 		rating: 0.5,
 		num: 53
 	},
@@ -3719,7 +3719,7 @@ export const Abilities = {
 			if (move.typeChangerBoosted === this.effect)
 				return this.chainModify([4915, 4096])
 		},
-		name: "Pixilate",
+		name: "フェアリースキン",
 		rating: 4,
 		num: 182
 	},
@@ -3732,7 +3732,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Plus",
+		name: "プラス",
 		rating: 0,
 		num: 57
 	},
@@ -3744,7 +3744,7 @@ export const Abilities = {
 				return false
 			}
 		},
-		name: "Poison Heal",
+		name: "ポイズンヒール",
 		rating: 4,
 		num: 90
 	},
@@ -3756,7 +3756,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Poison Point",
+		name: "どくのトゲ",
 		rating: 1.5,
 		num: 38
 	},
@@ -3771,7 +3771,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Poison Touch",
+		name: "どくしゅ",
 		rating: 2,
 		num: 143
 	},
@@ -3810,7 +3810,7 @@ export const Abilities = {
 			this.add("-heal", pokemon, pokemon.getHealth, "[silent]")
 		},
 		isPermanent: true,
-		name: "Power Construct",
+		name: "スワームチェンジ",
 		rating: 5,
 		num: 211
 	},
@@ -3847,7 +3847,7 @@ export const Abilities = {
 				)
 			}
 		},
-		name: "Power of Alchemy",
+		name: "かがくのちから",
 		rating: 0,
 		num: 223
 	},
@@ -3859,7 +3859,7 @@ export const Abilities = {
 				return this.chainModify([5325, 4096])
 			}
 		},
-		name: "Power Spot",
+		name: "パワースポット",
 		rating: 0,
 		num: 249
 	},
@@ -3870,7 +3870,7 @@ export const Abilities = {
 				return priority + 1
 			}
 		},
-		name: "Prankster",
+		name: "いたずらごころ",
 		rating: 4,
 		num: 158
 	},
@@ -3882,7 +3882,7 @@ export const Abilities = {
 			if (target.isAlly(source)) return
 			return 1
 		},
-		name: "Pressure",
+		name: "プレッシャー",
 		rating: 2.5,
 		num: 46
 	},
@@ -3909,7 +3909,7 @@ export const Abilities = {
 			}
 			this.field.clearWeather()
 		},
-		name: "Primordial Sea",
+		name: "はじまりのうみ",
 		rating: 4.5,
 		num: 189
 	},
@@ -3920,7 +3920,7 @@ export const Abilities = {
 				return this.chainModify(0.75)
 			}
 		},
-		name: "Prism Armor",
+		name: "プリズムアーマー",
 		rating: 3,
 		num: 232
 	},
@@ -3930,7 +3930,7 @@ export const Abilities = {
 			// most of the implementation is in Battle#getTarget
 			move.tracksTarget = move.target !== "scripted"
 		},
-		name: "Propeller Tail",
+		name: "スクリューおびれ",
 		rating: 0,
 		num: 239
 	},
@@ -3959,7 +3959,7 @@ export const Abilities = {
 		onSwitchIn(pokemon) {
 			delete this.effectState.protean
 		},
-		name: "Protean",
+		name: "へんげんじざい",
 		rating: 4,
 		num: 168
 	},
@@ -4035,7 +4035,7 @@ export const Abilities = {
 			}
 		},
 		isPermanent: true,
-		name: "Protosynthesis",
+		name: "こだいかっせい",
 		rating: 3,
 		num: 281
 	},
@@ -4043,7 +4043,7 @@ export const Abilities = {
 		onStart(source) {
 			this.field.setTerrain("psychicterrain")
 		},
-		name: "Psychic Surge",
+		name: "サイコメイカー",
 		rating: 4,
 		num: 227
 	},
@@ -4062,7 +4062,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Punk Rock",
+		name: "パンクロック",
 		rating: 3.5,
 		num: 244
 	},
@@ -4071,7 +4071,7 @@ export const Abilities = {
 		onModifyAtk(atk) {
 			return this.chainModify(2)
 		},
-		name: "Pure Power",
+		name: "ヨガパワー",
 		rating: 5,
 		num: 74
 	},
@@ -4103,7 +4103,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Purifying Salt",
+		name: "きよめのしお",
 		rating: 4,
 		num: 272
 	},
@@ -4169,7 +4169,7 @@ export const Abilities = {
 			}
 		},
 		isPermanent: true,
-		name: "Quark Drive",
+		name: "クォークチャージ",
 		rating: 3,
 		num: 282
 	},
@@ -4200,7 +4200,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Queenly Majesty",
+		name: "じょおうのいげん",
 		rating: 2.5,
 		num: 214
 	},
@@ -4212,7 +4212,7 @@ export const Abilities = {
 				return 0.1
 			}
 		},
-		name: "Quick Draw",
+		name: "クイックドロウ",
 		rating: 2.5,
 		num: 259
 	},
@@ -4222,7 +4222,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Quick Feet",
+		name: "はやあし",
 		rating: 2.5,
 		num: 95
 	},
@@ -4233,7 +4233,7 @@ export const Abilities = {
 				this.heal(target.baseMaxhp / 16)
 			}
 		},
-		name: "Rain Dish",
+		name: "あめうけざら",
 		rating: 1.5,
 		num: 44
 	},
@@ -4248,7 +4248,7 @@ export const Abilities = {
 				this.boost({ spe: 1 })
 			}
 		},
-		name: "Rattled",
+		name: "びびり",
 		rating: 1,
 		num: 155
 	},
@@ -4285,7 +4285,7 @@ export const Abilities = {
 				)
 			}
 		},
-		name: "Receiver",
+		name: "レシーバー",
 		rating: 0,
 		num: 222
 	},
@@ -4297,7 +4297,7 @@ export const Abilities = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		name: "Reckless",
+		name: "すてみ",
 		rating: 3,
 		num: 120
 	},
@@ -4328,7 +4328,7 @@ export const Abilities = {
 			if (move.typeChangerBoosted === this.effect)
 				return this.chainModify([4915, 4096])
 		},
-		name: "Refrigerate",
+		name: "フリーズスキン",
 		rating: 4,
 		num: 174
 	},
@@ -4336,7 +4336,7 @@ export const Abilities = {
 		onSwitchOut(pokemon) {
 			pokemon.heal(pokemon.baseMaxhp / 3)
 		},
-		name: "Regenerator",
+		name: "さいせいりょく",
 		rating: 4.5,
 		num: 144
 	},
@@ -4391,7 +4391,7 @@ export const Abilities = {
 			// Record if the pokemon ate a berry to resist the attack
 			pokemon.abilityState.berryWeaken = weakenBerries.includes(item.name)
 		},
-		name: "Ripen",
+		name: "じゅくせい",
 		rating: 2,
 		num: 247
 	},
@@ -4408,14 +4408,14 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Rivalry",
+		name: "とうそうしん",
 		rating: 0,
 		num: 79
 	},
 	"ARシステム": {
 		// RKS System's type-changing itself is implemented in statuses.js
 		isPermanent: true,
-		name: "RKS System",
+		name: "ARシステム",
 		rating: 4,
 		num: 225
 	},
@@ -4426,7 +4426,7 @@ export const Abilities = {
 				if (this.activeMove.id !== "struggle") return null
 			}
 		},
-		name: "Rock Head",
+		name: "いしあたま",
 		rating: 3,
 		num: 69
 	},
@@ -4445,7 +4445,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Rocky Payload",
+		name: "いわはこび",
 		rating: 3.5,
 		num: 276
 	},
@@ -4456,12 +4456,12 @@ export const Abilities = {
 				this.damage(source.baseMaxhp / 8, source, target)
 			}
 		},
-		name: "Rough Skin",
+		name: "さめはだ",
 		rating: 2.5,
 		num: 24
 	},
 	"にげあし": {
-		name: "Run Away",
+		name: "にげあし",
 		rating: 0,
 		num: 50
 	},
@@ -4482,7 +4482,7 @@ export const Abilities = {
 		onImmunity(type, pokemon) {
 			if (type === "sandstorm") return false
 		},
-		name: "Sand Force",
+		name: "すなのちから",
 		rating: 2,
 		num: 159
 	},
@@ -4495,7 +4495,7 @@ export const Abilities = {
 		onImmunity(type, pokemon) {
 			if (type === "sandstorm") return false
 		},
-		name: "Sand Rush",
+		name: "すなかき",
 		rating: 3,
 		num: 146
 	},
@@ -4503,7 +4503,7 @@ export const Abilities = {
 		onDamagingHit(damage, target, source, move) {
 			this.field.setWeather("sandstorm")
 		},
-		name: "Sand Spit",
+		name: "すなはき",
 		rating: 1,
 		num: 245
 	},
@@ -4511,7 +4511,7 @@ export const Abilities = {
 		onStart(source) {
 			this.field.setWeather("sandstorm")
 		},
-		name: "Sand Stream",
+		name: "すなおこし",
 		rating: 4,
 		num: 45
 	},
@@ -4528,7 +4528,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Sand Veil",
+		name: "すながくれ",
 		rating: 1.5,
 		num: 8
 	},
@@ -4549,7 +4549,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Sap Sipper",
+		name: "そうしょく",
 		rating: 3,
 		num: 157
 	},
@@ -4591,7 +4591,7 @@ export const Abilities = {
 			}
 		},
 		isPermanent: true,
-		name: "Schooling",
+		name: "ぎょぐん",
 		rating: 3,
 		num: 208
 	},
@@ -4617,7 +4617,7 @@ export const Abilities = {
 				)
 			}
 		},
-		name: "Scrappy",
+		name: "きもったま",
 		rating: 3,
 		num: 113
 	},
@@ -4639,7 +4639,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Screen Cleaner",
+		name: "バリアフリー",
 		rating: 2,
 		num: 251
 	},
@@ -4647,7 +4647,7 @@ export const Abilities = {
 		onDamagingHit(damage, target, source, move) {
 			this.field.setTerrain("grassyterrain")
 		},
-		name: "Seed Sower",
+		name: "こぼれダネ",
 		rating: 2.5,
 		num: 269
 	},
@@ -4662,7 +4662,7 @@ export const Abilities = {
 			}
 			if (move.self?.chance) move.self.chance *= 2
 		},
-		name: "Serene Grace",
+		name: "てんのめぐみ",
 		rating: 3.5,
 		num: 32
 	},
@@ -4673,7 +4673,7 @@ export const Abilities = {
 				return this.chainModify(0.5)
 			}
 		},
-		name: "Shadow Shield",
+		name: "ファントムガード",
 		rating: 3.5,
 		num: 231
 	},
@@ -4693,7 +4693,7 @@ export const Abilities = {
 				pokemon.maybeTrapped = true
 			}
 		},
-		name: "Shadow Tag",
+		name: "かげふみ",
 		rating: 5,
 		num: 23
 	},
@@ -4705,7 +4705,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Sharpness",
+		name: "きれあじ",
 		rating: 3.5,
 		num: 292
 	},
@@ -4719,7 +4719,7 @@ export const Abilities = {
 				pokemon.cureStatus()
 			}
 		},
-		name: "Shed Skin",
+		name: "だっぴ",
 		rating: 3,
 		num: 61
 	},
@@ -4738,14 +4738,14 @@ export const Abilities = {
 		onBasePower(basePower, pokemon, target, move) {
 			if (move.hasSheerForce) return this.chainModify([5325, 4096])
 		},
-		name: "Sheer Force",
+		name: "ちからずく",
 		rating: 3.5,
 		num: 125
 	},
 	"シェルアーマー": {
 		onCriticalHit: false,
 		isBreakable: true,
-		name: "Shell Armor",
+		name: "シェルアーマー",
 		rating: 1,
 		num: 75
 	},
@@ -4755,7 +4755,7 @@ export const Abilities = {
 			return secondaries.filter(effect => !!(effect.self || effect.dustproof))
 		},
 		isBreakable: true,
-		name: "Shield Dust",
+		name: "りんぷん",
 		rating: 2,
 		num: 19
 	},
@@ -4805,7 +4805,7 @@ export const Abilities = {
 			return null
 		},
 		isPermanent: true,
-		name: "Shields Down",
+		name: "リミットシールド",
 		rating: 3,
 		num: 197
 	},
@@ -4818,7 +4818,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Simple",
+		name: "たんじゅん",
 		rating: 4,
 		num: 86
 	},
@@ -4835,7 +4835,7 @@ export const Abilities = {
 				delete move.multiaccuracy
 			}
 		},
-		name: "Skill Link",
+		name: "スキルリンク",
 		rating: 3,
 		num: 92
 	},
@@ -4865,7 +4865,7 @@ export const Abilities = {
 				this.add("-end", target, "Slow Start")
 			}
 		},
-		name: "Slow Start",
+		name: "スロースタート",
 		rating: -1,
 		num: 112
 	},
@@ -4875,7 +4875,7 @@ export const Abilities = {
 				return this.chainModify(2)
 			}
 		},
-		name: "Slush Rush",
+		name: "ゆきかき",
 		rating: 3,
 		num: 202
 	},
@@ -4886,7 +4886,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Sniper",
+		name: "スナイパー",
 		rating: 2,
 		num: 97
 	},
@@ -4903,7 +4903,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Snow Cloak",
+		name: "ゆきがくれ",
 		rating: 1.5,
 		num: 81
 	},
@@ -4911,7 +4911,7 @@ export const Abilities = {
 		onStart(source) {
 			this.field.setWeather("snow")
 		},
-		name: "Snow Warning",
+		name: "ゆきふらし",
 		rating: 4,
 		num: 117
 	},
@@ -4928,7 +4928,7 @@ export const Abilities = {
 				this.damage(target.baseMaxhp / 8, target, target)
 			}
 		},
-		name: "Solar Power",
+		name: "サンパワー",
 		rating: 2,
 		num: 94
 	},
@@ -4940,7 +4940,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Solid Rock",
+		name: "ハードロック",
 		rating: 3,
 		num: 116
 	},
@@ -4949,7 +4949,7 @@ export const Abilities = {
 		onAnyFaint() {
 			this.boost({ spa: 1 }, this.effectState.target)
 		},
-		name: "Soul-Heart",
+		name: "ソウルハート",
 		rating: 3.5,
 		num: 220
 	},
@@ -4970,7 +4970,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Soundproof",
+		name: "ぼうおん",
 		rating: 2,
 		num: 43
 	},
@@ -4982,7 +4982,7 @@ export const Abilities = {
 				this.boost({ spe: 1 })
 			}
 		},
-		name: "Speed Boost",
+		name: "かそく",
 		rating: 4.5,
 		num: 3
 	},
@@ -5001,13 +5001,13 @@ export const Abilities = {
 				return this.chainModify(2)
 			}
 		},
-		name: "Stakeout",
+		name: "はりこみ",
 		rating: 4.5,
 		num: 198
 	},
 	"あとだし": {
 		onFractionalPriority: -0.1,
-		name: "Stall",
+		name: "あとだし",
 		rating: -1,
 		num: 100
 	},
@@ -5017,7 +5017,7 @@ export const Abilities = {
 			// most of the implementation is in Battle#getTarget
 			move.tracksTarget = move.target !== "scripted"
 		},
-		name: "Stalwart",
+		name: "すじがねいり",
 		rating: 0,
 		num: 242
 	},
@@ -5025,7 +5025,7 @@ export const Abilities = {
 		onDamagingHit(damage, target, source, effect) {
 			this.boost({ def: 1 })
 		},
-		name: "Stamina",
+		name: "じきゅうりょく",
 		rating: 3.5,
 		num: 192
 	},
@@ -5041,7 +5041,7 @@ export const Abilities = {
 				attacker.formeChange(targetForme)
 		},
 		isPermanent: true,
-		name: "Stance Change",
+		name: "バトルスイッチ",
 		rating: 4,
 		num: 176
 	},
@@ -5053,7 +5053,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Static",
+		name: "せいでんき",
 		rating: 2,
 		num: 9
 	},
@@ -5061,7 +5061,7 @@ export const Abilities = {
 		onFlinch(pokemon) {
 			this.boost({ spe: 1 })
 		},
-		name: "Steadfast",
+		name: "ふくつのこころ",
 		rating: 1,
 		num: 80
 	},
@@ -5071,7 +5071,7 @@ export const Abilities = {
 				this.boost({ spe: 6 })
 			}
 		},
-		name: "Steam Engine",
+		name: "じょうききかん",
 		rating: 2,
 		num: 243
 	},
@@ -5090,7 +5090,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Steelworker",
+		name: "はがねつかい",
 		rating: 3.5,
 		num: 200
 	},
@@ -5102,7 +5102,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Steely Spirit",
+		name: "はがねのせいしん",
 		rating: 3.5,
 		num: 252
 	},
@@ -5121,7 +5121,7 @@ export const Abilities = {
 				})
 			}
 		},
-		name: "Stench",
+		name: "あくしゅう",
 		rating: 0.5,
 		num: 1
 	},
@@ -5135,7 +5135,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Sticky Hold",
+		name: "ねんちゃく",
 		rating: 1.5,
 		num: 60
 	},
@@ -5164,7 +5164,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Storm Drain",
+		name: "よびみず",
 		rating: 3,
 		num: 114
 	},
@@ -5175,7 +5175,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Strong Jaw",
+		name: "がんじょうあご",
 		rating: 3.5,
 		num: 173
 	},
@@ -5199,7 +5199,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Sturdy",
+		name: "がんじょう",
 		rating: 3,
 		num: 5
 	},
@@ -5210,7 +5210,7 @@ export const Abilities = {
 			return null
 		},
 		isBreakable: true,
-		name: "Suction Cups",
+		name: "きゅうばん",
 		rating: 1,
 		num: 21
 	},
@@ -5218,7 +5218,7 @@ export const Abilities = {
 		onModifyCritRatio(critRatio) {
 			return critRatio + 1
 		},
-		name: "Super Luck",
+		name: "きょううん",
 		rating: 1.5,
 		num: 105
 	},
@@ -5240,7 +5240,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Supersweet Syrup",
+		name: "かんろなミツ",
 		rating: 1.5,
 		num: 306
 	},
@@ -5266,7 +5266,7 @@ export const Abilities = {
 				return this.chainModify([powMod[this.effectState.fallen], 4096])
 			}
 		},
-		name: "Supreme Overlord",
+		name: "そうだいしょう",
 		rating: 4,
 		num: 293
 	},
@@ -5276,7 +5276,7 @@ export const Abilities = {
 				return this.chainModify(2)
 			}
 		},
-		name: "Surge Surfer",
+		name: "サーフテール",
 		rating: 3,
 		num: 207
 	},
@@ -5295,12 +5295,12 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Swarm",
+		name: "むしのしらせ",
 		rating: 2,
 		num: 68
 	},
 	"スイートベール": {
-		name: "Sweet Veil",
+		name: "スイートベール",
 		onAllySetStatus(status, target, source, effect) {
 			if (status.id === "slp") {
 				this.debug("Sweet Veil interrupts sleep")
@@ -5337,7 +5337,7 @@ export const Abilities = {
 				return this.chainModify(2)
 			}
 		},
-		name: "Swift Swim",
+		name: "すいすい",
 		rating: 3,
 		num: 33
 	},
@@ -5370,7 +5370,7 @@ export const Abilities = {
 				"[of] " + pokemon
 			)
 		},
-		name: "Symbiosis",
+		name: "きょうせい",
 		rating: 0,
 		num: 180
 	},
@@ -5387,7 +5387,7 @@ export const Abilities = {
 				id: "synchronize"
 			})
 		},
-		name: "Synchronize",
+		name: "シンクロ",
 		rating: 2,
 		num: 28
 	},
@@ -5405,7 +5405,7 @@ export const Abilities = {
 			this.debug("Sword of Ruin Def drop")
 			return this.chainModify(0.75)
 		},
-		name: "Sword of Ruin",
+		name: "わざわいのつるぎ",
 		rating: 4.5,
 		num: 285
 	},
@@ -5422,7 +5422,7 @@ export const Abilities = {
 			this.debug("Tablets of Ruin Atk drop")
 			return this.chainModify(0.75)
 		},
-		name: "Tablets of Ruin",
+		name: "わざわいのおふだ",
 		rating: 4.5,
 		num: 284
 	},
@@ -5436,7 +5436,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Tangled Feet",
+		name: "ちどりあし",
 		rating: 1,
 		num: 77
 	},
@@ -5447,7 +5447,7 @@ export const Abilities = {
 				this.boost({ spe: -1 }, source, target, null, true)
 			}
 		},
-		name: "Tangling Hair",
+		name: "カーリーヘアー",
 		rating: 2,
 		num: 221
 	},
@@ -5464,7 +5464,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Technician",
+		name: "テクニシャン",
 		rating: 3.5,
 		num: 101
 	},
@@ -5480,7 +5480,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Telepathy",
+		name: "テレパシー",
 		rating: 0,
 		num: 140
 	},
@@ -5491,7 +5491,7 @@ export const Abilities = {
 		onModifyMove(move) {
 			move.ignoreAbility = true
 		},
-		name: "Teravolt",
+		name: "テラボルテージ",
 		rating: 3,
 		num: 164
 	},
@@ -5514,7 +5514,7 @@ export const Abilities = {
 			}
 			return false
 		},
-		name: "Thermal Exchange",
+		name: "ねつこうかん",
 		rating: 2.5,
 		num: 270
 	},
@@ -5534,7 +5534,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Thick Fat",
+		name: "あついしぼう",
 		rating: 3.5,
 		num: 47
 	},
@@ -5545,7 +5545,7 @@ export const Abilities = {
 				return this.chainModify(2)
 			}
 		},
-		name: "Tinted Lens",
+		name: "いろめがね",
 		rating: 4,
 		num: 110
 	},
@@ -5564,7 +5564,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Torrent",
+		name: "げきりゅう",
 		rating: 2,
 		num: 67
 	},
@@ -5575,7 +5575,7 @@ export const Abilities = {
 				return this.chainModify([5325, 4096])
 			}
 		},
-		name: "Tough Claws",
+		name: "かたいツメ",
 		rating: 3.5,
 		num: 181
 	},
@@ -5589,7 +5589,7 @@ export const Abilities = {
 				return this.chainModify(1.5)
 			}
 		},
-		name: "Toxic Boost",
+		name: "どくぼうそう",
 		rating: 3,
 		num: 137
 	},
@@ -5603,7 +5603,7 @@ export const Abilities = {
 				target.trySetStatus("tox", source)
 			}
 		},
-		name: "Toxic Chain",
+		name: "どくのくさり",
 		rating: 4.5,
 		num: 305
 	},
@@ -5619,7 +5619,7 @@ export const Abilities = {
 				side.addSideCondition("toxicspikes", target)
 			}
 		},
-		name: "Toxic Debris",
+		name: "どくげしょう",
 		rating: 3.5,
 		num: 295
 	},
@@ -5679,7 +5679,7 @@ export const Abilities = {
 				)
 			}
 		},
-		name: "Trace",
+		name: "トレース",
 		rating: 2.5,
 		num: 36
 	},
@@ -5698,7 +5698,7 @@ export const Abilities = {
 				return this.chainModify([5325, 4096])
 			}
 		},
-		name: "Transistor",
+		name: "トランジスタ",
 		rating: 3.5,
 		num: 262
 	},
@@ -5706,7 +5706,7 @@ export const Abilities = {
 		onModifyPriority(priority, pokemon, target, move) {
 			if (move?.flags["heal"]) return priority + 3
 		},
-		name: "Triage",
+		name: "ヒーリングシフト",
 		rating: 3.5,
 		num: 205
 	},
@@ -5730,7 +5730,7 @@ export const Abilities = {
 			pokemon.addVolatile("truant")
 		},
 		condition: {},
-		name: "Truant",
+		name: "なまけ",
 		rating: -1,
 		num: 54
 	},
@@ -5741,12 +5741,12 @@ export const Abilities = {
 		onModifyMove(move) {
 			move.ignoreAbility = true
 		},
-		name: "Turboblaze",
+		name: "ターボブレイズ",
 		rating: 3,
 		num: 163
 	},
 	"てんねん": {
-		name: "Unaware",
+		name: "てんねん",
 		onAnyModifyBoost(boosts, pokemon) {
 			const unawareUser = this.effectState.target
 			if (unawareUser === pokemon) return
@@ -5784,7 +5784,7 @@ export const Abilities = {
 				}
 			}
 		},
-		name: "Unburden",
+		name: "かるわざ",
 		rating: 3.5,
 		num: 84
 	},
@@ -5804,7 +5804,7 @@ export const Abilities = {
 		onFoeTryEatItem() {
 			return !this.effectState.unnerved
 		},
-		name: "Unnerve",
+		name: "きんちょうかん",
 		rating: 1,
 		num: 127
 	},
@@ -5812,7 +5812,7 @@ export const Abilities = {
 		onModifyMove(move) {
 			if (move.flags["contact"]) delete move.flags["protect"]
 		},
-		name: "Unseen Fist",
+		name: "ふかしのこぶし",
 		rating: 2,
 		num: 260
 	},
@@ -5829,7 +5829,7 @@ export const Abilities = {
 			this.debug("Vessel of Ruin SpA drop")
 			return this.chainModify(0.75)
 		},
-		name: "Vessel of Ruin",
+		name: "わざわいのうつわ",
 		rating: 4.5,
 		num: 284
 	},
@@ -5843,7 +5843,7 @@ export const Abilities = {
 				return this.chainModify([4506, 4096])
 			}
 		},
-		name: "Victory Star",
+		name: "しょうりのほし",
 		rating: 2,
 		num: 162
 	},
@@ -5868,7 +5868,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Vital Spirit",
+		name: "やるき",
 		rating: 1.5,
 		num: 72
 	},
@@ -5882,7 +5882,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Volt Absorb",
+		name: "ちくでん",
 		rating: 3.5,
 		num: 10
 	},
@@ -5929,7 +5929,7 @@ export const Abilities = {
 				target.setAbility(sourceAbility)
 			}
 		},
-		name: "Wandering Spirit",
+		name: "さまようたましい",
 		rating: 2.5,
 		num: 254
 	},
@@ -5943,7 +5943,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Water Absorb",
+		name: "ちょすい",
 		rating: 3.5,
 		num: 11
 	},
@@ -5984,7 +5984,7 @@ export const Abilities = {
 			return false
 		},
 		isBreakable: true,
-		name: "Water Bubble",
+		name: "すいほう",
 		rating: 4.5,
 		num: 199
 	},
@@ -5994,7 +5994,7 @@ export const Abilities = {
 				this.boost({ def: 2 })
 			}
 		},
-		name: "Water Compaction",
+		name: "みずがため",
 		rating: 1.5,
 		num: 195
 	},
@@ -6013,7 +6013,7 @@ export const Abilities = {
 			return false
 		},
 		isBreakable: true,
-		name: "Water Veil",
+		name: "みずのベール",
 		rating: 2,
 		num: 41
 	},
@@ -6023,7 +6023,7 @@ export const Abilities = {
 				this.boost({ def: -1, spe: 2 }, target, target)
 			}
 		},
-		name: "Weak Armor",
+		name: "くだけるよろい",
 		rating: 1,
 		num: 133
 	},
@@ -6037,7 +6037,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Well-Baked Body",
+		name: "こんがりボディ",
 		rating: 3.5,
 		num: 273
 	},
@@ -6063,7 +6063,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "White Smoke",
+		name: "しろいけむり",
 		rating: 2,
 		num: 73
 	},
@@ -6083,7 +6083,7 @@ export const Abilities = {
 			target.switchFlag = true
 			this.add("-activate", target, "ability: Wimp Out")
 		},
-		name: "Wimp Out",
+		name: "にげごし",
 		rating: 1,
 		num: 193
 	},
@@ -6100,7 +6100,7 @@ export const Abilities = {
 				pokemon.addVolatile("charge")
 			}
 		},
-		name: "Wind Power",
+		name: "ふうりょくでんき",
 		rating: 1,
 		num: 277
 	},
@@ -6125,7 +6125,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Wind Rider",
+		name: "かぜのり",
 		rating: 3.5,
 		// We do not want Brambleghast to get Infiltrator in Randbats
 		num: 274
@@ -6151,7 +6151,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Wonder Guard",
+		name: "ふしぎなまもり",
 		rating: 5,
 		num: 25
 	},
@@ -6164,7 +6164,7 @@ export const Abilities = {
 			}
 		},
 		isBreakable: true,
-		name: "Wonder Skin",
+		name: "ミラクルスキン",
 		rating: 2,
 		num: 147
 	},
@@ -6223,7 +6223,7 @@ export const Abilities = {
 			}
 		},
 		isPermanent: true,
-		name: "Zen Mode",
+		name: "ダルマモード",
 		rating: 0,
 		num: 161
 	},
@@ -6252,72 +6252,9 @@ export const Abilities = {
 			}
 		},
 		isPermanent: true,
-		name: "Zero to Hero",
+		name: "マイティチェンジ",
 		rating: 5,
 		num: 278
 	},
 
-	// CAP
-	mountaineer: {
-		onDamage(damage, target, source, effect) {
-			if (effect && effect.id === "stealthrock") {
-				return false
-			}
-		},
-		onTryHit(target, source, move) {
-			if (move.type === "Rock" && !target.activeTurns) {
-				this.add("-immune", target, "[from] ability: Mountaineer")
-				return null
-			}
-		},
-		isNonstandard: "CAP",
-		isBreakable: true,
-		name: "Mountaineer",
-		rating: 3,
-		num: -2
-	},
-	rebound: {
-		isNonstandard: "CAP",
-		name: "Rebound",
-		onTryHitPriority: 1,
-		onTryHit(target, source, move) {
-			if (this.effectState.target.activeTurns) return
-
-			if (target === source || move.hasBounced || !move.flags["reflectable"]) {
-				return
-			}
-			const newMove = this.dex.getActiveMove(move.id)
-			newMove.hasBounced = true
-			this.actions.useMove(newMove, target, source)
-			return null
-		},
-		onAllyTryHitSide(target, source, move) {
-			if (this.effectState.target.activeTurns) return
-
-			if (
-				target.isAlly(source) ||
-				move.hasBounced ||
-				!move.flags["reflectable"]
-			) {
-				return
-			}
-			const newMove = this.dex.getActiveMove(move.id)
-			newMove.hasBounced = true
-			this.actions.useMove(newMove, this.effectState.target, source)
-			return null
-		},
-		condition: {
-			duration: 1
-		},
-		isBreakable: true,
-		rating: 3,
-		num: -3
-	},
-	persistent: {
-		isNonstandard: "CAP",
-		name: "Persistent",
-		// implemented in the corresponding move
-		rating: 3,
-		num: -4
-	}
 }
