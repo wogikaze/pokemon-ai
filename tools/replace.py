@@ -14,12 +14,11 @@ with open("../source/skills_pre.js", "r", encoding="utf-8") as file:
 
 # 日本語のテキストを英語に置き換え
 for japanese, english in translation_map.items():
-    content = content.replace(english, '"' + japanese + '"')
-    english = english.replace(" ", "").replace("-", "").replace("'", "").lower()
+    # content = content.replace(english, '"' + japanese + '"')
+    # english = english.replace(" ", "").replace("-", "").replace("'", "").lower()
     english = english + ": {"
-    japanese = japanese + ": {"
     print(english)
-    content = content.replace(english, japanese)
+    content = content.replace(english, '"' + japanese + '": {')
 
 # 置き換えた内容をファイルに書き込む
 with open("../source/skills_pre.js", "w", encoding="utf-8") as file:
