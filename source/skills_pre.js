@@ -13,7 +13,7 @@ const Moves = {
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Clever"
 	},
 	"アクセルロック": {
@@ -27,7 +27,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Rock",
+		type: "いわ",
 		contestType: "Cool"
 	},
 	"ようかいえき": {
@@ -46,7 +46,7 @@ const Moves = {
 			}
 		},
 		target: "allAdjacentFoes",
-		type: "Poison",
+		type: "どく",
 		contestType: "Clever"
 	},
 	"とける": {
@@ -63,7 +63,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Poison",
+		type: "どく",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Tough"
 	},
@@ -83,7 +83,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		contestType: "Beautiful"
 	},
 	"アクロバット": {
@@ -104,7 +104,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, distance: 1 },
 		secondary: null,
 		target: "any",
-		type: "Flying",
+		type: "ひこう",
 		contestType: "Cool"
 	},
 	"つぼをつく": {
@@ -135,7 +135,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "adjacentAllyOrSelf",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "crit2" },
 		contestType: "Tough"
 	},
@@ -150,7 +150,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, distance: 1, slicing: 1 },
 		secondary: null,
 		target: "any",
-		type: "Flying",
+		type: "ひこう",
 		contestType: "Cool"
 	},
 	"おさきにどうぞ": {
@@ -174,7 +174,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Cute"
 	},
@@ -192,7 +192,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cool"
 	},
@@ -208,7 +208,7 @@ const Moves = {
 		critRatio: 2,
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Flying",
+		type: "ひこう",
 		contestType: "Cool"
 	},
 	"エアスラッシュ": {
@@ -225,7 +225,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "any",
-		type: "Flying",
+		type: "ひこう",
 		contestType: "Cool"
 	},
 	"サイドチェンジ": {
@@ -255,7 +255,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spe: 2 } },
 		contestType: "Clever"
 	},
@@ -273,7 +273,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
@@ -299,7 +299,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Rock",
+		type: "いわ",
 		contestType: "Tough"
 	},
 	"りんごさん": {
@@ -318,7 +318,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Grass"
+		type: "くさ"
 	},
 	"アクアカッター": {
 		num: 895,
@@ -332,7 +332,7 @@ const Moves = {
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Cool"
 	},
 	"アクアジェット": {
@@ -346,7 +346,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Cool"
 	},
 	"アクアリング": {
@@ -370,7 +370,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Water",
+		type: "みず",
 		zMove: { boost: { def: 1 } },
 		contestType: "Beautiful"
 	},
@@ -392,7 +392,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Cool"
 	},
 	"アクアテール": {
@@ -406,7 +406,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Beautiful"
 	},
 	"アーマーキャノン": {
@@ -426,7 +426,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fire"
+		type: "ほのお"
 	},
 	"つっぱり": {
 		num: 292,
@@ -440,7 +440,7 @@ const Moves = {
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Tough"
 	},
 	"アロマミスト": {
@@ -457,7 +457,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "adjacentAlly",
-		type: "Fairy",
+		type: "フェアリー",
 		zMove: { boost: { spd: 2 } },
 		contestType: "Beautiful"
 	},
@@ -479,7 +479,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Clever"
 	},
 	"おどろかす": {
@@ -496,7 +496,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "normal",
-		type: "Ghost",
+		type: "ゴースト",
 		contestType: "Cute"
 	},
 	"アストラルビット": {
@@ -510,7 +510,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Ghost"
+		type: "ゴースト"
 	},
 	"こうげきしれい": {
 		num: 454,
@@ -524,7 +524,7 @@ const Moves = {
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
-		type: "Bug",
+		type: "むし",
 		contestType: "Clever"
 	},
 	"メロメロ": {
@@ -607,7 +607,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
@@ -622,7 +622,7 @@ const Moves = {
 		flags: { bullet: 1, protect: 1, pulse: 1, mirror: 1, distance: 1 },
 		secondary: null,
 		target: "any",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Beautiful"
 	},
 	"オーラぐるま": {
@@ -661,7 +661,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Electric"
+		type: "でんき"
 	},
 	"オーロラビーム": {
 		num: 62,
@@ -679,7 +679,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Ice",
+		type: "こおり",
 		contestType: "Beautiful"
 	},
 	"オーロラベール": {
@@ -731,7 +731,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allySide",
-		type: "Ice",
+		type: "こおり",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Beautiful"
 	},
@@ -756,7 +756,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Ice",
+		type: "こおり",
 		contestType: "Beautiful"
 	},
 	"かかとおとし": {
@@ -782,7 +782,7 @@ const Moves = {
 			volatileStatus: "confusion"
 		},
 		target: "normal",
-		type: "Fighting"
+		type: "かくとう"
 	},
 	"つぶらなひとみ": {
 		num: 608,
@@ -798,7 +798,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fairy",
+		type: "フェアリー",
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
@@ -860,7 +860,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Poison",
+		type: "どく",
 		zMove: { boost: { def: 1 } },
 		contestType: "Tough"
 	},
@@ -883,7 +883,7 @@ const Moves = {
 			status: "psn"
 		},
 		target: "normal",
-		type: "Poison"
+		type: "どく"
 	},
 	"バトンタッチ": {
 		num: 226,
@@ -909,7 +909,7 @@ const Moves = {
 		selfSwitch: "copyvolatile",
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
@@ -936,7 +936,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Clever"
 	},
 	"きょじゅうだん": {
@@ -950,7 +950,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, failcopycat: 1, failmimic: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Steel"
+		type: "はがね"
 	},
 	"きょじゅうざん": {
 		num: 781,
@@ -970,7 +970,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Steel"
+		type: "はがね"
 	},
 	"ゲップ": {
 		num: 562,
@@ -994,7 +994,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		contestType: "Tough"
 	},
 	"はらだいこ": {
@@ -1020,7 +1020,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "heal" },
 		contestType: "Cute"
 	},
@@ -1036,7 +1036,7 @@ const Moves = {
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"かみつく": {
@@ -1053,7 +1053,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Tough"
 	},
 	"むねんのつるぎ": {
@@ -1068,7 +1068,7 @@ const Moves = {
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
-		type: "Fire"
+		type: "ほのお"
 	},
 	"うらみつらみ": {
 		num: 841,
@@ -1086,7 +1086,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Ghost"
+		type: "ゴースト"
 	},
 	"ブラストバーン": {
 		num: 307,
@@ -1102,7 +1102,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Beautiful"
 	},
 	"ブレイズキック": {
@@ -1120,7 +1120,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Cool"
 	},
 	"こがらしあらし": {
@@ -1147,7 +1147,7 @@ const Moves = {
 			}
 		},
 		target: "allAdjacentFoes",
-		type: "Flying"
+		type: "ひこう"
 	},
 	"ふぶき": {
 		num: 59,
@@ -1166,7 +1166,7 @@ const Moves = {
 			status: "frz"
 		},
 		target: "allAdjacentFoes",
-		type: "Ice",
+		type: "こおり",
 		contestType: "Beautiful"
 	},
 	"とおせんぼう": {
@@ -1183,7 +1183,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
@@ -1198,7 +1198,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1, cantusetwice: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal"
+		type: "ノーマル"
 	},
 	"ボディプレス": {
 		num: 776,
@@ -1212,7 +1212,7 @@ const Moves = {
 		overrideOffensiveStat: "def",
 		secondary: null,
 		target: "normal",
-		type: "Fighting"
+		type: "かくとう"
 	},
 	"のしかかり": {
 		num: 34,
@@ -1228,7 +1228,7 @@ const Moves = {
 			status: "par"
 		},
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"ボーンラッシュ": {
@@ -1243,7 +1243,7 @@ const Moves = {
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
-		type: "Ground",
+		type: "じめん",
 		zMove: { basePower: 140 },
 		maxMove: { basePower: 130 },
 		contestType: "Tough"
@@ -1259,7 +1259,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1, sound: 1, bypasssub: 1 },
 		secondary: null,
 		target: "allAdjacent",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"とびはねる": {
@@ -1321,7 +1321,7 @@ const Moves = {
 			status: "par"
 		},
 		target: "any",
-		type: "Flying",
+		type: "ひこう",
 		contestType: "Cute"
 	},
 	"えだづき": {
@@ -1335,7 +1335,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Grass"
+		type: "くさ"
 	},
 	"ブレイブバード": {
 		num: 413,
@@ -1349,7 +1349,7 @@ const Moves = {
 		recoil: [33, 100],
 		secondary: null,
 		target: "any",
-		type: "Flying",
+		type: "ひこう",
 		contestType: "Cool"
 	},
 	"ワイドブレイカー": {
@@ -1368,7 +1368,7 @@ const Moves = {
 			}
 		},
 		target: "allAdjacentFoes",
-		type: "Dragon"
+		type: "ドラゴン"
 	},
 	"かわらわり": {
 		num: 280,
@@ -1387,7 +1387,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Cool"
 	},
 	"しおみず": {
@@ -1406,7 +1406,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Tough"
 	},
 	"ぶんまわす": {
@@ -1420,7 +1420,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "allAdjacent",
-		type: "Dark",
+		type: "あく",
 		contestType: "Tough"
 	},
 	"バブルこうせん": {
@@ -1439,7 +1439,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Beautiful"
 	},
 	"むしくい": {
@@ -1471,7 +1471,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Bug",
+		type: "むし",
 		contestType: "Cute"
 	},
 	"むしのさざめき": {
@@ -1490,7 +1490,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Bug",
+		type: "むし",
 		contestType: "Beautiful"
 	},
 	"ビルドアップ": {
@@ -1508,7 +1508,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Fighting",
+		type: "かくとう",
 		zMove: { boost: { atk: 1 } },
 		contestType: "Cool"
 	},
@@ -1528,7 +1528,7 @@ const Moves = {
 			}
 		},
 		target: "allAdjacent",
-		type: "Ground",
+		type: "じめん",
 		contestType: "Tough"
 	},
 	"バレットパンチ": {
@@ -1542,7 +1542,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Steel",
+		type: "はがね",
 		contestType: "Tough"
 	},
 	"タネマシンガン": {
@@ -1557,7 +1557,7 @@ const Moves = {
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		zMove: { basePower: 140 },
 		maxMove: { basePower: 130 },
 		contestType: "Cool"
@@ -1580,7 +1580,7 @@ const Moves = {
 			}
 		},
 		target: "allAdjacentFoes",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Tough"
 	},
 	"もえつきる": {
@@ -1614,7 +1614,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Clever"
 	},
 	"めいそう": {
@@ -1632,7 +1632,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
@@ -1661,7 +1661,7 @@ const Moves = {
 		},
 		secondary: {}, // Sheer Force-boosted
 		target: "normal",
-		type: "Dark"
+		type: "あく"
 	},
 	"おいわい": {
 		num: 606,
@@ -1683,7 +1683,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
 		contestType: "Cute"
 	},
@@ -1756,7 +1756,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Electric",
+		type: "でんき",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
@@ -1778,7 +1778,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Beautiful"
 	},
 	"あまえる": {
@@ -1795,7 +1795,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fairy",
+		type: "フェアリー",
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
@@ -1815,7 +1815,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Beautiful"
 	},
 	"さむいギャグ": {
@@ -1833,7 +1833,7 @@ const Moves = {
 		selfSwitch: true,
 		secondary: null,
 		target: "all",
-		type: "Ice"
+		type: "こおり"
 	},
 	"クロロブラスト": {
 		num: 835,
@@ -1847,7 +1847,7 @@ const Moves = {
 		// Recoil implemented in battle-actions.ts
 		secondary: null,
 		target: "normal",
-		type: "Grass"
+		type: "くさ"
 	},
 	"ともえなげ": {
 		num: 509,
@@ -1860,7 +1860,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, noassist: 1, failcopycat: 1 },
 		forceSwitch: true,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Cool"
 	},
 	"スケイルノイズ": {
@@ -1879,7 +1879,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Dragon",
+		type: "ドラゴン",
 		contestType: "Tough"
 	},
 	"ソウルビート": {
@@ -1911,7 +1911,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Dragon"
+		type: "ドラゴン"
 	},
 	"クリアスモッグ": {
 		num: 499,
@@ -1928,7 +1928,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		contestType: "Beautiful"
 	},
 	"インファイト": {
@@ -1948,7 +1948,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Tough"
 	},
 	"コーチング": {
@@ -1966,7 +1966,7 @@ const Moves = {
 			def: 1
 		},
 		target: "adjacentAlly",
-		type: "Fighting"
+		type: "かくとう"
 	},
 	"とぐろをまく": {
 		num: 489,
@@ -1984,7 +1984,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Poison",
+		type: "どく",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Tough"
 	},
@@ -2006,7 +2006,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Tough"
 	},
 	"ほうふく": {
@@ -2037,7 +2037,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "scripted",
-		type: "Dark",
+		type: "あく",
 		contestType: "Cool"
 	},
 	"ないしょばなし": {
@@ -2054,7 +2054,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Cute"
 	},
@@ -2070,7 +2070,7 @@ const Moves = {
 		volatileStatus: "confusion",
 		secondary: null,
 		target: "normal",
-		type: "Ghost",
+		type: "ゴースト",
 		zMove: { boost: { spa: 1 } },
 		contestType: "Clever"
 	},
@@ -2088,7 +2088,7 @@ const Moves = {
 			volatileStatus: "confusion"
 		},
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Clever"
 	},
 	"まねっこ": {
@@ -2119,7 +2119,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { accuracy: 1 } },
 		contestType: "Cute"
 	},
@@ -2148,7 +2148,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allAdjacent",
-		type: "Poison"
+		type: "どく"
 	},
 	"コスモパワー": {
 		num: 322,
@@ -2165,7 +2165,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Beautiful"
 	},
@@ -2183,7 +2183,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Grass",
+		type: "くさ",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
@@ -2201,7 +2201,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Grass",
+		type: "くさ",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
@@ -2253,7 +2253,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "scripted",
-		type: "Fighting",
+		type: "かくとう",
 		maxMove: { basePower: 75 },
 		contestType: "Tough"
 	},
@@ -2349,7 +2349,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Normal"
+		type: "ノーマル"
 	},
 	"ほしがる": {
 		num: 343,
@@ -2400,7 +2400,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cute"
 	},
 	"クラブハンマー": {
@@ -2415,7 +2415,7 @@ const Moves = {
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Tough"
 	},
 	"クロスチョップ": {
@@ -2430,7 +2430,7 @@ const Moves = {
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Cool"
 	},
 	"クロスポイズン": {
@@ -2448,7 +2448,7 @@ const Moves = {
 		},
 		critRatio: 2,
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		contestType: "Cool"
 	},
 	"かみくだく": {
@@ -2467,7 +2467,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Tough"
 	},
 	"ブレイククロー": {
@@ -2486,7 +2486,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cool"
 	},
 	"のろい": {
@@ -2530,7 +2530,7 @@ const Moves = {
 		secondary: null,
 		target: "normal",
 		nonGhostTarget: "self",
-		type: "Ghost",
+		type: "ゴースト",
 		zMove: { effect: "curse" },
 		contestType: "Tough"
 	},
@@ -2545,7 +2545,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, slicing: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cool"
 	},
 	"DDラリアット": {
@@ -2561,7 +2561,7 @@ const Moves = {
 		ignoreDefensive: true,
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Cool"
 	},
 	"あくのはどう": {
@@ -2578,7 +2578,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "any",
-		type: "Dark",
+		type: "あく",
 		contestType: "Cool"
 	},
 	"ダークホール": {
@@ -2601,7 +2601,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Dark",
+		type: "あく",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
@@ -2616,7 +2616,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Fairy",
+		type: "フェアリー",
 		contestType: "Beautiful"
 	},
 	"ぼうぎょしれい": {
@@ -2634,7 +2634,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Bug",
+		type: "むし",
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
@@ -2657,7 +2657,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { accuracy: 1 } },
 		contestType: "Cute"
 	},
@@ -2723,7 +2723,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Flying",
+		type: "ひこう",
 		zMove: { boost: { accuracy: 1 } },
 		contestType: "Cool"
 	},
@@ -2767,7 +2767,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Ghost",
+		type: "ゴースト",
 		zMove: { effect: "redirect" },
 		contestType: "Clever"
 	},
@@ -2790,7 +2790,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Fighting",
+		type: "かくとう",
 		zMove: { boost: { evasion: 1 } },
 		contestType: "Cool"
 	},
@@ -2813,7 +2813,7 @@ const Moves = {
 			// Sheer Force negates the self even though it is not secondary
 		},
 		target: "allAdjacentFoes",
-		type: "Rock",
+		type: "いわ",
 		contestType: "Beautiful"
 	},
 	"あなをほる": {
@@ -2864,7 +2864,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Ground",
+		type: "じめん",
 		contestType: "Tough"
 	},
 	"かなしばり": {
@@ -2947,7 +2947,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
@@ -2962,7 +2962,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1, sound: 1, bypasssub: 1 },
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Fairy",
+		type: "フェアリー",
 		contestType: "Cute"
 	},
 	"ほうでん": {
@@ -2979,7 +2979,7 @@ const Moves = {
 			status: "par"
 		},
 		target: "allAdjacent",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Beautiful"
 	},
 	"フェイタルクロー": {
@@ -3005,7 +3005,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Poison"
+		type: "どく"
 	},
 	"ダイビング": {
 		num: 291,
@@ -3067,7 +3067,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Beautiful"
 	},
 	"うつしえ": {
@@ -3106,7 +3106,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "adjacentFoe",
-		type: "Normal"
+		type: "ノーマル"
 	},
 	"はめつのねがい": {
 		num: 353,
@@ -3131,7 +3131,7 @@ const Moves = {
 					priority: 0,
 					flags: { futuremove: 1 },
 					effectType: "Move",
-					type: "Steel"
+					type: "はがね"
 				}
 			})
 			this.add("-start", source, "Doom Desire")
@@ -3139,7 +3139,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Steel",
+		type: "はがね",
 		contestType: "Beautiful"
 	},
 	"すてみタックル": {
@@ -3154,7 +3154,7 @@ const Moves = {
 		recoil: [33, 100],
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"ダブルアタック": {
@@ -3169,7 +3169,7 @@ const Moves = {
 		multihit: 2,
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { basePower: 140 },
 		maxMove: { basePower: 120 },
 		contestType: "Cool"
@@ -3186,7 +3186,7 @@ const Moves = {
 		multihit: 2,
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		maxMove: { basePower: 80 },
 		contestType: "Cool"
 	},
@@ -3223,7 +3223,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Clever"
 	},
 	"かげぶんしん": {
@@ -3240,7 +3240,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cool"
 	},
@@ -3260,7 +3260,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dragon",
+		type: "ドラゴン",
 		contestType: "Beautiful"
 	},
 	"ガリョウテンセイ": {
@@ -3279,7 +3279,7 @@ const Moves = {
 			}
 		},
 		target: "any",
-		type: "Flying",
+		type: "ひこう",
 		contestType: "Beautiful"
 	},
 	"りゅうのいぶき": {
@@ -3296,7 +3296,7 @@ const Moves = {
 			status: "par"
 		},
 		target: "normal",
-		type: "Dragon",
+		type: "ドラゴン",
 		contestType: "Cool"
 	},
 	"ドラゴンクロー": {
@@ -3310,7 +3310,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Dragon",
+		type: "ドラゴン",
 		contestType: "Cool"
 	},
 	"りゅうのまい": {
@@ -3328,7 +3328,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Dragon",
+		type: "ドラゴン",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cool"
 	},
@@ -3345,7 +3345,7 @@ const Moves = {
 		smartTarget: true,
 		secondary: null,
 		target: "normal",
-		type: "Dragon",
+		type: "ドラゴン",
 		maxMove: { basePower: 130 }
 	},
 	"ドラゴンエナジー": {
@@ -3364,7 +3364,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Dragon"
+		type: "ドラゴン"
 	},
 	"りゅうのはどう": {
 		num: 406,
@@ -3377,7 +3377,7 @@ const Moves = {
 		flags: { protect: 1, pulse: 1, mirror: 1, distance: 1 },
 		secondary: null,
 		target: "any",
-		type: "Dragon",
+		type: "ドラゴン",
 		contestType: "Beautiful"
 	},
 	"ドラゴンダイブ": {
@@ -3394,7 +3394,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "normal",
-		type: "Dragon",
+		type: "ドラゴン",
 		contestType: "Tough"
 	},
 	"ドラゴンテール": {
@@ -3408,7 +3408,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, noassist: 1, failcopycat: 1 },
 		forceSwitch: true,
 		target: "normal",
-		type: "Dragon",
+		type: "ドラゴン",
 		contestType: "Tough"
 	},
 	"ドレインキッス": {
@@ -3423,7 +3423,7 @@ const Moves = {
 		drain: [3, 4],
 		secondary: null,
 		target: "normal",
-		type: "Fairy",
+		type: "フェアリー",
 		contestType: "Cute"
 	},
 	"ドレインパンチ": {
@@ -3438,7 +3438,7 @@ const Moves = {
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Tough"
 	},
 	"ゆめくい": {
@@ -3456,7 +3456,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Clever"
 	},
 	"ドリルくちばし": {
@@ -3470,7 +3470,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, distance: 1 },
 		secondary: null,
 		target: "any",
-		type: "Flying",
+		type: "ひこう",
 		contestType: "Cool"
 	},
 	"ドリルライナー": {
@@ -3485,7 +3485,7 @@ const Moves = {
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
-		type: "Ground",
+		type: "じめん",
 		contestType: "Tough"
 	},
 	"ドラムアタック": {
@@ -3504,7 +3504,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Grass"
+		type: "くさ"
 	},
 	"ダブルウイング": {
 		num: 814,
@@ -3518,7 +3518,7 @@ const Moves = {
 		multihit: 2,
 		secondary: null,
 		target: "normal",
-		type: "Flying",
+		type: "ひこう",
 		maxMove: { basePower: 130 }
 	},
 	"ダイマックスほう": {
@@ -3540,7 +3540,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dragon"
+		type: "ドラゴン"
 	},
 	"ばくれつパンチ": {
 		num: 223,
@@ -3556,7 +3556,7 @@ const Moves = {
 			volatileStatus: "confusion"
 		},
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Cool"
 	},
 	"だいちのちから": {
@@ -3575,7 +3575,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Ground",
+		type: "じめん",
 		contestType: "Beautiful"
 	},
 	"じしん": {
@@ -3589,7 +3589,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1, nonsky: 1 },
 		secondary: null,
 		target: "allAdjacent",
-		type: "Ground",
+		type: "じめん",
 		contestType: "Tough"
 	},
 	"エコーボイス": {
@@ -3628,7 +3628,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Beautiful"
 	},
 	"かいでんぱ": {
@@ -3645,7 +3645,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
@@ -3679,7 +3679,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Psychic"
+		type: "エスパー"
 	},
 	"エレキフィールド": {
 		num: 604,
@@ -3752,7 +3752,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Electric",
+		type: "でんき",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
@@ -3774,7 +3774,7 @@ const Moves = {
 		flags: { bullet: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		zMove: { basePower: 160 },
 		maxMove: { basePower: 130 },
 		contestType: "Cool"
@@ -3797,7 +3797,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Cool"
 	},
 	"エレキネット": {
@@ -3816,7 +3816,7 @@ const Moves = {
 			}
 		},
 		target: "allAdjacentFoes",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Beautiful"
 	},
 	"ひのこ": {
@@ -3833,7 +3833,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Cute"
 	},
 	"アンコール": {
@@ -3906,7 +3906,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Cute"
 	},
@@ -3927,7 +3927,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { basePower: 160 },
 		maxMove: { basePower: 130 },
 		contestType: "Tough"
@@ -3964,7 +3964,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Tough"
 	},
@@ -3984,7 +3984,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Beautiful"
 	},
 	"なかまづくり": {
@@ -4039,7 +4039,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Cute"
 	},
@@ -4059,7 +4059,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Beautiful"
 	},
 	"オーラウイング": {
@@ -4081,7 +4081,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Psychic"
+		type: "エスパー"
 	},
 	"ワイドフォース": {
 		num: 797,
@@ -4105,7 +4105,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Psychic"
+		type: "エスパー"
 	},
 	"だいばくはつ": {
 		num: 153,
@@ -4119,7 +4119,7 @@ const Moves = {
 		selfdestruct: "always",
 		secondary: null,
 		target: "allAdjacent",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Beautiful"
 	},
 	"じんつうりき": {
@@ -4136,7 +4136,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Cool"
 	},
 	"しんそく": {
@@ -4150,7 +4150,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cool"
 	},
 	"からげんき": {
@@ -4169,7 +4169,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cute"
 	},
 	"フェアリーロック": {
@@ -4193,7 +4193,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Fairy",
+		type: "フェアリー",
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
@@ -4208,7 +4208,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1, wind: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Fairy",
+		type: "フェアリー",
 		contestType: "Beautiful"
 	},
 	"ねこだまし": {
@@ -4231,7 +4231,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cute"
 	},
 	"うそなき": {
@@ -4248,7 +4248,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		zMove: { boost: { spa: 1 } },
 		contestType: "Cute"
 	},
@@ -4263,7 +4263,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Dark"
+		type: "あく"
 	},
 	"みねうち": {
 		num: 206,
@@ -4280,7 +4280,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cool"
 	},
 	"フェザーダンス": {
@@ -4297,7 +4297,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Flying",
+		type: "ひこう",
 		zMove: { boost: { def: 1 } },
 		contestType: "Beautiful"
 	},
@@ -4314,7 +4314,7 @@ const Moves = {
 		// Breaking protection implemented in scripts.js
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Clever"
 	},
 	"とどめばり": {
@@ -4332,7 +4332,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Bug",
+		type: "むし",
 		contestType: "Cool"
 	},
 	"ほのおのまい": {
@@ -4353,7 +4353,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Beautiful"
 	},
 	"もえあがるいかり": {
@@ -4370,7 +4370,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "allAdjacentFoes",
-		type: "Dark"
+		type: "あく"
 	},
 	"みをけずる": {
 		num: 868,
@@ -4398,7 +4398,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal"
+		type: "ノーマル"
 	},
 	"いのちがけ": {
 		num: 515,
@@ -4417,7 +4417,7 @@ const Moves = {
 		flags: { protect: 1, noparentalbond: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		zMove: { basePower: 180 },
 		contestType: "Tough"
 	},
@@ -4435,7 +4435,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Beautiful"
 	},
 	"ほのおのキバ": {
@@ -4458,7 +4458,7 @@ const Moves = {
 			}
 		],
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Cool"
 	},
 	"ほのおのムチ": {
@@ -4477,7 +4477,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Cute"
 	},
 	"ほのおのちかい": {
@@ -4548,7 +4548,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Beautiful"
 	},
 	"ほのおのパンチ": {
@@ -4565,7 +4565,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Tough"
 	},
 	"ほのおのうず": {
@@ -4580,7 +4580,7 @@ const Moves = {
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Beautiful"
 	},
 	"であいがしら": {
@@ -4600,7 +4600,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Bug",
+		type: "むし",
 		contestType: "Cute"
 	},
 	"じわれ": {
@@ -4615,7 +4615,7 @@ const Moves = {
 		ohko: true,
 		secondary: null,
 		target: "normal",
-		type: "Ground",
+		type: "じめん",
 		zMove: { basePower: 180 },
 		maxMove: { basePower: 130 },
 		contestType: "Tough"
@@ -4650,7 +4650,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { basePower: 160 },
 		maxMove: { basePower: 130 },
 		contestType: "Cute"
@@ -4673,7 +4673,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Cool"
 	},
 	"かえんぐるま": {
@@ -4690,7 +4690,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Beautiful"
 	},
 	"かえんほうしゃ": {
@@ -4707,7 +4707,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Beautiful"
 	},
 	"フレアドライブ": {
@@ -4725,7 +4725,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Cool"
 	},
 	"ラスターカノン": {
@@ -4744,7 +4744,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Steel",
+		type: "はがね",
 		contestType: "Beautiful"
 	},
 	"おだてる": {
@@ -4762,7 +4762,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
@@ -4782,7 +4782,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fairy",
+		type: "フェアリー",
 		contestType: "Beautiful"
 	},
 	"なげつける": {
@@ -4845,7 +4845,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Cute"
 	},
 	"クイックターン": {
@@ -4860,7 +4860,7 @@ const Moves = {
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",
-		type: "Water"
+		type: "みず"
 	},
 	"トリックフラワー": {
 		num: 870,
@@ -4874,7 +4874,7 @@ const Moves = {
 		willCrit: true,
 		secondary: null,
 		target: "normal",
-		type: "Grass"
+		type: "くさ"
 	},
 	"そらをとぶ": {
 		num: 19,
@@ -4932,7 +4932,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "any",
-		type: "Flying",
+		type: "ひこう",
 		contestType: "Clever"
 	},
 	"フライングプレス": {
@@ -4956,7 +4956,7 @@ const Moves = {
 		priority: 0,
 		secondary: null,
 		target: "any",
-		type: "Fighting",
+		type: "かくとう",
 		zMove: { basePower: 170 },
 		contestType: "Tough"
 	},
@@ -4976,7 +4976,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Cool"
 	},
 	"きあいだめ": {
@@ -5008,7 +5008,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { accuracy: 1 } },
 		contestType: "Cool"
 	},
@@ -5055,7 +5055,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Tough"
 	},
 	"このゆびとまれ": {
@@ -5094,7 +5094,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
@@ -5112,7 +5112,7 @@ const Moves = {
 			status: "par"
 		},
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Cool"
 	},
 	"イカサマ": {
@@ -5127,7 +5127,7 @@ const Moves = {
 		overrideOffensivePokemon: "target",
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Clever"
 	},
 	"フリーズドライ": {
@@ -5147,7 +5147,7 @@ const Moves = {
 			status: "frz"
 		},
 		target: "normal",
-		type: "Ice",
+		type: "こおり",
 		contestType: "Beautiful"
 	},
 	"いてつくしせん": {
@@ -5164,7 +5164,7 @@ const Moves = {
 			status: "frz"
 		},
 		target: "normal",
-		type: "Psychic"
+		type: "エスパー"
 	},
 	"ハードプラント": {
 		num: 338,
@@ -5180,7 +5180,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Cool"
 	},
 	"こおりのいぶき": {
@@ -5195,7 +5195,7 @@ const Moves = {
 		willCrit: true,
 		secondary: null,
 		target: "normal",
-		type: "Ice",
+		type: "こおり",
 		contestType: "Beautiful"
 	},
 	"みだれづき": {
@@ -5210,7 +5210,7 @@ const Moves = {
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cool"
 	},
 	"れんぞくぎり": {
@@ -5248,7 +5248,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Bug",
+		type: "むし",
 		contestType: "Cool"
 	},
 	"みだれひっかき": {
@@ -5263,7 +5263,7 @@ const Moves = {
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		maxMove: { basePower: 100 },
 		contestType: "Tough"
 	},
@@ -5293,7 +5293,7 @@ const Moves = {
 					flags: { allyanim: 1, futuremove: 1 },
 					ignoreImmunity: false,
 					effectType: "Move",
-					type: "Psychic"
+					type: "エスパー"
 				}
 			})
 			this.add("-start", source, "move: Future Sight")
@@ -5301,7 +5301,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Clever"
 	},
 	"いえき": {
@@ -5344,7 +5344,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Tough"
 	},
@@ -5360,7 +5360,7 @@ const Moves = {
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Clever"
 	},
 	"ギガインパクト": {
@@ -5377,7 +5377,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"デカハンマー": {
@@ -5391,7 +5391,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1, cantusetwice: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Steel"
+		type: "はがね"
 	},
 	"ブリザードランス": {
 		num: 824,
@@ -5404,7 +5404,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Ice"
+		type: "こおり"
 	},
 	"きょけんとつげき": {
 		num: 862,
@@ -5437,7 +5437,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dragon"
+		type: "ドラゴン"
 	},
 	"へびにらみ": {
 		num: 137,
@@ -5451,7 +5451,7 @@ const Moves = {
 		status: "par",
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Tough"
 	},
@@ -5492,7 +5492,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		zMove: { basePower: 160 },
 		maxMove: { basePower: 130 },
 		contestType: "Cute"
@@ -5562,7 +5562,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Beautiful"
 	},
 	"グラススライダー": {
@@ -5581,7 +5581,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Cool"
 	},
 	"グラスフィールド": {
@@ -5649,7 +5649,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Grass",
+		type: "くさ",
 		zMove: { boost: { def: 1 } },
 		contestType: "Beautiful"
 	},
@@ -5674,7 +5674,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Grass"
+		type: "くさ"
 	},
 	"じゅうりょく": {
 		num: 356,
@@ -5770,7 +5770,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spa: 1 } },
 		contestType: "Clever"
 	},
@@ -5788,7 +5788,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
@@ -5811,7 +5811,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spa: 1 } },
 		contestType: "Beautiful"
 	},
@@ -5839,7 +5839,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
@@ -5875,7 +5875,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
@@ -5891,7 +5891,7 @@ const Moves = {
 		ohko: true,
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { basePower: 180 },
 		maxMove: { basePower: 130 },
 		contestType: "Cool"
@@ -5910,7 +5910,7 @@ const Moves = {
 			status: "psn"
 		},
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		contestType: "Tough"
 	},
 	"かぜおこし": {
@@ -5924,7 +5924,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1, distance: 1, wind: 1 },
 		secondary: null,
 		target: "any",
-		type: "Flying",
+		type: "ひこう",
 		contestType: "Clever"
 	},
 	"ジャイロボール": {
@@ -5946,7 +5946,7 @@ const Moves = {
 		flags: { bullet: 1, contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Steel",
+		type: "はがね",
 		zMove: { basePower: 160 },
 		maxMove: { basePower: 130 },
 		contestType: "Cool"
@@ -5967,7 +5967,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Tough"
 	},
 	"ハッピータイム": {
@@ -5984,7 +5984,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allySide",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
 		contestType: "Cute"
 	},
@@ -6002,7 +6002,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { def: 1 } },
 		contestType: "Tough"
 	},
@@ -6023,7 +6023,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Ice",
+		type: "こおり",
 		zMove: { effect: "heal" },
 		contestType: "Beautiful"
 	},
@@ -6041,7 +6041,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"ぶちかまし": {
@@ -6061,7 +6061,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Ground"
+		type: "じめん"
 	},
 	"もろはのずつき": {
 		num: 457,
@@ -6075,7 +6075,7 @@ const Moves = {
 		recoil: [1, 2],
 		secondary: null,
 		target: "normal",
-		type: "Rock",
+		type: "いわ",
 		contestType: "Tough"
 	},
 	"いやしのすず": {
@@ -6101,7 +6101,7 @@ const Moves = {
 			return success
 		},
 		target: "allyTeam",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "heal" },
 		contestType: "Beautiful"
 	},
@@ -6140,7 +6140,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Beautiful"
 	},
 	"いやしのはどう": {
@@ -6177,7 +6177,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "any",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
@@ -6207,7 +6207,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { effect: "crit2" },
 		contestType: "Clever"
 	},
@@ -6247,7 +6247,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		zMove: { basePower: 160 },
 		maxMove: { basePower: 130 },
 		contestType: "Tough"
@@ -6266,7 +6266,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "allAdjacentFoes",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Beautiful"
 	},
 	"ヘビーボンバー": {
@@ -6305,7 +6305,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Steel",
+		type: "はがね",
 		zMove: { basePower: 160 },
 		maxMove: { basePower: 130 },
 		contestType: "Tough"
@@ -6341,7 +6341,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "adjacentAlly",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
@@ -6363,7 +6363,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Ghost",
+		type: "ゴースト",
 		zMove: { basePower: 160 },
 		contestType: "Clever"
 	},
@@ -6378,7 +6378,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Ground",
+		type: "じめん",
 		contestType: "Tough"
 	},
 	"とびひざげり": {
@@ -6401,7 +6401,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Cool"
 	},
 	"てかげん": {
@@ -6419,7 +6419,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cool"
 	},
 	"てをつなぐ": {
@@ -6440,7 +6440,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "adjacentAlly",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
 		contestType: "Cute"
 	},
@@ -6459,7 +6459,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Dark",
+		type: "あく",
 		zMove: { boost: { atk: 1 } },
 		contestType: "Cute"
 	},
@@ -6474,7 +6474,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cool"
 	},
 	"つのドリル": {
@@ -6489,7 +6489,7 @@ const Moves = {
 		ohko: true,
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { basePower: 180 },
 		maxMove: { basePower: 130 },
 		contestType: "Cool"
@@ -6506,7 +6506,7 @@ const Moves = {
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Tough"
 	},
 	"とおぼえ": {
@@ -6523,7 +6523,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allies",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { atk: 1 } },
 		contestType: "Cool"
 	},
@@ -6553,7 +6553,7 @@ const Moves = {
 			volatileStatus: "confusion"
 		},
 		target: "any",
-		type: "Flying",
+		type: "ひこう",
 		contestType: "Tough"
 	},
 	"ハイドロカノン": {
@@ -6570,7 +6570,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Beautiful"
 	},
 	"ハイドロポンプ": {
@@ -6584,7 +6584,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Beautiful"
 	},
 	"ハイドロスチーム": {
@@ -6600,7 +6600,7 @@ const Moves = {
 		thawsTarget: true,
 		secondary: null,
 		target: "normal",
-		type: "Water"
+		type: "みず"
 	},
 	"はかいこうせん": {
 		num: 63,
@@ -6616,7 +6616,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cool"
 	},
 	"ハイパードリル": {
@@ -6630,7 +6630,7 @@ const Moves = {
 		flags: { contact: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Clever"
 	},
 	"いじげんラッシュ": {
@@ -6664,7 +6664,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Tough"
 	},
 	"いじげんホール": {
@@ -6679,7 +6679,7 @@ const Moves = {
 		breaksProtect: true,
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Clever"
 	},
 	"ハイパーボイス": {
@@ -6693,7 +6693,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1, sound: 1, bypasssub: 1 },
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cool"
 	},
 	"さいみんじゅつ": {
@@ -6708,7 +6708,7 @@ const Moves = {
 		status: "slp",
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
@@ -6726,7 +6726,7 @@ const Moves = {
 			status: "frz"
 		},
 		target: "normal",
-		type: "Ice",
+		type: "こおり",
 		contestType: "Beautiful"
 	},
 	"こおりのキバ": {
@@ -6749,7 +6749,7 @@ const Moves = {
 			}
 		],
 		target: "normal",
-		type: "Ice",
+		type: "こおり",
 		contestType: "Cool"
 	},
 	"アイスハンマー": {
@@ -6768,7 +6768,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Ice",
+		type: "こおり",
 		contestType: "Tough"
 	},
 	"れいとうパンチ": {
@@ -6785,7 +6785,7 @@ const Moves = {
 			status: "frz"
 		},
 		target: "normal",
-		type: "Ice",
+		type: "こおり",
 		contestType: "Beautiful"
 	},
 	"こおりのつぶて": {
@@ -6799,7 +6799,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Ice",
+		type: "こおり",
 		contestType: "Beautiful"
 	},
 	"アイススピナー": {
@@ -6823,7 +6823,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Ice"
+		type: "こおり"
 	},
 	"つららおとし": {
 		num: 556,
@@ -6839,7 +6839,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "normal",
-		type: "Ice",
+		type: "こおり",
 		contestType: "Beautiful"
 	},
 	"つららばり": {
@@ -6854,7 +6854,7 @@ const Moves = {
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
-		type: "Ice",
+		type: "こおり",
 		zMove: { basePower: 140 },
 		maxMove: { basePower: 130 },
 		contestType: "Beautiful"
@@ -6875,7 +6875,7 @@ const Moves = {
 			}
 		},
 		target: "allAdjacentFoes",
-		type: "Ice",
+		type: "こおり",
 		contestType: "Beautiful"
 	},
 	"ふういん": {
@@ -6915,7 +6915,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spd: 2 } },
 		contestType: "Clever"
 	},
@@ -6936,7 +6936,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Tough"
 	},
 	"ひゃっきやこう": {
@@ -6958,7 +6958,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "normal",
-		type: "Ghost"
+		type: "ゴースト"
 	},
 	"れんごく": {
 		num: 517,
@@ -6974,7 +6974,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Beautiful"
 	},
 	"まとわりつく": {
@@ -6989,7 +6989,7 @@ const Moves = {
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
-		type: "Bug",
+		type: "むし",
 		contestType: "Cute"
 	},
 	"ねをはる": {
@@ -7021,7 +7021,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Grass",
+		type: "くさ",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
@@ -7063,7 +7063,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spa: 1 } },
 		contestType: "Clever"
 	},
@@ -7081,7 +7081,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Steel",
+		type: "はがね",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Tough"
 	},
@@ -7099,7 +7099,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "normal",
-		type: "Steel",
+		type: "はがね",
 		contestType: "Tough"
 	},
 	"アイアンテール": {
@@ -7118,7 +7118,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Steel",
+		type: "はがね",
 		contestType: "Cool"
 	},
 	"ツタこんぼう": {
@@ -7154,7 +7154,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Grass"
+		type: "くさ"
 	},
 	"くらいつく": {
 		num: 746,
@@ -7171,7 +7171,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark"
+		type: "あく"
 	},
 	"ジェットパンチ": {
 		num: 857,
@@ -7184,7 +7184,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Cool"
 	},
 	"さばきのつぶて": {
@@ -7205,7 +7205,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Beautiful"
 	},
 	"ジャングルヒール": {
@@ -7223,7 +7223,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allies",
-		type: "Grass"
+		type: "くさ"
 	},
 	"はたきおとす": {
 		num: 282,
@@ -7268,7 +7268,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Clever"
 	},
 	"ドゲザン": {
@@ -7282,7 +7282,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, slicing: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Dark"
+		type: "あく"
 	},
 	"うっぷんばらし": {
 		num: 808,
@@ -7301,7 +7301,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark"
+		type: "あく"
 	},
 	"とっておき": {
 		num: 387,
@@ -7326,7 +7326,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cute"
 	},
 	"おはかまいり": {
@@ -7343,7 +7343,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Ghost"
+		type: "ゴースト"
 	},
 	"ふんえん": {
 		num: 436,
@@ -7359,7 +7359,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "allAdjacent",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Tough"
 	},
 	"このは": {
@@ -7373,7 +7373,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Tough"
 	},
 	"リーフブレード": {
@@ -7388,7 +7388,7 @@ const Moves = {
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Cool"
 	},
 	"リーフストーム": {
@@ -7407,7 +7407,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Beautiful"
 	},
 	"きゅうけつ": {
@@ -7422,7 +7422,7 @@ const Moves = {
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
-		type: "Bug",
+		type: "むし",
 		contestType: "Clever"
 	},
 	"やどりぎのタネ": {
@@ -7457,7 +7457,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
@@ -7475,7 +7475,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { atk: 1 } },
 		contestType: "Cool"
 	},
@@ -7493,7 +7493,7 @@ const Moves = {
 			status: "par"
 		},
 		target: "normal",
-		type: "Ghost",
+		type: "ゴースト",
 		contestType: "Cute"
 	},
 	"いのちのしずく": {
@@ -7508,7 +7508,7 @@ const Moves = {
 		heal: [1, 4],
 		secondary: null,
 		target: "allies",
-		type: "Water"
+		type: "みず"
 	},
 	"ひかりのかべ": {
 		num: 113,
@@ -7552,7 +7552,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allySide",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Beautiful"
 	},
@@ -7572,7 +7572,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Cool"
 	},
 	"ロックオン": {
@@ -7614,7 +7614,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
@@ -7655,7 +7655,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		zMove: { basePower: 160 },
 		contestType: "Tough"
 	},
@@ -7675,7 +7675,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Clever"
 	},
 	"ルミナコリジョン": {
@@ -7694,7 +7694,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Psychic"
+		type: "エスパー"
 	},
 	"みかづきのいのり": {
 		num: 849,
@@ -7711,7 +7711,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allies",
-		type: "Psychic"
+		type: "エスパー"
 	},
 	"みかづきのまい": {
 		num: 461,
@@ -7756,7 +7756,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Beautiful"
 	},
 	"とびかかる": {
@@ -7775,7 +7775,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Bug",
+		type: "むし",
 		contestType: "Cute"
 	},
 	"マッハパンチ": {
@@ -7789,7 +7789,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Cool"
 	},
 	"マジカルリーフ": {
@@ -7803,7 +7803,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Beautiful"
 	},
 	"まほうのこな": {
@@ -7822,7 +7822,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Psychic"
+		type: "エスパー"
 	},
 	"マジックルーム": {
 		num: 478,
@@ -7879,7 +7879,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
@@ -7895,7 +7895,7 @@ const Moves = {
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Tough"
 	},
 	"じばそうさ": {
@@ -7928,7 +7928,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allySide",
-		type: "Electric",
+		type: "でんき",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
@@ -7967,7 +7967,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Electric",
+		type: "でんき",
 		zMove: { boost: { evasion: 1 } },
 		contestType: "Clever"
 	},
@@ -7987,7 +7987,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Steel",
+		type: "はがね",
 		contestType: "Beautiful"
 	},
 	"シャカシャカほう": {
@@ -8006,7 +8006,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "allAdjacentFoes",
-		type: "Grass"
+		type: "くさ"
 	},
 	"くろいまなざし": {
 		num: 212,
@@ -8022,7 +8022,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Beautiful"
 	},
@@ -8038,7 +8038,7 @@ const Moves = {
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		zMove: { basePower: 120 },
 		contestType: "Clever"
 	},
@@ -8053,7 +8053,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Bug",
+		type: "むし",
 		contestType: "Cool"
 	},
 	"メガトンキック": {
@@ -8067,7 +8067,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cool"
 	},
 	"メガトンパンチ": {
@@ -8081,7 +8081,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"おきみやげ": {
@@ -8100,7 +8100,7 @@ const Moves = {
 		selfdestruct: "ifHit",
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		zMove: { effect: "healreplacement" },
 		contestType: "Tough"
 	},
@@ -8132,7 +8132,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "scripted",
-		type: "Steel",
+		type: "はがね",
 		contestType: "Cool"
 	},
 	"メタルクロー": {
@@ -8153,7 +8153,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Steel",
+		type: "はがね",
 		contestType: "Cool"
 	},
 	"きんぞくおん": {
@@ -8177,7 +8177,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Steel",
+		type: "はがね",
 		zMove: { boost: { spa: 1 } },
 		contestType: "Clever"
 	},
@@ -8204,7 +8204,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Rock"
+		type: "いわ"
 	},
 	"コメットパンチ": {
 		num: 309,
@@ -8224,7 +8224,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Steel",
+		type: "はがね",
 		contestType: "Cool"
 	},
 	"ゆびをふる": {
@@ -8408,7 +8408,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cute"
 	},
 	"ミルクのみ": {
@@ -8423,7 +8423,7 @@ const Moves = {
 		heal: [1, 2],
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
@@ -8474,7 +8474,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { accuracy: 1 } },
 		contestType: "Cute"
 	},
@@ -8528,7 +8528,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
@@ -8574,7 +8574,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "scripted",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Beautiful"
 	},
 	"しろいきり": {
@@ -8621,7 +8621,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allySide",
-		type: "Ice",
+		type: "こおり",
 		zMove: { effect: "heal" },
 		contestType: "Beautiful"
 	},
@@ -8643,7 +8643,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allAdjacent",
-		type: "Fairy"
+		type: "フェアリー"
 	},
 	"ミストフィールド": {
 		num: 581,
@@ -8709,7 +8709,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Fairy",
+		type: "フェアリー",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Beautiful"
 	},
@@ -8729,7 +8729,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Fairy",
+		type: "フェアリー",
 		contestType: "Beautiful"
 	},
 	"つきのひかり": {
@@ -8765,7 +8765,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Fairy",
+		type: "フェアリー",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
@@ -8802,7 +8802,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
@@ -8888,7 +8888,7 @@ const Moves = {
 			status: "psn"
 		},
 		target: "allAdjacentFoes",
-		type: "Poison"
+		type: "どく"
 	},
 	"ひょうざんおろし": {
 		num: 836,
@@ -8904,7 +8904,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "normal",
-		type: "Ice"
+		type: "こおり"
 	},
 	"マッドショット": {
 		num: 341,
@@ -8922,7 +8922,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Ground",
+		type: "じめん",
 		contestType: "Tough"
 	},
 	"どろかけ": {
@@ -8941,7 +8941,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Ground",
+		type: "じめん",
 		contestType: "Cute"
 	},
 	"だくりゅう": {
@@ -8960,7 +8960,7 @@ const Moves = {
 			}
 		},
 		target: "allAdjacentFoes",
-		type: "Water",
+		type: "みず",
 		contestType: "Tough"
 	},
 	"マジカルフレイム": {
@@ -8979,7 +8979,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Beautiful"
 	},
 	"しんぴのちから": {
@@ -9000,7 +9000,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Psychic"
+		type: "エスパー"
 	},
 	"わるだくみ": {
 		num: 417,
@@ -9016,7 +9016,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Dark",
+		type: "あく",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
@@ -9036,7 +9036,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Cool"
 	},
 	"ナイトヘッド": {
@@ -9051,7 +9051,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Ghost",
+		type: "ゴースト",
 		contestType: "Clever"
 	},
 	"つじぎり": {
@@ -9066,7 +9066,7 @@ const Moves = {
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Cool"
 	},
 	"おたけび": {
@@ -9084,7 +9084,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { def: 1 } },
 		contestType: "Tough"
 	},
@@ -9121,7 +9121,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Fighting"
+		type: "かくとう"
 	},
 	"ほっぺすりすり": {
 		num: 609,
@@ -9137,7 +9137,7 @@ const Moves = {
 			status: "par"
 		},
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Cute"
 	},
 	"いっちょうあがり": {
@@ -9168,7 +9168,7 @@ const Moves = {
 		secondary: null,
 		hasSheerForce: true,
 		target: "normal",
-		type: "Dragon"
+		type: "ドラゴン"
 	},
 	"こんげんのはどう": {
 		num: 618,
@@ -9180,7 +9180,7 @@ const Moves = {
 		priority: 0,
 		flags: { protect: 1, pulse: 1, mirror: 1 },
 		target: "allAdjacentFoes",
-		type: "Water",
+		type: "みず",
 		contestType: "Beautiful"
 	},
 	"げきりん": {
@@ -9205,7 +9205,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "randomNormal",
-		type: "Dragon",
+		type: "ドラゴン",
 		contestType: "Cool"
 	},
 	"オーバードライブ": {
@@ -9219,7 +9219,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1, sound: 1, bypasssub: 1 },
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Electric"
+		type: "でんき"
 	},
 	"オーバーヒート": {
 		num: 315,
@@ -9237,7 +9237,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Beautiful"
 	},
 	"いたみわけ": {
@@ -9266,7 +9266,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
@@ -9282,7 +9282,7 @@ const Moves = {
 		drain: [1, 2],
 		secondary: null,
 		target: "allAdjacent",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Clever"
 	},
 	"すてゼリフ": {
@@ -9303,7 +9303,7 @@ const Moves = {
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		zMove: { effect: "healreplacement" },
 		contestType: "Cool"
 	},
@@ -9326,7 +9326,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Tough"
 	},
 	"ネコにこばん": {
@@ -9340,7 +9340,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Clever"
 	},
 	"つつく": {
@@ -9354,7 +9354,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, distance: 1 },
 		secondary: null,
 		target: "any",
-		type: "Flying",
+		type: "ひこう",
 		contestType: "Cool"
 	},
 	"ほろびのうた": {
@@ -9399,7 +9399,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
@@ -9414,7 +9414,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1, wind: 1 },
 		secondary: null,
 		target: "allAdjacent",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Beautiful"
 	},
 	"はなびらのまい": {
@@ -9439,7 +9439,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "randomNormal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Beautiful"
 	},
 	"ゴーストダイブ": {
@@ -9476,7 +9476,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Ghost",
+		type: "ゴースト",
 		contestType: "Cool"
 	},
 	"ミサイルばり": {
@@ -9491,7 +9491,7 @@ const Moves = {
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
-		type: "Bug",
+		type: "むし",
 		zMove: { basePower: 140 },
 		maxMove: { basePower: 130 },
 		contestType: "Cool"
@@ -9510,7 +9510,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
@@ -9530,7 +9530,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Fairy",
+		type: "フェアリー",
 		contestType: "Cute"
 	},
 	"ついばむ": {
@@ -9562,7 +9562,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "any",
-		type: "Flying",
+		type: "ひこう",
 		contestType: "Cute"
 	},
 	"どくどくのキバ": {
@@ -9579,7 +9579,7 @@ const Moves = {
 			status: "tox"
 		},
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		contestType: "Clever"
 	},
 	"どくガス": {
@@ -9594,7 +9594,7 @@ const Moves = {
 		status: "psn",
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Poison",
+		type: "どく",
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
@@ -9612,7 +9612,7 @@ const Moves = {
 			status: "psn"
 		},
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		contestType: "Tough"
 	},
 	"どくのこな": {
@@ -9627,7 +9627,7 @@ const Moves = {
 		status: "psn",
 		secondary: null,
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
@@ -9645,7 +9645,7 @@ const Moves = {
 			status: "psn"
 		},
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		contestType: "Clever"
 	},
 	"ポイズンテール": {
@@ -9663,7 +9663,7 @@ const Moves = {
 			status: "psn"
 		},
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		contestType: "Clever"
 	},
 	"かふんだんご": {
@@ -9704,7 +9704,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Bug",
+		type: "むし",
 		contestType: "Cute"
 	},
 	"ポルターガイスト": {
@@ -9729,7 +9729,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Ghost"
+		type: "ゴースト"
 	},
 	"ネズミざん": {
 		num: 860,
@@ -9744,7 +9744,7 @@ const Moves = {
 		multiaccuracy: true,
 		secondary: null,
 		target: "normal",
-		type: "Normal"
+		type: "ノーマル"
 	},
 	"とびつく": {
 		num: 884,
@@ -9762,7 +9762,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Bug",
+		type: "むし",
 		contestType: "Cute"
 	},
 	"はたく": {
@@ -9776,7 +9776,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"こなゆき": {
@@ -9793,7 +9793,7 @@ const Moves = {
 			status: "frz"
 		},
 		target: "allAdjacentFoes",
-		type: "Ice",
+		type: "こおり",
 		contestType: "Beautiful"
 	},
 	"パワージェム": {
@@ -9807,7 +9807,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Rock",
+		type: "いわ",
 		contestType: "Beautiful"
 	},
 	"パワーシフト": {
@@ -9848,7 +9848,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal"
+		type: "ノーマル"
 	},
 	"パワーシェア": {
 		num: 471,
@@ -9874,7 +9874,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
@@ -9910,7 +9910,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
@@ -9951,7 +9951,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { atk: 1 } },
 		contestType: "Clever"
 	},
@@ -9971,7 +9971,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		zMove: { basePower: 160 },
 		maxMove: { basePower: 130 },
 		contestType: "Clever"
@@ -9987,7 +9987,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Tough"
 	},
 	"だんがいのつるぎ": {
@@ -10000,7 +10000,7 @@ const Moves = {
 		priority: 0,
 		flags: { protect: 1, mirror: 1, nonsky: 1 },
 		target: "allAdjacentFoes",
-		type: "Ground",
+		type: "じめん",
 		contestType: "Cool"
 	},
 	"プレゼント": {
@@ -10027,7 +10027,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cute"
 	},
 	"まもる": {
@@ -10077,7 +10077,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
@@ -10095,7 +10095,7 @@ const Moves = {
 			volatileStatus: "confusion"
 		},
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Beautiful"
 	},
 	"サイコブレイド": {
@@ -10115,7 +10115,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Psychic"
+		type: "エスパー"
 	},
 	"じこあんじ": {
 		num: 244,
@@ -10146,7 +10146,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "heal" },
 		contestType: "Clever"
 	},
@@ -10166,7 +10166,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Clever"
 	},
 	"サイコファング": {
@@ -10186,7 +10186,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Clever"
 	},
 	"サイコフィールド": {
@@ -10256,7 +10256,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spa: 1 } },
 		contestType: "Clever"
 	},
@@ -10272,7 +10272,7 @@ const Moves = {
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Cool"
 	},
 	"バリアーラッシュ": {
@@ -10293,7 +10293,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Psychic"
+		type: "エスパー"
 	},
 	"サイコショック": {
 		num: 473,
@@ -10307,7 +10307,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Beautiful"
 	},
 	"サイコブレイク": {
@@ -10322,7 +10322,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Cool"
 	},
 	"かえんボール": {
@@ -10339,7 +10339,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "normal",
-		type: "Fire"
+		type: "ほのお"
 	},
 	"さきおくり": {
 		num: 511,
@@ -10360,7 +10360,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
@@ -10375,7 +10375,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cool"
 	},
 	"ファストガード": {
@@ -10423,7 +10423,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allySide",
-		type: "Fighting",
+		type: "かくとう",
 		zMove: { boost: { def: 1 } },
 		contestType: "Cool"
 	},
@@ -10443,7 +10443,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Bug",
+		type: "むし",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
@@ -10461,7 +10461,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Ghost"
+		type: "ゴースト"
 	},
 	"いかりのこな": {
 		num: 476,
@@ -10498,7 +10498,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Bug",
+		type: "むし",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
@@ -10532,7 +10532,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal"
+		type: "ノーマル"
 	},
 	"だいふんげき": {
 		num: 833,
@@ -10553,7 +10553,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "randomNormal",
-		type: "Fire"
+		type: "ほのお"
 	},
 	"あまごい": {
 		num: 240,
@@ -10567,7 +10567,7 @@ const Moves = {
 		weather: "RainDance",
 		secondary: null,
 		target: "all",
-		type: "Water",
+		type: "みず",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Beautiful"
 	},
@@ -10657,7 +10657,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cool"
 	},
 	"はっぱカッター": {
@@ -10672,7 +10672,7 @@ const Moves = {
 		critRatio: 2,
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Cool"
 	},
 	"シェルブレード": {
@@ -10691,7 +10691,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Cool"
 	},
 	"じこさいせい": {
@@ -10706,7 +10706,7 @@ const Moves = {
 		heal: [1, 2],
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
@@ -10733,7 +10733,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spe: 2 } },
 		contestType: "Clever"
 	},
@@ -10779,7 +10779,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allySide",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
@@ -10822,7 +10822,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spa: 1 } },
 		contestType: "Clever"
 	},
@@ -10860,7 +10860,7 @@ const Moves = {
 			}
 		},
 		target: "allAdjacentFoes",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Beautiful"
 	},
 	"ねむる": {
@@ -10898,7 +10898,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
@@ -10919,7 +10919,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cool"
 	},
 	"めざめるダンス": {
@@ -10938,7 +10938,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Beautiful"
 	},
 	"きしかいせい": {
@@ -10971,7 +10971,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		zMove: { basePower: 160 },
 		contestType: "Cool"
 	},
@@ -11001,7 +11001,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal"
+		type: "ノーマル"
 	},
 	"ライジングボルト": {
 		num: 804,
@@ -11022,7 +11022,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		maxMove: { basePower: 140 }
 	},
 	"ほえる": {
@@ -11045,7 +11045,7 @@ const Moves = {
 		forceSwitch: true,
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { def: 1 } },
 		contestType: "Cool"
 	},
@@ -11063,7 +11063,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dragon",
+		type: "ドラゴン",
 		contestType: "Beautiful"
 	},
 	"ロックブラスト": {
@@ -11078,7 +11078,7 @@ const Moves = {
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
-		type: "Rock",
+		type: "いわ",
 		zMove: { basePower: 140 },
 		maxMove: { basePower: 130 },
 		contestType: "Tough"
@@ -11097,7 +11097,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Rock",
+		type: "いわ",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Tough"
 	},
@@ -11115,7 +11115,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "allAdjacentFoes",
-		type: "Rock",
+		type: "いわ",
 		contestType: "Tough"
 	},
 	"いわくだき": {
@@ -11134,7 +11134,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Tough"
 	},
 	"いわおとし": {
@@ -11148,7 +11148,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Rock",
+		type: "いわ",
 		contestType: "Tough"
 	},
 	"がんせきふうじ": {
@@ -11167,7 +11167,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Rock",
+		type: "いわ",
 		contestType: "Clever"
 	},
 	"なりきり": {
@@ -11222,7 +11222,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Cute"
 	},
@@ -11301,7 +11301,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Rock",
+		type: "いわ",
 		contestType: "Cute"
 	},
 	"はねやすめ": {
@@ -11338,7 +11338,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Flying",
+		type: "ひこう",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
@@ -11370,7 +11370,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Beautiful"
 	},
 	"カタストロフィ": {
@@ -11387,7 +11387,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Tough"
 	},
 	"せいなるつるぎ": {
@@ -11403,7 +11403,7 @@ const Moves = {
 		ignoreDefensive: true,
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Cool"
 	},
 	"しんぴのまもり": {
@@ -11482,7 +11482,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allySide",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Beautiful"
 	},
@@ -11515,7 +11515,7 @@ const Moves = {
 			volatileStatus: "saltcure"
 		},
 		target: "normal",
-		type: "Rock"
+		type: "いわ"
 	},
 	"すなかけ": {
 		num: 28,
@@ -11531,7 +11531,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Ground",
+		type: "じめん",
 		zMove: { boost: { evasion: 1 } },
 		contestType: "Cute"
 	},
@@ -11557,7 +11557,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "allAdjacentFoes",
-		type: "Ground"
+		type: "じめん"
 	},
 	"すなあらし": {
 		num: 201,
@@ -11571,7 +11571,7 @@ const Moves = {
 		weather: "Sandstorm",
 		secondary: null,
 		target: "all",
-		type: "Rock",
+		type: "いわ",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Tough"
 	},
@@ -11587,7 +11587,7 @@ const Moves = {
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
-		type: "Ground",
+		type: "じめん",
 		contestType: "Clever"
 	},
 	"ねっとう": {
@@ -11605,7 +11605,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Tough"
 	},
 	"スケイルショット": {
@@ -11626,7 +11626,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dragon",
+		type: "ドラゴン",
 		zMove: { basePower: 140 },
 		maxMove: { basePower: 130 }
 	},
@@ -11644,7 +11644,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Tough"
 	},
@@ -11663,7 +11663,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "normal",
-		type: "Ground"
+		type: "じめん"
 	},
 	"ひっかく": {
 		num: 10,
@@ -11676,7 +11676,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"いやなおと": {
@@ -11700,7 +11700,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { atk: 1 } },
 		contestType: "Clever"
 	},
@@ -11715,7 +11715,7 @@ const Moves = {
 		flags: { bullet: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Tough"
 	},
 	"シードフレア": {
@@ -11734,7 +11734,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Beautiful"
 	},
 	"ちきゅうなげ": {
@@ -11749,7 +11749,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, nonsky: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		maxMove: { basePower: 75 },
 		contestType: "Tough"
 	},
@@ -11765,7 +11765,7 @@ const Moves = {
 		selfdestruct: "always",
 		secondary: null,
 		target: "allAdjacent",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Beautiful"
 	},
 	"シャドーボール": {
@@ -11784,7 +11784,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Ghost",
+		type: "ゴースト",
 		contestType: "Clever"
 	},
 	"シャドークロー": {
@@ -11799,7 +11799,7 @@ const Moves = {
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
-		type: "Ghost",
+		type: "ゴースト",
 		contestType: "Cool"
 	},
 	"シャドーダイブ": {
@@ -11836,7 +11836,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Ghost",
+		type: "ゴースト",
 		contestType: "Cool"
 	},
 	"シャドーパンチ": {
@@ -11850,7 +11850,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Ghost",
+		type: "ゴースト",
 		contestType: "Clever"
 	},
 	"かげうち": {
@@ -11864,7 +11864,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Ghost",
+		type: "ゴースト",
 		contestType: "Clever"
 	},
 	"しっぽきり": {
@@ -11902,7 +11902,7 @@ const Moves = {
 		selfSwitch: "shedtail",
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" }
 	},
 	"ぜったいれいど": {
@@ -11917,7 +11917,7 @@ const Moves = {
 		secondary: null,
 		ohko: "Ice",
 		target: "normal",
-		type: "Ice",
+		type: "こおり",
 		zMove: { basePower: 180 },
 		maxMove: { basePower: 130 },
 		contestType: "Beautiful"
@@ -11972,7 +11972,7 @@ const Moves = {
 			status: "psn"
 		},
 		target: "normal",
-		type: "Poison"
+		type: "どく"
 	},
 	"からをやぶる": {
 		num: 504,
@@ -11992,7 +11992,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Tough"
 	},
@@ -12010,7 +12010,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Steel"
+		type: "はがね"
 	},
 	"ギアチェンジ": {
 		num: 508,
@@ -12027,7 +12027,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Steel",
+		type: "はがね",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
@@ -12042,7 +12042,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Cool"
 	},
 	"すなあつめ": {
@@ -12068,7 +12068,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Ground",
+		type: "じめん",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
@@ -12138,7 +12138,7 @@ const Moves = {
 			}
 		},
 		target: "self",
-		type: "Bug"
+		type: "むし"
 	},
 	"シンプルビーム": {
 		num: 493,
@@ -12168,7 +12168,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spa: 1 } },
 		contestType: "Cute"
 	},
@@ -12184,7 +12184,7 @@ const Moves = {
 		status: "slp",
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Cute"
 	},
@@ -12267,7 +12267,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
@@ -12287,7 +12287,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Bug"
+		type: "むし"
 	},
 	"ゴッドバード": {
 		num: 143,
@@ -12322,7 +12322,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "any",
-		type: "Flying",
+		type: "ひこう",
 		contestType: "Cool"
 	},
 	"なまける": {
@@ -12337,7 +12337,7 @@ const Moves = {
 		heal: [1, 2],
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
@@ -12352,7 +12352,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, nonsky: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"きりさく": {
@@ -12367,7 +12367,7 @@ const Moves = {
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cool"
 	},
 	"ねむりごな": {
@@ -12382,7 +12382,7 @@ const Moves = {
 		status: "slp",
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
@@ -12431,7 +12431,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "crit2" },
 		contestType: "Cute"
 	},
@@ -12449,7 +12449,7 @@ const Moves = {
 			status: "psn"
 		},
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		contestType: "Tough"
 	},
 	"ヘドロばくだん": {
@@ -12466,7 +12466,7 @@ const Moves = {
 			status: "psn"
 		},
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		contestType: "Tough"
 	},
 	"ヘドロウェーブ": {
@@ -12483,7 +12483,7 @@ const Moves = {
 			status: "psn"
 		},
 		target: "allAdjacent",
-		type: "Poison",
+		type: "どく",
 		contestType: "Tough"
 	},
 	"うちおとす": {
@@ -12535,7 +12535,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Rock",
+		type: "いわ",
 		contestType: "Tough"
 	},
 	"スマートホーン": {
@@ -12549,7 +12549,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Steel",
+		type: "はがね",
 		contestType: "Cool"
 	},
 	"スモッグ": {
@@ -12566,7 +12566,7 @@ const Moves = {
 			status: "psn"
 		},
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		contestType: "Tough"
 	},
 	"えんまく": {
@@ -12583,7 +12583,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { evasion: 1 } },
 		contestType: "Clever"
 	},
@@ -12603,7 +12603,7 @@ const Moves = {
 			}
 		},
 		target: "allAdjacentFoes",
-		type: "Dark",
+		type: "あく",
 		contestType: "Tough"
 	},
 	"ねらいうち": {
@@ -12619,7 +12619,7 @@ const Moves = {
 		tracksTarget: true,
 		secondary: null,
 		target: "normal",
-		type: "Water"
+		type: "みず"
 	},
 	"いびき": {
 		num: 173,
@@ -12639,7 +12639,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cute"
 	},
 	"ゆきげしき": {
@@ -12654,7 +12654,7 @@ const Moves = {
 		weather: "snow",
 		secondary: null,
 		target: "all",
-		type: "Ice"
+		type: "こおり"
 	},
 	"みずびたし": {
 		num: 487,
@@ -12676,7 +12676,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		zMove: { boost: { spa: 1 } },
 		contestType: "Cute"
 	},
@@ -12692,7 +12692,7 @@ const Moves = {
 		heal: [1, 2],
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
@@ -12742,7 +12742,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Cool"
 	},
 	"ソーラーブレード": {
@@ -12793,7 +12793,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Cool"
 	},
 	"あくうせつだん": {
@@ -12808,7 +12808,7 @@ const Moves = {
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
-		type: "Dragon",
+		type: "ドラゴン",
 		contestType: "Beautiful"
 	},
 	"スパーク": {
@@ -12825,7 +12825,7 @@ const Moves = {
 			status: "par"
 		},
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Cool"
 	},
 	"スピードスワップ": {
@@ -12845,7 +12845,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
@@ -12864,7 +12864,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Grass"
+		type: "くさ"
 	},
 	"まきびし": {
 		num: 191,
@@ -12897,7 +12897,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "foeSide",
-		type: "Ground",
+		type: "じめん",
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
@@ -12959,7 +12959,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Grass",
+		type: "くさ",
 		zMove: { boost: { def: 1 } },
 		contestType: "Tough"
 	},
@@ -12979,7 +12979,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Steel"
+		type: "はがね"
 	},
 	"ソウルクラッシュ": {
 		num: 789,
@@ -12997,7 +12997,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Fairy"
+		type: "フェアリー"
 	},
 	"かげぬい": {
 		num: 662,
@@ -13016,7 +13016,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Ghost",
+		type: "ゴースト",
 		contestType: "Tough"
 	},
 	"はきだす": {
@@ -13040,7 +13040,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"うらみ": {
@@ -13063,7 +13063,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Ghost",
+		type: "ゴースト",
 		zMove: { effect: "heal" },
 		contestType: "Tough"
 	},
@@ -13088,7 +13088,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { atk: 3 } },
 		contestType: "Cute"
 	},
@@ -13104,7 +13104,7 @@ const Moves = {
 		status: "slp",
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
@@ -13124,7 +13124,7 @@ const Moves = {
 			}
 		},
 		target: "allAdjacentFoes",
-		type: "Fairy"
+		type: "フェアリー"
 	},
 	"ステルスロック": {
 		num: 446,
@@ -13153,7 +13153,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "foeSide",
-		type: "Rock",
+		type: "いわ",
 		zMove: { boost: { def: 1 } },
 		contestType: "Cool"
 	},
@@ -13172,7 +13172,7 @@ const Moves = {
 			status: "brn"
 		},
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Beautiful"
 	},
 	"てっていこうせん": {
@@ -13205,7 +13205,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Steel"
+		type: "はがね"
 	},
 	"アイアンローラー": {
 		num: 798,
@@ -13227,7 +13227,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Steel"
+		type: "はがね"
 	},
 	"はがねのつばさ": {
 		num: 211,
@@ -13247,7 +13247,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Steel",
+		type: "はがね",
 		contestType: "Cool"
 	},
 	"ねばねばネット": {
@@ -13277,7 +13277,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "foeSide",
-		type: "Bug",
+		type: "むし",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Tough"
 	},
@@ -13340,7 +13340,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "heal" },
 		contestType: "Tough"
 	},
@@ -13358,7 +13358,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"じだんだ": {
@@ -13379,7 +13379,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Ground",
+		type: "じめん",
 		contestType: "Tough"
 	},
 	"がんせきアックス": {
@@ -13407,7 +13407,7 @@ const Moves = {
 		},
 		secondary: {}, // Sheer Force-boosted
 		target: "normal",
-		type: "Rock"
+		type: "いわ"
 	},
 	"ストーンエッジ": {
 		num: 444,
@@ -13421,7 +13421,7 @@ const Moves = {
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
-		type: "Rock",
+		type: "いわ",
 		contestType: "Tough"
 	},
 	"アシストパワー": {
@@ -13440,7 +13440,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { basePower: 160 },
 		maxMove: { basePower: 130 },
 		contestType: "Clever"
@@ -13459,7 +13459,7 @@ const Moves = {
 			volatileStatus: "confusion"
 		},
 		target: "normal",
-		type: "Fairy"
+		type: "フェアリー"
 	},
 	"かいりき": {
 		num: 70,
@@ -13472,7 +13472,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"ちからをすいとる": {
@@ -13492,7 +13492,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
@@ -13510,7 +13510,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Bug",
+		type: "むし",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
@@ -13542,7 +13542,7 @@ const Moves = {
 		struggleRecoil: true,
 		secondary: null,
 		target: "randomNormal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"むしのていこう": {
@@ -13561,7 +13561,7 @@ const Moves = {
 			}
 		},
 		target: "allAdjacentFoes",
-		type: "Bug",
+		type: "むし",
 		contestType: "Cute"
 	},
 	"ほおばる": {
@@ -13585,7 +13585,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal"
+		type: "ノーマル"
 	},
 	"しびれごな": {
 		num: 78,
@@ -13599,7 +13599,7 @@ const Moves = {
 		status: "par",
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
@@ -13706,7 +13706,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
@@ -13732,7 +13732,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Clever"
 	},
 	"にほんばれ": {
@@ -13747,7 +13747,7 @@ const Moves = {
 		weather: "sunnyday",
 		secondary: null,
 		target: "all",
-		type: "Fire",
+		type: "ほのお",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Beautiful"
 	},
@@ -13765,7 +13765,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"ばかぢから": {
@@ -13785,7 +13785,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Tough"
 	},
 	"ちょうおんぱ": {
@@ -13800,7 +13800,7 @@ const Moves = {
 		volatileStatus: "confusion",
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
@@ -13815,7 +13815,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1, nonsky: 1 },
 		secondary: null,
 		target: "allAdjacent",
-		type: "Water",
+		type: "みず",
 		contestType: "Beautiful"
 	},
 	"すいりゅうれんだ": {
@@ -13831,7 +13831,7 @@ const Moves = {
 		multihit: 3,
 		secondary: null,
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		zMove: { basePower: 140 },
 		maxMove: { basePower: 130 }
 	},
@@ -13850,7 +13850,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Cute"
 	},
@@ -13880,7 +13880,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Tough"
 	},
@@ -13896,7 +13896,7 @@ const Moves = {
 		volatileStatus: "confusion",
 		secondary: null,
 		target: "normal",
-		type: "Fairy",
+		type: "フェアリー",
 		zMove: { boost: { spa: 1 } },
 		contestType: "Cute"
 	},
@@ -13914,7 +13914,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { accuracy: 1 } },
 		contestType: "Cute"
 	},
@@ -13929,7 +13929,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cool"
 	},
 	"すりかえ": {
@@ -14006,7 +14006,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		zMove: { boost: { spe: 2 } },
 		contestType: "Clever"
 	},
@@ -14024,7 +14024,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
@@ -14061,7 +14061,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Grass",
+		type: "くさ",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Clever"
 	},
@@ -14093,7 +14093,7 @@ const Moves = {
 			volatileStatus: "syrupbomb"
 		},
 		target: "normal",
-		type: "Grass"
+		type: "くさ"
 	},
 	"たいあたり": {
 		num: 33,
@@ -14106,7 +14106,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"ほたるび": {
@@ -14123,7 +14123,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Bug",
+		type: "むし",
 		zMove: { effect: "clearnegativeboost" },
 		contestType: "Beautiful"
 	},
@@ -14139,7 +14139,7 @@ const Moves = {
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { basePower: 140 },
 		maxMove: { basePower: 130 },
 		contestType: "Cute"
@@ -14158,7 +14158,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { atk: 1 } },
 		contestType: "Cute"
 	},
@@ -14204,7 +14204,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allySide",
-		type: "Flying",
+		type: "ひこう",
 		zMove: { effect: "crit2" },
 		contestType: "Cool"
 	},
@@ -14220,7 +14220,7 @@ const Moves = {
 		recoil: [1, 4],
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"ブレイブチャージ": {
@@ -14238,7 +14238,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic"
+		type: "エスパー"
 	},
 	"タールショット": {
 		num: 749,
@@ -14268,7 +14268,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Rock"
+		type: "いわ"
 	},
 	"ちょうはつ": {
 		num: 269,
@@ -14315,7 +14315,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		zMove: { boost: { atk: 1 } },
 		contestType: "Clever"
 	},
@@ -14334,7 +14334,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
@@ -14371,7 +14371,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Normal"
+		type: "ノーマル"
 	},
 	"フラフラダンス": {
 		num: 298,
@@ -14385,7 +14385,7 @@ const Moves = {
 		volatileStatus: "confusion",
 		secondary: null,
 		target: "allAdjacent",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spa: 1 } },
 		contestType: "Cute"
 	},
@@ -14404,7 +14404,7 @@ const Moves = {
 		selfSwitch: true,
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { effect: "heal" },
 		contestType: "Cool"
 	},
@@ -14438,7 +14438,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal"
+		type: "ノーマル"
 	},
 	"だいちのはどう": {
 		num: 805,
@@ -14474,7 +14474,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { basePower: 160 },
 		maxMove: { basePower: 130 }
 	},
@@ -14535,7 +14535,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Tough"
 	},
 	"あばれる": {
@@ -14560,7 +14560,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "randomNormal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"じごくづき": {
@@ -14609,7 +14609,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		contestType: "Clever"
 	},
 	"かみなり": {
@@ -14638,7 +14638,7 @@ const Moves = {
 			status: "par"
 		},
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Cool"
 	},
 	"10まんボルト": {
@@ -14655,7 +14655,7 @@ const Moves = {
 			status: "par"
 		},
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Cool"
 	},
 	"サンダープリズン": {
@@ -14670,7 +14670,7 @@ const Moves = {
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
-		type: "Electric"
+		type: "でんき"
 	},
 	"かみなりのキバ": {
 		num: 422,
@@ -14692,7 +14692,7 @@ const Moves = {
 			}
 		],
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Cool"
 	},
 	"らいめいげり": {
@@ -14711,7 +14711,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Fighting"
+		type: "かくとう"
 	},
 	"かみなりパンチ": {
 		num: 9,
@@ -14727,7 +14727,7 @@ const Moves = {
 			status: "par"
 		},
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Cool"
 	},
 	"でんきショック": {
@@ -14744,7 +14744,7 @@ const Moves = {
 			status: "par"
 		},
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Cool"
 	},
 	"でんじは": {
@@ -14760,7 +14760,7 @@ const Moves = {
 		ignoreImmunity: false,
 		secondary: null,
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Cool"
 	},
@@ -14779,7 +14779,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
@@ -14825,7 +14825,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal"
+		type: "ノーマル"
 	},
 	"フレアソング": {
 		num: 871,
@@ -14845,7 +14845,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		contestType: "Beautiful"
 	},
 	"いちゃもん": {
@@ -14878,7 +14878,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "あく",
 		zMove: { boost: { def: 1 } },
 		contestType: "Tough"
 	},
@@ -14895,7 +14895,7 @@ const Moves = {
 		status: "tox",
 		secondary: null,
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
@@ -14944,7 +14944,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "foeSide",
-		type: "Poison",
+		type: "どく",
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever"
 	},
@@ -14963,7 +14963,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Tough"
 	},
@@ -14985,7 +14985,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Cool"
 	},
 	"へんしん": {
@@ -15011,7 +15011,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { effect: "heal" },
 		contestType: "Clever"
 	},
@@ -15038,7 +15038,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Beautiful"
 	},
 	"トリック": {
@@ -15103,7 +15103,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spe: 2 } },
 		contestType: "Clever"
 	},
@@ -15155,7 +15155,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { accuracy: 1 } },
 		contestType: "Clever"
 	},
@@ -15182,7 +15182,7 @@ const Moves = {
 			}
 		],
 		target: "normal",
-		type: "Fighting"
+		type: "かくとう"
 	},
 	"トリプルアクセル": {
 		num: 813,
@@ -15200,7 +15200,7 @@ const Moves = {
 		multiaccuracy: true,
 		secondary: null,
 		target: "normal",
-		type: "Ice",
+		type: "こおり",
 		zMove: { basePower: 120 },
 		maxMove: { basePower: 140 }
 	},
@@ -15216,7 +15216,7 @@ const Moves = {
 		multihit: 3,
 		secondary: null,
 		target: "normal",
-		type: "Water"
+		type: "みず"
 	},
 	"トロピカルキック": {
 		num: 688,
@@ -15234,7 +15234,7 @@ const Moves = {
 			}
 		},
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Cute"
 	},
 	"ツインビーム": {
@@ -15249,7 +15249,7 @@ const Moves = {
 		multihit: 2,
 		secondary: null,
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Cool"
 	},
 	"たつまき": {
@@ -15266,7 +15266,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "allAdjacentFoes",
-		type: "Dragon",
+		type: "ドラゴン",
 		contestType: "Cool"
 	},
 	"とんぼがえり": {
@@ -15281,7 +15281,7 @@ const Moves = {
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",
-		type: "Bug",
+		type: "むし",
 		contestType: "Cute"
 	},
 	"さわぐ": {
@@ -15347,7 +15347,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "randomNormal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Cute"
 	},
 	"しんくうは": {
@@ -15361,7 +15361,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "かくとう",
 		contestType: "Cool"
 	},
 	"Vジェネレート": {
@@ -15382,7 +15382,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		zMove: { basePower: 220 },
 		contestType: "Cool"
 	},
@@ -15402,7 +15402,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Poison",
+		type: "どく",
 		contestType: "Beautiful"
 	},
 	"しょうりのまい": {
@@ -15421,7 +15421,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Fighting"
+		type: "かくとう"
 	},
 	"つるのムチ": {
 		num: 22,
@@ -15434,7 +15434,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Cool"
 	},
 	"はさむ": {
@@ -15448,7 +15448,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"ボルトチェンジ": {
@@ -15463,7 +15463,7 @@ const Moves = {
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Cool"
 	},
 	"ボルテッカー": {
@@ -15481,7 +15481,7 @@ const Moves = {
 			status: "par"
 		},
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Cool"
 	},
 	"たきのぼり": {
@@ -15498,7 +15498,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Tough"
 	},
 	"みずでっぽう": {
@@ -15512,7 +15512,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Cute"
 	},
 	"みずのちかい": {
@@ -15595,7 +15595,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Beautiful"
 	},
 	"みずのはどう": {
@@ -15612,7 +15612,7 @@ const Moves = {
 			volatileStatus: "confusion"
 		},
 		target: "any",
-		type: "Water",
+		type: "みず",
 		contestType: "Beautiful"
 	},
 	"みずしゅりけん": {
@@ -15637,7 +15637,7 @@ const Moves = {
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Cool"
 	},
 	"しおふき": {
@@ -15656,7 +15656,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Water",
+		type: "みず",
 		contestType: "Beautiful"
 	},
 	"ウェーブタックル": {
@@ -15671,7 +15671,7 @@ const Moves = {
 		recoil: [33, 100],
 		secondary: null,
 		target: "normal",
-		type: "Water"
+		type: "みず"
 	},
 	"ウェザーボール": {
 		num: 311,
@@ -15723,7 +15723,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { basePower: 160 },
 		maxMove: { basePower: 130 },
 		contestType: "Beautiful"
@@ -15740,7 +15740,7 @@ const Moves = {
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
-		type: "Water",
+		type: "みず",
 		contestType: "Beautiful"
 	},
 	"ふきとばし": {
@@ -15763,7 +15763,7 @@ const Moves = {
 		forceSwitch: true,
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
@@ -15779,7 +15779,7 @@ const Moves = {
 		willCrit: true,
 		secondary: null,
 		target: "normal",
-		type: "Dark"
+		type: "あく"
 	},
 	"ワイドガード": {
 		num: 469,
@@ -15829,7 +15829,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "allySide",
-		type: "Rock",
+		type: "いわ",
 		zMove: { boost: { def: 1 } },
 		contestType: "Tough"
 	},
@@ -15855,7 +15855,7 @@ const Moves = {
 			status: "par"
 		},
 		target: "allAdjacentFoes",
-		type: "Electric"
+		type: "でんき"
 	},
 	"ワイルドボルト": {
 		num: 528,
@@ -15869,7 +15869,7 @@ const Moves = {
 		recoil: [1, 4],
 		secondary: null,
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Tough"
 	},
 	"おにび": {
@@ -15884,7 +15884,7 @@ const Moves = {
 		status: "brn",
 		secondary: null,
 		target: "normal",
-		type: "Fire",
+		type: "ほのお",
 		zMove: { boost: { atk: 1 } },
 		contestType: "Beautiful"
 	},
@@ -15899,7 +15899,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, distance: 1 },
 		secondary: null,
 		target: "any",
-		type: "Flying",
+		type: "ひこう",
 		contestType: "Cool"
 	},
 	"ねがいごと": {
@@ -15935,7 +15935,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Cute"
 	},
@@ -15953,7 +15953,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Water",
+		type: "みず",
 		zMove: { boost: { def: 1 } },
 		contestType: "Cute"
 	},
@@ -16016,7 +16016,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Psychic",
+		type: "エスパー",
 		zMove: { boost: { spd: 1 } },
 		contestType: "Clever"
 	},
@@ -16032,7 +16032,7 @@ const Moves = {
 		recoil: [33, 100],
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		contestType: "Tough"
 	},
 	"ふるいたてる": {
@@ -16050,7 +16050,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { atk: 1 } },
 		contestType: "Tough"
 	},
@@ -16088,7 +16088,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "くさ",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Clever"
 	},
@@ -16104,7 +16104,7 @@ const Moves = {
 		volatileStatus: "partiallytrapped",
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		contestType: "Tough"
 	},
 	"シザークロス": {
@@ -16118,7 +16118,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, slicing: 1 },
 		secondary: null,
 		target: "normal",
-		type: "Bug",
+		type: "むし",
 		contestType: "Cool"
 	},
 	"あくび": {
@@ -16150,7 +16150,7 @@ const Moves = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "ノーマル",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Cute"
 	},
@@ -16168,7 +16168,7 @@ const Moves = {
 			status: "par"
 		},
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Cool"
 	},
 	"しねんのずつき": {
@@ -16185,7 +16185,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "normal",
-		type: "Psychic",
+		type: "エスパー",
 		contestType: "Clever"
 	},
 	"びりびりちくちく": {
@@ -16202,7 +16202,7 @@ const Moves = {
 			volatileStatus: "flinch"
 		},
 		target: "normal",
-		type: "Electric",
+		type: "でんき",
 		contestType: "Cool"
 	},
 }
