@@ -6,8 +6,8 @@ file_type = args[1]
 
 # CSVファイルを読み込み、置換マッピングを作成
 translation_map = {}
-for file_type in ["skills", "tokusei", "items"]:
-    with open(f"{file_type}_jp.csv", encoding="utf-8") as csv_file:
+for file_name in ["skills", "tokusei", "items"]:
+    with open(f"{file_name}_jp.csv", encoding="utf-8") as csv_file:
         csv_reader = csv.reader(csv_file)
         for row in csv_reader:
             japanese, english = row
@@ -53,7 +53,7 @@ type_en = [
     "fairy",
 ]
 for t in range(len(type_ja)):
-    translation_map[type_en[t]] = type_ja[t]
+    translation_map[type_ja[t]] = type_en[t]
 
 # items_pre.jsを読み込み
 with open(f"../source/{file_type}_pre.js", "r", encoding="utf-8") as file:

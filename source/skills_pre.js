@@ -233,7 +233,7 @@ const Moves = {
 			if (source.side.active.length === 3 && source.position === 1) return false
 		},
 		onHit(pokemon) {
-			pokemon.addVolatile("stall")
+			pokemon.addVolatile("あとだし")
 			const newPosition =
 				pokemon.position === 0 ? pokemon.side.active.length - 1 : 0
 			if (!pokemon.side.active[newPosition]) return false
@@ -523,7 +523,7 @@ const Moves = {
 					return false
 				}
 
-				if (effect.name === "Cute Charm") {
+				if (effect.name === "メロメロボディ") {
 					this.add(
 						"-start",
 						pokemon,
@@ -531,7 +531,7 @@ const Moves = {
 						"[from] ability: Cute Charm",
 						"[of] " + source
 					)
-				} else if (effect.name === "Destiny Knot") {
+				} else if (effect.name === "あかいいと") {
 					this.add(
 						"-start",
 						pokemon,
@@ -665,7 +665,7 @@ const Moves = {
 		condition: {
 			duration: 5,
 			durationCallback(target, source, effect) {
-				if (source?.hasItem("lightclay")) {
+				if (source?.hasItem("ひかりのねんど")) {
 					return 8
 				}
 				return 5
@@ -780,7 +780,7 @@ const Moves = {
 			return !!this.queue.willAct() && this.runEvent("StallMove", pokemon)
 		},
 		onHit(pokemon) {
-			pokemon.addVolatile("stall")
+			pokemon.addVolatile("あとだし")
 		},
 		condition: {
 			duration: 1,
@@ -1084,7 +1084,7 @@ const Moves = {
 		onModifyMove(move, pokemon, target) {
 			if (
 				target &&
-				["あまごい", "primordialsea"].includes(target.effectiveWeather())
+				["あまごい", "はじまりのうみ"].includes(target.effectiveWeather())
 			) {
 				move.accuracy = true
 			}
@@ -1397,7 +1397,7 @@ const Moves = {
 				)
 				if (this.singleEvent("Eat", item, null, source, null, null)) {
 					this.runEvent("EatItem", source, null, null, item)
-					if (item.id === "leppaberry") target.staleness = "external"
+					if (item.id === "ヒメリのみ") target.staleness = "external"
 				}
 				if (item.onEat) source.ateBerry = true
 			}
@@ -1623,7 +1623,7 @@ const Moves = {
 			onStart(pokemon, source, effect) {
 				if (
 					effect &&
-					["Electromorphosis", "Wind Power"].includes(effect.name)
+					["でんきにかえる", "ふうりょくでんき"].includes(effect.name)
 				) {
 					this.add(
 						"-start",
@@ -1639,7 +1639,7 @@ const Moves = {
 			onRestart(pokemon, source, effect) {
 				if (
 					effect &&
-					["Electromorphosis", "Wind Power"].includes(effect.name)
+					["でんきにかえる", "ふうりょくでんき"].includes(effect.name)
 				) {
 					this.add(
 						"-start",
@@ -2667,7 +2667,7 @@ const Moves = {
 			return !!this.queue.willAct() && this.runEvent("StallMove", pokemon)
 		},
 		onHit(pokemon) {
-			pokemon.addVolatile("stall")
+			pokemon.addVolatile("あとだし")
 		},
 		secondary: null,
 		target: "self",
@@ -2905,7 +2905,7 @@ const Moves = {
 				return
 			}
 			if (
-				attacker.hasAbility("gulpmissile") &&
+				attacker.hasAbility("うのミサイル") &&
 				attacker.species.name === "Cramorant" &&
 				!attacker.transformed
 			) {
@@ -3306,7 +3306,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1, heal: 1 },
 		drain: [1, 2],
 		onTryImmunity(target) {
-			return target.status === "slp" || target.hasAbility("comatose")
+			return target.status === "slp" || target.hasAbility("ぜったいねむり")
 		},
 		secondary: null,
 		target: "normal",
@@ -3536,7 +3536,7 @@ const Moves = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasItem("terrainextender")) {
+				if (source?.hasItem("グランドコート")) {
 					return 8
 				}
 				return 5
@@ -3782,7 +3782,7 @@ const Moves = {
 			return !!this.queue.willAct() && this.runEvent("StallMove", pokemon)
 		},
 		onHit(pokemon) {
-			pokemon.addVolatile("stall")
+			pokemon.addVolatile("あとだし")
 		},
 		condition: {
 			duration: 1,
@@ -3834,22 +3834,22 @@ const Moves = {
 
 			const additionalBannedSourceAbilities = [
 				// Zen Mode included here for compatability with Gen 5-6
-				"commander",
-				"flowergift",
-				"forecast",
-				"hungerswitch",
-				"illusion",
-				"imposter",
-				"neutralizinggas",
-				"powerofalchemy",
-				"receiver",
-				"trace",
-				"zenmode"
+				"しれいとう",
+				"フラワーギフト",
+				"てんきや",
+				"はらぺこスイッチ",
+				"イリュージョン",
+				"かわりもの",
+				"かがくへんかガス",
+				"かがくのちから",
+				"レシーバー",
+				"トレース",
+				"ダルマモード"
 			]
 			if (
 				target.ability === source.ability ||
 				target.getAbility().isPermanent ||
-				target.ability === "truant" ||
+				target.ability === "なまけ" ||
 				source.getAbility().isPermanent ||
 				additionalBannedSourceAbilities.includes(source.ability)
 			) {
@@ -4612,7 +4612,7 @@ const Moves = {
 				move.onHit = function (foe) {
 					if (this.singleEvent("Eat", item, null, foe, null, null)) {
 						this.runEvent("EatItem", foe, null, null, item)
-						if (item.id === "leppaberry") foe.staleness = "external"
+						if (item.id === "ヒメリのみ") foe.staleness = "external"
 					}
 					if (item.onEat) foe.ateBerry = true
 				}
@@ -4785,7 +4785,7 @@ const Moves = {
 					this.add("-start", target, "move: Focus Energy", "[zeffect]")
 				} else if (
 					effect &&
-					["costar", "imposter", "じこあんじ", "へんしん"].includes(effect.id)
+					["きょうえん", "かわりもの", "じこあんじ", "へんしん"].includes(effect.id)
 				) {
 					this.add("-start", target, "move: Focus Energy", "[silent]")
 				} else {
@@ -5095,7 +5095,7 @@ const Moves = {
 			if (target.getAbility().isPermanent) {
 				return false
 			}
-			if (target.hasItem("Ability Shield")) {
+			if (target.hasItem("とくせいガード")) {
 				this.add("-block", target, "item: Ability Shield")
 				return null
 			}
@@ -5103,7 +5103,7 @@ const Moves = {
 		condition: {
 			// Ability suppression implemented in Pokemon.ignoringAbility() within sim/pokemon.ts
 			onStart(pokemon) {
-				if (pokemon.hasItem("Ability Shield")) return false
+				if (pokemon.hasItem("とくせいガード")) return false
 				this.add("-endability", pokemon)
 				this.singleEvent(
 					"End",
@@ -5364,7 +5364,7 @@ const Moves = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasItem("terrainextender")) {
+				if (source?.hasItem("グランドコート")) {
 					return 8
 				}
 				return 5
@@ -5565,7 +5565,7 @@ const Moves = {
 		priority: 0,
 		flags: { snatch: 1 },
 		onModifyMove(move, pokemon) {
-			if (["にほんばれ", "desolateland"].includes(pokemon.effectiveWeather()))
+			if (["にほんばれ", "おわりのだいち"].includes(pokemon.effectiveWeather()))
 				move.boosts = { atk: 2, spa: 2 }
 		},
 		boosts: {
@@ -5844,7 +5844,7 @@ const Moves = {
 				...(target.side.allySide?.pokemon || [])
 			]
 			for (const ally of allies) {
-				if (ally !== source && ally.hasAbility("soundproof")) continue
+				if (ally !== source && ally.hasAbility("ぼうおん")) continue
 				if (ally.cureStatus()) success = true
 			}
 			return success
@@ -5908,7 +5908,7 @@ const Moves = {
 		},
 		onHit(target, source) {
 			let success = false
-			if (source.hasAbility("megalauncher")) {
+			if (source.hasAbility("メガランチャー")) {
 				success = !!this.heal(this.modify(target.baseMaxhp, 0.75))
 			} else {
 				success = !!this.heal(Math.ceil(target.baseMaxhp * 0.5))
@@ -6091,7 +6091,7 @@ const Moves = {
 		accuracy: 100,
 		basePower: 65,
 		basePowerCallback(pokemon, target, move) {
-			if (target.status || target.hasAbility("comatose")) {
+			if (target.status || target.hasAbility("ぜったいねむり")) {
 				this.debug("BP doubled from status condition")
 				return move.basePower * 2
 			}
@@ -6270,11 +6270,11 @@ const Moves = {
 		onModifyMove(move, pokemon, target) {
 			switch (target?.effectiveWeather()) {
 				case "あまごい":
-				case "primordialsea":
+				case "はじまりのうみ":
 					move.accuracy = true
 					break
 				case "にほんばれ":
-				case "desolateland":
+				case "おわりのだいち":
 					move.accuracy = 50
 					break
 			}
@@ -6654,7 +6654,7 @@ const Moves = {
 		accuracy: 100,
 		basePower: 60,
 		basePowerCallback(pokemon, target, move) {
-			if (target.status || target.hasAbility("comatose"))
+			if (target.status || target.hasAbility("ぜったいねむり"))
 				return move.basePower * 2
 			return move.basePower
 		},
@@ -7206,7 +7206,7 @@ const Moves = {
 		condition: {
 			duration: 5,
 			durationCallback(target, source, effect) {
-				if (source?.hasItem("lightclay")) {
+				if (source?.hasItem("ひかりのねんど")) {
 					return 8
 				}
 				return 5
@@ -7581,7 +7581,7 @@ const Moves = {
 				.allies()
 				.filter(
 					ally =>
-						ally.hasAbility(["plus", "minus"]) &&
+						ally.hasAbility(["プラス", "マイナス"]) &&
 						(!ally.volatiles["maxguard"] ||
 							this.runEvent("TryHit", ally, source, move))
 				)
@@ -7626,7 +7626,7 @@ const Moves = {
 				this.add("-start", target, "でんじふゆう")
 			},
 			onImmunity(type) {
-				if (type === "Ground") return false
+				if (type === "じめん") return false
 			},
 			onResidualOrder: 18,
 			onEnd(target) {
@@ -8305,7 +8305,7 @@ const Moves = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasItem("terrainextender")) {
+				if (source?.hasItem("グランドコート")) {
 					return 8
 				}
 				return 5
@@ -8390,11 +8390,11 @@ const Moves = {
 			let factor = 0.5
 			switch (pokemon.effectiveWeather()) {
 				case "にほんばれ":
-				case "desolateland":
+				case "おわりのだいち":
 					factor = 0.667
 					break
 				case "あまごい":
-				case "primordialsea":
+				case "はじまりのうみ":
 				case "すなあらし":
 				case "hail":
 				case "snow":
@@ -8426,11 +8426,11 @@ const Moves = {
 			let factor = 0.5
 			switch (pokemon.effectiveWeather()) {
 				case "にほんばれ":
-				case "desolateland":
+				case "おわりのだいち":
 					factor = 0.667
 					break
 				case "あまごい":
-				case "primordialsea":
+				case "はじまりのうみ":
 				case "すなあらし":
 				case "hail":
 				case "snow":
@@ -8918,7 +8918,7 @@ const Moves = {
 		flags: { protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1 },
 		onHit(target, source, move) {
 			const success = this.boost({ atk: -1, spa: -1 }, target, source)
-			if (!success && !target.hasAbility("mirrorarmor")) {
+			if (!success && !target.hasAbility("ミラーアーマー")) {
 				delete move.selfSwitch
 			}
 		},
@@ -9166,7 +9166,7 @@ const Moves = {
 				)
 				if (this.singleEvent("Eat", item, null, source, null, null)) {
 					this.runEvent("EatItem", source, null, null, item)
-					if (item.id === "leppaberry") target.staleness = "external"
+					if (item.id === "ヒメリのみ") target.staleness = "external"
 				}
 				if (item.onEat) source.ateBerry = true
 			}
@@ -9634,7 +9634,7 @@ const Moves = {
 			return !!this.queue.willAct() && this.runEvent("StallMove", pokemon)
 		},
 		onHit(pokemon) {
-			pokemon.addVolatile("stall")
+			pokemon.addVolatile("あとだし")
 		},
 		condition: {
 			duration: 1,
@@ -9785,7 +9785,7 @@ const Moves = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasItem("terrainextender")) {
+				if (source?.hasItem("グランドコート")) {
 					return 8
 				}
 				return 5
@@ -9967,7 +9967,7 @@ const Moves = {
 			return !!this.queue.willAct()
 		},
 		onHitSide(side, source) {
-			source.addVolatile("stall")
+			source.addVolatile("あとだし")
 		},
 		condition: {
 			duration: 1,
@@ -10313,7 +10313,7 @@ const Moves = {
 		condition: {
 			duration: 5,
 			durationCallback(target, source, effect) {
-				if (source?.hasItem("lightclay")) {
+				if (source?.hasItem("ひかりのねんど")) {
 					return 8
 				}
 				return 5
@@ -10433,13 +10433,13 @@ const Moves = {
 		priority: 0,
 		flags: { snatch: 1, heal: 1 },
 		onTry(source) {
-			if (source.status === "slp" || source.hasAbility("comatose")) return false
+			if (source.status === "slp" || source.hasAbility("ぜったいねむり")) return false
 
 			if (source.hp === source.maxhp) {
 				this.add("-fail", source, "heal")
 				return null
 			}
-			if (source.hasAbility(["insomnia", "vitalspirit"])) {
+			if (source.hasAbility(["ふみん", "やるき"])) {
 				this.add(
 					"-fail",
 					source,
@@ -10730,18 +10730,18 @@ const Moves = {
 
 			const additionalBannedTargetAbilities = [
 				// Zen Mode included here for compatability with Gen 5-6
-				"commander",
-				"flowergift",
-				"forecast",
-				"hungerswitch",
-				"illusion",
-				"imposter",
-				"neutralizinggas",
-				"powerofalchemy",
-				"receiver",
-				"trace",
-				"wonderguard",
-				"zenmode"
+				"しれいとう",
+				"フラワーギフト",
+				"てんきや",
+				"はらぺこスイッチ",
+				"イリュージョン",
+				"かわりもの",
+				"かがくへんかガス",
+				"かがくのちから",
+				"レシーバー",
+				"トレース",
+				"ふしぎなまもり",
+				"ダルマモード"
 			]
 
 			if (
@@ -10982,7 +10982,7 @@ const Moves = {
 				if (target !== source) {
 					this.debug("interrupting setStatus")
 					if (
-						effect.name === "Synchronize" ||
+						effect.name === "シンクロ" ||
 						(effect.effectType === "Move" && !effect.secondaries)
 					) {
 						this.add("-activate", target, "move: Safeguard")
@@ -11084,7 +11084,7 @@ const Moves = {
 		onModifyMove(move, pokemon, target) {
 			if (
 				target &&
-				["あまごい", "primordialsea"].includes(target.effectiveWeather())
+				["あまごい", "はじまりのうみ"].includes(target.effectiveWeather())
 			) {
 				move.accuracy = true
 			}
@@ -11598,7 +11598,7 @@ const Moves = {
 			return !!this.queue.willAct() && this.runEvent("StallMove", pokemon)
 		},
 		onHit(pokemon) {
-			pokemon.addVolatile("stall")
+			pokemon.addVolatile("あとだし")
 		},
 		condition: {
 			duration: 1,
@@ -11662,16 +11662,16 @@ const Moves = {
 		onTryHit(target) {
 			if (
 				target.getAbility().isPermanent ||
-				target.ability === "simple" ||
-				target.ability === "truant"
+				target.ability === "たんじゅん" ||
+				target.ability === "なまけ"
 			) {
 				return false
 			}
 		},
 		onHit(pokemon) {
-			const oldAbility = pokemon.setAbility("simple")
+			const oldAbility = pokemon.setAbility("たんじゅん")
 			if (oldAbility) {
-				this.add("-ability", pokemon, "Simple", "[from] move: Simple Beam")
+				this.add("-ability", pokemon, "たんじゅん", "[from] move: Simple Beam")
 				return
 			}
 			return oldAbility
@@ -11707,10 +11707,10 @@ const Moves = {
 		flags: { protect: 1, mirror: 1, bypasssub: 1, allyanim: 1 },
 		onTryHit(target, source) {
 			const additionalBannedAbilities = [
-				"hungerswitch",
-				"illusion",
-				"neutralizinggas",
-				"wonderguard"
+				"はらぺこスイッチ",
+				"イリュージョン",
+				"かがくへんかガス",
+				"ふしぎなまもり"
 			]
 			const targetAbility = target.getAbility()
 			const sourceAbility = source.getAbility()
@@ -11905,7 +11905,7 @@ const Moves = {
 		},
 		sleepUsable: true,
 		onTry(source) {
-			return source.status === "slp" || source.hasAbility("comatose")
+			return source.status === "slp" || source.hasAbility("ぜったいねむり")
 		},
 		onHit(pokemon) {
 			const moves = []
@@ -11997,10 +11997,10 @@ const Moves = {
 			noCopy: true,
 			onStart(pokemon) {
 				let applies = false
-				if (pokemon.hasType("Flying") || pokemon.hasAbility("levitate"))
+				if (pokemon.hasType("Flying") || pokemon.hasAbility("ふゆう"))
 					applies = true
 				if (
-					pokemon.hasItem("ironball") ||
+					pokemon.hasItem("くろいてっきゅう") ||
 					pokemon.volatiles["ねをはる"] ||
 					this.field.getPseudoWeather("じゅうりょく")
 				)
@@ -12123,7 +12123,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1, sound: 1, bypasssub: 1 },
 		sleepUsable: true,
 		onTry(source) {
-			return source.status === "slp" || source.hasAbility("comatose")
+			return source.status === "slp" || source.hasAbility("ぜったいねむり")
 		},
 		secondary: {
 			chance: 30,
@@ -12203,7 +12203,7 @@ const Moves = {
 				return
 			}
 			this.add("-prepare", attacker, move.name)
-			if (["にほんばれ", "desolateland"].includes(attacker.effectiveWeather())) {
+			if (["にほんばれ", "おわりのだいち"].includes(attacker.effectiveWeather())) {
 				this.attrLastMove("[still]")
 				this.addMove("-anim", attacker, move.name, defender)
 				return
@@ -12217,7 +12217,7 @@ const Moves = {
 		onBasePower(basePower, pokemon, target) {
 			const weakWeathers = [
 				"あまごい",
-				"primordialsea",
+				"はじまりのうみ",
 				"すなあらし",
 				"hail",
 				"snow"
@@ -12253,7 +12253,7 @@ const Moves = {
 				return
 			}
 			this.add("-prepare", attacker, move.name)
-			if (["にほんばれ", "desolateland"].includes(attacker.effectiveWeather())) {
+			if (["にほんばれ", "おわりのだいち"].includes(attacker.effectiveWeather())) {
 				this.attrLastMove("[still]")
 				this.addMove("-anim", attacker, move.name, defender)
 				return
@@ -12267,7 +12267,7 @@ const Moves = {
 		onBasePower(basePower, pokemon, target) {
 			const weakWeathers = [
 				"あまごい",
-				"primordialsea",
+				"はじまりのうみ",
 				"すなあらし",
 				"hail",
 				"snow"
@@ -12369,7 +12369,7 @@ const Moves = {
 				this.effectState.layers++
 			},
 			onEntryHazard(pokemon) {
-				if (!pokemon.isGrounded() || pokemon.hasItem("heavydutyboots")) return
+				if (!pokemon.isGrounded() || pokemon.hasItem("あつぞこブーツ")) return
 				const damageAmounts = [0, 3, 4, 6] // 1/8, 1/6, 1/4
 				this.damage(
 					(damageAmounts[this.effectState.layers] * pokemon.maxhp) / 24
@@ -12396,7 +12396,7 @@ const Moves = {
 			return !!this.queue.willAct() && this.runEvent("StallMove", pokemon)
 		},
 		onHit(pokemon) {
-			pokemon.addVolatile("stall")
+			pokemon.addVolatile("あとだし")
 		},
 		condition: {
 			duration: 1,
@@ -12613,7 +12613,7 @@ const Moves = {
 				this.add("-sidestart", side, "move: Stealth Rock")
 			},
 			onEntryHazard(pokemon) {
-				if (pokemon.hasItem("heavydutyboots")) return
+				if (pokemon.hasItem("あつぞこブーツ")) return
 				const typeMod = this.clampIntRange(
 					pokemon.runEffectiveness(this.dex.getActiveMove("ステルスロック")),
 					-6,
@@ -12731,7 +12731,7 @@ const Moves = {
 				this.add("-sidestart", side, "move: Sticky Web")
 			},
 			onEntryHazard(pokemon) {
-				if (!pokemon.isGrounded() || pokemon.hasItem("heavydutyboots")) return
+				if (!pokemon.isGrounded() || pokemon.hasItem("あつぞこブーツ")) return
 				this.add("-activate", pokemon, "move: Sticky Web")
 				this.boost(
 					{ spe: -1 },
@@ -13380,7 +13380,7 @@ const Moves = {
 		priority: 0,
 		flags: { protect: 1, mirror: 1, allyanim: 1, noassist: 1, failcopycat: 1 },
 		onTryImmunity(target) {
-			return !target.hasAbility("stickyhold")
+			return !target.hasAbility("ねんちゃく")
 		},
 		onHit(target, source, move) {
 			const yourItem = target.takeItem(source)
@@ -13477,11 +13477,11 @@ const Moves = {
 			let factor = 0.5
 			switch (pokemon.effectiveWeather()) {
 				case "にほんばれ":
-				case "desolateland":
+				case "おわりのだいち":
 					factor = 0.667
 					break
 				case "あまごい":
-				case "primordialsea":
+				case "はじまりのうみ":
 				case "すなあらし":
 				case "hail":
 				case "snow":
@@ -14040,11 +14040,11 @@ const Moves = {
 		onModifyMove(move, pokemon, target) {
 			switch (target?.effectiveWeather()) {
 				case "あまごい":
-				case "primordialsea":
+				case "はじまりのうみ":
 					move.accuracy = true
 					break
 				case "にほんばれ":
-				case "desolateland":
+				case "おわりのだいち":
 					move.accuracy = 50
 					break
 			}
@@ -14335,7 +14335,7 @@ const Moves = {
 					pokemon.side.removeSideCondition("どくびし")
 				} else if (
 					pokemon.hasType("Steel") ||
-					pokemon.hasItem("heavydutyboots")
+					pokemon.hasItem("あつぞこブーツ")
 				) {
 					return
 				} else if (this.effectState.layers >= 2) {
@@ -14449,7 +14449,7 @@ const Moves = {
 		priority: 0,
 		flags: { protect: 1, mirror: 1, allyanim: 1, noassist: 1, failcopycat: 1 },
 		onTryImmunity(target) {
-			return !target.hasAbility("stickyhold")
+			return !target.hasAbility("ねんちゃく")
 		},
 		onHit(target, source, move) {
 			const yourItem = target.takeItem(source)
@@ -14961,7 +14961,7 @@ const Moves = {
 					this.debug("doubling secondary chance")
 					for (const secondary of move.secondaries) {
 						if (
-							pokemon.hasAbility("serenegrace") &&
+							pokemon.hasAbility("てんのめぐみ") &&
 							secondary.volatileStatus === "flinch"
 						)
 							continue
@@ -14998,7 +14998,7 @@ const Moves = {
 		basePowerCallback(pokemon, target, move) {
 			if (
 				pokemon.species.name === "Greninja-Ash" &&
-				pokemon.hasAbility("battlebond") &&
+				pokemon.hasAbility("きずなへんげ") &&
 				!pokemon.transformed
 			) {
 				return move.basePower + 5
@@ -15058,11 +15058,11 @@ const Moves = {
 		onModifyType(move, pokemon) {
 			switch (pokemon.effectiveWeather()) {
 				case "にほんばれ":
-				case "desolateland":
+				case "おわりのだいち":
 					move.type = "Fire"
 					break
 				case "あまごい":
-				case "primordialsea":
+				case "はじまりのうみ":
 					move.type = "Water"
 					break
 				case "すなあらし":
@@ -15077,11 +15077,11 @@ const Moves = {
 		onModifyMove(move, pokemon) {
 			switch (pokemon.effectiveWeather()) {
 				case "にほんばれ":
-				case "desolateland":
+				case "おわりのだいち":
 					move.basePower *= 2
 					break
 				case "あまごい":
-				case "primordialsea":
+				case "はじまりのうみ":
 					move.basePower *= 2
 					break
 				case "すなあらし":
@@ -15164,7 +15164,7 @@ const Moves = {
 			return !!this.queue.willAct()
 		},
 		onHitSide(side, source) {
-			source.addVolatile("stall")
+			source.addVolatile("あとだし")
 		},
 		condition: {
 			duration: 1,
@@ -15213,7 +15213,7 @@ const Moves = {
 		onModifyMove(move, pokemon, target) {
 			if (
 				target &&
-				["あまごい", "primordialsea"].includes(target.effectiveWeather())
+				["あまごい", "はじまりのうみ"].includes(target.effectiveWeather())
 			) {
 				move.accuracy = true
 			}
@@ -15425,7 +15425,7 @@ const Moves = {
 		onTryImmunity(target) {
 			// Truant and Insomnia have 特殊 treatment; they fail before
 			// checking accuracy and will double Stomping Tantrum's BP
-			if (target.ability === "truant" || target.ability === "insomnia") {
+			if (target.ability === "なまけ" || target.ability === "ふみん") {
 				return false
 			}
 		},
@@ -15435,9 +15435,9 @@ const Moves = {
 			}
 		},
 		onHit(pokemon) {
-			const oldAbility = pokemon.setAbility("insomnia")
+			const oldAbility = pokemon.setAbility("ふみん")
 			if (oldAbility) {
-				this.add("-ability", pokemon, "Insomnia", "[from] move: Worry Seed")
+				this.add("-ability", pokemon, "ふみん", "[from] move: Worry Seed")
 				if (pokemon.status === "slp") {
 					pokemon.cureStatus()
 				}

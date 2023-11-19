@@ -171,7 +171,7 @@ const Items = {
 		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
-			type: "Ground"
+			type: "じめん"
 		},
 		onUpdate(pokemon) {
 			if (
@@ -749,10 +749,10 @@ const Items = {
 	},
 	だいちのプレート: {
 		name: "だいちのプレート",
-		spriteonPlate: "Ground",
+		spriteonPlate: "じめん",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move && move.type === "Ground") {
+			if (move && move.type === "じめん") {
 				return this.chainModify([4915, 4096])
 			}
 		},
@@ -1297,7 +1297,7 @@ const Items = {
 				this.field.getPseudoWeather("じゅうりょく")
 			)
 				return
-			if (move.type === "Ground" && target.hasType("Flying")) return 0
+			if (move.type === "じめん" && target.hasType("Flying")) return 0
 		},
 		// airborneness negation implemented in sim/pokemon.js:Pokemon#isGrounded
 		onModifySpe(spe) {
@@ -2166,7 +2166,7 @@ const Items = {
 		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
-			type: "Ground"
+			type: "じめん"
 		},
 		onUpdate(pokemon) {
 			if (pokemon.volatiles["ねんりき"]) {
@@ -2674,10 +2674,10 @@ const Items = {
 		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
-			type: "Ground"
+			type: "じめん"
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-			if (move.type === "Ground" && target.getMoveHitData(move).typeMod > 0) {
+			if (move.type === "じめん" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
 					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
@@ -2792,7 +2792,7 @@ const Items = {
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move.type === "Ground") {
+			if (move.type === "じめん") {
 				return this.chainModify([4915, 4096])
 			}
 		},
