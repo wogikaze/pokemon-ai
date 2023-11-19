@@ -2,7 +2,6 @@
 
 const Moves = {
 	"すいとる": {
-		num: 71,
 		accuracy: 100,
 		basePower: 20,
 		category: "特殊",
@@ -17,7 +16,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"アクセルロック": {
-		num: 709,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -31,7 +29,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ようかいえき": {
-		num: 51,
 		accuracy: 100,
 		basePower: 40,
 		category: "特殊",
@@ -50,7 +47,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"とける": {
-		num: 151,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -68,7 +64,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"アシッドボム": {
-		num: 491,
 		accuracy: 100,
 		basePower: 40,
 		category: "特殊",
@@ -87,7 +82,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"アクロバット": {
-		num: 512,
 		accuracy: 100,
 		basePower: 55,
 		basePowerCallback(pokemon, target, move) {
@@ -108,7 +102,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"つぼをつく": {
-		num: 367,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -140,7 +133,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"つばめがえし": {
-		num: 332,
 		accuracy: true,
 		basePower: 60,
 		category: "物理",
@@ -154,7 +146,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"おさきにどうぞ": {
-		num: 495,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -179,7 +170,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"こうそくいどう": {
-		num: 97,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -197,7 +187,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"エアカッター": {
-		num: 314,
 		accuracy: 95,
 		basePower: 60,
 		category: "特殊",
@@ -212,7 +201,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"エアスラッシュ": {
-		num: 403,
 		accuracy: 95,
 		basePower: 75,
 		category: "特殊",
@@ -229,7 +217,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"サイドチェンジ": {
-		num: 502,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -260,7 +247,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ドわすれ": {
-		num: 133,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -278,7 +264,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"げんしのちから": {
-		num: 246,
 		accuracy: 100,
 		basePower: 60,
 		category: "特殊",
@@ -303,7 +288,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"りんごさん": {
-		num: 787,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -321,7 +305,6 @@ const Moves = {
 		type: "くさ"
 	},
 	"アクアカッター": {
-		num: 895,
 		accuracy: 100,
 		basePower: 70,
 		category: "物理",
@@ -336,7 +319,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"アクアジェット": {
-		num: 453,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -350,7 +332,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"アクアリング": {
-		num: 392,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -375,7 +356,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"アクアステップ": {
-		num: 872,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -396,7 +376,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"アクアテール": {
-		num: 401,
 		accuracy: 90,
 		basePower: 90,
 		category: "物理",
@@ -410,7 +389,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"アーマーキャノン": {
-		num: 890,
 		accuracy: 100,
 		basePower: 120,
 		category: "特殊",
@@ -429,7 +407,6 @@ const Moves = {
 		type: "ほのお"
 	},
 	"つっぱり": {
-		num: 292,
 		accuracy: 100,
 		basePower: 15,
 		category: "物理",
@@ -444,7 +421,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"アロマミスト": {
-		num: 597,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -462,7 +438,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ダメおし": {
-		num: 372,
 		accuracy: 100,
 		basePower: 60,
 		basePowerCallback(pokemon, target, move) {
@@ -483,7 +458,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"おどろかす": {
-		num: 310,
 		accuracy: 100,
 		basePower: 30,
 		category: "物理",
@@ -500,7 +474,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"アストラルビット": {
-		num: 825,
 		accuracy: 100,
 		basePower: 120,
 		category: "特殊",
@@ -513,7 +486,6 @@ const Moves = {
 		type: "ゴースト"
 	},
 	"こうげきしれい": {
-		num: 454,
 		accuracy: 100,
 		basePower: 90,
 		category: "物理",
@@ -528,7 +500,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"メロメロ": {
-		num: 213,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -612,7 +583,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"はどうだん": {
-		num: 396,
 		accuracy: true,
 		basePower: 80,
 		category: "特殊",
@@ -626,7 +596,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"オーラぐるま": {
-		num: 783,
 		accuracy: 100,
 		basePower: 110,
 		category: "物理",
@@ -664,7 +633,6 @@ const Moves = {
 		type: "でんき"
 	},
 	"オーロラビーム": {
-		num: 62,
 		accuracy: 100,
 		basePower: 65,
 		category: "特殊",
@@ -683,7 +651,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"オーロラベール": {
-		num: 694,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -736,7 +703,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ゆきなだれ": {
-		num: 419,
 		accuracy: 100,
 		basePower: 60,
 		basePowerCallback(pokemon, target, move) {
@@ -760,7 +726,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"かかとおとし": {
-		num: 853,
 		accuracy: 90,
 		basePower: 120,
 		category: "物理",
@@ -785,7 +750,6 @@ const Moves = {
 		type: "かくとう"
 	},
 	"つぶらなひとみ": {
-		num: 608,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -803,7 +767,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"トーチカ": {
-		num: 661,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -865,7 +828,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"どくばりセンボン": {
-		num: 839,
 		accuracy: 100,
 		basePower: 60,
 		category: "物理",
@@ -886,7 +848,6 @@ const Moves = {
 		type: "どく"
 	},
 	"バトンタッチ": {
-		num: 226,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -914,7 +875,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ふくろだたき": {
-		num: 251,
 		accuracy: 100,
 		basePower: 0,
 		basePowerCallback(pokemon, target, move) {
@@ -940,7 +900,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"きょじゅうだん": {
-		num: 782,
 		accuracy: 100,
 		basePower: 100,
 		category: "物理",
@@ -953,7 +912,6 @@ const Moves = {
 		type: "はがね"
 	},
 	"きょじゅうざん": {
-		num: 781,
 		accuracy: 100,
 		basePower: 100,
 		category: "物理",
@@ -973,7 +931,6 @@ const Moves = {
 		type: "はがね"
 	},
 	"ゲップ": {
-		num: 562,
 		accuracy: 90,
 		basePower: 120,
 		category: "特殊",
@@ -998,7 +955,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"はらだいこ": {
-		num: 187,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -1025,7 +981,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"しめつける": {
-		num: 20,
 		accuracy: 85,
 		basePower: 15,
 		category: "物理",
@@ -1040,7 +995,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"かみつく": {
-		num: 44,
 		accuracy: 100,
 		basePower: 60,
 		category: "物理",
@@ -1057,7 +1011,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"むねんのつるぎ": {
-		num: 891,
 		accuracy: 100,
 		basePower: 90,
 		category: "物理",
@@ -1071,7 +1024,6 @@ const Moves = {
 		type: "ほのお"
 	},
 	"うらみつらみ": {
-		num: 841,
 		accuracy: 100,
 		basePower: 75,
 		category: "特殊",
@@ -1089,7 +1041,6 @@ const Moves = {
 		type: "ゴースト"
 	},
 	"ブラストバーン": {
-		num: 307,
 		accuracy: 90,
 		basePower: 150,
 		category: "特殊",
@@ -1106,7 +1057,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ブレイズキック": {
-		num: 299,
 		accuracy: 90,
 		basePower: 85,
 		category: "物理",
@@ -1124,7 +1074,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"こがらしあらし": {
-		num: 846,
 		accuracy: 80,
 		basePower: 100,
 		category: "特殊",
@@ -1150,7 +1099,6 @@ const Moves = {
 		type: "ひこう"
 	},
 	"ふぶき": {
-		num: 59,
 		accuracy: 70,
 		basePower: 110,
 		category: "特殊",
@@ -1170,7 +1118,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"とおせんぼう": {
-		num: 335,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -1188,7 +1135,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ブラッドムーン": {
-		num: 901,
 		accuracy: 100,
 		basePower: 140,
 		category: "特殊",
@@ -1201,7 +1147,6 @@ const Moves = {
 		type: "ノーマル"
 	},
 	"ボディプレス": {
-		num: 776,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -1215,7 +1160,6 @@ const Moves = {
 		type: "かくとう"
 	},
 	"のしかかり": {
-		num: 34,
 		accuracy: 100,
 		basePower: 85,
 		category: "物理",
@@ -1232,7 +1176,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ボーンラッシュ": {
-		num: 198,
 		accuracy: 90,
 		basePower: 25,
 		category: "物理",
@@ -1249,7 +1192,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ばくおんぱ": {
-		num: 586,
 		accuracy: 100,
 		basePower: 140,
 		category: "特殊",
@@ -1263,7 +1205,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"とびはねる": {
-		num: 340,
 		accuracy: 85,
 		basePower: 85,
 		category: "物理",
@@ -1325,7 +1266,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"えだづき": {
-		num: 785,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -1338,7 +1278,6 @@ const Moves = {
 		type: "くさ"
 	},
 	"ブレイブバード": {
-		num: 413,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -1353,7 +1292,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ワイドブレイカー": {
-		num: 784,
 		accuracy: 100,
 		basePower: 60,
 		category: "物理",
@@ -1371,7 +1309,6 @@ const Moves = {
 		type: "ドラゴン"
 	},
 	"かわらわり": {
-		num: 280,
 		accuracy: 100,
 		basePower: 75,
 		category: "物理",
@@ -1391,7 +1328,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"しおみず": {
-		num: 362,
 		accuracy: 100,
 		basePower: 65,
 		category: "特殊",
@@ -1410,7 +1346,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ぶんまわす": {
-		num: 693,
 		accuracy: 100,
 		basePower: 60,
 		category: "物理",
@@ -1424,7 +1359,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"バブルこうせん": {
-		num: 61,
 		accuracy: 100,
 		basePower: 65,
 		category: "特殊",
@@ -1443,7 +1377,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"むしくい": {
-		num: 450,
 		accuracy: 100,
 		basePower: 60,
 		category: "物理",
@@ -1475,7 +1408,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"むしのさざめき": {
-		num: 405,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -1494,7 +1426,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ビルドアップ": {
-		num: 339,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -1513,7 +1444,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"じならし": {
-		num: 523,
 		accuracy: 100,
 		basePower: 60,
 		category: "物理",
@@ -1532,7 +1462,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"バレットパンチ": {
-		num: 418,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -1546,7 +1475,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"タネマシンガン": {
-		num: 331,
 		accuracy: 100,
 		basePower: 25,
 		category: "物理",
@@ -1563,7 +1491,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"しっとのほのお": {
-		num: 807,
 		accuracy: 100,
 		basePower: 70,
 		category: "特殊",
@@ -1584,7 +1511,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"もえつきる": {
-		num: 682,
 		accuracy: 100,
 		basePower: 130,
 		category: "特殊",
@@ -1618,7 +1544,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"めいそう": {
-		num: 347,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -1637,7 +1562,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ひけん・ちえなみ": {
-		num: 845,
 		accuracy: 90,
 		basePower: 65,
 		category: "物理",
@@ -1664,7 +1588,6 @@ const Moves = {
 		type: "あく"
 	},
 	"おいわい": {
-		num: 606,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -1688,7 +1611,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"じゅうでん": {
-		num: 268,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -1761,7 +1683,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"チャージビーム": {
-		num: 451,
 		accuracy: 90,
 		basePower: 50,
 		category: "特殊",
@@ -1782,7 +1703,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"あまえる": {
-		num: 204,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -1800,7 +1720,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ひやみず": {
-		num: 886,
 		accuracy: 100,
 		basePower: 50,
 		category: "特殊",
@@ -1819,7 +1738,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"さむいギャグ": {
-		num: 881,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -1836,7 +1754,6 @@ const Moves = {
 		type: "こおり"
 	},
 	"クロロブラスト": {
-		num: 835,
 		accuracy: 95,
 		basePower: 150,
 		category: "特殊",
@@ -1850,7 +1767,6 @@ const Moves = {
 		type: "くさ"
 	},
 	"ともえなげ": {
-		num: 509,
 		accuracy: 90,
 		basePower: 60,
 		category: "物理",
@@ -1864,7 +1780,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"スケイルノイズ": {
-		num: 691,
 		accuracy: 100,
 		basePower: 110,
 		category: "特殊",
@@ -1883,7 +1798,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ソウルビート": {
-		num: 775,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -1914,7 +1828,6 @@ const Moves = {
 		type: "ドラゴン"
 	},
 	"クリアスモッグ": {
-		num: 499,
 		accuracy: true,
 		basePower: 50,
 		category: "特殊",
@@ -1932,7 +1845,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"インファイト": {
-		num: 370,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -1952,7 +1864,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"コーチング": {
-		num: 811,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -1969,7 +1880,6 @@ const Moves = {
 		type: "かくとう"
 	},
 	"とぐろをまく": {
-		num: 489,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -1989,7 +1899,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"アクセルブレイク": {
-		num: 878,
 		accuracy: 100,
 		basePower: 100,
 		category: "物理",
@@ -2010,7 +1919,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ほうふく": {
-		num: 894,
 		accuracy: 100,
 		basePower: 0,
 		damageCallback(pokemon) {
@@ -2041,7 +1949,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ないしょばなし": {
-		num: 590,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -2059,7 +1966,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"あやしいひかり": {
-		num: 109,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -2075,7 +1981,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ねんりき": {
-		num: 93,
 		accuracy: 100,
 		basePower: 50,
 		category: "特殊",
@@ -2092,7 +1997,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"まねっこ": {
-		num: 383,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -2124,7 +2028,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ふしょくガス": {
-		num: 810,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -2151,7 +2054,6 @@ const Moves = {
 		type: "どく"
 	},
 	"コスモパワー": {
-		num: 322,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -2170,7 +2072,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"コットンガード": {
-		num: 538,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -2188,7 +2089,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"わたほうし": {
-		num: 178,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -2206,7 +2106,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"カウンター": {
-		num: 68,
 		accuracy: 100,
 		basePower: 0,
 		damageCallback(pokemon) {
@@ -2258,7 +2157,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"コートチェンジ": {
-		num: 756,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -2352,7 +2250,6 @@ const Moves = {
 		type: "ノーマル"
 	},
 	"ほしがる": {
-		num: 343,
 		accuracy: 100,
 		basePower: 60,
 		category: "物理",
@@ -2404,7 +2301,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"クラブハンマー": {
-		num: 152,
 		accuracy: 90,
 		basePower: 100,
 		category: "物理",
@@ -2419,7 +2315,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"クロスチョップ": {
-		num: 238,
 		accuracy: 80,
 		basePower: 100,
 		category: "物理",
@@ -2434,7 +2329,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"クロスポイズン": {
-		num: 440,
 		accuracy: 100,
 		basePower: 70,
 		category: "物理",
@@ -2452,7 +2346,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"かみくだく": {
-		num: 242,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -2471,7 +2364,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ブレイククロー": {
-		num: 306,
 		accuracy: 95,
 		basePower: 75,
 		category: "物理",
@@ -2490,7 +2382,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"のろい": {
-		num: 174,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -2535,7 +2426,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"いあいぎり": {
-		num: 15,
 		accuracy: 95,
 		basePower: 50,
 		category: "物理",
@@ -2549,7 +2439,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"DDラリアット": {
-		num: 663,
 		accuracy: 100,
 		basePower: 85,
 		category: "物理",
@@ -2565,7 +2454,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"あくのはどう": {
-		num: 399,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -2582,7 +2470,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ダークホール": {
-		num: 464,
 		accuracy: 50,
 		basePower: 0,
 		category: "Status",
@@ -2606,7 +2493,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"マジカルシャイン": {
-		num: 605,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -2620,7 +2506,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ぼうぎょしれい": {
-		num: 455,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -2639,7 +2524,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"まるくなる": {
-		num: 111,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -2662,7 +2546,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"きりばらい": {
-		num: 432,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -2728,7 +2611,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"みちづれ": {
-		num: 194,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -2772,7 +2654,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"みきり": {
-		num: 197,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -2795,7 +2676,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ダイヤストーム": {
-		num: 591,
 		accuracy: 95,
 		basePower: 100,
 		category: "物理",
@@ -2817,7 +2697,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"あなをほる": {
-		num: 91,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -2868,7 +2747,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"かなしばり": {
-		num: 50,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -2952,7 +2830,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"チャームボイス": {
-		num: 574,
 		accuracy: true,
 		basePower: 40,
 		category: "特殊",
@@ -2966,7 +2843,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ほうでん": {
-		num: 435,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -2983,7 +2859,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"フェイタルクロー": {
-		num: 827,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -3008,7 +2883,6 @@ const Moves = {
 		type: "どく"
 	},
 	"ダイビング": {
-		num: 291,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -3071,7 +2945,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"うつしえ": {
-		num: 867,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -3109,7 +2982,6 @@ const Moves = {
 		type: "ノーマル"
 	},
 	"はめつのねがい": {
-		num: 353,
 		accuracy: 100,
 		basePower: 140,
 		category: "特殊",
@@ -3143,7 +3015,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"すてみタックル": {
-		num: 38,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -3158,7 +3029,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ダブルアタック": {
-		num: 458,
 		accuracy: 90,
 		basePower: 35,
 		category: "物理",
@@ -3175,7 +3045,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"にどげり": {
-		num: 24,
 		accuracy: 100,
 		basePower: 30,
 		category: "物理",
@@ -3191,7 +3060,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"でんこうそうげき": {
-		num: 892,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -3227,7 +3095,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"かげぶんしん": {
-		num: 104,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -3245,7 +3112,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"りゅうせいぐん": {
-		num: 434,
 		accuracy: 90,
 		basePower: 130,
 		category: "特殊",
@@ -3264,7 +3130,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ガリョウテンセイ": {
-		num: 620,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -3283,7 +3148,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"りゅうのいぶき": {
-		num: 225,
 		accuracy: 100,
 		basePower: 60,
 		category: "特殊",
@@ -3300,7 +3164,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ドラゴンクロー": {
-		num: 337,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -3314,7 +3177,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"りゅうのまい": {
-		num: 349,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -3333,7 +3195,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ドラゴンアロー": {
-		num: 751,
 		accuracy: 100,
 		basePower: 50,
 		category: "物理",
@@ -3349,7 +3210,6 @@ const Moves = {
 		maxMove: { basePower: 130 }
 	},
 	"ドラゴンエナジー": {
-		num: 820,
 		accuracy: 100,
 		basePower: 150,
 		basePowerCallback(pokemon, target, move) {
@@ -3367,7 +3227,6 @@ const Moves = {
 		type: "ドラゴン"
 	},
 	"りゅうのはどう": {
-		num: 406,
 		accuracy: 100,
 		basePower: 85,
 		category: "特殊",
@@ -3381,7 +3240,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ドラゴンダイブ": {
-		num: 407,
 		accuracy: 75,
 		basePower: 100,
 		category: "物理",
@@ -3398,7 +3256,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ドラゴンテール": {
-		num: 525,
 		accuracy: 90,
 		basePower: 60,
 		category: "物理",
@@ -3412,7 +3269,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ドレインキッス": {
-		num: 577,
 		accuracy: 100,
 		basePower: 50,
 		category: "特殊",
@@ -3427,7 +3283,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ドレインパンチ": {
-		num: 409,
 		accuracy: 100,
 		basePower: 75,
 		category: "物理",
@@ -3442,7 +3297,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ゆめくい": {
-		num: 138,
 		accuracy: 100,
 		basePower: 100,
 		category: "特殊",
@@ -3460,7 +3314,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ドリルくちばし": {
-		num: 65,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -3474,7 +3327,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ドリルライナー": {
-		num: 529,
 		accuracy: 95,
 		basePower: 80,
 		category: "物理",
@@ -3489,7 +3341,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ドラムアタック": {
-		num: 778,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -3507,7 +3358,6 @@ const Moves = {
 		type: "くさ"
 	},
 	"ダブルウイング": {
-		num: 814,
 		accuracy: 90,
 		basePower: 40,
 		category: "物理",
@@ -3522,7 +3372,6 @@ const Moves = {
 		maxMove: { basePower: 130 }
 	},
 	"ダイマックスほう": {
-		num: 744,
 		accuracy: 100,
 		basePower: 100,
 		category: "特殊",
@@ -3543,7 +3392,6 @@ const Moves = {
 		type: "ドラゴン"
 	},
 	"ばくれつパンチ": {
-		num: 223,
 		accuracy: 50,
 		basePower: 100,
 		category: "物理",
@@ -3560,7 +3408,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"だいちのちから": {
-		num: 414,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -3579,7 +3426,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"じしん": {
-		num: 89,
 		accuracy: 100,
 		basePower: 100,
 		category: "物理",
@@ -3593,7 +3439,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"エコーボイス": {
-		num: 497,
 		accuracy: 100,
 		basePower: 40,
 		basePowerCallback(pokemon, target, move) {
@@ -3632,7 +3477,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"かいでんぱ": {
-		num: 598,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -3650,7 +3494,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ぶきみなじゅもん": {
-		num: 826,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -3682,7 +3525,6 @@ const Moves = {
 		type: "エスパー"
 	},
 	"エレキフィールド": {
-		num: 604,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -3757,7 +3599,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"エレキボール": {
-		num: 486,
 		accuracy: 100,
 		basePower: 0,
 		basePowerCallback(pokemon, target) {
@@ -3780,7 +3621,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"イナズマドライブ": {
-		num: 879,
 		accuracy: 100,
 		basePower: 100,
 		category: "特殊",
@@ -3801,7 +3641,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"エレキネット": {
-		num: 527,
 		accuracy: 95,
 		basePower: 55,
 		category: "特殊",
@@ -3820,7 +3659,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ひのこ": {
-		num: 52,
 		accuracy: 100,
 		basePower: 40,
 		category: "特殊",
@@ -3837,7 +3675,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"アンコール": {
-		num: 227,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -3911,7 +3748,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"がむしゃら": {
-		num: 283,
 		accuracy: 100,
 		basePower: 0,
 		damageCallback(pokemon, target) {
@@ -3933,7 +3769,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"こらえる": {
-		num: 203,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -3969,7 +3804,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"エナジーボール": {
-		num: 412,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -3988,7 +3822,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"なかまづくり": {
-		num: 494,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -4044,7 +3877,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ふんか": {
-		num: 284,
 		accuracy: 100,
 		basePower: 150,
 		basePowerCallback(pokemon, target, move) {
@@ -4063,7 +3895,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"オーラウイング": {
-		num: 840,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -4084,7 +3915,6 @@ const Moves = {
 		type: "エスパー"
 	},
 	"ワイドフォース": {
-		num: 797,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -4108,7 +3938,6 @@ const Moves = {
 		type: "エスパー"
 	},
 	"だいばくはつ": {
-		num: 153,
 		accuracy: 100,
 		basePower: 250,
 		category: "物理",
@@ -4123,7 +3952,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"じんつうりき": {
-		num: 326,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -4140,7 +3968,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"しんそく": {
-		num: 245,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -4154,7 +3981,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"からげんき": {
-		num: 263,
 		accuracy: 100,
 		basePower: 70,
 		category: "物理",
@@ -4173,7 +3999,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"フェアリーロック": {
-		num: 587,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -4198,7 +4023,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ようせいのかぜ": {
-		num: 584,
 		accuracy: 100,
 		basePower: 40,
 		category: "特殊",
@@ -4212,7 +4036,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ねこだまし": {
-		num: 252,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -4235,7 +4058,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"うそなき": {
-		num: 313,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -4253,7 +4075,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"どげざつき": {
-		num: 793,
 		accuracy: true,
 		basePower: 80,
 		category: "物理",
@@ -4266,7 +4087,6 @@ const Moves = {
 		type: "あく"
 	},
 	"みねうち": {
-		num: 206,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -4284,7 +4104,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"フェザーダンス": {
-		num: 297,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -4302,7 +4121,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"フェイント": {
-		num: 364,
 		accuracy: 100,
 		basePower: 30,
 		category: "物理",
@@ -4318,7 +4136,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"とどめばり": {
-		num: 565,
 		accuracy: 100,
 		basePower: 50,
 		category: "物理",
@@ -4336,7 +4153,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ほのおのまい": {
-		num: 552,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -4357,7 +4173,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"もえあがるいかり": {
-		num: 822,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -4373,7 +4188,6 @@ const Moves = {
 		type: "あく"
 	},
 	"みをけずる": {
-		num: 868,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -4401,7 +4215,6 @@ const Moves = {
 		type: "ノーマル"
 	},
 	"いのちがけ": {
-		num: 515,
 		accuracy: 100,
 		basePower: 0,
 		damageCallback(pokemon) {
@@ -4422,7 +4235,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"だいもんじ": {
-		num: 126,
 		accuracy: 85,
 		basePower: 110,
 		category: "特殊",
@@ -4439,7 +4251,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ほのおのキバ": {
-		num: 424,
 		accuracy: 95,
 		basePower: 65,
 		category: "物理",
@@ -4462,7 +4273,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ほのおのムチ": {
-		num: 680,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -4481,7 +4291,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ほのおのちかい": {
-		num: 519,
 		accuracy: 100,
 		basePower: 80,
 		basePowerCallback(target, source, move) {
@@ -4552,7 +4361,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ほのおのパンチ": {
-		num: 7,
 		accuracy: 100,
 		basePower: 75,
 		category: "物理",
@@ -4569,7 +4377,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ほのおのうず": {
-		num: 83,
 		accuracy: 85,
 		basePower: 35,
 		category: "特殊",
@@ -4584,7 +4391,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"であいがしら": {
-		num: 660,
 		accuracy: 100,
 		basePower: 90,
 		category: "物理",
@@ -4604,7 +4410,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"じわれ": {
-		num: 90,
 		accuracy: 30,
 		basePower: 0,
 		category: "物理",
@@ -4621,7 +4426,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"じたばた": {
-		num: 175,
 		accuracy: 100,
 		basePower: 0,
 		basePowerCallback(pokemon, target) {
@@ -4656,7 +4460,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ニトロチャージ": {
-		num: 488,
 		accuracy: 100,
 		basePower: 50,
 		category: "物理",
@@ -4677,7 +4480,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"かえんぐるま": {
-		num: 172,
 		accuracy: 100,
 		basePower: 60,
 		category: "物理",
@@ -4694,7 +4496,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"かえんほうしゃ": {
-		num: 53,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -4711,7 +4512,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"フレアドライブ": {
-		num: 394,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -4729,7 +4529,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ラスターカノン": {
-		num: 430,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -4748,7 +4547,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"おだてる": {
-		num: 260,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -4767,7 +4565,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"フルールカノン": {
-		num: 705,
 		accuracy: 90,
 		basePower: 130,
 		category: "特殊",
@@ -4786,7 +4583,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"なげつける": {
-		num: 374,
 		accuracy: 100,
 		basePower: 0,
 		category: "物理",
@@ -4849,7 +4645,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"クイックターン": {
-		num: 812,
 		accuracy: 100,
 		basePower: 60,
 		category: "物理",
@@ -4863,7 +4658,6 @@ const Moves = {
 		type: "みず"
 	},
 	"トリックフラワー": {
-		num: 870,
 		accuracy: true,
 		basePower: 70,
 		category: "物理",
@@ -4877,7 +4671,6 @@ const Moves = {
 		type: "くさ"
 	},
 	"そらをとぶ": {
-		num: 19,
 		accuracy: 95,
 		basePower: 90,
 		category: "物理",
@@ -4936,7 +4729,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"フライングプレス": {
-		num: 560,
 		accuracy: 95,
 		basePower: 100,
 		category: "物理",
@@ -4961,7 +4753,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"きあいだま": {
-		num: 411,
 		accuracy: 70,
 		basePower: 120,
 		category: "特殊",
@@ -4980,7 +4771,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"きあいだめ": {
-		num: 116,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -5013,7 +4803,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"きあいパンチ": {
-		num: 264,
 		accuracy: 100,
 		basePower: 150,
 		category: "物理",
@@ -5059,7 +4848,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"このゆびとまれ": {
-		num: 266,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -5099,7 +4887,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"はっけい": {
-		num: 395,
 		accuracy: 100,
 		basePower: 60,
 		category: "物理",
@@ -5116,7 +4903,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"イカサマ": {
-		num: 492,
 		accuracy: 100,
 		basePower: 95,
 		category: "物理",
@@ -5131,7 +4917,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"フリーズドライ": {
-		num: 573,
 		accuracy: 100,
 		basePower: 70,
 		category: "特殊",
@@ -5151,7 +4936,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"いてつくしせん": {
-		num: 821,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -5167,7 +4951,6 @@ const Moves = {
 		type: "エスパー"
 	},
 	"ハードプラント": {
-		num: 338,
 		accuracy: 90,
 		basePower: 150,
 		category: "特殊",
@@ -5184,7 +4967,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"こおりのいぶき": {
-		num: 524,
 		accuracy: 90,
 		basePower: 60,
 		category: "特殊",
@@ -5199,7 +4981,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"みだれづき": {
-		num: 31,
 		accuracy: 85,
 		basePower: 15,
 		category: "物理",
@@ -5214,7 +4995,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"れんぞくぎり": {
-		num: 210,
 		accuracy: 95,
 		basePower: 40,
 		basePowerCallback(pokemon, target, move) {
@@ -5252,7 +5032,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"みだれひっかき": {
-		num: 154,
 		accuracy: 80,
 		basePower: 18,
 		category: "物理",
@@ -5268,7 +5047,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"みらいよち": {
-		num: 248,
 		accuracy: 100,
 		basePower: 120,
 		category: "特殊",
@@ -5305,7 +5083,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"いえき": {
-		num: 380,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -5349,7 +5126,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ギガドレイン": {
-		num: 202,
 		accuracy: 100,
 		basePower: 75,
 		category: "特殊",
@@ -5364,7 +5140,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ギガインパクト": {
-		num: 416,
 		accuracy: 90,
 		basePower: 150,
 		category: "物理",
@@ -5381,7 +5156,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"デカハンマー": {
-		num: 893,
 		accuracy: 100,
 		basePower: 160,
 		category: "物理",
@@ -5394,7 +5168,6 @@ const Moves = {
 		type: "はがね"
 	},
 	"ブリザードランス": {
-		num: 824,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -5407,7 +5180,6 @@ const Moves = {
 		type: "こおり"
 	},
 	"きょけんとつげき": {
-		num: 862,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -5440,7 +5212,6 @@ const Moves = {
 		type: "ドラゴン"
 	},
 	"へびにらみ": {
-		num: 137,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -5456,7 +5227,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"くさむすび": {
-		num: 447,
 		accuracy: 100,
 		basePower: 0,
 		basePowerCallback(pokemon, target) {
@@ -5498,7 +5268,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"くさのちかい": {
-		num: 520,
 		accuracy: 100,
 		basePower: 80,
 		basePowerCallback(target, source, move) {
@@ -5566,7 +5335,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"グラススライダー": {
-		num: 803,
 		accuracy: 100,
 		basePower: 55,
 		category: "物理",
@@ -5585,7 +5353,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"グラスフィールド": {
-		num: 580,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -5654,7 +5421,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"Gのちから": {
-		num: 788,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -5677,7 +5443,6 @@ const Moves = {
 		type: "くさ"
 	},
 	"じゅうりょく": {
-		num: 356,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -5775,7 +5540,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"なきごえ": {
-		num: 45,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -5793,7 +5557,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"せいちょう": {
-		num: 74,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -5816,7 +5579,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ガードシェア": {
-		num: 470,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -5844,7 +5606,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ガードスワップ": {
-		num: 385,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -5880,7 +5641,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ハサミギロチン": {
-		num: 12,
 		accuracy: 30,
 		basePower: 0,
 		category: "物理",
@@ -5897,7 +5657,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ダストシュート": {
-		num: 441,
 		accuracy: 80,
 		basePower: 120,
 		category: "物理",
@@ -5914,7 +5673,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"かぜおこし": {
-		num: 16,
 		accuracy: 100,
 		basePower: 40,
 		category: "特殊",
@@ -5928,7 +5686,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ジャイロボール": {
-		num: 360,
 		accuracy: 100,
 		basePower: 0,
 		basePowerCallback(pokemon, target) {
@@ -5952,7 +5709,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"アームハンマー": {
-		num: 359,
 		accuracy: 90,
 		basePower: 100,
 		category: "物理",
@@ -5971,7 +5727,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ハッピータイム": {
-		num: 603,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -5989,7 +5744,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"かたくなる": {
-		num: 106,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -6007,7 +5761,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"くろいきり": {
-		num: 114,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -6028,7 +5781,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ずつき": {
-		num: 29,
 		accuracy: 100,
 		basePower: 70,
 		category: "物理",
@@ -6045,7 +5797,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ぶちかまし": {
-		num: 838,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -6064,7 +5815,6 @@ const Moves = {
 		type: "じめん"
 	},
 	"もろはのずつき": {
-		num: 457,
 		accuracy: 80,
 		basePower: 150,
 		category: "物理",
@@ -6079,7 +5829,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"いやしのすず": {
-		num: 215,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -6106,7 +5855,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"いやしのねがい": {
-		num: 361,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -6144,7 +5892,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"いやしのはどう": {
-		num: 505,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -6182,7 +5929,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ハートスワップ": {
-		num: 391,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -6212,7 +5958,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ヒートスタンプ": {
-		num: 535,
 		accuracy: 100,
 		basePower: 0,
 		basePowerCallback(pokemon, target) {
@@ -6253,7 +5998,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ねっぷう": {
-		num: 257,
 		accuracy: 90,
 		basePower: 95,
 		category: "特殊",
@@ -6270,7 +6014,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ヘビーボンバー": {
-		num: 484,
 		accuracy: 100,
 		basePower: 0,
 		basePowerCallback(pokemon, target) {
@@ -6311,7 +6054,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"てだすけ": {
-		num: 270,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -6346,7 +6088,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"たたりめ": {
-		num: 506,
 		accuracy: 100,
 		basePower: 65,
 		basePowerCallback(pokemon, target, move) {
@@ -6368,7 +6109,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"10まんばりき": {
-		num: 667,
 		accuracy: 95,
 		basePower: 95,
 		category: "物理",
@@ -6382,7 +6122,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"とびひざげり": {
-		num: 136,
 		accuracy: 90,
 		basePower: 130,
 		category: "物理",
@@ -6405,7 +6144,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"てかげん": {
-		num: 610,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -6423,7 +6161,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"てをつなぐ": {
-		num: 607,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -6445,7 +6182,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"つめとぎ": {
-		num: 468,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -6464,7 +6200,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"つのでつく": {
-		num: 30,
 		accuracy: 100,
 		basePower: 65,
 		category: "物理",
@@ -6478,7 +6213,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"つのドリル": {
-		num: 32,
 		accuracy: 30,
 		basePower: 0,
 		category: "物理",
@@ -6495,7 +6229,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ウッドホーン": {
-		num: 532,
 		accuracy: 100,
 		basePower: 75,
 		category: "物理",
@@ -6510,7 +6243,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"とおぼえ": {
-		num: 336,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -6528,7 +6260,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ぼうふう": {
-		num: 542,
 		accuracy: 70,
 		basePower: 110,
 		category: "特殊",
@@ -6557,7 +6288,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ハイドロカノン": {
-		num: 308,
 		accuracy: 90,
 		basePower: 150,
 		category: "特殊",
@@ -6574,7 +6304,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ハイドロポンプ": {
-		num: 56,
 		accuracy: 80,
 		basePower: 110,
 		category: "特殊",
@@ -6588,7 +6317,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ハイドロスチーム": {
-		num: 876,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -6603,7 +6331,6 @@ const Moves = {
 		type: "みず"
 	},
 	"はかいこうせん": {
-		num: 63,
 		accuracy: 90,
 		basePower: 150,
 		category: "特殊",
@@ -6620,7 +6347,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ハイパードリル": {
-		num: 887,
 		accuracy: 100,
 		basePower: 100,
 		category: "物理",
@@ -6634,7 +6360,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"いじげんラッシュ": {
-		num: 621,
 		accuracy: true,
 		basePower: 100,
 		category: "物理",
@@ -6668,7 +6393,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"いじげんホール": {
-		num: 593,
 		accuracy: true,
 		basePower: 80,
 		category: "特殊",
@@ -6683,7 +6407,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ハイパーボイス": {
-		num: 304,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -6697,7 +6420,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"さいみんじゅつ": {
-		num: 95,
 		accuracy: 60,
 		basePower: 0,
 		category: "Status",
@@ -6713,7 +6435,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"れいとうビーム": {
-		num: 58,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -6730,7 +6451,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"こおりのキバ": {
-		num: 423,
 		accuracy: 95,
 		basePower: 65,
 		category: "物理",
@@ -6753,7 +6473,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"アイスハンマー": {
-		num: 665,
 		accuracy: 90,
 		basePower: 100,
 		category: "物理",
@@ -6772,7 +6491,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"れいとうパンチ": {
-		num: 8,
 		accuracy: 100,
 		basePower: 75,
 		category: "物理",
@@ -6789,7 +6507,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"こおりのつぶて": {
-		num: 420,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -6803,7 +6520,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"アイススピナー": {
-		num: 861,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -6826,7 +6542,6 @@ const Moves = {
 		type: "こおり"
 	},
 	"つららおとし": {
-		num: 556,
 		accuracy: 90,
 		basePower: 85,
 		category: "物理",
@@ -6843,7 +6558,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"つららばり": {
-		num: 333,
 		accuracy: 100,
 		basePower: 25,
 		category: "物理",
@@ -6860,7 +6574,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"こごえるかぜ": {
-		num: 196,
 		accuracy: 95,
 		basePower: 55,
 		category: "特殊",
@@ -6879,7 +6592,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ふういん": {
-		num: 286,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -6920,7 +6632,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"やきつくす": {
-		num: 510,
 		accuracy: 100,
 		basePower: 60,
 		category: "特殊",
@@ -6940,7 +6651,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ひゃっきやこう": {
-		num: 844,
 		accuracy: 100,
 		basePower: 60,
 		basePowerCallback(pokemon, target, move) {
@@ -6961,7 +6671,6 @@ const Moves = {
 		type: "ゴースト"
 	},
 	"れんごく": {
-		num: 517,
 		accuracy: 50,
 		basePower: 100,
 		category: "特殊",
@@ -6978,7 +6687,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"まとわりつく": {
-		num: 611,
 		accuracy: 100,
 		basePower: 20,
 		category: "特殊",
@@ -6993,7 +6701,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ねをはる": {
-		num: 275,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -7026,7 +6733,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"さいはい": {
-		num: 689,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -7068,7 +6774,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"てっぺき": {
-		num: 334,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -7086,7 +6791,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"アイアンヘッド": {
-		num: 442,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -7103,7 +6807,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"アイアンテール": {
-		num: 231,
 		accuracy: 75,
 		basePower: 100,
 		category: "物理",
@@ -7122,7 +6825,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ツタこんぼう": {
-		num: 904,
 		accuracy: 100,
 		basePower: 100,
 		category: "物理",
@@ -7157,7 +6859,6 @@ const Moves = {
 		type: "くさ"
 	},
 	"くらいつく": {
-		num: 746,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -7174,7 +6875,6 @@ const Moves = {
 		type: "あく"
 	},
 	"ジェットパンチ": {
-		num: 857,
 		accuracy: 100,
 		basePower: 60,
 		category: "物理",
@@ -7188,7 +6888,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"さばきのつぶて": {
-		num: 449,
 		accuracy: 100,
 		basePower: 100,
 		category: "特殊",
@@ -7209,7 +6908,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ジャングルヒール": {
-		num: 816,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -7226,7 +6924,6 @@ const Moves = {
 		type: "くさ"
 	},
 	"はたきおとす": {
-		num: 282,
 		accuracy: 100,
 		basePower: 65,
 		category: "物理",
@@ -7272,7 +6969,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ドゲザン": {
-		num: 869,
 		accuracy: true,
 		basePower: 85,
 		category: "物理",
@@ -7285,7 +6981,6 @@ const Moves = {
 		type: "あく"
 	},
 	"うっぷんばらし": {
-		num: 808,
 		accuracy: 100,
 		basePower: 75,
 		category: "物理",
@@ -7304,7 +6999,6 @@ const Moves = {
 		type: "あく"
 	},
 	"とっておき": {
-		num: 387,
 		accuracy: 100,
 		basePower: 140,
 		category: "物理",
@@ -7330,7 +7024,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"おはかまいり": {
-		num: 854,
 		accuracy: 100,
 		basePower: 50,
 		basePowerCallback(pokemon, target, move) {
@@ -7346,7 +7039,6 @@ const Moves = {
 		type: "ゴースト"
 	},
 	"ふんえん": {
-		num: 436,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -7363,7 +7055,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"このは": {
-		num: 670,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -7377,7 +7068,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"リーフブレード": {
-		num: 348,
 		accuracy: 100,
 		basePower: 90,
 		category: "物理",
@@ -7392,7 +7082,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"リーフストーム": {
-		num: 437,
 		accuracy: 90,
 		basePower: 130,
 		category: "特殊",
@@ -7411,7 +7100,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"きゅうけつ": {
-		num: 141,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -7426,7 +7114,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"やどりぎのタネ": {
-		num: 73,
 		accuracy: 90,
 		basePower: 0,
 		category: "Status",
@@ -7462,7 +7149,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"にらみつける": {
-		num: 43,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -7480,7 +7166,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"したでなめる": {
-		num: 122,
 		accuracy: 100,
 		basePower: 30,
 		category: "物理",
@@ -7497,7 +7182,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"いのちのしずく": {
-		num: 791,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -7511,7 +7195,6 @@ const Moves = {
 		type: "みず"
 	},
 	"ひかりのかべ": {
-		num: 113,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -7557,7 +7240,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"アクアブレイク": {
-		num: 710,
 		accuracy: 100,
 		basePower: 85,
 		category: "物理",
@@ -7576,7 +7258,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ロックオン": {
-		num: 199,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -7619,7 +7300,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"けたぐり": {
-		num: 67,
 		accuracy: 100,
 		basePower: 0,
 		basePowerCallback(pokemon, target) {
@@ -7660,7 +7340,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ローキック": {
-		num: 490,
 		accuracy: 100,
 		basePower: 65,
 		category: "物理",
@@ -7679,7 +7358,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ルミナコリジョン": {
-		num: 855,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -7697,7 +7375,6 @@ const Moves = {
 		type: "エスパー"
 	},
 	"みかづきのいのり": {
-		num: 849,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -7714,7 +7391,6 @@ const Moves = {
 		type: "エスパー"
 	},
 	"みかづきのまい": {
-		num: 461,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -7760,7 +7436,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"とびかかる": {
-		num: 679,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -7779,7 +7454,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"マッハパンチ": {
-		num: 183,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -7793,7 +7467,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"マジカルリーフ": {
-		num: 345,
 		accuracy: true,
 		basePower: 60,
 		category: "特殊",
@@ -7807,7 +7480,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"まほうのこな": {
-		num: 750,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -7825,7 +7497,6 @@ const Moves = {
 		type: "エスパー"
 	},
 	"マジックルーム": {
-		num: 478,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -7884,7 +7555,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"マグマストーム": {
-		num: 463,
 		accuracy: 75,
 		basePower: 100,
 		category: "特殊",
@@ -7899,7 +7569,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"じばそうさ": {
-		num: 602,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -7933,7 +7602,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"でんじふゆう": {
-		num: 393,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -7972,7 +7640,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ゴールドラッシュ": {
-		num: 874,
 		accuracy: 100,
 		basePower: 120,
 		category: "特殊",
@@ -7991,7 +7658,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"シャカシャカほう": {
-		num: 902,
 		accuracy: 90,
 		basePower: 80,
 		category: "特殊",
@@ -8009,7 +7675,6 @@ const Moves = {
 		type: "くさ"
 	},
 	"くろいまなざし": {
-		num: 212,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -8027,7 +7692,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"メガドレイン": {
-		num: 72,
 		accuracy: 100,
 		basePower: 40,
 		category: "特殊",
@@ -8043,7 +7707,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"メガホーン": {
-		num: 224,
 		accuracy: 85,
 		basePower: 120,
 		category: "物理",
@@ -8057,7 +7720,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"メガトンキック": {
-		num: 25,
 		accuracy: 75,
 		basePower: 120,
 		category: "物理",
@@ -8071,7 +7733,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"メガトンパンチ": {
-		num: 5,
 		accuracy: 85,
 		basePower: 80,
 		category: "物理",
@@ -8085,7 +7746,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"おきみやげ": {
-		num: 262,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -8105,7 +7765,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"メタルバースト": {
-		num: 368,
 		accuracy: 100,
 		basePower: 0,
 		damageCallback(pokemon) {
@@ -8136,7 +7795,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"メタルクロー": {
-		num: 232,
 		accuracy: 95,
 		basePower: 50,
 		category: "物理",
@@ -8157,7 +7815,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"きんぞくおん": {
-		num: 319,
 		accuracy: 85,
 		basePower: 0,
 		category: "Status",
@@ -8182,7 +7839,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"メテオビーム": {
-		num: 800,
 		accuracy: 90,
 		basePower: 120,
 		category: "特殊",
@@ -8207,7 +7863,6 @@ const Moves = {
 		type: "いわ"
 	},
 	"コメットパンチ": {
-		num: 309,
 		accuracy: 90,
 		basePower: 90,
 		category: "物理",
@@ -8228,7 +7883,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ゆびをふる": {
-		num: 118,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -8412,7 +8066,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ミルクのみ": {
-		num: 208,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -8428,7 +8081,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ものまね": {
-		num: 102,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -8479,7 +8131,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ちいさくなる": {
-		num: 107,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -8533,7 +8184,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ミラーコート": {
-		num: 243,
 		accuracy: 100,
 		basePower: 0,
 		damageCallback(pokemon) {
@@ -8578,7 +8228,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"しろいきり": {
-		num: 54,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -8626,7 +8275,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ミストバースト": {
-		num: 802,
 		accuracy: 100,
 		basePower: 100,
 		category: "特殊",
@@ -8646,7 +8294,6 @@ const Moves = {
 		type: "フェアリー"
 	},
 	"ミストフィールド": {
-		num: 581,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -8714,7 +8361,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ムーンフォース": {
-		num: 585,
 		accuracy: 100,
 		basePower: 95,
 		category: "特殊",
@@ -8733,7 +8379,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"つきのひかり": {
-		num: 236,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -8770,7 +8415,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"あさのひざし": {
-		num: 234,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -8807,7 +8451,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"キラースピン": {
-		num: 866,
 		accuracy: 100,
 		basePower: 30,
 		category: "物理",
@@ -8891,7 +8534,6 @@ const Moves = {
 		type: "どく"
 	},
 	"ひょうざんおろし": {
-		num: 836,
 		accuracy: 85,
 		basePower: 100,
 		category: "物理",
@@ -8907,7 +8549,6 @@ const Moves = {
 		type: "こおり"
 	},
 	"マッドショット": {
-		num: 341,
 		accuracy: 95,
 		basePower: 55,
 		category: "特殊",
@@ -8926,7 +8567,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"どろかけ": {
-		num: 189,
 		accuracy: 100,
 		basePower: 20,
 		category: "特殊",
@@ -8945,7 +8585,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"だくりゅう": {
-		num: 330,
 		accuracy: 85,
 		basePower: 90,
 		category: "特殊",
@@ -8964,7 +8603,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"マジカルフレイム": {
-		num: 595,
 		accuracy: 100,
 		basePower: 75,
 		category: "特殊",
@@ -8983,7 +8621,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"しんぴのちから": {
-		num: 832,
 		accuracy: 90,
 		basePower: 70,
 		category: "特殊",
@@ -9003,7 +8640,6 @@ const Moves = {
 		type: "エスパー"
 	},
 	"わるだくみ": {
-		num: 417,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -9021,7 +8657,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ナイトバースト": {
-		num: 539,
 		accuracy: 95,
 		basePower: 85,
 		category: "特殊",
@@ -9040,7 +8675,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ナイトヘッド": {
-		num: 101,
 		accuracy: 100,
 		basePower: 0,
 		damage: "level",
@@ -9055,7 +8689,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"つじぎり": {
-		num: 400,
 		accuracy: 100,
 		basePower: 70,
 		category: "物理",
@@ -9070,7 +8703,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"おたけび": {
-		num: 568,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -9089,7 +8721,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"はいすいのじん": {
-		num: 748,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -9124,7 +8755,6 @@ const Moves = {
 		type: "かくとう"
 	},
 	"ほっぺすりすり": {
-		num: 609,
 		accuracy: 100,
 		basePower: 20,
 		category: "物理",
@@ -9141,7 +8771,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"いっちょうあがり": {
-		num: 856,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -9171,7 +8800,6 @@ const Moves = {
 		type: "ドラゴン"
 	},
 	"こんげんのはどう": {
-		num: 618,
 		accuracy: 85,
 		basePower: 110,
 		category: "特殊",
@@ -9184,7 +8812,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"げきりん": {
-		num: 200,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -9209,7 +8836,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"オーバードライブ": {
-		num: 786,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -9222,7 +8848,6 @@ const Moves = {
 		type: "でんき"
 	},
 	"オーバーヒート": {
-		num: 315,
 		accuracy: 90,
 		basePower: 130,
 		category: "特殊",
@@ -9241,7 +8866,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"いたみわけ": {
-		num: 220,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -9271,7 +8895,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"パラボラチャージ": {
-		num: 570,
 		accuracy: 100,
 		basePower: 65,
 		category: "特殊",
@@ -9286,7 +8909,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"すてゼリフ": {
-		num: 575,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -9308,7 +8930,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"しっぺがえし": {
-		num: 371,
 		accuracy: 100,
 		basePower: 50,
 		basePowerCallback(pokemon, target, move) {
@@ -9330,7 +8951,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ネコにこばん": {
-		num: 6,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -9344,7 +8964,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"つつく": {
-		num: 64,
 		accuracy: 100,
 		basePower: 35,
 		category: "物理",
@@ -9358,7 +8977,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ほろびのうた": {
-		num: 195,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -9404,7 +9022,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"はなふぶき": {
-		num: 572,
 		accuracy: 100,
 		basePower: 90,
 		category: "物理",
@@ -9418,7 +9035,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"はなびらのまい": {
-		num: 80,
 		accuracy: 100,
 		basePower: 120,
 		category: "特殊",
@@ -9443,7 +9059,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ゴーストダイブ": {
-		num: 566,
 		accuracy: 100,
 		basePower: 90,
 		category: "物理",
@@ -9480,7 +9095,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ミサイルばり": {
-		num: 42,
 		accuracy: 95,
 		basePower: 25,
 		category: "物理",
@@ -9497,7 +9111,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"なかよくする": {
-		num: 589,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -9515,7 +9128,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"じゃれつく": {
-		num: 583,
 		accuracy: 90,
 		basePower: 90,
 		category: "物理",
@@ -9534,7 +9146,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ついばむ": {
-		num: 365,
 		accuracy: 100,
 		basePower: 60,
 		category: "物理",
@@ -9566,7 +9177,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"どくどくのキバ": {
-		num: 305,
 		accuracy: 100,
 		basePower: 50,
 		category: "物理",
@@ -9583,7 +9193,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"どくガス": {
-		num: 139,
 		accuracy: 90,
 		basePower: 0,
 		category: "Status",
@@ -9599,7 +9208,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"どくづき": {
-		num: 398,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -9616,7 +9224,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"どくのこな": {
-		num: 77,
 		accuracy: 75,
 		basePower: 0,
 		category: "Status",
@@ -9632,7 +9239,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"どくばり": {
-		num: 40,
 		accuracy: 100,
 		basePower: 15,
 		category: "物理",
@@ -9649,7 +9255,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ポイズンテール": {
-		num: 342,
 		accuracy: 100,
 		basePower: 50,
 		category: "物理",
@@ -9667,7 +9272,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"かふんだんご": {
-		num: 676,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -9708,7 +9312,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ポルターガイスト": {
-		num: 809,
 		accuracy: 90,
 		basePower: 110,
 		category: "物理",
@@ -9732,7 +9335,6 @@ const Moves = {
 		type: "ゴースト"
 	},
 	"ネズミざん": {
-		num: 860,
 		accuracy: 90,
 		basePower: 20,
 		category: "物理",
@@ -9747,7 +9349,6 @@ const Moves = {
 		type: "ノーマル"
 	},
 	"とびつく": {
-		num: 884,
 		accuracy: 100,
 		basePower: 50,
 		category: "物理",
@@ -9766,7 +9367,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"はたく": {
-		num: 1,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -9780,7 +9380,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"こなゆき": {
-		num: 181,
 		accuracy: 100,
 		basePower: 40,
 		category: "特殊",
@@ -9797,7 +9396,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"パワージェム": {
-		num: 408,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -9811,7 +9409,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"パワーシフト": {
-		num: 829,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -9851,7 +9448,6 @@ const Moves = {
 		type: "ノーマル"
 	},
 	"パワーシェア": {
-		num: 471,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -9879,7 +9475,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"パワースワップ": {
-		num: 384,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -9915,7 +9510,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"パワートリック": {
-		num: 379,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -9956,7 +9550,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"つけあがる": {
-		num: 681,
 		accuracy: 100,
 		basePower: 20,
 		basePowerCallback(pokemon, target, move) {
@@ -9977,7 +9570,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"パワーウィップ": {
-		num: 438,
 		accuracy: 85,
 		basePower: 120,
 		category: "物理",
@@ -9991,7 +9583,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"だんがいのつるぎ": {
-		num: 619,
 		accuracy: 85,
 		basePower: 120,
 		category: "物理",
@@ -10004,7 +9595,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"プレゼント": {
-		num: 217,
 		accuracy: 90,
 		basePower: 0,
 		category: "物理",
@@ -10031,7 +9621,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"まもる": {
-		num: 182,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -10082,7 +9671,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"サイケこうせん": {
-		num: 60,
 		accuracy: 100,
 		basePower: 65,
 		category: "特殊",
@@ -10099,7 +9687,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"サイコブレイド": {
-		num: 875,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -10118,7 +9705,6 @@ const Moves = {
 		type: "エスパー"
 	},
 	"じこあんじ": {
-		num: 244,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -10151,7 +9737,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"サイコキネシス": {
-		num: 94,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -10170,7 +9755,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"サイコファング": {
-		num: 706,
 		accuracy: 100,
 		basePower: 85,
 		category: "物理",
@@ -10190,7 +9774,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"サイコフィールド": {
-		num: 678,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -10261,7 +9844,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"サイコカッター": {
-		num: 427,
 		accuracy: 100,
 		basePower: 70,
 		category: "物理",
@@ -10276,7 +9858,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"バリアーラッシュ": {
-		num: 828,
 		accuracy: 90,
 		basePower: 70,
 		category: "物理",
@@ -10296,7 +9877,6 @@ const Moves = {
 		type: "エスパー"
 	},
 	"サイコショック": {
-		num: 473,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -10311,7 +9891,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"サイコブレイク": {
-		num: 540,
 		accuracy: 100,
 		basePower: 100,
 		category: "特殊",
@@ -10326,7 +9905,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"かえんボール": {
-		num: 780,
 		accuracy: 90,
 		basePower: 120,
 		category: "物理",
@@ -10342,7 +9920,6 @@ const Moves = {
 		type: "ほのお"
 	},
 	"さきおくり": {
-		num: 511,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -10365,7 +9942,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"でんこうせっか": {
-		num: 98,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -10379,7 +9955,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ファストガード": {
-		num: 501,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -10428,7 +10003,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ちょうのまい": {
-		num: 483,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -10448,7 +10022,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ふんどのこぶし": {
-		num: 889,
 		accuracy: 100,
 		basePower: 50,
 		basePowerCallback(pokemon) {
@@ -10464,7 +10037,6 @@ const Moves = {
 		type: "ゴースト"
 	},
 	"いかりのこな": {
-		num: 476,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -10503,7 +10075,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"レイジングブル": {
-		num: 873,
 		accuracy: 100,
 		basePower: 90,
 		category: "物理",
@@ -10535,7 +10106,6 @@ const Moves = {
 		type: "ノーマル"
 	},
 	"だいふんげき": {
-		num: 833,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -10556,7 +10126,6 @@ const Moves = {
 		type: "ほのお"
 	},
 	"あまごい": {
-		num: 240,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -10572,7 +10141,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"こうそくスピン": {
-		num: 229,
 		accuracy: 100,
 		basePower: 50,
 		category: "物理",
@@ -10661,7 +10229,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"はっぱカッター": {
-		num: 75,
 		accuracy: 95,
 		basePower: 55,
 		category: "物理",
@@ -10676,7 +10243,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"シェルブレード": {
-		num: 534,
 		accuracy: 95,
 		basePower: 75,
 		category: "物理",
@@ -10695,7 +10261,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"じこさいせい": {
-		num: 105,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -10711,7 +10276,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"リサイクル": {
-		num: 278,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -10738,7 +10302,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"リフレクター": {
-		num: 115,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -10784,7 +10347,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ミラータイプ": {
-		num: 513,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -10827,7 +10389,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"いにしえのうた": {
-		num: 547,
 		accuracy: 100,
 		basePower: 75,
 		category: "特殊",
@@ -10864,7 +10425,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ねむる": {
-		num: 156,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -10903,7 +10463,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"かたきうち": {
-		num: 514,
 		accuracy: 100,
 		basePower: 70,
 		category: "物理",
@@ -10923,7 +10482,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"めざめるダンス": {
-		num: 686,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -10942,7 +10500,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"きしかいせい": {
-		num: 179,
 		accuracy: 100,
 		basePower: 0,
 		basePowerCallback(pokemon, target) {
@@ -10976,7 +10533,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"さいきのいのり": {
-		num: 863,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -11004,7 +10560,6 @@ const Moves = {
 		type: "ノーマル"
 	},
 	"ライジングボルト": {
-		num: 804,
 		accuracy: 100,
 		basePower: 70,
 		basePowerCallback(source, target, move) {
@@ -11026,7 +10581,6 @@ const Moves = {
 		maxMove: { basePower: 140 }
 	},
 	"ほえる": {
-		num: 46,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -11050,7 +10604,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ときのほうこう": {
-		num: 459,
 		accuracy: 90,
 		basePower: 150,
 		category: "特殊",
@@ -11067,7 +10620,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ロックブラスト": {
-		num: 350,
 		accuracy: 90,
 		basePower: 25,
 		category: "物理",
@@ -11084,7 +10636,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ロックカット": {
-		num: 397,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -11102,7 +10653,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"いわなだれ": {
-		num: 157,
 		accuracy: 90,
 		basePower: 75,
 		category: "物理",
@@ -11119,7 +10669,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"いわくだき": {
-		num: 249,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -11138,7 +10687,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"いわおとし": {
-		num: 88,
 		accuracy: 90,
 		basePower: 50,
 		category: "物理",
@@ -11152,7 +10700,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"がんせきふうじ": {
-		num: 317,
 		accuracy: 95,
 		basePower: 60,
 		category: "物理",
@@ -11171,7 +10718,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"なりきり": {
-		num: 272,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -11227,7 +10773,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ころがる": {
-		num: 205,
 		accuracy: 90,
 		basePower: 30,
 		basePowerCallback(pokemon, target, move) {
@@ -11305,7 +10850,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"はねやすめ": {
-		num: 355,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -11343,7 +10887,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"りんしょう": {
-		num: 496,
 		accuracy: 100,
 		basePower: 60,
 		basePowerCallback(target, source, move) {
@@ -11374,7 +10917,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"カタストロフィ": {
-		num: 877,
 		accuracy: 90,
 		basePower: 0,
 		damageCallback(pokemon, target) {
@@ -11391,7 +10933,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"せいなるつるぎ": {
-		num: 533,
 		accuracy: 100,
 		basePower: 90,
 		category: "物理",
@@ -11407,7 +10948,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"しんぴのまもり": {
-		num: 219,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -11487,7 +11027,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"しおづけ": {
-		num: 864,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -11518,7 +11057,6 @@ const Moves = {
 		type: "いわ"
 	},
 	"すなかけ": {
-		num: 28,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -11536,7 +11074,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ねっさのあらし": {
-		num: 848,
 		accuracy: 80,
 		basePower: 100,
 		category: "特殊",
@@ -11560,7 +11097,6 @@ const Moves = {
 		type: "じめん"
 	},
 	"すなあらし": {
-		num: 201,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -11576,7 +11112,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"すなじごく": {
-		num: 328,
 		accuracy: 85,
 		basePower: 35,
 		category: "物理",
@@ -11591,7 +11126,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ねっとう": {
-		num: 503,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -11609,7 +11143,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"スケイルショット": {
-		num: 799,
 		accuracy: 90,
 		basePower: 25,
 		category: "物理",
@@ -11631,7 +11164,6 @@ const Moves = {
 		maxMove: { basePower: 130 }
 	},
 	"こわいかお": {
-		num: 184,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -11649,7 +11181,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ねっさのだいち": {
-		num: 815,
 		accuracy: 100,
 		basePower: 70,
 		category: "特殊",
@@ -11666,7 +11197,6 @@ const Moves = {
 		type: "じめん"
 	},
 	"ひっかく": {
-		num: 10,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -11680,7 +11210,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"いやなおと": {
-		num: 103,
 		accuracy: 85,
 		basePower: 0,
 		category: "Status",
@@ -11705,7 +11234,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"タネばくだん": {
-		num: 402,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -11719,7 +11247,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"シードフレア": {
-		num: 465,
 		accuracy: 85,
 		basePower: 120,
 		category: "特殊",
@@ -11738,7 +11265,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ちきゅうなげ": {
-		num: 69,
 		accuracy: 100,
 		basePower: 0,
 		damage: "level",
@@ -11754,7 +11280,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"じばく": {
-		num: 120,
 		accuracy: 100,
 		basePower: 200,
 		category: "物理",
@@ -11769,7 +11294,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"シャドーボール": {
-		num: 247,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -11788,7 +11312,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"シャドークロー": {
-		num: 421,
 		accuracy: 100,
 		basePower: 70,
 		category: "物理",
@@ -11803,7 +11326,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"シャドーダイブ": {
-		num: 467,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -11840,7 +11362,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"シャドーパンチ": {
-		num: 325,
 		accuracy: true,
 		basePower: 60,
 		category: "物理",
@@ -11854,7 +11375,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"かげうち": {
-		num: 425,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -11868,7 +11388,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"しっぽきり": {
-		num: 880,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -11906,7 +11425,6 @@ const Moves = {
 		zMove: { effect: "clearnegativeboost" }
 	},
 	"ぜったいれいど": {
-		num: 329,
 		accuracy: 30,
 		basePower: 0,
 		category: "特殊",
@@ -11923,7 +11441,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"シェルアームズ": {
-		num: 801,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -11975,7 +11492,6 @@ const Moves = {
 		type: "どく"
 	},
 	"からをやぶる": {
-		num: 504,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -11997,7 +11513,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"たてこもる": {
-		num: 842,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -12013,7 +11528,6 @@ const Moves = {
 		type: "はがね"
 	},
 	"ギアチェンジ": {
-		num: 508,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -12032,7 +11546,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"でんげきは": {
-		num: 351,
 		accuracy: true,
 		basePower: 60,
 		category: "特殊",
@@ -12046,7 +11559,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"すなあつめ": {
-		num: 659,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -12073,7 +11585,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"スレッドトラップ": {
-		num: 852,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -12141,7 +11652,6 @@ const Moves = {
 		type: "むし"
 	},
 	"シンプルビーム": {
-		num: 493,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -12173,7 +11683,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"うたう": {
-		num: 47,
 		accuracy: 55,
 		basePower: 0,
 		category: "Status",
@@ -12189,7 +11698,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"スキルスワップ": {
-		num: 285,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -12272,7 +11780,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"はいよるいちげき": {
-		num: 806,
 		accuracy: 90,
 		basePower: 70,
 		category: "物理",
@@ -12290,7 +11797,6 @@ const Moves = {
 		type: "むし"
 	},
 	"ゴッドバード": {
-		num: 143,
 		accuracy: 90,
 		basePower: 140,
 		category: "物理",
@@ -12326,7 +11832,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"なまける": {
-		num: 303,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -12342,7 +11847,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"たたきつける": {
-		num: 21,
 		accuracy: 75,
 		basePower: 80,
 		category: "物理",
@@ -12356,7 +11860,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"きりさく": {
-		num: 163,
 		accuracy: 100,
 		basePower: 70,
 		category: "物理",
@@ -12371,7 +11874,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ねむりごな": {
-		num: 79,
 		accuracy: 75,
 		basePower: 0,
 		category: "Status",
@@ -12387,7 +11889,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ねごと": {
-		num: 214,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -12436,7 +11937,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ヘドロこうげき": {
-		num: 124,
 		accuracy: 100,
 		basePower: 65,
 		category: "特殊",
@@ -12453,7 +11953,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ヘドロばくだん": {
-		num: 188,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -12470,7 +11969,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ヘドロウェーブ": {
-		num: 482,
 		accuracy: 100,
 		basePower: 95,
 		category: "特殊",
@@ -12487,7 +11985,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"うちおとす": {
-		num: 479,
 		accuracy: 100,
 		basePower: 50,
 		category: "物理",
@@ -12539,7 +12036,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"スマートホーン": {
-		num: 684,
 		accuracy: true,
 		basePower: 70,
 		category: "物理",
@@ -12553,7 +12049,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"スモッグ": {
-		num: 123,
 		accuracy: 70,
 		basePower: 30,
 		category: "特殊",
@@ -12570,7 +12065,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"えんまく": {
-		num: 108,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -12588,7 +12082,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"バークアウト": {
-		num: 555,
 		accuracy: 95,
 		basePower: 55,
 		category: "特殊",
@@ -12607,7 +12100,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ねらいうち": {
-		num: 745,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -12622,7 +12114,6 @@ const Moves = {
 		type: "みず"
 	},
 	"いびき": {
-		num: 173,
 		accuracy: 100,
 		basePower: 50,
 		category: "特殊",
@@ -12643,7 +12134,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ゆきげしき": {
-		num: 883,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -12657,7 +12147,6 @@ const Moves = {
 		type: "こおり"
 	},
 	"みずびたし": {
-		num: 487,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -12681,7 +12170,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"タマゴうみ": {
-		num: 135,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -12697,7 +12185,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ソーラービーム": {
-		num: 76,
 		accuracy: 100,
 		basePower: 120,
 		category: "特殊",
@@ -12746,7 +12233,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ソーラーブレード": {
-		num: 669,
 		accuracy: 100,
 		basePower: 125,
 		category: "物理",
@@ -12797,7 +12283,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"あくうせつだん": {
-		num: 460,
 		accuracy: 95,
 		basePower: 100,
 		category: "特殊",
@@ -12812,7 +12297,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"スパーク": {
-		num: 209,
 		accuracy: 100,
 		basePower: 65,
 		category: "物理",
@@ -12829,7 +12313,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"スピードスワップ": {
-		num: 683,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -12850,7 +12333,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ハバネロエキス": {
-		num: 858,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -12867,7 +12349,6 @@ const Moves = {
 		type: "くさ"
 	},
 	"まきびし": {
-		num: 191,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -12902,7 +12383,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ニードルガード": {
-		num: 596,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -12964,7 +12444,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ホイールスピン": {
-		num: 859,
 		accuracy: 100,
 		basePower: 100,
 		category: "物理",
@@ -12982,7 +12461,6 @@ const Moves = {
 		type: "はがね"
 	},
 	"ソウルクラッシュ": {
-		num: 789,
 		accuracy: 100,
 		basePower: 75,
 		category: "物理",
@@ -13000,7 +12478,6 @@ const Moves = {
 		type: "フェアリー"
 	},
 	"かげぬい": {
-		num: 662,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -13020,7 +12497,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"はきだす": {
-		num: 255,
 		accuracy: 100,
 		basePower: 0,
 		basePowerCallback(pokemon) {
@@ -13044,7 +12520,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"うらみ": {
-		num: 180,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -13068,7 +12543,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"はねる": {
-		num: 150,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -13093,7 +12567,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"キノコのほうし": {
-		num: 147,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -13109,7 +12582,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"はるのあらし": {
-		num: 831,
 		accuracy: 80,
 		basePower: 100,
 		category: "特殊",
@@ -13127,7 +12599,6 @@ const Moves = {
 		type: "フェアリー"
 	},
 	"ステルスロック": {
-		num: 446,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -13158,7 +12629,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"スチームバースト": {
-		num: 592,
 		accuracy: 95,
 		basePower: 110,
 		category: "特殊",
@@ -13176,7 +12646,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"てっていこうせん": {
-		num: 796,
 		accuracy: 95,
 		basePower: 140,
 		category: "特殊",
@@ -13208,7 +12677,6 @@ const Moves = {
 		type: "はがね"
 	},
 	"アイアンローラー": {
-		num: 798,
 		accuracy: 100,
 		basePower: 130,
 		category: "物理",
@@ -13230,7 +12698,6 @@ const Moves = {
 		type: "はがね"
 	},
 	"はがねのつばさ": {
-		num: 211,
 		accuracy: 90,
 		basePower: 70,
 		category: "物理",
@@ -13251,7 +12718,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ねばねばネット": {
-		num: 564,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -13282,7 +12748,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"たくわえる": {
-		num: 254,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -13345,7 +12810,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ふみつけ": {
-		num: 23,
 		accuracy: 100,
 		basePower: 65,
 		category: "物理",
@@ -13362,7 +12826,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"じだんだ": {
-		num: 707,
 		accuracy: 100,
 		basePower: 75,
 		basePowerCallback(pokemon, target, move) {
@@ -13383,7 +12846,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"がんせきアックス": {
-		num: 830,
 		accuracy: 90,
 		basePower: 65,
 		category: "物理",
@@ -13410,7 +12872,6 @@ const Moves = {
 		type: "いわ"
 	},
 	"ストーンエッジ": {
-		num: 444,
 		accuracy: 80,
 		basePower: 100,
 		category: "物理",
@@ -13425,7 +12886,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"アシストパワー": {
-		num: 500,
 		accuracy: 100,
 		basePower: 20,
 		basePowerCallback(pokemon, target, move) {
@@ -13446,7 +12906,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ワンダースチーム": {
-		num: 790,
 		accuracy: 95,
 		basePower: 90,
 		category: "特殊",
@@ -13462,7 +12921,6 @@ const Moves = {
 		type: "フェアリー"
 	},
 	"かいりき": {
-		num: 70,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -13476,7 +12934,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ちからをすいとる": {
-		num: 668,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -13497,7 +12954,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"いとをはく": {
-		num: 81,
 		accuracy: 95,
 		basePower: 0,
 		category: "Status",
@@ -13515,7 +12971,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"わるあがき": {
-		num: 165,
 		accuracy: true,
 		basePower: 50,
 		category: "物理",
@@ -13546,7 +13001,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"むしのていこう": {
-		num: 522,
 		accuracy: 100,
 		basePower: 50,
 		category: "特殊",
@@ -13565,7 +13019,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ほおばる": {
-		num: 747,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -13588,7 +13041,6 @@ const Moves = {
 		type: "ノーマル"
 	},
 	"しびれごな": {
-		num: 78,
 		accuracy: 75,
 		basePower: 0,
 		category: "Status",
@@ -13604,7 +13056,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"みがわり": {
-		num: 164,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -13711,7 +13162,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ふいうち": {
-		num: 389,
 		accuracy: 100,
 		basePower: 70,
 		category: "物理",
@@ -13736,7 +13186,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"にほんばれ": {
-		num: 241,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -13752,7 +13201,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"いかりのまえば": {
-		num: 162,
 		accuracy: 90,
 		basePower: 0,
 		damageCallback(pokemon, target) {
@@ -13769,7 +13217,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ばかぢから": {
-		num: 276,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -13789,7 +13236,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ちょうおんぱ": {
-		num: 48,
 		accuracy: 55,
 		basePower: 0,
 		category: "Status",
@@ -13805,7 +13251,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"なみのり": {
-		num: 57,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -13819,7 +13264,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"すいりゅうれんだ": {
-		num: 818,
 		accuracy: 100,
 		basePower: 25,
 		category: "物理",
@@ -13836,7 +13280,6 @@ const Moves = {
 		maxMove: { basePower: 130 }
 	},
 	"いばる": {
-		num: 207,
 		accuracy: 85,
 		basePower: 0,
 		category: "Status",
@@ -13855,7 +13298,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"のみこむ": {
-		num: 256,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -13885,7 +13327,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"てんしのキッス": {
-		num: 186,
 		accuracy: 75,
 		basePower: 0,
 		category: "Status",
@@ -13901,7 +13342,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"あまいかおり": {
-		num: 230,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -13919,7 +13359,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"スピードスター": {
-		num: 129,
 		accuracy: true,
 		basePower: 60,
 		category: "特殊",
@@ -13933,7 +13372,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"すりかえ": {
-		num: 415,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -14011,7 +13449,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"つるぎのまい": {
-		num: 14,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -14029,7 +13466,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"こうごうせい": {
-		num: 235,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -14066,7 +13502,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"みずあめボム": {
-		num: 903,
 		accuracy: 85,
 		basePower: 60,
 		category: "特殊",
@@ -14096,7 +13531,6 @@ const Moves = {
 		type: "くさ"
 	},
 	"たいあたり": {
-		num: 33,
 		accuracy: 100,
 		basePower: 40,
 		category: "物理",
@@ -14110,7 +13544,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ほたるび": {
-		num: 294,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -14128,7 +13561,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"スイープビンタ": {
-		num: 541,
 		accuracy: 85,
 		basePower: 25,
 		category: "物理",
@@ -14145,7 +13577,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"しっぽをふる": {
-		num: 39,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -14163,7 +13594,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"おいかぜ": {
-		num: 366,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -14209,7 +13639,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"とっしん": {
-		num: 36,
 		accuracy: 85,
 		basePower: 90,
 		category: "物理",
@@ -14224,7 +13653,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ブレイブチャージ": {
-		num: 850,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -14241,7 +13669,6 @@ const Moves = {
 		type: "エスパー"
 	},
 	"タールショット": {
-		num: 749,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -14271,7 +13698,6 @@ const Moves = {
 		type: "いわ"
 	},
 	"ちょうはつ": {
-		num: 269,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -14320,7 +13746,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"なみだめ": {
-		num: 715,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -14339,7 +13764,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"おちゃかい": {
-		num: 752,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -14374,7 +13798,6 @@ const Moves = {
 		type: "ノーマル"
 	},
 	"フラフラダンス": {
-		num: 298,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -14390,7 +13813,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"テレポート": {
-		num: 100,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -14409,7 +13831,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"テラバースト": {
-		num: 851,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -14441,7 +13862,6 @@ const Moves = {
 		type: "ノーマル"
 	},
 	"だいちのはどう": {
-		num: 805,
 		accuracy: 100,
 		basePower: 50,
 		category: "特殊",
@@ -14479,7 +13899,6 @@ const Moves = {
 		maxMove: { basePower: 130 }
 	},
 	"どろぼう": {
-		num: 168,
 		accuracy: 100,
 		basePower: 60,
 		category: "物理",
@@ -14539,7 +13958,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"あばれる": {
-		num: 37,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -14564,7 +13982,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"じごくづき": {
-		num: 675,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -14613,7 +14030,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"かみなり": {
-		num: 87,
 		accuracy: 70,
 		basePower: 110,
 		category: "特殊",
@@ -14642,7 +14058,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"10まんボルト": {
-		num: 85,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -14659,7 +14074,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"サンダープリズン": {
-		num: 819,
 		accuracy: 90,
 		basePower: 80,
 		category: "特殊",
@@ -14673,7 +14087,6 @@ const Moves = {
 		type: "でんき"
 	},
 	"かみなりのキバ": {
-		num: 422,
 		accuracy: 95,
 		basePower: 65,
 		category: "物理",
@@ -14696,7 +14109,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"らいめいげり": {
-		num: 823,
 		accuracy: 100,
 		basePower: 90,
 		category: "物理",
@@ -14714,7 +14126,6 @@ const Moves = {
 		type: "かくとう"
 	},
 	"かみなりパンチ": {
-		num: 9,
 		accuracy: 100,
 		basePower: 75,
 		category: "物理",
@@ -14731,7 +14142,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"でんきショック": {
-		num: 84,
 		accuracy: 100,
 		basePower: 40,
 		category: "特殊",
@@ -14748,7 +14158,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"でんじは": {
-		num: 86,
 		accuracy: 90,
 		basePower: 0,
 		category: "Status",
@@ -14765,7 +14174,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"くすぐる": {
-		num: 321,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -14784,7 +14192,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"おかたづけ": {
-		num: 882,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -14828,7 +14235,6 @@ const Moves = {
 		type: "ノーマル"
 	},
 	"フレアソング": {
-		num: 871,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -14849,7 +14255,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"いちゃもん": {
-		num: 259,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -14883,7 +14288,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"どくどく": {
-		num: 92,
 		accuracy: 90,
 		basePower: 0,
 		category: "Status",
@@ -14900,7 +14304,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"どくびし": {
-		num: 390,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -14949,7 +14352,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"どくのいと": {
-		num: 672,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -14968,7 +14370,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"くさわけ": {
-		num: 885,
 		accuracy: 100,
 		basePower: 50,
 		category: "物理",
@@ -14989,7 +14390,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"へんしん": {
-		num: 144,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -15016,7 +14416,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"トライアタック": {
-		num: 161,
 		accuracy: 100,
 		basePower: 80,
 		category: "特殊",
@@ -15042,7 +14441,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"トリック": {
-		num: 271,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -15108,7 +14506,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"トリックルーム": {
-		num: 433,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -15160,7 +14557,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"3ぼんのや": {
-		num: 843,
 		accuracy: 100,
 		basePower: 90,
 		category: "物理",
@@ -15185,7 +14581,6 @@ const Moves = {
 		type: "かくとう"
 	},
 	"トリプルアクセル": {
-		num: 813,
 		accuracy: 90,
 		basePower: 20,
 		basePowerCallback(pokemon, target, move) {
@@ -15205,7 +14600,6 @@ const Moves = {
 		maxMove: { basePower: 140 }
 	},
 	"トリプルダイブ": {
-		num: 865,
 		accuracy: 95,
 		basePower: 30,
 		category: "物理",
@@ -15219,7 +14613,6 @@ const Moves = {
 		type: "みず"
 	},
 	"トロピカルキック": {
-		num: 688,
 		accuracy: 100,
 		basePower: 70,
 		category: "物理",
@@ -15238,7 +14631,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ツインビーム": {
-		num: 888,
 		accuracy: 100,
 		basePower: 40,
 		category: "特殊",
@@ -15253,7 +14645,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"たつまき": {
-		num: 239,
 		accuracy: 100,
 		basePower: 40,
 		category: "特殊",
@@ -15270,7 +14661,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"とんぼがえり": {
-		num: 369,
 		accuracy: 100,
 		basePower: 70,
 		category: "物理",
@@ -15285,7 +14675,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"さわぐ": {
-		num: 253,
 		accuracy: 100,
 		basePower: 90,
 		category: "特殊",
@@ -15351,7 +14740,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"しんくうは": {
-		num: 410,
 		accuracy: 100,
 		basePower: 40,
 		category: "特殊",
@@ -15365,7 +14753,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"Vジェネレート": {
-		num: 557,
 		accuracy: 95,
 		basePower: 180,
 		category: "物理",
@@ -15387,7 +14774,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ベノムショック": {
-		num: 474,
 		accuracy: 100,
 		basePower: 65,
 		category: "特殊",
@@ -15406,7 +14792,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"しょうりのまい": {
-		num: 837,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -15424,7 +14809,6 @@ const Moves = {
 		type: "かくとう"
 	},
 	"つるのムチ": {
-		num: 22,
 		accuracy: 100,
 		basePower: 45,
 		category: "物理",
@@ -15438,7 +14822,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"はさむ": {
-		num: 11,
 		accuracy: 100,
 		basePower: 55,
 		category: "物理",
@@ -15452,7 +14835,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ボルトチェンジ": {
-		num: 521,
 		accuracy: 100,
 		basePower: 70,
 		category: "特殊",
@@ -15467,7 +14849,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ボルテッカー": {
-		num: 344,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -15485,7 +14866,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"たきのぼり": {
-		num: 127,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -15502,7 +14882,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"みずでっぽう": {
-		num: 55,
 		accuracy: 100,
 		basePower: 40,
 		category: "特殊",
@@ -15516,7 +14895,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"みずのちかい": {
-		num: 518,
 		accuracy: 100,
 		basePower: 80,
 		basePowerCallback(target, source, move) {
@@ -15599,7 +14977,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"みずのはどう": {
-		num: 352,
 		accuracy: 100,
 		basePower: 60,
 		category: "特殊",
@@ -15616,7 +14993,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"みずしゅりけん": {
-		num: 594,
 		accuracy: 100,
 		basePower: 15,
 		basePowerCallback(pokemon, target, move) {
@@ -15641,7 +15017,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"しおふき": {
-		num: 323,
 		accuracy: 100,
 		basePower: 150,
 		basePowerCallback(pokemon, target, move) {
@@ -15660,7 +15035,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ウェーブタックル": {
-		num: 834,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -15674,7 +15048,6 @@ const Moves = {
 		type: "みず"
 	},
 	"ウェザーボール": {
-		num: 311,
 		accuracy: 100,
 		basePower: 50,
 		category: "特殊",
@@ -15729,7 +15102,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"うずしお": {
-		num: 250,
 		accuracy: 85,
 		basePower: 35,
 		category: "特殊",
@@ -15744,7 +15116,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"ふきとばし": {
-		num: 18,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -15768,7 +15139,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"あんこくきょうだ": {
-		num: 817,
 		accuracy: 100,
 		basePower: 75,
 		category: "物理",
@@ -15782,7 +15152,6 @@ const Moves = {
 		type: "あく"
 	},
 	"ワイドガード": {
-		num: 469,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -15834,7 +15203,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"かみなりあらし": {
-		num: 847,
 		accuracy: 80,
 		basePower: 100,
 		category: "特殊",
@@ -15858,7 +15226,6 @@ const Moves = {
 		type: "でんき"
 	},
 	"ワイルドボルト": {
-		num: 528,
 		accuracy: 100,
 		basePower: 90,
 		category: "物理",
@@ -15873,7 +15240,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"おにび": {
-		num: 261,
 		accuracy: 85,
 		basePower: 0,
 		category: "Status",
@@ -15889,7 +15255,6 @@ const Moves = {
 		contestType: "Beautiful"
 	},
 	"つばさでうつ": {
-		num: 17,
 		accuracy: 100,
 		basePower: 60,
 		category: "物理",
@@ -15903,7 +15268,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"ねがいごと": {
-		num: 273,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -15940,7 +15304,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"からにこもる": {
-		num: 110,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -15958,7 +15321,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"ワンダールーム": {
-		num: 472,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -16021,7 +15383,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"ウッドハンマー": {
-		num: 452,
 		accuracy: 100,
 		basePower: 120,
 		category: "物理",
@@ -16036,7 +15397,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"ふるいたてる": {
-		num: 526,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -16055,7 +15415,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"なやみのタネ": {
-		num: 388,
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -16093,7 +15452,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"まきつく": {
-		num: 35,
 		accuracy: 90,
 		basePower: 15,
 		category: "物理",
@@ -16108,7 +15466,6 @@ const Moves = {
 		contestType: "Tough"
 	},
 	"シザークロス": {
-		num: 404,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
@@ -16122,7 +15479,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"あくび": {
-		num: 281,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -16155,7 +15511,6 @@ const Moves = {
 		contestType: "Cute"
 	},
 	"でんじほう": {
-		num: 192,
 		accuracy: 50,
 		basePower: 120,
 		category: "特殊",
@@ -16172,7 +15527,6 @@ const Moves = {
 		contestType: "Cool"
 	},
 	"しねんのずつき": {
-		num: 428,
 		accuracy: 90,
 		basePower: 80,
 		category: "物理",
@@ -16189,7 +15543,6 @@ const Moves = {
 		contestType: "Clever"
 	},
 	"びりびりちくちく": {
-		num: 716,
 		accuracy: 100,
 		basePower: 80,
 		category: "物理",
