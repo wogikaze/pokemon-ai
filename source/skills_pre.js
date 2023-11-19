@@ -342,7 +342,7 @@ const Moves = {
 		volatileStatus: "aquaring",
 		condition: {
 			onStart(pokemon) {
-				this.add("-start", pokemon, "Aqua Ring")
+				this.add("-start", pokemon, "アクアリング")
 			},
 			onResidualOrder: 6,
 			onResidual(pokemon) {
@@ -518,7 +518,7 @@ const Moves = {
 					this.debug("incompatible gender")
 					return false
 				}
-				if (!this.runEvent("Attract", pokemon, source)) {
+				if (!this.runEvent("メロメロ", pokemon, source)) {
 					this.debug("Attract event failed")
 					return false
 				}
@@ -527,7 +527,7 @@ const Moves = {
 					this.add(
 						"-start",
 						pokemon,
-						"Attract",
+						"メロメロ",
 						"[from] ability: Cute Charm",
 						"[of] " + source
 					)
@@ -535,12 +535,12 @@ const Moves = {
 					this.add(
 						"-start",
 						pokemon,
-						"Attract",
+						"メロメロ",
 						"[from] item: Destiny Knot",
 						"[of] " + source
 					)
 				} else {
-					this.add("-start", pokemon, "Attract")
+					this.add("-start", pokemon, "メロメロ")
 				}
 			},
 			onUpdate(pokemon) {
@@ -562,12 +562,12 @@ const Moves = {
 					"[of] " + this.effectState.source
 				)
 				if (this.randomChance(1, 2)) {
-					this.add("cant", pokemon, "Attract")
+					this.add("cant", pokemon, "メロメロ")
 					return false
 				}
 			},
 			onEnd(pokemon) {
-				this.add("-end", pokemon, "Attract", "[silent]")
+				this.add("-end", pokemon, "メロメロ", "[silent]")
 			}
 		},
 		onTryImmunity(target, source) {
@@ -739,7 +739,7 @@ const Moves = {
 				source.baseMaxhp / 2,
 				source,
 				source,
-				this.dex.conditions.get("High Jump Kick")
+				this.dex.conditions.get("とびひざげり")
 			)
 		},
 		secondary: {
@@ -1628,12 +1628,12 @@ const Moves = {
 					this.add(
 						"-start",
 						pokemon,
-						"Charge",
+						"じゅうでん",
 						this.activeMove.name,
 						"[from] ability: " + effect.name
 					)
 				} else {
-					this.add("-start", pokemon, "Charge")
+					this.add("-start", pokemon, "じゅうでん")
 				}
 			},
 			onRestart(pokemon, source, effect) {
@@ -1644,12 +1644,12 @@ const Moves = {
 					this.add(
 						"-start",
 						pokemon,
-						"Charge",
+						"じゅうでん",
 						this.activeMove.name,
 						"[from] ability: " + effect.name
 					)
 				} else {
-					this.add("-start", pokemon, "Charge")
+					this.add("-start", pokemon, "じゅうでん")
 				}
 			},
 			onBasePowerPriority: 9,
@@ -1670,7 +1670,7 @@ const Moves = {
 				}
 			},
 			onEnd(pokemon) {
-				this.add("-end", pokemon, "Charge", "[silent]")
+				this.add("-end", pokemon, "じゅうでん", "[silent]")
 			}
 		},
 		boosts: {
@@ -2411,7 +2411,7 @@ const Moves = {
 		},
 		condition: {
 			onStart(pokemon, source) {
-				this.add("-start", pokemon, "Curse", "[of] " + source)
+				this.add("-start", pokemon, "のろい", "[of] " + source)
 			},
 			onResidualOrder: 12,
 			onResidual(pokemon) {
@@ -2624,7 +2624,7 @@ const Moves = {
 		},
 		condition: {
 			onStart(pokemon) {
-				this.add("-singlemove", pokemon, "Destiny Bond")
+				this.add("-singlemove", pokemon, "みちづれ")
 			},
 			onFaint(target, source, effect) {
 				if (!source || !effect || target.isAlly(source)) return
@@ -2794,24 +2794,24 @@ const Moves = {
 					this.add(
 						"-start",
 						pokemon,
-						"Disable",
+						"かなしばり",
 						pokemon.lastMove.name,
 						"[from] ability: Cursed Body",
 						"[of] " + source
 					)
 				} else {
-					this.add("-start", pokemon, "Disable", pokemon.lastMove.name)
+					this.add("-start", pokemon, "かなしばり", pokemon.lastMove.name)
 				}
 				this.effectState.move = pokemon.lastMove.id
 			},
 			onResidualOrder: 17,
 			onEnd(pokemon) {
-				this.add("-end", pokemon, "Disable")
+				this.add("-end", pokemon, "かなしばり")
 			},
 			onBeforeMovePriority: 7,
 			onBeforeMove(attacker, defender, move) {
 				if (!move.isZ && move.id === this.effectState.move) {
-					this.add("cant", attacker, "Disable", move)
+					this.add("cant", attacker, "かなしばり", move)
 					return false
 				}
 			},
@@ -3006,7 +3006,7 @@ const Moves = {
 					type: "はがね"
 				}
 			})
-			this.add("-start", source, "Doom Desire")
+			this.add("-start", source, "はめつのねがい")
 			return this.NOT_FAIL
 		},
 		secondary: null,
@@ -3709,7 +3709,7 @@ const Moves = {
 					return false
 				}
 				this.effectState.move = move.id
-				this.add("-start", target, "Encore")
+				this.add("-start", target, "アンコール")
 				if (!this.queue.willMove(target)) {
 					this.effectState.duration++
 				}
@@ -3728,7 +3728,7 @@ const Moves = {
 				}
 			},
 			onEnd(target) {
-				this.add("-end", target, "Encore")
+				this.add("-end", target, "アンコール")
 			},
 			onDisableMove(pokemon) {
 				if (!this.effectState.move || !pokemon.hasMove(this.effectState.move)) {
@@ -4341,7 +4341,7 @@ const Moves = {
 		condition: {
 			duration: 4,
 			onSideStart(targetSide) {
-				this.add("-sidestart", targetSide, "Fire Pledge")
+				this.add("-sidestart", targetSide, "ほのおのちかい")
 			},
 			onResidualOrder: 5,
 			onResidualSubOrder: 1,
@@ -4352,7 +4352,7 @@ const Moves = {
 			onSideResidualOrder: 26,
 			onSideResidualSubOrder: 8,
 			onSideEnd(targetSide) {
-				this.add("-sideend", targetSide, "Fire Pledge")
+				this.add("-sideend", targetSide, "ほのおのちかい")
 			}
 		},
 		secondary: null,
@@ -4824,7 +4824,7 @@ const Moves = {
 		},
 		beforeMoveCallback(pokemon) {
 			if (pokemon.volatiles["focuspunch"]?.lostFocus) {
-				this.add("cant", pokemon, "Focus Punch", "Focus Punch")
+				this.add("cant", pokemon, "きあいパンチ", "きあいパンチ")
 				return true
 			}
 		},
@@ -5193,7 +5193,7 @@ const Moves = {
 		condition: {
 			noCopy: true,
 			onStart(pokemon) {
-				this.add("-singlemove", pokemon, "Glaive Rush", "[silent]")
+				this.add("-singlemove", pokemon, "きょけんとつげき", "[silent]")
 			},
 			onAccuracy() {
 				return true
@@ -5318,12 +5318,12 @@ const Moves = {
 		condition: {
 			duration: 4,
 			onSideStart(targetSide) {
-				this.add("-sidestart", targetSide, "Grass Pledge")
+				this.add("-sidestart", targetSide, "くさのちかい")
 			},
 			onSideResidualOrder: 26,
 			onSideResidualSubOrder: 9,
 			onSideEnd(targetSide) {
-				this.add("-sideend", targetSide, "Grass Pledge")
+				this.add("-sideend", targetSide, "くさのちかい")
 			},
 			onModifySpe(spe, pokemon) {
 				return this.chainModify(0.25)
@@ -6069,11 +6069,11 @@ const Moves = {
 			duration: 1,
 			onStart(target, source) {
 				this.effectState.multiplier = 1.5
-				this.add("-singleturn", target, "Helping Hand", "[of] " + source)
+				this.add("-singleturn", target, "てだすけ", "[of] " + source)
 			},
 			onRestart(target, source) {
 				this.effectState.multiplier *= 1.5
-				this.add("-singleturn", target, "Helping Hand", "[of] " + source)
+				this.add("-singleturn", target, "てだすけ", "[of] " + source)
 			},
 			onBasePowerPriority: 10,
 			onBasePower(basePower) {
@@ -6135,7 +6135,7 @@ const Moves = {
 				source.baseMaxhp / 2,
 				source,
 				source,
-				this.dex.conditions.get("High Jump Kick")
+				this.dex.conditions.get("とびひざげり")
 			)
 		},
 		secondary: null,
@@ -7488,9 +7488,9 @@ const Moves = {
 		priority: 0,
 		flags: { powder: 1, protect: 1, reflectable: 1, mirror: 1, allyanim: 1 },
 		onHit(target) {
-			if (target.getTypes().join() === "Psychic" || !target.setType("Psychic"))
+			if (target.getTypes().join() === "サイコキネシス" || !target.setType("サイコキネシス"))
 				return false
-			this.add("-start", target, "typechange", "Psychic")
+			this.add("-start", target, "typechange", "サイコキネシス")
 		},
 		secondary: null,
 		target: "normal",
@@ -7615,7 +7615,7 @@ const Moves = {
 				return false
 
 			// Additional Gravity check for Z-move variant
-			if (this.field.getPseudoWeather("Gravity")) {
+			if (this.field.getPseudoWeather("じゅうりょく")) {
 				this.add("cant", source, "move: Gravity", move)
 				return null
 			}
@@ -7623,14 +7623,14 @@ const Moves = {
 		condition: {
 			duration: 5,
 			onStart(target) {
-				this.add("-start", target, "Magnet Rise")
+				this.add("-start", target, "でんじふゆう")
 			},
 			onImmunity(type) {
 				if (type === "Ground") return false
 			},
 			onResidualOrder: 18,
 			onEnd(target) {
-				this.add("-end", target, "Magnet Rise")
+				this.add("-end", target, "でんじふゆう")
 			}
 		},
 		secondary: null,
@@ -7898,146 +7898,146 @@ const Moves = {
 			failmimic: 1
 		},
 		noMetronome: [
-			"After You",
-			"Apple Acid",
-			"Armor Cannon",
+			"おさきにどうぞ",
+			"りんごさん",
+			"アーマーキャノン",
 			"Assist",
-			"Astral Barrage",
-			"Aura Wheel",
-			"Baneful Bunker",
+			"アストラルビット",
+			"オーラぐるま",
+			"トーチカ",
 			"Beak Blast",
-			"Behemoth Bash",
-			"Behemoth Blade",
-			"Belch",
+			"きょじゅうだん",
+			"きょじゅうざん",
+			"ゲップ",
 			"Bestow",
 			"Blazing Torque",
-			"Body Press",
-			"Branch Poke",
-			"Breaking Swipe",
-			"Celebrate",
+			"ボディプレス",
+			"えだづき",
+			"ワイドブレイカー",
+			"おいわい",
 			"Chatter",
-			"Chilling Water",
-			"Chilly Reception",
-			"Clangorous Soul",
-			"Collision Course",
+			"ひやみず",
+			"さむいギャグ",
+			"ソウルビート",
+			"アクセルブレイク",
 			"Combat Torque",
-			"Comeuppance",
-			"Copycat",
-			"Counter",
-			"Covet",
+			"ほうふく",
+			"まねっこ",
+			"カウンター",
+			"ほしがる",
 			"Crafty Shield",
 			"Decorate",
-			"Destiny Bond",
-			"Detect",
-			"Diamond Storm",
-			"Doodle",
+			"みちづれ",
+			"みきり",
+			"ダイヤストーム",
+			"うつしえ",
 			"Double Iron Bash",
-			"Double Shock",
-			"Dragon Ascent",
-			"Dragon Energy",
-			"Drum Beating",
-			"Dynamax Cannon",
-			"Electro Drift",
-			"Endure",
+			"でんこうそうげき",
+			"ガリョウテンセイ",
+			"ドラゴンエナジー",
+			"ドラムアタック",
+			"ダイマックスほう",
+			"イナズマドライブ",
+			"こらえる",
 			"Eternabeam",
-			"False Surrender",
-			"Feint",
-			"Fiery Wrath",
-			"Fillet Away",
-			"Fleur Cannon",
-			"Focus Punch",
-			"Follow Me",
+			"どげざつき",
+			"フェイント",
+			"もえあがるいかり",
+			"みをけずる",
+			"フルールカノン",
+			"きあいパンチ",
+			"このゆびとまれ",
 			"Freeze Shock",
-			"Freezing Glare",
-			"Glacial Lance",
-			"Grav Apple",
-			"Helping Hand",
-			"Hold Hands",
-			"Hyper Drill",
-			"Hyperspace Fury",
-			"Hyperspace Hole",
+			"いてつくしせん",
+			"ブリザードランス",
+			"Gのちから",
+			"てだすけ",
+			"てをつなぐ",
+			"ハイパードリル",
+			"いじげんラッシュ",
+			"いじげんホール",
 			"Ice Burn",
-			"Instruct",
-			"Jet Punch",
-			"Jungle Healing",
+			"さいはい",
+			"ジェットパンチ",
+			"ジャングルヒール",
 			"King's Shield",
-			"Life Dew",
+			"いのちのしずく",
 			"Light of Ruin",
 			"Magical Torque",
-			"Make It Rain",
+			"ゴールドラッシュ",
 			"Mat Block",
 			"Me First",
 			"Meteor Assault",
-			"Metronome",
-			"Mimic",
+			"ゆびをふる",
+			"ものまね",
 			"Mind Blown",
-			"Mirror Coat",
+			"ミラーコート",
 			"Mirror Move",
 			"Moongeist Beam",
 			"Nature Power",
 			"Nature's Madness",
 			"Noxious Torque",
 			"Obstruct",
-			"Order Up",
-			"Origin Pulse",
-			"Overdrive",
+			"いっちょうあがり",
+			"こんげんのはどう",
+			"オーバードライブ",
 			"Photon Geyser",
 			"Plasma Fists",
-			"Population Bomb",
-			"Pounce",
-			"Power Shift",
-			"Precipice Blades",
-			"Protect",
-			"Pyro Ball",
-			"Quash",
-			"Quick Guard",
-			"Rage Fist",
-			"Rage Powder",
-			"Raging Bull",
-			"Raging Fury",
-			"Relic Song",
-			"Revival Blessing",
-			"Ruination",
-			"Salt Cure",
+			"ネズミざん",
+			"とびつく",
+			"パワーシフト",
+			"だんがいのつるぎ",
+			"まもる",
+			"かえんボール",
+			"さきおくり",
+			"ファストガード",
+			"ふんどのこぶし",
+			"いかりのこな",
+			"レイジングブル",
+			"だいふんげき",
+			"いにしえのうた",
+			"さいきのいのり",
+			"カタストロフィ",
+			"しおづけ",
 			"Secret Sword",
-			"Shed Tail",
+			"しっぽきり",
 			"Shell Trap",
-			"Silk Trap",
+			"スレッドトラップ",
 			"Sketch",
-			"Sleep Talk",
+			"ねごと",
 			"Snap Trap",
-			"Snarl",
+			"バークアウト",
 			"Snatch",
-			"Snore",
-			"Snowscape",
+			"いびき",
+			"ゆきげしき",
 			"Spectral Thief",
-			"Spicy Extract",
-			"Spiky Shield",
-			"Spirit Break",
+			"ハバネロエキス",
+			"ニードルガード",
+			"ソウルクラッシュ",
 			"Spotlight",
-			"Springtide Storm",
-			"Steam Eruption",
-			"Steel Beam",
-			"Strange Steam",
-			"Struggle",
+			"はるのあらし",
+			"スチームバースト",
+			"てっていこうせん",
+			"ワンダースチーム",
+			"わるあがき",
 			"Sunsteel Strike",
-			"Surging Strikes",
-			"Switcheroo",
+			"すいりゅうれんだ",
+			"すりかえ",
 			"Techno Blast",
-			"Thief",
+			"どろぼう",
 			"Thousand Arrows",
 			"Thousand Waves",
-			"Thunder Cage",
-			"Thunderous Kick",
-			"Tidy Up",
-			"Trailblaze",
-			"Transform",
-			"Trick",
-			"Twin Beam",
-			"V-create",
-			"Wicked Blow",
+			"サンダープリズン",
+			"らいめいげり",
+			"おかたづけ",
+			"くさわけ",
+			"へんしん",
+			"トリック",
+			"ツインビーム",
+			"Vジェネレート",
+			"あんこくきょうだ",
 			"Wicked Torque",
-			"Wide Guard"
+			"ワイドガード"
 		],
 		onHit(target, source, effect) {
 			const moves = this.dex.moves
@@ -8122,7 +8122,7 @@ const Moves = {
 				used: false,
 				virtual: true
 			}
-			this.add("-start", source, "Mimic", move.name)
+			this.add("-start", source, "ものまね", move.name)
 		},
 		secondary: null,
 		target: "normal",
@@ -8260,12 +8260,12 @@ const Moves = {
 				}
 			},
 			onSideStart(side) {
-				this.add("-sidestart", side, "Mist")
+				this.add("-sidestart", side, "しろいきり")
 			},
 			onSideResidualOrder: 26,
 			onSideResidualSubOrder: 4,
 			onSideEnd(side) {
-				this.add("-sideend", side, "Mist")
+				this.add("-sideend", side, "しろいきり")
 			}
 		},
 		secondary: null,
@@ -8351,7 +8351,7 @@ const Moves = {
 			onFieldResidualOrder: 27,
 			onFieldResidualSubOrder: 7,
 			onFieldEnd() {
-				this.add("-fieldend", "Misty Terrain")
+				this.add("-fieldend", "ミストフィールド")
 			}
 		},
 		secondary: null,
@@ -8464,7 +8464,7 @@ const Moves = {
 					this.add(
 						"-end",
 						pokemon,
-						"Leech Seed",
+						"やどりぎのタネ",
 						"[from] move: Mortal Spin",
 						"[of] " + pokemon
 					)
@@ -8498,7 +8498,7 @@ const Moves = {
 					this.add(
 						"-end",
 						pokemon,
-						"Leech Seed",
+						"やどりぎのタネ",
 						"[from] move: Mortal Spin",
 						"[of] " + pokemon
 					)
@@ -9420,7 +9420,7 @@ const Moves = {
 		volatileStatus: "powershift",
 		condition: {
 			onStart(pokemon) {
-				this.add("-start", pokemon, "Power Shift")
+				this.add("-start", pokemon, "パワーシフト")
 				const newatk = pokemon.storedStats.def
 				const newdef = pokemon.storedStats.atk
 				pokemon.storedStats.atk = newatk
@@ -9433,14 +9433,14 @@ const Moves = {
 				pokemon.storedStats.def = newdef
 			},
 			onEnd(pokemon) {
-				this.add("-end", pokemon, "Power Shift")
+				this.add("-end", pokemon, "パワーシフト")
 				const newatk = pokemon.storedStats.def
 				const newdef = pokemon.storedStats.atk
 				pokemon.storedStats.atk = newatk
 				pokemon.storedStats.def = newdef
 			},
 			onRestart(pokemon) {
-				pokemon.removeVolatile("Power Shift")
+				pokemon.removeVolatile("パワーシフト")
 			}
 		},
 		secondary: null,
@@ -9520,7 +9520,7 @@ const Moves = {
 		volatileStatus: "powertrick",
 		condition: {
 			onStart(pokemon) {
-				this.add("-start", pokemon, "Power Trick")
+				this.add("-start", pokemon, "パワートリック")
 				const newatk = pokemon.storedStats.def
 				const newdef = pokemon.storedStats.atk
 				pokemon.storedStats.atk = newatk
@@ -9533,14 +9533,14 @@ const Moves = {
 				pokemon.storedStats.def = newdef
 			},
 			onEnd(pokemon) {
-				this.add("-end", pokemon, "Power Trick")
+				this.add("-end", pokemon, "パワートリック")
 				const newatk = pokemon.storedStats.def
 				const newdef = pokemon.storedStats.atk
 				pokemon.storedStats.atk = newatk
 				pokemon.storedStats.def = newdef
 			},
 			onRestart(pokemon) {
-				pokemon.removeVolatile("Power Trick")
+				pokemon.removeVolatile("パワートリック")
 			}
 		},
 		secondary: null,
@@ -9639,7 +9639,7 @@ const Moves = {
 		condition: {
 			duration: 1,
 			onStart(target) {
-				this.add("-singleturn", target, "Protect")
+				this.add("-singleturn", target, "まもる")
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
@@ -9811,7 +9811,7 @@ const Moves = {
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
 				if (
-					move.type === "Psychic" &&
+					move.type === "サイコキネシス" &&
 					attacker.isGrounded() &&
 					!attacker.isSemiInvulnerable()
 				) {
@@ -9972,7 +9972,7 @@ const Moves = {
 		condition: {
 			duration: 1,
 			onSideStart(target, source) {
-				this.add("-singleturn", source, "Quick Guard")
+				this.add("-singleturn", source, "ファストガード")
 			},
 			onTryHitPriority: 4,
 			onTryHit(target, source, move) {
@@ -10154,7 +10154,7 @@ const Moves = {
 					this.add(
 						"-end",
 						pokemon,
-						"Leech Seed",
+						"やどりぎのタネ",
 						"[from] move: Rapid Spin",
 						"[of] " + pokemon
 					)
@@ -10188,7 +10188,7 @@ const Moves = {
 					this.add(
 						"-end",
 						pokemon,
-						"Leech Seed",
+						"やどりぎのタネ",
 						"[from] move: Rapid Spin",
 						"[of] " + pokemon
 					)
@@ -10332,12 +10332,12 @@ const Moves = {
 				}
 			},
 			onSideStart(side) {
-				this.add("-sidestart", side, "Reflect")
+				this.add("-sidestart", side, "リフレクター")
 			},
 			onSideResidualOrder: 26,
 			onSideResidualSubOrder: 1,
 			onSideEnd(side) {
-				this.add("-sideend", side, "Reflect")
+				this.add("-sideend", side, "リフレクター")
 			}
 		},
 		secondary: null,
@@ -11009,15 +11009,15 @@ const Moves = {
 			},
 			onSideStart(side, source) {
 				if (source?.hasAbility("persistent")) {
-					this.add("-sidestart", side, "Safeguard", "[persistent]")
+					this.add("-sidestart", side, "しんぴのまもり", "[persistent]")
 				} else {
-					this.add("-sidestart", side, "Safeguard")
+					this.add("-sidestart", side, "しんぴのまもり")
 				}
 			},
 			onSideResidualOrder: 26,
 			onSideResidualSubOrder: 3,
 			onSideEnd(side) {
-				this.add("-sideend", side, "Safeguard")
+				this.add("-sideend", side, "しんぴのまもり")
 			}
 		},
 		secondary: null,
@@ -11037,7 +11037,7 @@ const Moves = {
 		condition: {
 			noCopy: true,
 			onStart(pokemon) {
-				this.add("-start", pokemon, "Salt Cure")
+				this.add("-start", pokemon, "しおづけ")
 			},
 			onResidualOrder: 13,
 			onResidual(pokemon) {
@@ -11046,7 +11046,7 @@ const Moves = {
 				)
 			},
 			onEnd(pokemon) {
-				this.add("-end", pokemon, "Salt Cure")
+				this.add("-end", pokemon, "しおづけ")
 			}
 		},
 		secondary: {
@@ -11104,7 +11104,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { wind: 1 },
-		weather: "Sandstorm",
+		weather: "すなあらし",
 		secondary: null,
 		target: "all",
 		type: "いわ",
@@ -11603,7 +11603,7 @@ const Moves = {
 		condition: {
 			duration: 1,
 			onStart(target) {
-				this.add("-singleturn", target, "Protect")
+				this.add("-singleturn", target, "まもる")
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
@@ -11629,7 +11629,7 @@ const Moves = {
 						{ spe: -1 },
 						source,
 						target,
-						this.dex.getActiveMove("Silk Trap")
+						this.dex.getActiveMove("スレッドトラップ")
 					)
 				}
 				return this.NOT_FAIL
@@ -11643,7 +11643,7 @@ const Moves = {
 						{ spe: -1 },
 						source,
 						target,
-						this.dex.getActiveMove("Silk Trap")
+						this.dex.getActiveMove("スレッドトラップ")
 					)
 				}
 			}
@@ -12019,13 +12019,13 @@ const Moves = {
 					delete pokemon.volatiles["telekinesis"]
 				}
 				if (!applies) return false
-				this.add("-start", pokemon, "Smack Down")
+				this.add("-start", pokemon, "うちおとす")
 			},
 			onRestart(pokemon) {
 				if (pokemon.removeVolatile("fly") || pokemon.removeVolatile("bounce")) {
 					this.queue.cancelMove(pokemon)
 					pokemon.removeVolatile("twoturnmove")
-					this.add("-start", pokemon, "Smack Down")
+					this.add("-start", pokemon, "うちおとす")
 				}
 			}
 			// groundedness implemented in battle.engine.js:BattlePokemon#isGrounded
@@ -12360,12 +12360,12 @@ const Moves = {
 		condition: {
 			// this is a side condition
 			onSideStart(side) {
-				this.add("-sidestart", side, "Spikes")
+				this.add("-sidestart", side, "まきびし")
 				this.effectState.layers = 1
 			},
 			onSideRestart(side) {
 				if (this.effectState.layers >= 3) return false
-				this.add("-sidestart", side, "Spikes")
+				this.add("-sidestart", side, "まきびし")
 				this.effectState.layers++
 			},
 			onEntryHazard(pokemon) {
@@ -12552,7 +12552,7 @@ const Moves = {
 		flags: { gravity: 1 },
 		onTry(source, target, move) {
 			// Additional Gravity check for Z-move variant
-			if (this.field.getPseudoWeather("Gravity")) {
+			if (this.field.getPseudoWeather("じゅうりょく")) {
 				this.add("cant", source, "move: Gravity", move)
 				return null
 			}
@@ -12661,7 +12661,7 @@ const Moves = {
 					Math.round(pokemon.maxhp / 2),
 					pokemon,
 					pokemon,
-					this.dex.conditions.get("Steel Beam"),
+					this.dex.conditions.get("てっていこうせん"),
 					true
 				)
 				if (
@@ -12792,7 +12792,7 @@ const Moves = {
 					if (this.effectState.spd) boosts.spd = this.effectState.spd
 					this.boost(boosts, target, target)
 				}
-				this.add("-end", target, "Stockpile")
+				this.add("-end", target, "たくわえる")
 				if (
 					this.effectState.def !== this.effectState.layers * -1 ||
 					this.effectState.spd !== this.effectState.layers * -1
@@ -13081,9 +13081,9 @@ const Moves = {
 		condition: {
 			onStart(target, source, effect) {
 				if (effect?.id === "shedtail") {
-					this.add("-start", target, "Substitute", "[from] move: Shed Tail")
+					this.add("-start", target, "みがわり", "[from] move: Shed Tail")
 				} else {
-					this.add("-start", target, "Substitute")
+					this.add("-start", target, "みがわり")
 				}
 				this.effectState.hp = Math.floor(target.maxhp / 4)
 				if (target.volatiles["partiallytrapped"]) {
@@ -13152,7 +13152,7 @@ const Moves = {
 				return this.HIT_SUBSTITUTE
 			},
 			onEnd(target) {
-				this.add("-end", target, "Substitute")
+				this.add("-end", target, "みがわり")
 			}
 		},
 		secondary: null,
@@ -13513,14 +13513,14 @@ const Moves = {
 			noCopy: true,
 			duration: 4,
 			onStart(pokemon) {
-				this.add("-start", pokemon, "Syrup Bomb")
+				this.add("-start", pokemon, "みずあめボム")
 			},
 			onResidualOrder: 14,
 			onResidual() {
 				this.boost({ spe: -1 })
 			},
 			onEnd(pokemon) {
-				this.add("-end", pokemon, "Syrup Bomb", "[silent]")
+				this.add("-end", pokemon, "みずあめボム", "[silent]")
 			}
 		},
 		secondary: {
@@ -13680,7 +13680,7 @@ const Moves = {
 		condition: {
 			onStart(pokemon) {
 				if (pokemon.terastallized) return false
-				this.add("-start", pokemon, "Tar Shot")
+				this.add("-start", pokemon, "タールショット")
 			},
 			onEffectivenessPriority: -2,
 			onEffectiveness(typeMod, target, type, move) {
@@ -13882,7 +13882,7 @@ const Moves = {
 					move.type = "Fairy"
 					break
 				case "psychicterrain":
-					move.type = "Psychic"
+					move.type = "サイコキネシス"
 					break
 			}
 		},
@@ -13992,7 +13992,7 @@ const Moves = {
 		condition: {
 			duration: 2,
 			onStart(target) {
-				this.add("-start", target, "Throat Chop", "[silent]")
+				this.add("-start", target, "じごくづき", "[silent]")
 			},
 			onDisableMove(pokemon) {
 				for (const moveSlot of pokemon.moveSlots) {
@@ -14016,7 +14016,7 @@ const Moves = {
 			},
 			onResidualOrder: 22,
 			onEnd(target) {
-				this.add("-end", target, "Throat Chop", "[silent]")
+				this.add("-end", target, "じごくづき", "[silent]")
 			}
 		},
 		secondary: {
@@ -14271,10 +14271,10 @@ const Moves = {
 					return false
 				}
 				if (effect?.id === "gmaxmeltdown") this.effectState.duration = 3
-				this.add("-start", pokemon, "Torment")
+				this.add("-start", pokemon, "いちゃもん")
 			},
 			onEnd(pokemon) {
-				this.add("-end", pokemon, "Torment")
+				this.add("-end", pokemon, "いちゃもん")
 			},
 			onDisableMove(pokemon) {
 				if (pokemon.lastMove && pokemon.lastMove.id !== "struggle")
@@ -14704,7 +14704,7 @@ const Moves = {
 		condition: {
 			duration: 3,
 			onStart(target) {
-				this.add("-start", target, "Uproar")
+				this.add("-start", target, "さわぐ")
 			},
 			onResidual(target) {
 				if (target.volatiles["throatchop"]) {
@@ -14715,12 +14715,12 @@ const Moves = {
 					// don't lock
 					delete target.volatiles["uproar"]
 				}
-				this.add("-start", target, "Uproar", "[upkeep]")
+				this.add("-start", target, "さわぐ", "[upkeep]")
 			},
 			onResidualOrder: 28,
 			onResidualSubOrder: 1,
 			onEnd(target) {
-				this.add("-end", target, "Uproar")
+				this.add("-end", target, "さわぐ")
 			},
 			onLockMove: "uproar",
 			onAnySetStatus(status, pokemon) {
@@ -14949,12 +14949,12 @@ const Moves = {
 		condition: {
 			duration: 4,
 			onSideStart(targetSide) {
-				this.add("-sidestart", targetSide, "Water Pledge")
+				this.add("-sidestart", targetSide, "みずのちかい")
 			},
 			onSideResidualOrder: 26,
 			onSideResidualSubOrder: 7,
 			onSideEnd(targetSide) {
-				this.add("-sideend", targetSide, "Water Pledge")
+				this.add("-sideend", targetSide, "みずのちかい")
 			},
 			onModifyMove(move, pokemon) {
 				if (move.secondaries && move.id !== "secretpower") {
@@ -15169,7 +15169,7 @@ const Moves = {
 		condition: {
 			duration: 1,
 			onSideStart(target, source) {
-				this.add("-singleturn", source, "Wide Guard")
+				this.add("-singleturn", source, "ワイドガード")
 			},
 			onTryHitPriority: 4,
 			onTryHit(target, source, move) {
@@ -15275,7 +15275,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { snatch: 1, heal: 1 },
-		slotCondition: "Wish",
+		slotCondition: "ねがいごと",
 		condition: {
 			duration: 2,
 			onStart(pokemon, source) {

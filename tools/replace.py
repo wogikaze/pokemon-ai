@@ -19,9 +19,11 @@ with open(f"../source/{file_type}_pre.js", "r", encoding="utf-8") as file:
 # 日本語のテキストを英語に置き換え
 for japanese, english in translation_map.items():
     content = content.replace(f'name: "{english}"', 'name: "' + japanese + '"')
+    content = content.replace(f'"{english}"', '"' + japanese + '"')
     english = english.replace(" ", "").replace("-", "").replace("'", "").lower()
     print(english)
     content = content.replace("	" + english + ": {", '	"' + japanese + '": {')
+    content = content.replace(f'"{english}"', '"' + japanese + '"')
 
 # 置き換えた内容をファイルに書き込む
 with open(f"../source/{file_type}_pre.js", "w", encoding="utf-8") as file:
