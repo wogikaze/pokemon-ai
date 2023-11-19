@@ -339,7 +339,7 @@ const Moves = {
 		pp: 20,
 		priority: 0,
 		flags: { snatch: 1 },
-		volatileStatus: "aquaring",
+		volatileStatus: "アクアリング",
 		condition: {
 			onStart(pokemon) {
 				this.add("-start", pokemon, "アクアリング")
@@ -507,7 +507,7 @@ const Moves = {
 		pp: 15,
 		priority: 0,
 		flags: { protect: 1, reflectable: 1, mirror: 1, bypasssub: 1 },
-		volatileStatus: "attract",
+		volatileStatus: "メロメロ",
 		condition: {
 			noCopy: true, // doesn't get copied by Baton Pass
 			onStart(pokemon, source, effect) {
@@ -547,10 +547,10 @@ const Moves = {
 				if (
 					this.effectState.source &&
 					!this.effectState.source.isActive &&
-					pokemon.volatiles["attract"]
+					pokemon.volatiles["メロメロ"]
 				) {
 					this.debug("Removing Attract volatile on " + pokemon)
-					pokemon.removeVolatile("attract")
+					pokemon.removeVolatile("メロメロ")
 				}
 			},
 			onBeforeMovePriority: 2,
@@ -658,7 +658,7 @@ const Moves = {
 		pp: 20,
 		priority: 0,
 		flags: { snatch: 1 },
-		sideCondition: "auroraveil",
+		sideCondition: "オーロラベール",
 		onTry() {
 			return this.field.isWeather(["hail", "snow"])
 		},
@@ -673,9 +673,9 @@ const Moves = {
 			onAnyModifyDamage(damage, source, target, move) {
 				if (target !== source && this.effectState.target.hasAlly(target)) {
 					if (
-						(target.side.getSideCondition("reflect") &&
+						(target.side.getSideCondition("リフレクター") &&
 							this.getCategory(move) === "物理") ||
-						(target.side.getSideCondition("lightscreen") &&
+						(target.side.getSideCondition("ひかりのかべ") &&
 							this.getCategory(move) === "特殊")
 					) {
 						return
@@ -744,7 +744,7 @@ const Moves = {
 		},
 		secondary: {
 			chance: 30,
-			volatileStatus: "confusion"
+			volatileStatus: "ねんりき"
 		},
 		target: "normal",
 		type: "かくとう"
@@ -775,7 +775,7 @@ const Moves = {
 		priority: 4,
 		flags: { noassist: 1, failcopycat: 1 },
 		stallingMove: true,
-		volatileStatus: "banefulbunker",
+		volatileStatus: "トーチカ",
 		onPrepareHit(pokemon) {
 			return !!this.queue.willAct() && this.runEvent("StallMove", pokemon)
 		},
@@ -789,7 +789,7 @@ const Moves = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags["protect"]) {
+				if (!move.flags["まもる"]) {
 					if (["gmaxoneblow", "gmaxrapidflow"].includes(move.id)) return
 					if (move.isZ || move.isMax)
 						target.getMoveHitData(move).zBrokeProtect = true
@@ -947,7 +947,7 @@ const Moves = {
 			failmimic: 1
 		},
 		onDisableMove(pokemon) {
-			if (!pokemon.ateBerry) pokemon.disableMove("belch")
+			if (!pokemon.ateBerry) pokemon.disableMove("ゲップ")
 		},
 		secondary: null,
 		target: "normal",
@@ -1084,7 +1084,7 @@ const Moves = {
 		onModifyMove(move, pokemon, target) {
 			if (
 				target &&
-				["raindance", "primordialsea"].includes(target.effectiveWeather())
+				["あまごい", "primordialsea"].includes(target.effectiveWeather())
 			) {
 				move.accuracy = true
 			}
@@ -1238,12 +1238,12 @@ const Moves = {
 			onInvulnerability(target, source, move) {
 				if (
 					[
-						"gust",
-						"twister",
+						"かぜおこし",
+						"たつまき",
 						"skyuppercut",
-						"thunder",
-						"hurricane",
-						"smackdown",
+						"かみなり",
+						"ぼうふう",
+						"うちおとす",
 						"thousandarrows"
 					].includes(move.id)
 				) {
@@ -1252,7 +1252,7 @@ const Moves = {
 				return false
 			},
 			onSourceBasePower(basePower, target, source, move) {
-				if (move.id === "gust" || move.id === "twister") {
+				if (move.id === "かぜおこし" || move.id === "たつまき") {
 					return this.chainModify(2)
 				}
 			}
@@ -1318,9 +1318,9 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		onTryHit(pokemon) {
 			// will shatter screens through sub, before you hit
-			pokemon.side.removeSideCondition("reflect")
-			pokemon.side.removeSideCondition("lightscreen")
-			pokemon.side.removeSideCondition("auroraveil")
+			pokemon.side.removeSideCondition("リフレクター")
+			pokemon.side.removeSideCondition("ひかりのかべ")
+			pokemon.side.removeSideCondition("オーロラベール")
 		},
 		secondary: null,
 		target: "normal",
@@ -1572,14 +1572,14 @@ const Moves = {
 		onAfterHit(target, source, move) {
 			if (!move.hasSheerForce && source.hp) {
 				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition("spikes")
+					side.addSideCondition("まきびし")
 				}
 			}
 		},
 		onAfterSubDamage(damage, target, source, move) {
 			if (!move.hasSheerForce && source.hp) {
 				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition("spikes")
+					side.addSideCondition("まきびし")
 				}
 			}
 		},
@@ -1618,7 +1618,7 @@ const Moves = {
 		pp: 20,
 		priority: 0,
 		flags: { snatch: 1 },
-		volatileStatus: "charge",
+		volatileStatus: "じゅうでん",
 		condition: {
 			onStart(pokemon, source, effect) {
 				if (
@@ -1660,13 +1660,13 @@ const Moves = {
 				}
 			},
 			onMoveAborted(pokemon, target, move) {
-				if (move.type === "Electric" && move.id !== "charge") {
-					pokemon.removeVolatile("charge")
+				if (move.type === "Electric" && move.id !== "じゅうでん") {
+					pokemon.removeVolatile("じゅうでん")
 				}
 			},
 			onAfterMove(pokemon, target, move) {
-				if (move.type === "Electric" && move.id !== "charge") {
-					pokemon.removeVolatile("charge")
+				if (move.type === "Electric" && move.id !== "じゅうでん") {
+					pokemon.removeVolatile("じゅうでん")
 				}
 			},
 			onEnd(pokemon) {
@@ -1973,7 +1973,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { protect: 1, reflectable: 1, mirror: 1 },
-		volatileStatus: "confusion",
+		volatileStatus: "ねんりき",
 		secondary: null,
 		target: "normal",
 		type: "ゴースト",
@@ -1990,7 +1990,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: {
 			chance: 10,
-			volatileStatus: "confusion"
+			volatileStatus: "ねんりき"
 		},
 		target: "normal",
 		type: "エスパー",
@@ -2109,8 +2109,8 @@ const Moves = {
 		accuracy: 100,
 		basePower: 0,
 		damageCallback(pokemon) {
-			if (!pokemon.volatiles["counter"]) return 0
-			return pokemon.volatiles["counter"].damage || 1
+			if (!pokemon.volatiles["カウンター"]) return 0
+			return pokemon.volatiles["カウンター"].damage || 1
 		},
 		category: "物理",
 		name: "カウンター",
@@ -2124,11 +2124,11 @@ const Moves = {
 			failcopycat: 1
 		},
 		beforeTurnCallback(pokemon) {
-			pokemon.addVolatile("counter")
+			pokemon.addVolatile("カウンター")
 		},
 		onTry(source) {
-			if (!source.volatiles["counter"]) return false
-			if (source.volatiles["counter"].slot === null) return false
+			if (!source.volatiles["カウンター"]) return false
+			if (source.volatiles["カウンター"].slot === null) return false
 		},
 		condition: {
 			duration: 1,
@@ -2139,7 +2139,7 @@ const Moves = {
 			},
 			onRedirectTargetPriority: -1,
 			onRedirectTarget(target, source, source2, move) {
-				if (move.id !== "counter") return
+				if (move.id !== "カウンター") return
 				if (source !== this.effectState.target || !this.effectState.slot) return
 				return this.getAtSlot(this.effectState.slot)
 			},
@@ -2166,19 +2166,19 @@ const Moves = {
 		flags: { mirror: 1 },
 		onHitField(target, source) {
 			const sideConditions = [
-				"mist",
-				"lightscreen",
-				"reflect",
-				"spikes",
-				"safeguard",
-				"tailwind",
-				"toxicspikes",
-				"stealthrock",
-				"waterpledge",
-				"firepledge",
-				"grasspledge",
-				"stickyweb",
-				"auroraveil",
+				"しろいきり",
+				"ひかりのかべ",
+				"リフレクター",
+				"まきびし",
+				"しんぴのまもり",
+				"おいかぜ",
+				"どくびし",
+				"ステルスロック",
+				"みずのちかい",
+				"ほのおのちかい",
+				"くさのちかい",
+				"ねばねばネット",
+				"オーロラベール",
 				"gmaxsteelsurge",
 				"gmaxcannonade",
 				"gmaxvinelash",
@@ -2389,7 +2389,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { bypasssub: 1 },
-		volatileStatus: "curse",
+		volatileStatus: "のろい",
 		onModifyMove(move, source, target) {
 			if (!source.hasType("Ghost")) {
 				move.target = move.nonGhostTarget
@@ -2402,7 +2402,7 @@ const Moves = {
 				delete move.volatileStatus
 				delete move.onHit
 				move.self = { boosts: { spe: -1, atk: 1, def: 1 } }
-			} else if (move.volatileStatus && target.volatiles["curse"]) {
+			} else if (move.volatileStatus && target.volatiles["のろい"]) {
 				return false
 			}
 		},
@@ -2422,7 +2422,7 @@ const Moves = {
 		target: "normal",
 		nonGhostTarget: "self",
 		type: "ゴースト",
-		zMove: { effect: "curse" },
+		zMove: { effect: "のろい" },
 		contestType: "Tough"
 	},
 	"いあいぎり": {
@@ -2534,7 +2534,7 @@ const Moves = {
 		boosts: {
 			def: 1
 		},
-		volatileStatus: "defensecurl",
+		volatileStatus: "まるくなる",
 		condition: {
 			noCopy: true,
 			onRestart: () => null
@@ -2555,25 +2555,25 @@ const Moves = {
 		flags: { protect: 1, reflectable: 1, mirror: 1, bypasssub: 1 },
 		onHit(target, source, move) {
 			let success = false
-			if (!target.volatiles["substitute"] || move.infiltrates)
+			if (!target.volatiles["みがわり"] || move.infiltrates)
 				success = !!this.boost({ evasion: -1 })
 			const removeTarget = [
-				"reflect",
-				"lightscreen",
-				"auroraveil",
-				"safeguard",
-				"mist",
-				"spikes",
-				"toxicspikes",
-				"stealthrock",
-				"stickyweb",
+				"リフレクター",
+				"ひかりのかべ",
+				"オーロラベール",
+				"しんぴのまもり",
+				"しろいきり",
+				"まきびし",
+				"どくびし",
+				"ステルスロック",
+				"ねばねばネット",
 				"gmaxsteelsurge"
 			]
 			const removeAll = [
-				"spikes",
-				"toxicspikes",
-				"stealthrock",
-				"stickyweb",
+				"まきびし",
+				"どくびし",
+				"ステルスロック",
+				"ねばねばネット",
 				"gmaxsteelsurge"
 			]
 			for (const targetCondition of removeTarget) {
@@ -2618,9 +2618,9 @@ const Moves = {
 		pp: 5,
 		priority: 0,
 		flags: { bypasssub: 1, noassist: 1, failcopycat: 1 },
-		volatileStatus: "destinybond",
+		volatileStatus: "みちづれ",
 		onPrepareHit(pokemon) {
-			return !pokemon.removeVolatile("destinybond")
+			return !pokemon.removeVolatile("みちづれ")
 		},
 		condition: {
 			onStart(pokemon) {
@@ -2639,12 +2639,12 @@ const Moves = {
 			},
 			onBeforeMovePriority: -1,
 			onBeforeMove(pokemon, target, move) {
-				if (move.id === "destinybond") return
+				if (move.id === "みちづれ") return
 				this.debug("removing Destiny Bond before attack")
-				pokemon.removeVolatile("destinybond")
+				pokemon.removeVolatile("みちづれ")
 			},
 			onMoveAborted(pokemon, target, move) {
-				pokemon.removeVolatile("destinybond")
+				pokemon.removeVolatile("みちづれ")
 			}
 		},
 		secondary: null,
@@ -2662,7 +2662,7 @@ const Moves = {
 		priority: 4,
 		flags: { noassist: 1, failcopycat: 1 },
 		stallingMove: true,
-		volatileStatus: "protect",
+		volatileStatus: "まもる",
 		onPrepareHit(pokemon) {
 			return !!this.queue.willAct() && this.runEvent("StallMove", pokemon)
 		},
@@ -2727,16 +2727,16 @@ const Moves = {
 		condition: {
 			duration: 2,
 			onImmunity(type, pokemon) {
-				if (type === "sandstorm" || type === "hail") return false
+				if (type === "すなあらし" || type === "hail") return false
 			},
 			onInvulnerability(target, source, move) {
-				if (["earthquake", "magnitude"].includes(move.id)) {
+				if (["じしん", "magnitude"].includes(move.id)) {
 					return
 				}
 				return false
 			},
 			onSourceModifyDamage(damage, source, target, move) {
-				if (move.id === "earthquake" || move.id === "magnitude") {
+				if (move.id === "じしん" || move.id === "magnitude") {
 					return this.chainModify(2)
 				}
 			}
@@ -2754,13 +2754,13 @@ const Moves = {
 		pp: 20,
 		priority: 0,
 		flags: { protect: 1, reflectable: 1, mirror: 1, bypasssub: 1 },
-		volatileStatus: "disable",
+		volatileStatus: "かなしばり",
 		onTryHit(target) {
 			if (
 				!target.lastMove ||
 				target.lastMove.isZ ||
 				target.lastMove.isMax ||
-				target.lastMove.id === "struggle"
+				target.lastMove.id === "わるあがき"
 			) {
 				return false
 			}
@@ -2925,16 +2925,16 @@ const Moves = {
 		condition: {
 			duration: 2,
 			onImmunity(type, pokemon) {
-				if (type === "sandstorm" || type === "hail") return false
+				if (type === "すなあらし" || type === "hail") return false
 			},
 			onInvulnerability(target, source, move) {
-				if (["surf", "whirlpool"].includes(move.id)) {
+				if (["なみのり", "うずしお"].includes(move.id)) {
 					return
 				}
 				return false
 			},
 			onSourceModifyDamage(damage, source, target, move) {
-				if (move.id === "surf" || move.id === "whirlpool") {
+				if (move.id === "なみのり" || move.id === "うずしお") {
 					return this.chainModify(2)
 				}
 			}
@@ -2992,10 +2992,10 @@ const Moves = {
 		onTry(source, target) {
 			if (!target.side.addSlotCondition(target, "futuremove")) return false
 			Object.assign(target.side.slotConditions[target.position]["futuremove"], {
-				move: "doomdesire",
+				move: "はめつのねがい",
 				source: source,
 				moveData: {
-					id: "doomdesire",
+					id: "はめつのねがい",
 					name: "はめつのねがい",
 					accuracy: 100,
 					basePower: 140,
@@ -3401,7 +3401,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
 		secondary: {
 			chance: 100,
-			volatileStatus: "confusion"
+			volatileStatus: "ねんりき"
 		},
 		target: "normal",
 		type: "かくとう",
@@ -3455,7 +3455,7 @@ const Moves = {
 		priority: 0,
 		flags: { protect: 1, mirror: 1, sound: 1, bypasssub: 1 },
 		onTry() {
-			this.field.addPseudoWeather("echoedvoice")
+			this.field.addPseudoWeather("エコーボイス")
 		},
 		condition: {
 			duration: 2,
@@ -3532,7 +3532,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { nonsky: 1 },
-		terrain: "electricterrain",
+		terrain: "エレキフィールド",
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
@@ -3548,7 +3548,7 @@ const Moves = {
 					!target.isSemiInvulnerable()
 				) {
 					if (
-						effect.id === "yawn" ||
+						effect.id === "あくび" ||
 						(effect.effectType === "Move" && !effect.secondaries)
 					) {
 						this.add("-activate", target, "move: Electric Terrain")
@@ -3558,7 +3558,7 @@ const Moves = {
 			},
 			onTryAddVolatile(status, target) {
 				if (!target.isGrounded() || target.isSemiInvulnerable()) return
-				if (status.id === "yawn") {
+				if (status.id === "あくび") {
 					this.add("-activate", target, "move: Electric Terrain")
 					return null
 				}
@@ -3688,7 +3688,7 @@ const Moves = {
 			bypasssub: 1,
 			failencore: 1
 		},
-		volatileStatus: "encore",
+		volatileStatus: "アンコール",
 		condition: {
 			duration: 3,
 			noCopy: true, // doesn't get copied by Z-Baton Pass
@@ -3724,7 +3724,7 @@ const Moves = {
 					target.moveSlots[target.moves.indexOf(this.effectState.move)].pp <= 0
 				) {
 					// early termination if you run out of PP
-					target.removeVolatile("encore")
+					target.removeVolatile("アンコール")
 				}
 			},
 			onEnd(target) {
@@ -3777,7 +3777,7 @@ const Moves = {
 		priority: 4,
 		flags: { noassist: 1, failcopycat: 1 },
 		stallingMove: true,
-		volatileStatus: "endure",
+		volatileStatus: "こらえる",
 		onPrepareHit(pokemon) {
 			return !!this.queue.willAct() && this.runEvent("StallMove", pokemon)
 		},
@@ -3923,13 +3923,13 @@ const Moves = {
 		priority: 0,
 		flags: { protect: 1, mirror: 1 },
 		onBasePower(basePower, source) {
-			if (this.field.isTerrain("psychicterrain") && source.isGrounded()) {
+			if (this.field.isTerrain("サイコフィールド") && source.isGrounded()) {
 				this.debug("terrain buff")
 				return this.chainModify(1.5)
 			}
 		},
 		onModifyMove(move, source, target) {
-			if (this.field.isTerrain("psychicterrain") && source.isGrounded()) {
+			if (this.field.isTerrain("サイコフィールド") && source.isGrounded()) {
 				move.target = "allAdjacentFoes"
 			}
 		},
@@ -4006,7 +4006,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { mirror: 1, bypasssub: 1 },
-		pseudoWeather: "fairylock",
+		pseudoWeather: "フェアリーロック",
 		condition: {
 			duration: 2,
 			onFieldStart(target) {
@@ -4294,7 +4294,7 @@ const Moves = {
 		accuracy: 100,
 		basePower: 80,
 		basePowerCallback(target, source, move) {
-			if (["grasspledge", "waterpledge"].includes(move.sourceEffect)) {
+			if (["くさのちかい", "みずのちかい"].includes(move.sourceEffect)) {
 				this.add("-combine")
 				return 150
 			}
@@ -4318,7 +4318,7 @@ const Moves = {
 				}
 				if (
 					action.pokemon.isAlly(source) &&
-					["grasspledge", "waterpledge"].includes(action.move.id)
+					["くさのちかい", "みずのちかい"].includes(action.move.id)
 				) {
 					this.queue.prioritizeAction(action, move)
 					this.add("-waiting", source, action.pokemon)
@@ -4327,15 +4327,15 @@ const Moves = {
 			}
 		},
 		onModifyMove(move) {
-			if (move.sourceEffect === "waterpledge") {
+			if (move.sourceEffect === "みずのちかい") {
 				move.type = "Water"
 				move.forceSTAB = true
-				move.self = { sideCondition: "waterpledge" }
+				move.self = { sideCondition: "みずのちかい" }
 			}
-			if (move.sourceEffect === "grasspledge") {
+			if (move.sourceEffect === "くさのちかい") {
 				move.type = "Fire"
 				move.forceSTAB = true
-				move.sideCondition = "firepledge"
+				move.sideCondition = "ほのおのちかい"
 			}
 		},
 		condition: {
@@ -4554,7 +4554,7 @@ const Moves = {
 		pp: 15,
 		priority: 0,
 		flags: { protect: 1, reflectable: 1, mirror: 1, allyanim: 1 },
-		volatileStatus: "confusion",
+		volatileStatus: "ねんりき",
 		boosts: {
 			spa: 1
 		},
@@ -4626,7 +4626,7 @@ const Moves = {
 					move.secondaries.push({ volatileStatus: item.fling.volatileStatus })
 				}
 			}
-			source.addVolatile("fling")
+			source.addVolatile("なげつける")
 		},
 		condition: {
 			onUpdate(pokemon) {
@@ -4636,7 +4636,7 @@ const Moves = {
 				pokemon.usedItemThisTurn = true
 				this.add("-enditem", pokemon, item.name, "[from] move: Fling")
 				this.runEvent("AfterUseItem", pokemon, null, null, item)
-				pokemon.removeVolatile("fling")
+				pokemon.removeVolatile("なげつける")
 			}
 		},
 		secondary: null,
@@ -4704,12 +4704,12 @@ const Moves = {
 			onInvulnerability(target, source, move) {
 				if (
 					[
-						"gust",
-						"twister",
+						"かぜおこし",
+						"たつまき",
 						"skyuppercut",
-						"thunder",
-						"hurricane",
-						"smackdown",
+						"かみなり",
+						"ぼうふう",
+						"うちおとす",
 						"thousandarrows"
 					].includes(move.id)
 				) {
@@ -4718,7 +4718,7 @@ const Moves = {
 				return false
 			},
 			onSourceModifyDamage(damage, source, target, move) {
-				if (move.id === "gust" || move.id === "twister") {
+				if (move.id === "かぜおこし" || move.id === "たつまき") {
 					return this.chainModify(2)
 				}
 			}
@@ -4778,14 +4778,14 @@ const Moves = {
 		pp: 30,
 		priority: 0,
 		flags: { snatch: 1 },
-		volatileStatus: "focusenergy",
+		volatileStatus: "きあいだめ",
 		condition: {
 			onStart(target, source, effect) {
 				if (effect?.id === "zpower") {
 					this.add("-start", target, "move: Focus Energy", "[zeffect]")
 				} else if (
 					effect &&
-					["costar", "imposter", "psychup", "transform"].includes(effect.id)
+					["costar", "imposter", "じこあんじ", "へんしん"].includes(effect.id)
 				) {
 					this.add("-start", target, "move: Focus Energy", "[silent]")
 				} else {
@@ -4820,10 +4820,10 @@ const Moves = {
 			failinstruct: 1
 		},
 		priorityChargeCallback(pokemon) {
-			pokemon.addVolatile("focuspunch")
+			pokemon.addVolatile("きあいパンチ")
 		},
 		beforeMoveCallback(pokemon) {
-			if (pokemon.volatiles["focuspunch"]?.lostFocus) {
+			if (pokemon.volatiles["きあいパンチ"]?.lostFocus) {
 				this.add("cant", pokemon, "きあいパンチ", "きあいパンチ")
 				return true
 			}
@@ -4855,7 +4855,7 @@ const Moves = {
 		pp: 20,
 		priority: 2,
 		flags: { noassist: 1, failcopycat: 1 },
-		volatileStatus: "followme",
+		volatileStatus: "このゆびとまれ",
 		onTry(source) {
 			return this.activePerHalf > 1
 		},
@@ -4998,11 +4998,11 @@ const Moves = {
 		accuracy: 95,
 		basePower: 40,
 		basePowerCallback(pokemon, target, move) {
-			if (!pokemon.volatiles["furycutter"] || move.hit === 1) {
-				pokemon.addVolatile("furycutter")
+			if (!pokemon.volatiles["れんぞくぎり"] || move.hit === 1) {
+				pokemon.addVolatile("れんぞくぎり")
 			}
 			const bp = this.clampIntRange(
-				move.basePower * pokemon.volatiles["furycutter"].multiplier,
+				move.basePower * pokemon.volatiles["れんぞくぎり"].multiplier,
 				1,
 				160
 			)
@@ -5059,10 +5059,10 @@ const Moves = {
 			if (!target.side.addSlotCondition(target, "futuremove")) return false
 			Object.assign(target.side.slotConditions[target.position]["futuremove"], {
 				duration: 3,
-				move: "futuresight",
+				move: "みらいよち",
 				source: source,
 				moveData: {
-					id: "futuresight",
+					id: "みらいよち",
 					name: "みらいよち",
 					accuracy: 100,
 					basePower: 120,
@@ -5090,7 +5090,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { protect: 1, reflectable: 1, mirror: 1, allyanim: 1 },
-		volatileStatus: "gastroacid",
+		volatileStatus: "いえき",
 		onTryHit(target) {
 			if (target.getAbility().isPermanent) {
 				return false
@@ -5111,12 +5111,12 @@ const Moves = {
 					pokemon.abilityState,
 					pokemon,
 					pokemon,
-					"gastroacid"
+					"いえき"
 				)
 			},
 			onCopy(pokemon) {
 				if (pokemon.getAbility().isPermanent)
-					pokemon.removeVolatile("gastroacid")
+					pokemon.removeVolatile("いえき")
 			}
 		},
 		secondary: null,
@@ -5188,7 +5188,7 @@ const Moves = {
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		self: {
-			volatileStatus: "glaiverush"
+			volatileStatus: "きょけんとつげき"
 		},
 		condition: {
 			noCopy: true,
@@ -5204,7 +5204,7 @@ const Moves = {
 			onBeforeMovePriority: 100,
 			onBeforeMove(pokemon) {
 				this.debug("removing Glaive Rush drawback before attack")
-				pokemon.removeVolatile("glaiverush")
+				pokemon.removeVolatile("きょけんとつげき")
 			}
 		},
 		secondary: null,
@@ -5271,7 +5271,7 @@ const Moves = {
 		accuracy: 100,
 		basePower: 80,
 		basePowerCallback(target, source, move) {
-			if (["waterpledge", "firepledge"].includes(move.sourceEffect)) {
+			if (["みずのちかい", "ほのおのちかい"].includes(move.sourceEffect)) {
 				this.add("-combine")
 				return 150
 			}
@@ -5295,7 +5295,7 @@ const Moves = {
 				}
 				if (
 					action.pokemon.isAlly(source) &&
-					["waterpledge", "firepledge"].includes(action.move.id)
+					["みずのちかい", "ほのおのちかい"].includes(action.move.id)
 				) {
 					this.queue.prioritizeAction(action, move)
 					this.add("-waiting", source, action.pokemon)
@@ -5304,15 +5304,15 @@ const Moves = {
 			}
 		},
 		onModifyMove(move) {
-			if (move.sourceEffect === "waterpledge") {
+			if (move.sourceEffect === "みずのちかい") {
 				move.type = "Grass"
 				move.forceSTAB = true
-				move.sideCondition = "grasspledge"
+				move.sideCondition = "くさのちかい"
 			}
-			if (move.sourceEffect === "firepledge") {
+			if (move.sourceEffect === "ほのおのちかい") {
 				move.type = "Fire"
 				move.forceSTAB = true
-				move.sideCondition = "firepledge"
+				move.sideCondition = "ほのおのちかい"
 			}
 		},
 		condition: {
@@ -5343,7 +5343,7 @@ const Moves = {
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		onModifyPriority(priority, source, target, move) {
-			if (this.field.isTerrain("grassyterrain") && source.isGrounded()) {
+			if (this.field.isTerrain("グラスフィールド") && source.isGrounded()) {
 				return priority + 1
 			}
 		},
@@ -5360,7 +5360,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { nonsky: 1 },
-		terrain: "grassyterrain",
+		terrain: "グラスフィールド",
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
@@ -5371,7 +5371,7 @@ const Moves = {
 			},
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
-				const weakenedMoves = ["earthquake", "bulldoze", "magnitude"]
+				const weakenedMoves = ["じしん", "じならし", "magnitude"]
 				if (
 					weakenedMoves.includes(move.id) &&
 					defender.isGrounded() &&
@@ -5429,7 +5429,7 @@ const Moves = {
 		priority: 0,
 		flags: { protect: 1, mirror: 1 },
 		onBasePower(basePower) {
-			if (this.field.getPseudoWeather("gravity")) {
+			if (this.field.getPseudoWeather("じゅうりょく")) {
 				return this.chainModify(1.5)
 			}
 		},
@@ -5450,7 +5450,7 @@ const Moves = {
 		pp: 5,
 		priority: 0,
 		flags: { nonsky: 1 },
-		pseudoWeather: "gravity",
+		pseudoWeather: "じゅうりょく",
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
@@ -5469,8 +5469,8 @@ const Moves = {
 				for (const pokemon of this.getAllActive()) {
 					let applies = false
 					if (
-						pokemon.removeVolatile("bounce") ||
-						pokemon.removeVolatile("fly")
+						pokemon.removeVolatile("とびはねる") ||
+						pokemon.removeVolatile("そらをとぶ")
 					) {
 						applies = true
 						this.queue.cancelMove(pokemon)
@@ -5491,9 +5491,9 @@ const Moves = {
 						pokemon.removeVolatile("skydrop")
 						pokemon.removeVolatile("twoturnmove")
 					}
-					if (pokemon.volatiles["magnetrise"]) {
+					if (pokemon.volatiles["でんじふゆう"]) {
 						applies = true
-						delete pokemon.volatiles["magnetrise"]
+						delete pokemon.volatiles["でんじふゆう"]
 					}
 					if (pokemon.volatiles["telekinesis"]) {
 						applies = true
@@ -5508,7 +5508,7 @@ const Moves = {
 			},
 			onDisableMove(pokemon) {
 				for (const moveSlot of pokemon.moveSlots) {
-					if (this.dex.moves.get(moveSlot.id).flags["gravity"]) {
+					if (this.dex.moves.get(moveSlot.id).flags["じゅうりょく"]) {
 						pokemon.disableMove(moveSlot.id)
 					}
 				}
@@ -5516,13 +5516,13 @@ const Moves = {
 			// groundedness implemented in battle.engine.js:BattlePokemon#isGrounded
 			onBeforeMovePriority: 6,
 			onBeforeMove(pokemon, target, move) {
-				if (move.flags["gravity"] && !move.isZ) {
+				if (move.flags["じゅうりょく"] && !move.isZ) {
 					this.add("cant", pokemon, "move: Gravity", move)
 					return false
 				}
 			},
 			onModifyMove(move, pokemon, target) {
-				if (move.flags["gravity"] && !move.isZ) {
+				if (move.flags["じゅうりょく"] && !move.isZ) {
 					this.add("cant", pokemon, "move: Gravity", move)
 					return false
 				}
@@ -5565,7 +5565,7 @@ const Moves = {
 		priority: 0,
 		flags: { snatch: 1 },
 		onModifyMove(move, pokemon) {
-			if (["sunnyday", "desolateland"].includes(pokemon.effectiveWeather()))
+			if (["にほんばれ", "desolateland"].includes(pokemon.effectiveWeather()))
 				move.boosts = { atk: 2, spa: 2 }
 		},
 		boosts: {
@@ -5870,7 +5870,7 @@ const Moves = {
 			}
 		},
 		selfdestruct: "ifHit",
-		slotCondition: "healingwish",
+		slotCondition: "いやしのねがい",
 		condition: {
 			onSwap(target) {
 				if (!target.fainted && (target.hp < target.maxhp || target.status)) {
@@ -5882,7 +5882,7 @@ const Moves = {
 						target.getHealth,
 						"[from] move: Healing Wish"
 					)
-					target.side.removeSlotCondition(target, "healingwish")
+					target.side.removeSlotCondition(target, "いやしのねがい")
 				}
 			}
 		},
@@ -6061,7 +6061,7 @@ const Moves = {
 		pp: 20,
 		priority: 5,
 		flags: { bypasssub: 1, noassist: 1, failcopycat: 1 },
-		volatileStatus: "helpinghand",
+		volatileStatus: "てだすけ",
 		onTryHit(target) {
 			if (!target.newlySwitched && !this.queue.willMove(target)) return false
 		},
@@ -6269,11 +6269,11 @@ const Moves = {
 		flags: { protect: 1, mirror: 1, distance: 1, wind: 1 },
 		onModifyMove(move, pokemon, target) {
 			switch (target?.effectiveWeather()) {
-				case "raindance":
+				case "あまごい":
 				case "primordialsea":
 					move.accuracy = true
 					break
-				case "sunnyday":
+				case "にほんばれ":
 				case "desolateland":
 					move.accuracy = 50
 					break
@@ -6281,7 +6281,7 @@ const Moves = {
 		},
 		secondary: {
 			chance: 30,
-			volatileStatus: "confusion"
+			volatileStatus: "ねんりき"
 		},
 		target: "any",
 		type: "ひこう",
@@ -6599,7 +6599,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { snatch: 1, bypasssub: 1, mustpressure: 1 },
-		volatileStatus: "imprison",
+		volatileStatus: "ふういん",
 		condition: {
 			noCopy: true,
 			onStart(target) {
@@ -6607,7 +6607,7 @@ const Moves = {
 			},
 			onFoeDisableMove(pokemon) {
 				for (const moveSlot of this.effectState.source.moveSlots) {
-					if (moveSlot.id === "struggle") continue
+					if (moveSlot.id === "わるあがき") continue
 					pokemon.disableMove(moveSlot.id, "hidden")
 				}
 				pokemon.maybeDisabled = true
@@ -6615,7 +6615,7 @@ const Moves = {
 			onFoeBeforeMovePriority: 4,
 			onFoeBeforeMove(attacker, defender, move) {
 				if (
-					move.id !== "struggle" &&
+					move.id !== "わるあがき" &&
 					this.effectState.source.hasMove(move.id) &&
 					!move.isZ &&
 					!move.isMax
@@ -6708,7 +6708,7 @@ const Moves = {
 		pp: 20,
 		priority: 0,
 		flags: { snatch: 1, nonsky: 1 },
-		volatileStatus: "ingrain",
+		volatileStatus: "ねをはる",
 		condition: {
 			onStart(pokemon) {
 				this.add("-start", pokemon, "move: Ingrain")
@@ -6748,10 +6748,10 @@ const Moves = {
 				lastMove.flags["failinstruct"] ||
 				lastMove.isZ ||
 				lastMove.isMax ||
-				lastMove.flags["charge"] ||
+				lastMove.flags["じゅうでん"] ||
 				lastMove.flags["recharge"] ||
 				target.volatiles["beakblast"] ||
-				target.volatiles["focuspunch"] ||
+				target.volatiles["きあいパンチ"] ||
 				target.volatiles["shelltrap"] ||
 				(target.moveSlots[moveIndex] && target.moveSlots[moveIndex].pp <= 0)
 			) {
@@ -7010,7 +7010,7 @@ const Moves = {
 			if (source.moveSlots.length < 2) return false // Last Resort fails unless the user knows at least 2 moves
 			let hasLastResort = false // User must actually have Last Resort for it to succeed
 			for (const moveSlot of source.moveSlots) {
-				if (moveSlot.id === "lastresort") {
+				if (moveSlot.id === "とっておき") {
 					hasLastResort = true
 					continue
 				}
@@ -7121,14 +7121,14 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { protect: 1, reflectable: 1, mirror: 1 },
-		volatileStatus: "leechseed",
+		volatileStatus: "やどりぎのタネ",
 		condition: {
 			onStart(target) {
 				this.add("-start", target, "move: Leech Seed")
 			},
 			onResidualOrder: 8,
 			onResidual(pokemon) {
-				const target = this.getAtSlot(pokemon.volatiles["leechseed"].sourceSlot)
+				const target = this.getAtSlot(pokemon.volatiles["やどりぎのタネ"].sourceSlot)
 				if (!target || target.fainted || target.hp <= 0) {
 					this.debug("Nothing to leech into")
 					return
@@ -7202,7 +7202,7 @@ const Moves = {
 		pp: 30,
 		priority: 0,
 		flags: { snatch: 1 },
-		sideCondition: "lightscreen",
+		sideCondition: "ひかりのかべ",
 		condition: {
 			duration: 5,
 			durationCallback(target, source, effect) {
@@ -7266,10 +7266,10 @@ const Moves = {
 		priority: 0,
 		flags: { protect: 1, mirror: 1 },
 		onTryHit(target, source) {
-			if (source.volatiles["lockon"]) return false
+			if (source.volatiles["ロックオン"]) return false
 		},
 		onHit(target, source) {
-			source.addVolatile("lockon", target)
+			source.addVolatile("ロックオン", target)
 			this.add("-activate", source, "move: Lock-On", "[of] " + target)
 		},
 		condition: {
@@ -7406,7 +7406,7 @@ const Moves = {
 			}
 		},
 		selfdestruct: "ifHit",
-		slotCondition: "lunardance",
+		slotCondition: "みかづきのまい",
 		condition: {
 			onSwap(target) {
 				if (
@@ -7426,7 +7426,7 @@ const Moves = {
 						target.getHealth,
 						"[from] move: Lunar Dance"
 					)
-					target.side.removeSlotCondition(target, "lunardance")
+					target.side.removeSlotCondition(target, "みかづきのまい")
 				}
 			}
 		},
@@ -7504,7 +7504,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { mirror: 1 },
-		pseudoWeather: "magicroom",
+		pseudoWeather: "マジックルーム",
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
@@ -7535,7 +7535,7 @@ const Moves = {
 				}
 			},
 			onFieldRestart(target, source) {
-				this.field.removePseudoWeather("magicroom")
+				this.field.removePseudoWeather("マジックルーム")
 			},
 			// Item suppression implemented in Pokemon.ignoringItem() within sim/pokemon.js
 			onFieldResidualOrder: 27,
@@ -7609,9 +7609,9 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { snatch: 1, gravity: 1 },
-		volatileStatus: "magnetrise",
+		volatileStatus: "でんじふゆう",
 		onTry(source, target, move) {
-			if (target.volatiles["smackdown"] || target.volatiles["ingrain"])
+			if (target.volatiles["うちおとす"] || target.volatiles["ねをはる"])
 				return false
 
 			// Additional Gravity check for Z-move variant
@@ -8109,7 +8109,7 @@ const Moves = {
 				return false
 			}
 			if (move.isZ || move.isMax) return false
-			const mimicIndex = source.moves.indexOf("mimic")
+			const mimicIndex = source.moves.indexOf("ものまね")
 			if (mimicIndex < 0) return false
 
 			source.moveSlots[mimicIndex] = {
@@ -8138,19 +8138,19 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { snatch: 1 },
-		volatileStatus: "minimize",
+		volatileStatus: "ちいさくなる",
 		condition: {
 			noCopy: true,
 			onRestart: () => null,
 			onSourceModifyDamage(damage, source, target, move) {
 				const boostedMoves = [
-					"stomp",
+					"ふみつけ",
 					"steamroller",
-					"bodyslam",
-					"flyingpress",
-					"dragonrush",
-					"heatcrash",
-					"heavyslam",
+					"のしかかり",
+					"フライングプレス",
+					"ドラゴンダイブ",
+					"ヒートスタンプ",
+					"ヘビーボンバー",
 					"maliciousmoonsault"
 				]
 				if (boostedMoves.includes(move.id)) {
@@ -8159,13 +8159,13 @@ const Moves = {
 			},
 			onAccuracy(accuracy, target, source, move) {
 				const boostedMoves = [
-					"stomp",
+					"ふみつけ",
 					"steamroller",
-					"bodyslam",
-					"flyingpress",
-					"dragonrush",
-					"heatcrash",
-					"heavyslam",
+					"のしかかり",
+					"フライングプレス",
+					"ドラゴンダイブ",
+					"ヒートスタンプ",
+					"ヘビーボンバー",
 					"maliciousmoonsault"
 				]
 				if (boostedMoves.includes(move.id)) {
@@ -8187,8 +8187,8 @@ const Moves = {
 		accuracy: 100,
 		basePower: 0,
 		damageCallback(pokemon) {
-			if (!pokemon.volatiles["mirrorcoat"]) return 0
-			return pokemon.volatiles["mirrorcoat"].damage || 1
+			if (!pokemon.volatiles["ミラーコート"]) return 0
+			return pokemon.volatiles["ミラーコート"].damage || 1
 		},
 		category: "特殊",
 		name: "ミラーコート",
@@ -8196,11 +8196,11 @@ const Moves = {
 		priority: -5,
 		flags: { protect: 1, failmefirst: 1, noassist: 1 },
 		beforeTurnCallback(pokemon) {
-			pokemon.addVolatile("mirrorcoat")
+			pokemon.addVolatile("ミラーコート")
 		},
 		onTry(source) {
-			if (!source.volatiles["mirrorcoat"]) return false
-			if (source.volatiles["mirrorcoat"].slot === null) return false
+			if (!source.volatiles["ミラーコート"]) return false
+			if (source.volatiles["ミラーコート"].slot === null) return false
 		},
 		condition: {
 			duration: 1,
@@ -8211,7 +8211,7 @@ const Moves = {
 			},
 			onRedirectTargetPriority: -1,
 			onRedirectTarget(target, source, source2, move) {
-				if (move.id !== "mirrorcoat") return
+				if (move.id !== "ミラーコート") return
 				if (source !== this.effectState.target || !this.effectState.slot) return
 				return this.getAtSlot(this.effectState.slot)
 			},
@@ -8235,7 +8235,7 @@ const Moves = {
 		pp: 30,
 		priority: 0,
 		flags: { snatch: 1 },
-		sideCondition: "mist",
+		sideCondition: "しろいきり",
 		condition: {
 			duration: 5,
 			onTryBoost(boost, target, source, effect) {
@@ -8284,7 +8284,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		selfdestruct: "always",
 		onBasePower(basePower, source) {
-			if (this.field.isTerrain("mistyterrain") && source.isGrounded()) {
+			if (this.field.isTerrain("ミストフィールド") && source.isGrounded()) {
 				this.debug("misty terrain boost")
 				return this.chainModify(1.5)
 			}
@@ -8301,7 +8301,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { nonsky: 1 },
-		terrain: "mistyterrain",
+		terrain: "ミストフィールド",
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
@@ -8312,14 +8312,14 @@ const Moves = {
 			},
 			onSetStatus(status, target, source, effect) {
 				if (!target.isGrounded() || target.isSemiInvulnerable()) return
-				if (effect && (effect.status || effect.id === "yawn")) {
+				if (effect && (effect.status || effect.id === "あくび")) {
 					this.add("-activate", target, "move: Misty Terrain")
 				}
 				return false
 			},
 			onTryAddVolatile(status, target, source, effect) {
 				if (!target.isGrounded() || target.isSemiInvulnerable()) return
-				if (status.id === "confusion") {
+				if (status.id === "ねんりき") {
 					if (effect.effectType === "Move" && !effect.secondaries)
 						this.add("-activate", target, "move: Misty Terrain")
 					return null
@@ -8389,13 +8389,13 @@ const Moves = {
 		onHit(pokemon) {
 			let factor = 0.5
 			switch (pokemon.effectiveWeather()) {
-				case "sunnyday":
+				case "にほんばれ":
 				case "desolateland":
 					factor = 0.667
 					break
-				case "raindance":
+				case "あまごい":
 				case "primordialsea":
-				case "sandstorm":
+				case "すなあらし":
 				case "hail":
 				case "snow":
 					factor = 0.25
@@ -8425,13 +8425,13 @@ const Moves = {
 		onHit(pokemon) {
 			let factor = 0.5
 			switch (pokemon.effectiveWeather()) {
-				case "sunnyday":
+				case "にほんばれ":
 				case "desolateland":
 					factor = 0.667
 					break
-				case "raindance":
+				case "あまごい":
 				case "primordialsea":
-				case "sandstorm":
+				case "すなあらし":
 				case "hail":
 				case "snow":
 					factor = 0.25
@@ -8460,7 +8460,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		onAfterHit(target, pokemon, move) {
 			if (!move.hasSheerForce) {
-				if (pokemon.hp && pokemon.removeVolatile("leechseed")) {
+				if (pokemon.hp && pokemon.removeVolatile("やどりぎのタネ")) {
 					this.add(
 						"-end",
 						pokemon,
@@ -8470,10 +8470,10 @@ const Moves = {
 					)
 				}
 				const sideConditions = [
-					"spikes",
-					"toxicspikes",
-					"stealthrock",
-					"stickyweb",
+					"まきびし",
+					"どくびし",
+					"ステルスロック",
+					"ねばねばネット",
 					"gmaxsteelsurge"
 				]
 				for (const condition of sideConditions) {
@@ -8494,7 +8494,7 @@ const Moves = {
 		},
 		onAfterSubDamage(damage, target, pokemon, move) {
 			if (!move.hasSheerForce) {
-				if (pokemon.hp && pokemon.removeVolatile("leechseed")) {
+				if (pokemon.hp && pokemon.removeVolatile("やどりぎのタネ")) {
 					this.add(
 						"-end",
 						pokemon,
@@ -8504,10 +8504,10 @@ const Moves = {
 					)
 				}
 				const sideConditions = [
-					"spikes",
-					"toxicspikes",
-					"stealthrock",
-					"stickyweb",
+					"まきびし",
+					"どくびし",
+					"ステルスロック",
+					"ねばねばネット",
 					"gmaxsteelsurge"
 				]
 				for (const condition of sideConditions) {
@@ -8728,9 +8728,9 @@ const Moves = {
 		pp: 5,
 		priority: 0,
 		flags: { snatch: 1 },
-		volatileStatus: "noretreat",
+		volatileStatus: "はいすいのじん",
 		onTry(source, target, move) {
-			if (source.volatiles["noretreat"]) return false
+			if (source.volatiles["はいすいのじん"]) return false
 			if (source.volatiles["trapped"]) {
 				delete move.volatileStatus
 			}
@@ -8993,8 +8993,8 @@ const Moves = {
 					result = true
 				} else if (this.runEvent("TryHit", pokemon, source, move) === null) {
 					result = true
-				} else if (!pokemon.volatiles["perishsong"]) {
-					pokemon.addVolatile("perishsong")
+				} else if (!pokemon.volatiles["ほろびのうた"]) {
+					pokemon.addVolatile("ほろびのうた")
 					this.add("-start", pokemon, "perish3", "[silent]")
 					result = true
 					message = true
@@ -9011,7 +9011,7 @@ const Moves = {
 			},
 			onResidualOrder: 24,
 			onResidual(pokemon) {
-				const duration = pokemon.volatiles["perishsong"].duration
+				const duration = pokemon.volatiles["ほろびのうた"].duration
 				this.add("-start", pokemon, "perish" + duration)
 			}
 		},
@@ -9417,7 +9417,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { snatch: 1 },
-		volatileStatus: "powershift",
+		volatileStatus: "パワーシフト",
 		condition: {
 			onStart(pokemon) {
 				this.add("-start", pokemon, "パワーシフト")
@@ -9517,7 +9517,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { snatch: 1 },
-		volatileStatus: "powertrick",
+		volatileStatus: "パワートリック",
 		condition: {
 			onStart(pokemon) {
 				this.add("-start", pokemon, "パワートリック")
@@ -9629,7 +9629,7 @@ const Moves = {
 		priority: 4,
 		flags: { noassist: 1, failcopycat: 1 },
 		stallingMove: true,
-		volatileStatus: "protect",
+		volatileStatus: "まもる",
 		onPrepareHit(pokemon) {
 			return !!this.queue.willAct() && this.runEvent("StallMove", pokemon)
 		},
@@ -9643,7 +9643,7 @@ const Moves = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags["protect"]) {
+				if (!move.flags["まもる"]) {
 					if (["gmaxoneblow", "gmaxrapidflow"].includes(move.id)) return
 					if (move.isZ || move.isMax)
 						target.getMoveHitData(move).zBrokeProtect = true
@@ -9680,7 +9680,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: {
 			chance: 10,
-			volatileStatus: "confusion"
+			volatileStatus: "ねんりき"
 		},
 		target: "normal",
 		type: "エスパー",
@@ -9696,7 +9696,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1, slicing: 1 },
 		secondary: null,
 		onBasePower(basePower, source) {
-			if (this.field.isTerrain("electricterrain")) {
+			if (this.field.isTerrain("エレキフィールド")) {
 				this.debug("psyblade electric terrain boost")
 				return this.chainModify(1.5)
 			}
@@ -9717,7 +9717,7 @@ const Moves = {
 			for (i in target.boosts) {
 				source.boosts[i] = target.boosts[i]
 			}
-			const volatilesToCopy = ["focusenergy", "gmaxchistrike", "laserfocus"]
+			const volatilesToCopy = ["きあいだめ", "gmaxchistrike", "laserfocus"]
 			for (const volatile of volatilesToCopy) {
 				if (target.volatiles[volatile]) {
 					source.addVolatile(volatile)
@@ -9764,9 +9764,9 @@ const Moves = {
 		flags: { bite: 1, contact: 1, protect: 1, mirror: 1 },
 		onTryHit(pokemon) {
 			// will shatter screens through sub, before you hit
-			pokemon.side.removeSideCondition("reflect")
-			pokemon.side.removeSideCondition("lightscreen")
-			pokemon.side.removeSideCondition("auroraveil")
+			pokemon.side.removeSideCondition("リフレクター")
+			pokemon.side.removeSideCondition("ひかりのかべ")
+			pokemon.side.removeSideCondition("オーロラベール")
 		},
 		secondary: null,
 		target: "normal",
@@ -9781,7 +9781,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { nonsky: 1 },
-		terrain: "psychicterrain",
+		terrain: "サイコフィールド",
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
@@ -9962,7 +9962,7 @@ const Moves = {
 		pp: 15,
 		priority: 3,
 		flags: { snatch: 1 },
-		sideCondition: "quickguard",
+		sideCondition: "ファストガード",
 		onTry() {
 			return !!this.queue.willAct()
 		},
@@ -9979,7 +9979,7 @@ const Moves = {
 				// Quick Guard blocks moves with positive priority, even those given increased priority by Prankster or Gale Wings.
 				// (e.g. it blocks 0 priority moves boosted by Prankster or Gale Wings; Quick Claw/Custap Berry do not count)
 				if (move.priority <= 0.1) return
-				if (!move.flags["protect"]) {
+				if (!move.flags["まもる"]) {
 					if (["gmaxoneblow", "gmaxrapidflow"].includes(move.id)) return
 					if (move.isZ || move.isMax)
 						target.getMoveHitData(move).zBrokeProtect = true
@@ -10044,7 +10044,7 @@ const Moves = {
 		pp: 20,
 		priority: 2,
 		flags: { powder: 1, noassist: 1, failcopycat: 1 },
-		volatileStatus: "ragepowder",
+		volatileStatus: "いかりのこな",
 		onTry(source) {
 			return this.activePerHalf > 1
 		},
@@ -10084,9 +10084,9 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		onTryHit(pokemon) {
 			// will shatter screens through sub, before you hit
-			pokemon.side.removeSideCondition("reflect")
-			pokemon.side.removeSideCondition("lightscreen")
-			pokemon.side.removeSideCondition("auroraveil")
+			pokemon.side.removeSideCondition("リフレクター")
+			pokemon.side.removeSideCondition("ひかりのかべ")
+			pokemon.side.removeSideCondition("オーロラベール")
 		},
 		onModifyType(move, pokemon) {
 			switch (pokemon.species.name) {
@@ -10150,7 +10150,7 @@ const Moves = {
 		flags: { contact: 1, protect: 1, mirror: 1 },
 		onAfterHit(target, pokemon, move) {
 			if (!move.hasSheerForce) {
-				if (pokemon.hp && pokemon.removeVolatile("leechseed")) {
+				if (pokemon.hp && pokemon.removeVolatile("やどりぎのタネ")) {
 					this.add(
 						"-end",
 						pokemon,
@@ -10160,10 +10160,10 @@ const Moves = {
 					)
 				}
 				const sideConditions = [
-					"spikes",
-					"toxicspikes",
-					"stealthrock",
-					"stickyweb",
+					"まきびし",
+					"どくびし",
+					"ステルスロック",
+					"ねばねばネット",
 					"gmaxsteelsurge"
 				]
 				for (const condition of sideConditions) {
@@ -10184,7 +10184,7 @@ const Moves = {
 		},
 		onAfterSubDamage(damage, target, pokemon, move) {
 			if (!move.hasSheerForce) {
-				if (pokemon.hp && pokemon.removeVolatile("leechseed")) {
+				if (pokemon.hp && pokemon.removeVolatile("やどりぎのタネ")) {
 					this.add(
 						"-end",
 						pokemon,
@@ -10194,10 +10194,10 @@ const Moves = {
 					)
 				}
 				const sideConditions = [
-					"spikes",
-					"toxicspikes",
-					"stealthrock",
-					"stickyweb",
+					"まきびし",
+					"どくびし",
+					"ステルスロック",
+					"ねばねばネット",
 					"gmaxsteelsurge"
 				]
 				for (const condition of sideConditions) {
@@ -10309,7 +10309,7 @@ const Moves = {
 		pp: 20,
 		priority: 0,
 		flags: { snatch: 1 },
-		sideCondition: "reflect",
+		sideCondition: "リフレクター",
 		condition: {
 			duration: 5,
 			durationCallback(target, source, effect) {
@@ -10546,7 +10546,7 @@ const Moves = {
 				return false
 			}
 		},
-		slotCondition: "revivalblessing",
+		slotCondition: "さいきのいのり",
 		// No this not a real switchout move
 		// This is needed to trigger a switch protocol to choose a fainted party member
 		// Feel free to refactor
@@ -10563,7 +10563,7 @@ const Moves = {
 		accuracy: 100,
 		basePower: 70,
 		basePowerCallback(source, target, move) {
-			if (this.field.isTerrain("electricterrain") && target.isGrounded()) {
+			if (this.field.isTerrain("エレキフィールド") && target.isGrounded()) {
 				if (!source.isAlly(target))
 					this.hint(`${move.name}'s BP doubled on grounded target.`)
 				return move.basePower * 2
@@ -10777,7 +10777,7 @@ const Moves = {
 		basePower: 30,
 		basePowerCallback(pokemon, target, move) {
 			let bp = move.basePower
-			const rolloutData = pokemon.volatiles["rollout"]
+			const rolloutData = pokemon.volatiles["ころがる"]
 			if (rolloutData?.hitCount) {
 				bp *= Math.pow(2, rolloutData.contactHitCount)
 			}
@@ -10788,7 +10788,7 @@ const Moves = {
 					rolloutData.duration = 2
 				}
 			}
-			if (pokemon.volatiles["defensecurl"]) {
+			if (pokemon.volatiles["まるくなる"]) {
 				bp *= 2
 			}
 			this.debug("BP: " + bp)
@@ -10806,18 +10806,18 @@ const Moves = {
 			failinstruct: 1
 		},
 		onModifyMove(move, pokemon, target) {
-			if (pokemon.volatiles["rollout"] || pokemon.status === "slp" || !target)
+			if (pokemon.volatiles["ころがる"] || pokemon.status === "slp" || !target)
 				return
-			pokemon.addVolatile("rollout")
+			pokemon.addVolatile("ころがる")
 			// @ts-ignore
 			// TS thinks pokemon.volatiles['rollout'] doesn't exist because of the condition on the return above
 			// but it does exist now because addVolatile created it
-			pokemon.volatiles["rollout"].targetSlot = move.sourceEffect
+			pokemon.volatiles["ころがる"].targetSlot = move.sourceEffect
 				? pokemon.lastMoveTargetLoc
 				: pokemon.getLocOf(target)
 		},
 		onAfterMove(source, target, move) {
-			const rolloutData = source.volatiles["rollout"]
+			const rolloutData = source.volatiles["ころがる"]
 			if (
 				rolloutData &&
 				rolloutData.hitCount === 5 &&
@@ -10832,15 +10832,15 @@ const Moves = {
 		},
 		condition: {
 			duration: 1,
-			onLockMove: "rollout",
+			onLockMove: "ころがる",
 			onStart() {
 				this.effectState.hitCount = 0
 				this.effectState.contactHitCount = 0
 			},
 			onResidual(target) {
-				if (target.lastMove && target.lastMove.id === "struggle") {
+				if (target.lastMove && target.lastMove.id === "わるあがき") {
 					// don't lock
-					delete target.volatiles["rollout"]
+					delete target.volatiles["ころがる"]
 				}
 			}
 		},
@@ -10859,7 +10859,7 @@ const Moves = {
 		flags: { snatch: 1, heal: 1 },
 		heal: [1, 2],
 		self: {
-			volatileStatus: "roost"
+			volatileStatus: "はねやすめ"
 		},
 		condition: {
 			duration: 1,
@@ -10890,7 +10890,7 @@ const Moves = {
 		accuracy: 100,
 		basePower: 60,
 		basePowerCallback(target, source, move) {
-			if (move.sourceEffect === "round") {
+			if (move.sourceEffect === "りんしょう") {
 				this.debug("BP doubled")
 				return move.basePower * 2
 			}
@@ -10905,7 +10905,7 @@ const Moves = {
 			for (const action of this.queue.list) {
 				if (!action.pokemon || !action.move || action.maxMove || action.zmove)
 					continue
-				if (action.move.id === "round") {
+				if (action.move.id === "りんしょう") {
 					this.queue.prioritizeAction(action, move)
 					return
 				}
@@ -10955,7 +10955,7 @@ const Moves = {
 		pp: 25,
 		priority: 0,
 		flags: { snatch: 1 },
-		sideCondition: "safeguard",
+		sideCondition: "しんぴのまもり",
 		condition: {
 			duration: 5,
 			durationCallback(target, source, effect) {
@@ -10972,7 +10972,7 @@ const Moves = {
 			},
 			onSetStatus(status, target, source, effect) {
 				if (!effect || !source) return
-				if (effect.id === "yawn") return
+				if (effect.id === "あくび") return
 				if (
 					effect.effectType === "Move" &&
 					effect.infiltrates &&
@@ -10999,7 +10999,7 @@ const Moves = {
 				)
 					return
 				if (
-					(status.id === "confusion" || status.id === "yawn") &&
+					(status.id === "ねんりき" || status.id === "あくび") &&
 					target !== source
 				) {
 					if (effect.effectType === "Move" && !effect.secondaries)
@@ -11051,7 +11051,7 @@ const Moves = {
 		},
 		secondary: {
 			chance: 100,
-			volatileStatus: "saltcure"
+			volatileStatus: "しおづけ"
 		},
 		target: "normal",
 		type: "いわ"
@@ -11084,7 +11084,7 @@ const Moves = {
 		onModifyMove(move, pokemon, target) {
 			if (
 				target &&
-				["raindance", "primordialsea"].includes(target.effectiveWeather())
+				["あまごい", "primordialsea"].includes(target.effectiveWeather())
 			) {
 				move.accuracy = true
 			}
@@ -11395,13 +11395,13 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: {},
-		volatileStatus: "substitute",
+		volatileStatus: "みがわり",
 		onTryHit(source) {
 			if (!this.canSwitch(source.side) || source.volatiles["commanded"]) {
 				this.add("-fail", source)
 				return this.NOT_FAIL
 			}
-			if (source.volatiles["substitute"]) {
+			if (source.volatiles["みがわり"]) {
 				this.add("-fail", source, "move: Shed Tail")
 				return this.NOT_FAIL
 			}
@@ -11418,7 +11418,7 @@ const Moves = {
 				source.skipBeforeSwitchOutEventFlag = true
 			}
 		},
-		selfSwitch: "shedtail",
+		selfSwitch: "しっぽきり",
 		secondary: null,
 		target: "self",
 		type: "ノーマル",
@@ -11568,7 +11568,7 @@ const Moves = {
 		flags: { snatch: 1, heal: 1 },
 		onHit(pokemon) {
 			let factor = 0.5
-			if (this.field.isWeather("sandstorm")) {
+			if (this.field.isWeather("すなあらし")) {
 				factor = 0.667
 			}
 			const success = !!this.heal(this.modify(pokemon.maxhp, factor))
@@ -11593,7 +11593,7 @@ const Moves = {
 		priority: 4,
 		flags: {},
 		stallingMove: true,
-		volatileStatus: "silktrap",
+		volatileStatus: "スレッドトラップ",
 		onPrepareHit(pokemon) {
 			return !!this.queue.willAct() && this.runEvent("StallMove", pokemon)
 		},
@@ -11607,7 +11607,7 @@ const Moves = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags["protect"] || move.category === "Status") {
+				if (!move.flags["まもる"] || move.category === "Status") {
 					if (move.isZ || move.isMax)
 						target.getMoveHitData(move).zBrokeProtect = true
 					return
@@ -11915,7 +11915,7 @@ const Moves = {
 				const move = this.dex.moves.get(moveid)
 				if (
 					move.flags["nosleeptalk"] ||
-					move.flags["charge"] ||
+					move.flags["じゅうでん"] ||
 					(move.isZ && move.basePower !== 1) ||
 					move.isMax
 				) {
@@ -11992,7 +11992,7 @@ const Moves = {
 		pp: 15,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, nonsky: 1 },
-		volatileStatus: "smackdown",
+		volatileStatus: "うちおとす",
 		condition: {
 			noCopy: true,
 			onStart(pokemon) {
@@ -12001,18 +12001,18 @@ const Moves = {
 					applies = true
 				if (
 					pokemon.hasItem("ironball") ||
-					pokemon.volatiles["ingrain"] ||
-					this.field.getPseudoWeather("gravity")
+					pokemon.volatiles["ねをはる"] ||
+					this.field.getPseudoWeather("じゅうりょく")
 				)
 					applies = false
-				if (pokemon.removeVolatile("fly") || pokemon.removeVolatile("bounce")) {
+				if (pokemon.removeVolatile("そらをとぶ") || pokemon.removeVolatile("とびはねる")) {
 					applies = true
 					this.queue.cancelMove(pokemon)
 					pokemon.removeVolatile("twoturnmove")
 				}
-				if (pokemon.volatiles["magnetrise"]) {
+				if (pokemon.volatiles["でんじふゆう"]) {
 					applies = true
-					delete pokemon.volatiles["magnetrise"]
+					delete pokemon.volatiles["でんじふゆう"]
 				}
 				if (pokemon.volatiles["telekinesis"]) {
 					applies = true
@@ -12022,7 +12022,7 @@ const Moves = {
 				this.add("-start", pokemon, "うちおとす")
 			},
 			onRestart(pokemon) {
-				if (pokemon.removeVolatile("fly") || pokemon.removeVolatile("bounce")) {
+				if (pokemon.removeVolatile("そらをとぶ") || pokemon.removeVolatile("とびはねる")) {
 					this.queue.cancelMove(pokemon)
 					pokemon.removeVolatile("twoturnmove")
 					this.add("-start", pokemon, "うちおとす")
@@ -12203,7 +12203,7 @@ const Moves = {
 				return
 			}
 			this.add("-prepare", attacker, move.name)
-			if (["sunnyday", "desolateland"].includes(attacker.effectiveWeather())) {
+			if (["にほんばれ", "desolateland"].includes(attacker.effectiveWeather())) {
 				this.attrLastMove("[still]")
 				this.addMove("-anim", attacker, move.name, defender)
 				return
@@ -12216,9 +12216,9 @@ const Moves = {
 		},
 		onBasePower(basePower, pokemon, target) {
 			const weakWeathers = [
-				"raindance",
+				"あまごい",
 				"primordialsea",
-				"sandstorm",
+				"すなあらし",
 				"hail",
 				"snow"
 			]
@@ -12253,7 +12253,7 @@ const Moves = {
 				return
 			}
 			this.add("-prepare", attacker, move.name)
-			if (["sunnyday", "desolateland"].includes(attacker.effectiveWeather())) {
+			if (["にほんばれ", "desolateland"].includes(attacker.effectiveWeather())) {
 				this.attrLastMove("[still]")
 				this.addMove("-anim", attacker, move.name, defender)
 				return
@@ -12266,9 +12266,9 @@ const Moves = {
 		},
 		onBasePower(basePower, pokemon, target) {
 			const weakWeathers = [
-				"raindance",
+				"あまごい",
 				"primordialsea",
-				"sandstorm",
+				"すなあらし",
 				"hail",
 				"snow"
 			]
@@ -12356,7 +12356,7 @@ const Moves = {
 		pp: 20,
 		priority: 0,
 		flags: { reflectable: 1, nonsky: 1, mustpressure: 1 },
-		sideCondition: "spikes",
+		sideCondition: "まきびし",
 		condition: {
 			// this is a side condition
 			onSideStart(side) {
@@ -12391,7 +12391,7 @@ const Moves = {
 		priority: 4,
 		flags: { noassist: 1, failcopycat: 1 },
 		stallingMove: true,
-		volatileStatus: "spikyshield",
+		volatileStatus: "ニードルガード",
 		onPrepareHit(pokemon) {
 			return !!this.queue.willAct() && this.runEvent("StallMove", pokemon)
 		},
@@ -12405,7 +12405,7 @@ const Moves = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags["protect"]) {
+				if (!move.flags["まもる"]) {
 					if (["gmaxoneblow", "gmaxrapidflow"].includes(move.id)) return
 					if (move.isZ || move.isMax)
 						target.getMoveHitData(move).zBrokeProtect = true
@@ -12500,8 +12500,8 @@ const Moves = {
 		accuracy: 100,
 		basePower: 0,
 		basePowerCallback(pokemon) {
-			if (!pokemon.volatiles["stockpile"]?.layers) return false
-			return pokemon.volatiles["stockpile"].layers * 100
+			if (!pokemon.volatiles["たくわえる"]?.layers) return false
+			return pokemon.volatiles["たくわえる"].layers * 100
 		},
 		category: "特殊",
 		name: "はきだす",
@@ -12509,10 +12509,10 @@ const Moves = {
 		priority: 0,
 		flags: { protect: 1 },
 		onTry(source) {
-			return !!source.volatiles["stockpile"]
+			return !!source.volatiles["たくわえる"]
 		},
 		onAfterMove(pokemon) {
-			pokemon.removeVolatile("stockpile")
+			pokemon.removeVolatile("たくわえる")
 		},
 		secondary: null,
 		target: "normal",
@@ -12606,7 +12606,7 @@ const Moves = {
 		pp: 20,
 		priority: 0,
 		flags: { reflectable: 1, mustpressure: 1 },
-		sideCondition: "stealthrock",
+		sideCondition: "ステルスロック",
 		condition: {
 			// this is a side condition
 			onSideStart(side) {
@@ -12615,7 +12615,7 @@ const Moves = {
 			onEntryHazard(pokemon) {
 				if (pokemon.hasItem("heavydutyboots")) return
 				const typeMod = this.clampIntRange(
-					pokemon.runEffectiveness(this.dex.getActiveMove("stealthrock")),
+					pokemon.runEffectiveness(this.dex.getActiveMove("ステルスロック")),
 					-6,
 					6
 				)
@@ -12725,7 +12725,7 @@ const Moves = {
 		pp: 20,
 		priority: 0,
 		flags: { reflectable: 1 },
-		sideCondition: "stickyweb",
+		sideCondition: "ねばねばネット",
 		condition: {
 			onSideStart(side) {
 				this.add("-sidestart", side, "move: Sticky Web")
@@ -12737,7 +12737,7 @@ const Moves = {
 					{ spe: -1 },
 					pokemon,
 					this.effectState.source,
-					this.dex.getActiveMove("stickyweb")
+					this.dex.getActiveMove("ねばねばネット")
 				)
 			}
 		},
@@ -12757,19 +12757,19 @@ const Moves = {
 		flags: { snatch: 1 },
 		onTry(source) {
 			if (
-				source.volatiles["stockpile"] &&
-				source.volatiles["stockpile"].layers >= 3
+				source.volatiles["たくわえる"] &&
+				source.volatiles["たくわえる"].layers >= 3
 			)
 				return false
 		},
-		volatileStatus: "stockpile",
+		volatileStatus: "たくわえる",
 		condition: {
 			noCopy: true,
 			onStart(target) {
 				this.effectState.layers = 1
 				this.effectState.def = 0
 				this.effectState.spd = 0
-				this.add("-start", target, "stockpile" + this.effectState.layers)
+				this.add("-start", target, "たくわえる" + this.effectState.layers)
 				const [curDef, curSpD] = [target.boosts.def, target.boosts.spd]
 				this.boost({ def: 1, spd: 1 }, target, target)
 				if (curDef !== target.boosts.def) this.effectState.def--
@@ -12778,7 +12778,7 @@ const Moves = {
 			onRestart(target) {
 				if (this.effectState.layers >= 3) return false
 				this.effectState.layers++
-				this.add("-start", target, "stockpile" + this.effectState.layers)
+				this.add("-start", target, "たくわえる" + this.effectState.layers)
 				const curDef = target.boosts.def
 				const curSpD = target.boosts.spd
 				this.boost({ def: 1, spd: 1 }, target, target)
@@ -12856,14 +12856,14 @@ const Moves = {
 		onAfterHit(target, source, move) {
 			if (!move.hasSheerForce && source.hp) {
 				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition("stealthrock")
+					side.addSideCondition("ステルスロック")
 				}
 			}
 		},
 		onAfterSubDamage(damage, target, source, move) {
 			if (!move.hasSheerForce && source.hp) {
 				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition("stealthrock")
+					side.addSideCondition("ステルスロック")
 				}
 			}
 		},
@@ -12915,7 +12915,7 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		secondary: {
 			chance: 20,
-			volatileStatus: "confusion"
+			volatileStatus: "ねんりき"
 		},
 		target: "normal",
 		type: "フェアリー"
@@ -13027,7 +13027,7 @@ const Moves = {
 		priority: 0,
 		flags: { snatch: 1 },
 		onDisableMove(pokemon) {
-			if (!pokemon.getItem().isBerry) pokemon.disableMove("stuffcheeks")
+			if (!pokemon.getItem().isBerry) pokemon.disableMove("ほおばる")
 		},
 		onTry(source) {
 			return source.getItem().isBerry
@@ -13063,9 +13063,9 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { snatch: 1, nonsky: 1 },
-		volatileStatus: "substitute",
+		volatileStatus: "みがわり",
 		onTryHit(source) {
-			if (source.volatiles["substitute"]) {
+			if (source.volatiles["みがわり"]) {
 				this.add("-fail", source, "move: Substitute")
 				return this.NOT_FAIL
 			}
@@ -13080,7 +13080,7 @@ const Moves = {
 		},
 		condition: {
 			onStart(target, source, effect) {
-				if (effect?.id === "shedtail") {
+				if (effect?.id === "しっぽきり") {
 					this.add("-start", target, "みがわり", "[from] move: Shed Tail")
 				} else {
 					this.add("-start", target, "みがわり")
@@ -13112,18 +13112,18 @@ const Moves = {
 				if (!damage) {
 					return damage
 				}
-				if (damage > target.volatiles["substitute"].hp) {
-					damage = target.volatiles["substitute"].hp
+				if (damage > target.volatiles["みがわり"].hp) {
+					damage = target.volatiles["みがわり"].hp
 				}
-				target.volatiles["substitute"].hp -= damage
+				target.volatiles["みがわり"].hp -= damage
 				source.lastDamage = damage
-				if (target.volatiles["substitute"].hp <= 0) {
+				if (target.volatiles["みがわり"].hp <= 0) {
 					if (move.ohko) this.add("-ohko")
-					target.removeVolatile("substitute")
+					target.removeVolatile("みがわり")
 				} else {
 					this.add("-activate", target, "move: Substitute", "[damage]")
 				}
-				if (move.recoil || move.id === "chloroblast") {
+				if (move.recoil || move.id === "クロロブラスト") {
 					this.damage(
 						this.actions.calcRecoilDamage(damage, move, source),
 						source,
@@ -13193,7 +13193,7 @@ const Moves = {
 		pp: 5,
 		priority: 0,
 		flags: {},
-		weather: "sunnyday",
+		weather: "にほんばれ",
 		secondary: null,
 		target: "all",
 		type: "ほのお",
@@ -13243,7 +13243,7 @@ const Moves = {
 		pp: 20,
 		priority: 0,
 		flags: { protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1 },
-		volatileStatus: "confusion",
+		volatileStatus: "ねんりき",
 		secondary: null,
 		target: "normal",
 		type: "ノーマル",
@@ -13287,7 +13287,7 @@ const Moves = {
 		pp: 15,
 		priority: 0,
 		flags: { protect: 1, reflectable: 1, mirror: 1, allyanim: 1 },
-		volatileStatus: "confusion",
+		volatileStatus: "ねんりき",
 		boosts: {
 			atk: 2
 		},
@@ -13306,18 +13306,18 @@ const Moves = {
 		priority: 0,
 		flags: { snatch: 1, heal: 1 },
 		onTry(source) {
-			return !!source.volatiles["stockpile"]
+			return !!source.volatiles["たくわえる"]
 		},
 		onHit(pokemon) {
 			const healAmount = [0.25, 0.5, 1]
 			const success = !!this.heal(
 				this.modify(
 					pokemon.maxhp,
-					healAmount[pokemon.volatiles["stockpile"].layers - 1]
+					healAmount[pokemon.volatiles["たくわえる"].layers - 1]
 				)
 			)
 			if (!success) this.add("-fail", pokemon, "heal")
-			pokemon.removeVolatile("stockpile")
+			pokemon.removeVolatile("たくわえる")
 			return success || this.NOT_FAIL
 		},
 		secondary: null,
@@ -13334,7 +13334,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { protect: 1, reflectable: 1, mirror: 1 },
-		volatileStatus: "confusion",
+		volatileStatus: "ねんりき",
 		secondary: null,
 		target: "normal",
 		type: "フェアリー",
@@ -13476,13 +13476,13 @@ const Moves = {
 		onHit(pokemon) {
 			let factor = 0.5
 			switch (pokemon.effectiveWeather()) {
-				case "sunnyday":
+				case "にほんばれ":
 				case "desolateland":
 					factor = 0.667
 					break
-				case "raindance":
+				case "あまごい":
 				case "primordialsea":
-				case "sandstorm":
+				case "すなあらし":
 				case "hail":
 				case "snow":
 					factor = 0.25
@@ -13525,7 +13525,7 @@ const Moves = {
 		},
 		secondary: {
 			chance: 100,
-			volatileStatus: "syrupbomb"
+			volatileStatus: "みずあめボム"
 		},
 		target: "normal",
 		type: "くさ"
@@ -13601,7 +13601,7 @@ const Moves = {
 		pp: 15,
 		priority: 0,
 		flags: { snatch: 1, wind: 1 },
-		sideCondition: "tailwind",
+		sideCondition: "おいかぜ",
 		condition: {
 			duration: 4,
 			durationCallback(target, source, effect) {
@@ -13676,7 +13676,7 @@ const Moves = {
 		pp: 15,
 		priority: 0,
 		flags: { protect: 1, reflectable: 1, mirror: 1 },
-		volatileStatus: "tarshot",
+		volatileStatus: "タールショット",
 		condition: {
 			onStart(pokemon) {
 				if (pokemon.terastallized) return false
@@ -13705,7 +13705,7 @@ const Moves = {
 		pp: 20,
 		priority: 0,
 		flags: { protect: 1, reflectable: 1, mirror: 1, bypasssub: 1 },
-		volatileStatus: "taunt",
+		volatileStatus: "ちょうはつ",
 		condition: {
 			duration: 3,
 			onStart(target) {
@@ -13805,7 +13805,7 @@ const Moves = {
 		pp: 20,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, dance: 1 },
-		volatileStatus: "confusion",
+		volatileStatus: "ねんりき",
 		secondary: null,
 		target: "allAdjacent",
 		type: "ノーマル",
@@ -13872,16 +13872,16 @@ const Moves = {
 		onModifyType(move, pokemon) {
 			if (!pokemon.isGrounded()) return
 			switch (this.field.terrain) {
-				case "electricterrain":
+				case "エレキフィールド":
 					move.type = "Electric"
 					break
-				case "grassyterrain":
+				case "グラスフィールド":
 					move.type = "Grass"
 					break
-				case "mistyterrain":
+				case "ミストフィールド":
 					move.type = "Fairy"
 					break
-				case "psychicterrain":
+				case "サイコフィールド":
 					move.type = "サイコキネシス"
 					break
 			}
@@ -14022,7 +14022,7 @@ const Moves = {
 		secondary: {
 			chance: 100,
 			onHit(target) {
-				target.addVolatile("throatchop")
+				target.addVolatile("じごくづき")
 			}
 		},
 		target: "normal",
@@ -14039,11 +14039,11 @@ const Moves = {
 		flags: { protect: 1, mirror: 1 },
 		onModifyMove(move, pokemon, target) {
 			switch (target?.effectiveWeather()) {
-				case "raindance":
+				case "あまごい":
 				case "primordialsea":
 					move.accuracy = true
 					break
-				case "sunnyday":
+				case "にほんばれ":
 				case "desolateland":
 					move.accuracy = 50
 					break
@@ -14202,13 +14202,13 @@ const Moves = {
 		onHit(pokemon) {
 			let success = false
 			for (const active of this.getAllActive()) {
-				if (active.removeVolatile("substitute")) success = true
+				if (active.removeVolatile("みがわり")) success = true
 			}
 			const removeAll = [
-				"spikes",
-				"toxicspikes",
-				"stealthrock",
-				"stickyweb",
+				"まきびし",
+				"どくびし",
+				"ステルスロック",
+				"ねばねばネット",
 				"gmaxsteelsurge"
 			]
 			const sides = [pokemon.side, ...pokemon.side.foeSidesWithConditions()]
@@ -14262,12 +14262,12 @@ const Moves = {
 		pp: 15,
 		priority: 0,
 		flags: { protect: 1, reflectable: 1, mirror: 1, bypasssub: 1 },
-		volatileStatus: "torment",
+		volatileStatus: "いちゃもん",
 		condition: {
 			noCopy: true,
 			onStart(pokemon, source, effect) {
 				if (pokemon.volatiles["dynamax"]) {
-					delete pokemon.volatiles["torment"]
+					delete pokemon.volatiles["いちゃもん"]
 					return false
 				}
 				if (effect?.id === "gmaxmeltdown") this.effectState.duration = 3
@@ -14277,7 +14277,7 @@ const Moves = {
 				this.add("-end", pokemon, "いちゃもん")
 			},
 			onDisableMove(pokemon) {
-				if (pokemon.lastMove && pokemon.lastMove.id !== "struggle")
+				if (pokemon.lastMove && pokemon.lastMove.id !== "わるあがき")
 					pokemon.disableMove(pokemon.lastMove.id)
 			}
 		},
@@ -14311,7 +14311,7 @@ const Moves = {
 		pp: 20,
 		priority: 0,
 		flags: { reflectable: 1, nonsky: 1, mustpressure: 1 },
-		sideCondition: "toxicspikes",
+		sideCondition: "どくびし",
 		condition: {
 			// this is a side condition
 			onSideStart(side) {
@@ -14332,7 +14332,7 @@ const Moves = {
 						"move: Toxic Spikes",
 						"[of] " + pokemon
 					)
-					pokemon.side.removeSideCondition("toxicspikes")
+					pokemon.side.removeSideCondition("どくびし")
 				} else if (
 					pokemon.hasType("Steel") ||
 					pokemon.hasItem("heavydutyboots")
@@ -14513,7 +14513,7 @@ const Moves = {
 		pp: 5,
 		priority: -7,
 		flags: { mirror: 1 },
-		pseudoWeather: "trickroom",
+		pseudoWeather: "トリックルーム",
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
@@ -14541,7 +14541,7 @@ const Moves = {
 				}
 			},
 			onFieldRestart(target, source) {
-				this.field.removePseudoWeather("trickroom")
+				this.field.removePseudoWeather("トリックルーム")
 			},
 			// Speed modification is changed in Pokemon.getActionSpeed() in sim/pokemon.js
 			onFieldResidualOrder: 27,
@@ -14690,7 +14690,7 @@ const Moves = {
 			failinstruct: 1
 		},
 		self: {
-			volatileStatus: "uproar"
+			volatileStatus: "さわぐ"
 		},
 		onTryHit(target) {
 			const activeTeam = target.side.activeTeam()
@@ -14707,13 +14707,13 @@ const Moves = {
 				this.add("-start", target, "さわぐ")
 			},
 			onResidual(target) {
-				if (target.volatiles["throatchop"]) {
-					target.removeVolatile("uproar")
+				if (target.volatiles["じごくづき"]) {
+					target.removeVolatile("さわぐ")
 					return
 				}
-				if (target.lastMove && target.lastMove.id === "struggle") {
+				if (target.lastMove && target.lastMove.id === "わるあがき") {
 					// don't lock
-					delete target.volatiles["uproar"]
+					delete target.volatiles["さわぐ"]
 				}
 				this.add("-start", target, "さわぐ", "[upkeep]")
 			},
@@ -14722,7 +14722,7 @@ const Moves = {
 			onEnd(target) {
 				this.add("-end", target, "さわぐ")
 			},
-			onLockMove: "uproar",
+			onLockMove: "さわぐ",
 			onAnySetStatus(status, pokemon) {
 				if (status.id === "slp") {
 					if (pokemon === this.effectState.target) {
@@ -14898,7 +14898,7 @@ const Moves = {
 		accuracy: 100,
 		basePower: 80,
 		basePowerCallback(target, source, move) {
-			if (["firepledge", "grasspledge"].includes(move.sourceEffect)) {
+			if (["ほのおのちかい", "くさのちかい"].includes(move.sourceEffect)) {
 				this.add("-combine")
 				return 150
 			}
@@ -14926,7 +14926,7 @@ const Moves = {
 				}
 				if (
 					otherMoveUser.isAlly(source) &&
-					["firepledge", "grasspledge"].includes(otherMove.id)
+					["ほのおのちかい", "くさのちかい"].includes(otherMove.id)
 				) {
 					this.queue.prioritizeAction(action, move)
 					this.add("-waiting", source, otherMoveUser)
@@ -14935,15 +14935,15 @@ const Moves = {
 			}
 		},
 		onModifyMove(move) {
-			if (move.sourceEffect === "grasspledge") {
+			if (move.sourceEffect === "くさのちかい") {
 				move.type = "Grass"
 				move.forceSTAB = true
-				move.sideCondition = "grasspledge"
+				move.sideCondition = "くさのちかい"
 			}
-			if (move.sourceEffect === "firepledge") {
+			if (move.sourceEffect === "ほのおのちかい") {
 				move.type = "Water"
 				move.forceSTAB = true
-				move.self = { sideCondition: "waterpledge" }
+				move.self = { sideCondition: "みずのちかい" }
 			}
 		},
 		condition: {
@@ -14986,7 +14986,7 @@ const Moves = {
 		flags: { protect: 1, pulse: 1, mirror: 1, distance: 1 },
 		secondary: {
 			chance: 20,
-			volatileStatus: "confusion"
+			volatileStatus: "ねんりき"
 		},
 		target: "any",
 		type: "みず",
@@ -15057,15 +15057,15 @@ const Moves = {
 		flags: { bullet: 1, protect: 1, mirror: 1 },
 		onModifyType(move, pokemon) {
 			switch (pokemon.effectiveWeather()) {
-				case "sunnyday":
+				case "にほんばれ":
 				case "desolateland":
 					move.type = "Fire"
 					break
-				case "raindance":
+				case "あまごい":
 				case "primordialsea":
 					move.type = "Water"
 					break
-				case "sandstorm":
+				case "すなあらし":
 					move.type = "Rock"
 					break
 				case "hail":
@@ -15076,15 +15076,15 @@ const Moves = {
 		},
 		onModifyMove(move, pokemon) {
 			switch (pokemon.effectiveWeather()) {
-				case "sunnyday":
+				case "にほんばれ":
 				case "desolateland":
 					move.basePower *= 2
 					break
-				case "raindance":
+				case "あまごい":
 				case "primordialsea":
 					move.basePower *= 2
 					break
-				case "sandstorm":
+				case "すなあらし":
 					move.basePower *= 2
 					break
 				case "hail":
@@ -15159,7 +15159,7 @@ const Moves = {
 		pp: 10,
 		priority: 3,
 		flags: { snatch: 1 },
-		sideCondition: "wideguard",
+		sideCondition: "ワイドガード",
 		onTry() {
 			return !!this.queue.willAct()
 		},
@@ -15213,7 +15213,7 @@ const Moves = {
 		onModifyMove(move, pokemon, target) {
 			if (
 				target &&
-				["raindance", "primordialsea"].includes(target.effectiveWeather())
+				["あまごい", "primordialsea"].includes(target.effectiveWeather())
 			) {
 				move.accuracy = true
 			}
@@ -15328,7 +15328,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { mirror: 1 },
-		pseudoWeather: "wonderroom",
+		pseudoWeather: "ワンダールーム",
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
@@ -15367,7 +15367,7 @@ const Moves = {
 				}
 			},
 			onFieldRestart(target, source) {
-				this.field.removePseudoWeather("wonderroom")
+				this.field.removePseudoWeather("ワンダールーム")
 			},
 			// Swapping defenses partially implemented in sim/pokemon.js:Pokemon#calculateStat and Pokemon#getStat
 			onFieldResidualOrder: 27,
@@ -15486,7 +15486,7 @@ const Moves = {
 		pp: 10,
 		priority: 0,
 		flags: { protect: 1, reflectable: 1, mirror: 1 },
-		volatileStatus: "yawn",
+		volatileStatus: "あくび",
 		onTryHit(target) {
 			if (target.status || !target.runStatusImmunity("slp")) {
 				return false

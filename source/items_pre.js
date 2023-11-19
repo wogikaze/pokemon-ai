@@ -11,7 +11,7 @@ const Items = {
 			if (
 				effect &&
 				effect.effectType === "Ability" &&
-				effect.name !== "Trace"
+				effect.name !== "トレース"
 			) {
 				this.add("-ability", source, effect)
 			}
@@ -83,7 +83,7 @@ const Items = {
 			if (target.boosts["spe"] === 6 || boost.atk === 0) {
 				return
 			}
-			if (effect.name === "Intimidate") {
+			if (effect.name === "いかく") {
 				target.useItem()
 			}
 		},
@@ -102,7 +102,7 @@ const Items = {
 			if (
 				pokemon.hp <= pokemon.maxhp / 4 ||
 				(pokemon.hp <= pokemon.maxhp / 2 &&
-					pokemon.hasAbility("gluttony") &&
+					pokemon.hasAbility("くいしんぼう") &&
 					pokemon.abilityState.gluttony)
 			) {
 				pokemon.eatItem()
@@ -123,7 +123,7 @@ const Items = {
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp / 3)
 			if (pokemon.getNature().minus === "spd") {
-				pokemon.addVolatile("confusion")
+				pokemon.addVolatile("ねんりき")
 			}
 		},
 	},
@@ -133,7 +133,7 @@ const Items = {
 			basePower: 10
 		},
 		onStart(target) {
-			if (!target.ignoringItem() && !this.field.getPseudoWeather("gravity")) {
+			if (!target.ignoringItem() && !this.field.getPseudoWeather("じゅうりょく")) {
 				this.add("-item", target, "ふうせん")
 			}
 		},
@@ -177,7 +177,7 @@ const Items = {
 			if (
 				pokemon.hp <= pokemon.maxhp / 4 ||
 				(pokemon.hp <= pokemon.maxhp / 2 &&
-					pokemon.hasAbility("gluttony") &&
+					pokemon.hasAbility("くいしんぼう") &&
 					pokemon.abilityState.gluttony)
 			) {
 				pokemon.eatItem()
@@ -232,7 +232,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Steel" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -253,7 +253,7 @@ const Items = {
 		},
 		onTryHealPriority: 1,
 		onTryHeal(damage, target, source, effect) {
-			const heals = ["drain", "leechseed", "ingrain", "aquaring", "strengthsap"]
+			const heals = ["drain", "やどりぎのタネ", "ねをはる", "アクアリング", "ちからをすいとる"]
 			if (heals.includes(effect.id)) {
 				return this.chainModify([5324, 4096])
 			}
@@ -325,18 +325,18 @@ const Items = {
 			if (this.queue.peek(true)?.choice === "runSwitch") return
 
 			if (
-				pokemon.hasAbility("protosynthesis") &&
-				!this.field.isWeather("sunnyday") &&
+				pokemon.hasAbility("こだいかっせい") &&
+				!this.field.isWeather("にほんばれ") &&
 				pokemon.useItem()
 			) {
-				pokemon.addVolatile("protosynthesis")
+				pokemon.addVolatile("こだいかっせい")
 			}
 			if (
-				pokemon.hasAbility("quarkdrive") &&
-				!this.field.isTerrain("electricterrain") &&
+				pokemon.hasAbility("クォークチャージ") &&
+				!this.field.isTerrain("エレキフィールド") &&
 				pokemon.useItem()
 			) {
-				pokemon.addVolatile("quarkdrive")
+				pokemon.addVolatile("クォークチャージ")
 			}
 		},
 		onTakeItem(item, source) {
@@ -392,7 +392,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Rock" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -452,7 +452,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (
 				move.type === "Normal" &&
-				(!target.volatiles["substitute"] ||
+				(!target.volatiles["みがわり"] ||
 					move.flags["bypasssub"] ||
 					(move.infiltrates && this.gen >= 6))
 			) {
@@ -537,7 +537,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Fighting" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -587,7 +587,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Flying" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -611,7 +611,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Dark" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -666,7 +666,7 @@ const Items = {
 				priority <= 0 &&
 				(pokemon.hp <= pokemon.maxhp / 4 ||
 					(pokemon.hp <= pokemon.maxhp / 2 &&
-						pokemon.hasAbility("gluttony") &&
+						pokemon.hasAbility("くいしんぼう") &&
 						pokemon.abilityState.gluttony))
 			) {
 				if (pokemon.eatItem()) {
@@ -692,7 +692,7 @@ const Items = {
 		onAttract(target, source) {
 			this.debug("attract intercepted: " + target + " from " + source)
 			if (!source || source === target) return
-			if (!source.volatiles["attract"]) source.addVolatile("attract", target)
+			if (!source.volatiles["メロメロ"]) source.addVolatile("メロメロ", target)
 		},
 	},
 	りゅうのプレート: {
@@ -809,7 +809,7 @@ const Items = {
 			basePower: 50
 		},
 		onAfterBoost(boost, target, source, effect) {
-			if (this.activeMove?.id === "partingshot") return
+			if (this.activeMove?.id === "すてゼリフ") return
 			let eject = false
 			let i
 			for (i in boost) {
@@ -836,12 +836,12 @@ const Items = {
 			basePower: 10
 		},
 		onStart(pokemon) {
-			if (!pokemon.ignoringItem() && this.field.isTerrain("electricterrain")) {
+			if (!pokemon.ignoringItem() && this.field.isTerrain("エレキフィールド")) {
 				pokemon.useItem()
 			}
 		},
 		onTerrainChange(pokemon) {
-			if (this.field.isTerrain("electricterrain")) {
+			if (this.field.isTerrain("エレキフィールド")) {
 				pokemon.useItem()
 			}
 		},
@@ -929,7 +929,7 @@ const Items = {
 			if (
 				pokemon.hp <= pokemon.maxhp / 4 ||
 				(pokemon.hp <= pokemon.maxhp / 2 &&
-					pokemon.hasAbility("gluttony") &&
+					pokemon.hasAbility("くいしんぼう") &&
 					pokemon.abilityState.gluttony)
 			) {
 				pokemon.eatItem()
@@ -950,7 +950,7 @@ const Items = {
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp / 3)
 			if (pokemon.getNature().minus === "atk") {
-				pokemon.addVolatile("confusion")
+				pokemon.addVolatile("ねんりき")
 			}
 		},
 	},
@@ -1063,7 +1063,7 @@ const Items = {
 			if (
 				pokemon.hp <= pokemon.maxhp / 4 ||
 				(pokemon.hp <= pokemon.maxhp / 2 &&
-					pokemon.hasAbility("gluttony") &&
+					pokemon.hasAbility("くいしんぼう") &&
 					pokemon.abilityState.gluttony)
 			) {
 				pokemon.eatItem()
@@ -1079,12 +1079,12 @@ const Items = {
 			basePower: 10
 		},
 		onStart(pokemon) {
-			if (!pokemon.ignoringItem() && this.field.isTerrain("grassyterrain")) {
+			if (!pokemon.ignoringItem() && this.field.isTerrain("グラスフィールド")) {
 				pokemon.useItem()
 			}
 		},
 		onTerrainChange(pokemon) {
-			if (this.field.isTerrain("grassyterrain")) {
+			if (this.field.isTerrain("グラスフィールド")) {
 				pokemon.useItem()
 			}
 		},
@@ -1145,7 +1145,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Dragon" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -1213,7 +1213,7 @@ const Items = {
 			if (
 				pokemon.hp <= pokemon.maxhp / 4 ||
 				(pokemon.hp <= pokemon.maxhp / 2 &&
-					pokemon.hasAbility("gluttony") &&
+					pokemon.hasAbility("くいしんぼう") &&
 					pokemon.abilityState.gluttony)
 			) {
 				pokemon.eatItem()
@@ -1234,7 +1234,7 @@ const Items = {
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp / 3)
 			if (pokemon.getNature().minus === "def") {
-				pokemon.addVolatile("confusion")
+				pokemon.addVolatile("ねんりき")
 			}
 		},
 	},
@@ -1292,9 +1292,9 @@ const Items = {
 		onEffectiveness(typeMod, target, type, move) {
 			if (!target) return
 			if (
-				target.volatiles["ingrain"] ||
-				target.volatiles["smackdown"] ||
-				this.field.getPseudoWeather("gravity")
+				target.volatiles["ねをはる"] ||
+				target.volatiles["うちおとす"] ||
+				this.field.getPseudoWeather("じゅうりょく")
 			)
 				return
 			if (move.type === "Ground" && target.hasType("Flying")) return 0
@@ -1336,11 +1336,11 @@ const Items = {
 				move.category === "Physical" &&
 				source.hp &&
 				source.isActive &&
-				!source.hasAbility("magicguard")
+				!source.hasAbility("マジックガード")
 			) {
 				if (target.eatItem()) {
 					this.damage(
-						source.baseMaxhp / (target.hasAbility("ripen") ? 4 : 8),
+						source.baseMaxhp / (target.hasAbility("じゅくせい") ? 4 : 8),
 						source,
 						target
 					)
@@ -1359,7 +1359,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Ghost" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -1383,7 +1383,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Poison" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -1406,7 +1406,7 @@ const Items = {
 		},
 		onAfterMoveSecondary(target, source, move) {
 			if (move.category === "Physical") {
-				if (move.id === "present" && move.heal) return
+				if (move.id === "プレゼント" && move.heal) return
 				target.eatItem()
 			}
 		},
@@ -1452,14 +1452,14 @@ const Items = {
 			if (
 				pokemon.hp <= pokemon.maxhp / 4 ||
 				(pokemon.hp <= pokemon.maxhp / 2 &&
-					pokemon.hasAbility("gluttony") &&
+					pokemon.hasAbility("くいしんぼう") &&
 					pokemon.abilityState.gluttony)
 			) {
 				pokemon.eatItem()
 			}
 		},
 		onEat(pokemon) {
-			pokemon.addVolatile("focusenergy")
+			pokemon.addVolatile("きあいだめ")
 		},
 	},
 	たべのこし: {
@@ -1513,7 +1513,7 @@ const Items = {
 			if (
 				pokemon.hp <= pokemon.maxhp / 4 ||
 				(pokemon.hp <= pokemon.maxhp / 2 &&
-					pokemon.hasAbility("gluttony") &&
+					pokemon.hasAbility("くいしんぼう") &&
 					pokemon.abilityState.gluttony)
 			) {
 				pokemon.eatItem()
@@ -1616,13 +1616,13 @@ const Items = {
 			pokemon.eatItem()
 		},
 		onUpdate(pokemon) {
-			if (pokemon.status || pokemon.volatiles["confusion"]) {
+			if (pokemon.status || pokemon.volatiles["ねんりき"]) {
 				pokemon.eatItem()
 			}
 		},
 		onEat(pokemon) {
 			pokemon.cureStatus()
-			pokemon.removeVolatile("confusion")
+			pokemon.removeVolatile("ねんりき")
 		},
 	},
 	ひかりごけ: {
@@ -1698,7 +1698,7 @@ const Items = {
 			if (
 				pokemon.hp <= pokemon.maxhp / 4 ||
 				(pokemon.hp <= pokemon.maxhp / 2 &&
-					pokemon.hasAbility("gluttony") &&
+					pokemon.hasAbility("くいしんぼう") &&
 					pokemon.abilityState.gluttony)
 			) {
 				pokemon.eatItem()
@@ -1719,7 +1719,7 @@ const Items = {
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp / 3)
 			if (pokemon.getNature().minus === "spe") {
-				pokemon.addVolatile("confusion")
+				pokemon.addVolatile("ねんりき")
 			}
 		},
 	},
@@ -1765,11 +1765,11 @@ const Items = {
 			basePower: 10,
 			effect(pokemon) {
 				const conditions = [
-					"attract",
-					"taunt",
-					"encore",
-					"torment",
-					"disable",
+					"メロメロ",
+					"ちょうはつ",
+					"アンコール",
+					"いちゃもん",
+					"かなしばり",
 					"healblock"
 				]
 				for (const firstCondition of conditions) {
@@ -1777,8 +1777,8 @@ const Items = {
 						for (const secondCondition of conditions) {
 							pokemon.removeVolatile(secondCondition)
 							if (
-								firstCondition === "attract" &&
-								secondCondition === "attract"
+								firstCondition === "メロメロ" &&
+								secondCondition === "メロメロ"
 							) {
 								this.add(
 									"-end",
@@ -1795,11 +1795,11 @@ const Items = {
 		},
 		onUpdate(pokemon) {
 			const conditions = [
-				"attract",
-				"taunt",
-				"encore",
-				"torment",
-				"disable",
+				"メロメロ",
+				"ちょうはつ",
+				"アンコール",
+				"いちゃもん",
+				"かなしばり",
 				"healblock"
 			]
 			for (const firstCondition of conditions) {
@@ -1807,7 +1807,7 @@ const Items = {
 					if (!pokemon.useItem()) return
 					for (const secondCondition of conditions) {
 						pokemon.removeVolatile(secondCondition)
-						if (firstCondition === "attract" && secondCondition === "attract") {
+						if (firstCondition === "メロメロ" && secondCondition === "メロメロ") {
 							this.add(
 								"-end",
 								pokemon,
@@ -1835,7 +1835,7 @@ const Items = {
 	},
 	メタルパウダー: {
 		name: "メタルパウダー",
-		fling: {
+		"なげつける": {
 			basePower: 10
 		},
 		spriteonModifyDefPriority: 2,
@@ -1904,7 +1904,7 @@ const Items = {
 			if (
 				pokemon.hp <= pokemon.maxhp / 4 ||
 				(pokemon.hp <= pokemon.maxhp / 2 &&
-					pokemon.hasAbility("gluttony") &&
+					pokemon.hasAbility("くいしんぼう") &&
 					pokemon.abilityState.gluttony)
 			) {
 				pokemon.eatItem()
@@ -1928,10 +1928,10 @@ const Items = {
 	},
 	ふしぎのプレート: {
 		name: "ふしぎのプレート",
-		spriteonPlate: "Psychic",
+		spriteonPlate: "サイコキネシス",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move.type === "Psychic") {
+			if (move.type === "サイコキネシス") {
 				return this.chainModify([4915, 4096])
 			}
 		},
@@ -1948,7 +1948,7 @@ const Items = {
 	},
 	きせきのタネ: {
 		name: "きせきのタネ",
-		fling: {
+		"なげつける": {
 			basePower: 30
 		},
 		spriteonBasePowerPriority: 15,
@@ -1964,7 +1964,7 @@ const Items = {
 			basePower: 30
 		},
 		onFoeAfterBoost(boost, target, source, effect) {
-			if (effect?.name === "Opportunist" || effect?.name === "ものまねハーブ")
+			if (effect?.name === "びんじょう" || effect?.name === "ものまねハーブ")
 				return
 			const boostPlus = {}
 			let statsRaised = false
@@ -1987,12 +1987,12 @@ const Items = {
 			basePower: 10
 		},
 		onStart(pokemon) {
-			if (!pokemon.ignoringItem() && this.field.isTerrain("mistyterrain")) {
+			if (!pokemon.ignoringItem() && this.field.isTerrain("ミストフィールド")) {
 				pokemon.useItem()
 			}
 		},
 		onTerrainChange(pokemon) {
-			if (this.field.isTerrain("mistyterrain")) {
+			if (this.field.isTerrain("ミストフィールド")) {
 				pokemon.useItem()
 			}
 		},
@@ -2061,7 +2061,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Fire" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -2105,7 +2105,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Water" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -2124,12 +2124,12 @@ const Items = {
 		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
-			type: "Psychic"
+			type: "サイコキネシス"
 		},
 		onSourceModifyDamage(damage, source, target, move) {
-			if (move.type === "Psychic" && target.getMoveHitData(move).typeMod > 0) {
+			if (move.type === "サイコキネシス" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -2169,12 +2169,12 @@ const Items = {
 			type: "Ground"
 		},
 		onUpdate(pokemon) {
-			if (pokemon.volatiles["confusion"]) {
+			if (pokemon.volatiles["ねんりき"]) {
 				pokemon.eatItem()
 			}
 		},
 		onEat(pokemon) {
-			pokemon.removeVolatile("confusion")
+			pokemon.removeVolatile("ねんりき")
 		},
 	},
 	ヤタピのみ: {
@@ -2188,7 +2188,7 @@ const Items = {
 			if (
 				pokemon.hp <= pokemon.maxhp / 4 ||
 				(pokemon.hp <= pokemon.maxhp / 2 &&
-					pokemon.hasAbility("gluttony") &&
+					pokemon.hasAbility("くいしんぼう") &&
 					pokemon.abilityState.gluttony)
 			) {
 				pokemon.eatItem()
@@ -2234,7 +2234,7 @@ const Items = {
 	パワーアンクル: {
 		name: "パワーアンクル",
 		spriteignoreKlutz: true,
-		fling: {
+		"なげつける": {
 			basePower: 70
 		},
 		onModifySpe(spe) {
@@ -2244,7 +2244,7 @@ const Items = {
 	パワーバンド: {
 		name: "パワーバンド",
 		spriteignoreKlutz: true,
-		fling: {
+		"なげつける": {
 			basePower: 70
 		},
 		onModifySpe(spe) {
@@ -2254,7 +2254,7 @@ const Items = {
 	パワーベルト: {
 		name: "パワーベルト",
 		spriteignoreKlutz: true,
-		fling: {
+		"なげつける": {
 			basePower: 70
 		},
 		onModifySpe(spe) {
@@ -2264,7 +2264,7 @@ const Items = {
 	パワーリスト: {
 		name: "パワーリスト",
 		spriteignoreKlutz: true,
-		fling: {
+		"なげつける": {
 			basePower: 70
 		},
 		onModifySpe(spe) {
@@ -2288,7 +2288,7 @@ const Items = {
 	パワーレンズ: {
 		name: "パワーレンズ",
 		spriteignoreKlutz: true,
-		fling: {
+		"なげつける": {
 			basePower: 70
 		},
 		onModifySpe(spe) {
@@ -2298,7 +2298,7 @@ const Items = {
 	パワーウエイト: {
 		name: "パワーウエイト",
 		spriteignoreKlutz: true,
-		fling: {
+		"なげつける": {
 			basePower: 70
 		},
 		onModifySpe(spe) {
@@ -2311,12 +2311,12 @@ const Items = {
 			basePower: 10
 		},
 		onStart(pokemon) {
-			if (!pokemon.ignoringItem() && this.field.isTerrain("psychicterrain")) {
+			if (!pokemon.ignoringItem() && this.field.isTerrain("サイコフィールド")) {
 				pokemon.useItem()
 			}
 		},
 		onTerrainChange(pokemon) {
-			if (this.field.isTerrain("psychicterrain")) {
+			if (this.field.isTerrain("サイコフィールド")) {
 				pokemon.useItem()
 			}
 		},
@@ -2344,7 +2344,7 @@ const Items = {
 	せんせいのツメ: {
 		onFractionalPriorityPriority: -2,
 		onFractionalPriority(priority, pokemon, target, move) {
-			if (move.category === "Status" && pokemon.hasAbility("myceliummight"))
+			if (move.category === "Status" && pokemon.hasAbility("きんしのちから"))
 				return
 			if (priority <= 0 && this.randomChance(1, 5)) {
 				this.add("-activate", pokemon, "item: せんせいのツメ")
@@ -2457,7 +2457,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Grass" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -2496,13 +2496,13 @@ const Items = {
 			basePower: 100
 		},
 		onStart(pokemon) {
-			if (!pokemon.ignoringItem() && this.field.getPseudoWeather("trickroom")) {
+			if (!pokemon.ignoringItem() && this.field.getPseudoWeather("トリックルーム")) {
 				pokemon.useItem()
 			}
 		},
 		onAnyPseudoWeatherChange() {
 			const pokemon = this.effectState.target
-			if (this.field.getPseudoWeather("trickroom")) {
+			if (this.field.getPseudoWeather("トリックルーム")) {
 				pokemon.useItem(pokemon)
 			}
 		},
@@ -2520,7 +2520,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Fairy" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -2546,11 +2546,11 @@ const Items = {
 				move.category === "Special" &&
 				source.hp &&
 				source.isActive &&
-				!source.hasAbility("magicguard")
+				!source.hasAbility("マジックガード")
 			) {
 				if (target.eatItem()) {
 					this.damage(
-						source.baseMaxhp / (target.hasAbility("ripen") ? 4 : 8),
+						source.baseMaxhp / (target.hasAbility("じゅくせい") ? 4 : 8),
 						source,
 						target
 					)
@@ -2591,7 +2591,7 @@ const Items = {
 			basePower: 80
 		},
 		onImmunity(type, pokemon) {
-			if (type === "sandstorm" || type === "hail" || type === "powder")
+			if (type === "すなあらし" || type === "hail" || type === "powder")
 				return false
 		},
 		onTryHit(pokemon, source, move) {
@@ -2616,7 +2616,7 @@ const Items = {
 			if (
 				pokemon.hp <= pokemon.maxhp / 4 ||
 				(pokemon.hp <= pokemon.maxhp / 2 &&
-					pokemon.hasAbility("gluttony") &&
+					pokemon.hasAbility("くいしんぼう") &&
 					pokemon.abilityState.gluttony)
 			) {
 				pokemon.eatItem()
@@ -2679,7 +2679,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Ground" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -2722,7 +2722,7 @@ const Items = {
 		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
-			type: "Psychic"
+			type: "サイコキネシス"
 		},
 		onUpdate(pokemon) {
 			if (pokemon.hp <= pokemon.maxhp / 2) {
@@ -2854,13 +2854,13 @@ const Items = {
 		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
-			type: "Psychic"
+			type: "サイコキネシス"
 		},
 		onUpdate(pokemon) {
 			if (
 				pokemon.hp <= pokemon.maxhp / 4 ||
 				(pokemon.hp <= pokemon.maxhp / 2 &&
-					pokemon.hasAbility("gluttony") &&
+					pokemon.hasAbility("くいしんぼう") &&
 					pokemon.abilityState.gluttony)
 			) {
 				pokemon.eatItem()
@@ -2941,7 +2941,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Bug" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -3014,7 +3014,7 @@ const Items = {
 		},
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
-			if (move.type === "Psychic") {
+			if (move.type === "サイコキネシス") {
 				return this.chainModify([4915, 4096])
 			}
 		},
@@ -3028,7 +3028,7 @@ const Items = {
 		onStart(pokemon) {
 			if (!pokemon.ignoringItem()) return
 			if (
-				["sunnyday", "raindance", "desolateland", "primordialsea"].includes(
+				["にほんばれ", "あまごい", "おわりのだいち", "はじまりのうみ"].includes(
 					this.field.effectiveWeather()
 				)
 			) {
@@ -3039,7 +3039,7 @@ const Items = {
 			if (!this.effectState.inactive) return
 			this.effectState.inactive = false
 			if (
-				["sunnyday", "raindance", "desolateland", "primordialsea"].includes(
+				["にほんばれ", "あまごい", "おわりのだいち", "はじまりのうみ"].includes(
 					this.field.effectiveWeather()
 				)
 			) {
@@ -3048,7 +3048,7 @@ const Items = {
 		},
 		onEnd(pokemon) {
 			if (
-				["sunnyday", "raindance", "desolateland", "primordialsea"].includes(
+				["にほんばれ", "あまごい", "おわりのだいち", "はじまりのうみ"].includes(
 					this.field.effectiveWeather()
 				)
 			) {
@@ -3067,7 +3067,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Electric" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
@@ -3176,7 +3176,7 @@ const Items = {
 			if (
 				pokemon.hp <= pokemon.maxhp / 4 ||
 				(pokemon.hp <= pokemon.maxhp / 2 &&
-					pokemon.hasAbility("gluttony") &&
+					pokemon.hasAbility("くいしんぼう") &&
 					pokemon.abilityState.gluttony)
 			) {
 				pokemon.eatItem()
@@ -3197,7 +3197,7 @@ const Items = {
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp / 3)
 			if (pokemon.getNature().minus === "spa") {
-				pokemon.addVolatile("confusion")
+				pokemon.addVolatile("ねんりき")
 			}
 		},
 	},
@@ -3223,7 +3223,7 @@ const Items = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (move.type === "Ice" && target.getMoveHitData(move).typeMod > 0) {
 				const hitSub =
-					target.volatiles["substitute"] &&
+					target.volatiles["みがわり"] &&
 					!move.flags["bypasssub"] &&
 					!(move.infiltrates && this.gen >= 6)
 				if (hitSub) return
