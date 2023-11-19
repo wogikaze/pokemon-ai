@@ -1796,7 +1796,6 @@ export const Abilities = {
 	"くいしんぼう": {
 		name: "くいしんぼう",
 		rating: 1.5,
-		num: 82,
 		onStart(pokemon) {
 			pokemon.abilityState.gluttony = true
 		},

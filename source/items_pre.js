@@ -1,8 +1,7 @@
 const Items = {
 	とくせいガード: {
 		name: "とくせいガード",
-		spritenum: 746,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		ignoreKlutz: true,
@@ -20,13 +19,10 @@ const Items = {
 			return null
 		},
 		// Mold Breaker protection implemented in Battle.suppressingAbility() within sim/battle.ts
-		num: 1881,
-		gen: 9
 	},
 	きゅうこん: {
 		name: "きゅうこん",
-		spritenum: 2,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onDamagingHit(damage, target, source, move) {
@@ -37,13 +33,10 @@ const Items = {
 		boosts: {
 			spa: 1
 		},
-		num: 545,
-		gen: 5
 	},
 	だいこんごうだま: {
 		name: "だいこんごうだま",
-		spritenum: 741,
-		onBasePowerPriority: 15,
+		spriteonBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (
 				user.baseSpecies.num === 483 &&
@@ -60,13 +53,10 @@ const Items = {
 		},
 		forcedForme: "Dialga-Origin",
 		itemUser: ["Dialga-Origin"],
-		num: 1777,
-		gen: 8
 	},
 	こんごうだま: {
 		name: "こんごうだま",
-		spritenum: 4,
-		fling: {
+		spritefling: {
 			basePower: 60
 		},
 		onBasePowerPriority: 15,
@@ -79,13 +69,10 @@ const Items = {
 			}
 		},
 		itemUser: ["Dialga"],
-		num: 135,
-		gen: 4
 	},
 	ビビリだま: {
 		name: "ビビリだま",
-		spritenum: 660,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onAfterBoost(boost, target, source, effect) {
@@ -103,13 +90,10 @@ const Items = {
 		boosts: {
 			spe: 1
 		},
-		num: 846,
-		gen: 7
 	},
 	バンジのみ: {
 		name: "バンジのみ",
-		spritenum: 5,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Dragon"
@@ -142,13 +126,10 @@ const Items = {
 				pokemon.addVolatile("confusion")
 			}
 		},
-		num: 162,
-		gen: 3
 	},
 	ふうせん: {
 		name: "ふうせん",
-		spritenum: 6,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onStart(target) {
@@ -184,13 +165,10 @@ const Items = {
 				)
 			}
 		},
-		num: 541,
-		gen: 5
 	},
 	ズアのみ: {
 		name: "ズアのみ",
-		spritenum: 10,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Ground"
@@ -208,13 +186,10 @@ const Items = {
 		onEat(pokemon) {
 			this.boost({ spd: 1 })
 		},
-		num: 205,
-		gen: 3
 	},
 	ナナシのみ: {
 		name: "ナナシのみ",
-		spritenum: 13,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Ice"
@@ -229,13 +204,10 @@ const Items = {
 				pokemon.cureStatus()
 			}
 		},
-		num: 153,
-		gen: 3
 	},
 	とつげきチョッキ: {
 		name: "とつげきチョッキ",
-		spritenum: 581,
-		fling: {
+		spritefling: {
 			basePower: 80
 		},
 		onModifySpDPriority: 1,
@@ -249,13 +221,10 @@ const Items = {
 				}
 			}
 		},
-		num: 640,
-		gen: 6
 	},
 	リリバのみ: {
 		name: "リリバのみ",
-		spritenum: 17,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Steel"
@@ -276,13 +245,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 199,
-		gen: 4
 	},
 	おおきなねっこ: {
 		name: "おおきなねっこ",
-		spritenum: 29,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onTryHealPriority: 1,
@@ -292,23 +258,17 @@ const Items = {
 				return this.chainModify([5324, 4096])
 			}
 		},
-		num: 296,
-		gen: 4
 	},
 	しめつけバンド: {
 		name: "しめつけバンド",
-		spritenum: 31,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		// implemented in statuses
-		num: 544,
-		gen: 5
 	},
 	くろおび: {
 		name: "くろおび",
-		spritenum: 32,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onBasePowerPriority: 15,
@@ -317,13 +277,10 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 241,
-		gen: 2
 	},
 	くろいメガネ: {
 		name: "くろいメガネ",
-		spritenum: 35,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onBasePowerPriority: 15,
@@ -332,13 +289,10 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 240,
-		gen: 2
 	},
 	くろいヘドロ: {
 		name: "くろいヘドロ",
-		spritenum: 34,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onResidualOrder: 5,
@@ -350,23 +304,17 @@ const Items = {
 				this.damage(pokemon.baseMaxhp / 8)
 			}
 		},
-		num: 281,
-		gen: 4
 	},
 	からぶりほけん: {
 		name: "からぶりほけん",
-		spritenum: 716,
-		fling: {
+		spritefling: {
 			basePower: 80
 		},
 		// Item activation located in scripts.js
-		num: 1121,
-		gen: 8
 	},
 	ブーストエナジー: {
 		name: "ブーストエナジー",
-		spritenum: 745,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onStart() {
@@ -395,13 +343,10 @@ const Items = {
 			if (source.baseSpecies.tags.includes("Paradox")) return false
 			return true
 		},
-		num: 1880,
-		gen: 9
 	},
 	ひかりのこな: {
 		name: "ひかりのこな",
-		spritenum: 51,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onModifyAccuracyPriority: -2,
@@ -410,13 +355,10 @@ const Items = {
 			this.debug("ひかりのこな - decreasing accuracy")
 			return this.chainModify([3686, 4096])
 		},
-		num: 213,
-		gen: 2
 	},
 	じゅうでんち: {
 		name: "じゅうでんち",
-		spritenum: 60,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onDamagingHit(damage, target, source, move) {
@@ -427,13 +369,10 @@ const Items = {
 		boosts: {
 			atk: 1
 		},
-		num: 546,
-		gen: 5
 	},
 	もくたん: {
 		name: "もくたん",
-		spritenum: 61,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onBasePowerPriority: 15,
@@ -442,13 +381,10 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 249,
-		gen: 2
 	},
 	ヨロギのみ: {
 		name: "ヨロギのみ",
-		spritenum: 62,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Rock"
@@ -469,13 +405,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 195,
-		gen: 4
 	},
 	クラボのみ: {
 		name: "クラボのみ",
-		spritenum: 63,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Fire"
@@ -490,13 +423,10 @@ const Items = {
 				pokemon.cureStatus()
 			}
 		},
-		num: 149,
-		gen: 3
 	},
 	カゴのみ: {
 		name: "カゴのみ",
-		spritenum: 65,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Water"
@@ -511,13 +441,10 @@ const Items = {
 				pokemon.cureStatus()
 			}
 		},
-		num: 150,
-		gen: 3
 	},
 	ホズのみ: {
 		name: "ホズのみ",
-		spritenum: 66,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Normal"
@@ -537,13 +464,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 200,
-		gen: 4
 	},
 	こだわりハチマキ: {
 		name: "こだわりハチマキ",
-		spritenum: 68,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onStart(pokemon) {
@@ -561,13 +485,10 @@ const Items = {
 			return this.chainModify(1.5)
 		},
 		isChoice: true,
-		num: 220,
-		gen: 3
 	},
 	こだわりスカーフ: {
 		name: "こだわりスカーフ",
-		spritenum: 69,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onStart(pokemon) {
@@ -584,13 +505,10 @@ const Items = {
 			return this.chainModify(1.5)
 		},
 		isChoice: true,
-		num: 287,
-		gen: 4
 	},
 	こだわりメガネ: {
 		name: "こだわりメガネ",
-		spritenum: 70,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onStart(pokemon) {
@@ -608,13 +526,10 @@ const Items = {
 			return this.chainModify(1.5)
 		},
 		isChoice: true,
-		num: 297,
-		gen: 4
 	},
 	ヨプのみ: {
 		name: "ヨプのみ",
-		spritenum: 71,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Fighting"
@@ -635,13 +550,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 189,
-		gen: 4
 	},
 	クリアチャーム: {
 		name: "クリアチャーム",
-		spritenum: 747,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onTryBoost(boost, target, source, effect) {
@@ -664,13 +576,10 @@ const Items = {
 				)
 			}
 		},
-		num: 1882,
-		gen: 9
 	},
 	バコウのみ: {
 		name: "バコウのみ",
-		spritenum: 76,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Flying"
@@ -691,13 +600,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 192,
-		gen: 4
 	},
 	ナモのみ: {
 		name: "ナモのみ",
-		spritenum: 78,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Dark"
@@ -718,13 +624,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 198,
-		gen: 4
 	},
 	いしずえのめん: {
 		name: "いしずえのめん",
-		spritenum: 758,
-		fling: {
+		spritefling: {
 			basePower: 60
 		},
 		onBasePowerPriority: 15,
@@ -739,26 +642,20 @@ const Items = {
 		},
 		forcedForme: "Ogerpon-Cornerstone",
 		itemUser: ["Ogerpon-Cornerstone"],
-		num: 2406,
-		gen: 9
 	},
 	おんみつマント: {
 		name: "おんみつマント",
-		spritenum: 750,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onModifySecondaries(secondaries) {
 			this.debug("おんみつマント prevent secondary")
 			return secondaries.filter(effect => !!(effect.self || effect.dustproof))
 		},
-		num: 1885,
-		gen: 9
 	},
 	イバンのみ: {
 		name: "イバンのみ",
-		spritenum: 86,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Ghost"
@@ -779,22 +676,16 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 210,
-		gen: 4
 	},
 	しめったいわ: {
 		name: "しめったいわ",
-		spritenum: 88,
-		fling: {
+		spritefling: {
 			basePower: 60
 		},
-		num: 285,
-		gen: 4
 	},
 	あかいいと: {
 		name: "あかいいと",
-		spritenum: 95,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onAttractPriority: -100,
@@ -803,13 +694,10 @@ const Items = {
 			if (!source || source === target) return
 			if (!source.volatiles["attract"]) source.addVolatile("attract", target)
 		},
-		num: 280,
-		gen: 4
 	},
 	りゅうのプレート: {
 		name: "りゅうのプレート",
-		spritenum: 105,
-		onPlate: "Dragon",
+		spriteonPlate: "Dragon",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move && move.type === "Dragon") {
@@ -826,13 +714,10 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Dragon",
-		num: 311,
-		gen: 4
 	},
 	りゅうのキバ: {
 		name: "りゅうのキバ",
-		spritenum: 106,
-		fling: {
+		spritefling: {
 			basePower: 70
 		},
 		onBasePowerPriority: 15,
@@ -841,13 +726,10 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 250,
-		gen: 2
 	},
 	こわもてプレート: {
 		name: "こわもてプレート",
-		spritenum: 110,
-		onPlate: "Dark",
+		spriteonPlate: "Dark",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move && move.type === "Dark") {
@@ -864,13 +746,10 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Dark",
-		num: 312,
-		gen: 4
 	},
 	だいちのプレート: {
 		name: "だいちのプレート",
-		spritenum: 117,
-		onPlate: "Ground",
+		spriteonPlate: "Ground",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move && move.type === "Ground") {
@@ -887,13 +766,10 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Ground",
-		num: 305,
-		gen: 4
 	},
 	だっしゅつボタン: {
 		name: "だっしゅつボタン",
-		spritenum: 118,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onAfterMoveSecondaryPriority: 2,
@@ -926,13 +802,10 @@ const Items = {
 				}
 			}
 		},
-		num: 547,
-		gen: 5
 	},
 	だっしゅつパック: {
 		name: "だっしゅつパック",
-		spritenum: 714,
-		fling: {
+		spritefling: {
 			basePower: 50
 		},
 		onAfterBoost(boost, target, source, effect) {
@@ -956,13 +829,10 @@ const Items = {
 				}
 			}
 		},
-		num: 1119,
-		gen: 8
 	},
 	エレキシード: {
 		name: "エレキシード",
-		spritenum: 664,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onStart(pokemon) {
@@ -978,13 +848,10 @@ const Items = {
 		boosts: {
 			def: 1
 		},
-		num: 881,
-		gen: 7
 	},
 	ナゾのみ: {
 		name: "ナゾのみ",
-		spritenum: 124,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Bug"
@@ -1009,13 +876,10 @@ const Items = {
 				return false
 		},
 		onEat() { },
-		num: 208,
-		gen: 3
 	},
 	しんかのきせき: {
 		name: "しんかのきせき",
-		spritenum: 130,
-		fling: {
+		spritefling: {
 			basePower: 40
 		},
 		onModifyDefPriority: 2,
@@ -1030,13 +894,10 @@ const Items = {
 				return this.chainModify(1.5)
 			}
 		},
-		num: 538,
-		gen: 5
 	},
 	たつじんのおび: {
 		name: "たつじんのおび",
-		spritenum: 132,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onModifyDamage(damage, source, target, move) {
@@ -1044,13 +905,10 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 268,
-		gen: 4
 	},
 	ようせいのハネ: {
 		name: "ようせいのハネ",
-		spritenum: 754,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onBasePowerPriority: 15,
@@ -1059,13 +917,10 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 2401,
-		gen: 9
 	},
 	フィラのみ: {
 		name: "フィラのみ",
-		spritenum: 140,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Bug"
@@ -1098,13 +953,10 @@ const Items = {
 				pokemon.addVolatile("confusion")
 			}
 		},
-		num: 159,
-		gen: 3
 	},
 	こぶしのプレート: {
 		name: "こぶしのプレート",
-		spritenum: 143,
-		onPlate: "Fighting",
+		spriteonPlate: "Fighting",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move && move.type === "Fighting") {
@@ -1121,13 +973,10 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Fighting",
-		num: 303,
-		gen: 4
 	},
 	かえんだま: {
 		name: "かえんだま",
-		spritenum: 145,
-		fling: {
+		spritefling: {
 			basePower: 30,
 			status: "brn"
 		},
@@ -1136,13 +985,10 @@ const Items = {
 		onResidual(pokemon) {
 			pokemon.trySetStatus("brn", pokemon)
 		},
-		num: 273,
-		gen: 4
 	},
 	ひのたまプレート: {
 		name: "ひのたまプレート",
-		spritenum: 146,
-		onPlate: "Fire",
+		spriteonPlate: "Fire",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move && move.type === "Fire") {
@@ -1159,25 +1005,19 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Fire",
-		num: 298,
-		gen: 4
 	},
 	かるいし: {
 		name: "かるいし",
-		spritenum: 147,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onModifyWeight(weighthg) {
 			return this.trunc(weighthg / 2)
 		},
-		num: 539,
-		gen: 5
 	},
 	きあいのハチマキ: {
 		name: "きあいのハチマキ",
-		spritenum: 150,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onDamagePriority: -40,
@@ -1192,13 +1032,10 @@ const Items = {
 				return target.hp - 1
 			}
 		},
-		num: 230,
-		gen: 2
 	},
 	きあいのタスキ: {
 		name: "きあいのタスキ",
-		spritenum: 151,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onDamagePriority: -40,
@@ -1214,13 +1051,10 @@ const Items = {
 				}
 			}
 		},
-		num: 275,
-		gen: 4
 	},
 	リュガのみ: {
 		name: "リュガのみ",
-		spritenum: 158,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Ice"
@@ -1238,13 +1072,10 @@ const Items = {
 		onEat(pokemon) {
 			this.boost({ def: 1 })
 		},
-		num: 202,
-		gen: 3
 	},
 	グラスシード: {
 		name: "グラスシード",
-		spritenum: 667,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onStart(pokemon) {
@@ -1260,23 +1091,17 @@ const Items = {
 		boosts: {
 			def: 1
 		},
-		num: 884,
-		gen: 7
 	},
 	ねばりのかぎづめ: {
 		name: "ねばりのかぎづめ",
-		spritenum: 179,
-		fling: {
+		spritefling: {
 			basePower: 90
 		},
 		// implemented in statuses
-		num: 286,
-		gen: 4
 	},
 	だいはっきんだま: {
 		name: "だいはっきんだま",
-		spritenum: 743,
-		onBasePowerPriority: 15,
+		spriteonBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (
 				user.baseSpecies.num === 487 &&
@@ -1293,13 +1118,10 @@ const Items = {
 		},
 		forcedForme: "Giratina-Origin",
 		itemUser: ["Giratina-Origin"],
-		num: 1779,
-		gen: 8
 	},
 	はっきんだま: {
 		name: "はっきんだま",
-		spritenum: 180,
-		fling: {
+		spritefling: {
 			basePower: 60
 		},
 		onBasePowerPriority: 15,
@@ -1312,13 +1134,10 @@ const Items = {
 			}
 		},
 		itemUser: ["Giratina"],
-		num: 112,
-		gen: 4
 	},
 	ハバンのみ: {
 		name: "ハバンのみ",
-		spritenum: 185,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Dragon"
@@ -1339,13 +1158,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 197,
-		gen: 4
 	},
 	かたいいし: {
 		name: "かたいいし",
-		spritenum: 187,
-		fling: {
+		spritefling: {
 			basePower: 100
 		},
 		onBasePowerPriority: 15,
@@ -1354,13 +1170,10 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 238,
-		gen: 2
 	},
 	かまどのめん: {
 		name: "かまどのめん",
-		spritenum: 760,
-		fling: {
+		spritefling: {
 			basePower: 60
 		},
 		onBasePowerPriority: 15,
@@ -1375,32 +1188,23 @@ const Items = {
 		},
 		forcedForme: "Ogerpon-Hearthflame",
 		itemUser: ["Ogerpon-Hearthflame"],
-		num: 2408,
-		gen: 9
 	},
 	あついいわ: {
 		name: "あついいわ",
-		spritenum: 193,
-		fling: {
+		spritefling: {
 			basePower: 60
 		},
-		num: 284,
-		gen: 4
 	},
 	あつぞこブーツ: {
 		name: "あつぞこブーツ",
-		spritenum: 715,
-		fling: {
+		spritefling: {
 			basePower: 80
 		},
-		num: 1120,
-		gen: 8
 		// Hazard Immunity implemented in moves.ts
 	},
 	イアのみ: {
 		name: "イアのみ",
-		spritenum: 217,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Dark"
@@ -1433,13 +1237,10 @@ const Items = {
 				pokemon.addVolatile("confusion")
 			}
 		},
-		num: 163,
-		gen: 3
 	},
 	つららのプレート: {
 		name: "つららのプレート",
-		spritenum: 220,
-		onPlate: "Ice",
+		spriteonPlate: "Ice",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === "Ice") {
@@ -1456,22 +1257,16 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Ice",
-		num: 302,
-		gen: 4
 	},
 	つめたいいわ: {
 		name: "つめたいいわ",
-		spritenum: 221,
-		fling: {
+		spritefling: {
 			basePower: 40
 		},
-		num: 282,
-		gen: 4
 	},
 	たまむしプレート: {
 		name: "たまむしプレート",
-		spritenum: 223,
-		onPlate: "Bug",
+		spriteonPlate: "Bug",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === "Bug") {
@@ -1488,13 +1283,10 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Bug",
-		num: 308,
-		gen: 4
 	},
 	くろいてっきゅう: {
 		name: "くろいてっきゅう",
-		spritenum: 224,
-		fling: {
+		spritefling: {
 			basePower: 130
 		},
 		onEffectiveness(typeMod, target, type, move) {
@@ -1511,13 +1303,10 @@ const Items = {
 		onModifySpe(spe) {
 			return this.chainModify(0.5)
 		},
-		num: 278,
-		gen: 4
 	},
 	こうてつプレート: {
 		name: "こうてつプレート",
-		spritenum: 225,
-		onPlate: "Steel",
+		spriteonPlate: "Steel",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === "Steel") {
@@ -1534,13 +1323,10 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Steel",
-		num: 313,
-		gen: 4
 	},
 	ジャポのみ: {
 		name: "ジャポのみ",
-		spritenum: 230,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Dragon"
@@ -1562,13 +1348,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 211,
-		gen: 4
 	},
 	カシブのみ: {
 		name: "カシブのみ",
-		spritenum: 233,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Ghost"
@@ -1589,13 +1372,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 196,
-		gen: 4
 	},
 	ビアーのみ: {
 		name: "ビアーのみ",
-		spritenum: 234,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Poison"
@@ -1616,13 +1396,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 190,
-		gen: 4
 	},
 	アッキのみ: {
 		name: "アッキのみ",
-		spritenum: 593,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Fairy"
@@ -1636,13 +1413,10 @@ const Items = {
 		onEat(pokemon) {
 			this.boost({ def: 1 })
 		},
-		num: 687,
-		gen: 6
 	},
 	おうじゃのしるし: {
 		name: "おうじゃのしるし",
-		spritenum: 236,
-		fling: {
+		spritefling: {
 			basePower: 30,
 			volatileStatus: "flinch"
 		},
@@ -1659,23 +1433,17 @@ const Items = {
 				})
 			}
 		},
-		num: 221,
-		gen: 2
 	},
 	こうこうのしっぽ: {
 		name: "こうこうのしっぽ",
-		spritenum: 237,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onFractionalPriority: -0.1,
-		num: 279,
-		gen: 4
 	},
 	サンのみ: {
 		name: "サンのみ",
-		spritenum: 238,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Flying"
@@ -1693,13 +1461,10 @@ const Items = {
 		onEat(pokemon) {
 			pokemon.addVolatile("focusenergy")
 		},
-		num: 206,
-		gen: 3
 	},
 	たべのこし: {
 		name: "たべのこし",
-		spritenum: 242,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onResidualOrder: 5,
@@ -1707,13 +1472,10 @@ const Items = {
 		onResidual(pokemon) {
 			this.heal(pokemon.baseMaxhp / 16)
 		},
-		num: 234,
-		gen: 2
 	},
 	ヒメリのみ: {
 		name: "ヒメリのみ",
-		spritenum: 244,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Fighting"
@@ -1739,13 +1501,10 @@ const Items = {
 				"[consumed]"
 			)
 		},
-		num: 154,
-		gen: 3
 	},
 	チイラのみ: {
 		name: "チイラのみ",
-		spritenum: 248,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Grass"
@@ -1763,13 +1522,10 @@ const Items = {
 		onEat(pokemon) {
 			this.boost({ atk: 1 })
 		},
-		num: 201,
-		gen: 3
 	},
 	いのちのたま: {
 		name: "いのちのたま",
-		spritenum: 249,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onModifyDamage(damage, source, target, move) {
@@ -1791,13 +1547,10 @@ const Items = {
 				)
 			}
 		},
-		num: 270,
-		gen: 4
 	},
 	でんきだま: {
 		name: "でんきだま",
-		spritenum: 251,
-		fling: {
+		spritefling: {
 			basePower: 30,
 			status: "par"
 		},
@@ -1831,23 +1584,17 @@ const Items = {
 			"Pikachu-Starter",
 			"Pikachu-World"
 		],
-		num: 236,
-		gen: 2
 	},
 	ひかりのねんど: {
 		name: "ひかりのねんど",
-		spritenum: 252,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		// implemented in the corresponding thing
-		num: 269,
-		gen: 4
 	},
 	いかさまダイス: {
 		name: "いかさまダイス",
-		spritenum: 751,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		// partially implemented in sim/battle-actions.ts:BattleActions#hitStepMoveHitLoop
@@ -1856,13 +1603,10 @@ const Items = {
 				delete move.multiaccuracy
 			}
 		},
-		num: 1886,
-		gen: 9
 	},
 	ラムのみ: {
 		name: "ラムのみ",
-		spritenum: 262,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Flying"
@@ -1880,13 +1624,10 @@ const Items = {
 			pokemon.cureStatus()
 			pokemon.removeVolatile("confusion")
 		},
-		num: 157,
-		gen: 3
 	},
 	ひかりごけ: {
 		name: "ひかりごけ",
-		spritenum: 595,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onDamagingHit(damage, target, source, move) {
@@ -1897,13 +1638,10 @@ const Items = {
 		boosts: {
 			spd: 1
 		},
-		num: 648,
-		gen: 6
 	},
 	だいしらたま: {
 		name: "だいしらたま",
-		spritenum: 742,
-		onBasePowerPriority: 15,
+		spriteonBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (
 				user.baseSpecies.num === 484 &&
@@ -1920,13 +1658,10 @@ const Items = {
 		},
 		forcedForme: "Palkia-Origin",
 		itemUser: ["Palkia-Origin"],
-		num: 1778,
-		gen: 8
 	},
 	しらたま: {
 		name: "しらたま",
-		spritenum: 265,
-		fling: {
+		spritefling: {
 			basePower: 60
 		},
 		onBasePowerPriority: 15,
@@ -1939,13 +1674,10 @@ const Items = {
 			}
 		},
 		itemUser: ["Palkia"],
-		num: 136,
-		gen: 4
 	},
 	じしゃく: {
 		name: "じしゃく",
-		spritenum: 273,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onBasePowerPriority: 15,
@@ -1954,13 +1686,10 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 242,
-		gen: 2
 	},
 	マゴのみ: {
 		name: "マゴのみ",
-		spritenum: 274,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Ghost"
@@ -1993,13 +1722,10 @@ const Items = {
 				pokemon.addVolatile("confusion")
 			}
 		},
-		num: 161,
-		gen: 3
 	},
 	タラプのみ: {
 		name: "タラプのみ",
-		spritenum: 597,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Dark"
@@ -2012,13 +1738,10 @@ const Items = {
 		onEat(pokemon) {
 			this.boost({ spd: 1 })
 		},
-		num: 688,
-		gen: 6
 	},
 	みどりのプレート: {
 		name: "みどりのプレート",
-		spritenum: 282,
-		onPlate: "Grass",
+		spriteonPlate: "Grass",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === "Grass") {
@@ -2035,13 +1758,10 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Grass",
-		num: 301,
-		gen: 4
 	},
 	メンタルハーブ: {
 		name: "メンタルハーブ",
-		spritenum: 285,
-		fling: {
+		spritefling: {
 			basePower: 10,
 			effect(pokemon) {
 				const conditions = [
@@ -2100,13 +1820,10 @@ const Items = {
 				}
 			}
 		},
-		num: 219,
-		gen: 3
 	},
 	メタルコート: {
 		name: "メタルコート",
-		spritenum: 286,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onBasePowerPriority: 15,
@@ -2115,30 +1832,24 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 233,
-		gen: 2
 	},
 	メタルパウダー: {
 		name: "メタルパウダー",
 		fling: {
 			basePower: 10
 		},
-		spritenum: 287,
-		onModifyDefPriority: 2,
+		spriteonModifyDefPriority: 2,
 		onModifyDef(def, pokemon) {
 			if (pokemon.species.name === "Ditto" && !pokemon.transformed) {
 				return this.chainModify(2)
 			}
 		},
 		itemUser: ["Ditto"],
-		num: 257,
-		gen: 2,
 		isNonstandard: "Past"
 	},
 	メトロノーム: {
 		name: "メトロノーム",
-		spritenum: 289,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onStart(pokemon) {
@@ -2181,13 +1892,10 @@ const Items = {
 				return this.chainModify([dmgMod[numConsecutive], 4096])
 			}
 		},
-		num: 277,
-		gen: 4
 	},
 	ミクルのみ: {
 		name: "ミクルのみ",
-		spritenum: 290,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Rock"
@@ -2217,13 +1925,10 @@ const Items = {
 				}
 			}
 		},
-		num: 209,
-		gen: 4
 	},
 	ふしぎのプレート: {
 		name: "ふしぎのプレート",
-		spritenum: 291,
-		onPlate: "Psychic",
+		spriteonPlate: "Psychic",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === "Psychic") {
@@ -2240,28 +1945,22 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Psychic",
-		num: 307,
-		gen: 4
 	},
 	きせきのタネ: {
 		name: "きせきのタネ",
 		fling: {
 			basePower: 30
 		},
-		spritenum: 292,
-		onBasePowerPriority: 15,
+		spriteonBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === "Grass") {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 239,
-		gen: 2
 	},
 	ものまねハーブ: {
 		name: "ものまねハーブ",
-		spritenum: 748,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onFoeAfterBoost(boost, target, source, effect) {
@@ -2281,13 +1980,10 @@ const Items = {
 			pokemon.useItem()
 			this.boost(boostPlus, pokemon)
 		},
-		num: 1883,
-		gen: 9
 	},
 	ミストシード: {
 		name: "ミストシード",
-		spritenum: 666,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onStart(pokemon) {
@@ -2303,13 +1999,10 @@ const Items = {
 		boosts: {
 			spd: 1
 		},
-		num: 883,
-		gen: 7
 	},
 	ちからのハチマキ: {
 		name: "ちからのハチマキ",
-		spritenum: 297,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onBasePowerPriority: 16,
@@ -2318,13 +2011,10 @@ const Items = {
 				return this.chainModify([4505, 4096])
 			}
 		},
-		num: 266,
-		gen: 4
 	},
 	しんぴのしずく: {
 		name: "しんぴのしずく",
-		spritenum: 300,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onBasePowerPriority: 15,
@@ -2333,13 +2023,10 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 243,
-		gen: 2
 	},
 	とけないこおり: {
 		name: "とけないこおり",
-		spritenum: 305,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onBasePowerPriority: 15,
@@ -2348,13 +2035,10 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 246,
-		gen: 2
 	},
 	ノーマルジュエル: {
 		name: "ノーマルジュエル",
-		spritenum: 307,
-		isGem: true,
+		spriteisGem: true,
 		onSourceTryPrimaryHit(target, source, move) {
 			if (
 				target === source ||
@@ -2366,13 +2050,10 @@ const Items = {
 				source.addVolatile("gem")
 			}
 		},
-		num: 564,
-		gen: 5
 	},
 	オッカのみ: {
 		name: "オッカのみ",
-		spritenum: 311,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Fire"
@@ -2393,13 +2074,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 184,
-		gen: 4
 	},
 	オレンのみ: {
 		name: "オレンのみ",
-		spritenum: 319,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Poison"
@@ -2416,13 +2094,10 @@ const Items = {
 		onEat(pokemon) {
 			this.heal(10)
 		},
-		num: 155,
-		gen: 3
 	},
 	イトケのみ: {
 		name: "イトケのみ",
-		spritenum: 329,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Water"
@@ -2443,13 +2118,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 185,
-		gen: 4
 	},
 	ウタンのみ: {
 		name: "ウタンのみ",
-		spritenum: 330,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Psychic"
@@ -2470,13 +2142,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 193,
-		gen: 4
 	},
 	モモンのみ: {
 		name: "モモンのみ",
-		spritenum: 333,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Electric"
@@ -2491,13 +2160,10 @@ const Items = {
 				pokemon.cureStatus()
 			}
 		},
-		num: 151,
-		gen: 3
 	},
 	キーのみ: {
 		name: "キーのみ",
-		spritenum: 334,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Ground"
@@ -2510,13 +2176,10 @@ const Items = {
 		onEat(pokemon) {
 			pokemon.removeVolatile("confusion")
 		},
-		num: 156,
-		gen: 3
 	},
 	ヤタピのみ: {
 		name: "ヤタピのみ",
-		spritenum: 335,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Poison"
@@ -2534,13 +2197,10 @@ const Items = {
 		onEat(pokemon) {
 			this.boost({ spa: 1 })
 		},
-		num: 204,
-		gen: 3
 	},
 	せいれいプレート: {
 		name: "せいれいプレート",
-		spritenum: 610,
-		onPlate: "Fairy",
+		spriteonPlate: "Fairy",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move && move.type === "Fairy") {
@@ -2557,13 +2217,10 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Fairy",
-		num: 644,
-		gen: 6
 	},
 	どくバリ: {
 		name: "どくバリ",
-		spritenum: 343,
-		fling: {
+		spritefling: {
 			basePower: 70,
 			status: "psn"
 		},
@@ -2573,60 +2230,46 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 245,
-		gen: 2
 	},
 	パワーアンクル: {
 		name: "パワーアンクル",
-		spritenum: 354,
-		ignoreKlutz: true,
+		spriteignoreKlutz: true,
 		fling: {
 			basePower: 70
 		},
 		onModifySpe(spe) {
 			return this.chainModify(0.5)
 		},
-		num: 293,
-		gen: 4
 	},
 	パワーバンド: {
 		name: "パワーバンド",
-		spritenum: 355,
-		ignoreKlutz: true,
+		spriteignoreKlutz: true,
 		fling: {
 			basePower: 70
 		},
 		onModifySpe(spe) {
 			return this.chainModify(0.5)
 		},
-		num: 292,
-		gen: 4
 	},
 	パワーベルト: {
 		name: "パワーベルト",
-		spritenum: 356,
-		ignoreKlutz: true,
+		spriteignoreKlutz: true,
 		fling: {
 			basePower: 70
 		},
 		onModifySpe(spe) {
 			return this.chainModify(0.5)
 		},
-		num: 290,
-		gen: 4
 	},
 	パワーリスト: {
 		name: "パワーリスト",
-		spritenum: 357,
-		ignoreKlutz: true,
+		spriteignoreKlutz: true,
 		fling: {
 			basePower: 70
 		},
 		onModifySpe(spe) {
 			return this.chainModify(0.5)
 		},
-		num: 289,
-		gen: 4
 	},
 	パワフルハーブ: {
 		onChargeMove(pokemon, target, move) {
@@ -2638,43 +2281,33 @@ const Items = {
 			}
 		},
 		name: "パワフルハーブ",
-		spritenum: 358,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
-		num: 271,
-		gen: 4
 	},
 	パワーレンズ: {
 		name: "パワーレンズ",
-		spritenum: 359,
-		ignoreKlutz: true,
+		spriteignoreKlutz: true,
 		fling: {
 			basePower: 70
 		},
 		onModifySpe(spe) {
 			return this.chainModify(0.5)
 		},
-		num: 291,
-		gen: 4
 	},
 	パワーウエイト: {
 		name: "パワーウエイト",
-		spritenum: 360,
-		ignoreKlutz: true,
+		spriteignoreKlutz: true,
 		fling: {
 			basePower: 70
 		},
 		onModifySpe(spe) {
 			return this.chainModify(0.5)
 		},
-		num: 294,
-		gen: 4
 	},
 	サイコシード: {
 		name: "サイコシード",
-		spritenum: 665,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onStart(pokemon) {
@@ -2690,13 +2323,10 @@ const Items = {
 		boosts: {
 			spd: 1
 		},
-		num: 882,
-		gen: 7
 	},
 	パンチグローブ: {
 		name: "パンチグローブ",
-		spritenum: 749,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onBasePowerPriority: 23,
@@ -2710,8 +2340,6 @@ const Items = {
 		onModifyMove(move) {
 			if (move.flags["punch"]) delete move.flags["contact"]
 		},
-		num: 1884,
-		gen: 9
 	},
 	せんせいのツメ: {
 		onFractionalPriorityPriority: -2,
@@ -2724,17 +2352,13 @@ const Items = {
 			}
 		},
 		name: "せんせいのツメ",
-		spritenum: 373,
-		fling: {
+		spritefling: {
 			basePower: 80
 		},
-		num: 217,
-		gen: 2
 	},
 	スピードパウダー: {
 		name: "スピードパウダー",
-		spritenum: 374,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onModifySpe(spe, pokemon) {
@@ -2743,14 +2367,11 @@ const Items = {
 			}
 		},
 		itemUser: ["Ditto"],
-		num: 274,
-		gen: 4,
 		isNonstandard: "Past"
 	},
 	チーゴのみ: {
 		name: "チーゴのみ",
-		spritenum: 381,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Grass"
@@ -2765,25 +2386,19 @@ const Items = {
 				pokemon.cureStatus()
 			}
 		},
-		num: 152,
-		gen: 3
 	},
 	するどいツメ: {
 		name: "するどいツメ",
-		spritenum: 382,
-		fling: {
+		spritefling: {
 			basePower: 80
 		},
 		onModifyCritRatio(critRatio) {
 			return critRatio + 1
 		},
-		num: 326,
-		gen: 4
 	},
 	するどいキバ: {
 		name: "するどいキバ",
-		spritenum: 383,
-		fling: {
+		spritefling: {
 			basePower: 30,
 			volatileStatus: "flinch"
 		},
@@ -2800,13 +2415,10 @@ const Items = {
 				})
 			}
 		},
-		num: 327,
-		gen: 4
 	},
 	レッドカード: {
 		name: "レッドカード",
-		spritenum: 387,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onAfterMoveSecondary(target, source, move) {
@@ -2834,13 +2446,10 @@ const Items = {
 				}
 			}
 		},
-		num: 542,
-		gen: 5
 	},
 	リンドのみ: {
 		name: "リンドのみ",
-		spritenum: 409,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Grass"
@@ -2861,23 +2470,17 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 187,
-		gen: 4
 	},
 	ねらいのまと: {
 		name: "ねらいのまと",
-		spritenum: 410,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onNegateImmunity: false,
-		num: 543,
-		gen: 5
 	},
 	ゴツゴツメット: {
 		name: "ゴツゴツメット",
-		spritenum: 417,
-		fling: {
+		spritefling: {
 			basePower: 60
 		},
 		onDamagingHitOrder: 2,
@@ -2886,13 +2489,10 @@ const Items = {
 				this.damage(source.baseMaxhp / 6, source, target)
 			}
 		},
-		num: 540,
-		gen: 5
 	},
 	ルームサービス: {
 		name: "ルームサービス",
-		spritenum: 717,
-		fling: {
+		spritefling: {
 			basePower: 100
 		},
 		onStart(pokemon) {
@@ -2909,13 +2509,10 @@ const Items = {
 		boosts: {
 			spe: -1
 		},
-		num: 1122,
-		gen: 8
 	},
 	ロゼルのみ: {
 		name: "ロゼルのみ",
-		spritenum: 603,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Fairy"
@@ -2936,13 +2533,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 686,
-		gen: 6
 	},
 	レンブのみ: {
 		name: "レンブのみ",
-		spritenum: 420,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Dark"
@@ -2964,13 +2558,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 212,
-		gen: 4
 	},
 	くちたたて: {
 		name: "くちたたて",
-		spritenum: 699,
-		onTakeItem(item, pokemon, source) {
+		spriteonTakeItem(item, pokemon, source) {
 			if (
 				(source && source.baseSpecies.num === 889) ||
 				pokemon.baseSpecies.num === 889
@@ -2980,13 +2571,10 @@ const Items = {
 			return true
 		},
 		itemUser: ["Zamazenta-Crowned"],
-		num: 1104,
-		gen: 8
 	},
 	くちたけん: {
 		name: "くちたけん",
-		spritenum: 698,
-		onTakeItem(item, pokemon, source) {
+		spriteonTakeItem(item, pokemon, source) {
 			if (
 				(source && source.baseSpecies.num === 888) ||
 				pokemon.baseSpecies.num === 888
@@ -2996,13 +2584,10 @@ const Items = {
 			return true
 		},
 		itemUser: ["Zacian-Crowned"],
-		num: 1103,
-		gen: 8
 	},
 	ぼうじんゴーグル: {
 		name: "ぼうじんゴーグル",
-		spritenum: 604,
-		fling: {
+		spritefling: {
 			basePower: 80
 		},
 		onImmunity(type, pokemon) {
@@ -3019,13 +2604,10 @@ const Items = {
 				return null
 			}
 		},
-		num: 650,
-		gen: 6
 	},
 	カムラのみ: {
 		name: "カムラのみ",
-		spritenum: 426,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Fighting"
@@ -3043,25 +2625,19 @@ const Items = {
 		onEat(pokemon) {
 			this.boost({ spe: 1 })
 		},
-		num: 203,
-		gen: 3
 	},
 	ピントレンズ: {
 		name: "ピントレンズ",
-		spritenum: 429,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onModifyCritRatio(critRatio) {
 			return critRatio + 1
 		},
-		num: 232,
-		gen: 2
 	},
 	するどいくちばし: {
 		name: "するどいくちばし",
-		spritenum: 436,
-		fling: {
+		spritefling: {
 			basePower: 50
 		},
 		onBasePowerPriority: 15,
@@ -3070,26 +2646,20 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 244,
-		gen: 2
 	},
 	きれいなぬけがら: {
 		name: "きれいなぬけがら",
-		spritenum: 437,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onTrapPokemonPriority: -10,
 		onTrapPokemon(pokemon) {
 			pokemon.trapped = pokemon.maybeTrapped = false
 		},
-		num: 295,
-		gen: 4
 	},
 	かいがらのすず: {
 		name: "かいがらのすず",
-		spritenum: 438,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onAfterMoveSecondarySelfPriority: -1,
@@ -3098,13 +2668,10 @@ const Items = {
 				this.heal(move.totalDamage / 8, pokemon)
 			}
 		},
-		num: 253,
-		gen: 3
 	},
 	シュカのみ: {
 		name: "シュカのみ",
-		spritenum: 443,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Ground"
@@ -3125,13 +2692,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 191,
-		gen: 4
 	},
 	シルクのスカーフ: {
 		name: "シルクのスカーフ",
-		spritenum: 444,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onBasePowerPriority: 15,
@@ -3140,13 +2704,10 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 251,
-		gen: 3
 	},
 	ぎんのこな: {
 		name: "ぎんのこな",
-		spritenum: 447,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onBasePowerPriority: 15,
@@ -3155,13 +2716,10 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 222,
-		gen: 2
 	},
 	オボンのみ: {
 		name: "オボンのみ",
-		spritenum: 448,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Psychic"
@@ -3186,13 +2744,10 @@ const Items = {
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp / 4)
 		},
-		num: 158,
-		gen: 3
 	},
 	あおぞらプレート: {
 		name: "あおぞらプレート",
-		spritenum: 450,
-		onPlate: "Flying",
+		spriteonPlate: "Flying",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === "Flying") {
@@ -3209,22 +2764,16 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Flying",
-		num: 306,
-		gen: 4
 	},
 	さらさらいわ: {
 		name: "さらさらいわ",
-		spritenum: 453,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
-		num: 283,
-		gen: 4
 	},
 	ゆきだま: {
 		name: "ゆきだま",
-		spritenum: 606,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onDamagingHit(damage, target, source, move) {
@@ -3235,13 +2784,10 @@ const Items = {
 		boosts: {
 			atk: 1
 		},
-		num: 649,
-		gen: 6
 	},
 	やわらかいすな: {
 		name: "やわらかいすな",
-		spritenum: 456,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onBasePowerPriority: 15,
@@ -3250,13 +2796,10 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 237,
-		gen: 2
 	},
 	のろいのおふだ: {
 		name: "のろいのおふだ",
-		spritenum: 461,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onBasePowerPriority: 15,
@@ -3265,13 +2808,10 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 247,
-		gen: 2
 	},
 	しずくプレート: {
 		name: "しずくプレート",
-		spritenum: 463,
-		onPlate: "Water",
+		spriteonPlate: "Water",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === "Water") {
@@ -3288,13 +2828,10 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Water",
-		num: 299,
-		gen: 4
 	},
 	もののけプレート: {
 		name: "もののけプレート",
-		spritenum: 464,
-		onPlate: "Ghost",
+		spriteonPlate: "Ghost",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === "Ghost") {
@@ -3311,13 +2848,10 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Ghost",
-		num: 310,
-		gen: 4
 	},
 	スターのみ: {
 		name: "スターのみ",
-		spritenum: 472,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 100,
 			type: "Psychic"
@@ -3351,13 +2885,10 @@ const Items = {
 				this.boost(boost)
 			}
 		},
-		num: 207,
-		gen: 3
 	},
 	くっつきバリ: {
 		name: "くっつきバリ",
-		spritenum: 476,
-		fling: {
+		spritefling: {
 			basePower: 80
 		},
 		onResidualOrder: 28,
@@ -3379,13 +2910,10 @@ const Items = {
 				// no message for くっつきバリ changing hands
 			}
 		},
-		num: 288,
-		gen: 4
 	},
 	がんせきプレート: {
 		name: "がんせきプレート",
-		spritenum: 477,
-		onPlate: "Rock",
+		spriteonPlate: "Rock",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === "Rock") {
@@ -3402,13 +2930,10 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Rock",
-		num: 309,
-		gen: 4
 	},
 	タンガのみ: {
 		name: "タンガのみ",
-		spritenum: 487,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Bug"
@@ -3429,22 +2954,16 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 194,
-		gen: 4
 	},
 	グランドコート: {
 		name: "グランドコート",
-		spritenum: 662,
-		fling: {
+		spritefling: {
 			basePower: 60
 		},
-		num: 879,
-		gen: 7
 	},
 	のどスプレー: {
 		name: "のどスプレー",
-		spritenum: 713,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onAfterMoveSecondarySelf(target, source, move) {
@@ -3455,13 +2974,10 @@ const Items = {
 		boosts: {
 			spa: 1
 		},
-		num: 1118,
-		gen: 8
 	},
 	どくどくだま: {
 		name: "どくどくだま",
-		spritenum: 515,
-		fling: {
+		spritefling: {
 			basePower: 30,
 			status: "tox"
 		},
@@ -3470,13 +2986,10 @@ const Items = {
 		onResidual(pokemon) {
 			pokemon.trySetStatus("tox", pokemon)
 		},
-		num: 272,
-		gen: 4
 	},
 	もうどくプレート: {
 		name: "もうどくプレート",
-		spritenum: 516,
-		onPlate: "Poison",
+		spriteonPlate: "Poison",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === "Poison") {
@@ -3493,13 +3006,10 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Poison",
-		num: 304,
-		gen: 4
 	},
 	まがったスプーン: {
 		name: "まがったスプーン",
-		spritenum: 520,
-		fling: {
+		spritefling: {
 			basePower: 30
 		},
 		onBasePowerPriority: 15,
@@ -3508,13 +3018,10 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 248,
-		gen: 2
 	},
 	ばんのうがさ: {
 		name: "ばんのうがさ",
-		spritenum: 718,
-		fling: {
+		spritefling: {
 			basePower: 60
 		},
 		// Partially implemented in Pokemon.effectiveWeather() in sim/pokemon.ts
@@ -3549,13 +3056,10 @@ const Items = {
 			}
 			this.effectState.inactive = true
 		},
-		num: 1123,
-		gen: 8
 	},
 	ソクノのみ: {
 		name: "ソクノのみ",
-		spritenum: 526,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Electric"
@@ -3575,13 +3079,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 186,
-		gen: 4
 	},
 	じゃくてんほけん: {
 		name: "じゃくてんほけん",
-		spritenum: 609,
-		fling: {
+		spritefling: {
 			basePower: 80
 		},
 		onDamagingHit(damage, target, source, move) {
@@ -3597,13 +3098,10 @@ const Items = {
 			atk: 2,
 			spa: 2
 		},
-		num: 639,
-		gen: 6
 	},
 	いどのめん: {
 		name: "いどのめん",
-		spritenum: 759,
-		fling: {
+		spritefling: {
 			basePower: 60
 		},
 		onBasePowerPriority: 15,
@@ -3618,13 +3116,10 @@ const Items = {
 		},
 		forcedForme: "Ogerpon-Wellspring",
 		itemUser: ["Ogerpon-Wellspring"],
-		num: 2407,
-		gen: 9
 	},
 	しろいハーブ: {
 		name: "しろいハーブ",
-		spritenum: 535,
-		fling: {
+		spritefling: {
 			basePower: 10,
 			effect(pokemon) {
 				let activate = false
@@ -3657,13 +3152,10 @@ const Items = {
 				this.add("-clearnegativeboost", pokemon, "[silent]")
 			}
 		},
-		num: 214,
-		gen: 3
 	},
 	こうかくレンズ: {
 		name: "こうかくレンズ",
-		spritenum: 537,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onSourceModifyAccuracyPriority: -2,
@@ -3672,13 +3164,10 @@ const Items = {
 				return this.chainModify([4505, 4096])
 			}
 		},
-		num: 265,
-		gen: 4
 	},
 	ウイのみ: {
 		name: "ウイのみ",
-		spritenum: 538,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Rock"
@@ -3711,13 +3200,10 @@ const Items = {
 				pokemon.addVolatile("confusion")
 			}
 		},
-		num: 160,
-		gen: 3
 	},
 	ものしりメガネ: {
 		name: "ものしりメガネ",
-		spritenum: 539,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onBasePowerPriority: 16,
@@ -3726,13 +3212,10 @@ const Items = {
 				return this.chainModify([4505, 4096])
 			}
 		},
-		num: 267,
-		gen: 4
 	},
 	ヤチェのみ: {
 		name: "ヤチェのみ",
-		spritenum: 567,
-		isBerry: true,
+		spriteisBerry: true,
 		naturalGift: {
 			basePower: 80,
 			type: "Ice"
@@ -3753,13 +3236,10 @@ const Items = {
 			}
 		},
 		onEat() { },
-		num: 188,
-		gen: 4
 	},
 	いかずちプレート: {
 		name: "いかずちプレート",
-		spritenum: 572,
-		onPlate: "Electric",
+		spriteonPlate: "Electric",
 		onBasePowerPriority: 15,
 		onBasePower(basePower, user, target, move) {
 			if (move.type === "Electric") {
@@ -3776,13 +3256,10 @@ const Items = {
 			return true
 		},
 		forcedForme: "Arceus-Electric",
-		num: 300,
-		gen: 4
 	},
 	フォーカスレンズ: {
 		name: "フォーカスレンズ",
-		spritenum: 574,
-		fling: {
+		spritefling: {
 			basePower: 10
 		},
 		onSourceModifyAccuracyPriority: -2,
@@ -3792,7 +3269,5 @@ const Items = {
 				return this.chainModify([4915, 4096])
 			}
 		},
-		num: 276,
-		gen: 4
 	},
 }
