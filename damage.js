@@ -9,7 +9,7 @@ const damage = (
 ) => {
 
     //初期化
-    kougeki_types = attacker.type.includes("・") ? attacker.type.split("・") : [attacker.type]
+    kougeki_types = attacker.type
     power = attacker.attack
     tokukou = attacker.tokukou
     power_rank = attacker.rank?.["こうげき"]
@@ -17,7 +17,7 @@ const damage = (
     meityu_rank = attacker.rank?.["めいちゅう"]
     kougeki_hosei = 4096
 
-    defender_types = defender.type.includes("・") ? defender.type.split("・") : [defender.type]
+    defender_types = defender.type
     bougyo_first = defender.defense
     tokubou = defender.tokubou
     bougyo_rank_first = defender.rank?.["ぼうぎょ"]
