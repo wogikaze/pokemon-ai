@@ -9,31 +9,35 @@ const damage = (
 ) => {
 
     //初期化
-    kougeki_types = attacker[0].includes("・") ? attacker[0].split("・") : [attacker[0]]
-    power = attacker[2]
-    tokukou = attacker[4]
-    power_rank = attacker[13]?.["こうげき"]
-    tokukou_rank = attacker[13]?.["とくこう"]
-    meityu_rank = attacker[13]?.["めいちゅう"]
+    kougeki_types = attacker.type
+    power = attacker.attack
+    tokukou = attacker.tokukou
+    power_rank = attacker.rank?.["こうげき"]
+    tokukou_rank = attacker.rank?.["とくこう"]
+    meityu_rank = attacker.rank?.["めいちゅう"]
     kougeki_hosei = 4096
 
-    defender_types = defender[0].includes("・") ? defender[0].split("・") : [defender[0]]
-    bougyo_first = defender[3]
-    tokubou = defender[5]
-    bougyo_rank_first = defender[13]?.["ぼうぎょ"]
-    tokubou_rank_first = defender[13]?.["とくぼう"]
-    kaihi_rank = defender[13]?.["かいひ"]
+    defender_types = defender.type
+    bougyo_first = defender.defense
+    tokubou = defender.tokubou
+    bougyo_rank_first = defender.rank?.["ぼうぎょ"]
+    tokubou_rank_first = defender.rank?.["とくぼう"]
+    kaihi_rank = defender.rank?.["かいひ"]
     bougyo_hosei = 4096
 
-    skill_type = skills[skill][0]
-    skill_category = skills[skill][1]
-    skill_power = skills[skill][2]
-    skill_sessyoku = skills[skill][5]
+    const skills = getSkill(skill)
+    skill_type = skills.type
+    skill_category = skills.category
+    skill_power = skills.power
+    skill_sessyoku = skills.direct
     skill_hosei = 4096
 
     var phaze = "damage"
     const level = 50                // 攻撃者レベル(50固定)
 
+    // 特性判定(仮)
+    activateTokusei(attacker, defender, "calc_damage")
+    
     // 下準備
     let isphysic = skill_category == "物理"
     let kougeki = isphysic ? power : tokukou
@@ -48,8 +52,7 @@ const damage = (
         return rate
     })
     let vital_rank = 0
-    if (skill_effects[skill]?.phaze !== undefined) eval(skill_effects[skill].phaze)
-    if (check_hit(skills[skill][3], meityu_rank, kaihi_rank) === false) {
+    if (check_hit(skills.hit, meityu_rank, kaihi_rank) === false) {
         document.getElementById("output").innerText += "命中失敗："
         return 0
     }
@@ -71,14 +74,14 @@ const damage = (
         // テラスタイプと技のタイプが同じで60未満の場合は60にする(一部の技を除く)
     })
     let forth = (() => {
-        let damage_temp = Math.floor(kougeki * hit_rate[kougeki_rank + 6])
+        let damage_temp = Math.floor(kougeki * damage_rank[kougeki_rank + 6])
         // 特性：はりきりx1.5
         damage_temp = roundHalfUpOrDown(damage_temp * kougeki_hosei / 4096)
         if (damage_temp < 1) damage_temp = 1
         return damage_temp
     })
     let sixth = (() => {
-        let bougyo_temp = Math.floor(bougyo * hit_rate[bougyo_rank + 6])
+        let bougyo_temp = Math.floor(bougyo * damage_rank[bougyo_rank + 6])
         // 場の状態：すなあらし(いわ)/ゆき(こおり)で1.5倍
         bougyo_temp = roundHalfUpOrDown(bougyo_temp * bougyo_hosei / 4096)
         if (bougyo_temp < 1) bougyo_temp = 1
