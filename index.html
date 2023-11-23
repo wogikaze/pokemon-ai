@@ -18,8 +18,9 @@
 <body>
     <div id="main">
         <h1>Pokemon-AI</h1>
-        <h2 class="flex">パーティーの設定</h2>
-        <div id="settings">
+        <h2 class="flex" id="pagetitle">パーティーの設定</h2>
+
+        <div id="settings" style="display: block;">
             <h3 class="flex">パーティー構成</h3>
             <div class="flex">
                 <div class="selectpoke" id="user_select">
@@ -85,42 +86,41 @@
             </div>
         </div>
 
-        <h2 class="flex">ポケモンの設定</h2>
-        <div id="pokemon_info">
-            <div class="flex">
-                <div id="user_name">
-                    ユーザーのポケモン名
+        <div id="buttle" style="display: none;">
+            <h3 class="flex">ポケモンの設定</h3>
+            <div id="pokemon_info">
+                <div class="flex">
+                    <div id="user_name">
+                        ユーザーのポケモン名
+                    </div>
+                    <div id="enemy_name">
+                        相手のポケモン名
+                    </div>
                 </div>
-                <div id="enemy_name">
-                    相手のポケモン名
+                <div class="flex">
+                    <div>
+                        <select id="user_skill">
+    
+                        </select>
+                        <input type="checkbox" id="user_change"><label for="user_change">交代</label>
+                    </div>
+                    <div>
+                        <select id="enemy_skill">
+                        </select>
+                        <input type="checkbox" id="enemy_change"><label for="enemy_change">交代</label>
+                    </div>
+                </div>
+                <div class="flex">
+                    自分のHP：<div id="user_hp"> </div>
+                    相手のHP：<div id="enemy_hp"> </div>
                 </div>
             </div>
-            <div class="flex">
-                <div>
-                    <select id="user_skill">
-
-                    </select>
-                    <input type="checkbox" id="user_change"><label for="user_change">交代</label>
-                </div>
-                <div>
-                    <select id="enemy_skill">
-                    </select>
-                    <input type="checkbox" id="enemy_change"><label for="enemy_change">交代</label>
-                </div>
+            <h3>操作</h3>
+            <div>
+                <input type="checkbox" id="fix-random" name="fix-random">
+                <label for="fix-random">ダメージの最大値と最小値も表示する(HPの計算をしない)</label>
             </div>
-            <div class="flex">
-                自分のHP：<div id="user_hp"> </div>
-                相手のHP：<div id="enemy_hp"> </div>
-            </div>
-        </div>
-
-        <h2 class="flex">バトル</h2>
-        <div id="buttle">
             <button id="run" disabled>ターンを進める</button>
-
-            <input type="checkbox" id="fix-random" name="fix-random">
-            <label for="fix-random">ダメージの最大値と最小値も表示する(HPの計算をしない)</label>
-            <br>
             <div id="output">
             </div>
             <div id="turn">

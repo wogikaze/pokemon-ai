@@ -14,6 +14,9 @@ window.onload = (e) => {
     const u_hp = getElement("user_hp");
     const e_hp = getElement("enemy_hp");
     const output = getElement("output");
+    const settings = getElement("settings");
+    const buttle = getElement("buttle");
+    const pagetitle = getElement("pagetitle");
     var u_names
     var e_names
 
@@ -108,11 +111,14 @@ window.onload = (e) => {
             alert("どちらも3体のポケモンを選んでください");
             return
         }
-        e_select.forEach(element => { element.disabled = true });
-        u_select.forEach(element => { element.disabled = true });
-        fix_select.disabled = true;
-        u_switch.disabled = true;
-        e_switch.disabled = true;
+        // e_select.forEach(element => { element.disabled = true });
+        // u_select.forEach(element => { element.disabled = true });
+        // fix_select.disabled = true;
+        // u_switch.disabled = true;
+        // e_switch.disabled = true;
+        settings.style.display = "none";
+        buttle.style.display = "block";
+        pagetitle.innerText = "バトル";
         run.disabled = false
 
         u_name = u_switch.value
