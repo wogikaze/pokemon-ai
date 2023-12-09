@@ -76,7 +76,8 @@ const init_rank: IRank = {
 }
 
 
-export const pokemonMap: { [key: string]: Pokemon } = {
+export const pokemonMap: { 
+    [key: string]: Pokemon } = {
     "カイリュー": new Pokemon(
         "",
         "カイリュー",

@@ -2,9 +2,11 @@ import { Pokedex } from "data/Pokedex";
 import { pokemonMap } from "./data/pokemon";
 
 const getElement = (id: string) => document.getElementById(id) as HTMLElement;
+const getInput = (id: string) => document.getElementById(id) as HTMLInputElement;
+// 開発用グローバル変数
 declare global {
   interface Window {
-    run: HTMLElement | null;
+    run_turn: HTMLElement | null;
     fix_select: HTMLElement | null;
     u_skill: HTMLElement | null;
     e_skill: HTMLElement | null;
@@ -21,44 +23,55 @@ declare global {
   }
 }
 const isDevelop = true; //TODO: 外す
-if (isDevelop) {
-  window.run = getElement("run");
-  window.fix_select = getElement("selectpokemon");
-  window.u_skill = getElement("user_skill");
-  window.e_skill = getElement("enemy_skill");
-  window.u_select = getElement("user_select");
-  window.e_select = getElement("enemy_select");
-  window.u_switch = getElement(`user_switch`) as HTMLSelectElement;
-  window.e_switch = getElement(`enemy_switch`) as HTMLSelectElement;
-  window.u_change = getElement("user_change") as HTMLInputElement;
-  window.e_change = getElement("enemy_change") as HTMLInputElement;
-  window.output = getElement("output");
-  window.settings = getElement("settings");
-  window.buttle = getElement("buttle");
-  window.pagetitle = getElement("pagetitle");
-}
-const run = getElement("run");
-const fix_select = getElement("selectpokemon");
-const u_skill = getElement("user_skill");
-const e_skill = getElement("enemy_skill");
+
+const run_turn = getElement("run_turn") as HTMLButtonElement;
+const fix_select = getElement("selectpokemon") as HTMLButtonElement;
+const u_skill = getElement("user_skill") as HTMLSelectElement;
+const e_skill = getElement("enemy_skill") as HTMLSelectElement;
 const u_select = getElement("user_select");
 const e_select = getElement("enemy_select");
 const u_switch = getElement(`user_switch`) as HTMLSelectElement;
 const e_switch = getElement(`enemy_switch`) as HTMLSelectElement;
-const u_change = getElement("user_change") as HTMLInputElement;
-const e_change = getElement("enemy_change") as HTMLInputElement;
-const output = getElement("output");
+const u_change = getInput("user_change");
+const e_change = getInput("enemy_change");
+const output_ele = getElement("output");
 const settings = getElement("settings");
 const buttle = getElement("buttle");
 const pagetitle = getElement("pagetitle");
+// 開発用グローバル変数
+if (isDevelop) {
+  window.run_turn = run_turn;
+  window.fix_select = fix_select;
+  window.u_skill = u_skill;
+  window.e_skill = e_skill;
+  window.u_select = u_select;
+  window.e_select = e_select;
+  window.u_switch = u_switch;
+  window.e_switch = e_switch;
+  window.u_change = u_change;
+  window.e_change = e_change;
+  window.output = output_ele;
+  window.settings = settings;
+  window.buttle = buttle;
+  window.pagetitle = pagetitle;
+}
 
-/* 4体選択の作成 */
-u_select.innerHTML = make_select_box(Object.keys(pokemonMap));
-e_select.innerHTML = make_select_box(Object.keys(pokemonMap));
-
+// 3体選択の作成
+u_select.innerHTML = make_select_box(Object.keys(pokemonMap), [0, 1, 2]);
+e_select.innerHTML = make_select_box(Object.keys(pokemonMap), [3, 4, 5]);
+function make_select_box(names: string[], index: number[]) {
+  // create html array of options as `<label><input type="checkbox">カイリュー</label><br>`
+  let html = "";
+  for (let i = 0; i < names.length; i++) {
+    if (isDevelop && index.some((e) => e == i))
+      html += `<label><input type="checkbox" name=${names[i]} checked>${names[i]}</label><br>`;
+    else html += `<label><input type="checkbox" name=${names[i]}>${names[i]}</label><br>`;
+  }
+  return html;
+}
 /* 場に出すポケモンの選択更新 */
-const update_poke_slects = (select: string) => {
-  const pokemon = getElement("user_select").querySelectorAll("input");
+function update_poke_slects(select: string) {
+  const pokemon = getElement(`${select}_select`).querySelectorAll("input");
   const selects = getElement(`${select}_switch`);
   selects.innerHTML = "";
   pokemon.forEach((inputElement) => {
@@ -69,32 +82,20 @@ const update_poke_slects = (select: string) => {
       selects.appendChild(option);
     }
   });
-};
+}
 update_poke_slects("user");
 update_poke_slects("enemy");
-
+// 選ばれたポケモンが変更されたとき
 u_select.addEventListener("change", () => update_poke_slects("user"));
 e_select.addEventListener("change", () => update_poke_slects("enemy"));
-
-function make_select_box(names: string[]) {
-  // create html array of options as `<label><input type="checkbox">カイリュー</label><br>`
-  let html = "";
-  for (let i = 0; i < names.length; i++) {
-    html += `<label><input type="checkbox">${names[i]}</label><br>`;
-    if (isDevelop && i == 2) {
-      html = html.replace(/checkbox/g, 'checkbox" checked="true"');
-    }
-  }
-  return html;
-}
-
+// パーティーを固定
 fix_select.addEventListener("click", () => {
   if (u_select.querySelectorAll("input:checked").length !== 3) {
     alert("3体選べ");
   } else if (e_select.querySelectorAll("input:checked").length !== 3) {
     alert("3体選べ");
   } else {
-    settings.style.display = "none";
+    if (!isDevelop) settings.style.display = "none";
     // ポケモンの名前表示
     set_pokemon_name(u_switch.value, "user");
     set_pokemon_name(e_switch.value, "enemy");
@@ -104,6 +105,14 @@ fix_select.addEventListener("click", () => {
     // ステータス表示
     set_hp(pokemonMap[u_switch.value].hp, "user");
     set_hp(pokemonMap[e_switch.value].hp, "enemy");
+    set_maxhp(pokemonMap[u_switch.value].hp, "user");
+    set_maxhp(pokemonMap[e_switch.value].hp, "enemy");
+    // ターンを進めるボタンの有効化
+    run_turn.disabled = false;
+    // 交代ボタンの有効化
+    u_change.disabled = false;
+    e_change.disabled = false;
+    fix_select.disabled = true
   }
 });
 
@@ -155,12 +164,52 @@ function set_hp(hp: number, side: string) {
     e_hp.textContent = hp.toString();
   }
 }
-// 交代ボタンの動作
-u_change.addEventListener("click", () => {
-  if (u_change.checked) {
-    // set_skill_select(pokemonMap[u_name].moves, "user");
+function set_maxhp(hp: number, side: string) {
+  const u_maxhp = getElement("user_maxhp");
+  const e_maxhp = getElement("enemy_maxhp");
+  if (side == "user") {
+    u_maxhp.textContent = hp.toString();
   } else {
-    // set_skill_select(pokemonMap[u_name].moves, "user");
+    e_maxhp.textContent = hp.toString();
   }
+}
+// 交代ボタンの動作
+function update_move_select(side: string) {
+  const name = getElement(`${side}_name`).textContent as string;
+  if (getInput(`${side}_change`).checked) {
+    const poke_names = Array.from(getElement(`${side}_select`).querySelectorAll("input:checked"))
+      .map((element) => element as HTMLSelectElement)
+      .map((e) => (e.labels[0].textContent ? e.labels[0].textContent : ""))
+      .filter((e) => e !== name);
+    set_skill_select(poke_names, side);
+  } else {
+    set_skill_select(pokemonMap[name].moves, side);
+  }
+}
+u_change.addEventListener("click", () => update_move_select("user"));
+e_change.addEventListener("click", () => update_move_select("enemy"));
+// ターンを進めるボタンの動作
+run_turn.addEventListener("click", () => {
+  const is_u_change = u_change.checked;
+  const is_e_change = e_change.checked;
+  console.log(is_u_change, is_e_change);
+  is_u_change && change_pokemon(u_skill.value, "user");
+  is_e_change && change_pokemon(e_skill.value, "enemy");
 });
-e_change.addEventListener("click", () => {});
+// 交代の処理
+function change_pokemon(name: string, side: string) {
+  const oldpokemon_name = getElement(`${side}_name`);
+  add_output(`(${side})${oldpokemon_name.textContent}が${name}に交代した`); // 出力の表示
+  oldpokemon_name.textContent = name; // 名前の表示更新
+  set_skill_select(pokemonMap[name].moves, side);
+  getInput(`${side}_change`).checked = false;
+  set_maxhp(pokemonMap[name].hp, side);
+}
+
+// アウトプットの表示
+function add_output(output: string, turn?: number) {
+  if (turn && turn > 0) {
+    output_ele.innerHTML += `<div class="turn">ターン:${turn}</div>`;
+  }
+  output_ele.innerHTML += `<div>ターン:${output}</div>`;
+}

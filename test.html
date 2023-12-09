@@ -57,16 +57,20 @@
                 <div class="flex">
                     <div>
                         <select id="user_skill"> </select>
-                        <label><input type="checkbox" id="user_change">交代</label>
+                        <label><input type="checkbox" id="user_change" disabled>交代</label>
                     </div>
                     <div>
                         <select id="enemy_skill"> </select>
-                        <label><input type="checkbox" id="enemy_change">交代</label>
+                        <label><input type="checkbox" id="enemy_change" disabled>交代</label>
                     </div>
                 </div>
+                <div class="flex show_hp">
+                    <div>HP：<span id="user_hp"></span>/<span id="user_maxhp"></span></div>
+                    <div>HP：<span id="enemy_hp"></span>/<span id="enemy_maxhp"></span></div>
+                </div>
                 <div class="flex">
-                    自分のHP：<div id="user_hp"> </div>
-                    相手のHP：<div id="enemy_hp"> </div>
+                    <div>状態：<span id="user_effect"></span></div>
+                    <div>状態：<span id="enemy_effect"></span></div>
                 </div>
             </div>
             <h3>操作</h3>
@@ -75,12 +79,9 @@
                     ダメージの最大値と最小値も表示する(HPの計算をしない)
                 </label>
             </div>
-            <div id="output">
-            </div>
-            <div id="turn">
-            </div>
+            <div id="output"></div>
             <div class="right">
-                <button id="run" disabled>ターンを進める</button>
+                <button id="run_turn" disabled>ターンを進める</button>
             </div>
         </div>
     </div>
