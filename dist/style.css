@@ -46,7 +46,7 @@ label:hover {
     color: gray;
 }
 
-input:checked+label::before {
+label:has(input:checked)::before {
     content: "✓";
 }
 
@@ -55,11 +55,12 @@ input {
 }
 
 .selectpoke {
+    min-width: 250px;
     border: 1px solid gray;
     padding: 4px;
     background-color: white;
     max-height: 200px;
-    overflow: scroll;
+    overflow-y: auto;
     margin: 10px;
     box-shadow: 1px 1px 1px 1px white;
 }
@@ -144,7 +145,7 @@ hr {
 button,
 select {
     background: linear-gradient(180deg, rgb(237, 237, 237) 30%, rgb(193, 193, 193) 70%, rgb(239, 239, 239) 100%);
-    font-size: 60%;
+    font-size: 75%;
     padding: 3px;
     border: 1px solid gray;
     border-radius: 4px;

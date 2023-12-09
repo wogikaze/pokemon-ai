@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
-        "target": "esnext",
-        "module": "commonjs",
+        "sourceMap": true,
+        "target": "ES5",
+        "module": "ES2015",
         "baseUrl": "./src",
         "outDir": "dist",
         "strict": true,
@@ -10,7 +11,8 @@
         "noImplicitOverride": true,
         "noImplicitReturns": true,
         "noPropertyAccessFromIndexSignature": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "moduleResolution": "node"
     },
     "include": [
         "src"
