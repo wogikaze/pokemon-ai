@@ -79,15 +79,17 @@ select {
   user-select: text;
   overflow-y: scroll;
   min-height: 200px;
-  width: 80%;
-  margin: 10px;
-  padding: 5px;
+  width: 100%;
+  padding: 0 5px 5px 5px;
   border-radius: 1px;
 }
 
 .turn {
   margin-top: 10px;
   border-top: solid 2px #aeaeae;
+}
+.turn:first-child {
+  margin-top: 0;
 }
 
 #output::-webkit-scrollbar {

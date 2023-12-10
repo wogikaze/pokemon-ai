@@ -2,7 +2,6 @@
   "name": "pokemon-ai-fork",
   "version": "1.0.0",
   "description": "ポケモン対戦においてよりよい選択をするためのAIを作成する",
-  "main": "index.js",
   "scripts": {
     "build": "webpack",
     "watch": "webpack -w"
