@@ -1,6 +1,8 @@
-import { add_output, set_pokemon_name } from "./gui";
-add_output("");
+import { addOutput, setPokemoName } from "./gui";
+addOutput("");
 
-export function run_turn() {
-
+export function runEvent(user_move: string, enemy_move: string, isUserChange: boolean, isEnemyChange: boolean) {
+  console.log(user_move, enemy_move, isUserChange, isEnemyChange);
+  addOutput(`(user)${user_move}`);
+  addOutput(`(enemy)${enemy_move}`);
 }
