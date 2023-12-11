@@ -1,6 +1,5 @@
 import { runEvent } from "./main";
 import { pokemonMap } from "./data/pokemon";
-import { Moves } from "./data/Movedetx";
 
 const getElement = (id: string) => document.getElementById(id) as HTMLElement;
 const getInput = (id: string) => document.getElementById(id) as HTMLInputElement;
@@ -102,8 +101,8 @@ fix_select.addEventListener("click", () => {
     setPokemoName(u_switch.value, "user");
     setPokemoName(e_switch.value, "enemy");
     // 技選択表示
-    setSkillSelect(pokemonMap[u_switch.value].moves, Moves., "user");
-    setSkillSelect(pokemonMap[e_switch.value].moves, "enemy");
+    setSkillSelect(pokemonMap[u_switch.value].moves, [1], "user");
+    setSkillSelect(pokemonMap[e_switch.value].moves, [1], "enemy");
     // ステータス表示
     setHp(pokemonMap[u_switch.value].hp, "user");
     setHp(pokemonMap[e_switch.value].hp, "enemy");
@@ -183,9 +182,9 @@ function updateMoveSelect(side: string) {
       .map((element) => element as HTMLSelectElement)
       .map((e) => (e.labels[0].textContent ? e.labels[0].textContent : ""))
       .filter((e) => e !== name);
-    setSkillSelect(poke_names, side);
+    setSkillSelect(poke_names, [1], side);
   } else {
-    setSkillSelect(pokemonMap[name].moves, side);
+    setSkillSelect(pokemonMap[name].moves, [1], side);
   }
 }
 u_change.addEventListener("click", () => updateMoveSelect("user"));
