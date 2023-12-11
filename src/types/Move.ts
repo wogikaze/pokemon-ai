@@ -1,4 +1,5 @@
 import { Battle } from "./Battle";
+import { Condition } from "./Conditoin";
 import { Field } from "./Field";
 import { Pokemon } from "./Pokemon";
 

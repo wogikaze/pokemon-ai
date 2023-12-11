@@ -12,7 +12,7 @@ interface IRank {
     [key: string]: number;
 }
 
-class Pokemon {
+export class Pokemon {
     name: string;
     species: string;
     gender: string;
@@ -28,7 +28,6 @@ class Pokemon {
     ability: string;
     moves: string[];
     rank: IRank;
-
     constructor(
         name: string,
         species: string,
@@ -43,7 +42,7 @@ class Pokemon {
         this.species = species;
         this.gender = gender;
         // this.type = Pokedex[species].types; // Assuming Pokedex is a predefined object
-        this.type = []; //todo
+        this.type = Pokedex[species].types
         this.hp = evs.hp;
         this.attack = evs.atk;
         this.defense = evs.def;

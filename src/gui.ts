@@ -1,4 +1,4 @@
-import { runEvent } from "./main";
+import { runEvent, setPokemonName, setPokemonTeam } from "./main";
 import { pokemonMap } from "./data/pokemon";
 
 const getElement = (id: string) => document.getElementById(id) as HTMLElement;
@@ -91,9 +91,11 @@ u_select.addEventListener("change", () => updatePokeSlects("user"));
 e_select.addEventListener("change", () => updatePokeSlects("enemy"));
 // パーティーを固定
 fix_select.addEventListener("click", () => {
-  if (u_select.querySelectorAll("input:checked").length !== 3) {
+  const u_checked = u_select.querySelectorAll("input:checked") as NodeListOf<HTMLInputElement>;
+  const e_checked = e_select.querySelectorAll("input:checked") as NodeListOf<HTMLInputElement>;
+  if (u_checked.length !== 3) {
     alert("3体選べ");
-  } else if (e_select.querySelectorAll("input:checked").length !== 3) {
+  } else if (e_checked.length !== 3) {
     alert("3体選べ");
   } else {
     if (!isDevelop) settings.style.display = "none";
@@ -101,8 +103,8 @@ fix_select.addEventListener("click", () => {
     setPokemoName(u_switch.value, "user");
     setPokemoName(e_switch.value, "enemy");
     // 技選択表示
-    setSkillSelect(pokemonMap[u_switch.value].moves, [1], "user");
-    setSkillSelect(pokemonMap[e_switch.value].moves, [1], "enemy");
+    setSkillSelect(pokemonMap[u_switch.value].moves, "user", [1, 1, 1, 1]); //todo after:movedex
+    setSkillSelect(pokemonMap[e_switch.value].moves, "enemy", [1, 1, 1, 1]);
     // ステータス表示
     setHp(pokemonMap[u_switch.value].hp, "user");
     setHp(pokemonMap[e_switch.value].hp, "enemy");
@@ -114,6 +116,12 @@ fix_select.addEventListener("click", () => {
     u_change.disabled = false;
     e_change.disabled = false;
     fix_select.disabled = true;
+    // (main)
+    const u_poke_names = Array.from(u_checked).map((e) => e.name);
+    const e_poke_names = Array.from(e_checked).map((e) => e.name);
+    setPokemonTeam(u_poke_names, e_poke_names);
+    setPokemonName(u_switch.value, "user");
+    setPokemonName(e_switch.value, "enemy");
   }
 });
 
@@ -121,22 +129,22 @@ export function setPokemoName(name: string, side: string) {
   const name_div = getElement(`${side}_name`);
   name_div.textContent = name;
 }
-function setSkillSelect(skills: string[], pp: number[], side: string) {
+function setSkillSelect(skills: string[], side: string, pp?: number[]) {
   const update_user = () => {
     u_skill.innerHTML = "";
-    skills.forEach(function (skill) {
+    skills.forEach(function (skill, i) {
       var option = document.createElement("option");
       option.value = skill;
-      option.textContent = skill;
+      option.textContent = pp ? `${skill} ${pp?.[i]}/${pp?.[i]}` : skill;
       u_skill.appendChild(option);
     });
   };
   const update_enemy = () => {
     e_skill.innerHTML = "";
-    skills.forEach(function (skill) {
+    skills.forEach(function (skill, i) {
       var option = document.createElement("option");
       option.value = skill;
-      option.textContent = skill;
+      option.textContent = pp ? `${skill} ${pp?.[i]}/${pp?.[i]}` : skill;
       e_skill.appendChild(option);
     });
   };
@@ -182,9 +190,9 @@ function updateMoveSelect(side: string) {
       .map((element) => element as HTMLSelectElement)
       .map((e) => (e.labels[0].textContent ? e.labels[0].textContent : ""))
       .filter((e) => e !== name);
-    setSkillSelect(poke_names, [1], side);
+    setSkillSelect(poke_names, side);
   } else {
-    setSkillSelect(pokemonMap[name].moves, [1], side);
+    setSkillSelect(pokemonMap[name].moves, side);
   }
 }
 u_change.addEventListener("click", () => updateMoveSelect("user"));
@@ -197,16 +205,19 @@ run_turn.addEventListener("click", () => {
   const enemyEvent = e_skill.value;
   const isUserChange = u_change.checked;
   const isEnemyChange = e_change.checked;
+  isUserChange && changePokemon(userEvent, pokemonMap[userEvent].moves, "user");
+  isEnemyChange && changePokemon(enemyEvent, pokemonMap[enemyEvent].moves, "enemy");
   runEvent(userEvent, enemyEvent, isUserChange, isEnemyChange);
 });
 // 交代の処理
-export function changePokemon(name: string, moves: string[], pp: number[], side: string) {
+export function changePokemon(name: string, moves: string[], side: string, pp?: number[]) {
   const oldpokemon_name = getElement(`${side}_name`);
   addOutput(`(${side})${oldpokemon_name.textContent}が${name}に交代した`); // 出力の表示
   oldpokemon_name.textContent = name; // 名前の表示更新
-  setSkillSelect(moves, pp, side);
+  pp ? setSkillSelect(moves, side, pp) : setSkillSelect(moves, side);
   getInput(`${side}_change`).checked = false;
   setMaxhp(pokemonMap[name].hp, side);
+  setPokemonName(name, side);
 }
 
 // アウトプットの表示

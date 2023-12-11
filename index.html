@@ -4,15 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <title>Pokmon-AI</title>
-    <script src="source/items.js"></script>
-    <script src="source/pokemon_pre.js"></script><!--仮でタイプをここから借りている-->
-    <script src="source/pokemon.js"></script>
-    <script src="source/skills.js"></script>
-    <script src="source/tokusei.js"></script>
-    <script src="damage.js"></script>
-    <script src="main.js"></script>
-    <script src="source.js"></script>
-    <script src="utils.js"></script>
+    <!-- script file -->
+    <script src="dist/main.js" defer></script>
+    <!-- css file -->
+    <link rel="stylesheet" href="dist/style.css">
 </head>
 
 <body>
@@ -23,56 +18,8 @@
         <div id="settings" style="display: block;">
             <h3>パーティー構成</h3>
             <div class="flex">
-                <div class="selectpoke" id="user_select">
-                    <input type="checkbox" id="カイリュー_u" checked><label for="カイリュー_u">カイリュー</label><br>
-                    <input type="checkbox" id="ハバタクカミ_u" checked><label for="ハバタクカミ_u">ハバタクカミ</label><br>
-                    <input type="checkbox" id="オーガポン(かまど)_u" checked><label for="オーガポン(かまど)_u">オーガポン(かまど)</label><br>
-                    <input type="checkbox" id="ガチグマ(あかつき)_u"><label for="ガチグマ(あかつき)_u">ガチグマ(あかつき)</label><br>
-                    <input type="checkbox" id="パオジアン_u"><label for="パオジアン_u">パオジアン</label><br>
-                    <input type="checkbox" id="サーフゴー_u"><label for="サーフゴー_u">サーフゴー</label><br>
-                    <input type="checkbox" id="ウーラオス(れんげき)_u"><label for="ウーラオス(れんげき)_u">ウーラオス(れんげき)</label><br>
-                    <input type="checkbox" id="ハッサム_u"><label for="ハッサム_u">ハッサム</label><br>
-                    <input type="checkbox" id="イーユイ_u"><label for="イーユイ_u">イーユイ</label><br>
-                    <input type="checkbox" id="キョジオーン_u"><label for="キョジオーン_u">キョジオーン</label><br>
-                    <input type="checkbox" id="テツノツツミ_u"><label for="テツノツツミ_u">テツノツツミ</label><br>
-                    <input type="checkbox" id="ディンルー_u"><label for="ディンルー_u">ディンルー</label><br>
-                    <input type="checkbox" id="ランドロス(れいじゅう)_u"><label for="ランドロス(れいじゅう)_u">ランドロス(れいじゅう)</label><br>
-                    <input type="checkbox" id="トドロクツキ_u"><label for="トドロクツキ_u">トドロクツキ</label><br>
-                    <input type="checkbox" id="ヘイラッシャ_u"><label for="ヘイラッシャ_u">ヘイラッシャ</label><br>
-                    <input type="checkbox" id="キラフロル_u"><label for="キラフロル_u">キラフロル</label><br>
-                    <input type="checkbox" id="ガブリアス_u"><label for="ガブリアス_u">ガブリアス</label><br>
-                    <input type="checkbox" id="キュウコン(アローラ)_u"><label for="キュウコン(アローラ)_u">キュウコン(アローラ)</label><br>
-                    <input type="checkbox" id="コノヨザル_u"><label for="コノヨザル_u">コノヨザル</label><br>
-                    <input type="checkbox" id="アーマーガア_u"><label for="アーマーガア_u">アーマーガア</label><br>
-                    <input type="checkbox" id="テツノドクガ_u"><label for="テツノドクガ_u">テツノドクガ</label><br>
-                    <input type="checkbox" id="ドヒドイデ_u"><label for="ドヒドイデ_u">ドヒドイデ</label><br>
-                    <input type="checkbox" id="ミミッキュ_u"><label for="ミミッキュ_u">ミミッキュ</label><br>
-                </div>
-                <div class="selectpoke" id="enemy_select">
-                    <input type="checkbox" id="カイリュー_e"><label for="カイリュー_e">カイリュー</label><br>
-                    <input type="checkbox" id="ハバタクカミ_e"><label for="ハバタクカミ_e">ハバタクカミ</label><br>
-                    <input type="checkbox" id="オーガポン(かまど)_e"><label for="オーガポン(かまど)_e">オーガポン(かまど)</label><br>
-                    <input type="checkbox" id="ガチグマ(あかつき)_e" checked><label for="ガチグマ(あかつき)_e">ガチグマ(あかつき)</label><br>
-                    <input type="checkbox" id="パオジアン_e" checked><label for="パオジアン_e">パオジアン</label><br>
-                    <input type="checkbox" id="サーフゴー_e" checked><label for="サーフゴー_e">サーフゴー</label><br>
-                    <input type="checkbox" id="ウーラオス(れんげき)_e"><label for="ウーラオス(れんげき)_e">ウーラオス(れんげき)</label><br>
-                    <input type="checkbox" id="ハッサム_e"><label for="ハッサム_e">ハッサム</label><br>
-                    <input type="checkbox" id="イーユイ_e"><label for="イーユイ_e">イーユイ</label><br>
-                    <input type="checkbox" id="キョジオーン_e"><label for="キョジオーン_e">キョジオーン</label><br>
-                    <input type="checkbox" id="テツノツツミ_e"><label for="テツノツツミ_e">テツノツツミ</label><br>
-                    <input type="checkbox" id="ディンルー_e"><label for="ディンルー_e">ディンルー</label><br>
-                    <input type="checkbox" id="ランドロス(れいじゅう)_e"><label for="ランドロス(れいじゅう)_e">ランドロス(れいじゅう)</label><br>
-                    <input type="checkbox" id="トドロクツキ_e"><label for="トドロクツキ_e">トドロクツキ</label><br>
-                    <input type="checkbox" id="ヘイラッシャ_e"><label for="ヘイラッシャ_e">ヘイラッシャ</label><br>
-                    <input type="checkbox" id="キラフロル_e"><label for="キラフロル_e">キラフロル</label><br>
-                    <input type="checkbox" id="ガブリアス_e"><label for="ガブリアス_e">ガブリアス</label><br>
-                    <input type="checkbox" id="キュウコン(アローラ)_e"><label for="キュウコン(アローラ)_e">キュウコン(アローラ)</label><br>
-                    <input type="checkbox" id="コノヨザル_e"><label for="コノヨザル_e">コノヨザル</label><br>
-                    <input type="checkbox" id="アーマーガア_e"><label for="アーマーガア_e">アーマーガア</label><br>
-                    <input type="checkbox" id="テツノドクガ_e"><label for="テツノドクガ_e">テツノドクガ</label><br>
-                    <input type="checkbox" id="ドヒドイデ_e"><label for="ドヒドイデ_e">ドヒドイデ</label><br>
-                    <input type="checkbox" id="ミミッキュ_e"><label for="ミミッキュ_e">ミミッキュ</label><br>
-                </div>
+                <div class="selectpoke" id="user_select"> </div>
+                <div class="selectpoke" id="enemy_select"> </div>
             </div>
             <h3>場に出すポケモン</h3>
             <div class="flex">
@@ -87,7 +34,7 @@
             </div>
         </div>
 
-        <div id="buttle" style="display: none;">
+        <div id="buttle" style="display: block;">
             <h3>ポケモンの設定</h3>
             <div id="pokemon_info">
                 <div class="flex">
@@ -100,206 +47,38 @@
                 </div>
                 <div class="flex">
                     <div>
-                        <select id="user_skill">
-    
-                        </select>
-                        <input type="checkbox" id="user_change"><label for="user_change">交代</label>
+                        <select id="user_skill"> </select>
+                        <label><input type="checkbox" id="user_change" disabled>交代</label>
                     </div>
                     <div>
-                        <select id="enemy_skill">
-                        </select>
-                        <input type="checkbox" id="enemy_change"><label for="enemy_change">交代</label>
+                        <select id="enemy_skill"> </select>
+                        <label><input type="checkbox" id="enemy_change" disabled>交代</label>
                     </div>
                 </div>
+                <div class="flex show_hp">
+                    <div>HP：<span id="user_hp"></span>/<span id="user_maxhp"></span></div>
+                    <div>HP：<span id="enemy_hp"></span>/<span id="enemy_maxhp"></span></div>
+                </div>
                 <div class="flex">
-                    自分のHP：<div id="user_hp"> </div>
-                    相手のHP：<div id="enemy_hp"> </div>
+                    <div>状態：<span id="user_effect"></span></div>
+                    <div>状態：<span id="enemy_effect"></span></div>
                 </div>
             </div>
             <h3>操作</h3>
             <div id="fixrandoma">
-                <input type="checkbox" id="fix-random" name="fix-random">
-                <label for="fix-random">ダメージの最大値と最小値も表示する(HPの計算をしない)</label>
-            </div>
-            <div id="output">
-            </div>
-            <div id="turn">
+                <label for="fix-random"><input type="checkbox" id="fix-random" name="fix-random">
+                    ダメージの最大値と最小値も表示する(HPの計算をしない)
+                </label>
             </div>
             <div class="right">
-                <button id="run" disabled>ターンを進める</button>
+                <button id="run_turn" disabled>ターンを進める</button>
             </div>
+            <div id="output"></div>
         </div>
     </div>
 </body>
 
 </html>
-<style>
-    body {
-        padding: 20px;
-    }
-    #main {
-        font-size: 110%;
-        max-width: 1000px;
-        margin: auto;
-        user-select: none;
-        font-family: monospace;
-        font-weight: lighter;
-        background: linear-gradient(-50deg,rgb(105, 160, 205) 30%,rgb(64, 114, 163) 50%, rgb(156, 190, 227) 80%);
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 10px 3px black, inset 1px 1px 1px 0px rgb(255, 255, 255), inset -1px -1px 0px 0px rgb(7, 186, 253);
-    }
-
-    .flex {
-        display: flex;
-        justify-content: space-around;
-    }
-    .right {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    label::before {
-        content: " ";
-        background: linear-gradient(-50deg,rgb(255, 255, 255) 0%,rgb(180, 180, 180) 100%);
-        display: inline-block;
-        font-size: 12px;
-        width: 12px;
-        height: 12px;
-        border: 1px solid rgb(145, 145, 145);
-        box-shadow: inset 0px 0px 1px 1px rgb(255, 255, 255);
-        text-align: center;
-        padding: 0px 1px 2px 1px;
-        margin-right: 10px;
-        vertical-align: text-bottom;
-        color: rgb(0, 0, 99);
-        text-shadow: 0px -1px 1px rgb(8, 8, 83);
-    }
-    label:hover {
-        color: gray;
-    }
-    input:checked + label::before {
-        content: "✓";
-    }
-    input {
-        display: none;
-    }
-
-    .selectpoke {
-        border: 1px solid gray;
-        padding: 4px;
-        background-color: white;
-        max-height: 200px;
-        overflow: scroll;
-        margin: 10px;
-        box-shadow: 1px 1px 1px 1px white;
-    }
-
-    select {
-        padding: 10px;
-        margin: 5px;
-        min-width: 100px;
-    }
-
-    #turn {
-        display: inline-block;
-        background: #050741;
-        color: #FFF;
-        font-family: monospace;
-        user-select: text;
-        min-width: 50%;
-        overflow-y: scroll;
-        height: 200px;
-        margin: 10px;
-        padding: 5px;
-        border-radius: 1px;
-    }
-
-    .turn {
-        margin-bottom: 10px;
-    }
-
-    #turn::-webkit-scrollbar {
-        width: 5px;
-        background: #FFF;
-    }
-
-    #turn::-webkit-scrollbar-thumb {
-        background: #000;
-    }
-
-    .title {
-        width: 100%;
-        background-color: #5a5a5a;
-        border-bottom: 1px solid #2a2121;
-    }
-
-    h1 {
-        padding: 1px;
-        margin: -3px 2px 5px 3px;
-        border-radius: 5px;
-        font-size: 95%;
-        text-shadow: 1px 1px 2px white;
-        width: max-content;
-    }
-
-    h2 {
-        background-color: rgb(210, 223, 235);
-        text-shadow: 1px 1px 2px white;
-        padding: 4px;
-        margin: 5px;
-        border-radius: 5px;
-        font-size: 80%;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.3), inset 1px 1px 0px 0px rgb(84, 84, 84), inset -1px -1px 0px 0px rgb(157, 158, 158);
-    }
-
-    h3 {
-        padding: 1px;
-        margin: 3px;
-        font-size: 95%;
-    }
-
-    hr {
-        border: none;
-        border-top: 1px solid rgb(196, 195, 195);
-    }
-
-    #main>div {
-        background: #fbfbfb;
-        border-radius: 0;
-        margin: 2px 2px 2pxpx;
-        padding: 10px;
-    }
-
-    button,select {
-        background: linear-gradient(180deg,rgb(237, 237, 237) 30%,rgb(193, 193, 193) 70%,rgb(239, 239, 239) 100%);
-        font-size: 60%;
-        padding: 3px;
-        border: 1px solid gray;
-        border-radius: 4px;
-        margin: 5px;
-        box-shadow: inset 0px 0px 1px 1px white;
-        min-width: 50px;
-    }
-    button:hover {
-        background: linear-gradient(180deg,rgb(233, 247, 255) 30%,rgb(182, 229, 255) 70%,rgb(183, 221, 240) 100%);
-    }
-
-    select {
-        padding-top: 1px;
-    }
-    select:hover {
-        background: linear-gradient(180deg,rgb(233, 247, 255) 30%,rgb(151, 199, 225) 70%,rgb(163, 199, 217) 100%);
-    }
-    option {
-        padding: 0px;
-    }
-
-    #fixrandoma {
-        margin-left: 20px;
-    }
-</style>
 <script>
 
 </script>
