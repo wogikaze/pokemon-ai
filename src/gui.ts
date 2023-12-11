@@ -1,4 +1,4 @@
-import { runEvent, setPokemonName, setPokemonTeam } from "./main";
+import { compareSpeed, runEvent, setPokemonName, setPokemonTeam } from "./main";
 import { pokemonMap } from "./data/pokemon";
 
 const getElement = (id: string) => document.getElementById(id) as HTMLElement;
@@ -205,9 +205,19 @@ run_turn.addEventListener("click", () => {
   const enemyEvent = e_skill.value;
   const isUserChange = u_change.checked;
   const isEnemyChange = e_change.checked;
-  isUserChange && changePokemon(userEvent, pokemonMap[userEvent].moves, "user");
-  isEnemyChange && changePokemon(enemyEvent, pokemonMap[enemyEvent].moves, "enemy");
-  runEvent(userEvent, enemyEvent, isUserChange, isEnemyChange);
+  // 交代の素早さ判定
+  if (compareSpeed() === "user") {
+    isUserChange && changePokemon(userEvent, pokemonMap[userEvent].moves, "user");
+    isEnemyChange && changePokemon(enemyEvent, pokemonMap[enemyEvent].moves, "enemy");
+  } else {
+    isEnemyChange && changePokemon(enemyEvent, pokemonMap[enemyEvent].moves, "enemy");
+    isUserChange && changePokemon(userEvent, pokemonMap[userEvent].moves, "user");
+  }
+  let user_hp: number;
+  let enemy_hp: number;
+  [user_hp, enemy_hp] = runEvent(userEvent, enemyEvent, isUserChange, isEnemyChange);
+  setHp(user_hp, "user");
+  setHp(enemy_hp, "enemy");
 });
 // 交代の処理
 export function changePokemon(name: string, moves: string[], side: string, pp?: number[]) {
