@@ -1,5 +1,6 @@
 import { compareSpeed, getPP, runEvent, setPokemonName, setPokemonTeam } from "./main";
 import { pokemonMap } from "./data/pokemon";
+import { Moves } from "./data/Movedex";
 
 const getElement = (id: string) => document.getElementById(id) as HTMLElement;
 const getInput = (id: string) => document.getElementById(id) as HTMLInputElement;
@@ -100,11 +101,22 @@ fix_select.addEventListener("click", () => {
   } else {
     if (!isDevelop) settings.style.display = "none";
     // ポケモンの名前表示
-    setPokemoName(u_switch.value, "user");
-    setPokemoName(e_switch.value, "enemy");
+    getElement(`user_name`).textContent = u_switch.value;
+    getElement(`enemy_name`).textContent = e_switch.value;
+
+    // main()
+    const u_poke_names = Array.from(u_checked).map((e) => e.name);
+    const e_poke_names = Array.from(e_checked).map((e) => e.name);
+    setPokemonName(u_switch.value, "user");
+    setPokemonName(e_switch.value, "enemy");
+    setPokemonTeam(u_poke_names, e_poke_names);
+
     // 技選択表示
-    setSkillSelect(pokemonMap[u_switch.value].moves, "user", [1, 1, 1, 1]); //todo after:movedex
-    setSkillSelect(pokemonMap[e_switch.value].moves, "enemy", [1, 1, 1, 1]);
+    const userPP = pokemonMap[u_switch.value].moves.map((e) => getPP(u_switch.value, e, "user"));
+    const enemyPP = pokemonMap[e_switch.value].moves.map((e) => getPP(e_switch.value, e, "enemy"));
+
+    setSkillSelect(pokemonMap[u_switch.value].moves, "user", userPP); //todo after:movedex
+    setSkillSelect(pokemonMap[e_switch.value].moves, "enemy", enemyPP);
     // ステータス表示
     setHp(pokemonMap[u_switch.value].hp, "user");
     setHp(pokemonMap[e_switch.value].hp, "enemy");
@@ -116,26 +128,17 @@ fix_select.addEventListener("click", () => {
     u_change.disabled = false;
     e_change.disabled = false;
     fix_select.disabled = true;
-    // (main)
-    const u_poke_names = Array.from(u_checked).map((e) => e.name);
-    const e_poke_names = Array.from(e_checked).map((e) => e.name);
-    setPokemonTeam(u_poke_names, e_poke_names);
-    setPokemonName(u_switch.value, "user");
-    setPokemonName(e_switch.value, "enemy");
   }
 });
 
-export function setPokemoName(name: string, side: string) {
-  const name_div = getElement(`${side}_name`);
-  name_div.textContent = name;
-}
 function setSkillSelect(skills: string[], side: string, pp?: number[]) {
   const update_user = () => {
     u_skill.innerHTML = "";
     skills.forEach(function (skill, i) {
       var option = document.createElement("option");
       option.value = skill;
-      option.textContent = pp ? `${skill} ${pp?.[i]}/${pp?.[i]}` : skill;
+      option.textContent = pp ? `${skill} ${pp?.[i]}/${Moves[skills[i]].pp}` : skill;
+      option.disabled = pp?.[i] === 0 || false;
       u_skill.appendChild(option);
     });
   };
@@ -144,7 +147,8 @@ function setSkillSelect(skills: string[], side: string, pp?: number[]) {
     skills.forEach(function (skill, i) {
       var option = document.createElement("option");
       option.value = skill;
-      option.textContent = pp ? `${skill} ${pp?.[i]}/${pp?.[i]}` : skill;
+      option.textContent = pp ? `${skill} ${pp?.[i]}/${Moves[skills[i]].pp}` : skill;
+      option.disabled = pp?.[i] === 0 || false;
       e_skill.appendChild(option);
     });
   };
@@ -192,7 +196,8 @@ function updateMoveSelect(side: string) {
       .filter((e) => e !== name);
     setSkillSelect(poke_names, side);
   } else {
-    setSkillSelect(pokemonMap[name].moves, side);
+    const PP = pokemonMap[name].moves.map((e) => getPP(name, e, side));
+    setSkillSelect(pokemonMap[name].moves, side, PP);
   }
 }
 u_change.addEventListener("click", () => updateMoveSelect("user"));
@@ -205,19 +210,44 @@ run_turn.addEventListener("click", () => {
   const enemyEvent = e_skill.value;
   const isUserChange = u_change.checked;
   const isEnemyChange = e_change.checked;
+  const userName = getElement("user_name").textContent as string;
+  const enemyName = getElement("enemy_name").textContent as string;
+  //PP
+  const userPP = isUserChange ? pokemonMap[userEvent].moves.map((e) => getPP(userEvent, e, "user")) : undefined;
+  const enemyPP = isEnemyChange ? pokemonMap[enemyEvent].moves.map((e) => getPP(enemyEvent, e, "enemy")) : undefined;
   // 交代の素早さ判定
   if (compareSpeed() === "user") {
-    isUserChange && changePokemon(userEvent, pokemonMap[userEvent].moves, "user", pokemonMap[userEvent].moves.map(e => getPP(userEvent, e,"user")));
-    isEnemyChange && changePokemon(enemyEvent, pokemonMap[enemyEvent].moves, "enemy");
+    isUserChange && changePokemon(userEvent, pokemonMap[userEvent].moves, "user", userPP);
+    isEnemyChange && changePokemon(enemyEvent, pokemonMap[enemyEvent].moves, "enemy", enemyPP);
   } else {
-    isEnemyChange && changePokemon(enemyEvent, pokemonMap[enemyEvent].moves, "enemy");
-    isUserChange && changePokemon(userEvent, pokemonMap[userEvent].moves, "user");
+    isEnemyChange && changePokemon(enemyEvent, pokemonMap[enemyEvent].moves, "enemy", enemyPP);
+    isUserChange && changePokemon(userEvent, pokemonMap[userEvent].moves, "user", userPP);
   }
   let user_hp: number;
   let enemy_hp: number;
-  [user_hp, enemy_hp] = runEvent(userEvent, enemyEvent, isUserChange, isEnemyChange);
+  [user_hp, enemy_hp] = runEvent(userEvent, enemyEvent, isUserChange, isEnemyChange); //行動をする
   setHp(user_hp, "user");
   setHp(enemy_hp, "enemy");
+  //倒れたかどうかの判定
+  if (user_hp <= 0) {
+    addOutput("userのHPが0以下");
+    u_change.checked = true;
+    u_change.disabled = true;
+    updateMoveSelect("user");
+  }
+  // PPの更新
+  !isUserChange &&
+    setSkillSelect(
+      pokemonMap[userName].moves,
+      "user",
+      pokemonMap[userName].moves.map((e) => getPP(userName, e, "user"))
+    );
+  !isEnemyChange &&
+    setSkillSelect(
+      pokemonMap[enemyName].moves,
+      "enemy",
+      pokemonMap[enemyName].moves.map((e) => getPP(enemyName, e, "enemy"))
+    );
 });
 // 交代の処理
 export function changePokemon(name: string, moves: string[], side: string, pp?: number[]) {

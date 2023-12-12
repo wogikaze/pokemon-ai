@@ -1,7 +1,7 @@
 // import { Pokemon } from "types/Pokemon";
-import { Moves } from "data/Movedex";
 import { pokemonMap, Pokemon } from "./data/pokemon";
 import { addOutput } from "./gui";
+import { calcDamage } from "./calcDamage";
 
 //HPなどの管理
 let u_pokes: { [key: string]: Pokemon } = {};
@@ -11,7 +11,7 @@ let u_name: string;
 let e_name: string;
 export function getPP(name: string, skill: string, side: string): number {
   if (side == "user") return u_pokes[name].pp[skill]; //todo after:movedex
-  else return e_pokes[name].moves;
+  else return e_pokes[name].pp[skill];
 }
 export function setPokemonTeam(user_poke_names: string[], enemy_poke_names: string[]) {
   // 配列をループして、各名前に対応するポケモンを追加
@@ -39,19 +39,37 @@ export function compareSpeed() {
     return "enemy";
   }
 }
+// メイン関数. ターンを進める
 export function runEvent(user_move: string, enemy_move: string, isUserChange: boolean, isEnemyChange: boolean) {
   console.log(user_move, enemy_move, isUserChange, isEnemyChange);
   console.log(u_pokes);
   if (compareSpeed() === "user") {
-    !isUserChange && addOutput(`(user)${u_name}の${user_move}`);
-    !isEnemyChange && addOutput(`(enemy)${e_name}の${enemy_move}`);
+    if (!isUserChange) {
+      const damage = calcDamage(u_pokes[u_name], e_pokes[e_name], user_move);
+      addOutput(`(user)${u_name}の${user_move}<br>┗ ${e_name}に${damage}のダメージ`);
+      e_pokes[e_name].hp -= damage;
+      u_pokes[u_name].pp[user_move] -= 1;
+    }
+    if (!isEnemyChange && e_pokes[e_name].hp > 0) {
+      const damage = calcDamage(u_pokes[u_name], e_pokes[e_name], enemy_move);
+      addOutput(`(enemy)${e_name}の${enemy_move}<br>┗${u_name}に${damage}のダメージ`);
+      u_pokes[u_name].hp -= damage;
+      e_pokes[e_name].pp[enemy_move] -= 1;
+    }
   } else {
-    !isEnemyChange && addOutput(`(enemy)${e_name}の${enemy_move}`);
-    !isUserChange && addOutput(`(user)${u_name}の${user_move}`);
+    if (!isEnemyChange) {
+      const damage = calcDamage(u_pokes[u_name], e_pokes[e_name], enemy_move);
+      addOutput(`(enemy)${e_name}の${enemy_move}<br>┗${u_name}に${damage}のダメージ`);
+      u_pokes[u_name].hp -= damage;
+      e_pokes[e_name].pp[enemy_move] -= 1;
+    }
+    if (!isUserChange && u_pokes[u_name].hp > 0) {
+      const damage = calcDamage(u_pokes[u_name], e_pokes[e_name], user_move);
+      addOutput(`(user)${u_name}の${user_move}<br>┗ ${e_name}に${damage}のダメージ`);
+      e_pokes[e_name].hp -= damage;
+      u_pokes[u_name].pp[user_move] -= 1;
+    }
   }
 
-  function calcDamage() {
-
-  }
   return [u_pokes[u_name].hp, e_pokes[e_name].hp];
 }
