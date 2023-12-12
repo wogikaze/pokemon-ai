@@ -1,4 +1,4 @@
-import { compareSpeed, runEvent, setPokemonName, setPokemonTeam } from "./main";
+import { compareSpeed, getPP, runEvent, setPokemonName, setPokemonTeam } from "./main";
 import { pokemonMap } from "./data/pokemon";
 
 const getElement = (id: string) => document.getElementById(id) as HTMLElement;
@@ -207,7 +207,7 @@ run_turn.addEventListener("click", () => {
   const isEnemyChange = e_change.checked;
   // 交代の素早さ判定
   if (compareSpeed() === "user") {
-    isUserChange && changePokemon(userEvent, pokemonMap[userEvent].moves, "user");
+    isUserChange && changePokemon(userEvent, pokemonMap[userEvent].moves, "user", pokemonMap[userEvent].moves.map(e => getPP(userEvent, e,"user")));
     isEnemyChange && changePokemon(enemyEvent, pokemonMap[enemyEvent].moves, "enemy");
   } else {
     isEnemyChange && changePokemon(enemyEvent, pokemonMap[enemyEvent].moves, "enemy");

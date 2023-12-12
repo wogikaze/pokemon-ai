@@ -1,4 +1,5 @@
 // import { Pokemon } from "types/Pokemon";
+import { Moves } from "data/Movedex";
 import { pokemonMap, Pokemon } from "./data/pokemon";
 import { addOutput } from "./gui";
 
@@ -8,8 +9,8 @@ let e_pokes: { [key: string]: Pokemon } = {};
 //場に出ているポケモンの名前
 let u_name: string;
 let e_name: string;
-export function getPP(name: string, side: string) {
-  if (side == "user") return u_pokes[name].moves; //todo after:movedex
+export function getPP(name: string, skill: string, side: string): number {
+  if (side == "user") return u_pokes[name].pp[skill]; //todo after:movedex
   else return e_pokes[name].moves;
 }
 export function setPokemonTeam(user_poke_names: string[], enemy_poke_names: string[]) {
@@ -50,7 +51,7 @@ export function runEvent(user_move: string, enemy_move: string, isUserChange: bo
   }
 
   function calcDamage() {
-    
+
   }
   return [u_pokes[u_name].hp, e_pokes[e_name].hp];
 }

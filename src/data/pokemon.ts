@@ -1,3 +1,4 @@
+import { Moves } from "./Movedex";
 import { Pokedex } from "./Pokedex"
 interface IEVs {
     hp: number;
@@ -27,6 +28,7 @@ export class Pokemon {
     item: string;
     ability: string;
     moves: string[];
+    pp: { [key: string]: number }
     rank: IRank;
     constructor(
         name: string,
@@ -53,9 +55,9 @@ export class Pokemon {
         this.item = item;
         this.ability = ability;
         this.moves = moves;
+        this.pp = {};
         this.rank = init_rank;
     }
-
     get(poke_name: string): Pokemon {
         const pokemon = pokemonMap[poke_name];
         return JSON.parse(JSON.stringify(pokemon));
@@ -74,9 +76,9 @@ const init_rank: IRank = {
     "きゅうしょ": 0,
 }
 
-
-export const pokemonMap: { 
-    [key: string]: Pokemon } = {
+export const pokemonMap: {
+    [key: string]: Pokemon
+} = {
     "カイリュー": new Pokemon(
         "",
         "カイリュー",
@@ -308,3 +310,6 @@ export const pokemonMap: {
         ["じゃれつく", "でんじは", "みがわり", "のろい"]
     ),
 };
+
+
+Object.keys(pokemonMap).map(pokemon => { return pokemonMap[pokemon].moves.forEach(move => pokemonMap[pokemon].pp[move] = Moves[move].pp) })
