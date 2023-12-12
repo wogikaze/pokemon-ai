@@ -9,6 +9,10 @@ let e_pokes: { [key: string]: Pokemon } = {};
 //場に出ているポケモンの名前
 let u_name: string;
 let e_name: string;
+export function getHP(name: string, side: string) {
+  if (side == "user") return u_pokes[name].hp; //todo after:movedex
+  else return e_pokes[name].hp;
+}
 export function getPP(name: string, skill: string, side: string): number {
   if (side == "user") return u_pokes[name].pp[skill]; //todo after:movedex
   else return e_pokes[name].pp[skill];

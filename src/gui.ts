@@ -1,6 +1,7 @@
-import { compareSpeed, getPP, runEvent, setPokemonName, setPokemonTeam } from "./main";
+import { compareSpeed, getHP, getPP, runEvent, setPokemonName, setPokemonTeam } from "./main";
 import { pokemonMap } from "./data/pokemon";
 import { Moves } from "./data/Movedex";
+import { isIndexSignatureDeclaration } from "typescript";
 
 const getElement = (id: string) => document.getElementById(id) as HTMLElement;
 const getInput = (id: string) => document.getElementById(id) as HTMLInputElement;
@@ -138,7 +139,7 @@ function setSkillSelect(skills: string[], side: string, pp?: number[]) {
       var option = document.createElement("option");
       option.value = skill;
       option.textContent = pp ? `${skill} ${pp?.[i]}/${Moves[skills[i]].pp}` : skill;
-      option.disabled = pp?.[i] === 0 || false;
+      option.disabled = pp?.[i] === 0 || (!pp && getHP(skills[i], "user") <= 0);
       u_skill.appendChild(option);
     });
   };
@@ -148,7 +149,7 @@ function setSkillSelect(skills: string[], side: string, pp?: number[]) {
       var option = document.createElement("option");
       option.value = skill;
       option.textContent = pp ? `${skill} ${pp?.[i]}/${Moves[skills[i]].pp}` : skill;
-      option.disabled = pp?.[i] === 0 || false;
+      option.disabled = pp?.[i] === 0 || (!pp && getHP(skills[i], "enemy") <= 0);
       e_skill.appendChild(option);
     });
   };
@@ -173,8 +174,10 @@ function setHp(hp: number, side: string) {
   const e_hp = getElement("enemy_hp");
   if (side == "user") {
     u_hp.textContent = hp.toString();
+    getInput("user_change").disabled = false;
   } else {
     e_hp.textContent = hp.toString();
+    getInput("enemy_change").disabled = false;
   }
 }
 function setMaxhp(hp: number, side: string) {
@@ -225,24 +228,55 @@ run_turn.addEventListener("click", () => {
   }
   let user_hp: number;
   let enemy_hp: number;
-  [user_hp, enemy_hp] = runEvent(userEvent, enemyEvent, isUserChange, isEnemyChange); //行動をする
+  // 死に出しの条件
+  const [isUserDead, isEnemyDead] = [getInput("user_change").disabled, getInput("enemy_change").disabled];
+  if (isUserDead) {
+    setPokemonName(userEvent, "user");
+    setHp(getHP(userEvent, "user"), "user");
+  }
+  if (isEnemyDead) {
+    setPokemonName(enemyEvent, "enemy");
+    setHp(getHP(enemyEvent, "enemy"), "enemy");
+  }
+  if (isUserDead || isEnemyDead) return;
+
+  //行動をする
+  [user_hp, enemy_hp] = runEvent(userEvent, enemyEvent, isUserChange, isEnemyChange);
   setHp(user_hp, "user");
   setHp(enemy_hp, "enemy");
   //倒れたかどうかの判定
+  if (user_hp <= 0 && enemy_hp <= 0) addOutput("同時に倒れたぞ！！バグるぞ！！"); //todo
+
   if (user_hp <= 0) {
-    addOutput("userのHPが0以下");
+    addOutput(`${userName}は倒れた`);
     u_change.checked = true;
     u_change.disabled = true;
     updateMoveSelect("user");
+    if (!u_skill.value) {
+      alert("敵の勝ち");
+      endBattle();
+    }
+  }
+  if (enemy_hp <= 0) {
+    addOutput(`${enemyName}は倒れた`);
+    e_change.checked = true;
+    e_change.disabled = true;
+    updateMoveSelect("enemy");
+    if (!e_skill.value) {
+      alert("敵の勝ち");
+      endBattle();
+    }
   }
   // PPの更新
   !isUserChange &&
+    user_hp > 0 &&
     setSkillSelect(
       pokemonMap[userName].moves,
       "user",
       pokemonMap[userName].moves.map((e) => getPP(userName, e, "user"))
     );
   !isEnemyChange &&
+    enemy_hp > 0 &&
     setSkillSelect(
       pokemonMap[enemyName].moves,
       "enemy",
@@ -265,4 +299,9 @@ export function addOutput(output: string, turn?: number) {
   if (turn && turn > 0) output_ele.innerHTML += `<div class="turn">ターン:${turn}</div>`;
 
   output !== "" ? (output_ele.innerHTML += `<div>${output}</div>`) : "";
+}
+
+//(別にいらないけど)バトルの終了
+function endBattle() {
+  run_turn.disabled = true;
 }
