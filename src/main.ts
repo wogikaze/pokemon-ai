@@ -46,7 +46,6 @@ export function compareSpeed() {
 // メイン関数. ターンを進める
 export function runEvent(user_move: string, enemy_move: string, isUserChange: boolean, isEnemyChange: boolean) {
   console.log(user_move, enemy_move, isUserChange, isEnemyChange);
-  console.log(u_pokes);
   if (compareSpeed() === "user") {
     if (!isUserChange) {
       const damage = calcDamage(u_pokes[u_name], e_pokes[e_name], user_move);

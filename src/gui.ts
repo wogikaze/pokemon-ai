@@ -263,7 +263,7 @@ run_turn.addEventListener("click", () => {
     e_change.disabled = true;
     updateMoveSelect("enemy");
     if (!e_skill.value) {
-      alert("敵の勝ち");
+      alert("自分の勝ち");
       endBattle();
     }
   }

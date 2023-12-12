@@ -312,7 +312,6 @@ export const pokemonMap: {
 
 Object.keys(pokemonMap).map((pokemon) => {
   return pokemonMap[pokemon].moves.forEach((move) => {
-    console.log(move);
     pokemonMap[pokemon].pp[move] = Moves[move].pp;
   });
 });
