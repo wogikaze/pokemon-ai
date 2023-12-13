@@ -49,26 +49,26 @@ export function runEvent(user_move: string, enemy_move: string, isUserChange: bo
   if (compareSpeed() === "user") {
     if (!isUserChange) {
       const damage = calcDamage(u_pokes[u_name], e_pokes[e_name], user_move);
-      addOutput(`(user)${u_name}の${user_move}<br>┗ ${e_name}に${damage}のダメージ`);
+      addOutput(`☖${u_name}の${user_move}<br>┗ ${e_name}に${damage}のダメージ`);
       e_pokes[e_name].hp -= damage;
       u_pokes[u_name].pp[user_move] -= 1;
     }
     if (!isEnemyChange && e_pokes[e_name].hp > 0) {
       const damage = calcDamage(u_pokes[u_name], e_pokes[e_name], enemy_move);
-      addOutput(`(enemy)${e_name}の${enemy_move}<br>┗${u_name}に${damage}のダメージ`);
+      addOutput(`☗${e_name}の${enemy_move}<br>┗${u_name}に${damage}のダメージ`);
       u_pokes[u_name].hp -= damage;
       e_pokes[e_name].pp[enemy_move] -= 1;
     }
   } else {
     if (!isEnemyChange) {
       const damage = calcDamage(u_pokes[u_name], e_pokes[e_name], enemy_move);
-      addOutput(`(enemy)${e_name}の${enemy_move}<br>┗${u_name}に${damage}のダメージ`);
+      addOutput(`☗${e_name}の${enemy_move}<br>┗${u_name}に${damage}のダメージ`);
       u_pokes[u_name].hp -= damage;
       e_pokes[e_name].pp[enemy_move] -= 1;
     }
     if (!isUserChange && u_pokes[u_name].hp > 0) {
       const damage = calcDamage(u_pokes[u_name], e_pokes[e_name], user_move);
-      addOutput(`(user)${u_name}の${user_move}<br>┗ ${e_name}に${damage}のダメージ`);
+      addOutput(`☖${u_name}の${user_move}<br>┗ ${e_name}に${damage}のダメージ`);
       e_pokes[e_name].hp -= damage;
       u_pokes[u_name].pp[user_move] -= 1;
     }

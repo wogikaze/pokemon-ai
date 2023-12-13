@@ -286,7 +286,7 @@ run_turn.addEventListener("click", () => {
 // 交代の処理
 export function changePokemon(name: string, moves: string[], side: string, pp?: number[]) {
   const oldpokemon_name = getElement(`${side}_name`);
-  addOutput(`(${side})${oldpokemon_name.textContent}が${name}に交代した`); // 出力の表示
+  addOutput(`(${side == "user" ? "☖" : "☗"})${oldpokemon_name.textContent}が${name}に交代した`); // 出力の表示
   oldpokemon_name.textContent = name; // 名前の表示更新
   pp ? setSkillSelect(moves, side, pp) : setSkillSelect(moves, side);
   getInput(`${side}_change`).checked = false;
