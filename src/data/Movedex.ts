@@ -1,5 +1,5 @@
 // List of flags and their descriptions can be found in sim/dex-moves.ts
-import { MoveData } from "../types/Move";
+import { MoveData, MoveEventMethods } from "../types/Move";
 // List of flags and their descriptions can be found in sim/dex-moves.ts
 
 export const Moves: { [moveid: string]: MoveData } = {
@@ -1661,3 +1661,10 @@ export const Moves: { [moveid: string]: MoveData } = {
     contestType: "Cute",
   },
 };
+
+declare global {
+  interface Window {
+    Moves: { [key: string]: MoveData }
+  }
+}
+window.Moves = Moves
