@@ -30,6 +30,7 @@ export class Pokemon {
   moves: string[];
   pp: { [key: string]: number };
   rank: IRank;
+  baseMaxhp: number;
   constructor(
     name: string,
     species: string,
@@ -57,6 +58,7 @@ export class Pokemon {
     this.moves = moves;
     this.pp = {};
     this.rank = init_rank;
+    this.baseMaxhp = evs.hp;
   }
   get(poke_name: string): Pokemon {
     const pokemon = pokemonMap[poke_name];

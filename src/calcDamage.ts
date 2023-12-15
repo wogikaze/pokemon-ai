@@ -41,7 +41,7 @@ export function calcDamage(
   //   activateTokusei(attacker, defender, "calc_damage");
 
   // 下準備
-  let isphysic = skill_category == "Physical"; //todo after:movedex
+  let isphysic = skill_category == "物理"; 
   let kougeki = isphysic ? power : tokukou;
   let kougeki_rank = isphysic ? power_rank : tokukou_rank;
   let bougyo = isphysic ? bougyo_first : tokubou;

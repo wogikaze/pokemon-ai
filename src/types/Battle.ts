@@ -7,8 +7,7 @@ export class Battle {
     this.field = new Field(this);
   }
   debug(value: string) {}
-  add(method: string, side: string | Pokemon | any, value: string) {}
-  
+  add(method: string, side: string | Pokemon | any, value: string, other?: string) {}
 }
 
 export interface EffectState {

@@ -1,7 +1,8 @@
 import { compareSpeed, getHP, getPP, runEvent, setPokemonName, setPokemonTeam } from "./main";
-import { pokemonMap } from "./data/pokemon";
+import { Pokemon, pokemonMap } from "./data/pokemon";
 import { Moves } from "./data/Movedex";
 import { isIndexSignatureDeclaration } from "typescript";
+import { MoveData } from "types/Move";
 
 const getElement = (id: string) => document.getElementById(id) as HTMLElement;
 const getInput = (id: string) => document.getElementById(id) as HTMLInputElement;
@@ -22,6 +23,10 @@ declare global {
     settings: HTMLElement | null;
     buttle: HTMLElement | null;
     pagetitle: HTMLElement | null;
+    //moves
+    Moves: { [key: string]: MoveData };
+    //pokemons
+    pokemonMap: { [key: string]: Pokemon };
   }
 }
 const isDevelop = true; //TODO: 外す
@@ -56,6 +61,10 @@ if (isDevelop) {
   window.settings = settings;
   window.buttle = buttle;
   window.pagetitle = pagetitle;
+  //Moves
+  window.Moves = Moves;
+  //PokemonMap
+  window.pokemonMap = pokemonMap
 }
 let turn_num = 1;
 

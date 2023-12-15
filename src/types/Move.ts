@@ -855,7 +855,7 @@ export interface MoveData extends EffectData, MoveEventMethods, HitEffect {
   basePower: number;
   accuracy: true | number;
   pp: number;
-  category: "Physical" | "Special" | "Status";
+  category: "物理" | "特殊" | "変化";
   type: string;
   priority: number;
   target: string;
