@@ -1,7 +1,6 @@
 import { compareSpeed, getHP, getPP, runEvent, setPokemonName, setPokemonTeam } from "./main";
 import { Pokemon, pokemonMap } from "./data/pokemon";
 import { Moves } from "./data/Movedex";
-import { isIndexSignatureDeclaration } from "typescript";
 import { MoveData } from "types/Move";
 
 const getElement = (id: string) => document.getElementById(id) as HTMLElement;

@@ -6,14 +6,20 @@
         "baseUrl": "./src",
         "outDir": "dist",
         "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "noFallthroughCasesInSwitch": true,
-        "noImplicitOverride": true,
-        "noImplicitReturns": true,
-        "noPropertyAccessFromIndexSignature": true,
+        "allowJs": true,
+        "checkJs": true,
+        "incremental": true,
+        "allowUnreachableCode": false,
         "esModuleInterop": true,
-        "moduleResolution": "node"
+        "useDefineForClassFields": false
     },
+    "types": [
+        "node"
+    ],
+    "exclude": [
+        "./.*-dist/**/*",
+        "./server/chat-plugins/private/*/*.d.ts"
+    ],
     "include": [
         "src"
     ]
