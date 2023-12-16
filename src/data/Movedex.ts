@@ -261,7 +261,7 @@ export const Moves: { [moveid: string]: MoveData } = {
       },
       onResidualOrder: 12,
       onResidual(pokemon) {
-        this.damage(pokemon.baseMaxhp / 4);
+        // this.damage(pokemon.baseMaxhp / 4);
       },
     },
     secondary: null,
@@ -401,9 +401,9 @@ export const Moves: { [moveid: string]: MoveData } = {
       //     target.removeVolatile("encore");
       //   }
       // },
-      // onEnd(target) {
-      //   this.add("-end", target, "Encore");
-      // },
+      onEnd(target) {
+        this.add("-end", target, "Encore");
+      },
       // onDisableMove(pokemon) {
       //   if (!this.effectState.move || !pokemon.hasMove(this.effectState.move)) {
       //     return;
@@ -661,12 +661,12 @@ export const Moves: { [moveid: string]: MoveData } = {
     pp: 30,
     priority: 0,
     flags: { bypasssub: 1 },
-    // onHitField() {
-    //   this.add("-clearallboost");
-    //   for (const pokemon of this.getAllActive()) {
-    //     pokemon.clearBoosts();
-    //   }
-    // },
+    onHitField() {
+      this.add("-clearallboost");
+      for (const pokemon of this.getAllActive()) {
+        pokemon.clearBoosts();
+      }
+    },
     secondary: null,
     target: "all",
     type: "こおり",

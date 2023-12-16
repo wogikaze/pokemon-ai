@@ -60,10 +60,6 @@ export class Pokemon {
     this.rank = init_rank;
     this.baseMaxhp = evs.hp;
   }
-  get(poke_name: string): Pokemon {
-    const pokemon = pokemonMap[poke_name];
-    return JSON.parse(JSON.stringify(pokemon));
-  }
 }
 
 const init_rank: IRank = {

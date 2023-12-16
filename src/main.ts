@@ -18,12 +18,12 @@ export function getPP(name: string, skill: string, side: string): number {
   else return e_pokes[name].pp[skill];
 }
 export function setPokemonTeam(user_poke_names: string[], enemy_poke_names: string[]) {
-  // 配列をループして、各名前に対応するポケモンを追加
+  // 配列をループして、各名前に対応するポケモンを追加する
   user_poke_names.forEach((name) => {
-    u_pokes[name] = pokemonMap[name];
+    u_pokes[name] = { ...pokemonMap[name] };
   });
   enemy_poke_names.forEach((name) => {
-    e_pokes[name] = pokemonMap[name];
+    e_pokes[name] = { ...pokemonMap[name] };
   });
 }
 export function setPokemonName(name: string, side: string) {

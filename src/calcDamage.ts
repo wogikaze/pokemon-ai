@@ -41,7 +41,7 @@ export function calcDamage(
   //   activateTokusei(attacker, defender, "calc_damage");
 
   // 下準備
-  let isphysic = skill_category == "物理"; 
+  let isphysic = skill_category == "物理";
   let kougeki = isphysic ? power : tokukou;
   let kougeki_rank = isphysic ? power_rank : tokukou_rank;
   let bougyo = isphysic ? bougyo_first : tokubou;
@@ -188,7 +188,8 @@ const hit_rate = [3 / 9, 3 / 8, 3 / 7, 3 / 6, 3 / 5, 3 / 4, 3 / 3, 4 / 3, 5 / 3,
 const damage_rank = [2 / 8, 2 / 7, 2 / 6, 2 / 5, 2 / 4, 2 / 3, 2 / 2, 3 / 2, 4 / 2, 5 / 2, 6 / 2, 7 / 2, 8 / 2]; // ダメージランク
 
 const check_hit = (skill_meityu: number | true, meityu_rank: number, kaihi_rank: number) => {
-  let skill_accuracy = skill_meityu === true ? 100 : skill_meityu;
+  if (skill_meityu === true) return true
+  let skill_accuracy = skill_meityu;
   let hit_rank = meityu_rank - kaihi_rank;
   // TODO: 特性・道具・場「じゅうりょく」・一撃必殺技
   // let meityu_hosei = 4096 * ... / 4096
