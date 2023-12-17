@@ -36,3 +36,14 @@ filter_item.forEach(e => {
     }
 })
 console.log(text)
+
+/* 簡略版 */
+text = ""
+touple = [...document.querySelectorAll("table tr:has(td)")].map(e => {
+    return [e.querySelectorAll("td")[0].innerText, e.querySelectorAll("td")[1].innerText]
+})
+touple.forEach((e, index) => {
+    text += touple[index][0] + "," + touple[index][1] + "\n"
+
+})
+console.log(text)
