@@ -1,0 +1,206 @@
+dragonite @ lumberry
+Ability: multiscale
+EVs: 228 HP / 252 Atk / 28 Spe
+adamant Nature
+- extremespeed
+- earthquake
+- dragondance
+- encore
+
+fluttermane @ choicespecs
+Ability: protosynthesis
+EVs: 4 HP / 252 SpA / 252 Spe
+modest Nature
+- moonblast
+- shadowball
+- powergem
+- mysticalfire
+
+ogerponhearthflame @ hearthflamemask
+Ability: moldbreaker
+EVs: 252 HP / 4 Atk / 188 Def / 4 SpD / 60 Spe
+jolly Nature
+- ivycudgel
+- hornleech
+- encore
+- synthesis
+
+ursalunabloodmoon @ silkscarf
+Ability: mindseye
+EVs: 212 HP / 4 Def / 196 SpA / 4 SpD / 92 Spe
+modest Nature
+- bloodmoon
+- earthpower
+- hypervoice
+- yawn
+
+chienpao @ focussash
+Ability: swordofruin
+EVs: 252 Atk / 4 SpD / 252 Spe
+jolly Nature
+- iciclecrash
+- crunch
+- iceshard
+- sacredsword
+
+gholdengo @ covertcloak
+Ability: goodasgold
+EVs: 228 HP / 196 SpD / 84 Spe
+bold Nature
+- makeitrain
+- thunderwave
+- hex
+- recover
+
+urshifurapidstrike @ punchingglove
+Ability: unseenfist
+EVs: 252 Atk / 4 SpD / 252 Spe
+jolly Nature
+- surgingstrikes
+- closecombat
+- aquajet
+- icepunch
+
+scizor @ assaultvest
+Ability: technician
+EVs: 252 HP / 252 Atk / 4 SpD
+adamant Nature
+- bulletpunch
+- uturn
+- knockoff
+- closecombat
+
+chiyu @ choicescarf
+Ability: beadsofruin
+EVs: 4 HP / 252 SpA / 252 Spe
+modest Nature
+- flamethrower
+- darkpulse
+- terablast
+- overheat
+
+garganacl @ iapapaberry
+Ability: purifyingsalt
+EVs: 252 HP / 252 SpD / 4 Spe
+impish Nature
+- saltcure
+- bodypress
+- recover
+- irondefense
+
+ironbundle @ boosterenergy
+Ability: quarkdrive
+EVs: 252 SpA / 4 SpD / 252 Spe
+timid Nature
+- hydropump
+- freezedry
+- flipturn
+- encore
+
+tinglu @ leftovers
+Ability: vesselofruin
+EVs: 244 HP / 148 Def / 166 SpD
+impish Nature
+- earthquake
+- ruination
+- whirlwind
+- stealthrock
+
+landorustherian @ sitrusberry
+Ability: intimidate
+EVs: 4 HP / 252 Atk / 252 Spe
+jolly Nature
+- earthquake
+- uturn
+- rocktomb
+- stealthrock
+
+roaringmoon @ choiceband
+Ability: protosynthesis
+EVs: 44 HP / 252 Atk / 252 Spe
+jolly Nature
+- outrage
+- knockoff
+- ironhead
+- uturn
+
+dondozo @ chestoberry
+Ability: unaware
+EVs: 252 HP / 252 SpD / 4 Spe
+impish Nature
+- liquidation
+- yawn
+- rest
+- fissure
+
+glimmora @ redcard
+Ability: toxicdebris
+EVs: 252 HP / 252 SpD / 4 Spe
+bold Nature
+- endure
+- energyball
+- mortalspin
+- stealthrock
+
+garchomp @ loadeddice
+Ability: roughskin
+EVs: 252 Atk / 4 SpD / 252 Spe
+jolly Nature
+- earthquake
+- scaleshot
+- swordsdance
+- ironhead
+
+vulpixalola @ lightclay
+Ability: snowwarning
+EVs: 212 HP / 92 SpD / 204 Spe
+timid Nature
+- moonblast
+- blizzard
+- auroraveil
+- freezedry
+
+annihilape @ lightball
+Ability: innerfocus
+EVs: 252 HP / 4 Def / 252 Spe
+jolly Nature
+- fling
+- stealthrock
+- ragefist
+- finalgambit
+
+corviknight @ aguavberry
+Ability: mirrorarmor
+EVs: 252 HP / 180 Def / 76 SpD
+sassy Nature
+- roost
+- ironhead
+- uturn
+- drillpeck
+
+ironmoth @ airballoon
+Ability: quarkdrive
+EVs: 252 SpA / 252 Spe
+timid Nature
+- fierydance
+- sludgewave
+- energyball
+- uturn
+
+toxapex @ blacksludge
+Ability: regenerator
+EVs: 252 HP / 4 Def / 252 SpD
+bold Nature
+- recover
+- toxic
+- banefulbunker
+- haze
+
+mimikyu @ brightpowder
+Ability: disguise
+EVs: 4 HP / 252 Atk / 252 Spe
+jolly Nature
+- playrough
+- thunderwave
+- substitute
+- curse
