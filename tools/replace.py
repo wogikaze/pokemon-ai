@@ -55,7 +55,7 @@ type_en = [
 for t in range(len(type_ja)):
     translation_map[type_en[t]] = type_ja[t]
 
-# items_pre.jsを読み込み
+# 置き換えたいファイルを取得
 with open(f"../src/data/{file_type}dex.ts", "r", encoding="utf-8") as file:
     content = file.read()
 

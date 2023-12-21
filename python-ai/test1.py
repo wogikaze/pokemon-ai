@@ -1,7 +1,9 @@
 import asyncio
 import time
-
-from poke_env.player import Player, RandomPlayer
+from tabulate import tabulate
+from poke_env.player import Player, RandomPlayer, cross_evaluate
+from threading import Thread
+import numpy as np
 
 
 class MaxDamagePlayer(Player):
@@ -17,8 +19,22 @@ class MaxDamagePlayer(Player):
             return self.choose_random_move(battle)
 
 
+async def print_crosseval(players, n_battles):
+    # Cross evaluate players: each player plays 20 games against every other player
+    cross_evaluation = await cross_evaluate(players, n_challenges=n_battles)
+
+    # Prepare results for display
+    table = [["-"] + [p.username for p in players]]
+    for p_1, results in cross_evaluation.items():
+        table.append([p_1] + [cross_evaluation[p_1][p_2] for p_2 in results])
+
+    # Display results
+    print(tabulate(table))
+
+
 async def main():
-    # We create two players.
+    start = time.time()
+    # create players.
     team1 = f"""
 dragonite @ lumberry
 Ability: multiscale
@@ -74,24 +90,35 @@ bold Nature
 - hex
 - recover
 """
-
-    # random_player = RandomPlayer(
-    #     max_concurrent_battles=10,
-    # )
-
-    # max_damage_player = MaxDamagePlayer(
-    #     max_concurrent_battles=10,
-    # )
-    # # Now, let's evaluate our player
-    # await max_damage_player.battle_against(random_player, n_battles=100)
-    # print("Max damage player won %d / 100 battles" % max_damage_player.n_won_battles)
-
-    random_player = MaxDamagePlayer(
-        # battle_format="[Gen 9] Battle Stadium Singles Regulation E",
+    # random bot
+    random_player = RandomPlayer(
         max_concurrent_battles=10,
-        # team=team1,
     )
-    await random_player.send_challenges("wogikaze", n_challenges=1)
+    # max_basepower
+    max_damage_player = MaxDamagePlayer(max_concurrent_battles=10, log_level=30)
+    max_damage_player1 = MaxDamagePlayer(
+        max_concurrent_battles=10,
+    )
+
+    Battle_num = 100  # const
+    # evaluate our player
+    # await print_crosseval(
+    #     [random_player, max_damage_player, max_damage_player1], n_battles=Battle_num
+    # )
+
+    await max_damage_player.battle_against(max_damage_player1, n_battles=Battle_num)
+    print(
+        f"Max damage player won %d / {Battle_num} battles"
+        % max_damage_player1.n_won_battles
+    )
+    # 人間と戦う
+    # random_player = MaxDamagePlayer(
+    #     battle_format="gen9battlestadiumsinglesregulatione",
+    #     max_concurrent_battles=10,
+    #     team=team1,
+    # )
+    # await random_player.send_challenges("wogikaze", n_challenges=1)
+    print(f"time spend{time.time() - start} seconds")
 
 
 if __name__ == "__main__":
