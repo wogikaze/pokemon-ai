@@ -1,4 +1,7 @@
 {
     "liveServer.settings.multiRootWorkspaceName": "未来",
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "eslint.workingDirectories": [
+        "./Pokemon-Showdown"
+    ]
 }

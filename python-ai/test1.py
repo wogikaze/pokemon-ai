@@ -1,5 +1,9 @@
 import asyncio
 import time
+from typing import Awaitable, Union
+from poke_env import AccountConfiguration
+from poke_env.environment.abstract_battle import AbstractBattle
+from poke_env.player.battle_order import BattleOrder
 from tabulate import tabulate
 from poke_env.player import Player, RandomPlayer, cross_evaluate
 from threading import Thread
@@ -15,6 +19,23 @@ class MaxDamagePlayer(Player):
             return self.create_order(best_move)
 
         # If no attack is available, a random switch will be made
+        else:
+            return self.choose_random_move(battle)
+
+
+class MaxDamagePlayer_fix(Player):
+    def choose_move(self, battle: AbstractBattle):
+        if battle.available_moves:
+            # わざ威力 = basepower * タイプ相性
+            # 攻撃側のタイプと技のタイプが同じ場合1.5倍
+            # テラスタイプと技のタイプが同じ場合、ダメージが1.5倍
+            # テラスタイプと攻撃側のタイプと技のタイプが同じ場合、ダメージが2.0倍
+            best_move = max(
+                battle.available_moves,
+                key=lambda move: move.base_power
+                * battle.all_active_pokemons[1].damage_multiplier(move),
+            )
+            return self.create_order(best_move)
         else:
             return self.choose_random_move(battle)
 
@@ -91,34 +112,29 @@ bold Nature
 - recover
 """
     # random bot
-    random_player = RandomPlayer(
-        max_concurrent_battles=10,
-    )
+    random_player = RandomPlayer(max_concurrent_battles=10)
     # max_basepower
-    max_damage_player = MaxDamagePlayer(max_concurrent_battles=10, log_level=30)
-    max_damage_player1 = MaxDamagePlayer(
+    max_damage_player = MaxDamagePlayer(max_concurrent_battles=10)
+    max_damage_player1 = MaxDamagePlayer_fix(
         max_concurrent_battles=10,
+        account_configuration=AccountConfiguration("testing_max", None),
     )
 
-    Battle_num = 100  # const
+    Battle_num = 1000  # const
+    HumanBattle = False
     # evaluate our player
     # await print_crosseval(
     #     [random_player, max_damage_player, max_damage_player1], n_battles=Battle_num
     # )
-
-    await max_damage_player.battle_against(max_damage_player1, n_battles=Battle_num)
-    print(
-        f"Max damage player won %d / {Battle_num} battles"
-        % max_damage_player1.n_won_battles
-    )
-    # 人間と戦う
-    # random_player = MaxDamagePlayer(
-    #     battle_format="gen9battlestadiumsinglesregulatione",
-    #     max_concurrent_battles=10,
-    #     team=team1,
-    # )
-    # await random_player.send_challenges("wogikaze", n_challenges=1)
-    print(f"time spend{time.time() - start} seconds")
+    if HumanBattle:
+        await max_damage_player1.send_challenges("wogikaze", n_challenges=1)
+    else:
+        await max_damage_player.battle_against(max_damage_player1, n_battles=Battle_num)
+        print(
+            f"Max damage player won %d / {Battle_num} battles"
+            % max_damage_player1.n_won_battles
+        )
+        print(f"time spend {time.time() - start} seconds")
 
 
 if __name__ == "__main__":
