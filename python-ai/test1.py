@@ -30,13 +30,15 @@ class MaxDamagePlayer_fix(Player):
             # 攻撃側のタイプと技のタイプが同じ場合1.5倍
             # テラスタイプと技のタイプが同じ場合、ダメージが1.5倍
             # テラスタイプと攻撃側のタイプと技のタイプが同じ場合、ダメージが2.0倍
-            def output_array(array):
-                for move in array:
+            def output_array(moves):
+                for move in moves:
                     print(
-                        f"move:{move}: ",
-                        f"movetype:{move.type}",
-                        f"move_power:{move.base_power}"
-                        f"相手のtype: {battle.all_active_pokemons[1].types}, ",
+                        f"move:{move.id} ",
+                        f"movetype:{move.type.name} ",
+                        f"move_power: {move.base_power}\n",
+                        f"相手のtype: {battle.all_active_pokemons[1].types} ",
+                        f"相手のテラスタル: {battle.all_active_pokemons[1].terastallized}",
+                        f"相手のテラスタルタイプ: {getattr(battle.all_active_pokemons[1]._terastallized_type, 'name', None)}",
                         battle.all_active_pokemons[1].damage_multiplier(move),
                     )
 
