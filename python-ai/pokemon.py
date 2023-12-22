@@ -47,6 +47,7 @@ with open(file_path, "r", encoding="utf-8") as file:
         data_array.append(columns)
         pokemon_team += f""""{columns[0]}" @ "{columns[11]}"
 Ability: "{columns[10]}"
+Tera Type: "{columns[3]}"
 EVs: {extract_effort_values(columns[1])}
 "{''.join(re.findall(r'[あ-ん]', columns[1]))}" Nature
 - "{columns[13]}"

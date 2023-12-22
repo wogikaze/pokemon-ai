@@ -1,5 +1,6 @@
 dragonite @ lumberry
 Ability: multiscale
+Tera Type: normal
 EVs: 228 HP / 252 Atk / 28 Spe
 adamant Nature
 - extremespeed
@@ -9,6 +10,7 @@ adamant Nature
 
 fluttermane @ choicespecs
 Ability: protosynthesis
+Tera Type: fairy
 EVs: 4 HP / 252 SpA / 252 Spe
 modest Nature
 - moonblast
@@ -18,6 +20,7 @@ modest Nature
 
 ogerponhearthflame @ hearthflamemask
 Ability: moldbreaker
+Tera Type: fire
 EVs: 252 HP / 4 Atk / 188 Def / 4 SpD / 60 Spe
 jolly Nature
 - ivycudgel
@@ -27,6 +30,7 @@ jolly Nature
 
 ursalunabloodmoon @ silkscarf
 Ability: mindseye
+Tera Type: normal
 EVs: 212 HP / 4 Def / 196 SpA / 4 SpD / 92 Spe
 modest Nature
 - bloodmoon
@@ -36,6 +40,7 @@ modest Nature
 
 chienpao @ focussash
 Ability: swordofruin
+Tera Type: haunter
 EVs: 252 Atk / 4 SpD / 252 Spe
 jolly Nature
 - iciclecrash
@@ -45,6 +50,7 @@ jolly Nature
 
 gholdengo @ covertcloak
 Ability: goodasgold
+Tera Type: dragon
 EVs: 228 HP / 196 SpD / 84 Spe
 bold Nature
 - makeitrain
@@ -54,6 +60,7 @@ bold Nature
 
 urshifurapidstrike @ punchingglove
 Ability: unseenfist
+Tera Type: water
 EVs: 252 Atk / 4 SpD / 252 Spe
 jolly Nature
 - surgingstrikes
@@ -63,6 +70,7 @@ jolly Nature
 
 scizor @ assaultvest
 Ability: technician
+Tera Type: fire
 EVs: 252 HP / 252 Atk / 4 SpD
 adamant Nature
 - bulletpunch
@@ -72,6 +80,7 @@ adamant Nature
 
 chiyu @ choicescarf
 Ability: beadsofruin
+Tera Type: fairy
 EVs: 4 HP / 252 SpA / 252 Spe
 modest Nature
 - flamethrower
@@ -81,6 +90,7 @@ modest Nature
 
 garganacl @ iapapaberry
 Ability: purifyingsalt
+Tera Type: fairy
 EVs: 252 HP / 252 SpD / 4 Spe
 impish Nature
 - saltcure
@@ -90,6 +100,7 @@ impish Nature
 
 ironbundle @ boosterenergy
 Ability: quarkdrive
+Tera Type: water
 EVs: 252 SpA / 4 SpD / 252 Spe
 timid Nature
 - hydropump
@@ -99,6 +110,7 @@ timid Nature
 
 tinglu @ leftovers
 Ability: vesselofruin
+Tera Type: poison
 EVs: 244 HP / 148 Def / 166 SpD
 impish Nature
 - earthquake
@@ -108,6 +120,7 @@ impish Nature
 
 landorustherian @ sitrusberry
 Ability: intimidate
+Tera Type: steel
 EVs: 4 HP / 252 Atk / 252 Spe
 jolly Nature
 - earthquake
@@ -117,7 +130,8 @@ jolly Nature
 
 roaringmoon @ choiceband
 Ability: protosynthesis
-EVs: 44 HP / 252 Atk / 252 Spe
+Tera Type: steel
+EVs: 4 HP / 252 Atk / 252 Spe
 jolly Nature
 - outrage
 - knockoff
@@ -126,6 +140,7 @@ jolly Nature
 
 dondozo @ chestoberry
 Ability: unaware
+Tera Type: fairy
 EVs: 252 HP / 252 SpD / 4 Spe
 impish Nature
 - liquidation
@@ -135,6 +150,7 @@ impish Nature
 
 glimmora @ redcard
 Ability: toxicdebris
+Tera Type: grass
 EVs: 252 HP / 252 SpD / 4 Spe
 bold Nature
 - endure
@@ -144,6 +160,7 @@ bold Nature
 
 garchomp @ loadeddice
 Ability: roughskin
+Tera Type: steel
 EVs: 252 Atk / 4 SpD / 252 Spe
 jolly Nature
 - earthquake
@@ -153,6 +170,7 @@ jolly Nature
 
 vulpixalola @ lightclay
 Ability: snowwarning
+Tera Type: fire
 EVs: 212 HP / 92 SpD / 204 Spe
 timid Nature
 - moonblast
@@ -162,6 +180,7 @@ timid Nature
 
 annihilape @ lightball
 Ability: innerfocus
+Tera Type: steel
 EVs: 252 HP / 4 Def / 252 Spe
 jolly Nature
 - fling
@@ -171,6 +190,7 @@ jolly Nature
 
 corviknight @ aguavberry
 Ability: mirrorarmor
+Tera Type: fire
 EVs: 252 HP / 180 Def / 76 SpD
 sassy Nature
 - roost
@@ -180,6 +200,7 @@ sassy Nature
 
 ironmoth @ airballoon
 Ability: quarkdrive
+Tera Type: haunter
 EVs: 252 SpA / 252 Spe
 timid Nature
 - fierydance
@@ -189,6 +210,7 @@ timid Nature
 
 toxapex @ blacksludge
 Ability: regenerator
+Tera Type: poison
 EVs: 252 HP / 4 Def / 252 SpD
 bold Nature
 - recover
@@ -198,6 +220,7 @@ bold Nature
 
 mimikyu @ brightpowder
 Ability: disguise
+Tera Type: fairy
 EVs: 4 HP / 252 Atk / 252 Spe
 jolly Nature
 - playrough
