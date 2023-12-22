@@ -39,13 +39,12 @@ class MaxDamagePlayer_fix(Player):
                         f"相手のtype: {battle.all_active_pokemons[1].types} ",
                         f"相手のテラスタル: {battle.all_active_pokemons[1].terastallized}",
                         f"相手のテラスタルタイプ: {getattr(battle.all_active_pokemons[1]._terastallized_type, 'name', None)}",
-                        battle.all_active_pokemons[1].damage_multiplier(move),
+                        f"倍率: {battle.all_active_pokemons[1].damage_multiplier(move)}",
                     )
 
-            print("-------------")
-            print()
-            print(battle.available_moves)
-            output_array(battle.available_moves)
+            # print("-------------")
+            # print(battle.available_moves)
+            # output_array(battle.available_moves)
             best_move = max(
                 battle.available_moves,
                 key=lambda move: move.base_power
@@ -54,8 +53,12 @@ class MaxDamagePlayer_fix(Player):
             return self.create_order(best_move)
         else:
             # return self.choose_random_move(battle)
-            print(battle.available_switches)
-            return self.create_order(battle.available_switches[0])
+            # print(battle.available_switches)
+            try:
+                #TODO: 交代先のポケモンを選ぶ
+                return self.create_order(battle.available_switches[0])
+            except IndexError:
+                return self.choose_random_move(battle)
 
 
 async def print_crosseval(players, n_battles):
@@ -144,11 +147,11 @@ timid Nature
         # battle_format="gen9battlestadiumsinglesregulatione",
         account_configuration=AccountConfiguration("testing_max", None),
         # team=team1,
-        log_level=10,
+        # log_level=10,
     )
 
     Battle_num = 1000  # const
-    HumanBattle = True
+    HumanBattle = False
     # evaluate our player
     # await print_crosseval(
     #     [random_player, max_damage_player, max_damage_player1], n_battles=Battle_num
