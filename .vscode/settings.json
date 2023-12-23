@@ -3,5 +3,8 @@
     "liveServer.settings.port": 5501,
     "eslint.workingDirectories": [
         "./Pokemon-Showdown"
+    ],
+    "python.analysis.extraPaths": [
+        "./poke-env/src"
     ]
 }

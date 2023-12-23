@@ -55,7 +55,7 @@ class MaxDamagePlayer_fix(Player):
             # return self.choose_random_move(battle)
             # print(battle.available_switches)
             try:
-                #TODO: 交代先のポケモンを選ぶ
+                # TODO: 交代先のポケモンを選ぶ
                 return self.create_order(battle.available_switches[0])
             except IndexError:
                 return self.choose_random_move(battle)
@@ -142,7 +142,7 @@ timid Nature
     random_player = RandomPlayer(max_concurrent_battles=10)
     # max_basepower
     max_damage_player = MaxDamagePlayer(max_concurrent_battles=10)
-    max_damage_player1 = MaxDamagePlayer_fix(
+    max_damage_fix_player = MaxDamagePlayer_fix(
         max_concurrent_battles=10,
         # battle_format="gen9battlestadiumsinglesregulatione",
         account_configuration=AccountConfiguration("testing_max", None),
@@ -157,12 +157,12 @@ timid Nature
     #     [random_player, max_damage_player, max_damage_player1], n_battles=Battle_num
     # )
     if HumanBattle:
-        await max_damage_player1.send_challenges("wogikaze", n_challenges=2)
+        await max_damage_fix_player.send_challenges("wogikaze", n_challenges=2)
     else:
-        await max_damage_player.battle_against(max_damage_player1, n_battles=Battle_num)
+        await random_player.battle_against(max_damage_fix_player, n_battles=Battle_num)
         print(
             f"Max damage player won %d / {Battle_num} battles"
-            % max_damage_player1.n_won_battles
+            % max_damage_fix_player.n_won_battles
         )
         print(f"time spend {time.time() - start} seconds")
 
