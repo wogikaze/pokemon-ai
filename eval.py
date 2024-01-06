@@ -33,22 +33,22 @@ class MaxDamagePlayer_fix(Player):
             def output_array(moves):
                 for move in moves:
                     print(
+                        "----------------",
                         f"move:{move.id} ",
                         f"movetype:{move.type.name} ",
                         f"move_power: {move.base_power}\n",
-                        f"相手のtype: {battle.all_active_pokemons[1].types} ",
-                        f"相手のテラスタル: {battle.all_active_pokemons[1].terastallized}",
-                        f"相手のテラスタルタイプ: {getattr(battle.all_active_pokemons[1]._terastallized_type, 'name', None)}",
-                        f"倍率: {battle.all_active_pokemons[1].damage_multiplier(move)}",
+                        f"相手のtype: {battle.opponent_active_pokemon.types} ",
+                        f"相手のテラスタル: {battle.opponent_active_pokemon.terastallized}",
+                        f"相手のテラスタルタイプ: {getattr(battle.opponent_active_pokemon._terastallized_type, 'name', None)}",
+                        f"倍率: {battle.opponent_active_pokemon.damage_multiplier(move)}",
                     )
 
-            # print("-------------")
             # print(battle.available_moves)
-            # output_array(battle.available_moves)
+            output_array(battle.available_moves)
             best_move = max(
                 battle.available_moves,
                 key=lambda move: move.base_power
-                * battle.all_active_pokemons[1].damage_multiplier(move),
+                * battle.opponent_active_pokemon.damage_multiplier(move),
             )
             return self.create_order(best_move)
         else:
@@ -150,7 +150,7 @@ timid Nature
         # log_level=10,
     )
 
-    Battle_num = 1000  # const
+    Battle_num = 100  # const
     HumanBattle = False
     # evaluate our player
     # await print_crosseval(
