@@ -13,15 +13,16 @@
 
 ### 簡単 ver
 
-`$ run`
+`$ run`  
 `$ python eval.py`
 
 
 ### 詳細 ver
 
-Pokemon Showdown のサーバー起動
-`$ cd pokemon-showdown ; node pokemon-showdown start --no-security`
-python で AI の起動
+Pokemon Showdown のサーバー起動  
+`$ cd pokemon-showdown ; node pokemon-showdown start --no-security`  
+
+python で AI の起動  
 `$ python eval.py`
 
 ## ライセンス
