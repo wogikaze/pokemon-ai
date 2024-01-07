@@ -17,6 +17,7 @@ from tensorflow.python.keras.optimizers import adam_v2
 import numpy as np
 import random
 from collections import deque
+from Players.ApeXPlayer import ApeXPlayer
 from poke_env.player.player import Player
 
 
@@ -71,7 +72,12 @@ class DuelingDQNPlayer(Player):
         # ... additional features
 
         # Combining the features into a single array
-        state = np.array([own_active_pokemon_hp, opponent_active_pokemon_hp, ...])
+        state = np.array(
+            [
+                own_active_pokemon_hp,
+                opponent_active_pokemon_hp,
+            ]
+        )
 
         return state
 
@@ -125,7 +131,9 @@ class QNetwork:
 
         # Create the model
         self.model = Model(inputs=input_layer, outputs=output_layer)
-        self.model.compile(loss=huberloss, optimizer=adam_v2.Adam(learning_rate=learning_rate))
+        self.model.compile(
+            loss=huberloss, optimizer=adam_v2.Adam(learning_rate=learning_rate)
+        )
 
 
 class Memory:
@@ -373,185 +381,43 @@ class DQNAgent(Player):
         print(battle.turn)
 
 
-class MaxDamagePlayer(Player):
-    def __init__(self, account_configuration):
+class QLearningPlayer(Player):
+    def __init__(self, state_space, action_space, account_configuration):
+        # Initialize the parent class
         super().__init__(account_configuration)
-        self.win_counts = []
-        self.battle_num = 0
 
-    def choose_move(self, battle):
-        if battle.available_moves:
-            best_move = max(battle.available_moves, key=lambda move: move.base_power)
-            return self.create_order(best_move)
-        else:
-            return self.choose_random_move(battle)
-
-    def _battle_finished_callback(self, battle: AbstractBattle):
-        self.battle_num += 1
-
-
-class MaxDamagePlayer_fix(Player):
-    def __init__(self, account_configuration):
-        super().__init__(account_configuration)
-        self.win_counts = []
-        self.battle_num = 0
+        # Initialize the Q-table, learning parameters, etc.
+        self.q_table = np.zeros((state_space, action_space))
+        self.learning_rate = 0.1
+        self.discount_factor = 0.9
+        self.exploration_rate = 1.0
+        self.exploration_decay = 0.995
+        self.action_space = action_space
+        self.last_state = None
 
     def choose_move(self, battle: AbstractBattle):
-        if battle.available_moves:
-            best_move = max(
-                battle.available_moves,
-                key=lambda move: move.base_power
-                * battle.opponent_active_pokemon.damage_multiplier(move),
-            )
-            return self.create_order(best_move)
+        # Implement the policy for choosing an action
+        state = getState(battle)
+        available_moves = battle.available_moves + battle.available_switches
+        if np.random.uniform(0, 1) < self.exploration_rate:
+            action = np.random.choice(self.action_space)
         else:
-            try:
-                # TODO: 交代先のポケモンを選ぶ
-                return self.create_order(battle.available_switches[0])
-            except IndexError:
-                return self.choose_random_move(battle)
-
-    def _battle_finished_callback(self, battle: AbstractBattle):
-        self.battle_num += 1
-
-
-class QLearningPlayer(Player):
-    def __init__(self):
-        super().__init__()
-        self.q_table = {}  # Qテーブルの初期化
-        self.alpha = 0.1  # 学習率
-        self.gamma = 0.9  # 割引率
-        # 前回の状態と行動を記録するための変数
-        self.previous_state = None
-        self.previous_action = None
-        # 勝利数を記録するための変数
-        self.win_counts = []
-        self.battle_num = 0
-
-    def get_state(self, battle):
-        # 現在の状態を定義するコード
-        # 例: 自分のポケモンのHP、敵のポケモンのタイプなど
-        state = (
-            # battle.active_pokemon.current_hp,
-            # tuple(battle.active_pokemon.types),
-            # tuple((move.base_power, move.type) for move in battle.available_moves),
-            # tuple(battle.opponent_active_pokemon.types),
-            tuple(
-                move.base_power * battle.opponent_active_pokemon.damage_multiplier(move)
-                for move in battle.available_moves
-            )
+            action = np.argmax(self.q_table[state, :])
+        return action
+    def getState(battle:AbstractBattle):
+        return 
+    def update_q_table(self, state, action, reward, next_state):
+        # Update the Q-table using the Q-learning formula
+        best_next_action = np.argmax(self.q_table[next_state, :])
+        td_target = (
+            reward + self.discount_factor * self.q_table[next_state, best_next_action]
         )
-
-        return state
-
-    def choose_move(self, battle):
-        # 新しい状態を取得
-        current_state = self.get_state(battle)
-        # print(current_state)
-        # 前回の行動の結果を用いてQテーブルを更新
-        if self.previous_state is not None and self.previous_action is not None:
-            reward = self.calculate_reward(battle)
-            self.update_q_table(
-                battle,
-                self.previous_state,
-                self.previous_action,
-                reward,
-                current_state,
-                battle.finished,
-            )
-            # print(reward)
-        # ε-greedyアルゴリズムに基づいて行動を選択
-        if random.uniform(0, 1) < 0.5 * (1 / (self.battle_num + 1)):
-            action = self.choose_random_move(battle)
-            return action
-        else:
-            if not battle.available_moves:
-                action = self.choose_random_move(battle)
-                return action
-            else:
-                action = self.choose_best_move(
-                    current_state, battle, battle.available_moves
-                )
-                # print(action)
-
-        # 現在の状態と行動を記録
-        self.previous_state = current_state
-        self.previous_action = action
-
-        return self.create_order(action)
-
-    def choose_best_move(self, battle, state, available_moves):
-        best_move = None
-        best_q_value = float("-inf")
-        if not available_moves:
-            return self.choose_random_move(battle)
-        for move in available_moves:
-            # 状態と行動の組み合わせに対するQ値を取得
-            q_value = self.q_table.get((state, move), 0)  # Qテーブルになければデフォルト値0を使用
-
-            # 最大のQ値を持つ行動を選択
-            if q_value > best_q_value:
-                best_q_value = q_value
-                best_move = move
-
-        # どの行動もQテーブルにない場合はランダムに行動を選択
-        if best_move is None:
-            best_move = random.choice(available_moves)
-
-        return best_move
-
-    def update_q_table(self, battle, old_state, action, reward, new_state, done):
-        # print(self.q_table)
-        # print(old_state)
-        # print(action)
-        old_q_value = self.q_table.get((old_state, action), 0)
-
-        if not done:
-            if not battle.available_moves:
-                next_max_q_value = 0
-            else:
-                # 次の状態での最大Q値を見つける
-                next_max_q_value = max(
-                    [
-                        self.q_table.get((new_state, a), 0)
-                        for a in battle.available_moves
-                    ]
-                )
-        else:
-            # エピソードが終了した場合は、次の状態のQ値は0とする
-            next_max_q_value = 0
-
-        # Q値を更新する
-        new_q_value = old_q_value + self.alpha * (
-            reward + self.gamma * next_max_q_value - old_q_value
-        )
-        self.q_table[(old_state, action)] = new_q_value
-
-    def calculate_reward(self, battle):
-        # Calculate the HP percentage of your Pokémon and the opponent's Pokémon
-        my_hp_pct = battle.active_pokemon.current_hp / battle.active_pokemon.max_hp
-        opponent_hp_pct = (
-            battle.opponent_active_pokemon.current_hp
-            / battle.opponent_active_pokemon.max_hp
-        )
-
-        # Reward is the difference between your HP percentage and the opponent's
-        reward = my_hp_pct - opponent_hp_pct
-        return reward
+        td_delta = td_target - self.q_table[state, action]
+        self.q_table[state, action] += self.learning_rate * td_delta
 
     # バトル終了時
     def _battle_finished_callback(self, battle):
-        reward = self.calculate_reward(battle)
-        current_state = self.get_state(battle)
-        self.update_q_table(
-            battle,
-            self.previous_state,
-            self.previous_action,
-            reward,
-            current_state,
-            battle.finished,
-        )
-        self.battle_num += 1
+        self.exploration_rate *= self.exploration_decay
 
 
 async def main():
@@ -560,22 +426,20 @@ async def main():
     # player
     # qlearningplayer = QLearningPlayer()
     config = AccountConfiguration("QLPlayer1", None)
-    random_player = MaxDamagePlayer_fix(
+    random_player = RandomPlayer(
         account_configuration=AccountConfiguration("random", None)
     )
     # qlplayer = DuelingDQNPlayer(6, 7, account_configuration=config)
-    qlplayer = DuelingDQNPlayer(
+    qlplayer = ApeXPlayer(
         state_size=10,
-        action_size=4,
-        batch_size=32,
-        gamma=0.95,
+        action_size=9,
         account_configuration=config,
     )
 
     # dqnplayer = DQNAgent(account_configuration=config)
 
-    BATTLE_NUM = 500  # const
-    checkpoint = 5  # 何回ごとに記録するか
+    BATTLE_NUM = 15  # const
+    checkpoint = 3  # 何回ごとに記録するか
     print("- - -\nstart")
     for _ in range(BATTLE_NUM // checkpoint):
         batch_start = time.time()

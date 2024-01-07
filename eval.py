@@ -1,69 +1,30 @@
 import asyncio
 import time
-from typing import Awaitable, Union
+from matplotlib import pyplot as plt
 from poke_env import AccountConfiguration
-from poke_env.environment.abstract_battle import AbstractBattle
-from poke_env.player.battle_order import BattleOrder
+from poke_env.player import RandomPlayer, cross_evaluate
 from tabulate import tabulate
-from poke_env.player import Player, RandomPlayer, cross_evaluate
-from threading import Thread
-import numpy as np
+
+from Players.MaxDamagePlayer import MaxDamagePlayer, MaxDamagePlayer_fix
 
 
-class MaxDamagePlayer(Player):
-    def choose_move(self, battle):
-        # If the player can attack, it will
-        if battle.available_moves:
-            # Finds the best move among available ones
-            best_move = max(battle.available_moves, key=lambda move: move.base_power)
-            return self.create_order(best_move)
+async def main():
+    start = time.time()
 
-        # If no attack is available, a random switch will be made
-        else:
-            return self.choose_random_move(battle)
+    player1 = RandomPlayer(account_configuration=AccountConfiguration("player1", None))
+    player2 = MaxDamagePlayer(
+        account_configuration=AccountConfiguration("player2", None),
+    )
+    player3 = MaxDamagePlayer_fix(
+        account_configuration=AccountConfiguration("player3", None)
+    )
 
+    players = [player1, player2, player3]
+    BATTLE_NUM = 15  # const
+    checkpoint = 3  # 何回ごとに記録するか
+    print("start")
 
-class MaxDamagePlayer_fix(Player):
-    def choose_move(self, battle: AbstractBattle):
-        if battle.available_moves:
-            # わざ威力 = basepower * タイプ相性
-            # 攻撃側のタイプと技のタイプが同じ場合1.5倍
-            # テラスタイプと技のタイプが同じ場合、ダメージが1.5倍
-            # テラスタイプと攻撃側のタイプと技のタイプが同じ場合、ダメージが2.0倍
-            def output_array(moves):
-                for move in moves:
-                    print(
-                        "----------------",
-                        f"move:{move.id} ",
-                        f"movetype:{move.type.name} ",
-                        f"move_power: {move.base_power}\n",
-                        f"相手のtype: {battle.opponent_active_pokemon.types} ",
-                        f"相手のテラスタル: {battle.opponent_active_pokemon.terastallized}",
-                        f"相手のテラスタルタイプ: {getattr(battle.opponent_active_pokemon._terastallized_type, 'name', None)}",
-                        f"倍率: {battle.opponent_active_pokemon.damage_multiplier(move)}",
-                    )
-
-            # print(battle.available_moves)
-            output_array(battle.available_moves)
-            best_move = max(
-                battle.available_moves,
-                key=lambda move: move.base_power
-                * battle.opponent_active_pokemon.damage_multiplier(move),
-            )
-            return self.create_order(best_move)
-        else:
-            # return self.choose_random_move(battle)
-            # print(battle.available_switches)
-            try:
-                # TODO: 交代先のポケモンを選ぶ
-                return self.create_order(battle.available_switches[0])
-            except IndexError:
-                return self.choose_random_move(battle)
-
-
-async def print_crosseval(players, n_battles):
-    # Cross evaluate players: each player plays 20 games against every other player
-    cross_evaluation = await cross_evaluate(players, n_challenges=n_battles)
+    cross_evaluation = await cross_evaluate(players, n_challenges=20)
 
     # Prepare results for display
     table = [["-"] + [p.username for p in players]]
@@ -72,99 +33,7 @@ async def print_crosseval(players, n_battles):
 
     # Display results
     print(tabulate(table))
-
-
-async def main():
-    start = time.time()
-    # create players.
-    team1 = f"""
-landorustherian @ sitrusberry
-Ability: intimidate
-Tera Type: steel
-EVs: 4 HP / 252 Atk / 252 Spe
-jolly Nature
-- earthquake
-- uturn
-- rocktomb
-- stealthrock
-
-roaringmoon @ choiceband
-Ability: protosynthesis
-Tera Type: steel
-EVs: 4 HP / 252 Atk / 252 Spe
-jolly Nature
-- outrage
-- knockoff
-- ironhead
-- uturn
-
-dondozo @ chestoberry
-Ability: unaware
-Tera Type: fairy
-EVs: 252 HP / 252 SpD / 4 Spe
-impish Nature
-- liquidation
-- yawn
-- rest
-- fissure
-
-glimmora @ redcard
-Ability: toxicdebris
-Tera Type: grass
-EVs: 252 HP / 252 SpD / 4 Spe
-bold Nature
-- endure
-- energyball
-- mortalspin
-- stealthrock
-
-garchomp @ loadeddice
-Ability: roughskin
-Tera Type: steel
-EVs: 252 Atk / 4 SpD / 252 Spe
-jolly Nature
-- earthquake
-- scaleshot
-- swordsdance
-- ironhead
-
-vulpixalola @ lightclay
-Ability: snowwarning
-Tera Type: fire
-EVs: 212 HP / 92 SpD / 204 Spe
-timid Nature
-- moonblast
-- blizzard
-- auroraveil
-- freezedry
-"""
-    # random bot
-    random_player = RandomPlayer(max_concurrent_battles=10)
-    # max_basepower
-    max_damage_player = MaxDamagePlayer(max_concurrent_battles=10)
-    max_damage_fix_player = MaxDamagePlayer_fix(
-        max_concurrent_battles=10,
-        # battle_format="gen9battlestadiumsinglesregulatione",
-        account_configuration=AccountConfiguration("testing_max", None),
-        # team=team1,
-        # log_level=10,
-    )
-
-    Battle_num = 100  # const
-    HumanBattle = False
-    # evaluate our player
-    # await print_crosseval(
-    #     [random_player, max_damage_player, max_damage_player1], n_battles=Battle_num
-    # )
-    if HumanBattle:
-        await max_damage_fix_player.send_challenges("wogikaze", n_challenges=2)
-    else:
-        await random_player.battle_against(max_damage_fix_player, n_battles=Battle_num)
-        print(
-            f"Max damage player won %d / {Battle_num} battles"
-            % max_damage_fix_player.n_won_battles
-        )
-        print(f"time spend {time.time() - start} seconds")
+    print("took time %f" % (time.time() - start))
 
 
 if __name__ == "__main__":
