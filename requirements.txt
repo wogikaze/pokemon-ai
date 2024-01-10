@@ -1,1 +1,3 @@
 git+https://github.com/wogikaze/poke-env
+keras-rl2
+gymnasium
