@@ -10,26 +10,31 @@ from poke_env.player import RandomPlayer
 from poke_env.environment import AbstractBattle as Battle
 from poke_env.player.openai_api import ObsType, OpenAIGymEnv
 from MaxDamagePlayer import MaxDamagePlayer
-from env_test import Gen9EnvSinglePlayer
 from tabulate import tabulate
-
+from stable_baselines3.common.vec_env import DummyVecEnv
+from stable_baselines3 import PPO
 from stable_baselines3 import DQN
 from poke_env.player import (
     Gen8EnvSinglePlayer,
+    Gen9EnvSinglePlayer,
     MaxBasePowerPlayer,
     RandomPlayer,
     SimpleHeuristicsPlayer,
     background_cross_evaluate,
     background_evaluate_player,
 )
+from rl.agents.dqn import DQNAgent
+from rl.memory import SequentialMemory
+from rl.policy import EpsGreedyQPolicy, LinearAnnealedPolicy
+from tabulate import tabulate
+from keras.layers import Dense, Flatten
+from keras.models import Sequential
+from keras.optimizers import Adam
 
 
-class DemoEnv(Gen9EnvSinglePlayer):
+class SimpleRLPlayer(Gen8EnvSinglePlayer):
     def action_space_size(self):
         return 26
-
-    def action_to_move(self, action: int, battle: Battle):
-        return self.agent.choose_random_move(battle)
 
     def get_opponent(self):
         return RandomPlayer(
@@ -64,10 +69,6 @@ class DemoEnv(Gen9EnvSinglePlayer):
                 moves_dmg_multiplier[
                     i
                 ] = battle.opponent_active_pokemon.damage_multiplier(move)
-                # moves_dmg_multiplier[i] = move.type.damage_multiplier(
-                #     battle.opponent_active_pokemon.type_1,
-                #     battle.opponent_active_pokemon.type_2,
-                # )
 
         # We count how many pokemons have fainted in each team
         fainted_mon_team = len([mon for mon in battle.team.values() if mon.fainted]) / 6
@@ -83,35 +84,64 @@ class DemoEnv(Gen9EnvSinglePlayer):
                 [fainted_mon_team, fainted_mon_opponent],
             ]
         )
+        # print(final_vector)
         return np.float32(final_vector)
 
 
 if __name__ == "__main__":
-    env = DemoEnv(
-        battle_format="gen8randombattle",
-        server_configuration=LocalhostServerConfiguration,
-        start_challenging=True,
+    opponent = RandomPlayer(battle_format="gen8randombattle")
+    test_env = SimpleRLPlayer(
+        battle_format="gen8randombattle", start_challenging=True, opponent=opponent
     )
-    check_env(env)
-    env.close()
-    
-    
+    # check_env(test_env)
+    # test_env.close()
+
+    # Create one environment for training and one for evaluation
+    opponent = RandomPlayer(battle_format="gen8randombattle")
+    train_env = SimpleRLPlayer(
+        battle_format="gen8randombattle", opponent=opponent, start_challenging=True
+    )
+    opponent = RandomPlayer(battle_format="gen8randombattle")
+    eval_env = SimpleRLPlayer(
+        battle_format="gen8randombattle", opponent=opponent, start_challenging=True
+    )
+
+    # ベクトル型並行処理ができるので使ってみます
+    env = DummyVecEnv([lambda: train_env])
+
+    # 強化学習アルゴリズムとしてPPOを使用します
+    # イメージデータなどを扱う際はCnnPolicyを使用するようです。ここではMlpPolicyを使用します
     model = DQN("MlpPolicy", env, verbose=1)
-    model.learn(total_timesteps=1000, log_interval=4)
-    model.save("dqn_cartpole")
 
-    del model  # remove to demonstrate saving and loading
+    model.learn(total_timesteps=10000)
 
-    model = DQN.load("dqn_cartpole")
+    env.close()
 
-    obs, info = env.reset()
-    while True:
-        action, _states = model.predict(obs, deterministic=True)
-        obs, reward, terminated, truncated, info = env.step(action)
-        env.render()
-        if terminated or truncated:
-            obs, info = env.reset()
-            
+    model.save("proj_name")
+
+    del model
+
+    model = DQN.load("proj_name")
+
+    # Evaluating the model
+    print("Results against random player:")
+
+    for step in range(10):
+        state, info = eval_env.reset()
+        while True:
+            action, _ = model.predict(state, deterministic=True)
+            obs, reward, terminated, truncated, info = eval_env.step(action)
+            # env.render()
+            if terminated or truncated:
+                print(
+                    f"steps:{eval_env.n_finished_battles} is {eval_env.n_won_battles}"
+                )
+                break
+    print(
+        f"DQN Evaluation: {eval_env.n_won_battles} victories out of {eval_env.n_finished_battles} episodes"
+    )
+    env.close()
+
     # for ep in range(10):
     #     state, info = test_env.reset()
     #     done = False

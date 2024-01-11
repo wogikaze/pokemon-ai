@@ -39,7 +39,9 @@ class SimpleRLPlayer(Gen8EnvSinglePlayer):
                 move.base_power / 100
             )  # Simple rescaling to facilitate learning
             if move.type:
-                moves_dmg_multiplier[i] = battle.opponent_active_pokemon.damage_multiplier(move)
+                moves_dmg_multiplier[
+                    i
+                ] = battle.opponent_active_pokemon.damage_multiplier(move)
                 # moves_dmg_multiplier[i] = move.type.damage_multiplier(
                 #     battle.opponent_active_pokemon.type_1,
                 #     battle.opponent_active_pokemon.type_2,
