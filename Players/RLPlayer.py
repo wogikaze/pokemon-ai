@@ -29,7 +29,7 @@ from tabulate import tabulate
 from wandb.integration.sb3 import WandbCallback
 
 
-class SimpleRLPlayer(Gen9EnvSinglePlayer):
+class RLPlayer(Gen9EnvSinglePlayer):
     def action_space_size(self):
         return 26
 
@@ -88,7 +88,7 @@ class SimpleRLPlayer(Gen9EnvSinglePlayer):
 if __name__ == "__main__":
     "check env"
     # opponent = RandomPlayer(battle_format="gen9randombattle")
-    # test_env = SimpleRLPlayer(
+    # test_env = RLPlayer(
     #     battle_format="gen9randombattle", start_challenging=True, opponent=opponent
     # )
     # check_env(test_env)
@@ -96,11 +96,11 @@ if __name__ == "__main__":
 
     # Create one environment for training and one for evaluation
     opponent = MaxDamagePlayer(battle_format="gen9randombattle")
-    train_env = SimpleRLPlayer(
+    train_env = RLPlayer(
         battle_format="gen9randombattle", opponent=opponent, start_challenging=True
     )
     opponent = MaxDamagePlayer(battle_format="gen9randombattle")
-    eval_env = SimpleRLPlayer(
+    eval_env = RLPlayer(
         battle_format="gen9randombattle", opponent=opponent, start_challenging=True
     )
     train_env = Monitor(train_env)
@@ -123,18 +123,14 @@ if __name__ == "__main__":
     )
 
     model.learn(
-        total_timesteps=50000,
+        total_timesteps=10000,
         callback=WandbCallback(gradient_save_freq=100, verbose=1),
         progress_bar=True,
     )
 
     env.close()
 
-    model.save("QRDQNmx")
-
-    del model
-
-    model = QRDQN.load("QRDQNmx")
+    model.save("QRDQNr-m")
 
     # Evaluating the model
     print("Results against random player:")
@@ -160,7 +156,7 @@ def evaluate():
     from poke_env.player import background_cross_evaluate
 
     opponent = RandomPlayer(battle_format="gen8randombattle")
-    eval_env = SimpleRLPlayer(
+    eval_env = RLPlayer(
         battle_format="gen8randombattle", opponent=opponent, start_challenging=True
     )
 
