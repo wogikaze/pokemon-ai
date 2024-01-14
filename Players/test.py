@@ -9,13 +9,15 @@ from poke_env import AccountConfiguration, LocalhostServerConfiguration, to_id_s
 from poke_env.player import RandomPlayer
 from poke_env.environment import AbstractBattle as Battle
 from poke_env.player.openai_api import ObsType, OpenAIGymEnv
-from MaxDamagePlayer import MaxDamagePlayer
+import wandb
+from MaxDamagePlayer import MaxDamagePlayer, MaxDamagePlayer_fix
 from tabulate import tabulate
 from stable_baselines3.common.vec_env import DummyVecEnv
+from stable_baselines3.common.monitor import Monitor
 from stable_baselines3 import PPO
 from stable_baselines3 import DQN
+from sb3_contrib import QRDQN
 from poke_env.player import (
-    Gen8EnvSinglePlayer,
     Gen9EnvSinglePlayer,
     MaxBasePowerPlayer,
     RandomPlayer,
@@ -23,24 +25,19 @@ from poke_env.player import (
     background_cross_evaluate,
     background_evaluate_player,
 )
-from rl.agents.dqn import DQNAgent
-from rl.memory import SequentialMemory
-from rl.policy import EpsGreedyQPolicy, LinearAnnealedPolicy
 from tabulate import tabulate
-from keras.layers import Dense, Flatten
-from keras.models import Sequential
-from keras.optimizers import Adam
+from wandb.integration.sb3 import WandbCallback
 
 
-class SimpleRLPlayer(Gen8EnvSinglePlayer):
+class SimpleRLPlayer(Gen9EnvSinglePlayer):
     def action_space_size(self):
         return 26
 
-    def get_opponent(self):
-        return RandomPlayer(
-            battle_format="gen8randombattle",
-            server_configuration=LocalhostServerConfiguration,
-        )
+    # def get_opponent(self):
+    #     return MaxDamagePlayer(
+    #         battle_format="gen9randombattle",
+    #         server_configuration=LocalhostServerConfiguration,
+    #     )
 
     def describe_embedding(self) -> Space:
         low = [-1, -1, -1, -1, 0, 0, 0, 0, 0, 0]
@@ -89,44 +86,60 @@ class SimpleRLPlayer(Gen8EnvSinglePlayer):
 
 
 if __name__ == "__main__":
-    opponent = RandomPlayer(battle_format="gen8randombattle")
-    test_env = SimpleRLPlayer(
-        battle_format="gen8randombattle", start_challenging=True, opponent=opponent
-    )
+    "check env"
+    # opponent = RandomPlayer(battle_format="gen9randombattle")
+    # test_env = SimpleRLPlayer(
+    #     battle_format="gen9randombattle", start_challenging=True, opponent=opponent
+    # )
     # check_env(test_env)
     # test_env.close()
 
     # Create one environment for training and one for evaluation
-    opponent = RandomPlayer(battle_format="gen8randombattle")
+    opponent = MaxDamagePlayer(battle_format="gen9randombattle")
     train_env = SimpleRLPlayer(
-        battle_format="gen8randombattle", opponent=opponent, start_challenging=True
+        battle_format="gen9randombattle", opponent=opponent, start_challenging=True
     )
-    opponent = RandomPlayer(battle_format="gen8randombattle")
+    opponent = MaxDamagePlayer(battle_format="gen9randombattle")
     eval_env = SimpleRLPlayer(
-        battle_format="gen8randombattle", opponent=opponent, start_challenging=True
+        battle_format="gen9randombattle", opponent=opponent, start_challenging=True
     )
-
-    # ベクトル型並行処理ができるので使ってみます
+    train_env = Monitor(train_env)
     env = DummyVecEnv([lambda: train_env])
 
-    # 強化学習アルゴリズムとしてPPOを使用します
-    # イメージデータなどを扱う際はCnnPolicyを使用するようです。ここではMlpPolicyを使用します
-    model = DQN("MlpPolicy", env, verbose=1)
+    model = QRDQN(
+        "MlpPolicy",
+        env,
+        learning_rate=0.00025,
+        gamma=0.5,
+        # target_update_interval=1,
+        # verbose=1,
+    )
+    wandb.init(
+        project="sb3",
+        config=None,
+        sync_tensorboard=True,  # sb3のtensorboardメトリクスを自動アップロード
+        monitor_gym=True,  # ゲームをプレイするエージェントの動画を自動アップロード
+        save_code=True,  # 任意
+    )
 
-    model.learn(total_timesteps=10000)
+    model.learn(
+        total_timesteps=50000,
+        callback=WandbCallback(gradient_save_freq=100, verbose=1),
+        progress_bar=True,
+    )
 
     env.close()
 
-    model.save("proj_name")
+    model.save("QRDQNmx")
 
     del model
 
-    model = DQN.load("proj_name")
+    model = QRDQN.load("QRDQNmx")
 
     # Evaluating the model
     print("Results against random player:")
 
-    for step in range(10):
+    for step in range(100):
         state, info = eval_env.reset()
         while True:
             action, _ = model.predict(state, deterministic=True)
@@ -142,17 +155,27 @@ if __name__ == "__main__":
     )
     env.close()
 
-    # for ep in range(10):
-    #     state, info = test_env.reset()
-    #     done = False
-    #     return_ = 0.0
-    #     timesteps = 0
-    #     while not done:
-    #         state, reward, terminated, truncated, info = test_env.step(
-    #             test_env.action_space.sample()
-    #         )
-    #         test_env.render()
-    #         return_ += reward
-    #         done = terminated or truncated
-    #         timesteps += 1
-    #     print(f"Episode {ep}:: Timesteps: {timesteps}, Total Return: {return_ : .2f}")
+
+def evaluate():
+    from poke_env.player import background_cross_evaluate
+
+    opponent = RandomPlayer(battle_format="gen8randombattle")
+    eval_env = SimpleRLPlayer(
+        battle_format="gen8randombattle", opponent=opponent, start_challenging=True
+    )
+
+    n_challenges = 50
+    players = [
+        eval_env.agent,
+        RandomPlayer(battle_format="gen8randombattle"),
+        MaxBasePowerPlayer(battle_format="gen8randombattle"),
+        SimpleHeuristicsPlayer(battle_format="gen8randombattle"),
+    ]
+    cross_eval_task = background_cross_evaluate(players, n_challenges)
+
+    cross_evaluation = cross_eval_task.result()
+    table = [["-"] + [p.username for p in players]]
+    for p_1, results in cross_evaluation.items():
+        table.append([p_1] + [cross_evaluation[p_1][p_2] for p_2 in results])
+    print("Cross evaluation of DQN with baselines:")
+    print(tabulate(table))
