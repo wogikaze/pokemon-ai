@@ -1,4 +1,4 @@
-git+https://github.com/wogikaze/poke-env
+# git+https://github.com/wogikaze/poke-env
 keras-rl2
 gymnasium
 tabulate
@@ -18,4 +18,4 @@ pynvml
 redis
 pika
 paho-mqtt
-git+https://github.com/pocokhc/simple_distributed_rl
+# git+https://github.com/pocokhc/simple_distributed_rl
