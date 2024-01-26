@@ -56,13 +56,5 @@ def main():
     print(f"Average reward for 20 episodes: {np.mean(rewards)}")
 
 
-    from matplotlib import pyplot as plt
-    # x=np.linspace(0)
-    # plt.plot()
-# --- animation
-# path = os.path.join(os.path.dirname(__file__), "_dqn.gif")
-# runner.animation_save_gif(path)
-
-
 if __name__ == "__main__":
     main()
