@@ -1,6 +1,7 @@
 import time
 import gymnasium as gym
 import gymnasium.envs.registration
+import numpy as np
 from stable_baselines3 import PPO, DQN
 from stable_baselines3.common.logger import configure
 from sb3_contrib import QRDQN
@@ -11,7 +12,16 @@ from wandb.integration.sb3 import WandbCallback
 import os
 from RLPlayer import RLPlayer, RandomPlayer
 
+from poke_env.teambuilder import Teambuilder
 import random
+
+
+class RandomTeamFromPool(Teambuilder):
+    def __init__(self, teams):
+        self.teams = [self.join_team(self.parse_showdown_team(team)) for team in teams]
+
+    def yield_team(self):
+        return np.random.choice(self.teams)
 
 
 pokemon_data = """
@@ -57,7 +67,7 @@ modest Nature
 
 chienpao @ focussash
 Ability: swordofruin
-Tera Type: haunter
+Tera Type: ghost
 EVs: 252 Atk / 4 SpD / 252 Spe
 jolly Nature
 - iciclecrash
@@ -128,7 +138,7 @@ timid Nature
 tinglu @ leftovers
 Ability: vesselofruin
 Tera Type: poison
-EVs: 244 HP / 148 Def / 166 SpD
+EVs: 244 HP / 148 Def / 116 SpD
 impish Nature
 - earthquake
 - ruination
@@ -217,7 +227,7 @@ sassy Nature
 
 ironmoth @ airballoon
 Ability: quarkdrive
-Tera Type: haunter
+Tera Type: grass
 EVs: 252 SpA / 252 Spe
 timid Nature
 - fierydance
@@ -246,27 +256,49 @@ jolly Nature
 - curse
 """
 
+
 # ポケモンのデータを個別のエントリーに分割
 pokemon_entries = pokemon_data.strip().split("\n\n")
 teams = []
 for _ in range(100):
-    team = random.sample(pokemon_entries, 5)
+    team = random.sample(pokemon_entries, 6)
     teams.append("\n\n".join(team))
+# print(teams[:5])
+
+
+custom_builder = RandomTeamFromPool(teams)
 
 
 def make_env():
-    # gymnasium.envs.registration.register(
-    #     id="RLPlayer-v0",
-    #     entry_point="RLPlayer" + ":RLPlayer",
-    #     max_episode_steps=500,
+    gymnasium.envs.registration.register(
+        id="RLPlayer-v0",
+        entry_point="RLPlayer" + ":RLPlayer",
+        max_episode_steps=500,
+    )
+    env = gym.make(
+        "RLPlayer-v0",
+        battle_format="gen9battlestadiumsinglesregulatione",
+        opponent=RandomPlayer(
+            battle_format="gen9battlestadiumsinglesregulatione",
+            team=custom_builder,
+        ),
+        team=custom_builder,
+        start_challenging=True,
+    )
+    # env = RLPlayer(
+    #     battle_format="gen9battlestadiumsinglesregulatione",
+    #     opponent=RandomPlayer(
+    #         battle_format="gen9battlestadiumsinglesregulatione",
+    #         team=custom_builder,
+    #     ),
+    #     team=custom_builder,
+    #     start_challenging=True,
     # )
-    # env = gym.make("RLPlayer-v0", opponent=RandomPlayer())
-    env = RLPlayer(opponent=RandomPlayer(), team=teams)
     env = Monitor(env, filename=None)
     return env
 
 
-cfg = {"policy_class": "MlpPolicy", "timesteps": 20000}
+cfg = {"policy_class": "MlpPolicy", "timesteps": 50000}
 
 run = wandb.init("sb3-RLPlayer", config=cfg, sync_tensorboard=True, monitor_gym=True)
 

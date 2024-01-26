@@ -40,7 +40,7 @@ modest Nature
 
 chienpao @ focussash
 Ability: swordofruin
-Tera Type: haunter
+Tera Type: ghost
 EVs: 252 Atk / 4 SpD / 252 Spe
 jolly Nature
 - iciclecrash
@@ -111,7 +111,7 @@ timid Nature
 tinglu @ leftovers
 Ability: vesselofruin
 Tera Type: poison
-EVs: 244 HP / 148 Def / 166 SpD
+EVs: 244 HP / 148 Def / 116 SpD
 impish Nature
 - earthquake
 - ruination
@@ -200,7 +200,7 @@ sassy Nature
 
 ironmoth @ airballoon
 Ability: quarkdrive
-Tera Type: haunter
+Tera Type: grass
 EVs: 252 SpA / 252 Spe
 timid Nature
 - fierydance

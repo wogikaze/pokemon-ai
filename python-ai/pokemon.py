@@ -60,12 +60,6 @@ EVs: {extract_effort_values(columns[1])}
 
 def translate(text):
     translation_map = {}
-    for file_name in ["Poke", "Move", "Ability", "Items", "Nature"]:
-        with open(f"../tools/{file_name}_jp.csv", encoding="utf-8") as csv_file:
-            csv_reader = csv.reader(csv_file)
-            for row in csv_reader:
-                japanese, english = row
-                translation_map[english] = japanese
     type_ja = [
         "ノーマル",
         "ほのお",
@@ -109,7 +103,15 @@ def translate(text):
     ]
     for t in range(len(type_ja)):
         translation_map[type_en[t]] = type_ja[t]
+        
+    for file_name in ["Poke", "Move", "Ability", "Items", "Nature"]:
+        with open(f"../tools/{file_name}_jp.csv", encoding="utf-8") as csv_file:
+            csv_reader = csv.reader(csv_file)
+            for row in csv_reader:
+                japanese, english = row
+                translation_map[english] = japanese
 
+    print(translation_map)
     # items_pre.jsを読み込み
     # with open(f"../src/data/{file_type}dex.ts", "r", encoding="utf-8") as file:
     content = text
