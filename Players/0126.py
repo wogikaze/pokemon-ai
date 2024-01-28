@@ -1,3 +1,4 @@
+from datetime import datetime
 import time
 import gymnasium as gym
 import gymnasium.envs.registration
@@ -10,9 +11,11 @@ from stable_baselines3.common.vec_env import DummyVecEnv
 import wandb
 from wandb.integration.sb3 import WandbCallback
 import os
+from MaxDamagePlayer import MaxDamagePlayer, MaxDamagePlayerfix
 from RLPlayer import RLPlayer, RandomPlayer
 
 from poke_env.teambuilder import Teambuilder
+from poke_env.player import SimpleHeuristicsPlayer
 import random
 
 
@@ -278,7 +281,7 @@ def make_env():
     env = gym.make(
         "RLPlayer-v0",
         battle_format="gen9battlestadiumsinglesregulatione",
-        opponent=RandomPlayer(
+        opponent=MaxDamagePlayer(
             battle_format="gen9battlestadiumsinglesregulatione",
             team=custom_builder,
         ),
@@ -298,32 +301,113 @@ def make_env():
     return env
 
 
-cfg = {"policy_class": "MlpPolicy", "timesteps": 50000}
+def train(run_id):
+    cfg = {"policy_class": "MlpPolicy", "timesteps": 10000}
+    policy_kwargs = dict(n_quantiles=50)
+    run = wandb.init(
+        "sb3-RLPlayer", config=cfg, sync_tensorboard=True, monitor_gym=True
+    )
 
-run = wandb.init("sb3-RLPlayer", config=cfg, sync_tensorboard=True, monitor_gym=True)
+    logging_dir = "log"
+    os.makedirs(logging_dir + "/" + run_id)
+    os.environ["WANDB_DIR"] = logging_dir
+    env = DummyVecEnv([lambda: make_env() for _ in range(4)])
 
-logging_dir = "log"
-date = time.strftime("%Y%m%d%H%M%S", time.localtime())
-os.makedirs(logging_dir + "/" + date)
-os.environ["WANDB_DIR"] = logging_dir
-env = DummyVecEnv([lambda: make_env() for _ in range(4)])
+    new_logger = configure("/log", ["stdout", "csv", "tensorboard"])
 
-new_logger = configure("/log", ["stdout", "csv", "tensorboard"])
+    model = QRDQN(
+        cfg["policy_class"],
+        env,
+        policy_kwargs=policy_kwargs,
+        learning_rate=0.00025,
+        gamma=0.5,
+        target_update_interval=1,
+        train_freq=(1, "step"),
+        batch_size=64,
+    )
+    model.set_logger(new_logger)
+    model.learn(
+        total_timesteps=cfg["timesteps"],
+        callback=WandbCallback(
+            verbose=2,
+            gradient_save_freq=10,
+            model_save_freq=5000,
+            model_save_path="./models",
+        ),
+        progress_bar=True,
+        log_interval=12,
+    )
 
-model = QRDQN(
-    cfg["policy_class"],
-    env,
-    learning_rate=0.00025,
-    gamma=0.5,
-    target_update_interval=1,
-    train_freq=1,
-    batch_size=64,
-)
-model.set_logger(new_logger)
-model.learn(
-    cfg["timesteps"],
-    callback=WandbCallback(verbose=2, gradient_save_freq=10),
-    progress_bar=True,
-)
+    model.save(f"./models/{run_id}")
 
-model.save(f"./models/{date}")
+
+def evalute(run_id):
+    gymnasium.envs.registration.register(
+        id="RLPlayer-v0",
+        entry_point="RLPlayer" + ":RLPlayer",
+        max_episode_steps=500,
+    )
+    eval_env = gym.make(
+        "RLPlayer-v0",
+        battle_format="gen9battlestadiumsinglesregulatione",
+        opponent=RandomPlayer(
+            battle_format="gen9battlestadiumsinglesregulatione",
+            team=custom_builder,
+        ),
+        team=custom_builder,
+        start_challenging=True,
+    )
+
+    model = QRDQN.load(f"./models/{run_id}.zip", eval_env)
+    print("Results against random player:")
+
+    for step in range(100):
+        state, info = eval_env.reset()
+        while True:
+            action, _ = model.predict(state, deterministic=True)
+            obs, reward, terminated, truncated, info = eval_env.step(action)
+            # env.render()
+            if terminated or truncated:
+                print(
+                    f"steps: {eval_env.n_finished_battles} is {eval_env.n_won_battles}"
+                )
+                break
+    print("Results against Max player:")
+    eval_env2 = gym.make(
+        "RLPlayer-v0",
+        battle_format="gen9battlestadiumsinglesregulatione",
+        opponent=MaxDamagePlayer(
+            battle_format="gen9battlestadiumsinglesregulatione",
+            team=custom_builder,
+        ),
+        team=custom_builder,
+        start_challenging=True,
+    )
+    for step in range(100):
+        state, info = eval_env2.reset()
+        while True:
+            action, _ = model.predict(state, deterministic=True)
+            obs, reward, terminated, truncated, info = eval_env2.step(action)
+            # env.render()
+            if terminated or truncated:
+                print(
+                    f"steps: {eval_env2.n_finished_battles} is {eval_env2.n_won_battles}"
+                )
+                break
+    print(
+        f"""{run_id} Evaluation: 
+Random: {eval_env.n_won_battles} victories out of {eval_env.n_finished_battles} episodes
+Max:    {eval_env2.n_won_battles} victories out of {eval_env2.n_finished_battles} episodes
+
+"""
+    )
+
+
+if __name__ == "__main__":
+    # run_id は"lerning方法"+Date+Timeをコードにする
+    run_id = "QL" + datetime.now().strftime("%d-%H-%M")
+    # run_id = "QL27-14-12"
+    # evalute(run_id)
+
+    train(run_id)
+    evalute(run_id)

@@ -1,40 +1,46 @@
-import asyncio
-import time
-from matplotlib import pyplot as plt
-from poke_env import AccountConfiguration
-from poke_env.player import RandomPlayer, cross_evaluate
+import poke_env
+from poke_env.player import (
+    background_cross_evaluate,
+    RandomPlayer,
+    MaxBasePowerPlayer,
+    SimpleHeuristicsPlayer,
+)
+from Players.MaxDamagePlayer import MaxDamagePlayer
+from env.RLenv import RLenv
 from tabulate import tabulate
 
-from Players.MaxDamagePlayer import MaxDamagePlayer, MaxDamagePlayer_fix
 
-
-async def main():
-    start = time.time()
-
-    player1 = RandomPlayer(account_configuration=AccountConfiguration("player1", None))
-    player2 = MaxDamagePlayer(
-        account_configuration=AccountConfiguration("player2", None),
-    )
-    player3 = MaxDamagePlayer_fix(
-        account_configuration=AccountConfiguration("player3", None)
-    )
-
-    players = [player1, player2, player3]
-    BATTLE_NUM = 15  # const
-    checkpoint = 3  # 何回ごとに記録するか
-    print("start")
-
-    cross_evaluation = await cross_evaluate(players, n_challenges=20)
-
-    # Prepare results for display
+def eval(battle_format):
+    eval_env = RLenv(battle_format="gen8randombattle")
+    n_challenges = 100
+    players = [
+        # eval_env.agent,
+        RandomPlayer(battle_format="gen8randombattle"),
+        MaxBasePowerPlayer(battle_format="gen8randombattle"),
+        SimpleHeuristicsPlayer(battle_format="gen8randombattle"),
+    ]
+    cross_eval_task = background_cross_evaluate(players, n_challenges)
+    # dqn.test(
+    #     eval_env,
+    #     nb_episodes=n_challenges * (len(players) - 1),
+    #     verbose=False,
+    #     visualize=False,
+    # )
+    cross_evaluation = cross_eval_task.result()
     table = [["-"] + [p.username for p in players]]
     for p_1, results in cross_evaluation.items():
         table.append([p_1] + [cross_evaluation[p_1][p_2] for p_2 in results])
-
-    # Display results
+    print("Cross evaluation of DQN with baselines:")
     print(tabulate(table))
-    print("took time %f" % (time.time() - start))
 
 
 if __name__ == "__main__":
-    asyncio.get_event_loop().run_until_complete(main())
+    # 起動時引数をとりgen9battlestadiumsinglesregulationeにする
+    import sys
+
+    if len(sys.argv) == 2:
+        battle_format = "gen9battlestadiumsinglesregulatione"
+    else:
+        battle_format = "gen8randombattle"
+    
+    eval(battle_format)

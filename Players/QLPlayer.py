@@ -3,7 +3,7 @@ from poke_env.player import RandomPlayer
 from poke_env.environment import AbstractBattle as Battle
 from poke_env.player.openai_api import ObsType, OpenAIGymEnv
 import wandb
-from MaxDamagePlayer import MaxDamagePlayer, MaxDamagePlayer_fix
+from MaxDamagePlayer import MaxDamagePlayer, MaxDamagePlayerfix
 from tabulate import tabulate
 from stable_baselines3.common.vec_env import DummyVecEnv
 from stable_baselines3.common.monitor import Monitor
@@ -41,7 +41,7 @@ def evalute(run_id):
         battle_format="gen9randombattle", opponent=opponent, start_challenging=True
     )
     model = QRDQN.load(
-        "C:/Users/Wogikaze/Desktop/school/未来/models/mmt29uxf/model.zip", eval_env
+        f"C:/Users/Wogikaze/Desktop/school/未来/models/{run_id}.zip", eval_env
     )
     print("Results against random player:")
 
@@ -66,7 +66,7 @@ def train(run_id):
     train_env = DQNRLPlayer(
         battle_format="gen9randombattle", opponent=opponent, start_challenging=True
     )
-    train_env = Monitor(train_env,f"{run_id}")
+    train_env = Monitor(train_env, f"{run_id}")
     env = DummyVecEnv([lambda: train_env])
 
     run = wandb.init(
@@ -106,9 +106,9 @@ def train(run_id):
 
 if __name__ == "__main__":
     # run_id は"lerning方法"+Date+Timeをコードにする
-    run_id = "QL" + datetime.now().strftime("%d-%H-%M")
-    # run_id = "cpbk46g4"
+    # run_id = "QL" + datetime.now().strftime("%d-%H-%M")
+    run_id = "20240126172705"
     # evalute(run_id)
 
-    train(run_id)
+    # train(run_id)
     evalute(run_id)

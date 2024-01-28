@@ -10,7 +10,7 @@ from poke_env.player import RandomPlayer
 from poke_env.environment import AbstractBattle as Battle
 from poke_env.player.openai_api import ObsType, OpenAIGymEnv
 import wandb
-from MaxDamagePlayer import MaxDamagePlayer, MaxDamagePlayer_fix
+from MaxDamagePlayer import MaxDamagePlayer, MaxDamagePlayerfix
 from tabulate import tabulate
 from stable_baselines3.common.vec_env import DummyVecEnv
 from stable_baselines3.common.monitor import Monitor

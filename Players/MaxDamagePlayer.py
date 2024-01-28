@@ -11,7 +11,7 @@ class MaxDamagePlayer(Player):
             return self.choose_random_move(battle)
 
 
-class MaxDamagePlayer_fix(Player):
+class MaxDamagePlayerfix(Player):
     def choose_move(self, battle: AbstractBattle):
         if battle.available_moves:
             best_move = max(
