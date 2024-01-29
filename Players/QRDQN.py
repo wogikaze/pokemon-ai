@@ -1,111 +1,79 @@
 from datetime import datetime
-from poke_env.player import RandomPlayer
-from poke_env.environment import AbstractBattle as Battle
-from poke_env.player.openai_api import ObsType, OpenAIGymEnv
-import wandb
-from MaxDamagePlayer import MaxDamagePlayer, MaxDamagePlayerfix
-from tabulate import tabulate
-from stable_baselines3.common.vec_env import DummyVecEnv
-from stable_baselines3.common.monitor import Monitor
-from stable_baselines3 import PPO
-from stable_baselines3 import DQN
+import time
+import gymnasium as gym
+import gymnasium.envs.registration
+import numpy as np
+from stable_baselines3 import PPO, DQN
+from stable_baselines3.common.logger import configure
 from sb3_contrib import QRDQN
-from poke_env.player import (
-    Gen9EnvSinglePlayer,
-    MaxBasePowerPlayer,
-    RandomPlayer,
-    SimpleHeuristicsPlayer,
-    background_cross_evaluate,
-    background_evaluate_player,
-)
-from tabulate import tabulate
+from stable_baselines3.common.monitor import Monitor
+from stable_baselines3.common.vec_env import DummyVecEnv
+import wandb
 from wandb.integration.sb3 import WandbCallback
-from RLPlayer import RLPlayer
-import random
+import os
+from Players.MaxDamagePlayer import MaxDamagePlayer
+from Players.RLenv.RLenv import RLenv
 
 
-class QRDQNRLPlayer(RLPlayer):
-    def get_opponent(self):
-        return [
-            MaxDamagePlayer(battle_format="gen9randombattle"),
-        ]
-
-
-def evalute(run_id):
-    opponent = RandomPlayer(battle_format="gen9randombattle")
-    eval_env = RLPlayer(
-        battle_format="gen9randombattle", opponent=opponent, start_challenging=True
+def make_env():
+    gymnasium.envs.registration.register(
+        id="RLenv-v0",
+        entry_point="Players.RLenv.RLenv:RLenv",
+        max_episode_steps=500,
     )
-    model = QRDQN.load(
-        "C:/Users/Wogikaze/Desktop/school/未来/models/mmt29uxf/model.zip", eval_env
-    )
-    print("Results against random player:")
-
-    for step in range(100):
-        state, info = eval_env.reset()
-        while True:
-            action, _ = model.predict(state, deterministic=True)
-            obs, reward, terminated, truncated, info = eval_env.step(action)
-            # env.render()
-            if terminated or truncated:
-                print(
-                    f"steps:{eval_env.n_finished_battles} is {eval_env.n_won_battles}"
-                )
-                break
-    print(
-        f"{run_id} Evaluation: {eval_env.n_won_battles} victories out of {eval_env.n_finished_battles} episodes"
-    )
+    env = gym.make("RLenv-v0", opponent=MaxDamagePlayer(), start_challenging=True)
+    env = Monitor(env, filename=None)
+    return env
 
 
 def train(run_id):
-    opponent = MaxDamagePlayer(account_configuration=None)
-    train_env = QRDQNRLPlayer(
-        battle_format="gen9randombattle", opponent=opponent, start_challenging=True
-    )
-    train_env = Monitor(train_env)
-    env = DummyVecEnv([lambda: train_env])
-
+    cfg = {"policy_class": "MlpPolicy", "timesteps": 50000}
     run = wandb.init(
-        project="sb3",
-        config=None,
-        sync_tensorboard=True,  # sb3のtensorboardメトリクスを自動アップロード
-        monitor_gym=True,  # ゲームをプレイするエージェントの動画を自動アップロード
-        save_code=True,  # 任意
+        project="sb3-RLenv",
+        config=cfg,
+        sync_tensorboard=True,
+        monitor_gym=True,
+        name=run_id,
     )
+
+    logging_dir = "log"
+    os.makedirs(logging_dir + "/" + run_id)
+    os.environ["WANDB_DIR"] = logging_dir
+    env = DummyVecEnv([lambda: make_env() for _ in range(4)])
+
+    new_logger = configure("/log", ["stdout", "csv", "tensorboard"])
+
     model = QRDQN(
-        "MlpPolicy",
+        cfg["policy_class"],
         env,
         learning_rate=0.00025,
         gamma=0.5,
         target_update_interval=1,
         train_freq=(1, "step"),
-        verbose=1,
-        # tensorboard_log=f"runs/{run.id}",
+        batch_size=64,
     )
+    model.set_logger(new_logger)
+
+    def gettime():
+        return datetime.now().strftime("%d-%H-%M")
 
     model.learn(
-        total_timesteps=1_000,
+        total_timesteps=cfg["timesteps"],
         callback=WandbCallback(
-            model_save_path=f"models/{run_id}",
-            model_save_freq=10000,
             verbose=2,
-            gradient_save_freq=1000,
+            gradient_save_freq=10,
+            model_save_freq=5000,
+            model_save_path=f"./models/{run_id}/{gettime()}",
         ),
         progress_bar=True,
-        log_interval=1000,
+        log_interval=12,
     )
-    run.finish()
-    env.close()
 
-    model.save(f"models/{run_id}")
+    model.save(f"./models/{run_id}")
 
 
 if __name__ == "__main__":
-    """毎回idを変えておく()"""
     # run_id は"lerning方法"+Date+Timeをコードにする
     run_id = "QRDQN" + datetime.now().strftime("%d-%H-%M")
-    # run_id = "cpbk46g4"
-    # evalute(run_id)
 
     train(run_id)
-    evalute(run_id)

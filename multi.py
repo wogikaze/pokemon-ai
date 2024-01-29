@@ -1,17 +1,18 @@
-# multi-processing で対戦する
 import asyncio
-import multiprocessing
 import time
 from poke_env import AccountConfiguration
-from poke_env.player.random_player import RandomPlayer
-from QL import MaxDamagePlayer_fix
+from poke_env.player import RandomPlayer, SimpleHeuristicsPlayer
+from Players.MaxDamagePlayer import MaxDamagePlayerfix
+
 
 random_players = [
-    RandomPlayer(account_configuration=AccountConfiguration(f"RandomPlayer {i}", None))
+    SimpleHeuristicsPlayer(
+        account_configuration=AccountConfiguration(f"RandomPlayer {i}", None)
+    )
     for i in range(1, 6)
 ]
 max_damage_players = [
-    MaxDamagePlayer_fix(
+    MaxDamagePlayerfix(
         account_configuration=AccountConfiguration(f"QLPlayer {i}", None)
     )
     for i in range(1, 6)
