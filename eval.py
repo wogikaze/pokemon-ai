@@ -7,6 +7,9 @@ from poke_env.player import (
     RandomPlayer,
     MaxBasePowerPlayer,
     SimpleHeuristicsPlayer,
+    Gen9EnvSinglePlayer,
+    Player,
+    ForfeitBattleOrder,
 )
 from Players.MaxDamagePlayer import MaxDamagePlayer
 from Players.RLenv.RLenv import RLenv
@@ -15,6 +18,7 @@ from stable_baselines3 import DQN
 from stable_baselines3.common.evaluation import evaluate_policy
 from stable_baselines3.common.monitor import Monitor
 import statistics
+import torch
 
 
 class RandomTeamFromPool(Teambuilder):
@@ -270,6 +274,101 @@ for _ in range(100):
 custom_builder = RandomTeamFromPool(teams)
 
 
+class SimpleRLPlayer(Gen9EnvSinglePlayer):
+    def action_to_move(self, action: int, battle):
+        if action == -1:
+            return ForfeitBattleOrder()
+        elif (
+            action < 4
+            and action < len(battle.available_moves)
+            and not battle.force_switch
+        ):
+            return self.create_order(battle.available_moves[action])
+        elif (
+            not battle.force_switch
+            and battle.can_z_move
+            and battle.active_pokemon
+            and 0 <= action - 4 < len(battle.active_pokemon.available_z_moves)
+        ):
+            return self.create_order(
+                battle.active_pokemon.available_z_moves[action - 4], z_move=True
+            )
+        elif (
+            battle.can_mega_evolve
+            and 0 <= action - 8 < len(battle.available_moves)
+            and not battle.force_switch
+        ):
+            return self.create_order(battle.available_moves[action - 8], mega=True)
+        elif (
+            battle.can_dynamax
+            and 0 <= action - 12 < len(battle.available_moves)
+            and not battle.force_switch
+        ):
+            return self.create_order(battle.available_moves[action - 12], dynamax=True)
+        elif (
+            battle.can_tera
+            and 0 <= action - 16 < len(battle.available_moves)
+            and not battle.force_switch
+        ):
+            return self.create_order(
+                battle.available_moves[action - 16], terastallize=True
+            )
+        elif 0 <= action - 20 < len(battle.available_switches):
+            return self.create_order(battle.available_switches[action - 20])
+        else:
+            return self.choose_random_move(battle)
+
+
+async def evalhuman(battle_format, model: DQN):
+    class EmbeddedRLPlayer(Player):
+        def choose_move(self, battle):
+            # if battle.available_moves:
+            #     best_move = max(
+            #         battle.available_moves, key=lambda move: move.base_power
+            #     )
+            #     return self.create_order(best_move)
+            # else:
+            #     return self.choose_random_move(battle)
+            if np.random.rand() < 0.01:  # avoids infinite loops
+                print("random move")
+                return self.choose_random_move(battle)
+            # embedding = RLenv.embed_battle(self, battle)
+            # embedding = torch.from_numpy(embedding.astype(np.float32)).clone()
+            action = int(model.predict(RLenv.embed_battle(self, battle))[0])
+            return SimpleRLPlayer.action_to_move(self, action, battle)
+
+    if battle_format == "gen9randombattle":
+        player = SimpleHeuristicsPlayer(battle_format=battle_format)
+        player = EmbeddedRLPlayer(battle_format=battle_format)
+
+        eval_env = RLenv(
+            battle_format=battle_format,
+            # opponent=player,
+            opponent=None,
+            start_challenging=True,
+        )
+        await player.send_challenges("wogikaze", n_challenges=3)
+    else:
+        player = SimpleHeuristicsPlayer(
+            battle_format=battle_format, team=custom_builder
+        )
+        player = EmbeddedRLPlayer(battle_format=battle_format, team=custom_builder)
+        # eval_env = RLenv(
+        #     battle_format=battle_format,
+        #     # opponent=player,
+        #     opponent=None,
+        #     team=custom_builder,
+        #     start_challenging=True,
+        # )
+        await player.send_challenges("wogikaze", n_challenges=3)
+    # evaluate_policy(
+    #     model,
+    #     eval_env,
+    #     n_eval_episodes=1,
+    #     return_episode_rewards=True,
+    # )
+
+
 def eval(battle_format, model):
     n_challenges = 50
     print(f"each battle: {n_challenges}")
@@ -294,7 +393,9 @@ def eval(battle_format, model):
         if battle_format == "gen9randombattle":
             eval_env = RLenv(battle_format=battle_format, opponent=player)
         else:
-            eval_env = RLenv(battle_format=battle_format, opponent=player, team=custom_builder)
+            eval_env = RLenv(
+                battle_format=battle_format, opponent=player, team=custom_builder
+            )
         eval_env = Monitor(eval_env)
         reward = evaluate_policy(
             model,

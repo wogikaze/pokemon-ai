@@ -6,7 +6,7 @@ import srl
 from srl.algorithms import agent57
 from srl.utils import common
 
-common.logger_print()
+# common.logger_print()
 from poke_env.player import RandomPlayer
 from Players.MaxDamagePlayer import MaxDamagePlayer
 from Players.RLenv.RLenv import RLenv
